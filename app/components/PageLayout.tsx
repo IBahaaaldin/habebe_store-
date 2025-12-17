@@ -1,19 +1,20 @@
-import {Await, Link} from 'react-router';
-import {Suspense, useId} from 'react';
+import { Await, Link } from 'react-router';
+import { Suspense, useId } from 'react';
 import type {
   CartApiQueryFragment,
   FooterQuery,
   HeaderQuery,
 } from 'storefrontapi.generated';
-import {Aside} from '~/components/Aside';
-import {Footer} from '~/components/Footer';
-import {Header, HeaderMenu} from '~/components/Header';
-import {CartMain} from '~/components/CartMain';
+import { Aside } from '~/components/Aside';
+import { Footer } from '~/components/Footer';
+import { Header, HeaderMenu } from '~/components/Header';
+import { CartMain } from '~/components/CartMain';
 import {
   SEARCH_ENDPOINT,
   SearchFormPredictive,
 } from '~/components/SearchFormPredictive';
-import {SearchResultsPredictive} from '~/components/SearchResultsPredictive';
+import { SearchResultsPredictive } from '~/components/SearchResultsPredictive';
+import SignUp from './MINE/SignUp';
 
 interface PageLayoutProps {
   cart: Promise<CartApiQueryFragment | null>;
@@ -24,6 +25,10 @@ interface PageLayoutProps {
   children?: React.ReactNode;
 }
 
+
+
+
+// This is the main layout for the entire app
 export function PageLayout({
   cart,
   children = null,
@@ -34,9 +39,15 @@ export function PageLayout({
 }: PageLayoutProps) {
   return (
     <Aside.Provider>
+
+      {/* This is the cart, search, and mobile menu */}
       <CartAside cart={cart} />
       <SearchAside />
       <MobileMenuAside header={header} publicStoreDomain={publicStoreDomain} />
+
+
+
+      <SignUp />
       {header && (
         <Header
           header={header}
@@ -51,11 +62,17 @@ export function PageLayout({
         header={header}
         publicStoreDomain={publicStoreDomain}
       />
+
+
+
     </Aside.Provider>
   );
 }
 
-function CartAside({cart}: {cart: PageLayoutProps['cart']}) {
+
+
+
+function CartAside({ cart }: { cart: PageLayoutProps['cart'] }) {
   return (
     <Aside type="cart" heading="CART">
       <Suspense fallback={<p>Loading cart ...</p>}>
@@ -69,6 +86,8 @@ function CartAside({cart}: {cart: PageLayoutProps['cart']}) {
   );
 }
 
+
+
 function SearchAside() {
   const queriesDatalistId = useId();
   return (
@@ -76,7 +95,7 @@ function SearchAside() {
       <div className="predictive-search">
         <br />
         <SearchFormPredictive>
-          {({fetchResults, goToSearch, inputRef}) => (
+          {({ fetchResults, goToSearch, inputRef }) => (
             <>
               <input
                 name="q"
@@ -94,8 +113,8 @@ function SearchAside() {
         </SearchFormPredictive>
 
         <SearchResultsPredictive>
-          {({items, total, term, state, closeSearch}) => {
-            const {articles, collections, pages, products, queries} = items;
+          {({ items, total, term, state, closeSearch }) => {
+            const { articles, collections, pages, products, queries } = items;
 
             if (state === 'loading' && term.current) {
               return <div>Loading...</div>;
@@ -150,6 +169,8 @@ function SearchAside() {
     </Aside>
   );
 }
+
+
 
 function MobileMenuAside({
   header,

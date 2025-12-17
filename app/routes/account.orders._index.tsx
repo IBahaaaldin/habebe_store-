@@ -4,8 +4,8 @@ import {
   useNavigation,
   useSearchParams,
 } from 'react-router';
-import type {Route} from './+types/account.orders._index';
-import {useRef} from 'react';
+import type { Route } from './+types/account.orders._index';
+import { useRef } from 'react';
 import {
   Money,
   getPaginationVariables,
@@ -17,12 +17,12 @@ import {
   ORDER_FILTER_FIELDS,
   type OrderFilterParams,
 } from '~/lib/orderFilters';
-import {CUSTOMER_ORDERS_QUERY} from '~/graphql/customer-account/CustomerOrdersQuery';
+import { CUSTOMER_ORDERS_QUERY } from '~/graphql/customer-account/CustomerOrdersQuery';
 import type {
   CustomerOrdersFragment,
   OrderItemFragment,
 } from 'customer-accountapi.generated';
-import {PaginatedResourceSection} from '~/components/PaginatedResourceSection';
+import { PaginatedResourceSection } from '~/components/PaginatedResourceSection';
 
 type OrdersLoaderData = {
   customer: CustomerOrdersFragment;
@@ -30,11 +30,11 @@ type OrdersLoaderData = {
 };
 
 export const meta: Route.MetaFunction = () => {
-  return [{title: 'Orders'}];
+  return [{ title: 'Orders' }];
 };
 
-export async function loader({request, context}: Route.LoaderArgs) {
-  const {customerAccount} = context;
+export async function loader({ request, context }: Route.LoaderArgs) {
+  const { customerAccount } = context;
   const paginationVariables = getPaginationVariables(request, {
     pageBy: 20,
   });
@@ -43,7 +43,7 @@ export async function loader({request, context}: Route.LoaderArgs) {
   const filters = parseOrderFilters(url.searchParams);
   const query = buildOrderSearchQuery(filters);
 
-  const {data, errors} = await customerAccount.query(CUSTOMER_ORDERS_QUERY, {
+  const { data, errors } = await customerAccount.query(CUSTOMER_ORDERS_QUERY, {
     variables: {
       ...paginationVariables,
       query,
@@ -55,12 +55,12 @@ export async function loader({request, context}: Route.LoaderArgs) {
     throw Error('Customer orders not found');
   }
 
-  return {customer: data.customer, filters};
+  return { customer: data.customer, filters };
 }
 
 export default function Orders() {
-  const {customer, filters} = useLoaderData<OrdersLoaderData>();
-  const {orders} = customer;
+  const { customer, filters } = useLoaderData<OrdersLoaderData>();
+  const { orders } = customer;
 
   return (
     <div className="orders">
@@ -83,7 +83,7 @@ function OrdersTable({
     <div className="acccount-orders" aria-live="polite">
       {orders?.nodes.length ? (
         <PaginatedResourceSection connection={orders}>
-          {({node: order}) => <OrderItem key={order.id} order={order} />}
+          {({ node: order }) => <OrderItem key={order.id} order={order} />}
         </PaginatedResourceSection>
       ) : (
         <EmptyOrders hasFilters={hasFilters} />
@@ -92,7 +92,7 @@ function OrdersTable({
   );
 }
 
-function EmptyOrders({hasFilters = false}: {hasFilters?: boolean}) {
+function EmptyOrders({ hasFilters = false }: { hasFilters?: boolean }) {
   return (
     <div>
       {hasFilters ? (
@@ -199,7 +199,9 @@ function OrderSearchForm({
   );
 }
 
-function OrderItem({order}: {order: OrderItemFragment}) {
+
+
+function OrderItem({ order }: { order: OrderItemFragment }) {
   const fulfillmentStatus = flattenConnection(order.fulfillments)[0]?.status;
   return (
     <>

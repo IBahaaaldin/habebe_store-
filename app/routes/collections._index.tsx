@@ -1,8 +1,10 @@
-import {useLoaderData, Link} from 'react-router';
-import type {Route} from './+types/collections._index';
-import {getPaginationVariables, Image} from '@shopify/hydrogen';
-import type {CollectionFragment} from 'storefrontapi.generated';
-import {PaginatedResourceSection} from '~/components/PaginatedResourceSection';
+import { useLoaderData, Link } from 'react-router';
+import type { Route } from './+types/collections._index';
+import { getPaginationVariables, Image } from '@shopify/hydrogen';
+import type { CollectionFragment } from 'storefrontapi.generated';
+import { PaginatedResourceSection } from '~/components/PaginatedResourceSection';
+
+
 
 export async function loader(args: Route.LoaderArgs) {
   // Start fetching non-critical data without blocking time to first byte
@@ -11,26 +13,26 @@ export async function loader(args: Route.LoaderArgs) {
   // Await the critical data required to render initial state of the page
   const criticalData = await loadCriticalData(args);
 
-  return {...deferredData, ...criticalData};
+  return { ...deferredData, ...criticalData };
 }
 
 /**
  * Load data necessary for rendering content above the fold. This is the critical data
  * needed to render the page. If it's unavailable, the whole page should 400 or 500 error.
  */
-async function loadCriticalData({context, request}: Route.LoaderArgs) {
+async function loadCriticalData({ context, request }: Route.LoaderArgs) {
   const paginationVariables = getPaginationVariables(request, {
     pageBy: 4,
   });
 
-  const [{collections}] = await Promise.all([
+  const [{ collections }] = await Promise.all([
     context.storefront.query(COLLECTIONS_QUERY, {
       variables: paginationVariables,
     }),
     // Add other queries here, so that they are loaded in parallel
   ]);
 
-  return {collections};
+  return { collections };
 }
 
 /**
@@ -38,61 +40,94 @@ async function loadCriticalData({context, request}: Route.LoaderArgs) {
  * fetched after the initial page load. If it's unavailable, the page should still 200.
  * Make sure to not throw any errors here, as it will cause the page to 500.
  */
-function loadDeferredData({context}: Route.LoaderArgs) {
+function loadDeferredData({ context }: Route.LoaderArgs) {
   return {};
 }
 
 export default function Collections() {
-  const {collections} = useLoaderData<typeof loader>();
+  const { collections } = useLoaderData<typeof loader>();
 
   return (
-    <div className="collections">
-      <h1>Collections</h1>
-      <PaginatedResourceSection<CollectionFragment>
+    <div className="flex flex-col gap-3 p-5 bg-zinc-100 rounded-4xl">
+      {/* <PaginatedResourceSection<CollectionFragment>
         connection={collections}
-        resourcesClassName="collections-grid"
+        resourcesClassName=""
       >
-        {({node: collection, index}) => (
+        {({ node: collection, index }) => (
           <CollectionItem
             key={collection.id}
             collection={collection}
             index={index}
           />
         )}
-      </PaginatedResourceSection>
+      </PaginatedResourceSection> */}
+
+
+
+      <div className="flex flex-row gap-3 h-full">
+        <div className='w-1/3 min-h-100'>
+          {collections.nodes.slice(0, 1).map((collection, index) => (
+            <CollectionItem key={collection.id} collection={collection} index={index} />
+          ))}
+        </div>
+
+
+        <div className='w-2/3 min-h-100'>
+          {collections.nodes.slice(1, 2).map((collection, index) => (
+            <CollectionItem key={collection.id} collection={collection} index={index} />
+          ))}
+        </div>
+      </div>
+
+
+      <div className="flex flex-row gap-3 h-full">
+
+        <div className='w-2/3 min-h-100'>
+          {collections.nodes.slice(1, 2).map((collection, index) => (
+            <CollectionItem key={collection.id} collection={collection} index={index} />
+          ))}
+        </div>
+
+        <div className='w-1/3 min-h-100'>
+          {collections.nodes.slice(0, 1).map((collection, index) => (
+            <CollectionItem key={collection.id} collection={collection} index={index} />
+          ))}
+        </div>
+
+      </div>
+
+
+
     </div>
   );
 }
 
-function CollectionItem({
-  collection,
-  index,
-}: {
-  collection: CollectionFragment;
-  index: number;
-}) {
+
+
+function CollectionItem({ collection, index, }: { collection: CollectionFragment; index: number; }) {
   return (
     <Link
-      className="collection-item"
+      className="relative h-full rounded-4xl overflow-hidden block"
       key={collection.id}
       to={`/collections/${collection.handle}`}
       prefetch="intent"
     >
       {collection?.image && (
         <Image
+          className='h-full object-cover hover:scale-110 duration-500'
           alt={collection.image.altText || collection.title}
-          aspectRatio="1/1"
           data={collection.image}
           loading={index < 3 ? 'eager' : undefined}
-          sizes="(min-width: 45em) 400px, 100vw"
         />
       )}
-      <h5>{collection.title}</h5>
+      <h2 className='absolute uppercase top-10 left-10 text-3xl rounded-full'>{collection.title}</h2>
     </Link>
   );
 }
 
-const COLLECTIONS_QUERY = `#graphql
+
+
+export const COLLECTIONS_QUERY = `#graphql
   fragment Collection on Collection {
     id
     title

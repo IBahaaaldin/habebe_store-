@@ -4,11 +4,17 @@ import type {CartQueryDataReturn} from '@shopify/hydrogen';
 import {CartForm} from '@shopify/hydrogen';
 import {CartMain} from '~/components/CartMain';
 
+
+
 export const meta: Route.MetaFunction = () => {
   return [{title: `Hydrogen | Cart`}];
 };
 
+
+
 export const headers: HeadersFunction = ({actionHeaders}) => actionHeaders;
+
+
 
 export async function action({request, context}: Route.ActionArgs) {
   const {cart} = context;
@@ -99,6 +105,8 @@ export async function action({request, context}: Route.ActionArgs) {
     {status, headers},
   );
 }
+
+
 
 export async function loader({context}: Route.LoaderArgs) {
   const {cart} = context;

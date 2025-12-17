@@ -1,12 +1,15 @@
-import {Suspense} from 'react';
-import {Await, NavLink, useAsyncValue} from 'react-router';
+import { Suspense } from 'react';
+import { Await, NavLink, useAsyncValue } from 'react-router';
 import {
   type CartViewPayload,
   useAnalytics,
   useOptimisticCart,
 } from '@shopify/hydrogen';
-import type {HeaderQuery, CartApiQueryFragment} from 'storefrontapi.generated';
-import {useAside} from '~/components/Aside';
+import type { HeaderQuery, CartApiQueryFragment } from 'storefrontapi.generated';
+import { useAside } from '~/components/Aside';
+import { Codepen, SearchIcon, ShoppingBag, User } from "lucide-react";
+
+
 
 interface HeaderProps {
   header: HeaderQuery;
@@ -17,17 +20,22 @@ interface HeaderProps {
 
 type Viewport = 'desktop' | 'mobile';
 
-export function Header({
-  header,
-  isLoggedIn,
-  cart,
-  publicStoreDomain,
-}: HeaderProps) {
-  const {shop, menu} = header;
+export function Header({ header, isLoggedIn, cart, publicStoreDomain, }: HeaderProps) {
+
+
+  const { menu } = header;
+
+
   return (
     <header className="header">
-      <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <strong>{shop.name}</strong>
+      <NavLink
+        prefetch="intent"
+        to="/"
+        style={activeLinkStyle}
+        end
+      >
+
+        <Codepen size={32} />
       </NavLink>
       <HeaderMenu
         menu={menu}
@@ -39,6 +47,8 @@ export function Header({
     </header>
   );
 }
+
+
 
 export function HeaderMenu({
   menu,
@@ -52,7 +62,7 @@ export function HeaderMenu({
   publicStoreDomain: HeaderProps['publicStoreDomain'];
 }) {
   const className = `header-menu-${viewport}`;
-  const {close} = useAside();
+  const { close } = useAside();
 
   return (
     <nav className={className} role="navigation">
@@ -73,8 +83,8 @@ export function HeaderMenu({
         // if the url is internal, we strip the domain
         const url =
           item.url.includes('myshopify.com') ||
-          item.url.includes(publicStoreDomain) ||
-          item.url.includes(primaryDomainUrl)
+            item.url.includes(publicStoreDomain) ||
+            item.url.includes(primaryDomainUrl)
             ? new URL(item.url).pathname
             : item.url;
         return (
@@ -105,7 +115,7 @@ function HeaderCtas({
       <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
         <Suspense fallback="Sign in">
           <Await resolve={isLoggedIn} errorElement="Sign in">
-            {(isLoggedIn) => (isLoggedIn ? 'Account' : 'Sign in')}
+            {(isLoggedIn) => (isLoggedIn ? 'Account' : <User />)}
           </Await>
         </Suspense>
       </NavLink>
@@ -116,7 +126,7 @@ function HeaderCtas({
 }
 
 function HeaderMenuMobileToggle() {
-  const {open} = useAside();
+  const { open } = useAside();
   return (
     <button
       className="header-menu-mobile-toggle reset"
@@ -128,20 +138,21 @@ function HeaderMenuMobileToggle() {
 }
 
 function SearchToggle() {
-  const {open} = useAside();
+  const { open } = useAside();
   return (
     <button className="reset" onClick={() => open('search')}>
-      Search
+      <SearchIcon />
     </button>
   );
 }
 
-function CartBadge({count}: {count: number | null}) {
-  const {open} = useAside();
-  const {publish, shop, cart, prevCart} = useAnalytics();
+function CartBadge({ count }: { count: number | null }) {
+  const { open } = useAside();
+  const { publish, shop, cart, prevCart } = useAnalytics();
 
   return (
     <a
+      className='relative flex flex-row items-center gap-2'
       href="/cart"
       onClick={(e) => {
         e.preventDefault();
@@ -154,12 +165,13 @@ function CartBadge({count}: {count: number | null}) {
         } as CartViewPayload);
       }}
     >
-      Cart {count === null ? <span>&nbsp;</span> : count}
+      <ShoppingBag />
+      {count !== null && <span className='absolute -top-3 left-3 text-xs w-6 h-6 flex items-center justify-center bg-zinc-100 rounded-full'>{count}</span>}
     </a>
   );
 }
 
-function CartToggle({cart}: Pick<HeaderProps, 'cart'>) {
+function CartToggle({ cart }: Pick<HeaderProps, 'cart'>) {
   return (
     <Suspense fallback={<CartBadge count={null} />}>
       <Await resolve={cart}>

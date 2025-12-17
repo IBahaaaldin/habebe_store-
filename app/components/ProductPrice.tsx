@@ -1,5 +1,8 @@
-import {Money} from '@shopify/hydrogen';
-import type {MoneyV2} from '@shopify/hydrogen/storefront-api-types';
+import { Money } from '@shopify/hydrogen';
+import type { MoneyV2 } from '@shopify/hydrogen/storefront-api-types';
+import Prices from './MINE/UI/Prices';
+
+
 
 export function ProductPrice({
   price,
@@ -18,7 +21,8 @@ export function ProductPrice({
           </s>
         </div>
       ) : price ? (
-        <Money data={price} />
+        // <Money data={price} />
+        <Prices price={price.amount} currency={price.currencyCode} />
       ) : (
         <span>&nbsp;</span>
       )}
