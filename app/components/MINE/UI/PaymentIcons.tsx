@@ -11,9 +11,9 @@ const paymentMethods: string[] = [
 
 export default function PaymentIcons() {
     return (
-        <div className="flex flex-row flex-wrap gap-x-3 justify-start items-center min-w-full" >
+        <div className="mt-5 flex flex-row flex-wrap gap-x-3 justify-start items-center min-w-full" >
             {paymentMethods.map((icon, index) => (
-                <div key={index} className="min-w-15 max-w-15">
+                <div key={index} className="min-w-12 max-w-12">
                     <img src={icon} alt="payment method" />
                 </div>
             ))}

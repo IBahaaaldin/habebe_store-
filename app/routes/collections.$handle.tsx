@@ -1,4 +1,4 @@
-import { redirect, useLoaderData } from 'react-router';
+import { Link, redirect, useLoaderData } from 'react-router';
 import type { Route } from './+types/collections.$handle';
 import { getPaginationVariables, Analytics } from '@shopify/hydrogen';
 import { PaginatedResourceSection } from '~/components/PaginatedResourceSection';
@@ -68,9 +68,6 @@ export default function Collection() {
 
 
 
-  console.log(`%c${collection}`, 'color: red; font-size: 20px;')
-
-
   return (
     <div className="collection">
 
@@ -85,9 +82,20 @@ export default function Collection() {
       <Logos />
 
 
+
       <div className='productsContainer'>
 
-        <div className="flex flex-row items-start gap-10">
+        <Link
+          to="https://wa.me/+971561576657?text=I'm%20interested%20in%20your%20ad%20on%20Hydrogen"
+          className='w-full lg:h-40 h-30 border border-zinc-100 bg-zinc-50 lg:rounded-4xl rounded-2xl flex items-center justify-center LINK_BUTTON'
+          target='_blank'
+          rel="noreferrer"
+        >
+          your ad here
+        </Link>
+
+
+        <div className="flex flex-row  w-full items-start gap-10">
           {/* <div className="self-start sticky top-10">
             <FilterSidebar
             // AvailableSize={collection.handle}
@@ -98,7 +106,7 @@ export default function Collection() {
 
           <PaginatedResourceSection<ProductItemFragment>
             connection={collection.products}
-            resourcesClassName="products-grid"
+            resourcesClassName=""
           >
             {({ node: product, index }) => (
               <ProductItem

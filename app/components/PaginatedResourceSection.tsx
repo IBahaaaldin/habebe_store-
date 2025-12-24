@@ -14,7 +14,7 @@ export function PaginatedResourceSection<NodesType>({ connection, children, reso
         );
 
         return (
-          <div className='flex flex-col gap-10 w-full items-center justify-center '>
+          <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-[2%] gap-y-10 flex-wrap w-full items-start justify-start '>
             <PreviousLink>
               {isLoading ? 'Loading...' : <span className='button1'>Load previous</span>}
             </PreviousLink>

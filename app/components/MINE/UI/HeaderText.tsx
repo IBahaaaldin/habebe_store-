@@ -10,7 +10,7 @@ import { motion } from 'framer-motion'
 export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?: string }) {
     return (
         <div className="z-1 capitalize flex items-start justify-start w-full gap-5 mb-5" >
-            <h3 className=' text-4xl lg:text-5xl flex-wrap flex flex-row gap-2 font-bold'>
+            <h3 className=' g:text-5xl text-2xl flex-wrap flex flex-row gap-2 font-bold'>
                 {HEAD!.split(' ').map((word, index) => (
                     <span
                         key={index}

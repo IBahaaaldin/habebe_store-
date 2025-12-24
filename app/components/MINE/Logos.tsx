@@ -15,16 +15,11 @@ const Logos = () => {
     return (
         <div ref={reference} className="flex flex-row items-center justify-start gap-40 overflow-hidden w-full bg-black">
             {brands.map((logo, index) => (
-                <div key={index} className="flex flex-row items-center gap-40">
-                    <figure className="relative flex flex-col gap-2 py-10">
-                        {/* <Image
-                            src={logo}
-                            alt="logo"
-                            className="h-full w-full object-contain"
-                        /> */}
+                <div key={index} className="flex flex-row items-center lg:gap-40 gap-30">
+                    <figure className="relative flex flex-col gap-2 lg:py-7 py-5">
 
 
-                        <figcaption className="text-white text-nowrap text-center text-3xl">
+                        <figcaption className="text-white text-nowrap text-center lg:text-3xl text-xl">
                             {logo}
                         </figcaption>
                     </figure>

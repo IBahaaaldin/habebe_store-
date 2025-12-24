@@ -50,8 +50,8 @@ export default function Collections() {
 export function CollectionsSection({ collections }: { collections: CollectionFragment[] }) {
   return (
     <section>
-      <div className='relative flex flex-col gap-3 '>
-        <div className="flex flex-row gap-3 ">
+      <div className='relative flex flex-col lg:gap-3 gap-1 '>
+        <div className="flex flex-row lg:gap-3 gap-1 ">
           <div className='w-1/3 '>
             {collections.slice(0, 1).map((collection, index) => (
               <CollectionItem key={collection.id} collection={collection} index={index} />
@@ -67,7 +67,7 @@ export function CollectionsSection({ collections }: { collections: CollectionFra
         </div>
 
 
-        <div className="flex flex-row gap-3 ">
+        <div className="flex flex-row lg:gap-3 gap-1 ">
 
           <div className='w-2/3 '>
             {collections.slice(2, 3).map((collection, index) => (
@@ -95,17 +95,19 @@ function CollectionItem({ collection, index, }: { collection: CollectionFragment
       to={`/collections/${collection.handle}`}
     // prefetch="intent"
     >
-      <div className='max-h-100 h-full rounded-4xl overflow-hidden'>
+      <div className='max-h-100 h-full lg:rounded-4xl rounded-xl overflow-hidden'>
         {collection?.image && (
           <Image
-            className='object-cover hover:scale-110 duration-500 h-full'
+            className='object-cover hover:scale-110 duration-500 h-full -z-1'
             alt={collection.image.altText || collection.title}
             data={collection.image}
             loading={index < 3 ? 'eager' : undefined}
           />
         )}
       </div>
-      <h2 className='absolute uppercase top-10 left-10 text-3xl rounded-full'>{collection.title}</h2>
+      <h2 className='absolute z-1 bg-white/50 backdrop-blur-sm px-3 py-1 capitalize font-bold lg:top-10 top-5 lg:left-10 left-5 lg:text-3xl text-xl rounded-xl'>
+        {collection.title}
+      </h2>
     </Link>
   );
 }

@@ -43,7 +43,7 @@
 
 
 import { Link } from 'react-router';
-import { Image } from '@shopify/hydrogen';
+import { getAdjacentAndFirstAvailableVariants, getProductOptions, Image, useOptimisticVariant, useSelectedOptionInUrlParam } from '@shopify/hydrogen';
 import type {
   ProductItemFragment,
   CollectionItemFragment,
@@ -51,7 +51,7 @@ import type {
 } from 'storefrontapi.generated';
 import { useVariantUrl } from '~/lib/variants';
 import Prices from './MINE/UI/Prices';
-import { Star, StarHalf } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 
 
@@ -64,19 +64,34 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
   const price = product.priceRange?.minVariantPrice?.amount;
   const currency = product.priceRange?.minVariantPrice?.currencyCode;
 
-  console.log(`%c${JSON.stringify(product.featuredImage)}`, 'color: red; font-size: 20px;')
-  console.log(`%c${JSON.stringify(price)}`, 'color: red; font-size: 20px;')
+  // console.log(`%c${JSON.stringify(product.featuredImage)}`, 'color: red; font-size: 20px;')
+  // console.log(`%c${JSON.stringify(price)}`, 'color: red; font-size: 20px;')
+
+  const selectedVariant = useOptimisticVariant(
+    product.selectedOrFirstAvailableVariant,
+    getAdjacentAndFirstAvailableVariants(product),
+  );
+
+  // Sets the search param to the selected variant without navigation
+  // only when no search params are set in the url
+  useSelectedOptionInUrlParam(selectedVariant.selectedOptions);
+
+  // Get the product options array
+  const productOptions = getProductOptions({
+    ...product,
+    selectedOrFirstAvailableVariant: selectedVariant,
+  });
 
 
   return (
-    <Link
-      className="product-item min-w-80 flex flex-col gap-3"
-      key={product.id}
-      prefetch="intent"
-      to={variantUrl}
-    >
+    <div className='flex flex-col gap-3'>
       {image && (
-        <div className='rounded-4xl overflow-hidden'>
+        <Link
+          className="min-w-55 lg:rounded-xl rounded-lg overflow-hidden"
+          key={product.id}
+          prefetch="intent"
+          to={variantUrl}
+        >
           <Image
             alt={image.altText || product.title}
             aspectRatio="1/1"
@@ -84,9 +99,9 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
             loading={loading}
             className='hover:scale-105 duration-300'
           />
-        </div>
+        </Link>
       )}
-      <h4 className='pt-3 text-2xl capitalize font-bold'>{product.title}</h4>
+      <h4 className='lg:text-lg text-md capitalize font-bold'>{product.title.length > 20 ? product.title.slice(0, 20) + '...' : product.title}</h4>
       {/* <Money data={product.priceRange.minVariantPrice} /> */}
 
 
@@ -98,7 +113,7 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
           currency={currency}
         />
       </div>
-    </Link>
+    </div>
   );
 }
 
@@ -110,20 +125,11 @@ export default function Ratings({ RATING }: { RATING: number }) {
 
 
       <span className="flex flex-row  gap-1">
-        {[...Array(5)].map((_, i: number) => {
-          const rating = i + 1;               // 1,2,3,4,5
-          if (RATING >= rating) {
-            return <Star key={i} className="text-transparent w-7 h-7 fill-yellow-400" />;
-          }
-          if (RATING >= rating - 0.5) {
-            return <StarHalf key={i} className="text-transparent w-7 h-7 fill-yellow-400" />;
-          }
-          return <Star key={i} className="w-7 h-7 text-transparent" />;
-        })}
+        <Star className="text-transparent w-7 h-7 fill-green-500" />
       </span>
 
 
-      <small>{RATING}<span className='text-zinc-400'>/5</span></small>
+      <small>({RATING}/5)</small>
     </div>
   )
 }

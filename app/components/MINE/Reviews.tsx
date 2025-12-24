@@ -139,7 +139,7 @@ export default function Reviews({ Title, ProductId }: { Title?: string, ProductI
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.2 }}
                             key={index}
-                            className="font-bold overflow-hidden border border-black/10 text-sm min-w-80 min-h-full flex flex-col items-stretch gap-5 bg-white justify-stretch rounded-3xl p-10"
+                            className="font-bold overflow-hidden border border-black/10  min-w-80 min-h-full flex flex-col items-stretch gap-5 bg-white justify-stretch rounded-3xl p-10"
                         >
 
                             <span className='flex flex-row '>
@@ -148,19 +148,19 @@ export default function Reviews({ Title, ProductId }: { Title?: string, ProductI
                                 )}
                             </span>
 
-                            <p className='text-lg'> {testimonial.text}</p>
+                            <p className='lg:text-lg text-xs'> {testimonial.text}</p>
 
                             <div className='flex flex-col items-start justify-start'>
-                                <p className="text-black/30">@{testimonial.user}</p>
+                                <p className="text-black/30 text-xs">@{testimonial.user}</p>
 
 
                                 {testimonial.verified ?
-                                    <div className="flex items-center ">
+                                    <div className="flex items-center text-xs">
                                         <IoCheckmarkCircle className="text-green-500 mr-1" />
                                         <span className="">Verified Rating</span>
                                     </div>
                                     :
-                                    <div className="flex items-center ">
+                                    <div className="flex items-center text-xs">
                                         <IoCheckmarkCircle className="text-zinc-500 mr-1" />
                                         <span className="">Unverified Rating</span>
                                     </div>
@@ -186,7 +186,7 @@ export default function Reviews({ Title, ProductId }: { Title?: string, ProductI
 
 
             {/* Comments section */}
-            <article className="flex flex-col gap-5 items-start justify-start w-full my-10">
+            <article className="flex flex-col gap-5 items-start justify-start w-full lg:my-10 my-3">
 
                 {commentSubmited ? (
                     <div className="w-full flex flex-col gap-5 items-center justify-center p-10 border border-green-500 rounded-3xl bg-green-50">
@@ -197,8 +197,9 @@ export default function Reviews({ Title, ProductId }: { Title?: string, ProductI
                 ) : (
                     <form onSubmit={handleCommentSubmit} className="flex flex-col min-w-full gap-5 items-start justify-start">
                         <textarea
+                            maxLength={200}
                             onChange={(e) => setComment(e.target.value)}
-                            className="w-full bg-zinc-50 resize-none p-5 h-40 rounded-4xl border border-black/90"
+                            className="w-full bg-zinc-50 resize-none p-5 h-30 lg:rounded-4xl rounded-2xl border border-black/90"
                             placeholder="Write a comment for us (Praise or Demolish)"
                         />
                         <button type="submit" className="button1">Submit</button>

@@ -85,14 +85,17 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
                           : ''
                         }
     ${option.name.toLowerCase() === 'color' ?
-                          selected ? 'shadow-lg rounded-full scale-110 opacity-100' : 'opacity-50' : ''}
-    ${!available ? 'opacity-40 cursor-not-allowed' : ''}
+                          selected ? 'rounded-full scale-110 opacity-100 ' : 'opacity-50' : ''}
+    ${!available && 'opacity-40 cursor-not-allowed'}
   `}
                       disabled={!exists || !available}
                       onClick={() => {
                         if (!selected && exists) {
                           void navigate(`?${variantUriQuery}`, { replace: true, preventScrollReset: true });
                         }
+                      }}
+                      style={{
+                        
                       }}
                     >
                       <ProductOptionSwatch swatch={swatch} name={name} />

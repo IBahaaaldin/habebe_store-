@@ -13,6 +13,7 @@ import Reviews from '~/components/MINE/Reviews';
 import { getPaginationVariables } from '@shopify/hydrogen';
 import { COLLECTIONS_QUERY, CollectionsSection } from './collections._index';
 import HeaderText from '~/components/MINE/UI/HeaderText';
+import LoadingSpinner from '~/components/MINE/ReUsable/LoadingSpinner';
 
 
 
@@ -70,17 +71,6 @@ async function loadCriticalData({ context, request }: Route.LoaderArgs) {
 
 // Load data for rendering content below the fold.
 function loadDeferredData({ context }: Route.LoaderArgs) {
-  // const recommendedProducts = context.storefront
-  //   .query(RECOMMENDED_PRODUCTS_QUERY)
-  //   .catch((error: Error) => {
-  //     // Log query errors, but don't throw them so the page can still render
-  //     console.error(error);
-  //     return null;
-  //   });
-
-  // return {
-  //   recommendedProducts,
-  // };
   return {};
 }
 
@@ -103,11 +93,6 @@ export default function Homepage() {
       <Logos />
 
       <div className='productsContainer'>
-        {/* <RecommendedProducts products={data.recommendedProducts} Title={'Recommended Products'} />
-        <RecommendedProducts products={data.recommendedProducts} Title={'Recommended Products'} />
-        <RecommendedProducts products={data.recommendedProducts} Title={'Recommended Products'} />
-        <RecommendedProducts products={data.recommendedProducts} Title={'Recommended Products'} /> */}
-
         <div className='flex flex-col gap-10'>
           {data.recommendedProducts.collections.edges.map(({ node }: any) => (
             <RecommendedProducts
@@ -121,7 +106,7 @@ export default function Homepage() {
 
         <Link
           to="https://wa.me/+971561576657?text=I'm%20interested%20in%20your%20ad%20on%20Hydrogen"
-          className='w-full h-100 border border-zinc-100 bg-zinc-50 rounded-4xl flex items-center justify-center '
+          className='w-full lg:h-80 h-30 border border-zinc-100 bg-zinc-50 lg:rounded-4xl rounded-2xl flex items-center justify-center LINK_BUTTON'
           target='_blank'
           rel="noreferrer"
         >
@@ -154,14 +139,14 @@ export function RecommendedProducts({
 
   return (
     <div className="border-b border-black/30 pb-10">
-      <div className='flex flex-row justify-between mb-10'>
-        <h3 className='text-start w-full text-4xl capitalize font-bold'>
+      <div className='flex flex-row justify-between items-end lg:mb-10 mb-5'>
+        <h3 className='text-start w-full lg:text-4xl text-2xl capitalize font-bold'>
           {Title}
         </h3>
 
 
         <Link
-          className='button1'
+          className='LINK_BUTTON'
           prefetch="intent"
           to={`/collections/${Title.toLowerCase()}`}
         >
@@ -170,12 +155,12 @@ export function RecommendedProducts({
       </div>
 
 
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LoadingSpinner />}>
         <Await resolve={products}>
           {(response) => (
-            <div className="flex flex-row gap-5 overflow-scroll HIDDEN_SCROLL">
+            <div className="HIDDEN_SCROLL flex flex-row gap-[2%] overflow-scroll ">
               {response
-                ? response.edges.map((product: any) => (
+                ? response.edges.slice(0, 6).map((product: any) => (
                   <ProductItem
                     key={product.id}
                     product={product.node}

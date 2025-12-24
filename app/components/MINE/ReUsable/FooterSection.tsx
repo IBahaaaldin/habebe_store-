@@ -89,104 +89,78 @@ export default function FooterSection({ footer,
 
 
     return (
-        <footer className="max-w-[1750px] px-[5%] mx-auto duration-500 grid lg:grid-cols-3 md:grid-cols-2 md:gap-15 gap-10 md:gap-y-20 gap-y-15 items-between justify-between bg-white rounded-3xl relative overflow-hidden py-10 *:min-w-1/3 *:w-full">
-
-            <section className="flex flex-col gap-3">
-                {header.shop.brand?.logo?.image?.url && (
-                    <Image
-                        src={header.shop.brand.logo.image.url}
-                        alt={header.shop.name}
-                        className="object-cover aspect-square max-w-15 max-h-15"
-                        aspectRatio="1/1"
-                    />
-                )}
+        <footer className="max-w-[1750px] px-[5%] mx-auto duration-500 grid lg:grid-cols-3 md:grid-cols-2 md:gap-15 gap-10 md:gap-y-5 gap-y-5 items-between justify-between bg-white rounded-3xl relative overflow-hidden py-10 *:min-w-1/3 *:w-full">
 
 
-                {header.shop.name && (
-                    <h1 className="text-3xl font-bold">{header.shop.name}</h1>
-                )}
-
-                {header.shop.description && (
-                    <p className="capitalize text-black/50">
-                        {header.shop.description}
-                    </p>
-                )}
-
-
-                <article className=" w-fit flex flex-row items-center gap-5 ">
-                    {socialLinks.map((link, index) => (
-                        link && (
-                            <a
-                                key={index}
-                                href={link.path}
-                                className="text-2xl mt-1 cursor-pointer hover:opacity-50 hover:text-zinc-500 duration-300">
-                                {link.logo}
-                            </a>
-                        )
-                    ))}
-                </article>
-            </section>
-
-
-
-            {/* /// ABOUT US */}
+            {/* /// MENU */}
             <section className='flex flex-col min-h-full gap-2'>
                 <h3 className="text-black/50 mb-3">
                     Quick Navigation
                 </h3>
 
-                {header.menu?.items.map((page, index) => (
-                    <Link
-                        to={page.url || '#'}
-                        key={index}
-                        className="hover:text-zinc-400 text-black font-bold text-start duration-500"
-                    >
-                        {page.title}
-                    </Link>
-                ))}
-            </section>
 
-
-            {/* /// Social Media */}
-            <section className='flex flex-col min-h-full justify-between  gap-2'>
-                <div className="flex flex-col gap-5">
-                    <div className="flex flex-row items-center gap-3 w-full">
-                        <figure className="relative flex flex-row items-center rounded-full gap-3 w-12 aspect-square overflow-hidden ">
-                            {header.shop.brand?.logo?.image?.url && (
-                                <Image
-                                    src={header.shop.brand.logo.image.url}
-                                    alt={header.shop.name}
-                                    className="object-cover aspect-square max-w-15 max-h-15"
-                                    aspectRatio="1/1"
-                                />
-                            )}
-                        </figure>
-
-
-                        <div className="flex flex-col">
-                            <span className="text-black/50 text-xs">Al Hashimi</span>
-                            <p className="font-bold  ">Co Founder of Mistry Shopper</p>
-                        </div>
-                    </div>
-
-
-                    <p className=" text-black/50   leading-5">
-                        We are here to make life easier, Everything you want, in one place.
-                    </p>
-
-                    <ul className="flex flex-row items-center gap-5 ">
-                        <Link to={'/contact-us'}>
-                            <button className="button2 ">Contact Us</button>
+                <div className="flex flex-col gap-2">
+                    {header.menu?.items.map((page, index) => (
+                        <Link
+                            to={page.url || '#'}
+                            key={index}
+                            className="hover:text-zinc-400 text-black font-bold text-start duration-500"
+                        >
+                            {page.title}
                         </Link>
-                        <Link to={'mailto:info@mistreyshopper.com'} className=" text-black duration-500">
-                            <FaEnvelope className="text-2xl hover:text-zinc-400 duration-500" />
+                    ))}
+
+                    {header.menu?.items.map((page, index) => (
+                        <Link
+                            to={page.url || '#'}
+                            key={index}
+                            className="hover:text-zinc-400 text-black font-bold text-start duration-500"
+                        >
+                            {page.title}
                         </Link>
-                    </ul>
+                    ))}
                 </div>
             </section>
 
 
 
+            {/* /// ABOUT US */}
+            <section className="w-full flex flex-row gap-3 items-start justify-start">
+                {header.shop.brand?.logo?.image?.url && (
+                    <figure className=" max-w-20 max-h-20 overflow-hidden">
+                        <Image
+                            src={header.shop.brand.logo.image.url}
+                            alt={header.shop.name}
+                            className="object-cover w-full aspect-square scale-110"
+                            aspectRatio="1/1"
+                        />
+                    </figure>
+                )}
+
+                <div className="flex flex-col gap-3">
+                    {header.shop.name && (
+                        <h1 className="text-3xl text-nowrap font-bold">{header.shop.name}</h1>
+                    )}
+
+
+                    <article className=" w-fit flex flex-row items-center gap-5 ">
+                        {socialLinks.map((link, index) => (
+                            link && (
+                                <a
+                                    key={index}
+                                    href={link.path}
+                                    className="text-2xl mt-1 cursor-pointer hover:opacity-50 hover:text-zinc-500 duration-300">
+                                    {link.logo}
+                                </a>
+                            )
+                        ))}
+                    </article>
+                </div>
+            </section>
+
+
+
+            {/* /// Subscribe */}
             <section className='flex flex-col min-h-full justify-between gap-5'>
                 <div className="flex flex-col gap-3">
                     <h3 className="text-black">
@@ -209,6 +183,67 @@ export default function FooterSection({ footer,
 
 
 
+            {/* /// SECOND MENU */}
+            <section className='flex flex-col min-h-full gap-2'>
+                <h3 className="text-black/50 mb-3">
+                    Quick Navigation
+                </h3>
+
+                {header.menu?.items.map((page, index) => (
+                    <Link
+                        to={page.url || '#'}
+                        key={index}
+                        className="hover:text-zinc-400 text-black font-bold text-start duration-500"
+                    >
+                        {page.title}
+                    </Link>
+                ))}
+                {header.menu?.items.map((page, index) => (
+                    <Link
+                        to={page.url || '#'}
+                        key={index}
+                        className="hover:text-zinc-400 text-black font-bold text-start duration-500"
+                    >
+                        {page.title}
+                    </Link>
+                ))}
+            </section>
+
+
+
+            {/* /// Social Media */}
+            <section className='flex flex-col min-h-full justify-start gap-10'>
+                <div className="flex flex-col gap-5">
+                    <p className=" text-black/50   leading-5">
+                        We are here to make life easier, Everything you want, in one place.
+                    </p>
+
+                    <ul className="flex flex-row items-center gap-5 ">
+                        <Link to={'/contact-us'}>
+                            <button className="button2 ">Contact Us</button>
+                        </Link>
+                        <Link to={'mailto:info@mistreyshopper.com'} className=" text-black duration-500">
+                            <FaEnvelope className="text-2xl hover:text-zinc-400 duration-500" />
+                        </Link>
+                    </ul>
+                </div>
+
+
+                <div className="flex flex-col gap-3">
+                    <p className="text-black/50">
+                        Copyright 2025 @ what ever shit it is.
+                    </p>
+
+                    <div className="flex flex-row justify-between w-full font-bold">
+                        <Link to={'terms-conditions'}>Terms & Conditions</Link>
+                        <Link to={'privacy-policy'}>Privacy Policy</Link>
+                    </div>
+                </div>
+            </section>
+
+
+
+            {/* /// Location */}
             <section className="flex flex-col gap-3">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.526358678226!2d55.25913717631394!3d25.185465977718472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69d103361679%3A0x13f2d0058a5050cf!2sOntario%20Tower%20-%20Business%20Bay%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sus!4v1763540311131!5m2!1sen!2sus"
@@ -217,28 +252,9 @@ export default function FooterSection({ footer,
                     title="Our head office"
                 />
 
-
-                <div className="font-bold">
-                    <p>CLuster B,</p>
-                    <p>JLT,</p>
-                    <p>Dubai, UAE</p>
-                </div>
-            </section>
-
-
-
-            <section className="flex flex-col items-start gap-2 justify-between ">
-                <p className="text-black/50">
-                    Copyright 2025 @ what ever shit it is.
-                </p>
-
-                <div className="flex flex-row justify-between w-full font-bold">
-                    <Link to={'terms-conditions'}>Terms & Conditions</Link>
-                    <Link to={'privacy-policy'}>Privacy Policy</Link>
-                </div>
-
                 <PaymentIcons />
             </section>
+
         </footer>
     )
 }

@@ -41,7 +41,7 @@ export function PageLayout({ cart, children = null, footer, header, isLoggedIn, 
 
 
 
-      <SignUp />
+      {/* <SignUp /> */}
       {header && (
         <Header
           header={header}

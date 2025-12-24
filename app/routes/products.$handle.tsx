@@ -73,6 +73,7 @@ async function loadCriticalData({ context, params, request }: Route.LoaderArgs) 
   }
 
 
+  // get similar products after fetching the main product
   const { product: productWishCollections } = await storefront.query(SIMILAR_PRODUCTS_QUERY, {
     variables: { productId: product.id },
   })
@@ -136,7 +137,6 @@ export default function Product() {
 
 
 
-
         {/* Product Details */}
         <section className="flex flex-col gap-5 mt-5">
           <h1 className='text-5xl font-bold'>{title}</h1>
@@ -149,10 +149,10 @@ export default function Product() {
           />
 
 
-          <div
+          {/* <div
             className='text-zinc-500 border-zinc-300 border-b pb-5 mb-5'
             dangerouslySetInnerHTML={{ __html: descriptionHtml }}
-          />
+          /> */}
 
           <ProductForm
             productOptions={productOptions}

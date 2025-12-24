@@ -85,22 +85,22 @@ const HeroSection = ({ collection, Title, Description, HeroImg }: { collection: 
     const subText = Description ? Description : "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.";
 
     return (
-        <div className='max-w-[1750px] overflow-hidden w-full mx-auto relative text-white z-1 min-w-full px-[5%] flex flex-col gap-20 justify-center items-start min-h-screen'>
+        <div className='max-w-[1750px] rounded-[0px] overflow-hidden w-full mx-auto relative text-white z-1 min-w-full px-[5%] flex flex-col gap-20 justify-center items-start md:min-h-screen py-20'>
             {/* bg-[#664343]  */}
-            <article className='max-w-[60%] text-center z-10 w-full  relative flex flex-col gap-10'>
+            <article className='max-w-[70%] text-center z-10 w-full  relative flex flex-col gap-10'>
                 {/* <Messages /> */}
 
 
                 <div className='text-start z-10 relative flex flex-col gap-5  items-start justify-between items-e'>
 
                     <h1
-                        className='w-full  flex flex-row flex-wrap gap-2 text-wrap font-bold'
+                        className='w-full flex flex-row flex-wrap gap-2 text-wrap font-bold'
                     >
                         {headText.split(" ").map((word, index) => (
                             <span
                                 key={index}
                                 // **This is the container/window that clips the animation**
-                                className='inline-block overflow-hidden uppercase mr-3 lg:text-7xl text-7xl'
+                                className='inline-block overflow-hidden uppercase mr-3 lg:text-7xl md:text-5xl text-4xl'
                             >
                                 <motion.span
                                     // **Start hidden below the 'window'**
@@ -119,7 +119,7 @@ const HeroSection = ({ collection, Title, Description, HeroImg }: { collection: 
 
 
 
-                    <h3 className="text-lg flex flex-row w-full opacity-50">
+                    <h3 className="lg:text-lg sm:text-md text-sm flex flex-row w-full opacity-50">
                         {subText}
                     </h3>
                 </div>
