@@ -43,7 +43,7 @@
 
 
 import { Link } from 'react-router';
-import { getAdjacentAndFirstAvailableVariants, getProductOptions, Image, useOptimisticVariant, useSelectedOptionInUrlParam } from '@shopify/hydrogen';
+import {  Image } from '@shopify/hydrogen';
 import type {
   ProductItemFragment,
   CollectionItemFragment,
@@ -64,23 +64,6 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
   const price = product.priceRange?.minVariantPrice?.amount;
   const currency = product.priceRange?.minVariantPrice?.currencyCode;
 
-  // console.log(`%c${JSON.stringify(product.featuredImage)}`, 'color: red; font-size: 20px;')
-  // console.log(`%c${JSON.stringify(price)}`, 'color: red; font-size: 20px;')
-
-  // const selectedVariant = useOptimisticVariant(
-  //   product.selectedOrFirstAvailableVariant,
-  //   getAdjacentAndFirstAvailableVariants(product),
-  // );
-
-  // // Sets the search param to the selected variant without navigation
-  // // only when no search params are set in the url
-  // useSelectedOptionInUrlParam(selectedVariant.selectedOptions);
-
-  // // Get the product options array
-  // const productOptions = getProductOptions({
-  //   ...product,
-  //   selectedOrFirstAvailableVariant: selectedVariant,
-  // });
 
 
   return (
