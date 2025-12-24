@@ -60,12 +60,12 @@ export default function FooterSection({ footer,
     const socialLinks = [
         {
             name: "Instagram",
-            path: "https://www.instagram.com/storystory.ae",
+            path: "https://www.instagram.com/mistreyshopper.com",
             logo: <FaInstagram />,
         },
         {
             name: "TikTok",
-            path: "https://www.tiktok.com/@storystory.ae",
+            path: "https://www.tiktok.com/@mistreyshopper.com",
             logo: <FaTiktok />,
         },
         {
@@ -75,12 +75,12 @@ export default function FooterSection({ footer,
         },
         {
             name: "Facebook",
-            path: "https://www.facebook.com/StorystoryAE/",
+            path: "https://www.facebook.com/mistreyshopper/",
             logo: <FaFacebook />,
         },
         {
             name: "Twitter",
-            path: "https://twitter.com/StorystoryAE",
+            path: "https://twitter.com/mistreyshopper",
             logo: <FaTwitter />,
         },
     ];
@@ -178,7 +178,7 @@ export default function FooterSection({ footer,
                         <Link to={'/contact-us'}>
                             <button className="button2 ">Contact Us</button>
                         </Link>
-                        <Link to={'mailto:info@storystory.ae'} className=" text-black duration-500">
+                        <Link to={'mailto:info@mistreyshopper.com'} className=" text-black duration-500">
                             <FaEnvelope className="text-2xl hover:text-zinc-400 duration-500" />
                         </Link>
                     </ul>

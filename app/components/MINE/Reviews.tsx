@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 
 const testimonials = [
     {
-        text: "STORYSTORY feels intentional and refined. Minimal design, but it carries real meaning. I wore it out once and immediately got asked where it was from.",
+        text: "mistreyshopper feels intentional and refined. Minimal design, but it carries real meaning. I wore it out once and immediately got asked where it was from.",
         user: "Karim H.",
         rating: 5,
         imageUrl: "",
@@ -43,7 +43,7 @@ const testimonials = [
         verified: false
     },
     {
-        text: "I usually don’t buy graphic tees, but STORYSTORY feels different. Subtle and tasteful.",
+        text: "I usually don’t buy graphic tees, but mistreyshopper feels different. Subtle and tasteful.",
         user: "Marco B.",
         rating: 5,
         imageUrl: "",
@@ -57,7 +57,7 @@ const testimonials = [
         verified: true
     },
     {
-        text: "Wearing STORYSTORY feels expressive without being loud. That balance is hard to achieve.",
+        text: "Wearing mistreyshopper feels expressive without being loud. That balance is hard to achieve.",
         user: "James P.",
         rating: 5,
         imageUrl: "",
@@ -78,7 +78,7 @@ const testimonials = [
         verified: false
     },
     {
-        text: "I’d absolutely recommend STORYSTORY to friends who appreciate minimal design with meaning.",
+        text: "I’d absolutely recommend mistreyshopper to friends who appreciate minimal design with meaning.",
         user: "Ethan C.",
         rating: 4,
         imageUrl: "",

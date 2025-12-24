@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Await, Link, NavLink, useAsyncValue } from 'react-router';
 import {
   type CartViewPayload,
+  Image,
   useAnalytics,
   useOptimisticCart,
 } from '@shopify/hydrogen';
@@ -34,8 +35,13 @@ export function Header({ header, isLoggedIn, cart, publicStoreDomain, }: HeaderP
         style={activeLinkStyle}
         end
       >
-
-        <Codepen size={32} />
+        {/* LOGO on TOP */}
+        <Image
+          alt={header.shop.name}
+          src={header.shop.brand?.logo?.image?.url}
+          width={40}
+          height={40}
+        />
       </NavLink>
       <HeaderMenu
         menu={menu}

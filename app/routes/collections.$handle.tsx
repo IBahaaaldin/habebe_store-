@@ -79,8 +79,7 @@ export default function Collection() {
         Title={collection.title}
         Description={collection.description}
         collection={collection}
-        HeroImg={collection.products.nodes[0].featuredImage?.url
-        }
+        HeroImg={collection.image?.url}
       />
 
       <Logos />
@@ -191,6 +190,14 @@ export const COLLECTION_QUERY = `#graphql
       handle
       title
       description
+      # Add the image field here
+      image {
+        id
+        url(transform: {maxWidth: 2000, maxHeight: 1000})
+        altText
+        width
+        height
+      }
       products(
         first: $first,
         last: $last,
