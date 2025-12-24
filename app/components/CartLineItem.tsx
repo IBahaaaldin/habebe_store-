@@ -1,135 +1,146 @@
-import type {CartLineUpdateInput} from '@shopify/hydrogen/storefront-api-types';
-import type {CartLayout} from '~/components/CartMain';
-import {CartForm, Image, type OptimisticCartLine} from '@shopify/hydrogen';
-import {useVariantUrl} from '~/lib/variants';
-import {Link} from 'react-router';
-import {ProductPrice} from './ProductPrice';
-import {useAside} from './Aside';
-import type {CartApiQueryFragment} from 'storefrontapi.generated';
+import type { CartLineUpdateInput } from '@shopify/hydrogen/storefront-api-types';
+import type { CartLayout } from '~/components/CartMain';
+import { CartForm, Image, type OptimisticCartLine } from '@shopify/hydrogen';
+import { useVariantUrl } from '~/lib/variants';
+import { Link } from 'react-router';
+import { ProductPrice } from './ProductPrice';
+import { useAside } from './Aside';
+import type { CartApiQueryFragment } from 'storefrontapi.generated';
+import { Minus, Plus, Trash2 } from 'lucide-react';
 
 type CartLine = OptimisticCartLine<CartApiQueryFragment>;
 
-/**
- * A single line item in the cart. It displays the product image, title, price.
- * It also provides controls to update the quantity or remove the line item.
- */
-export function CartLineItem({
-  layout,
-  line,
-}: {
-  layout: CartLayout;
-  line: CartLine;
-}) {
-  const {id, merchandise} = line;
-  const {product, title, image, selectedOptions} = merchandise;
+
+
+
+// A SINGLE line item in the cart. It displays the PRODUCT image, title, price. It also provides controls to update the quantity or remove the line item.
+export function CartLineItem({ layout, line, }: { layout: CartLayout; line: CartLine; }) {
+  const { id, merchandise } = line;
+  const { product, title, image, selectedOptions } = merchandise;
   const lineItemUrl = useVariantUrl(product.handle, selectedOptions);
-  const {close} = useAside();
+  const { close } = useAside();
 
   return (
-    <li key={id} className="cart-line">
+    <li key={id} className="border border-zinc-300 p-5 rounded-4xl flex flex-row gap-5">
+
+      {/* Image */}
       {image && (
-        <Image
-          alt={title}
-          aspectRatio="1/1"
-          data={image}
-          height={100}
-          loading="lazy"
-          width={100}
-        />
+        <div className=' min-w-40 max-w-40 aspect-square rounded-4xl overflow-hidden'>
+          <Image
+            className='object-cover '
+            alt={title}
+            aspectRatio="1/1"
+            data={image}
+            loading="lazy"
+          />
+        </div>
       )}
 
-      <div>
-        <Link
-          prefetch="intent"
-          to={lineItemUrl}
-          onClick={() => {
-            if (layout === 'aside') {
-              close();
-            }
-          }}
-        >
-          <p>
-            <strong>{product.title}</strong>
-          </p>
-        </Link>
-        <ProductPrice price={line?.cost?.totalAmount} />
-        <ul>
-          {selectedOptions.map((option) => (
-            <li key={option.name}>
-              <small>
-                {option.name}: {option.value}
-              </small>
-            </li>
-          ))}
-        </ul>
-        <CartLineQuantity line={line} />
+
+
+      {/* Details */}
+      <div className='flex flex-row justify-between w-full'>
+        {/* LEFT */}
+        <article className='flex flex-col justify-between gap-3'>
+          <Link
+            prefetch="intent"
+            to={lineItemUrl}
+            onClick={() => {
+              if (layout === 'aside') {
+                close();
+              }
+            }}
+          >
+            <h2 className='text-xl uppercase text-wrap max-w-sm'>{product.title}</h2>
+          </Link>
+
+
+          <ul>
+            {selectedOptions.map((option) => (
+              <li key={option.name}>
+                <small>
+                  <span className='text-black'>{option.name}</span>: <strong className=''>{option.value}</strong>
+                </small>
+              </li>
+            ))}
+          </ul>
+
+
+          <ProductPrice price={line?.cost?.totalAmount} />
+        </article>
+
+
+        {/* RIGHT */}
+        <article className='flex flex-col items-end justify-between'>
+          <CartLineRemoveButton lineIds={[id]} disabled={false} />
+          <CartLineQuantity line={line} />
+        </article>
       </div>
+
     </li>
   );
 }
 
-/**
- * Provides the controls to update the quantity of a line item in the cart.
- * These controls are disabled when the line item is new, and the server
- * hasn't yet responded that it was successfully added to the cart.
- */
-function CartLineQuantity({line}: {line: CartLine}) {
+
+
+// Provides the controls to update the quantity of a line item in the cart.
+//  These controls are disabled when the line item is new, and the server
+// hasn't yet responded that it was successfully added to the cart.
+function CartLineQuantity({ line }: { line: CartLine }) {
   if (!line || typeof line?.quantity === 'undefined') return null;
-  const {id: lineId, quantity, isOptimistic} = line;
+  const { id: lineId, quantity, isOptimistic } = line;
   const prevQuantity = Number(Math.max(0, quantity - 1).toFixed(0));
   const nextQuantity = Number((quantity + 1).toFixed(0));
 
   return (
-    <div className="cart-line-quantity">
-      <small>Quantity: {quantity} &nbsp;&nbsp;</small>
-      <CartLineUpdateButton lines={[{id: lineId, quantity: prevQuantity}]}>
+    <div className="flex flex-row items-center justify-center bg-zinc-100 w-fit px-3 py-2 rounded-full gap-5">
+
+      <CartLineUpdateButton lines={[{ id: lineId, quantity: prevQuantity }]}>
         <button
           aria-label="Decrease quantity"
           disabled={quantity <= 1 || !!isOptimistic}
           name="decrease-quantity"
           value={prevQuantity}
         >
-          <span>&#8722; </span>
+          <Minus size={25} className='hover:bg-white rounded-full p-1 cursor-pointer' />
         </button>
       </CartLineUpdateButton>
-      &nbsp;
-      <CartLineUpdateButton lines={[{id: lineId, quantity: nextQuantity}]}>
+
+      <strong className='text-black'>{quantity}</strong>
+
+      <CartLineUpdateButton lines={[{ id: lineId, quantity: nextQuantity }]}>
         <button
           aria-label="Increase quantity"
           name="increase-quantity"
           value={nextQuantity}
           disabled={!!isOptimistic}
         >
-          <span>&#43;</span>
+          <Plus size={25} className='hover:bg-white rounded-full p-1 cursor-pointer' />
         </button>
       </CartLineUpdateButton>
-      &nbsp;
-      <CartLineRemoveButton lineIds={[lineId]} disabled={!!isOptimistic} />
+
+
     </div>
   );
 }
 
-/**
- * A button that removes a line item from the cart. It is disabled
- * when the line item is new, and the server hasn't yet responded
- * that it was successfully added to the cart.
- */
-function CartLineRemoveButton({
-  lineIds,
-  disabled,
-}: {
-  lineIds: string[];
-  disabled: boolean;
-}) {
+
+
+// A button that removes a line item from the cart. It is disabled
+// when the line item is new, and the server hasn't yet responded
+// that it was successfully added to the cart.
+function CartLineRemoveButton({ lineIds, disabled, }: { lineIds: string[]; disabled: boolean; }) {
+
+
   return (
     <CartForm
       fetcherKey={getUpdateKey(lineIds)}
       route="/cart"
       action={CartForm.ACTIONS.LinesRemove}
-      inputs={{lineIds}}
+      inputs={{ lineIds }}
     >
-      <button disabled={disabled} type="submit">
-        Remove
+      <button disabled={disabled} type="submit" className='cursor-pointer hover:opacity-50 duration-300'>
+        <Trash2 className='text-red-600 p-2.5 rounded-full w-10 h-10 bg-red-100' />
       </button>
     </CartForm>
   );
@@ -149,12 +160,14 @@ function CartLineUpdateButton({
       fetcherKey={getUpdateKey(lineIds)}
       route="/cart"
       action={CartForm.ACTIONS.LinesUpdate}
-      inputs={{lines}}
+      inputs={{ lines }}
     >
       {children}
     </CartForm>
   );
 }
+
+
 
 /**
  * Returns a unique key for the update action. This is used to make sure actions modifying the same line

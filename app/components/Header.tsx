@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { Await, NavLink, useAsyncValue } from 'react-router';
+import { Await, Link, NavLink, useAsyncValue } from 'react-router';
 import {
   type CartViewPayload,
   useAnalytics,
@@ -7,7 +7,7 @@ import {
 } from '@shopify/hydrogen';
 import type { HeaderQuery, CartApiQueryFragment } from 'storefrontapi.generated';
 import { useAside } from '~/components/Aside';
-import { Codepen, SearchIcon, ShoppingBag, User } from "lucide-react";
+import { Codepen, Menu, SearchIcon, ShoppingBag, User } from "lucide-react";
 
 
 
@@ -24,10 +24,10 @@ export function Header({ header, isLoggedIn, cart, publicStoreDomain, }: HeaderP
 
 
   const { menu } = header;
-
+  console.log(`%c${JSON.stringify(header)}`, 'color: pink; font-size: 20px;')
 
   return (
-    <header className="header">
+    <header className="w-full flex flex-row items-center gap-5 px-[5%] py-5">
       <NavLink
         prefetch="intent"
         to="/"
@@ -50,33 +50,39 @@ export function Header({ header, isLoggedIn, cart, publicStoreDomain, }: HeaderP
 
 
 
-export function HeaderMenu({
-  menu,
-  primaryDomainUrl,
-  viewport,
-  publicStoreDomain,
-}: {
-  menu: HeaderProps['header']['menu'];
-  primaryDomainUrl: HeaderProps['header']['shop']['primaryDomain']['url'];
-  viewport: Viewport;
-  publicStoreDomain: HeaderProps['publicStoreDomain'];
-}) {
-  const className = `header-menu-${viewport}`;
-  const { close } = useAside();
+export function HeaderMenu({ menu, primaryDomainUrl, viewport, publicStoreDomain, }: { menu: HeaderProps['header']['menu']; primaryDomainUrl: HeaderProps['header']['shop']['primaryDomain']['url']; viewport: Viewport; publicStoreDomain: HeaderProps['publicStoreDomain']; }) {
+
+
+
+  // const className = `header-menu-${viewport}`;
+  // const { close } = useAside();
+
+
 
   return (
-    <nav className={className} role="navigation">
+    <nav role="navigation" className='flex md:flex-row flex-col gap-3'>
+
+
+      {/* // // Mobile */}
       {viewport === 'mobile' && (
-        <NavLink
-          end
-          onClick={close}
-          prefetch="intent"
-          style={activeLinkStyle}
-          to="/"
-        >
-          Home
-        </NavLink>
+        (menu || FALLBACK_HEADER_MENU).items.map((item) => {
+          if (!item.url) return null;
+          return (
+            <a
+              href={item.url}
+              key={item.id}
+              rel="noopener noreferrer"
+              target="_blank"
+              className="px-3 py-2  w-fit rounded-full hover:bg-black hover:text-white duration-300"
+            >
+              {item.title}
+            </a>
+          );
+        })
       )}
+
+
+      {/* // // Desktop */}
       {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
         if (!item.url) return null;
 
@@ -88,27 +94,24 @@ export function HeaderMenu({
             ? new URL(item.url).pathname
             : item.url;
         return (
-          <NavLink
-            className="header-menu-item"
-            end
+          <a
+            href={url}
             key={item.id}
-            onClick={close}
-            prefetch="intent"
-            style={activeLinkStyle}
-            to={url}
+            rel="noopener noreferrer"
+            target="_blank"
+            className="hidden md:flex px-3 py-2 rounded-full hover:bg-black hover:text-white duration-300"
           >
             {item.title}
-          </NavLink>
+          </a>
         );
       })}
     </nav>
   );
 }
 
-function HeaderCtas({
-  isLoggedIn,
-  cart,
-}: Pick<HeaderProps, 'isLoggedIn' | 'cart'>) {
+function HeaderCtas({ isLoggedIn, cart, }: Pick<HeaderProps, 'isLoggedIn' | 'cart'>) {
+
+
   return (
     <nav className="header-ctas" role="navigation">
       <HeaderMenuMobileToggle />
@@ -125,17 +128,21 @@ function HeaderCtas({
   );
 }
 
+
+
 function HeaderMenuMobileToggle() {
   const { open } = useAside();
   return (
     <button
-      className="header-menu-mobile-toggle reset"
+      className="block md:hidden bg-black text-white p-2 rounded-xl cursor-pointer hover:opacity-70 duration-300"
       onClick={() => open('mobile')}
     >
-      <h3>☰</h3>
+      <Menu />
     </button>
   );
 }
+
+
 
 function SearchToggle() {
   const { open } = useAside();
@@ -146,30 +153,39 @@ function SearchToggle() {
   );
 }
 
+
+
+
 function CartBadge({ count }: { count: number | null }) {
-  const { open } = useAside();
+
+
+  // const { open } = useAside();
   const { publish, shop, cart, prevCart } = useAnalytics();
 
+
   return (
-    <a
+    <Link
       className='relative flex flex-row items-center gap-2'
-      href="/cart"
-      onClick={(e) => {
-        e.preventDefault();
-        open('cart');
-        publish('cart_viewed', {
-          cart,
-          prevCart,
-          shop,
-          url: window.location.href || '',
-        } as CartViewPayload);
-      }}
+      to="/cart"
+    // onClick={(e) => {
+    //   e.preventDefault();
+    //   open('cart');
+
+    //   publish('cart_viewed', {
+    //     cart,
+    //     prevCart,
+    //     shop,
+    //     url: window.location.href || '',
+    //   } as CartViewPayload);
+    // }}
     >
       <ShoppingBag />
       {count !== null && <span className='absolute -top-3 left-3 text-xs w-6 h-6 flex items-center justify-center bg-zinc-100 rounded-full'>{count}</span>}
-    </a>
+    </Link>
   );
 }
+
+
 
 function CartToggle({ cart }: Pick<HeaderProps, 'cart'>) {
   return (
@@ -180,6 +196,8 @@ function CartToggle({ cart }: Pick<HeaderProps, 'cart'>) {
     </Suspense>
   );
 }
+
+
 
 function CartBanner() {
   const originalCart = useAsyncValue() as CartApiQueryFragment | null;

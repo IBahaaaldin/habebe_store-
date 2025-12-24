@@ -188,9 +188,12 @@ export default function App() {
 }
 
 export function ErrorBoundary() {
+
+
   const error = useRouteError();
   let errorMessage = 'Unknown error';
   let errorStatus = 500;
+
 
   if (isRouteErrorResponse(error)) {
     errorMessage = error?.data?.message ?? error.data;
@@ -199,6 +202,8 @@ export function ErrorBoundary() {
     errorMessage = error.message;
   }
 
+
+  
   return (
     <div className="route-error">
       <h1>Oops</h1>

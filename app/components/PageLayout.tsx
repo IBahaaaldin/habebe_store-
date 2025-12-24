@@ -6,7 +6,6 @@ import type {
   HeaderQuery,
 } from 'storefrontapi.generated';
 import { Aside } from '~/components/Aside';
-import { Footer } from '~/components/Footer';
 import { Header, HeaderMenu } from '~/components/Header';
 import { CartMain } from '~/components/CartMain';
 import {
@@ -15,6 +14,8 @@ import {
 } from '~/components/SearchFormPredictive';
 import { SearchResultsPredictive } from '~/components/SearchResultsPredictive';
 import SignUp from './MINE/SignUp';
+import FooterSection from './MINE/ReUsable/FooterSection';
+import Logos from './MINE/Logos';
 
 interface PageLayoutProps {
   cart: Promise<CartApiQueryFragment | null>;
@@ -29,14 +30,7 @@ interface PageLayoutProps {
 
 
 // This is the main layout for the entire app
-export function PageLayout({
-  cart,
-  children = null,
-  footer,
-  header,
-  isLoggedIn,
-  publicStoreDomain,
-}: PageLayoutProps) {
+export function PageLayout({ cart, children = null, footer, header, isLoggedIn, publicStoreDomain, }: PageLayoutProps) {
   return (
     <Aside.Provider>
 
@@ -57,14 +51,21 @@ export function PageLayout({
         />
       )}
       <main>{children}</main>
-      <Footer
+      {/* <Footer
+        footer={footer}
+        header={header}
+        publicStoreDomain={publicStoreDomain}
+      /> */}
+
+
+
+      {/* Footer for the entire app and all PAGES */}
+      <Logos />
+      <FooterSection
         footer={footer}
         header={header}
         publicStoreDomain={publicStoreDomain}
       />
-
-
-
     </Aside.Provider>
   );
 }
@@ -172,13 +173,9 @@ function SearchAside() {
 
 
 
-function MobileMenuAside({
-  header,
-  publicStoreDomain,
-}: {
-  header: PageLayoutProps['header'];
-  publicStoreDomain: PageLayoutProps['publicStoreDomain'];
-}) {
+function MobileMenuAside({ header, publicStoreDomain, }: { header: PageLayoutProps['header']; publicStoreDomain: PageLayoutProps['publicStoreDomain']; }) {
+
+
   return (
     header.menu &&
     header.shop.primaryDomain?.url && (

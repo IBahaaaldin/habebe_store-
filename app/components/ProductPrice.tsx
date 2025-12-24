@@ -21,7 +21,6 @@ export function ProductPrice({
           </s>
         </div>
       ) : price ? (
-        // <Money data={price} />
         <Prices price={price.amount} currency={price.currencyCode} />
       ) : (
         <span>&nbsp;</span>

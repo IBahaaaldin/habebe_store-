@@ -95,7 +95,10 @@ const testimonials = [
 
 
 
-export default function Reviews() {
+export default function Reviews({ Title, ProductId }: { Title?: string, ProductId?: string }) {
+
+
+    const Head = Title ? `${Title}'s Reviews` : "What our clients say"
 
 
     const [comment, setComment] = useState<string>('')
@@ -119,11 +122,11 @@ export default function Reviews() {
 
 
     return (
-        <section className="flex flex-col gap-10 items-start justify-start mx-auto w-full">
+        <section className="flex flex-col items-start justify-start mx-auto w-full">
 
 
             <HeaderText
-                HEAD='What our clients say'
+                HEAD={Head}
             />
 
 
@@ -184,9 +187,6 @@ export default function Reviews() {
 
             {/* Comments section */}
             <article className="flex flex-col gap-5 items-start justify-start w-full my-10">
-                <HeaderText
-                    HEAD="Leave a comment for us"
-                />
 
                 {commentSubmited ? (
                     <div className="w-full flex flex-col gap-5 items-center justify-center p-10 border border-green-500 rounded-3xl bg-green-50">
@@ -198,7 +198,8 @@ export default function Reviews() {
                     <form onSubmit={handleCommentSubmit} className="flex flex-col min-w-full gap-5 items-start justify-start">
                         <textarea
                             onChange={(e) => setComment(e.target.value)}
-                            className="w-full resize-none p-5 h-40 rounded-4xl border border-black/10" placeholder="Write a comment for us (Praise or Demolish)"
+                            className="w-full bg-zinc-50 resize-none p-5 h-40 rounded-4xl border border-black/90"
+                            placeholder="Write a comment for us (Praise or Demolish)"
                         />
                         <button type="submit" className="button1">Submit</button>
                     </form>)

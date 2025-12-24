@@ -1,3 +1,4 @@
+import { X } from 'lucide-react';
 import {
   createContext,
   type ReactNode,
@@ -14,7 +15,7 @@ type AsideContextValue = {
 };
 
 /**
- * A side bar component with Overlay
+  A side bar component with Overlay
  * @example
  * ```jsx
  * <Aside type="search" heading="SEARCH">
@@ -23,17 +24,14 @@ type AsideContextValue = {
  * </Aside>
  * ```
  */
-export function Aside({
-  children,
-  heading,
-  type,
-}: {
-  children?: React.ReactNode;
-  type: AsideType;
-  heading: React.ReactNode;
-}) {
-  const {type: activeType, close} = useAside();
+export function Aside({ children, heading, type, }: { children?: React.ReactNode; type: AsideType; heading: React.ReactNode; }) {
+
+
+
+  const { type: activeType, close } = useAside();
   const expanded = type === activeType;
+
+
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -46,11 +44,13 @@ export function Aside({
             close();
           }
         },
-        {signal: abortController.signal},
+        { signal: abortController.signal },
       );
     }
     return () => abortController.abort();
   }, [close, expanded]);
+
+
 
   return (
     <div
@@ -61,9 +61,9 @@ export function Aside({
       <button className="close-outside" onClick={close} />
       <aside>
         <header>
-          <h3>{heading}</h3>
-          <button className="close reset" onClick={close} aria-label="Close">
-            &times;
+          <h3 className="text-xl font-bold">{heading}</h3>
+          <button className="cursor-pointer bg-black text-white p-2 rounded-xl hover:opacity-50 duration-300" onClick={close} aria-label="Close">
+            <X />
           </button>
         </header>
         <main>{children}</main>
@@ -74,7 +74,7 @@ export function Aside({
 
 const AsideContext = createContext<AsideContextValue | null>(null);
 
-Aside.Provider = function AsideProvider({children}: {children: ReactNode}) {
+Aside.Provider = function AsideProvider({ children }: { children: ReactNode }) {
   const [type, setType] = useState<AsideType>('closed');
 
   return (

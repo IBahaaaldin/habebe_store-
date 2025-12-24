@@ -262,7 +262,7 @@ type RouteFiles = {
     page: "/*";
   };
   "../node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout.jsx": {
-    id: "/home/ahmed/DropShipping/hydrogen-storefront/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout";
+    id: "/home/ahmed/dropshipping/node_modules/@shopify/hydrogen/dist/vite/virtual-routes/layout";
     page: "/graphiql" | "/subrequest-profiler" | "/.well-known/appspecific/com.chrome.devtools.json" | "/";
   };
   "../node_modules/@shopify/hydrogen/dist/vite/virtual-routes/routes/graphiql.jsx": {

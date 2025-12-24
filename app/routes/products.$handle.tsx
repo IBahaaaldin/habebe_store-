@@ -1,4 +1,4 @@
-import { redirect, useLoaderData } from 'react-router';
+import { Await, redirect, useLoaderData } from 'react-router';
 import type { Route } from './+types/products.$handle';
 import {
   getSelectedProductOptions,
@@ -12,7 +12,14 @@ import { ProductPrice } from '~/components/ProductPrice';
 import { ProductImage } from '~/components/ProductImage';
 import { ProductForm } from '~/components/ProductForm';
 import { redirectIfHandleIsLocalized } from '~/lib/redirect';
-import Ratings from '~/components/ProductItem';
+import Ratings, { ProductItem } from '~/components/ProductItem';
+import Reviews from '~/components/MINE/Reviews';
+// import { RecommendedProducts } from './_index';
+import { Suspense } from 'react';
+import type { RecommendedProductsQuery } from 'storefrontapi.generated';
+import LoadingSpinner from '~/components/MINE/ReUsable/LoadingSpinner';
+
+
 
 export const meta: Route.MetaFunction = ({ data }) => {
   return [
@@ -24,6 +31,8 @@ export const meta: Route.MetaFunction = ({ data }) => {
   ];
 };
 
+
+
 export async function loader(args: Route.LoaderArgs) {
   // Start fetching non-critical data without blocking time to first byte
   const deferredData = loadDeferredData(args);
@@ -34,51 +43,58 @@ export async function loader(args: Route.LoaderArgs) {
   return { ...deferredData, ...criticalData };
 }
 
-/**
- * Load data necessary for rendering content above the fold. This is the critical data
- * needed to render the page. If it's unavailable, the whole page should 400 or 500 error.
- */
+
 async function loadCriticalData({ context, params, request }: Route.LoaderArgs) {
   const { handle } = params;
   const { storefront } = context;
 
   if (!handle) {
-    throw new Error('Expected product handle to be defined');
+    throw new Error("Missing product handle");
   }
 
+
+  // “Get the product with this URL name (handle), and return the exact variant based on what the customer selected.”
+  // /products/black-tshirt?size=M&color=Black
+  // handle = "black-tshirt"
+  // selectedOptions = [{ name: "Size", value: "M" }, { name: "Color", value: "Black" }]
   const [{ product }] = await Promise.all([
     storefront.query(PRODUCT_QUERY, {
-      variables: { handle, selectedOptions: getSelectedProductOptions(request) },
+      variables: {
+        handle,
+        selectedOptions: getSelectedProductOptions(request),
+      },
     }),
     // Add other queries here, so that they are loaded in parallel
   ]);
+
 
   if (!product?.id) {
     throw new Response(null, { status: 404 });
   }
 
-  // The API handle might be localized, so redirect to the localized handle
-  redirectIfHandleIsLocalized(request, { handle, data: product });
+
+  const { product: productWishCollections } = await storefront.query(SIMILAR_PRODUCTS_QUERY, {
+    variables: { productId: product.id },
+  })
+
+  const similarProducts = productWishCollections.collections.edges[0]?.node.products.edges
 
   return {
     product,
+    similarProducts: similarProducts || [],
   };
 }
 
-/**
- * Load data for rendering content below the fold. This data is deferred and will be
- * fetched after the initial page load. If it's unavailable, the page should still 200.
- * Make sure to not throw any errors here, as it will cause the page to 500.
- */
-function loadDeferredData({ context, params }: Route.LoaderArgs) {
-  // Put any API calls that is not critical to be available on first page render
-  // For example: product reviews, product recommendations, social feeds.
 
+function loadDeferredData({ context, params }: Route.LoaderArgs) {
   return {};
 }
 
+
+
 export default function Product() {
-  const { product } = useLoaderData<typeof loader>();
+  const { product, similarProducts } = useLoaderData<typeof loader>();
+
 
   // Optimistically selects a variant with given available variant information
   const selectedVariant = useOptimisticVariant(
@@ -98,33 +114,69 @@ export default function Product() {
 
   const { title, descriptionHtml } = product;
 
+
+  console.log(`%c${JSON.stringify(product)}`, 'color: blue; font-size: 20px;')
+  console.log(`%c${JSON.stringify(similarProducts)}`, 'color: yellow; font-size: 20px;')
+
+  const OptionImages = product.options.map((op) => op.optionValues.map((opv) => opv.firstSelectableVariant?.image));
+
+
+
   return (
-    <div className="product">
-      <ProductImage image={selectedVariant?.image} />
-      <div className="flex flex-col gap-5">
+    <div className="productsContainer">
 
-        <h1 className='text-5xl font-bold'>{title}</h1>
 
-        <Ratings RATING={4.7} />
 
-        <ProductPrice
-          price={selectedVariant?.price}
-          compareAtPrice={selectedVariant?.compareAtPrice}
+      <div className='product'>
+        {/* Product Image */}
+        <ProductImage
+          image={selectedVariant?.image}
+          OtherImages={OptionImages[1]}
         />
 
 
-        <div
-          className='text-zinc-500 border-zinc-300 border-b pb-5 mb-5'
-          dangerouslySetInnerHTML={{ __html: descriptionHtml }}
-        />
 
-        <ProductForm
-          productOptions={productOptions}
-          selectedVariant={selectedVariant}
-        />
+
+        {/* Product Details */}
+        <section className="flex flex-col gap-5 mt-5">
+          <h1 className='text-5xl font-bold'>{title}</h1>
+
+          <Ratings RATING={4.7} />
+
+          <ProductPrice
+            price={selectedVariant?.price}
+            compareAtPrice={selectedVariant?.compareAtPrice}
+          />
+
+
+          <div
+            className='text-zinc-500 border-zinc-300 border-b pb-5 mb-5'
+            dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+          />
+
+          <ProductForm
+            productOptions={productOptions}
+            selectedVariant={selectedVariant}
+          />
+        </section>
       </div>
 
 
+
+      <Reviews
+        Title={title}
+        ProductId={product.id}
+      />
+
+
+
+      <SimilarProducts
+        Title={"Similar Products"}
+        products={similarProducts}
+      />
+
+
+      {/* Used for analytics only */}
       <Analytics.ProductView
         data={{
           products: [
@@ -143,6 +195,31 @@ export default function Product() {
     </div>
   );
 }
+
+
+
+function SimilarProducts({ products, Title }: { products: any; Title: string; }) {
+  return (
+    <div className="border-b border-black/30 pb-10">
+      <h3 className='text-start w-full text-4xl mb-10 capitalize font-bold'>
+        {Title}
+      </h3>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <Await resolve={products}>
+          {(response) => (
+            <div className="flex flex-row gap-5 overflow-scroll HIDDEN_SCROLL">
+              {products.map((item: any) => (
+                <ProductItem key={item.node.id} product={item.node} />
+              ))}
+            </div>
+          )}
+        </Await>
+      </Suspense>
+    </div>
+  );
+}
+
 
 
 
@@ -183,7 +260,7 @@ const PRODUCT_VARIANT_FRAGMENT = `#graphql
   }
 ` as const;
 
-const PRODUCT_FRAGMENT = `#graphql
+export const PRODUCT_FRAGMENT = `#graphql
   fragment Product on Product {
     id
     title
@@ -237,3 +314,40 @@ const PRODUCT_QUERY = `#graphql
   }
   ${PRODUCT_FRAGMENT}
 ` as const;
+
+
+const SIMILAR_PRODUCTS_QUERY = `#graphql
+  query SimilarProducts($productId: ID!) {
+    product(id: $productId) {
+      collections(first: 1) {
+        edges {
+          node {
+            products(first: 10) {
+              edges {
+                node {
+                  id
+                  title
+                  handle
+                  priceRange {
+                    minVariantPrice {
+                      amount
+                      currencyCode
+                    }
+                  }
+                  featuredImage {
+                    id
+                    url
+                    altText
+                    width
+                    height
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+` as const;
+

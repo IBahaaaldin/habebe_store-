@@ -7,25 +7,25 @@ import { ProductItem } from '~/components/ProductItem';
 import type { ProductItemFragment } from 'storefrontapi.generated';
 import HeroSection from '~/components/MINE/HeroSection';
 import Logos from '~/components/MINE/Logos';
+import FilterSidebar from '~/components/MINE/FilterSidebar';
+
+
 
 export const meta: Route.MetaFunction = ({ data }) => {
   return [{ title: `Hydrogen | ${data?.collection.title ?? ''} Collection` }];
 };
 
-export async function loader(args: Route.LoaderArgs) {
-  // Start fetching non-critical data without blocking time to first byte
-  const deferredData = loadDeferredData(args);
 
-  // Await the critical data required to render initial state of the page
+
+export async function loader(args: Route.LoaderArgs) {
+  const deferredData = loadDeferredData(args);
   const criticalData = await loadCriticalData(args);
 
   return { ...deferredData, ...criticalData };
 }
 
-/**
- * Load data necessary for rendering content above the fold. This is the critical data
- * needed to render the page. If it's unavailable, the whole page should 400 or 500 error.
- */
+
+
 async function loadCriticalData({ context, params, request }: Route.LoaderArgs) {
   const { handle } = params;
   const { storefront } = context;
@@ -38,10 +38,8 @@ async function loadCriticalData({ context, params, request }: Route.LoaderArgs) 
   }
 
   const [{ collection }] = await Promise.all([
-    storefront.query(COLLECTION_QUERY, {
-      variables: { handle, ...paginationVariables },
-      // Add other queries here, so that they are loaded in parallel
-    }),
+    storefront.query(COLLECTION_QUERY, { variables: { handle, ...paginationVariables } }),
+    // Add other queries here, so that they are loaded in parallel
   ]);
 
   if (!collection) {
@@ -58,17 +56,20 @@ async function loadCriticalData({ context, params, request }: Route.LoaderArgs) 
   };
 }
 
-/**
- * Load data for rendering content below the fold. This data is deferred and will be
- * fetched after the initial page load. If it's unavailable, the page should still 200.
- * Make sure to not throw any errors here, as it will cause the page to 500.
- */
+
+
+
 function loadDeferredData({ context }: Route.LoaderArgs) {
   return {};
 }
 
 export default function Collection() {
   const { collection } = useLoaderData<typeof loader>();
+
+
+
+  console.log(`%c${collection}`, 'color: red; font-size: 20px;')
+
 
   return (
     <div className="collection">
@@ -86,30 +87,36 @@ export default function Collection() {
 
 
       <div className='productsContainer'>
-        <PaginatedResourceSection<ProductItemFragment>
-          connection={collection.products}
-          resourcesClassName="products-grid"
-        >
-          {({ node: product, index }) => (
-            <ProductItem
-              key={product.id}
-              product={product}
-              loading={index < 8 ? 'eager' : undefined}
+
+        <div className="flex flex-row items-start gap-10">
+          {/* <div className="self-start sticky top-10">
+            <FilterSidebar
+            // AvailableSize={collection.handle}
+            // AvailableColor={collection.products.nodes}
+            // AvailablePrice={collection.products.node}
             />
-          )}
-        </PaginatedResourceSection>
-        <Analytics.CollectionView
-          data={{
-            collection: {
-              id: collection.id,
-              handle: collection.handle,
-            },
-          }}
-        />
+          </div> */}
+
+          <PaginatedResourceSection<ProductItemFragment>
+            connection={collection.products}
+            resourcesClassName="products-grid"
+          >
+            {({ node: product, index }) => (
+              <ProductItem
+                key={product.id}
+                product={product}
+                loading={index < 8 ? 'eager' : undefined}
+              />
+            )}
+          </PaginatedResourceSection>
+        </div>
+
       </div>
     </div>
   );
 }
+
+
 
 export const PRODUCT_ITEM_FRAGMENT = `#graphql
   fragment MoneyProductItem on MoneyV2 {
@@ -137,6 +144,35 @@ export const PRODUCT_ITEM_FRAGMENT = `#graphql
     }
   }
 ` as const;
+
+
+
+const PRODUCT_FRAGMENT = `#graphql
+  fragment Product on Product {
+    id
+    title
+    vendor
+    handle
+    options {
+      name
+      optionValues {
+        name
+        firstSelectableVariant {
+          ...ProductVariant
+        }
+        swatch {
+          color
+          image {
+            previewImage {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+` as const;
+
 
 // NOTE: https://shopify.dev/docs/api/storefront/2022-04/objects/collection
 export const COLLECTION_QUERY = `#graphql

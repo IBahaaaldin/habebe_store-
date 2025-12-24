@@ -9,27 +9,25 @@ import { motion } from 'framer-motion'
 
 export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?: string }) {
     return (
-        <div className="z-1 capitalize text-start flex flex-col gap-5 w-full mb-5 max-w-xl" >
-            {HEAD &&
-                <h3 className='w-full lg:text-7xl text-5xl flex flex-row flex-wrap gap-2 text-wrap'>
-                    {HEAD.split(' ').map((word, index) => (
-                        <span
-                            key={index}
-                            className='inline-block overflow-hidden '
+        <div className="z-1 capitalize flex items-start justify-start w-full gap-5 mb-5" >
+            <h3 className=' text-4xl lg:text-5xl flex-wrap flex flex-row gap-2 font-bold'>
+                {HEAD!.split(' ').map((word, index) => (
+                    <span
+                        key={index}
+                        className='inline-block overflow-hidden '
+                    >
+                        <motion.span
+                            initial={{ y: '100%' }}
+                            whileInView={{ y: 0 }}
+                            transition={{ duration: 1, delay: index * 0.06, ease: [0.165, 0.84, 0.44, 1] }}
+                            viewport={{ once: true }}
+                            className='inline-block'
                         >
-                            <motion.span
-                                initial={{ y: '100%' }}
-                                whileInView={{ y: 0 }}
-                                transition={{ duration: 1, delay: index * 0.06, ease: [0.165, 0.84, 0.44, 1] }}
-                                viewport={{ once: true }}
-                                className='inline-block'
-                            >
-                                {word}
-                            </motion.span>
-                        </span>
-                    ))}
-                </h3>
-            }
+                            {word}
+                        </motion.span>
+                    </span>
+                ))}
+            </h3>
 
 
 

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import AutoScrollArray from "./ReUsable/AutoScrollArray";
-import { Image } from "@shopify/hydrogen";
+// import { Image } from "@shopify/hydrogen";
 
 const Logos = () => {
     const brands = ["VERSACE", "ZARA", "GUCCI", "PRADA", "Calvin Klein", "VERSACE", "ZARA", "GUCCI", "PRADA", "Calvin Klein", "VERSACE", "ZARA", "GUCCI", "PRADA", "Calvin Klein"];

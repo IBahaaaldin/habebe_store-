@@ -18,7 +18,7 @@ export function AddToCartButton({ analytics, children, disabled, lines, onClick,
           />
           <button
             type="submit"
-            className='button1'
+            className='button1 w-full'
             onClick={onClick}
             disabled={disabled ?? fetcher.state !== 'idle'}
           >

@@ -61,10 +61,16 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
   const variantUrl = useVariantUrl(product.handle);
   const image = product.featuredImage;
 
+  const price = product.priceRange?.minVariantPrice?.amount;
+  const currency = product.priceRange?.minVariantPrice?.currencyCode;
+
+  console.log(`%c${JSON.stringify(product.featuredImage)}`, 'color: red; font-size: 20px;')
+  console.log(`%c${JSON.stringify(price)}`, 'color: red; font-size: 20px;')
+
 
   return (
     <Link
-      className="product-item min-w-80"
+      className="product-item min-w-80 flex flex-col gap-3"
       key={product.id}
       prefetch="intent"
       to={variantUrl}
@@ -80,14 +86,17 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
           />
         </div>
       )}
-      <h4 className='pt-3 text-2xl uppercase'>{product.title}</h4>
+      <h4 className='pt-3 text-2xl capitalize font-bold'>{product.title}</h4>
       {/* <Money data={product.priceRange.minVariantPrice} /> */}
 
 
       <div className='flex flex-col gap-2'>
         <Ratings RATING={3.7} />
 
-        <Prices price={product.priceRange.minVariantPrice.amount} currency={product.priceRange.minVariantPrice.currencyCode} />
+        <Prices
+          price={price}
+          currency={currency}
+        />
       </div>
     </Link>
   );

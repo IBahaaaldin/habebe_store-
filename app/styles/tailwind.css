@@ -7,7 +7,7 @@
 
 
 .button1 {
-    @apply flex flex-row w-fit mt-5 cursor-pointer gap-3 items-center justify-center px-10 py-3 text-white bg-black rounded-full duration-300 text-nowrap;
+    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-10 py-3 text-white bg-black rounded-full duration-300 text-nowrap;
 
     &:hover {
         @apply bg-black/70 text-white;
@@ -25,7 +25,7 @@
 
 
 .button2 {
-    @apply flex flex-row w-fit mt-5 cursor-pointer gap-3 items-center justify-center px-10 py-3 text-black bg-white border-2 border-black rounded-full duration-300 text-nowrap;
+    @apply flex flex-row w-fit cursor-pointer gap-3 items-center justify-center px-10 py-3 text-black bg-white border-2 border-black rounded-full duration-300 text-nowrap;
 
     &:hover {
         @apply bg-black text-white;
@@ -60,5 +60,25 @@
 
 
 .productsContainer {
-    @apply flex flex-col gap-20 my-20 max-w-[1750px] mx-auto
+    @apply flex flex-col px-[5%] gap-20 my-10 max-w-[1750px] mx-auto
+}
+
+
+small {
+    @apply text-sm text-zinc-300
+}
+
+
+form {
+    @apply mb-0 flex flex-col items-center justify-center 
+}
+
+
+.StrikeThrough {
+    text-decoration: line-through;
+}
+
+
+.INPUT {
+    @apply px-5 py-3  bg-zinc-100 outline-none rounded-full
 }

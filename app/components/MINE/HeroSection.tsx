@@ -85,7 +85,7 @@ const HeroSection = ({ collection, Title, Description, HeroImg }: { collection: 
     const subText = Description ? Description : "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.";
 
     return (
-        <div className='max-w-[1750px] bg-red-900 overflow-hidden w-full mx-auto relative text-white z-1 min-w-full px-[5%] flex flex-col gap-20 justify-center items-start min-h-screen'>
+        <div className='max-w-[1750px] overflow-hidden w-full mx-auto relative text-white z-1 min-w-full px-[5%] flex flex-col gap-20 justify-center items-start min-h-screen'>
             {/* bg-[#664343]  */}
             <article className='max-w-[60%] text-center z-10 w-full  relative flex flex-col gap-10'>
                 {/* <Messages /> */}

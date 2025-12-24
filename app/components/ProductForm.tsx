@@ -84,7 +84,8 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
                             : 'bg-zinc-100 text-black hover:bg-black hover:text-white'
                           : ''
                         }
-    ${option.name.toLowerCase() === 'color' ? selected ? 'scale-110' : 'opacity-50' : ''}
+    ${option.name.toLowerCase() === 'color' ?
+                          selected ? 'shadow-lg rounded-full scale-110 opacity-100' : 'opacity-50' : ''}
     ${!available ? 'opacity-40 cursor-not-allowed' : ''}
   `}
                       disabled={!exists || !available}
@@ -106,9 +107,9 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
       })}
       <AddToCartButton
         disabled={!selectedVariant || !selectedVariant.availableForSale}
-        onClick={() => {
-          open('cart');
-        }}
+        // onClick={() => {
+        //   open('cart');
+        // }}
         lines={
           selectedVariant
             ? [
@@ -129,26 +130,26 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
 
 
 
-function ProductOptionSwatch({
-  swatch,
-  name,
-}: {
-  swatch?: Maybe<ProductOptionValueSwatch> | undefined;
-  name: string;
-}) {
+function ProductOptionSwatch({ swatch, name, }: { swatch?: Maybe<ProductOptionValueSwatch> | undefined; name: string; }) {
+
+
   const image = swatch?.image?.previewImage?.url;
   const color = swatch?.color;
 
+
   if (!image && !color) return name;
+
+
 
   return (
     <div
       aria-label={name}
-      className="w-10 h-10 rounded-full"
+      className={`w-10 h-10 rounded-full `}
       style={{
         backgroundColor: color || 'transparent',
       }}
     >
+      {/* {color} */}
       {!!image && <img src={image} alt={name} />}
     </div>
   );
