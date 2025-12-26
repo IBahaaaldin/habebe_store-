@@ -100,7 +100,7 @@ const HeroSection = ({ collection, Title, Description, HeroImg }: { collection: 
                             <span
                                 key={index}
                                 // **This is the container/window that clips the animation**
-                                className='inline-block overflow-hidden uppercase mr-3 lg:text-7xl md:text-5xl text-4xl'
+                                className='inline-block overflow-hidden uppercase mr-3 md:text-7xl text-5xl'
                             >
                                 <motion.span
                                     // **Start hidden below the 'window'**
@@ -119,7 +119,7 @@ const HeroSection = ({ collection, Title, Description, HeroImg }: { collection: 
 
 
 
-                    <h3 className="lg:text-lg sm:text-md text-sm flex flex-row w-full opacity-50">
+                    <h3 className="md:text-lg flex flex-row w-full opacity-50">
                         {subText}
                     </h3>
                 </div>

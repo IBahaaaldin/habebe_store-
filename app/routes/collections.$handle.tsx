@@ -4,7 +4,7 @@ import { getPaginationVariables, Analytics } from '@shopify/hydrogen';
 import { PaginatedResourceSection } from '~/components/PaginatedResourceSection';
 import { redirectIfHandleIsLocalized } from '~/lib/redirect';
 import { ProductItem } from '~/components/ProductItem';
-import type { ProductItemFragment } from 'storefrontapi.generated';
+import type { ProductFragment } from 'storefrontapi.generated';
 import HeroSection from '~/components/MINE/HeroSection';
 import Logos from '~/components/MINE/Logos';
 import FilterSidebar from '~/components/MINE/FilterSidebar';
@@ -83,7 +83,7 @@ export default function Collection() {
 
 
 
-      <div className='productsContainer'>
+      <div className='SMALL_CONTAINER'>
 
         <Link
           to="https://wa.me/+971561576657?text=I'm%20interested%20in%20your%20ad%20on%20Hydrogen"
@@ -104,7 +104,7 @@ export default function Collection() {
             />
           </div> */}
 
-          <PaginatedResourceSection<ProductItemFragment>
+          <PaginatedResourceSection<ProductFragment>
             connection={collection.products}
             resourcesClassName=""
           >
@@ -149,6 +149,26 @@ export const PRODUCT_ITEM_FRAGMENT = `#graphql
         ...MoneyProductItem
       }
     }
+    
+    # Add variants with first: 1
+    variants(first: 1) {
+      nodes {
+        id
+        availableForSale
+        selectedOptions {
+          name
+          value
+        }
+      }
+    }
+
+    # Add product options
+    options {
+      name
+      values: optionValues {
+        name
+      }
+    }
   }
 ` as const;
 
@@ -173,6 +193,49 @@ const PRODUCT_FRAGMENT = `#graphql
             previewImage {
               url
             }
+          }
+        }
+      }
+    }
+  }
+` as const;
+
+
+
+const PRODUCT_QUERY = `#graphql
+  products(first: 10) {
+    edges {
+      node {
+        id
+        title
+        handle
+        priceRange {
+          minVariantPrice {
+            amount
+            currencyCode
+          }
+        }
+        featuredImage {
+          id
+          url
+          altText
+          width
+          height
+        }
+        variants(first: 1) {
+          nodes {
+            id
+            availableForSale
+            selectedOptions {
+              name
+              value
+            }
+          }
+        }
+        options {
+          name
+          values: optionValues {
+            name
           }
         }
       }

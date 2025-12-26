@@ -1,9 +1,10 @@
 import { type FetcherWithComponents } from 'react-router';
 import { CartForm, type OptimisticCartLineInput } from '@shopify/hydrogen';
+// import { toast } from 'react-toastify';
 
 
 
-export function AddToCartButton({ analytics, children, disabled, lines, onClick, }: { analytics?: unknown; children: React.ReactNode; disabled?: boolean; lines: Array<OptimisticCartLineInput>; onClick?: () => void; }) {
+export function AddToCartButton({ analytics, children, disabled, lines, onClick, CC }: { analytics?: unknown; children: React.ReactNode; disabled?: boolean; lines: Array<OptimisticCartLineInput>; onClick?: () => void; CC?: string; }) {
 
 
 
@@ -18,8 +19,11 @@ export function AddToCartButton({ analytics, children, disabled, lines, onClick,
           />
           <button
             type="submit"
-            className='button1 w-full'
-            onClick={onClick}
+            className={`${disabled ? 'opacity-50 bg-zinc-100 rounded-full px-5 py-3 cursor-not-allowed' : 'button1'}  ${CC}`}
+            onClick={() => {
+              onClick?.();
+              // toast.success('Item added to cart');
+            }}
             disabled={disabled ?? fetcher.state !== 'idle'}
           >
             {children}

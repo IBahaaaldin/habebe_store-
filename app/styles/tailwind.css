@@ -7,9 +7,9 @@
 
 
 .button1 {
-    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-4 py-2 text-sm text-white bg-black rounded-full duration-300 text-nowrap;
+    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-4 py-2 text-white bg-black rounded-full duration-300 text-nowrap;
 
-    @apply lg:px-10 lg:py-3 lg:text-base;
+    @apply lg:px-5 lg:py-3 lg:text-lg;
 
     &:hover {
         @apply bg-black/70 text-white;
@@ -27,9 +27,9 @@
 
 
 .button2 {
-    @apply flex flex-row w-fit cursor-pointer gap-3 items-center justify-center px-3 py-2 text-sm text-black bg-white border-2 border-black/50 rounded-full duration-300 text-nowrap;
+    @apply flex flex-row w-fit cursor-pointer gap-3 items-center justify-center px-3 py-2 text-black bg-white border-2 border-black/50 rounded-full duration-300 text-nowrap;
 
-    @apply lg:px-10 lg:py-3 lg:text-base;
+    @apply lg:px-5 lg:py-3 md:text-lg;
 
     &:hover {
         @apply bg-black text-white;
@@ -62,8 +62,8 @@
 
 
 
-.productsContainer {
-    @apply flex flex-col px-[5%] gap-10 my-10 max-w-[1750px] mx-auto;
+.SMALL_CONTAINER {
+    @apply flex flex-col px-[5%] gap-10 my-10 max-w-[1750px] mx-auto h-fit;
     @apply lg:gap-20 lg:py-3 lg:text-base;
 }
 
@@ -84,12 +84,16 @@ form {
 
 
 .INPUT {
-    @apply px-5 py-3 bg-zinc-100 outline-none rounded-full
+    @apply px-5 py-3 bg-zinc-100 outline-none rounded-xl w-full;
 }
 
 
 .LINK_BUTTON {
     @apply text-blue-700 text-nowrap outline-none underline text-sm;
-    @apply lg:text-lg 
+    @apply lg:text-lg
+}
 
+
+.GRID_CONTAINER {
+    @apply grid grid-cols-2 sm:grid-cols-2 h-full md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-[15%] gap-[2%];
 }

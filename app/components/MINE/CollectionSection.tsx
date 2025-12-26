@@ -46,7 +46,7 @@ export default function CollectionSection() {
     const { collections } = useLoaderData();
 
     return (
-        <div className="productsContainer">
+        <div className="SMALL_CONTAINER">
             <div className="flex flex-row gap-3 h-full">
                 <div className='w-1/3 min-h-100'>
                     {collections.nodes?.slice(0, 1).map((collection: CollectionFragment, index: number) => (

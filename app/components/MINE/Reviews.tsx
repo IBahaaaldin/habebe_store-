@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Star, StarHalf } from 'lucide-react';
 import React, { useRef, useState } from 'react';
 import { IoCheckmarkCircle } from 'react-icons/io5';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 
 const testimonials = [
     {
@@ -111,7 +111,7 @@ export default function Reviews({ Title, ProductId }: { Title?: string, ProductI
 
         setComment(''); // Clear the textarea after submission
         setcommentSubmited(true)
-        toast.success("Comment submitted successfully")
+        // toast.success("Comment submitted successfully")
     }
 
 
@@ -131,45 +131,38 @@ export default function Reviews({ Title, ProductId }: { Title?: string, ProductI
 
 
             <div className='relative w-full'>
-                <div ref={containerRef} className='flex flex-row overflow-hidden py-5 gap-5 items-start justify-start w-full'>
+                <div ref={containerRef} className='flex flex-row overflow-hidden py-5 gap-5 justify-start w-full'>
                     {testimonials.map((testimonial, index) => (
-                        <motion.article
-                            initial={{ filter: 'blur(10px)' }}
-                            whileInView={{ filter: 'blur(0px)' }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.2 }}
+                        <article
                             key={index}
-                            className="font-bold overflow-hidden border border-black/10  min-w-80 min-h-full flex flex-col items-stretch gap-5 bg-white justify-stretch rounded-3xl p-10"
+                            className="overflow-hidden border border-black/10  min-w-80 min-h-full flex flex-col items-stretch gap-5 bg-white  rounded-3xl p-10"
                         >
 
                             <span className='flex flex-row '>
                                 {Array.from({ length: 5 }, (_, index) => index + 1).map((star, index) =>
-                                    (testimonial.rating >= star ? <Star size={22} key={index} className='fill-yellow-400 text-transparent' /> : <StarHalf size={22} className='fill-yellow-400 text-transparent' key={index} />)
+                                    (testimonial.rating >= star ? <Star size={22} key={index} className='fill-green-600 text-transparent' /> : <StarHalf size={22} className='fill-green-600 text-transparent' key={index} />)
                                 )}
                             </span>
 
-                            <p className='lg:text-lg text-xs'> {testimonial.text}</p>
+                            <p className='md:text-lg text-sm'> {testimonial.text}</p>
 
                             <div className='flex flex-col items-start justify-start'>
-                                <p className="text-black/30 text-xs">@{testimonial.user}</p>
+                                <p className="text-black/30 text-sm">@{testimonial.user}</p>
 
 
                                 {testimonial.verified ?
-                                    <div className="flex items-center text-xs">
+                                    <div className="flex items-center text-sm">
                                         <IoCheckmarkCircle className="text-green-500 mr-1" />
                                         <span className="">Verified Rating</span>
                                     </div>
                                     :
-                                    <div className="flex items-center text-xs">
+                                    <div className="flex items-center text-sm">
                                         <IoCheckmarkCircle className="text-zinc-500 mr-1" />
                                         <span className="">Unverified Rating</span>
                                     </div>
                                 }
                             </div>
-
-
-                            <div className="absolute -bottom-10 -left-5 -z-10 h-50 w-60 rounded-full bg-linear-to-b from-black/10 to-transparent blur-xl"></div>
-                        </motion.article>
+                        </article>
                     ))}
                 </div>
 
@@ -199,7 +192,7 @@ export default function Reviews({ Title, ProductId }: { Title?: string, ProductI
                         <textarea
                             maxLength={200}
                             onChange={(e) => setComment(e.target.value)}
-                            className="w-full bg-zinc-50 resize-none p-5 h-30 lg:rounded-4xl rounded-2xl border border-black/90"
+                            className="w-full bg-zinc-50 resize-none p-5 h-30 rounded-2xl border border-black/5"
                             placeholder="Write a comment for us (Praise or Demolish)"
                         />
                         <button type="submit" className="button1">Submit</button>

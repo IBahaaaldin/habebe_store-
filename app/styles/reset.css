@@ -40,10 +40,6 @@ h5 {
   margin-top: 0.5rem;
 } */
 
-p {
-  font-size: 1rem;
-  line-height: 1.4;
-}
 
 /* 
 a {
@@ -51,10 +47,6 @@ a {
   text-decoration: none;
 } */
 
-a:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
 
 hr {
   border-bottom: none;

@@ -40,6 +40,8 @@ export function PageLayout({ cart, children = null, footer, header, isLoggedIn, 
       <MobileMenuAside header={header} publicStoreDomain={publicStoreDomain} />
 
 
+      {/* ABSOLUTE */}
+
 
       {/* <SignUp /> */}
       {header && (
@@ -51,12 +53,6 @@ export function PageLayout({ cart, children = null, footer, header, isLoggedIn, 
         />
       )}
       <main>{children}</main>
-      {/* <Footer
-        footer={footer}
-        header={header}
-        publicStoreDomain={publicStoreDomain}
-      /> */}
-
 
 
       {/* Footer for the entire app and all PAGES */}

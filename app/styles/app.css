@@ -17,10 +17,7 @@ img {
 * Non anchor links
 * --------------------------------------------------
 */
-.link:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
+
 
 /*
 * --------------------------------------------------
@@ -441,16 +438,6 @@ button.reset:hover:not(:has(> *)) {
 .product h1 {
   margin-top: 0;
 }
-
-
-
-.product-image {
-  aspect-ratio: 1 / 1;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
 
 .product-main {
   align-self: start;

@@ -92,7 +92,7 @@ export default function Homepage() {
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       <Logos />
 
-      <div className='productsContainer'>
+      <div className='SMALL_CONTAINER'>
         <div className='flex flex-col gap-10'>
           {data.recommendedProducts.collections.edges.map(({ node }: any) => (
             <RecommendedProducts
@@ -158,7 +158,7 @@ export function RecommendedProducts({
       <Suspense fallback={<LoadingSpinner />}>
         <Await resolve={products}>
           {(response) => (
-            <div className="HIDDEN_SCROLL flex flex-row gap-[2%] overflow-scroll ">
+            <div className="HIDDEN_SCROLL GRID_CONTAINER overflow-scroll ">
               {response
                 ? response.edges.slice(0, 6).map((product: any) => (
                   <ProductItem
@@ -231,6 +231,22 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
                   width
                   height
                 }
+                variants (first: 1) {
+                  nodes {
+                    id
+                    availableForSale
+                    selectedOptions {
+                      name
+                      value
+                    }
+                  }
+                }
+                options {
+                  name
+                  values: optionValues {
+                    name
+                  }
+                }
               }
             }
           }
@@ -238,6 +254,7 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
       }
     }
   }
+
 ` as const;
 
 

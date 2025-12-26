@@ -9,6 +9,7 @@ import {
   Scripts,
   ScrollRestoration,
   useRouteLoaderData,
+  Link,
 } from 'react-router';
 import type { Route } from './+types/root';
 import favicon from '~/assets/favicon.svg';
@@ -167,6 +168,7 @@ export function Layout({ children }: { children?: React.ReactNode }) {
   );
 }
 
+
 export default function App() {
   const data = useRouteLoaderData<RootLoader>('root');
 
@@ -189,7 +191,6 @@ export default function App() {
 
 export function ErrorBoundary() {
 
-
   const error = useRouteError();
   let errorMessage = 'Unknown error';
   let errorStatus = 500;
@@ -203,16 +204,14 @@ export function ErrorBoundary() {
   }
 
 
-  
+
   return (
-    <div className="route-error">
-      <h1>Oops</h1>
-      <h2>{errorStatus}</h2>
-      {errorMessage && (
-        <fieldset>
-          <pre>{errorMessage}</pre>
-        </fieldset>
-      )}
+    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4">
+      <h1 className="text-6xl font-bold mb-4">404</h1>
+      <p className="text-2xl mb-8">Sorry, this page not found.</p>
+      <Link to="/" className="button2">
+        Go back home
+      </Link>
     </div>
   );
 }

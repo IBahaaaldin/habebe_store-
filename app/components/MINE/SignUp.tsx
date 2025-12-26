@@ -1,4 +1,4 @@
-const SignUp = () => {
+export default function SignUp() {
 
     return (
         <div className="bg-black text-white py-2 text-center text-sm">
@@ -9,5 +9,3 @@ const SignUp = () => {
         </div>
     );
 };
-
-export default SignUp;

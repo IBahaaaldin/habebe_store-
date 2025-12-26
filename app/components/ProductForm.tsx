@@ -75,19 +75,21 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
                     <button
                       type="button"
                       key={option.name + name}
-                      className={`
-    cursor-pointer duration-300 transition-all
-    ${option.name.toLowerCase() === 'size' ? 'px-5 py-3 rounded-full' : ''}
-    ${option.name.toLowerCase() === 'size'
-                          ? selected
+                      className={`px-5 py-2 rounded-full
+                        ${!available
+                          ? 'opacity-40 bg-zinc-100 text-black cursor-not-allowed ' : `
+                            ${option.name.toLowerCase() === 'size' &&
+                          (selected
                             ? 'bg-black text-white'
-                            : 'bg-zinc-100 text-black hover:bg-black hover:text-white'
-                          : ''
-                        }
-    ${option.name.toLowerCase() === 'color' ?
-                          selected ? 'rounded-full scale-110 opacity-100 ' : 'opacity-50' : ''}
-    ${!available && 'opacity-40 cursor-not-allowed'}
-  `}
+                          : ' cursor-pointer bg-zinc-100 text-black hover:bg-black hover:text-white')
+                          }
+                            ${option.name.toLowerCase() === 'color' &&
+                          (selected
+                          ? 'bg-black text-white' 
+                          : ' cursor-pointer bg-zinc-100 text-black hover:bg-black hover:text-white')
+                          }
+                          `}
+                      `}
                       disabled={!exists || !available}
                       onClick={() => {
                         if (!selected && exists) {
@@ -95,7 +97,7 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
                         }
                       }}
                       style={{
-                        
+
                       }}
                     >
                       <ProductOptionSwatch swatch={swatch} name={name} />
@@ -110,9 +112,10 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
       })}
       <AddToCartButton
         disabled={!selectedVariant || !selectedVariant.availableForSale}
-        // onClick={() => {
-        //   open('cart');
-        // }}
+        onClick={() => {
+          console.log(`%c${JSON.stringify(selectedVariant)}`, 'color: purple; font-size: 30px;');
+        }}
+        CC='w-full'
         lines={
           selectedVariant
             ? [

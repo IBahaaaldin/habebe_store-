@@ -39,7 +39,7 @@ export default function Collections() {
 
 
   return (
-    <div className='productsContainer'>
+    <div className='SMALL_CONTAINER'>
       <CollectionsSection collections={data.collections.nodes} />
     </div>
   );

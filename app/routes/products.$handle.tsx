@@ -78,7 +78,7 @@ async function loadCriticalData({ context, params, request }: Route.LoaderArgs) 
     variables: { productId: product.id },
   })
 
-  const similarProducts = productWishCollections.collections.edges[0]?.node.products.edges
+  const similarProducts = productWishCollections?.collections.edges[0]?.node.products.edges
 
   return {
     product,
@@ -119,12 +119,12 @@ export default function Product() {
   console.log(`%c${JSON.stringify(product)}`, 'color: blue; font-size: 20px;')
   console.log(`%c${JSON.stringify(similarProducts)}`, 'color: yellow; font-size: 20px;')
 
-  const OptionImages = product.options.map((op) => op.optionValues.map((opv) => opv.firstSelectableVariant?.image));
+  const OptionImages = product.options.map((op: { optionValues: any[]; }) => op.optionValues.map((opv: { firstSelectableVariant: { image: any; }; }) => opv.firstSelectableVariant?.image));
 
 
 
   return (
-    <div className="productsContainer">
+    <div className="SMALL_CONTAINER">
 
 
 
@@ -138,16 +138,35 @@ export default function Product() {
 
 
         {/* Product Details */}
-        <section className="flex flex-col gap-5 mt-5">
-          <h1 className='text-5xl font-bold'>{title}</h1>
+        <section className="flex flex-col gap-10 mt-5">
+          <div className='flex flex-col gap-5'>
+            <h1 className='md:text-5xl text-3xl'>{title}</h1>
+            <span className="md:text-3xl text-xl">{selectedVariant?.price.currencyCode}{selectedVariant?.price.amount}</span>
+          </div>
 
-          <Ratings RATING={4.7} />
 
-          <ProductPrice
-            price={selectedVariant?.price}
-            compareAtPrice={selectedVariant?.compareAtPrice}
-          />
 
+
+          <div className='flex flex-col gap-2 border-3 border-zinc-100 rounded-3xl p-4'>
+            <span className='text-2xl font-bold'>Description: </span>
+
+            <span className=" md:text-lg text-sm text-zinc-500">{product.description.slice(0, 155)}...</span>
+
+          </div>
+
+
+          <div className='flex flex-col gap-5'>
+            <h4 className='text-2xl font-bold'>Main Notes</h4>
+            <div className='flex flex-row gap-3'>
+              {product.tags.map((tag: any) => (
+                <span
+                  key={tag}
+                  className='font-semibold rounded-full border border-zinc-300 px-3 py-1 '>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
 
           {/* <div
             className='text-zinc-500 border-zinc-300 border-b pb-5 mb-5'
@@ -208,7 +227,7 @@ function SimilarProducts({ products, Title }: { products: any; Title: string; })
       <Suspense fallback={<LoadingSpinner />}>
         <Await resolve={products}>
           {(response) => (
-            <div className="flex flex-row gap-5 overflow-scroll HIDDEN_SCROLL">
+            <div className="GRID_CONTAINER overflow-scroll HIDDEN_SCROLL">
               {products.map((item: any) => (
                 <ProductItem key={item.node.id} product={item.node} />
               ))}
@@ -268,6 +287,7 @@ export const PRODUCT_FRAGMENT = `#graphql
     handle
     descriptionHtml
     description
+    tags
     encodedVariantExistence
     encodedVariantAvailability
     options {
@@ -340,6 +360,22 @@ const SIMILAR_PRODUCTS_QUERY = `#graphql
                     altText
                     width
                     height
+                  }
+                  variants (first: 1) {
+                    nodes {
+                      id
+                      availableForSale
+                      selectedOptions {
+                        name
+                        value
+                      }
+                    }
+                  }
+                  options {
+                    name
+                    values: optionValues {
+                      name
+                    }
                   }
                 }
               }

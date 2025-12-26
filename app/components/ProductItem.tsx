@@ -43,19 +43,22 @@
 
 
 import { Link } from 'react-router';
-import {  Image } from '@shopify/hydrogen';
+import { Image } from '@shopify/hydrogen';
 import type {
-  ProductItemFragment,
+  // ProductItemFragment,
   CollectionItemFragment,
-  RecommendedProductFragment,
+  // RecommendedProductFragment,
 } from 'storefrontapi.generated';
 import { useVariantUrl } from '~/lib/variants';
 import Prices from './MINE/UI/Prices';
-import { Star } from 'lucide-react';
+import { ArrowUpRight, ShoppingBag, ShoppingCart, Star } from 'lucide-react';
+import { AddToCartButton } from './AddToCartButton';
+import { CartLineQuantity } from './CartLineItem';
 
 
+// Get the first varient 
 
-export function ProductItem({ product, loading, }: { product: | CollectionItemFragment | ProductItemFragment | RecommendedProductFragment; loading?: 'eager' | 'lazy'; }) {
+export function ProductItem({ product, loading, }: { product: | CollectionItemFragment | any; loading?: 'eager' | 'lazy'; }) {
 
 
   const variantUrl = useVariantUrl(product.handle);
@@ -65,38 +68,89 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
   const currency = product.priceRange?.minVariantPrice?.currencyCode;
 
 
+  console.log(`%c${JSON.stringify(product)}`, 'color: pink; font-size: 20px;')
+
 
   return (
-    <div className='flex flex-col gap-3'>
+    <article className='relative w-full h-fit items-end flex flex-col gap-3 p-3 bg-zinc-50 rounded-3xl overflow-hidden'>
       {image && (
         <Link
-          className="min-w-55 lg:rounded-xl rounded-lg overflow-hidden"
+          className="w-full rounded-xl overflow-hidden "
           key={product.id}
           prefetch="intent"
           to={variantUrl}
         >
-          <Image
-            alt={image.altText || product.title}
-            aspectRatio="1/1"
-            data={image}
-            loading={loading}
-            className='hover:scale-105 duration-300'
-          />
+          <figure className='relative w-full h-full rounded-lg overflow-hidden'>
+            <Image
+              alt={image.altText || product.title}
+              aspectRatio="1/1"
+              data={image}
+              loading={loading}
+              className='hover:scale-105 duration-300'
+            />
+          </figure>
         </Link>
       )}
-      <h4 className='lg:text-lg text-md capitalize font-bold'>{product.title.length > 20 ? product.title.slice(0, 20) + '...' : product.title}</h4>
-      {/* <Money data={product.priceRange.minVariantPrice} /> */}
 
 
-      <div className='flex flex-col gap-2'>
-        <Ratings RATING={3.7} />
 
-        <Prices
-          price={price}
-          currency={currency}
-        />
+      {/* /// Details */}
+      <div className='flex flex-row w-full justify-between'>
+        <div className='flex flex-col'>
+          <h4 className='md:text-xl capitalize'>{product.title.length > 15 ? product.title.slice(0, 15) + '...' : product.title}</h4>
+          {/* <Money data={product.priceRange.minVariantPrice} /> */}
+
+
+          <Prices
+            price={price}
+            currency={currency}
+          />
+        </div>
+
+        <Link
+          key={product.id}
+          prefetch="intent"
+          to={variantUrl}
+        >
+          <ArrowUpRight className="p-2 hover:bg-zinc-200 duration-300 rounded-full z-100 bg-white text-zinc-700 " size={40} />
+        </Link>
       </div>
-    </div>
+
+
+      <div className='flex flex-row flex-wrap w-full justify-between items-end'>
+        {[
+          { name: 'Stock', value: 500 },
+          { name: 'Sold', value: 200 }
+        ].map((item, index) => (
+          <div key={index} className="flex flex-row items-center gap-2">
+            <p><span className='text-zinc-500'>{item.name}:</span> {item.value}</p>
+          </div>
+        ))}
+      </div>
+
+
+      <AddToCartButton
+        disabled={!product?.variants.nodes[0]?.availableForSale}
+        CC='w-fit'
+        // onClick={() => {
+        //   open('cart');
+        // }}
+        lines={
+          product?.variants.nodes[0]
+            ? [
+              {
+                merchandiseId: product?.variants.nodes[0].id,
+                quantity: 1,
+                // The Varient itself should be passed here
+              }
+            ]
+            : []
+        }
+      >
+        {product?.variants.nodes[0]?.availableForSale ? <ShoppingCart size={20} /> : 'Sold out'}
+      </AddToCartButton>
+      {/* <CartLineQuantity line={line} /> */}
+    </article>
   );
 }
 
@@ -116,3 +170,55 @@ export default function Ratings({ RATING }: { RATING: number }) {
     </div>
   )
 }
+
+
+
+/*
+*
+query {
+  collections(first: 5) {
+    edges {
+      node {
+        id
+        title
+        handle
+        products(first: 5) {
+          edges {
+            node {
+              id
+              title
+              handle
+              priceRange {
+                minVariantPrice {
+                  amount
+                  currencyCode
+                }
+              }
+              featuredImage {
+                id
+                url
+                altText
+                width
+                height
+              }
+              # Add variants to get stock information
+              variants(first: 5) {
+                nodes {
+                  id
+                  availableForSale
+                  title
+                  sku
+                  price {
+                    amount
+                    currencyCode
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+*/

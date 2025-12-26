@@ -4,7 +4,7 @@ import React from 'react';
 
 const LoadingSpinner = () => {
     return (
-        <div className='productsContainer'>
+        <div className='SMALL_CONTAINER'>
             {/* Outer Container with Animation */}
             <section className="animate-pulse md:flex md:space-x-10">
 

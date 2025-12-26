@@ -71,7 +71,7 @@ export function HeaderMenu({ menu, primaryDomainUrl, viewport, publicStoreDomain
 
       {/* // // Mobile */}
       {viewport === 'mobile' && (
-        (menu || FALLBACK_HEADER_MENU).items.map((item) => {
+        menu?.items.map((item) => {
           if (!item.url) return null;
           return (
             <a
@@ -79,7 +79,7 @@ export function HeaderMenu({ menu, primaryDomainUrl, viewport, publicStoreDomain
               key={item.id}
               rel="noopener noreferrer"
               target="_blank"
-              className="px-3 py-2  w-fit rounded-full hover:bg-black hover:text-white duration-300"
+              className="px-3 py-2 w-fit rounded-full hover:bg-black hover:text-white duration-300"
             >
               {item.title}
             </a>
@@ -89,10 +89,11 @@ export function HeaderMenu({ menu, primaryDomainUrl, viewport, publicStoreDomain
 
 
       {/* // // Desktop */}
-      {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
+      {menu?.items.map((item) => {
         if (!item.url) return null;
 
-        // if the url is internal, we strip the domain
+
+        // // if the url is internal, we strip the domain
         const url =
           item.url.includes('myshopify.com') ||
             item.url.includes(publicStoreDomain) ||
@@ -105,7 +106,7 @@ export function HeaderMenu({ menu, primaryDomainUrl, viewport, publicStoreDomain
             key={item.id}
             rel="noopener noreferrer"
             target="_blank"
-            className="hidden md:flex px-3 py-2 rounded-full hover:bg-black hover:text-white duration-300"
+            className={`hidden md:flex px-3 py-2 rounded-full hover:bg-black hover:text-white duration-300 ${item?.url?.split('/')?.pop()?.includes(item.title.toLowerCase()) ? 'bg-zinc-100 text-black' : 'bg-black text-white'}`}
           >
             {item.title}
           </a>

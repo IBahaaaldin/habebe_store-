@@ -19,16 +19,19 @@ export function ProductImage({ image, OtherImages }: { image: ProductVariantFrag
 
   return (
     <section className="flex flex-col gap-5">
-      <div className='product-image rounded-4xl overflow-hidden'>
-        <Image
-          alt={image.altText || 'Product Image'}
-          aspectRatio="1/1"
-          data={image}
-          key={image.id}
-          sizes="(min-width: 45em) 50vw, 100vw"
-        />
-      </div>
+      <div className='p-3 rounded-3xl overflow-hidden
+    bg-zinc-50'>
+        <figure className='min-w-70 rounded-2xl overflow-hidden'>
+          <Image
+            alt={image.altText || 'Product Image'}
+            aspectRatio="1/1"
+            data={image}
+            key={image.id}
+            sizes="(min-width: 45em) 50vw, 100vw"
+          />
+        </figure>
 
+      </div>
 
 
 

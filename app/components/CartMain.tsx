@@ -28,8 +28,10 @@ export function CartMain({ layout, cart: originalCart }: CartMainProps) {
 
 
 
+  // console.log(`%c${JSON.stringify(cart.)}`, 'color: red; font-size: 20px;')
+
   return (
-    <div className={'productsContainer'}>
+    <div className={'SMALL_CONTAINER'}>
 
 
       {/* Show an empty cart message */}

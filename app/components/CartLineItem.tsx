@@ -7,6 +7,7 @@ import { ProductPrice } from './ProductPrice';
 import { useAside } from './Aside';
 import type { CartApiQueryFragment } from 'storefrontapi.generated';
 import { Minus, Plus, Trash2 } from 'lucide-react';
+// import { toast } from 'react-toastify';
 
 type CartLine = OptimisticCartLine<CartApiQueryFragment>;
 
@@ -86,7 +87,7 @@ export function CartLineItem({ layout, line, }: { layout: CartLayout; line: Cart
 // Provides the controls to update the quantity of a line item in the cart.
 //  These controls are disabled when the line item is new, and the server
 // hasn't yet responded that it was successfully added to the cart.
-function CartLineQuantity({ line }: { line: CartLine }) {
+export function CartLineQuantity({ line }: { line: CartLine }) {
   if (!line || typeof line?.quantity === 'undefined') return null;
   const { id: lineId, quantity, isOptimistic } = line;
   const prevQuantity = Number(Math.max(0, quantity - 1).toFixed(0));
@@ -132,6 +133,7 @@ function CartLineQuantity({ line }: { line: CartLine }) {
 function CartLineRemoveButton({ lineIds, disabled, }: { lineIds: string[]; disabled: boolean; }) {
 
 
+
   return (
     <CartForm
       fetcherKey={getUpdateKey(lineIds)}
@@ -139,7 +141,7 @@ function CartLineRemoveButton({ lineIds, disabled, }: { lineIds: string[]; disab
       action={CartForm.ACTIONS.LinesRemove}
       inputs={{ lineIds }}
     >
-      <button disabled={disabled} type="submit" className='cursor-pointer hover:opacity-50 duration-300'>
+      <button onClick={() => toast.success('Item removed from cart')} disabled={disabled} type="submit" className='cursor-pointer hover:opacity-50 duration-300'>
         <Trash2 className='text-red-600 p-2.5 rounded-full w-10 h-10 bg-red-100' />
       </button>
     </CartForm>

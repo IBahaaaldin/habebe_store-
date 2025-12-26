@@ -56,6 +56,9 @@ type Pages = {
       "handle": string;
     };
   };
+  "/terms-conditions": {
+    params: {};
+  };
   "/account/logout": {
     params: {};
   };
@@ -72,6 +75,9 @@ type Pages = {
     params: {
       "code": string;
     };
+  };
+  "/privacy-policy": {
+    params: {};
   };
   "/sitemap.xml": {
     params: {};
@@ -109,7 +115,19 @@ type Pages = {
       "*": string;
     };
   };
+  "/contact": {
+    params: {};
+  };
   "/search": {
+    params: {};
+  };
+  "/shirts": {
+    params: {};
+  };
+  "/pants": {
+    params: {};
+  };
+  "/shoes": {
     params: {};
   };
   "/cart": {
@@ -139,7 +157,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/blogs/:blogHandle/:articleHandle" | "/api/:version/graphql.json" | "/sitemap/:type/:page.xml" | "/blogs/:blogHandle" | "/collections/:handle" | "/account/authorize" | "/collections" | "/policies/:handle" | "/products/:handle" | "/account/logout" | "/collections/all" | "/policies" | "/account/login" | "/discount/:code" | "/sitemap.xml" | "/pages/:handle" | "/robots.txt" | "/blogs" | "/account" | "/account/orders" | "/account/orders/:id" | "/account/addresses" | "/account/profile" | "/account/*" | "/search" | "/cart" | "/cart/:lines" | "/*" | "/graphiql" | "/subrequest-profiler" | "/.well-known/appspecific/com.chrome.devtools.json";
+    page: "/" | "/blogs/:blogHandle/:articleHandle" | "/api/:version/graphql.json" | "/sitemap/:type/:page.xml" | "/blogs/:blogHandle" | "/collections/:handle" | "/account/authorize" | "/collections" | "/policies/:handle" | "/products/:handle" | "/terms-conditions" | "/account/logout" | "/collections/all" | "/policies" | "/account/login" | "/discount/:code" | "/privacy-policy" | "/sitemap.xml" | "/pages/:handle" | "/robots.txt" | "/blogs" | "/account" | "/account/orders" | "/account/orders/:id" | "/account/addresses" | "/account/profile" | "/account/*" | "/contact" | "/search" | "/shirts" | "/pants" | "/shoes" | "/cart" | "/cart/:lines" | "/*" | "/graphiql" | "/subrequest-profiler" | "/.well-known/appspecific/com.chrome.devtools.json";
   };
   "routes/blogs.$blogHandle.$articleHandle.tsx": {
     id: "routes/blogs.$blogHandle.$articleHandle";
@@ -177,6 +195,10 @@ type RouteFiles = {
     id: "routes/products.$handle";
     page: "/products/:handle";
   };
+  "routes/terms-conditions.tsx": {
+    id: "routes/terms-conditions";
+    page: "/terms-conditions";
+  };
   "routes/account_.logout.tsx": {
     id: "routes/account_.logout";
     page: "/account/logout";
@@ -196,6 +218,10 @@ type RouteFiles = {
   "routes/discount.$code.tsx": {
     id: "routes/discount.$code";
     page: "/discount/:code";
+  };
+  "routes/privacy-policy.tsx": {
+    id: "routes/privacy-policy";
+    page: "/privacy-policy";
   };
   "routes/[sitemap.xml].tsx": {
     id: "routes/[sitemap.xml]";
@@ -241,6 +267,10 @@ type RouteFiles = {
     id: "routes/account.$";
     page: "/account/*";
   };
+  "routes/contact.tsx": {
+    id: "routes/contact";
+    page: "/contact";
+  };
   "routes/_index.tsx": {
     id: "routes/_index";
     page: "/";
@@ -248,6 +278,18 @@ type RouteFiles = {
   "routes/search.tsx": {
     id: "routes/search";
     page: "/search";
+  };
+  "routes/shirts.tsx": {
+    id: "routes/shirts";
+    page: "/shirts";
+  };
+  "routes/pants.tsx": {
+    id: "routes/pants";
+    page: "/pants";
+  };
+  "routes/shoes.tsx": {
+    id: "routes/shoes";
+    page: "/shoes";
   };
   "routes/cart.tsx": {
     id: "routes/cart";

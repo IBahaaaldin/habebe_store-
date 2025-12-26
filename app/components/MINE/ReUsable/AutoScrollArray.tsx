@@ -15,7 +15,7 @@ export default function AutoScrollArray({ REFERENCE }: AutoScrollArrayProp) {
                 const { scrollLeft, scrollWidth, clientWidth } = REFERENCE.current;
 
                 if (scrollLeft + clientWidth < scrollWidth) {
-                    REFERENCE.current.scrollBy({ left: 0.5 }); // remove 'smooth'
+                    REFERENCE.current.scrollBy({ left: 1 }); // remove 'smooth'
                 } else {
                     REFERENCE.current.scrollTo({ left: 0 });
                 }

@@ -1,10 +1,6 @@
-import { FaEnvelope, FaFacebook, FaInstagram, FaMailchimp, FaTiktok, FaTwitter, FaVoicemail, FaWhatsapp } from "react-icons/fa";
-import { motion } from "framer-motion";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { toast } from 'react-toastify';
+import { FaEnvelope, FaFacebook, FaInstagram, FaTiktok, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
-import { Link, NavLink } from "react-router";
-import { Codepen } from "lucide-react";
+import { Link } from "react-router";
 import type { FooterQuery, HeaderQuery } from "storefrontapi.generated";
 import { Image } from "@shopify/hydrogen";
 import PaymentIcons from "../UI/PaymentIcons";
@@ -45,11 +41,11 @@ export default function FooterSection({ footer,
     /// Show Subscribe Alert
     function subscribeFun() {
         if (email.length > 5 && email.includes('com') && email.includes('@')) {
-            toast.success("subscribed successfully")
+            // toast.success("subscribed successfully")
             setEmail("")
-        } else (
-            toast.error('Please enter a valide email')
-        )
+        } else {
+            // toast.error('Please enter a valide email')
+        }
     }
 
 
@@ -87,6 +83,26 @@ export default function FooterSection({ footer,
 
 
 
+    const PagesLinks = [
+        {
+            name: "About",
+            path: "/about-us",
+        },
+        {
+            name: "Contact",
+            path: "/contact-us",
+        },
+        {
+            name: "orders",
+            path: "/orders",
+        },
+        {
+            name: "cart",
+            path: "/cart",
+        }
+    ];
+
+
 
     return (
         <footer className="max-w-[1750px] px-[5%] mx-auto duration-500 grid lg:grid-cols-3 md:grid-cols-2 md:gap-15 gap-10 md:gap-y-5 gap-y-5 items-between justify-between bg-white rounded-3xl relative overflow-hidden py-10 *:min-w-1/3 *:w-full">
@@ -104,6 +120,7 @@ export default function FooterSection({ footer,
                         <Link
                             to={page.url || '#'}
                             key={index}
+                            
                             className="hover:text-zinc-400 text-black font-bold text-start duration-500"
                         >
                             {page.title}
