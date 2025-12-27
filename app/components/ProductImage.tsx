@@ -1,12 +1,10 @@
 import type { ProductVariantFragment } from 'storefrontapi.generated';
 import { Image } from '@shopify/hydrogen';
-import Reviews from './MINE/Reviews';
 
 
 
 
-
-export function ProductImage({ image, OtherImages }: { image: ProductVariantFragment['image']; OtherImages?: ProductVariantFragment['image'][]; }) {
+export function ProductImage({ image, OtherImages }: { image: ProductVariantFragment['image']; OtherImages?: string[]; }) {
 
 
 
@@ -35,16 +33,17 @@ export function ProductImage({ image, OtherImages }: { image: ProductVariantFrag
 
 
 
-      {/* <div className='flex flex-col gap-3 max-w-full'>
-        {OtherImages?.filter((imgUrl): imgUrl is NonNullable<typeof imgUrl> => !!imgUrl).map((imgUrl) => (
+      <div className='flex flex-row flex-wrap gap-3 max-w-full'>
+        {OtherImages?.filter((imageData): imageData is NonNullable<typeof imageData> => !!imageData).map((image, index) => (
           <Image
-            alt={imgUrl.altText || 'Product Image'}
+            alt={'Product Image'}
             aspectRatio="1/1"
-            data={imgUrl}
-            key={imgUrl.id}
+            data={image}
+            key={image}
+            className='min-w-30 max-w-40 aspect-square  object-cover'
           />
         ))}
-      </div> */}
+      </div>
     </section>
   );
 }

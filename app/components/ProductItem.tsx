@@ -1,49 +1,8 @@
-// import { Link } from 'react-router';
-// import { Image, Money } from '@shopify/hydrogen';
-// import type {
-//   ProductItemFragment,
-//   CollectionItemFragment,
-//   RecommendedProductFragment,
-// } from 'storefrontapi.generated';
-// import { useVariantUrl } from '~/lib/variants';
-
-
-
-// export function ProductItem({ product, loading, }: { product: | CollectionItemFragment | ProductItemFragment | RecommendedProductFragment; loading?: 'eager' | 'lazy'; }) {
-
-
-//   const variantUrl = useVariantUrl(product.handle);
-//   const image = product.featuredImage;
-
-
-//   return (
-//     <Link
-//       className="product-item"
-//       key={product.id}
-//       prefetch="intent"
-//       to={variantUrl}
-//     >
-//       {image && (
-//         <Image
-//           alt={image.altText || product.title}
-//           aspectRatio="1/1"
-//           data={image}
-//           loading={loading}
-//           sizes="(min-width: 45em) 400px, 100vw"
-//         />
-//       )}
-//       <h4>{product.title}</h4>
-//       <small>
-//         <Money data={product.priceRange.minVariantPrice} />
-//       </small>
-//     </Link>
-//   );
-// }
-
-
-
+/* eslint-disable eslint-comments/disable-enable-pair */
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { Link } from 'react-router';
 import { Image } from '@shopify/hydrogen';
+import { useState } from 'react';
 import type {
   // ProductItemFragment,
   CollectionItemFragment,
@@ -51,15 +10,16 @@ import type {
 } from 'storefrontapi.generated';
 import { useVariantUrl } from '~/lib/variants';
 import Prices from './MINE/UI/Prices';
-import { ArrowUpRight, ShoppingBag, ShoppingCart, Star } from 'lucide-react';
+import { Share2, ShoppingCart, Star } from 'lucide-react';
 import { AddToCartButton } from './AddToCartButton';
-import { CartLineQuantity } from './CartLineItem';
+// import { CartLineQuantity } from './CartLineItem';
+
 
 
 // Get the first varient 
-
 export function ProductItem({ product, loading, }: { product: | CollectionItemFragment | any; loading?: 'eager' | 'lazy'; }) {
-
+  const [showCopyMessage, setShowCopyMessage] = useState(false);
+  const [copyMessage, setCopyMessage] = useState('');
 
   const variantUrl = useVariantUrl(product.handle);
   const image = product.featuredImage;
@@ -68,7 +28,23 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
   const currency = product.priceRange?.minVariantPrice?.currencyCode;
 
 
-  console.log(`%c${JSON.stringify(product)}`, 'color: pink; font-size: 20px;')
+  const handleShareClick = async () => {
+    try {
+      const productUrl = `${window.location.origin}${variantUrl}`; // Use variantUrl here
+      await navigator.clipboard.writeText(productUrl);
+      setCopyMessage('Product link copied!');
+      setShowCopyMessage(true);
+      setTimeout(() => setShowCopyMessage(false), 3000); // Hide after 3 seconds
+    } catch (err) {
+      setCopyMessage('Failed to copy link.');
+      setShowCopyMessage(true);
+      setTimeout(() => setShowCopyMessage(false), 3000);
+      console.error('Failed to copy product link: ', err);
+    }
+  };
+
+
+  // console.log(`%c${JSON.stringify(product)}`, 'color: pink; font-size: 20px;')
 
 
   return (
@@ -112,12 +88,33 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
           prefetch="intent"
           to={variantUrl}
         >
-          <ArrowUpRight className="p-2 hover:bg-zinc-200 duration-300 rounded-full z-100 bg-white text-zinc-700 " size={40} />
+
+          {/* /// Add to cart */}
+          <AddToCartButton
+            disabled={!product?.variants.nodes[0]?.availableForSale}
+            CC='w-full'
+            // onClick={() => {
+            //   open('cart');
+            // }}
+            lines={
+              product?.variants.nodes[0]
+                ? [
+                  {
+                    merchandiseId: product?.variants.nodes[0].id,
+                    quantity: 1,
+                    // The Varient itself should be passed here
+                  }
+                ]
+                : []
+            }
+          >
+            {product?.variants.nodes[0]?.availableForSale ? <ShoppingCart className='w-12 h-12 p-3 hover:bg-zinc-100 bg-white rounded-full duration-300 cursor-pointer' /> : 'Sold out'}
+          </AddToCartButton>
         </Link>
       </div>
 
 
-      <div className='flex flex-row flex-wrap w-full justify-between items-end'>
+      {/* <div className='flex flex-row flex-wrap w-full justify-between items-end'>
         {[
           { name: 'Stock', value: 500 },
           { name: 'Sold', value: 200 }
@@ -126,29 +123,22 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
             <p><span className='text-zinc-500'>{item.name}:</span> {item.value}</p>
           </div>
         ))}
-      </div>
+      </div> */}
 
 
-      <AddToCartButton
-        disabled={!product?.variants.nodes[0]?.availableForSale}
-        CC='w-fit'
-        // onClick={() => {
-        //   open('cart');
-        // }}
-        lines={
-          product?.variants.nodes[0]
-            ? [
-              {
-                merchandiseId: product?.variants.nodes[0].id,
-                quantity: 1,
-                // The Varient itself should be passed here
-              }
-            ]
-            : []
-        }
-      >
-        {product?.variants.nodes[0]?.availableForSale ? <ShoppingCart size={20} /> : 'Sold out'}
-      </AddToCartButton>
+
+      {/* <div className='absolute top-5 right-5'> */}
+      <Share2
+        className="cursor-pointer absolute top-5 left-5 p-2 hover:bg-zinc-200 duration-300 rounded-full z-100 bg-white text-zinc-700  w-9 h-9"
+        size={40}
+        onClick={handleShareClick}
+      />
+      {showCopyMessage && (
+        <div className="absolute top-15 left-5 px-3 py-1 bg-green-500 text-white rounded-md text-sm">
+          {copyMessage}
+        </div>
+      )}
+      {/* </div> */}
       {/* <CartLineQuantity line={line} /> */}
     </article>
   );

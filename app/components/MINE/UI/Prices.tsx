@@ -1,7 +1,7 @@
 export default function Prices({ price, currency, discount }: { price: string, currency: string, discount?: string }) {
     return (
         <article className='flex flex-row flex-wrap items-center gap-2'>
-            <span className="text-lg text-zinc-500">{currency}{price}</span>
+            <span className="text-lg text-black font-bold">{currency}{price}</span>
             {/* <span className="md:text-lg text-zinc-400 StrikeThrough ">{currency}{Number(price) * 2}</span> */}
 
             {/* <div className="items-center gap-1 px-2 py-1 rounded-lg text-green-500 md:text-sm text-xs flex flex-row text-nowrap font-semibold ">

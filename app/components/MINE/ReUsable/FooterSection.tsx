@@ -86,11 +86,11 @@ export default function FooterSection({ footer,
     const PagesLinks = [
         {
             name: "About",
-            path: "/about-us",
+            path: "/about",
         },
         {
             name: "Contact",
-            path: "/contact-us",
+            path: "/contact",
         },
         {
             name: "orders",
@@ -121,16 +121,6 @@ export default function FooterSection({ footer,
                             to={page.url || '#'}
                             key={index}
                             
-                            className="hover:text-zinc-400 text-black font-bold text-start duration-500"
-                        >
-                            {page.title}
-                        </Link>
-                    ))}
-
-                    {header.menu?.items.map((page, index) => (
-                        <Link
-                            to={page.url || '#'}
-                            key={index}
                             className="hover:text-zinc-400 text-black font-bold text-start duration-500"
                         >
                             {page.title}
@@ -206,22 +196,13 @@ export default function FooterSection({ footer,
                     Quick Navigation
                 </h3>
 
-                {header.menu?.items.map((page, index) => (
+                {PagesLinks.map((page, index) => (
                     <Link
-                        to={page.url || '#'}
+                        to={page.path || '#'}
                         key={index}
                         className="hover:text-zinc-400 text-black font-bold text-start duration-500"
                     >
-                        {page.title}
-                    </Link>
-                ))}
-                {header.menu?.items.map((page, index) => (
-                    <Link
-                        to={page.url || '#'}
-                        key={index}
-                        className="hover:text-zinc-400 text-black font-bold text-start duration-500"
-                    >
-                        {page.title}
+                        {page.name}
                     </Link>
                 ))}
             </section>

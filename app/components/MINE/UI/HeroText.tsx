@@ -2,14 +2,15 @@
 
 
 
+import React from 'react'
 import { motion } from 'framer-motion'
 
 
 
-export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?: string }) {
+export default function HeroText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?: string }) {
     return (
         <div className="flex flex-col z-1 capitalize items-start justify-start w-full gap-4 mb-5" >
-            <h3 className='lg:text-5xl text-4xl flex-wrap flex flex-row gap-2 font-bold'>
+            <h3 className=' lg:text-7xl text-6xl flex-wrap flex flex-row gap-2 font-bold'>
                 {HEAD!.split(' ').map((word, index) => (
                     <span
                         key={index}
@@ -31,7 +32,7 @@ export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?:
 
 
             {SUBHEAD &&
-                <h6 className='flex flex-row flex-wrap gap-1.5 text-wrap'>
+                <h4 className='lg:text-xl text-lg flex flex-row flex-wrap gap-1.5 text-wrap text-zinc-300'>
                     {SUBHEAD.split(' ').map((word, index) => (
                         <span
                             key={index}
@@ -48,7 +49,7 @@ export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?:
                             </motion.span>
                         </span>
                     ))}
-                </h6>
+                </h4>
             }
         </div>
     )

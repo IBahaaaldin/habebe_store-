@@ -4,6 +4,9 @@ import type { Maybe, ProductOptionValueSwatch, } from '@shopify/hydrogen/storefr
 import { AddToCartButton } from './AddToCartButton';
 import { useAside } from './Aside';
 import type { ProductFragment } from 'storefrontapi.generated';
+import { ShoppingCart } from 'lucide-react';
+import { CartLineQuantity } from './CartLineItem';
+import { useCart } from '@shopify/hydrogen-react';
 
 
 
@@ -14,10 +17,17 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
   const navigate = useNavigate();
   const { open } = useAside();
 
+  // const { lines || [] } = useCart();
+
+
+
+  // Used to get the current cart line
+  // const currentCartLine = lines?.find((line) => line?.merchandise?.id === selectedVariant?.id);
+  // console.log(`%c${JSON.stringify(currentCartLine)}`, 'color: black; font-size: 20px;')
 
 
   return (
-    <div className="product-form">
+    <section>
       {productOptions.map((option) => {
         // If there is only a single value in the option values, don't display the option
         if (option.optionValues.length === 1) return null;
@@ -29,7 +39,7 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
             <h5 className='text-zinc-300 mb-3'>Pick your {option.name}</h5>
 
 
-            <div className="flex flex-row gap-3">
+            <div className="flex flex-row flex-wrap gap-3">
               {option.optionValues.map((value) => {
                 const {
                   name,
@@ -81,12 +91,12 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
                             ${option.name.toLowerCase() === 'size' &&
                           (selected
                             ? 'bg-black text-white'
-                          : ' cursor-pointer bg-zinc-100 text-black hover:bg-black hover:text-white')
+                            : ' cursor-pointer bg-zinc-100 text-black hover:bg-black hover:text-white')
                           }
                             ${option.name.toLowerCase() === 'color' &&
                           (selected
-                          ? 'bg-black text-white' 
-                          : ' cursor-pointer bg-zinc-100 text-black hover:bg-black hover:text-white')
+                            ? 'bg-black text-white'
+                            : ' cursor-pointer bg-zinc-100 text-black hover:bg-black hover:text-white')
                           }
                           `}
                       `}
@@ -110,27 +120,39 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
           </div>
         );
       })}
-      <AddToCartButton
-        disabled={!selectedVariant || !selectedVariant.availableForSale}
-        onClick={() => {
-          console.log(`%c${JSON.stringify(selectedVariant)}`, 'color: purple; font-size: 30px;');
-        }}
-        CC='w-full'
-        lines={
-          selectedVariant
-            ? [
-              {
-                merchandiseId: selectedVariant.id,
-                quantity: 1,
-                selectedVariant,
-              },
-            ]
-            : []
-        }
-      >
-        {selectedVariant?.availableForSale ? 'Add to cart' : 'Sold out'}
-      </AddToCartButton>
-    </div>
+
+
+
+
+      <div className='flex flex-row w-full'>
+        <AddToCartButton
+          disabled={!selectedVariant || !selectedVariant.availableForSale}
+          onClick={() => {
+            console.log(`%c${JSON.stringify(selectedVariant)}`, 'color: purple; font-size: 30px;');
+          }}
+          CC='w-full button1'
+          lines={
+            selectedVariant
+              ? [
+                {
+                  merchandiseId: selectedVariant.id,
+                  quantity: 1,
+                  selectedVariant,
+                },
+              ]
+              : []
+          }
+        >
+          {selectedVariant?.availableForSale ? <ShoppingCart /> : 'Sold out'}
+        </AddToCartButton>
+
+
+        {/*  */}
+        {/* {currentCartLine && (
+          <CartLineQuantity line={currentCartLine} />
+        )} */}
+      </div>
+    </section>
   );
 }
 

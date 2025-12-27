@@ -6,7 +6,7 @@ import { CartForm, type OptimisticCartLineInput } from '@shopify/hydrogen';
 
 export function AddToCartButton({ analytics, children, disabled, lines, onClick, CC }: { analytics?: unknown; children: React.ReactNode; disabled?: boolean; lines: Array<OptimisticCartLineInput>; onClick?: () => void; CC?: string; }) {
 
-
+  console.log(`%c${JSON.stringify(lines)}`, 'color: red; font-size: 20px;')
 
   return (
     <CartForm route="/cart" inputs={{ lines }} action={CartForm.ACTIONS.LinesAdd}>
@@ -19,7 +19,7 @@ export function AddToCartButton({ analytics, children, disabled, lines, onClick,
           />
           <button
             type="submit"
-            className={`${disabled ? 'opacity-50 bg-zinc-100 rounded-full px-5 py-3 cursor-not-allowed' : 'button1'}  ${CC}`}
+            className={`${disabled ? 'opacity-50 bg-zinc-100 rounded-full px-5 py-3 cursor-not-allowed' : CC}`}
             onClick={() => {
               onClick?.();
               // toast.success('Item added to cart');

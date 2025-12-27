@@ -25,7 +25,7 @@ export function Header({ header, isLoggedIn, cart, publicStoreDomain, }: HeaderP
 
 
   const { menu } = header;
-  console.log(`%c${JSON.stringify(header)}`, 'color: pink; font-size: 20px;')
+  // console.log(`%c${JSON.stringify(header)}`, 'color: pink; font-size: 20px;')
 
   return (
     <header className="w-full flex flex-row items-center gap-5 px-[5%] py-5">

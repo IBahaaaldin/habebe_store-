@@ -75,6 +75,8 @@
 import { motion } from "framer-motion"
 import { Image } from '@shopify/hydrogen';
 import type { FeaturedCollectionFragment } from 'storefrontapi.generated';
+import HeaderText from "./UI/HeaderText";
+import HeroText from "./UI/HeroText";
 
 
 
@@ -85,51 +87,18 @@ const HeroSection = ({ collection, Title, Description, HeroImg }: { collection: 
     const subText = Description ? Description : "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.";
 
     return (
-        <div className='max-w-[1750px] rounded-[0px] overflow-hidden w-full mx-auto relative text-white z-1 min-w-full px-[5%] flex flex-col gap-20 justify-center items-start md:min-h-screen py-20'>
+        <div className='max-w-[1750px] rounded-[0px] overflow-hidden w-full mx-auto relative text-white z-1 min-w-full px-[5%] flex flex-col gap-20 justify-center items-start md:min-h-screen py-40'>
             {/* bg-[#664343]  */}
             <article className='max-w-[70%] text-center z-10 w-full  relative flex flex-col gap-10'>
-                {/* <Messages /> */}
 
-
-                <div className='text-start z-10 relative flex flex-col gap-5  items-start justify-between items-e'>
-
-                    <h1
-                        className='w-full flex flex-row flex-wrap gap-2 text-wrap font-bold'
-                    >
-                        {headText.split(" ").map((word, index) => (
-                            <span
-                                key={index}
-                                // **This is the container/window that clips the animation**
-                                className='inline-block overflow-hidden uppercase mr-3 md:text-7xl text-5xl'
-                            >
-                                <motion.span
-                                    // **Start hidden below the 'window'**
-                                    initial={{ y: '100%' }}
-                                    // **Slide up into final position**
-                                    animate={{ y: 0 }}
-                                    transition={{ duration: 1, delay: index * 0.06, ease: [0.165, 0.84, 0.44, 1] }} // Added a nice ease
-                                    className='inline-block' // Ensure it's a block element for predictable y-translation
-                                >
-                                    {word}
-                                </motion.span>
-                            </span>
-                        ))}
-                    </h1>
-
-
-
-
-                    <h3 className="md:text-lg flex flex-row w-full opacity-50">
-                        {subText}
-                    </h3>
-                </div>
-
+                <HeroText
+                    HEAD={headText}
+                    SUBHEAD={subText}
+                />
 
                 {/* <Messages /> */}
-                <a href={`/collections/${collection.handle}`}>
-                    <button className='button1'>
-                        Shop Now
-                    </button>
+                <a href={`/collections/${collection.handle}`} className='button1 w-fit'>
+                    Shop Now
                 </a>
             </article>
 

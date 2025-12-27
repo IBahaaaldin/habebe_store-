@@ -113,7 +113,7 @@ export default function Product() {
     selectedOrFirstAvailableVariant: selectedVariant,
   });
 
-  const { title, descriptionHtml } = product;
+  const { title } = product;
 
 
   console.log(`%c${JSON.stringify(product)}`, 'color: blue; font-size: 20px;')
@@ -123,22 +123,34 @@ export default function Product() {
 
 
 
+  const availableColorImages = product.options
+    .find(option => option.name === "Color")
+    ?.optionValues
+    .filter(value => value?.firstSelectableVariant.availableForSale)
+    .map(value => value?.firstSelectableVariant?.image);
+
+  console.log(availableColorImages);
+
+
+  console.log(`%c${JSON.stringify(availableColorImages)}`, 'color: black; font-size: 20px;')
+
+
   return (
     <div className="SMALL_CONTAINER">
 
 
 
-      <div className='product'>
+      <div className='flex lg:flex-row flex-col gap-[3%]'>
         {/* Product Image */}
         <ProductImage
           image={selectedVariant?.image}
-          OtherImages={OptionImages[1]}
+          OtherImages={availableColorImages}
         />
 
 
 
         {/* Product Details */}
-        <section className="flex flex-col gap-10 mt-5">
+        <section className="flex flex-col gap-10 mt-5 w-full lg:max-w-1/2">
           <div className='flex flex-col gap-5'>
             <h1 className='md:text-5xl text-3xl'>{title}</h1>
             <span className="md:text-3xl text-xl">{selectedVariant?.price.currencyCode}{selectedVariant?.price.amount}</span>

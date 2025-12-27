@@ -1,110 +1,779 @@
 {
-    "nodes": [
-        {
-            "id": "gid://shopify/CartLine/794c36a2-2d5f-4254-8997-b6c79cb20b10?cart=hWN6pEYSQxs17hAoh3ZdBbIS",
-            "quantity": 1,
-            "attributes": [],
-            "cost": {
-                "totalAmount": {
-                    "currencyCode": "AED",
-                    "amount": "70.82"
-                },
-                "amountPerQuantity": {
-                    "currencyCode": "AED",
-                    "amount": "70.82"
-                },
-                "compareAtAmountPerQuantity": {
-                    "currencyCode": "AED",
-                    "amount": "0.0"
-                }
+    "id": "gid://shopify/CartLine/5c0678db-ec00-4860-bbec-953e000522a8?cart=hWN6sTbTSwZ6i6dj2tKja7KT",
+    "quantity": 1,
+    "attributes": [],
+    "cost": {
+        "totalAmount": {
+            "currencyCode": "USD",
+            "amount": "90.0"
+        },
+        "amountPerQuantity": {
+            "currencyCode": "USD",
+            "amount": "90.0"
+        },
+        "compareAtAmountPerQuantity": null
+    },
+    "merchandise": {
+        "id": "gid://shopify/ProductVariant/43696906207254",
+        "availableForSale": true,
+        "compareAtPrice": null,
+        "price": {
+            "currencyCode": "USD",
+            "amount": "90.0"
+        },
+        "requiresShipping": true,
+        "title": "Small / Green",
+        "image": {
+            "id": "gid://shopify/ProductImage/39774601543702",
+            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenWomenscrew01.jpg?v=1675453375",
+            "altText": null,
+            "width": 4096,
+            "height": 4096
+        },
+        "product": {
+            "handle": "women-crewneck",
+            "title": "Women's Crewneck",
+            "id": "gid://shopify/Product/7983591030806",
+            "vendor": "Mock.shop"
+        },
+        "selectedOptions": [
+            {
+                "name": "Size",
+                "value": "Small"
             },
-            "merchandise": {
-                "id": "gid://shopify/ProductVariant/47387289878740",
-                "availableForSale": true,
-                "compareAtPrice": {
-                    "currencyCode": "AED",
-                    "amount": "0.0"
-                },
-                "price": {
-                    "currencyCode": "AED",
-                    "amount": "70.82"
-                },
-                "requiresShipping": true,
-                "title": "11 / S",
-                "image": {
-                    "id": "gid://shopify/ProductImage/45879340597460",
-                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/Sc10d70481ba7448eaaf8934cea863644q_ffecd444-565e-4a37-a2bb-f80afef8af92.webp?v=1766443330",
-                    "altText": null,
-                    "width": 2000,
-                    "height": 2000
-                },
-                "product": {
-                    "handle": "are-we-great-yet-outfit-unisex-t-shirt-cotton-tee-graphic-printing-tops-t-shirt-1",
-                    "title": "Are we great yet!",
-                    "id": "gid://shopify/Product/9023775080660",
-                    "vendor": "Mistry Shopper"
-                },
-                "selectedOptions": [
-                    {
-                        "name": "Color",
-                        "value": "11"
-                    },
-                    {
-                        "name": "Size",
-                        "value": "S"
-                    }
-                ]
+            {
+                "name": "Color",
+                "value": "Green"
             }
+        ]
+    }
+}
+
+
+
+[
+    [
+        {
+            "__typename": "Image",
+            "id": "gid://shopify/ProductImage/39774603477014",
+            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenWomensTshirt01.jpg?v=1675463247",
+            "altText": null,
+            "width": 4096,
+            "height": 4096
         },
         {
-            "id": "gid://shopify/CartLine/d7a3cd2d-27b4-4a78-8c04-8250b2a7d37b?cart=hWN6pEYSQxs17hAoh3ZdBbIS",
-            "quantity": 0,
-            "attributes": [],
-            "cost": {
-                "totalAmount": {
-                    "currencyCode": "AED",
-                    "amount": "0.0"
-                },
-                "amountPerQuantity": {
-                    "currencyCode": "AED",
-                    "amount": "101.29"
-                },
-                "compareAtAmountPerQuantity": null
-            },
-            "merchandise": {
-                "id": "gid://shopify/ProductVariant/47393710833876",
-                "availableForSale": false,
-                "compareAtPrice": null,
-                "price": {
-                    "currencyCode": "AED",
-                    "amount": "101.29"
-                },
-                "requiresShipping": true,
-                "title": "Black / 3XL",
-                "image": {
-                    "id": "gid://shopify/ProductImage/45900160401620",
-                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/3748181878235_1f93ef09-c03f-4933-9d93-04d190c4ff88.jpg?v=1766628847",
-                    "altText": null,
-                    "width": 865,
-                    "height": 852
-                },
-                "product": {
-                    "handle": "lil-peep-tshirt",
-                    "title": "Lil Peep Tshirt",
-                    "id": "gid://shopify/Product/9026417426644",
-                    "vendor": "cjdropshipping"
-                },
-                "selectedOptions": [
-                    {
-                        "name": "Color",
-                        "value": "Black"
-                    },
-                    {
-                        "name": "Size",
-                        "value": "3XL"
-                    }
-                ]
-            }
+            "__typename": "Image",
+            "id": "gid://shopify/ProductImage/39774603477014",
+            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenWomensTshirt01.jpg?v=1675463247",
+            "altText": null,
+            "width": 4096,
+            "height": 4096
+        },
+        {
+            "__typename": "Image",
+            "id": "gid://shopify/ProductImage/39774603477014",
+            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenWomensTshirt01.jpg?v=1675463247",
+            "altText": null,
+            "width": 4096,
+            "height": 4096
+        },
+        {
+            "__typename": "Image",
+            "id": "gid://shopify/ProductImage/39774603477014",
+            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenWomensTshirt01.jpg?v=1675463247",
+            "altText": null,
+            "width": 4096,
+            "height": 4096
+        }
+    ],
+    [
+        {
+            "__typename": "Image",
+            "id": "gid://shopify/ProductImage/39774603477014",
+            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenWomensTshirt01.jpg?v=1675463247",
+            "altText": null,
+            "width": 4096,
+            "height": 4096
+        },
+        {
+            "__typename": "Image",
+            "id": "gid://shopify/ProductImage/39774603444246",
+            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/ClayWomensTshirt01.jpg?v=1675463247",
+            "altText": null,
+            "width": 4096,
+            "height": 4096
+        },
+        {
+            "__typename": "Image",
+            "id": "gid://shopify/ProductImage/39774603509782",
+            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/OceanWomensTshirt01.jpg?v=1675463247",
+            "altText": null,
+            "width": 4096,
+            "height": 4096
+        },
+        {
+            "__typename": "Image",
+            "id": "gid://shopify/ProductImage/39774603542550",
+            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/PurpleWomensTshirt01.jpg?v=1675445666",
+            "altText": null,
+            "width": 4096,
+            "height": 4096
+        },
+        {
+            "__typename": "Image",
+            "id": "gid://shopify/ProductImage/39774603575318",
+            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/RedWomensTshirt01.jpg?v=1675445675",
+            "altText": null,
+            "width": 4096,
+            "height": 4096
         }
     ]
+]
+
+
+{
+    "id": "gid://shopify/Product/7983592374294",
+    "title": "Women's T-shirt",
+    "vendor": "Mock.shop",
+    "handle": "women-t-shirt",
+    "descriptionHtml": "<p data-mce-fragment=\"1\">Crafted from organic cotton, this classic T-shirt features a relaxed fit, crew neckline and timeless look. Enjoy the breathable comfort of 100% organic cotton.</p>",
+    "description": "Crafted from organic cotton, this classic T-shirt features a relaxed fit, crew neckline and timeless look. Enjoy the breathable comfort of 100% organic cotton.",
+    "tags": [
+        "tops",
+        "women"
+    ],
+    "encodedVariantExistence": "v1_0:0-4,1:0-4,2:0-4,3:0-4,",
+    "encodedVariantAvailability": "v1_0:0-4,1:0-4,2:0-4,3:0-4,",
+    "options": [
+        {
+            "name": "Size",
+            "optionValues": [
+                {
+                    "name": "Small",
+                    "firstSelectableVariant": {
+                        "availableForSale": true,
+                        "compareAtPrice": null,
+                        "id": "gid://shopify/ProductVariant/43696933273622",
+                        "image": {
+                            "__typename": "Image",
+                            "id": "gid://shopify/ProductImage/39774603477014",
+                            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenWomensTshirt01.jpg?v=1675463247",
+                            "altText": null,
+                            "width": 4096,
+                            "height": 4096
+                        },
+                        "price": {
+                            "amount": "30.0",
+                            "currencyCode": "USD"
+                        },
+                        "product": {
+                            "title": "Women's T-shirt",
+                            "handle": "women-t-shirt"
+                        },
+                        "selectedOptions": [
+                            {
+                                "name": "Size",
+                                "value": "Small"
+                            },
+                            {
+                                "name": "Color",
+                                "value": "Green"
+                            }
+                        ],
+                        "sku": null,
+                        "title": "Small / Green",
+                        "unitPrice": null
+                    },
+                    "swatch": null
+                },
+                {
+                    "name": "Medium",
+                    "firstSelectableVariant": {
+                        "availableForSale": true,
+                        "compareAtPrice": null,
+                        "id": "gid://shopify/ProductVariant/43696933437462",
+                        "image": {
+                            "__typename": "Image",
+                            "id": "gid://shopify/ProductImage/39774603477014",
+                            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenWomensTshirt01.jpg?v=1675463247",
+                            "altText": null,
+                            "width": 4096,
+                            "height": 4096
+                        },
+                        "price": {
+                            "amount": "30.0",
+                            "currencyCode": "USD"
+                        },
+                        "product": {
+                            "title": "Women's T-shirt",
+                            "handle": "women-t-shirt"
+                        },
+                        "selectedOptions": [
+                            {
+                                "name": "Size",
+                                "value": "Medium"
+                            },
+                            {
+                                "name": "Color",
+                                "value": "Green"
+                            }
+                        ],
+                        "sku": null,
+                        "title": "Medium / Green",
+                        "unitPrice": null
+                    },
+                    "swatch": null
+                },
+                {
+                    "name": "Large",
+                    "firstSelectableVariant": {
+                        "availableForSale": true,
+                        "compareAtPrice": null,
+                        "id": "gid://shopify/ProductVariant/43696933601302",
+                        "image": {
+                            "__typename": "Image",
+                            "id": "gid://shopify/ProductImage/39774603477014",
+                            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenWomensTshirt01.jpg?v=1675463247",
+                            "altText": null,
+                            "width": 4096,
+                            "height": 4096
+                        },
+                        "price": {
+                            "amount": "30.0",
+                            "currencyCode": "USD"
+                        },
+                        "product": {
+                            "title": "Women's T-shirt",
+                            "handle": "women-t-shirt"
+                        },
+                        "selectedOptions": [
+                            {
+                                "name": "Size",
+                                "value": "Large"
+                            },
+                            {
+                                "name": "Color",
+                                "value": "Green"
+                            }
+                        ],
+                        "sku": null,
+                        "title": "Large / Green",
+                        "unitPrice": null
+                    },
+                    "swatch": null
+                },
+                {
+                    "name": "X-Large",
+                    "firstSelectableVariant": {
+                        "availableForSale": true,
+                        "compareAtPrice": null,
+                        "id": "gid://shopify/ProductVariant/43696933765142",
+                        "image": {
+                            "__typename": "Image",
+                            "id": "gid://shopify/ProductImage/39774603477014",
+                            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenWomensTshirt01.jpg?v=1675463247",
+                            "altText": null,
+                            "width": 4096,
+                            "height": 4096
+                        },
+                        "price": {
+                            "amount": "30.0",
+                            "currencyCode": "USD"
+                        },
+                        "product": {
+                            "title": "Women's T-shirt",
+                            "handle": "women-t-shirt"
+                        },
+                        "selectedOptions": [
+                            {
+                                "name": "Size",
+                                "value": "X-Large"
+                            },
+                            {
+                                "name": "Color",
+                                "value": "Green"
+                            }
+                        ],
+                        "sku": null,
+                        "title": "X-Large / Green",
+                        "unitPrice": null
+                    },
+                    "swatch": null
+                }
+            ]
+        },
+        {
+            "name": "Color",
+            "optionValues": [
+                {
+                    "name": "Green",
+                    "firstSelectableVariant": {
+                        "availableForSale": true,
+                        "compareAtPrice": null,
+                        "id": "gid://shopify/ProductVariant/43696933273622",
+                        "image": {
+                            "__typename": "Image",
+                            "id": "gid://shopify/ProductImage/39774603477014",
+                            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenWomensTshirt01.jpg?v=1675463247",
+                            "altText": null,
+                            "width": 4096,
+                            "height": 4096
+                        },
+                        "price": {
+                            "amount": "30.0",
+                            "currencyCode": "USD"
+                        },
+                        "product": {
+                            "title": "Women's T-shirt",
+                            "handle": "women-t-shirt"
+                        },
+                        "selectedOptions": [
+                            {
+                                "name": "Size",
+                                "value": "Small"
+                            },
+                            {
+                                "name": "Color",
+                                "value": "Green"
+                            }
+                        ],
+                        "sku": null,
+                        "title": "Small / Green",
+                        "unitPrice": null
+                    },
+                    "swatch": null
+                },
+                {
+                    "name": "Olive",
+                    "firstSelectableVariant": {
+                        "availableForSale": true,
+                        "compareAtPrice": null,
+                        "id": "gid://shopify/ProductVariant/43696933240854",
+                        "image": {
+                            "__typename": "Image",
+                            "id": "gid://shopify/ProductImage/39774603444246",
+                            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/ClayWomensTshirt01.jpg?v=1675463247",
+                            "altText": null,
+                            "width": 4096,
+                            "height": 4096
+                        },
+                        "price": {
+                            "amount": "30.0",
+                            "currencyCode": "USD"
+                        },
+                        "product": {
+                            "title": "Women's T-shirt",
+                            "handle": "women-t-shirt"
+                        },
+                        "selectedOptions": [
+                            {
+                                "name": "Size",
+                                "value": "Small"
+                            },
+                            {
+                                "name": "Color",
+                                "value": "Olive"
+                            }
+                        ],
+                        "sku": null,
+                        "title": "Small / Olive",
+                        "unitPrice": null
+                    },
+                    "swatch": null
+                },
+                {
+                    "name": "Ocean",
+                    "firstSelectableVariant": {
+                        "availableForSale": true,
+                        "compareAtPrice": null,
+                        "id": "gid://shopify/ProductVariant/43696933306390",
+                        "image": {
+                            "__typename": "Image",
+                            "id": "gid://shopify/ProductImage/39774603509782",
+                            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/OceanWomensTshirt01.jpg?v=1675463247",
+                            "altText": null,
+                            "width": 4096,
+                            "height": 4096
+                        },
+                        "price": {
+                            "amount": "30.0",
+                            "currencyCode": "USD"
+                        },
+                        "product": {
+                            "title": "Women's T-shirt",
+                            "handle": "women-t-shirt"
+                        },
+                        "selectedOptions": [
+                            {
+                                "name": "Size",
+                                "value": "Small"
+                            },
+                            {
+                                "name": "Color",
+                                "value": "Ocean"
+                            }
+                        ],
+                        "sku": null,
+                        "title": "Small / Ocean",
+                        "unitPrice": null
+                    },
+                    "swatch": null
+                },
+                {
+                    "name": "Purple",
+                    "firstSelectableVariant": {
+                        "availableForSale": true,
+                        "compareAtPrice": null,
+                        "id": "gid://shopify/ProductVariant/43696933339158",
+                        "image": {
+                            "__typename": "Image",
+                            "id": "gid://shopify/ProductImage/39774603542550",
+                            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/PurpleWomensTshirt01.jpg?v=1675445666",
+                            "altText": null,
+                            "width": 4096,
+                            "height": 4096
+                        },
+                        "price": {
+                            "amount": "30.0",
+                            "currencyCode": "USD"
+                        },
+                        "product": {
+                            "title": "Women's T-shirt",
+                            "handle": "women-t-shirt"
+                        },
+                        "selectedOptions": [
+                            {
+                                "name": "Size",
+                                "value": "Small"
+                            },
+                            {
+                                "name": "Color",
+                                "value": "Purple"
+                            }
+                        ],
+                        "sku": null,
+                        "title": "Small / Purple",
+                        "unitPrice": null
+                    },
+                    "swatch": null
+                },
+                {
+                    "name": "Red",
+                    "firstSelectableVariant": {
+                        "availableForSale": true,
+                        "compareAtPrice": null,
+                        "id": "gid://shopify/ProductVariant/43696933371926",
+                        "image": {
+                            "__typename": "Image",
+                            "id": "gid://shopify/ProductImage/39774603575318",
+                            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/RedWomensTshirt01.jpg?v=1675445675",
+                            "altText": null,
+                            "width": 4096,
+                            "height": 4096
+                        },
+                        "price": {
+                            "amount": "30.0",
+                            "currencyCode": "USD"
+                        },
+                        "product": {
+                            "title": "Women's T-shirt",
+                            "handle": "women-t-shirt"
+                        },
+                        "selectedOptions": [
+                            {
+                                "name": "Size",
+                                "value": "Small"
+                            },
+                            {
+                                "name": "Color",
+                                "value": "Red"
+                            }
+                        ],
+                        "sku": null,
+                        "title": "Small / Red",
+                        "unitPrice": null
+                    },
+                    "swatch": null
+                }
+            ]
+        }
+    ],
+    "selectedOrFirstAvailableVariant": {
+        "availableForSale": true,
+        "compareAtPrice": null,
+        "id": "gid://shopify/ProductVariant/43696933273622",
+        "image": {
+            "__typename": "Image",
+            "id": "gid://shopify/ProductImage/39774603477014",
+            "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenWomensTshirt01.jpg?v=1675463247",
+            "altText": null,
+            "width": 4096,
+            "height": 4096
+        },
+        "price": {
+            "amount": "30.0",
+            "currencyCode": "USD"
+        },
+        "product": {
+            "title": "Women's T-shirt",
+            "handle": "women-t-shirt"
+        },
+        "selectedOptions": [
+            {
+                "name": "Size",
+                "value": "Small"
+            },
+            {
+                "name": "Color",
+                "value": "Green"
+            }
+        ],
+        "sku": null,
+        "title": "Small / Green",
+        "unitPrice": null
+    },
+    "adjacentVariants": [
+        {
+            "availableForSale": true,
+            "compareAtPrice": null,
+            "id": "gid://shopify/ProductVariant/43696933240854",
+            "image": {
+                "__typename": "Image",
+                "id": "gid://shopify/ProductImage/39774603444246",
+                "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/ClayWomensTshirt01.jpg?v=1675463247",
+                "altText": null,
+                "width": 4096,
+                "height": 4096
+            },
+            "price": {
+                "amount": "30.0",
+                "currencyCode": "USD"
+            },
+            "product": {
+                "title": "Women's T-shirt",
+                "handle": "women-t-shirt"
+            },
+            "selectedOptions": [
+                {
+                    "name": "Size",
+                    "value": "Small"
+                },
+                {
+                    "name": "Color",
+                    "value": "Olive"
+                }
+            ],
+            "sku": null,
+            "title": "Small / Olive",
+            "unitPrice": null
+        },
+        {
+            "availableForSale": true,
+            "compareAtPrice": null,
+            "id": "gid://shopify/ProductVariant/43696933306390",
+            "image": {
+                "__typename": "Image",
+                "id": "gid://shopify/ProductImage/39774603509782",
+                "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/OceanWomensTshirt01.jpg?v=1675463247",
+                "altText": null,
+                "width": 4096,
+                "height": 4096
+            },
+            "price": {
+                "amount": "30.0",
+                "currencyCode": "USD"
+            },
+            "product": {
+                "title": "Women's T-shirt",
+                "handle": "women-t-shirt"
+            },
+            "selectedOptions": [
+                {
+                    "name": "Size",
+                    "value": "Small"
+                },
+                {
+                    "name": "Color",
+                    "value": "Ocean"
+                }
+            ],
+            "sku": null,
+            "title": "Small / Ocean",
+            "unitPrice": null
+        },
+        {
+            "availableForSale": true,
+            "compareAtPrice": null,
+            "id": "gid://shopify/ProductVariant/43696933339158",
+            "image": {
+                "__typename": "Image",
+                "id": "gid://shopify/ProductImage/39774603542550",
+                "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/PurpleWomensTshirt01.jpg?v=1675445666",
+                "altText": null,
+                "width": 4096,
+                "height": 4096
+            },
+            "price": {
+                "amount": "30.0",
+                "currencyCode": "USD"
+            },
+            "product": {
+                "title": "Women's T-shirt",
+                "handle": "women-t-shirt"
+            },
+            "selectedOptions": [
+                {
+                    "name": "Size",
+                    "value": "Small"
+                },
+                {
+                    "name": "Color",
+                    "value": "Purple"
+                }
+            ],
+            "sku": null,
+            "title": "Small / Purple",
+            "unitPrice": null
+        },
+        {
+            "availableForSale": true,
+            "compareAtPrice": null,
+            "id": "gid://shopify/ProductVariant/43696933371926",
+            "image": {
+                "__typename": "Image",
+                "id": "gid://shopify/ProductImage/39774603575318",
+                "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/RedWomensTshirt01.jpg?v=1675445675",
+                "altText": null,
+                "width": 4096,
+                "height": 4096
+            },
+            "price": {
+                "amount": "30.0",
+                "currencyCode": "USD"
+            },
+            "product": {
+                "title": "Women's T-shirt",
+                "handle": "women-t-shirt"
+            },
+            "selectedOptions": [
+                {
+                    "name": "Size",
+                    "value": "Small"
+                },
+                {
+                    "name": "Color",
+                    "value": "Red"
+                }
+            ],
+            "sku": null,
+            "title": "Small / Red",
+            "unitPrice": null
+        },
+        {
+            "availableForSale": true,
+            "compareAtPrice": null,
+            "id": "gid://shopify/ProductVariant/43696933437462",
+            "image": {
+                "__typename": "Image",
+                "id": "gid://shopify/ProductImage/39774603477014",
+                "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenWomensTshirt01.jpg?v=1675463247",
+                "altText": null,
+                "width": 4096,
+                "height": 4096
+            },
+            "price": {
+                "amount": "30.0",
+                "currencyCode": "USD"
+            },
+            "product": {
+                "title": "Women's T-shirt",
+                "handle": "women-t-shirt"
+            },
+            "selectedOptions": [
+                {
+                    "name": "Size",
+                    "value": "Medium"
+                },
+                {
+                    "name": "Color",
+                    "value": "Green"
+                }
+            ],
+            "sku": null,
+            "title": "Medium / Green",
+            "unitPrice": null
+        },
+        {
+            "availableForSale": true,
+            "compareAtPrice": null,
+            "id": "gid://shopify/ProductVariant/43696933601302",
+            "image": {
+                "__typename": "Image",
+                "id": "gid://shopify/ProductImage/39774603477014",
+                "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenWomensTshirt01.jpg?v=1675463247",
+                "altText": null,
+                "width": 4096,
+                "height": 4096
+            },
+            "price": {
+                "amount": "30.0",
+                "currencyCode": "USD"
+            },
+            "product": {
+                "title": "Women's T-shirt",
+                "handle": "women-t-shirt"
+            },
+            "selectedOptions": [
+                {
+                    "name": "Size",
+                    "value": "Large"
+                },
+                {
+                    "name": "Color",
+                    "value": "Green"
+                }
+            ],
+            "sku": null,
+            "title": "Large / Green",
+            "unitPrice": null
+        },
+        {
+            "availableForSale": true,
+            "compareAtPrice": null,
+            "id": "gid://shopify/ProductVariant/43696933765142",
+            "image": {
+                "__typename": "Image",
+                "id": "gid://shopify/ProductImage/39774603477014",
+                "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenWomensTshirt01.jpg?v=1675463247",
+                "altText": null,
+                "width": 4096,
+                "height": 4096
+            },
+            "price": {
+                "amount": "30.0",
+                "currencyCode": "USD"
+            },
+            "product": {
+                "title": "Women's T-shirt",
+                "handle": "women-t-shirt"
+            },
+            "selectedOptions": [
+                {
+                    "name": "Size",
+                    "value": "X-Large"
+                },
+                {
+                    "name": "Color",
+                    "value": "Green"
+                }
+            ],
+            "sku": null,
+            "title": "X-Large / Green",
+            "unitPrice": null
+        }
+    ],
+    "seo": {
+        "description": null,
+        "title": null
+    }
 }

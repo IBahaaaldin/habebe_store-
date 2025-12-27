@@ -21,6 +21,9 @@ export function CartLineItem({ layout, line, }: { layout: CartLayout; line: Cart
   const lineItemUrl = useVariantUrl(product.handle, selectedOptions);
   const { close } = useAside();
 
+
+  console.log(`%c${JSON.stringify(line)}`, 'color: blue; font-size: 20px;')
+
   return (
     <li key={id} className="border border-zinc-300 p-5 rounded-4xl flex flex-row gap-5">
 
@@ -141,7 +144,7 @@ function CartLineRemoveButton({ lineIds, disabled, }: { lineIds: string[]; disab
       action={CartForm.ACTIONS.LinesRemove}
       inputs={{ lineIds }}
     >
-      <button onClick={() => toast.success('Item removed from cart')} disabled={disabled} type="submit" className='cursor-pointer hover:opacity-50 duration-300'>
+      <button disabled={disabled} type="submit" className='cursor-pointer hover:opacity-50 duration-300'>
         <Trash2 className='text-red-600 p-2.5 rounded-full w-10 h-10 bg-red-100' />
       </button>
     </CartForm>

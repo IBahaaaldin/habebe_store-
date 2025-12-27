@@ -178,12 +178,12 @@ export default function TermsPage() {
         <main>
             <div className="max-w-4xl mx-auto px-6 py-16 font-sans text-black">
                 <h1 className="text-4xl font-bold text-center mb-4 text-black">Terms & Conditions</h1>
-                <p className="text-center text-zinc-500 mb-12">
+                <p className="text-center text-zinc-500 ">
                     Last Updated: <span className="font-medium">{lastUpdated}</span>
                 </p>
 
                 {termsData.map((section) => (
-                    <section key={section.id} className="mb-12 scroll-mt-24" id={`section-${section.id}`}>
+                    <section key={section.id} className=" scroll-mt-24" id={`section-${section.id}`}>
                         <h2 className="text-2xl font-semibold mb-4 text-black">
                             {section.id}. {section.title}
                         </h2>
