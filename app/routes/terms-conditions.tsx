@@ -11,7 +11,7 @@ const termsData = [
         title: "Agreement to Terms",
         content: (
             <>
-                By accessing our website <Link to="https://mistryshopper.com" className="underline">mistryshopper.com</Link>, engaging with our fashion consultants, or using any services provided by <strong>mistryshopper</strong> (collectively, the &quot; Services&quot;), you agree to be bound by these Terms & Conditions (&quot;Terms&quot;).
+                By accessing our website <Link to="https://habebe.store" className="underline">habebe.store</Link>, engaging with our fashion consultants, or using any services provided by <strong>habebe</strong> (collectively, the &quot; Services&quot;), you agree to be bound by these Terms & Conditions (&quot;Terms&quot;).
                 <br /><br />
                 If you do not agree with any part of these Terms, you must immediately discontinue use of our Services.
             </>
@@ -37,7 +37,7 @@ const termsData = [
         title: "Fashion Retail Services",
         content: (
             <>
-                <strong>mistryshopper</strong> is a Dubai-based fashion brand specializing in contemporary and luxury clothing designs. We provide:
+                <strong>habebe</strong> is a Dubai-based fashion brand specializing in contemporary and luxury clothing designs. We provide:
             </>
         ),
         bulletList: [
@@ -81,7 +81,7 @@ const termsData = [
         title: "Intellectual Property",
         content: (
             <>
-                All content on our website, including but not limited to product photos, descriptions, designs, logos, and brand materials, is owned by <strong>mistryshopper</strong> or licensed to us. You may not:
+                All content on our website, including but not limited to product photos, descriptions, designs, logos, and brand materials, is owned by <strong>habebe</strong> or licensed to us. You may not:
             </>
         ),
         bulletList: [
@@ -107,7 +107,7 @@ const termsData = [
         title: "Limitation of Liability",
         content: (
             <>
-                To the fullest extent permitted by law, <strong>mistryshopper</strong>, its agents, employees, and affiliates shall not be liable for:
+                To the fullest extent permitted by law, <strong>habebe</strong>, its agents, employees, and affiliates shall not be liable for:
             </>
         ),
         bulletList: [
@@ -123,7 +123,7 @@ const termsData = [
         title: "Indemnification",
         content: (
             <>
-                You agree to indemnify and hold harmless <strong>mistryshopper</strong> and its agents from any claims, losses, or damages arising from your misuse of our Services or violation of these Terms.
+                You agree to indemnify and hold harmless <strong>habebe</strong> and its agents from any claims, losses, or damages arising from your misuse of our Services or violation of these Terms.
             </>
         ),
     },
@@ -163,8 +163,8 @@ const termsData = [
             </>
         ),
         contactInfo: [
-            { label: "Company Name", value: "mistryshopper" },
-            { label: "Email", value: "hello@mistryshopper.com", link: "mailto:hello@mistryshopper.com" },
+            { label: "Company Name", value: "habebe" },
+            { label: "Email", value: "hello@habebe.store", link: "mailto:hello@habebe.store" },
             { label: "Phone", value: "+971 56 157 6657", link: "tel:+971561576657" },
             { label: "Address", value: "Dubai, United Arab Emirates" },
         ],

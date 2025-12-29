@@ -6,62 +6,32 @@
 @import 'tailwindcss';
 
 
-.button1 {
-    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-5 py-3 text-white bg-black rounded-full duration-300 text-nowrap;
+.BUTTON1 {
+    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-4 py-2 font-bold text-white bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full duration-300 text-nowrap;
 
-    @apply lg:px-5 lg:py-3 lg:text-lg;
+    @apply lg:px-5 lg:py-3;
 
     &:hover {
-        @apply bg-black/70 text-white;
+        @apply opacity-70;
     }
 
     &:active {
-        @apply bg-black/70 text-white;
-    }
-
-    &:hover:active,
-    &.hover-white:hover {
-        @apply bg-white text-black;
+        @apply opacity-70;
     }
 }
 
 
-.button3 {
-    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-5 py-3 text-white bg-black rounded-full duration-300 text-nowrap;
+.BUTTON2 {
+    @apply flex flex-row w-fit cursor-pointer gap-3 items-center justify-center px-4 py-2 font-bold text-orange-500 bg-white border border-orange-500 rounded-full duration-300 text-nowrap;
 
-    @apply lg:px-5 lg:py-3 lg:text-lg;
+    @apply lg:px-5 lg:py-3;
 
     &:hover {
-        @apply bg-black/70 text-white;
+        @apply bg-orange-500 text-white ;
     }
 
     &:active {
-        @apply bg-black/70 text-white;
-    }
-
-    &:hover:active,
-    &.hover-white:hover {
-        @apply bg-white text-black;
-    }
-}
-
-
-.button2 {
-    @apply flex flex-row w-fit cursor-pointer gap-3 items-center justify-center px-5 py-3 text-black bg-white border-2 border-black/50 rounded-full duration-300 text-nowrap;
-
-    @apply lg:px-5 lg:py-3 md:text-lg;
-
-    &:hover {
-        @apply bg-black text-white;
-    }
-
-    &:active {
-        @apply bg-black text-white;
-    }
-
-    &:hover:active,
-    &.hover-black:hover {
-        @apply bg-white text-black;
+        @apply bg-orange-500 text-white ;
     }
 }
 
@@ -83,7 +53,7 @@
 
 
 .SMALL_CONTAINER {
-    @apply flex flex-col px-[5%] gap-10 my-10 max-w-[1750px] mx-auto h-fit;
+    @apply flex flex-col px-[5%] gap-10 mt-20 my-10 max-w-[1750px] mx-auto h-fit;
     @apply lg:gap-20 lg:py-3 lg:text-base;
 }
 
@@ -115,5 +85,25 @@ form {
 
 
 .GRID_CONTAINER {
-    @apply grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-10 gap-[2%] h-full; 
+    @apply grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-[2%] h-full;
+}
+
+
+.TAB {
+    @apply bg-zinc-50 border border-orange-500 rounded-full px-4 py-2 text-orange-500 text-nowrap;
+    @apply lg:px-5 lg:py-3 lg:text-lg;
+
+    &:hover {
+        @apply opacity-50 duration-300;
+    }
+}
+
+
+.ACTIVE_TAB {
+    @apply bg-orange-500 font-bold rounded-full px-4 py-2 text-white text-nowrap;
+    @apply lg:px-5 lg:py-3 lg:text-lg;
+
+    &:hover {
+        @apply opacity-50 duration-300;
+    }
 }

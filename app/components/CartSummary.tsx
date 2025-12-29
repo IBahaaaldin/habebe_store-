@@ -73,7 +73,7 @@ function CartCheckoutActions({ checkoutUrl }: { checkoutUrl?: string }) {
 
   return (
     <a href={checkoutUrl} target="_self" className=''>
-      <button className='button1 min-w-full'>Checkout <CircleChevronRight size={25} /> </button>
+      <button className='BUTTON1 min-w-full'>Checkout <CircleChevronRight size={25} /> </button>
     </a>
   );
 }
@@ -101,7 +101,7 @@ function CartDiscounts({ discountCodes, }: { discountCodes?: CartApiQueryFragmen
         <UpdateDiscountForm>
           <div className="cart-discount">
             {/* <code>{codes?.join(', ')}</code> */}
-            <button className='button1'>Remove</button>
+            <button className='BUTTON1'>Remove</button>
           </div>
         </UpdateDiscountForm>
       </dl>
@@ -116,7 +116,7 @@ function CartDiscounts({ discountCodes, }: { discountCodes?: CartApiQueryFragmen
             name="discountCode" placeholder="Discount code"
           />
 
-          <button className='button1' type="submit">Apply</button>
+          <button className='BUTTON1' type="submit">Apply</button>
         </div>
       </UpdateDiscountForm>
     </div>

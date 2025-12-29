@@ -195,7 +195,7 @@ export default function Reviews({ Title, ProductId }: { Title?: string, ProductI
                             className="w-full bg-zinc-50 resize-none p-5 h-30 rounded-2xl border border-black/5"
                             placeholder="Write a comment for us (Praise or Demolish)"
                         />
-                        <button type="submit" className="button1">Submit</button>
+                        <button type="submit" className="BUTTON1">Submit</button>
                     </form>)
                 }
             </article>

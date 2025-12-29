@@ -6,7 +6,7 @@ const privacyData = [
         title: "Introduction",
         content: (
             <>
-                At <strong>mistryshopper</strong>, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your data when you visit our website <Link to="https://mistryshopper.com" className="underline">mistryshopper.com</Link> or use our services.
+                At <strong>habebe</strong>, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your data when you visit our website <Link to="https://habebe.store" className="underline">habebe.store</Link> or use our services.
                 <br /><br />
                 By using our Services, you consent to the data practices described in this policy.
             </>
@@ -54,7 +54,7 @@ const privacyData = [
         ),
         bulletList: [
             "Service providers who assist us in operating our website and conducting our business (e.g., shipping partners, payment processors).",
-            "Legal authorities when required by law or to protect the safety and rights of mistryshopper and others.",
+            "Legal authorities when required by law or to protect the safety and rights of habebe and others.",
             "Business partners for joint marketing efforts, only with your explicit consent.",
         ],
     },
@@ -117,8 +117,8 @@ const privacyData = [
             </>
         ),
         contactInfo: [
-            { label: "Company Name", value: "mistryshopper" },
-            { label: "Email", value: "privacy@mistryshopper.com", link: "mailto:privacy@mistryshopper.com" },
+            { label: "Company Name", value: "habebe" },
+            { label: "Email", value: "privacy@habebe.store", link: "mailto:privacy@habebe.store" },
             { label: "Phone", value: "+971 56 157 6657", link: "tel:+971561576657" },
             { label: "Address", value: "Dubai, United Arab Emirates" },
         ],

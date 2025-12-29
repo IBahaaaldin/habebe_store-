@@ -30,16 +30,19 @@ img {
   }
 }
 
+
+/* 
 aside {
+  z-index: 1000;
   background: var(--color-light);
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
   height: 100vh;
-  width: min(var(--aside-width), 100vw);
-  position: fixed;
   right: calc(-1 * var(--aside-width));
   top: 0;
-  transition: transform 200ms ease-in-out;
-}
+} */
+
+/* 
+
 
 aside header {
   align-items: center;
@@ -85,7 +88,7 @@ aside p:last-child {
 
 aside li {
   margin-bottom: 0.125rem;
-}
+} */
 
 .overlay {
   background: rgba(0, 0, 0, 0.2);

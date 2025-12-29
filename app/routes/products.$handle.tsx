@@ -116,23 +116,13 @@ export default function Product() {
   const { title } = product;
 
 
-  console.log(`%c${JSON.stringify(product)}`, 'color: blue; font-size: 20px;')
-  console.log(`%c${JSON.stringify(similarProducts)}`, 'color: yellow; font-size: 20px;')
-
-  const OptionImages = product.options.map((op: { optionValues: any[]; }) => op.optionValues.map((opv: { firstSelectableVariant: { image: any; }; }) => opv.firstSelectableVariant?.image));
-
-
 
   const availableColorImages = product.options
     .find(option => option.name === "Color")
     ?.optionValues
-    .filter(value => value?.firstSelectableVariant.availableForSale)
-    .map(value => value?.firstSelectableVariant?.image);
+    .map(value => value?.firstSelectableVariant?.image)
+    .filter((image) => image);
 
-  console.log(availableColorImages);
-
-
-  console.log(`%c${JSON.stringify(availableColorImages)}`, 'color: black; font-size: 20px;')
 
 
   return (
@@ -140,7 +130,7 @@ export default function Product() {
 
 
 
-      <div className='flex lg:flex-row flex-col gap-[3%]'>
+      <div className='flex xl:flex-row flex-col gap-[3%]'>
         {/* Product Image */}
         <ProductImage
           image={selectedVariant?.image}
@@ -179,11 +169,6 @@ export default function Product() {
               ))}
             </div>
           </div>
-
-          {/* <div
-            className='text-zinc-500 border-zinc-300 border-b pb-5 mb-5'
-            dangerouslySetInnerHTML={{ __html: descriptionHtml }}
-          /> */}
 
           <ProductForm
             productOptions={productOptions}
@@ -398,4 +383,3 @@ const SIMILAR_PRODUCTS_QUERY = `#graphql
     }
   }
 ` as const;
-

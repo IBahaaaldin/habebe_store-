@@ -69,7 +69,7 @@ function CartEmpty({ hidden = false, }: { hidden: boolean; layout?: CartMainProp
         started!
       </div>
       <br />
-      <Link to="/collections" onClick={close} prefetch="viewport" className='button2'>
+      <Link to="/collections" onClick={close} prefetch="viewport" className='BUTTON2'>
         Continue shopping →
       </Link>
     </div>

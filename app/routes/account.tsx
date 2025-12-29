@@ -5,16 +5,16 @@ import {
   Outlet,
   useLoaderData,
 } from 'react-router';
-import type {Route} from './+types/account';
-import {CUSTOMER_DETAILS_QUERY} from '~/graphql/customer-account/CustomerDetailsQuery';
+import type { Route } from './+types/account';
+import { CUSTOMER_DETAILS_QUERY } from '~/graphql/customer-account/CustomerDetailsQuery';
 
 export function shouldRevalidate() {
   return true;
 }
 
-export async function loader({context}: Route.LoaderArgs) {
-  const {customerAccount} = context;
-  const {data, errors} = await customerAccount.query(CUSTOMER_DETAILS_QUERY, {
+export async function loader({ context }: Route.LoaderArgs) {
+  const { customerAccount } = context;
+  const { data, errors } = await customerAccount.query(CUSTOMER_DETAILS_QUERY, {
     variables: {
       language: customerAccount.i18n.language,
     },
@@ -25,7 +25,7 @@ export async function loader({context}: Route.LoaderArgs) {
   }
 
   return remixData(
-    {customer: data.customer},
+    { customer: data.customer },
     {
       headers: {
         'Cache-Control': 'no-cache, no-store, must-revalidate',
@@ -35,7 +35,7 @@ export async function loader({context}: Route.LoaderArgs) {
 }
 
 export default function AccountLayout() {
-  const {customer} = useLoaderData<typeof loader>();
+  const { customer } = useLoaderData<typeof loader>();
 
   const heading = customer
     ? customer.firstName
@@ -43,46 +43,54 @@ export default function AccountLayout() {
       : `Welcome to your account.`
     : 'Account Details';
 
+
+
+  console.log(`%c${JSON.stringify(customer)}`, 'color: red; font-size: 20px;')
+
+
+
   return (
-    <div className="account">
-      <h1>{heading}</h1>
-      <br />
-      <AccountMenu />
-      <br />
-      <br />
-      <Outlet context={{customer}} />
+    <div className="SMALL_CONTAINER">
+      <div className='flex flex-col gap-5'>
+        <h1 className='lg:text-5xl text-3xl font-bold'>{heading}</h1>
+        <br />
+        <AccountMenu />
+        <br />
+        <br />
+        <Outlet context={{ customer }} />
+      </div>
     </div>
   );
 }
 
 function AccountMenu() {
-  function isActiveStyle({
+  function isActiveClass({
     isActive,
     isPending,
   }: {
     isActive: boolean;
     isPending: boolean;
   }) {
-    return {
-      fontWeight: isActive ? 'bold' : undefined,
-      color: isPending ? 'grey' : 'black',
-    };
+    return `px-3 py-1 rounded-full ${isActive ? 'ACTIVE_TAB' : 'TAB'
+      } ${isPending ? 'text-gray-500 underline' : 'text-black'}`;
   }
 
   return (
-    <nav role="navigation">
-      <NavLink to="/account/orders" style={isActiveStyle}>
-        Orders &nbsp;
-      </NavLink>
-      &nbsp;|&nbsp;
-      <NavLink to="/account/profile" style={isActiveStyle}>
-        &nbsp; Profile &nbsp;
-      </NavLink>
-      &nbsp;|&nbsp;
-      <NavLink to="/account/addresses" style={isActiveStyle}>
-        &nbsp; Addresses &nbsp;
-      </NavLink>
-      &nbsp;|&nbsp;
+    <nav role="navigation" className='flex flex-row gap-5 items-center justify-between'>
+      <div className='flex flex-row flex-wrap gap-5'>
+        <NavLink to="/account/orders" className={isActiveClass}>
+          Orders
+        </NavLink>
+
+        <NavLink to="/account/profile" className={isActiveClass}>
+          Profile
+        </NavLink>
+
+        <NavLink to="/account/addresses" className={isActiveClass}>
+          Addresses
+        </NavLink>
+      </div>
+
       <Logout />
     </nav>
   );
@@ -91,7 +99,7 @@ function AccountMenu() {
 function Logout() {
   return (
     <Form className="account-logout" method="POST" action="/account/logout">
-      &nbsp;<button type="submit">Sign out</button>
+      <button type="submit" className='BUTTON2'>Sign out</button>
     </Form>
   );
 }

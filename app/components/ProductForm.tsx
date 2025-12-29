@@ -130,7 +130,7 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
           onClick={() => {
             console.log(`%c${JSON.stringify(selectedVariant)}`, 'color: purple; font-size: 30px;');
           }}
-          CC='w-full button1'
+          CC='w-full BUTTON1'
           lines={
             selectedVariant
               ? [

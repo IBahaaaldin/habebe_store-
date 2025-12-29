@@ -56,12 +56,12 @@ export default function FooterSection({ footer,
     const socialLinks = [
         {
             name: "Instagram",
-            path: "https://www.instagram.com/mistreyshopper.com",
+            path: "https://www.instagram.com/habebe.store",
             logo: <FaInstagram />,
         },
         {
             name: "TikTok",
-            path: "https://www.tiktok.com/@mistreyshopper.com",
+            path: "https://www.tiktok.com/@habebe.store",
             logo: <FaTiktok />,
         },
         {
@@ -71,12 +71,12 @@ export default function FooterSection({ footer,
         },
         {
             name: "Facebook",
-            path: "https://www.facebook.com/mistreyshopper/",
+            path: "https://www.facebook.com/habebe/",
             logo: <FaFacebook />,
         },
         {
             name: "Twitter",
-            path: "https://twitter.com/mistreyshopper",
+            path: "https://twitter.com/habebe",
             logo: <FaTwitter />,
         },
     ];
@@ -120,8 +120,8 @@ export default function FooterSection({ footer,
                         <Link
                             to={page.url || '#'}
                             key={index}
-                            
-                            className="hover:text-zinc-400 text-black font-bold text-start duration-500"
+
+                            className="hover:text-orange-500 text-black font-bold text-start duration-500"
                         >
                             {page.title}
                         </Link>
@@ -156,7 +156,7 @@ export default function FooterSection({ footer,
                                 <a
                                     key={index}
                                     href={link.path}
-                                    className="text-2xl mt-1 cursor-pointer hover:opacity-50 hover:text-zinc-500 duration-300">
+                                    className="text-2xl mt-1 cursor-pointer hover:opacity-50 hover:text-orange-500 duration-300">
                                     {link.logo}
                                 </a>
                             )
@@ -183,7 +183,7 @@ export default function FooterSection({ footer,
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
-                <button className="button2 "
+                <button className="BUTTON2 "
                     onClick={() => subscribeFun()}
                 >Subscribe</button>
             </section>
@@ -200,7 +200,7 @@ export default function FooterSection({ footer,
                     <Link
                         to={page.path || '#'}
                         key={index}
-                        className="hover:text-zinc-400 text-black font-bold text-start duration-500"
+                        className="hover:text-orange-500 text-black font-bold text-start duration-500"
                     >
                         {page.name}
                     </Link>
@@ -218,10 +218,10 @@ export default function FooterSection({ footer,
 
                     <ul className="flex flex-row items-center gap-5 ">
                         <Link to={'/contact-us'}>
-                            <button className="button2 ">Contact Us</button>
+                            <button className="BUTTON2 ">Contact Us</button>
                         </Link>
-                        <Link to={'mailto:info@mistreyshopper.com'} className=" text-black duration-500">
-                            <FaEnvelope className="text-2xl hover:text-zinc-400 duration-500" />
+                        <Link to={'mailto:info@habebe.store'} className=" text-black duration-500">
+                            <FaEnvelope className="text-2xl hover:text-orange-500 duration-500" />
                         </Link>
                     </ul>
                 </div>

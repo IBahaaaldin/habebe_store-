@@ -28,6 +28,8 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
   const currency = product.priceRange?.minVariantPrice?.currencyCode;
 
 
+
+  // Handles sharing the product link
   const handleShareClick = async () => {
     try {
       const productUrl = `${window.location.origin}${variantUrl}`; // Use variantUrl here
@@ -44,19 +46,18 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
   };
 
 
-  // console.log(`%c${JSON.stringify(product)}`, 'color: pink; font-size: 20px;')
 
 
   return (
-    <article className='relative w-full h-fit items-end flex flex-col gap-3 p-3 bg-zinc-50 rounded-3xl overflow-hidden'>
+    <article className='relative w-full h-fit items-end flex flex-col gap-3 p-3 bg-zinc-50 rounded-4xl overflow-hidden'>
       {image && (
         <Link
-          className="w-full rounded-xl overflow-hidden "
+          className="w-full rounded-3xl overflow-hidden "
           key={product.id}
           prefetch="intent"
           to={variantUrl}
         >
-          <figure className='relative w-full h-full rounded-lg overflow-hidden'>
+          <figure className='relative w-full h-full rounded-lg overflow-hidden '>
             <Image
               alt={image.altText || product.title}
               aspectRatio="1/1"
@@ -70,32 +71,25 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
 
 
 
+
+
       {/* /// Details */}
-      <div className='flex flex-row w-full justify-between'>
-        <div className='flex flex-col'>
-          <h4 className='md:text-xl capitalize'>{product.title.length > 15 ? product.title.slice(0, 15) + '...' : product.title}</h4>
-          {/* <Money data={product.priceRange.minVariantPrice} /> */}
+      <article className='px-2 flex flex-col w-full justify-between items-end'>
+        <h4 className='md:text-xl capitalize w-full'>{product.title.length > 15 ? product.title.slice(0, 15) + '...' : product.title}</h4>
+        {/* <Money data={product.priceRange.minVariantPrice} /> */}
 
 
+
+
+        <div className='flex flex-row w-full justify-between items-end '>
           <Prices
             price={price}
             currency={currency}
           />
-        </div>
 
-        <Link
-          key={product.id}
-          prefetch="intent"
-          to={variantUrl}
-        >
-
-          {/* /// Add to cart */}
           <AddToCartButton
             disabled={!product?.variants.nodes[0]?.availableForSale}
-            CC='w-full'
-            // onClick={() => {
-            //   open('cart');
-            // }}
+            CC='w-full scale-85'
             lines={
               product?.variants.nodes[0]
                 ? [
@@ -108,11 +102,10 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
                 : []
             }
           >
-            {product?.variants.nodes[0]?.availableForSale ? <ShoppingCart className='w-12 h-12 p-3 hover:bg-zinc-100 bg-white rounded-full duration-300 cursor-pointer' /> : 'Sold out'}
+            {product?.variants.nodes[0]?.availableForSale ? "Add to Cart" : 'Sold out'}
           </AddToCartButton>
-        </Link>
-      </div>
-
+        </div>
+      </article>
 
       {/* <div className='flex flex-row flex-wrap w-full justify-between items-end'>
         {[
@@ -129,12 +122,12 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
 
       {/* <div className='absolute top-5 right-5'> */}
       <Share2
-        className="cursor-pointer absolute top-5 left-5 p-2 hover:bg-zinc-200 duration-300 rounded-full z-100 bg-white text-zinc-700  w-9 h-9"
+        className="cursor-pointer absolute top-5 right-5 p-2 hover:bg-zinc-200 duration-300 rounded-2xl z-100 backdrop-blur-sm bg-zinc-100 text-black w-10 h-10"
         size={40}
         onClick={handleShareClick}
       />
       {showCopyMessage && (
-        <div className="absolute top-15 left-5 px-3 py-1 bg-green-500 text-white rounded-md text-sm">
+        <div className="absolute top-6 right-17 px-3 py-1 bg-green-900/70 backdrop-blur-sm rounded-full text-white text-sm">
           {copyMessage}
         </div>
       )}

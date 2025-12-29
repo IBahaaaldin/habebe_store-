@@ -19,7 +19,7 @@ export function AddToCartButton({ analytics, children, disabled, lines, onClick,
           />
           <button
             type="submit"
-            className={`${disabled ? 'opacity-50 bg-zinc-100 rounded-full px-5 py-3 cursor-not-allowed' : CC}`}
+            className={`text-nowrap ${disabled ? 'text-zinc-400 bg-orange-100 rounded-full px-5 py-3 cursor-not-allowed' : `BUTTON1`} ${CC}`}
             onClick={() => {
               onClick?.();
               // toast.success('Item added to cart');

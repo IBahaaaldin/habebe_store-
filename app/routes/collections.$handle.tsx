@@ -8,7 +8,87 @@ import type { ProductFragment } from 'storefrontapi.generated';
 import HeroSection from '~/components/MINE/HeroSection';
 import Logos from '~/components/MINE/Logos';
 import FilterSidebar from '~/components/MINE/FilterSidebar';
+import MenuCollection from '~/components/MINE/UI/MenuCollection';
 
+
+
+
+
+const ArrayOfText = [
+  "Fashion is more than just clothing; it's a statement, an art form, a reflection of who you are.",
+  "Discover pieces that don't just fit your body, but also your soul.",
+  "Our collection is curated to inspire confidence and express individuality.",
+  "Each garment tells a story, waiting for you to make it your own.",
+  "Step into a world where style meets comfort, and quality is never compromised.",
+  "Elevate your everyday with designs that are both timeless and on-trend.",
+  "Find your signature look and let your wardrobe speak volumes.",
+  "From casual chic to elegant sophistication, we have something for every occasion.",
+  "Embrace the power of fashion to transform and empower.",
+  "Explore our collection and redefine your style journey today."
+]
+
+const DEMO_CATEGORIES = [
+  {
+    label: "T-Shirts",
+    url: "#",
+    image: "https://placehold.co/600x600/e2e8f0/1e293b?text=T-Shirts"
+  },
+  {
+    label: "Jeans",
+    url: "#",
+    image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Jeans"
+  },
+  {
+    label: "Jackets",
+    url: "#",
+    image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Jackets"
+  },
+  {
+    label: "Shoes",
+    url: "#",
+    image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Shoes"
+  },
+  {
+    label: "T-Shirts",
+    url: "#",
+    image: "https://placehold.co/600x600/e2e8f0/1e293b?text=T-Shirts"
+  },
+  {
+    label: "Jeans",
+    url: "#",
+    image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Jeans"
+  },
+  {
+    label: "Jackets",
+    url: "#",
+    image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Jackets"
+  },
+  {
+    label: "Shoes",
+    url: "#",
+    image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Shoes"
+  },
+  {
+    label: "T-Shirts",
+    url: "#",
+    image: "https://placehold.co/600x600/e2e8f0/1e293b?text=T-Shirts"
+  },
+  {
+    label: "Jeans",
+    url: "#",
+    image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Jeans"
+  },
+  {
+    label: "Jackets",
+    url: "#",
+    image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Jackets"
+  },
+  {
+    label: "Shoes",
+    url: "#",
+    image: "https://placehold.co/600x600/e2e8f0/1e293b?text=Shoes"
+  },
+];
 
 
 export const meta: Route.MetaFunction = ({ data }) => {
@@ -39,6 +119,7 @@ async function loadCriticalData({ context, params, request }: Route.LoaderArgs) 
 
   const [{ collection }] = await Promise.all([
     storefront.query(COLLECTION_QUERY, { variables: { handle, ...paginationVariables } }),
+    storefront.query(SUB_COLLECTION_QUERY, { variables: { handle } }),
     // Add other queries here, so that they are loaded in parallel
   ]);
 
@@ -79,15 +160,20 @@ export default function Collection() {
         HeroImg={collection.image?.url}
       />
 
-      <Logos />
+      <Logos ArrayOfText={ArrayOfText} />
+
 
 
 
       <div className='SMALL_CONTAINER'>
+        <MenuCollection
+          menuItems={DEMO_CATEGORIES}
+        />
+
 
         <Link
           to="https://wa.me/+971561576657?text=I'm%20interested%20in%20your%20ad%20on%20Hydrogen"
-          className='w-full lg:h-40 h-30 border border-zinc-100 bg-zinc-50 lg:rounded-4xl rounded-2xl flex items-center justify-center LINK_BUTTON'
+          className='w-full lg:h-40 h-30 bg-zinc-50 lg:rounded-4xl rounded-2xl flex items-center justify-center LINK_BUTTON'
           target='_blank'
           rel="noreferrer"
         >
@@ -96,14 +182,6 @@ export default function Collection() {
 
 
         <div className="flex flex-row  w-full items-start gap-10">
-          {/* <div className="self-start sticky top-10">
-            <FilterSidebar
-            // AvailableSize={collection.handle}
-            // AvailableColor={collection.products.nodes}
-            // AvailablePrice={collection.products.node}
-            />
-          </div> */}
-
           <PaginatedResourceSection<ProductFragment>
             connection={collection.products}
             resourcesClassName=""
@@ -174,25 +252,28 @@ export const PRODUCT_ITEM_FRAGMENT = `#graphql
 
 
 
-const PRODUCT_FRAGMENT = `#graphql
-  fragment Product on Product {
-    id
-    title
-    vendor
-    handle
-    options {
-      name
-      optionValues {
-        name
-        firstSelectableVariant {
-          ...ProductVariant
-        }
-        swatch {
-          color
+const SUB_COLLECTION_QUERY = `#graphql
+  query SubCollections(
+    $handle: String!
+    $country: CountryCode
+    $language: LanguageCode
+    $first: Int
+    $last: Int
+    $startCursor: String
+    $endCursor: String
+  ) @inContext(country: $country, language: $language) {
+    collections(query: $handle + "-collection") {
+      edges {
+        node {
+          id
+          handle
+          title
           image {
-            previewImage {
-              url
-            }
+            id
+            url(transform: {maxWidth: 2000, maxHeight: 1000})
+            altText
+            width
+            height
           }
         }
       }

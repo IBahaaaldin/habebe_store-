@@ -177,7 +177,7 @@ const ContactUs: React.FC = () => {
                     <button
                         type="submit"
                         disabled={status === 'submitting'}
-                        className={`button2 ${status === 'submitting' ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+                        className={`BUTTON2 ${status === 'submitting' ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
                             }`}
                     >
                         {status === 'submitting' ? 'Sending...' : 'Submit →'}

@@ -72,10 +72,8 @@
 
 
 
-import { motion } from "framer-motion"
 import { Image } from '@shopify/hydrogen';
 import type { FeaturedCollectionFragment } from 'storefrontapi.generated';
-import HeaderText from "./UI/HeaderText";
 import HeroText from "./UI/HeroText";
 
 
@@ -87,9 +85,9 @@ const HeroSection = ({ collection, Title, Description, HeroImg }: { collection: 
     const subText = Description ? Description : "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.";
 
     return (
-        <div className='max-w-[1750px] rounded-[0px] overflow-hidden w-full mx-auto relative text-white z-1 min-w-full px-[5%] flex flex-col gap-20 justify-center items-start md:min-h-screen py-40'>
+        <div className='max-w-[1750px] lg:min-h-[95vh] min-h-[80vh] overflow-hidden w-full mx-auto relative text-white z-1 min-w-full px-[5%] flex flex-col gap-20 justify-center items-start py-40'>
             {/* bg-[#664343]  */}
-            <article className='max-w-[70%] text-center z-10 w-full  relative flex flex-col gap-10'>
+            <article className='max-w-[80%] text-center z-10 w-full relative flex flex-col gap-10'>
 
                 <HeroText
                     HEAD={headText}
@@ -97,7 +95,7 @@ const HeroSection = ({ collection, Title, Description, HeroImg }: { collection: 
                 />
 
                 {/* <Messages /> */}
-                <a href={`/collections/${collection.handle}`} className='button1 w-fit'>
+                <a href={`/collections/${collection.handle}`} className='BUTTON1 w-fit'>
                     Shop Now
                 </a>
             </article>

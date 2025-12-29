@@ -43,7 +43,6 @@ export function PageLayout({ cart, children = null, footer, header, isLoggedIn, 
       {/* ABSOLUTE */}
 
 
-      {/* <SignUp /> */}
       {header && (
         <Header
           header={header}
@@ -52,6 +51,7 @@ export function PageLayout({ cart, children = null, footer, header, isLoggedIn, 
           publicStoreDomain={publicStoreDomain}
         />
       )}
+
       <main>{children}</main>
 
 
