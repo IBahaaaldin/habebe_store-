@@ -6,7 +6,7 @@ import type {
   HeaderQuery,
 } from 'storefrontapi.generated';
 import { Aside } from '~/components/Aside';
-import { Header, HeaderMenu } from '~/components/Header';
+import Header, { HeaderMenu } from '~/components/Header';
 import { CartMain } from '~/components/CartMain';
 import {
   SEARCH_ENDPOINT,
@@ -39,21 +39,18 @@ export function PageLayout({ cart, children = null, footer, header, isLoggedIn, 
       <SearchAside />
       <MobileMenuAside header={header} publicStoreDomain={publicStoreDomain} />
 
-
-      {/* ABSOLUTE */}
-
-
-      {header && (
-        <Header
-          header={header}
-          cart={cart}
-          isLoggedIn={isLoggedIn}
-          publicStoreDomain={publicStoreDomain}
-        />
-      )}
-
-      <main>{children}</main>
-
+      {/* <Logos /> */}
+      <div className='MAIN_COL_CONTAINER'>
+        {header && (
+          <Header
+            header={header}
+            cart={cart}
+            isLoggedIn={isLoggedIn}
+            publicStoreDomain={publicStoreDomain}
+          />
+        )}
+        <main>{children}</main>
+      </div>
 
       {/* Footer for the entire app and all PAGES */}
       <Logos />

@@ -2,8 +2,7 @@ import { useLoaderData, Link } from 'react-router';
 import type { Route } from './+types/collections._index';
 import { getPaginationVariables, Image } from '@shopify/hydrogen';
 import type { CollectionFragment } from 'storefrontapi.generated';
-import { PaginatedResourceSection } from '~/components/PaginatedResourceSection';
-import CollectionSection from '~/components/MINE/CollectionSection';
+import HeaderText from '~/components/MINE/UI/HeaderText';
 
 
 
@@ -13,78 +12,83 @@ export async function loader(args: Route.LoaderArgs) {
 }
 
 
-async function loadCriticalData({ context, request }: Route.LoaderArgs) {
-  const paginationVariables = getPaginationVariables(request, {
-    pageBy: 4,
-  });
+async function loadCriticalData({ context }: Route.LoaderArgs) {
 
-  const [collectionsData] = await Promise.all([
-    context.storefront.query(COLLECTIONS_QUERY, {
-      variables: paginationVariables,
+
+  const MainCollections = ([
+    context.storefront.query(MAIN_MENU_QUERY, {
+      variables: { handle: 'main-menu' }
     }),
     // Add other queries here, so that they are loaded in parallel
   ]);
 
-  const collections = collectionsData.collections; // Used for Fetching Collections like => Men, 
+  // const collections = menu?.items.map((item: any) => item.resource); // Used for Fetching Collections like => Men, 
 
-  return { collections };
+  return {
+    MainCollections
+  };
 }
+// async function loadCriticalData({ context, request }: Route.LoaderArgs) {
+//   const paginationVariables = getPaginationVariables(request, {
+//     pageBy: 4,
+//   });
+
+//   const [collectionsData] = await Promise.all([
+//     context.storefront.query(COLLECTIONS_QUERY, {
+//       variables: paginationVariables,
+//     }),
+//     // Add other queries here, so that they are loaded in parallel
+//   ]);
+
+//   const collections = collectionsData.collections; // Used for Fetching Collections like => Men, 
+
+//   return { collections };
+// }
 
 
 
 export default function Collections() {
   const data = useLoaderData<typeof loader>();
 
+  console.log(`%c${JSON.stringify(data, null, 2)}`, 'color: purple; font-size: 20px;')
+  // const collections = data.collections.nodes;
 
 
 
   return (
-    <div className='SMALL_CONTAINER'>
-      <CollectionsSection collections={data.collections.nodes} />
-    </div>
+    <div></div>
+    // <section>
+
+    //   <HeaderText HEAD='Collections' />
+    //   <div className="relative flex flex-col lg:gap-3 gap-1">
+    //     {collections.map((collection, index) => {
+    //       const isEvenPair = Math.floor(index / 2) % 2 === 0; // Determines if it's the first or second pair in a set of four
+    //       const isFirstInPair = index % 2 === 0; // Determines if it's the first item in a pair
+
+    //       let firstItemWidth = 'w-1/3';
+    //       let secondItemWidth = 'w-2/3';
+
+    //       if (!isEvenPair) { // For the second pair (index 2, 3, 6, 7, etc.)
+    //         firstItemWidth = 'w-2/3';
+    //         secondItemWidth = 'w-1/3';
+    //       }
+
+    //       return (
+    //         <div key={collection.id} className={`flex flex-row lg:gap-3 gap-1 ${isFirstInPair ? 'flex-row' : 'flex-row-reverse'}`}>
+    //           <div className={`${isFirstInPair ? firstItemWidth : secondItemWidth}`}>
+    //             <CollectionItem collection={collection} index={index} />
+    //           </div>
+    //           <div className={`${isFirstInPair ? secondItemWidth : firstItemWidth}`}>
+    //             {collections[index + 1] && <CollectionItem collection={collections[index + 1]} index={index + 1} />}
+    //           </div>
+    //         </div>
+    //       );
+    //     }).filter((_, index) => index % 2 === 0)} {/* Render only even indices to group pairs */}
+    //   </div>
+    // </section>
   );
 }
 
-
-
-export function CollectionsSection({ collections }: { collections: CollectionFragment[] }) {
-  return (
-    <section>
-      <div className='relative flex flex-col lg:gap-3 gap-1 '>
-        <div className="flex flex-row lg:gap-3 gap-1 ">
-          <div className='w-1/3 '>
-            {collections.slice(0, 1).map((collection, index) => (
-              <CollectionItem key={collection.id} collection={collection} index={index} />
-            ))}
-          </div>
-
-
-          <div className='w-2/3 '>
-            {collections.slice(1, 2).map((collection, index) => (
-              <CollectionItem key={collection.id} collection={collection} index={index} />
-            ))}
-          </div>
-        </div>
-
-
-        <div className="flex flex-row lg:gap-3 gap-1 ">
-
-          <div className='w-2/3 '>
-            {collections.slice(2, 3).map((collection, index) => (
-              <CollectionItem key={collection.id} collection={collection} index={index} />
-            ))}
-          </div>
-
-          <div className='w-1/3 '>
-            {collections.slice(3, 4).map((collection, index) => (
-              <CollectionItem key={collection.id} collection={collection} index={index} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 
 function CollectionItem({ collection, index, }: { collection: CollectionFragment; index: number; }) {
@@ -105,7 +109,7 @@ function CollectionItem({ collection, index, }: { collection: CollectionFragment
           />
         )}
       </div>
-      <h2 className='absolute z-1 bg-white/50 backdrop-blur-sm px-3 py-1 capitalize font-bold lg:top-10 top-5 lg:left-10 left-5 lg:text-3xl text-xl rounded-xl'>
+      <h2 className='absolute z-1 bg-green-700/40 backdrop-blur-sm px-3 py-2 capitalize font-bold lg:top-10 top-5 lg:left-10 left-5 lg:text-3xl text-xl text-white rounded-full'>
         {collection.title}
       </h2>
     </Link>
@@ -114,41 +118,83 @@ function CollectionItem({ collection, index, }: { collection: CollectionFragment
 
 
 
-export const COLLECTIONS_QUERY = `#graphql
-  fragment Collection on Collection {
-    id
-    title
-    handle
-    image {
-      id
-      url
-      altText
-      width
-      height
+const MAIN_MENU_QUERY = `#graphql
+  query MainMenu($handle: String!) {
+    menu(handle: $handle) {
+      title
+      items {
+        id
+        title
+        url
+        resource {
+          ... on Collection {
+            image {
+              id
+              url
+              altText
+              width
+              height
+            }
+          }
+        }
+      }
     }
   }
-  query StoreCollections(
-    $country: CountryCode
-    $endCursor: String
-    $first: Int
-    $language: LanguageCode
-    $last: Int
-    $startCursor: String
-  ) @inContext(country: $country, language: $language) {
-    collections(
-      first: $first,
-      last: $last,
-      before: $startCursor,
-      after: $endCursor
-    ) {
-      nodes {
-        ...Collection
-      }
-      pageInfo {
-        hasNextPage
-        hasPreviousPage
-        startCursor
-        endCursor
+` as const;
+
+
+
+export const MAIN_MENU_AND_PRODUCTS_QUERY = `#graphql
+  query MainMenu($handle: String!) {
+    menu(handle: $handle) {
+      items {
+        title
+        resource {
+          ... on Collection {
+            id
+            title
+            handle
+            image {
+              id
+              url
+              altText
+              width
+              height
+            }
+            products(first: 10) {
+              nodes {
+                id
+                title
+                handle
+                priceRange {
+                  minVariantPrice {
+                    amount
+                    currencyCode
+                  }
+                }
+                featuredImage {
+                  id
+                  url
+                  altText
+                  width
+                  height
+                }
+                variants(first: 5) {
+                  nodes {
+                    id
+                    availableForSale
+                    title
+                    sku
+                    price {
+                      amount
+                      currencyCode
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

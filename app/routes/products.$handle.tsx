@@ -8,16 +8,14 @@ import {
   getAdjacentAndFirstAvailableVariants,
   useSelectedOptionInUrlParam,
 } from '@shopify/hydrogen';
-import { ProductPrice } from '~/components/ProductPrice';
 import { ProductImage } from '~/components/ProductImage';
 import { ProductForm } from '~/components/ProductForm';
-import { redirectIfHandleIsLocalized } from '~/lib/redirect';
 import Ratings, { ProductItem } from '~/components/ProductItem';
 import Reviews from '~/components/MINE/Reviews';
 // import { RecommendedProducts } from './_index';
 import { Suspense } from 'react';
-import type { RecommendedProductsQuery } from 'storefrontapi.generated';
 import LoadingSpinner from '~/components/MINE/ReUsable/LoadingSpinner';
+import Prices from '~/components/MINE/UI/Prices';
 
 
 
@@ -126,7 +124,7 @@ export default function Product() {
 
 
   return (
-    <div className="SMALL_CONTAINER">
+    <div>
 
 
 
@@ -140,10 +138,15 @@ export default function Product() {
 
 
         {/* Product Details */}
-        <section className="flex flex-col gap-10 mt-5 w-full lg:max-w-1/2">
+        <section className="flex flex-col gap-10 mt-5 w-full xl:max-w-1/2">
           <div className='flex flex-col gap-5'>
             <h1 className='md:text-5xl text-3xl'>{title}</h1>
-            <span className="md:text-3xl text-xl">{selectedVariant?.price.currencyCode}{selectedVariant?.price.amount}</span>
+            <Prices
+              CC1='lg:text-3xl text-2xl'
+              CC2='lg:text-2xl text-xl'
+              currency={selectedVariant.price.currencyCode}
+              price={selectedVariant.price.amount}
+            />
           </div>
 
 

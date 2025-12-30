@@ -50,7 +50,7 @@ export default function AccountLayout() {
 
 
   return (
-    <div className="SMALL_CONTAINER">
+    <div>
       <div className='flex flex-col gap-5'>
         <h1 className='lg:text-5xl text-3xl font-bold'>{heading}</h1>
         <br />

@@ -14,19 +14,27 @@ export function PaginatedResourceSection<NodesType>({ connection, children, reso
         );
 
         return (
-          <div className='GRID_CONTAINER gap-y-10 w-full items-start justify-start '>
-            <PreviousLink>
-              {isLoading ? 'Loading...' : <span className='BUTTON1'>Load previous</span>}
-            </PreviousLink>
-            {resourcesClassName ? (
-              <div className={resourcesClassName}>{resourcesMarkup}</div>
-            ) : (
-              resourcesMarkup
-            )}
-            <NextLink>
-              {isLoading ? 'Loading...' : <span className='BUTTON1'>Load more </span>}
-            </NextLink>
-          </div>
+          <>
+            <div className='GRID_CONTAINER gap-y-10 w-full'>
+
+              <PreviousLink>
+                {isLoading ? 'Loading...' : <span className='BUTTON1'>Load previous</span>}
+              </PreviousLink>
+
+
+              {resourcesClassName ? (
+                <div className={resourcesClassName}>{resourcesMarkup}</div>
+              ) : (
+                resourcesMarkup
+              )}
+            </div>
+
+            <div className='flex justify-center mt-10'>
+              <NextLink>
+                {isLoading ? 'Loading...' : <span className='BUTTON1'>Load more </span>}
+              </NextLink>
+            </div>
+          </>
         );
       }}
     </Pagination>

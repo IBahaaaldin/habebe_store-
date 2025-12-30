@@ -9,8 +9,8 @@ import { motion } from 'framer-motion'
 
 export default function HeroText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?: string }) {
     return (
-        <div className="flex flex-col z-1 capitalize items-start justify-start w-full gap-4 mb-5" >
-            <h3 className=' lg:text-8xl text-7xl flex-wrap flex flex-row gap-2 font-bold'>
+        <div className="flex flex-col z-1 capitalize w-full items-center justify-center gap-4 mb-5" >
+            <h3 className=' lg:text-8xl text-7xl flex-wrap flex flex-row gap-2'>
                 {HEAD!.split(' ').map((word, index) => (
                     <span
                         key={index}
@@ -32,7 +32,7 @@ export default function HeroText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?: s
 
 
             {SUBHEAD &&
-                <h4 className='lg:text-xl text-lg flex flex-row flex-wrap gap-1.5 text-wrap text-zinc-300'>
+                <h4 className='lg:text-lg flex flex-row items-center justify-center flex-wrap gap-1.5 text-wrap text-zinc-300'>
                     {SUBHEAD.split(' ').map((word, index) => (
                         <span
                             key={index}

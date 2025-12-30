@@ -4,20 +4,18 @@ import { Link } from 'react-router';
 import { Image } from '@shopify/hydrogen';
 import { useState } from 'react';
 import type {
-  // ProductItemFragment,
   CollectionItemFragment,
-  // RecommendedProductFragment,
 } from 'storefrontapi.generated';
 import { useVariantUrl } from '~/lib/variants';
 import Prices from './MINE/UI/Prices';
-import { Share2, ShoppingCart, Star } from 'lucide-react';
+import { Share2, Star } from 'lucide-react';
 import { AddToCartButton } from './AddToCartButton';
 // import { CartLineQuantity } from './CartLineItem';
 
 
 
 // Get the first varient 
-export function ProductItem({ product, loading, }: { product: | CollectionItemFragment | any; loading?: 'eager' | 'lazy'; }) {
+export function ProductItem({ product, loading }: { product: | CollectionItemFragment | any; loading?: 'eager' | 'lazy'; }) {
   const [showCopyMessage, setShowCopyMessage] = useState(false);
   const [copyMessage, setCopyMessage] = useState('');
 
@@ -74,12 +72,8 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
 
 
       {/* /// Details */}
-      <article className='px-2 flex flex-col w-full justify-between items-end'>
+      <article className='px-2 flex flex-col w-full justify-between items-end gap-2'>
         <h4 className='md:text-xl capitalize w-full'>{product.title.length > 15 ? product.title.slice(0, 15) + '...' : product.title}</h4>
-        {/* <Money data={product.priceRange.minVariantPrice} /> */}
-
-
-
 
         <div className='flex flex-row w-full justify-between items-end '>
           <Prices
@@ -102,7 +96,7 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
                 : []
             }
           >
-            {product?.variants.nodes[0]?.availableForSale ? "Add to Cart" : 'Sold out'}
+            {product?.variants.nodes[0]?.availableForSale ? "Add" : 'Sold out'}
           </AddToCartButton>
         </div>
       </article>
@@ -122,7 +116,7 @@ export function ProductItem({ product, loading, }: { product: | CollectionItemFr
 
       {/* <div className='absolute top-5 right-5'> */}
       <Share2
-        className="cursor-pointer absolute top-5 right-5 p-2 hover:bg-zinc-200 duration-300 rounded-2xl z-100 backdrop-blur-sm bg-zinc-100 text-black w-10 h-10"
+        className="cursor-pointer absolute top-5 right-5 p-2.5 hover:bg-orange-500 duration-300 rounded-2xl z-100 bg-orange-500/50 backdrop-blur-sm text-white w-10 h-10"
         size={40}
         onClick={handleShareClick}
       />
@@ -156,48 +150,71 @@ export default function Ratings({ RATING }: { RATING: number }) {
 
 
 
-/*
-*
-query {
-  collections(first: 5) {
-    edges {
-      node {
+export const PRODUCT_FIELDS = `#graphql
+  fragment ProductFields on Product {
+    id
+    title
+    handle
+    priceRange {
+      minVariantPrice {
+        amount
+        currencyCode
+      }
+    }
+    featuredImage {
+      id
+      url
+      altText
+      width
+      height
+    }
+    variants(first: 5) {
+      nodes {
         id
+        availableForSale
         title
-        handle
-        products(first: 5) {
-          edges {
-            node {
-              id
-              title
-              handle
-              priceRange {
-                minVariantPrice {
-                  amount
-                  currencyCode
-                }
-              }
-              featuredImage {
-                id
-                url
-                altText
-                width
-                height
-              }
-              # Add variants to get stock information
-              variants(first: 5) {
-                nodes {
-                  id
-                  availableForSale
-                  title
-                  sku
-                  price {
-                    amount
-                    currencyCode
-                  }
-                }
-              }
-            }
+        sku
+        price {
+          amount
+          currencyCode
+        }
+      }
+    }
+  }
+`;
+
+
+/*
+* This is the GraphQL snippet to fetch first 5 PRODUCTS
+products(first: 10) {
+  edges {
+    node {
+      id
+      title
+      handle
+      priceRange {
+        minVariantPrice {
+          amount
+          currencyCode
+        }
+      }
+      featuredImage {
+        id
+        url
+        altText
+        width
+        height
+      }
+      # Add variants to get stock information
+      variants(first: 5) {
+        nodes {
+          id
+          availableForSale
+          title
+          sku
+          price {
+            amount
+            currencyCode
           }
         }
       }

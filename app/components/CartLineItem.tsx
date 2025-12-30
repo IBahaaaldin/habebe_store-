@@ -22,22 +22,18 @@ export function CartLineItem({ layout, line, }: { layout: CartLayout; line: Cart
   const { close } = useAside();
 
 
-  console.log(`%c${JSON.stringify(line)}`, 'color: blue; font-size: 20px;')
 
   return (
     <li key={id} className="border border-zinc-300 p-5 rounded-4xl flex flex-row gap-5">
 
       {/* Image */}
       {image && (
-        <div className=' min-w-40 max-w-40 aspect-square rounded-4xl overflow-hidden'>
-          <Image
-            className='object-cover '
-            alt={title}
-            aspectRatio="1/1"
-            data={image}
-            loading="lazy"
-          />
-        </div>
+        <Image
+          className='object-cover min-w-40 max-w-40 min-h-full aspect-square rounded-2xl overflow-hidden'
+          alt={title}
+          data={image}
+          loading="lazy"
+        />
       )}
 
 

@@ -7,6 +7,7 @@ import {
 import type { HeaderQuery, CartApiQueryFragment } from 'storefrontapi.generated';
 import { useAside } from '~/components/Aside';
 import { Menu, SearchIcon, ShoppingBag, User } from "lucide-react";
+import { view } from 'framer-motion/client';
 
 
 
@@ -24,7 +25,7 @@ type Viewport = 'desktop' | 'mobile';
 
 
 // This is the main header component for the entire app
-export function Header({ header, isLoggedIn, cart, publicStoreDomain, }: HeaderProps) {
+export default function Header({ header, isLoggedIn, cart, publicStoreDomain, }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
 
 
@@ -44,11 +45,11 @@ export function Header({ header, isLoggedIn, cart, publicStoreDomain, }: HeaderP
   }, []);
 
   const { menu } = header;
-
+  console.log(`%c${JSON.stringify(menu)}`, 'color: blue; font-size: 20px;')
 
   return (
-    <header className={`z-999 fixed left-0 right-0 backdrop-blur-sm rounded-full max-w-[95%] mx-auto flex flex-row items-center gap-5 px-5 p-3 duration-500
-      ${isScrolled ? 'scale-70 top-0 bg-white/40' : 'bg-white scale-100 top-5'}
+    <header className={`z-999 sticky left-0 right-0 backdrop-blur-sm rounded-full w-full max-w-[1750px] mx-auto flex flex-row items-center gap-5 px-5  p-3 duration-500
+      ${isScrolled ? 'scale-70 top-0 bg-white/40' : 'bg-zinc-100 scale-100 top-5'}
       `}
     >
       <NavLink
@@ -66,6 +67,7 @@ export function Header({ header, isLoggedIn, cart, publicStoreDomain, }: HeaderP
         />
       </NavLink>
 
+
       <HeaderMenu
         menu={menu}
         viewport="desktop"
@@ -80,7 +82,7 @@ export function Header({ header, isLoggedIn, cart, publicStoreDomain, }: HeaderP
 
 
 // Header Menu Component inside the Header
-export function HeaderMenu({ menu, primaryDomainUrl, viewport, publicStoreDomain }: { menu: HeaderProps['header']['menu']; primaryDomainUrl: HeaderProps['header']['shop']['primaryDomain']['url']; viewport: Viewport; publicStoreDomain: HeaderProps['publicStoreDomain']; }) {
+export function HeaderMenu({ menu, viewport }: { menu: HeaderProps['header']['menu']; primaryDomainUrl: HeaderProps['header']['shop']['primaryDomain']['url']; viewport: Viewport; publicStoreDomain: HeaderProps['publicStoreDomain']; }) {
 
 
   const location = useLocation();
@@ -111,34 +113,46 @@ export function HeaderMenu({ menu, primaryDomainUrl, viewport, publicStoreDomain
         })
       )}
 
+      {/* const isActive = currentPathname === new URL(item.url).pathname; */}
 
 
-      {/* // // Desktop */}
-      {menu?.items.map((item) => {
-        if (!item.url) return null;
 
-        const isActive = currentPathname === new URL(item.url).pathname;
+      <ul className="hidden lg:flex flex-row gap-6"> {/* Increased gap for better look */}
+        {menu?.items.map((item) => {
+          // Optional: Logic to determine if active
+          const isActive = false;
 
+          return (
+            <li key={item.id} className="relative group ">
+              <a
+                href={item.url}
+                className={`text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 ${isActive ? 'text-orange-500' : 'text-black'
+                  }`}
+              >
+                {item.title}
+              </a>
 
-        // // if the url is internal, we strip the domain
-        const url =
-          item.url.includes('myshopify.com') ||
-            item.url.includes(publicStoreDomain) ||
-            item.url.includes(primaryDomainUrl)
-            ? new URL(item.url).pathname
-            : item.url;
-        return (
-          <a
-            href={url}
-            key={item.id}
-            rel="noopener noreferrer"
-            className={`hidden lg:flex px-3 py-2 rounded-full hover:opacity-50 font-bold duration-300 ${isActive ? 'bg-white text-orange-500' : 'text-black'}`}
-
-          >
-            {item.title}
-          </a>
-        );
-      })}
+              {/* Dropdown Container */}
+              {item.items && item.items.length > 0 && (
+                <div className="absolute left-0 top-[100%] hidden group-hover:block w-64 pt-2 z-50">
+                  <ul className="bg-white shadow-xl border border-gray-100 rounded-md overflow-hidden py-2">
+                    {item.items.map((child) => (
+                      <li key={child.id}>
+                        <a
+                          href={child.url}
+                          className="block px-4 py-3 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-150 border-b border-gray-50 last:border-0"
+                        >
+                          {child.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </li>
+          );
+        })}
+      </ul>
     </nav>
   );
 }
@@ -208,7 +222,6 @@ function CartBadge({ count }: { count: number | null }) {
     </Link>
   );
 }
-
 
 
 function CartToggle({ cart }: Pick<HeaderProps, 'cart'>) {

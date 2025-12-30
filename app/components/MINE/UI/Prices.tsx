@@ -1,4 +1,10 @@
-export default function Prices({ price, currency }: { price: string, currency: string }) {
+
+
+// CC1 and CC2 
+
+export default function Prices({ price, currency, CC1, CC2 }: { price: string, currency: string, CC1?: string, CC2?: string }) {
+
+
     const numericPrice = Number(price);
     let fakeOriginalPrice = numericPrice;
     let discountPercentage = 0;
@@ -15,21 +21,19 @@ export default function Prices({ price, currency }: { price: string, currency: s
         fakeOriginalPrice = numericPrice / (1 - discountPercentage / 100);
     }
 
+
+
     return (
         <article className='flex flex-col flex-wrap items-start mt-3 '>
-            <span className="md:text-lg text-black font-bold">{currency}{numericPrice.toFixed(2)}</span>
+            <span className={`${CC1 ?? 'md:text-lg'}  text-black font-bold`}>{currency}{numericPrice.toFixed(2)}</span>
 
 
-            {discountPercentage > 0 && (
-                <span className="text-zinc-400 line-through">{fakeOriginalPrice.toFixed(2)}</span>
-            )}
+            {discountPercentage > 0 &&
+                (<span className={`${CC2 ?? 'md:text-sm'} text-zinc-400 line-through`}>
+                    {fakeOriginalPrice.toFixed(2)}
+                </span>)
+            }
 
-
-            {/* {discountPercentage > 0 && (
-                <div className="items-center gap-1 px-2 py-1 rounded-lg text-green-500 md:text-sm text-xs flex flex-row text-nowrap font-semibold ">
-                    - {discountPercentage}%
-                </div>
-            )} */}
         </article >
     )
 }

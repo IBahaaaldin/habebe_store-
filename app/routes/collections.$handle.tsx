@@ -5,9 +5,7 @@ import { PaginatedResourceSection } from '~/components/PaginatedResourceSection'
 import { redirectIfHandleIsLocalized } from '~/lib/redirect';
 import { ProductItem } from '~/components/ProductItem';
 import type { ProductFragment } from 'storefrontapi.generated';
-import HeroSection from '~/components/MINE/HeroSection';
-import Logos from '~/components/MINE/Logos';
-import FilterSidebar from '~/components/MINE/FilterSidebar';
+import HeroSection, { AllCategories, TwoGrids } from '~/components/MINE/HeroSection';
 import MenuCollection from '~/components/MINE/UI/MenuCollection';
 
 
@@ -150,7 +148,7 @@ export default function Collection() {
 
 
   return (
-    <div className="collection">
+    <div className="SEC_COL_CONTAINER">
 
 
       <HeroSection
@@ -160,16 +158,12 @@ export default function Collection() {
         HeroImg={collection.image?.url}
       />
 
-      <Logos ArrayOfText={ArrayOfText} />
+
+      <TwoGrids Collection={collection} />
+      <AllCategories />
 
 
-
-
-      <div className='SMALL_CONTAINER'>
-        <MenuCollection
-          menuItems={DEMO_CATEGORIES}
-        />
-
+      <div className='space-y-10'>
 
         <Link
           to="https://wa.me/+971561576657?text=I'm%20interested%20in%20your%20ad%20on%20Hydrogen"
@@ -181,20 +175,18 @@ export default function Collection() {
         </Link>
 
 
-        <div className="flex flex-row  w-full items-start gap-10">
-          <PaginatedResourceSection<ProductFragment>
-            connection={collection.products}
-            resourcesClassName=""
-          >
-            {({ node: product, index }) => (
-              <ProductItem
-                key={product.id}
-                product={product}
-                loading={index < 8 ? 'eager' : undefined}
-              />
-            )}
-          </PaginatedResourceSection>
-        </div>
+        <PaginatedResourceSection<ProductFragment>
+          connection={collection.products}
+          resourcesClassName=""
+        >
+          {({ node: product, index }) => (
+            <ProductItem
+              key={product.id}
+              product={product}
+              loading={index < 8 ? 'eager' : undefined}
+            />
+          )}
+        </PaginatedResourceSection>
 
       </div>
     </div>
@@ -283,46 +275,25 @@ const SUB_COLLECTION_QUERY = `#graphql
 
 
 
-const PRODUCT_QUERY = `#graphql
-  products(first: 10) {
-    edges {
-      node {
-        id
+const SUB_MENU_COLLECTIONS = `#graphql
+  query SubMenuCollections($handle: String!) {
+    menu(handle: $handle) {
+      items {
         title
-        handle
-        priceRange {
-          minVariantPrice {
-            amount
-            currencyCode
-          }
-        }
-        featuredImage {
+        url
+        image {
           id
+          # Add the image field here
           url
           altText
           width
           height
         }
-        variants(first: 1) {
-          nodes {
-            id
-            availableForSale
-            selectedOptions {
-              name
-              value
-            }
-          }
-        }
-        options {
-          name
-          values: optionValues {
-            name
-          }
-        }
       }
     }
   }
 ` as const;
+
 
 
 // NOTE: https://shopify.dev/docs/api/storefront/2022-04/objects/collection

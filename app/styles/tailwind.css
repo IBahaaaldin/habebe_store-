@@ -27,11 +27,11 @@
     @apply lg:px-5 lg:py-3;
 
     &:hover {
-        @apply bg-orange-500 text-white ;
+        @apply bg-orange-500 text-white;
     }
 
     &:active {
-        @apply bg-orange-500 text-white ;
+        @apply bg-orange-500 text-white;
     }
 }
 
@@ -52,19 +52,17 @@
 
 
 
-.SMALL_CONTAINER {
-    @apply flex flex-col px-[5%] gap-10 mt-20 my-10 max-w-[1750px] mx-auto h-fit;
-    @apply lg:gap-20 lg:py-3 lg:text-base;
+.MAIN_COL_CONTAINER {
+    @apply flex flex-col px-[3%] gap-7 my-5 max-w-[1750px] w-full mx-auto h-fit;
+    @apply lg:gap-10 lg:py-3 lg:text-base;
 }
 
+.SEC_COL_CONTAINER {
+    @apply flex flex-col gap-10 w-full;
+}
 
 small {
     @apply text-sm text-zinc-300
-}
-
-
-form {
-    @apply mb-0 flex flex-col items-center justify-center
 }
 
 
@@ -85,7 +83,7 @@ form {
 
 
 .GRID_CONTAINER {
-    @apply grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 gap-[2%] h-full;
+    @apply grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-10 gap-[2%] h-full;
 }
 
 
@@ -107,3 +105,4 @@ form {
         @apply opacity-50 duration-300;
     }
 }
+

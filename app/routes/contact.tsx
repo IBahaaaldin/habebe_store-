@@ -57,7 +57,7 @@ const ContactUs: React.FC = () => {
     };
 
     return (
-        <div className="SMALL_CONTAINER">
+        <div>
             <HeaderText
                 HEAD="Contact Us"
                 SUBHEAD="We'd love to hear from you! Have a question, comment, or just want to say hi? We're all ears!"
