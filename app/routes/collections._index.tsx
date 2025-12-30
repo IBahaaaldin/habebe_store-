@@ -16,41 +16,23 @@ async function loadCriticalData({ context }: Route.LoaderArgs) {
 
 
   const MainCollections = ([
-    context.storefront.query(MAIN_MENU_QUERY, {
+    context.storefront.query(MAINMENU_QUERY, {
       variables: { handle: 'main-menu' }
     }),
-    // Add other queries here, so that they are loaded in parallel
   ]);
 
-  // const collections = menu?.items.map((item: any) => item.resource); // Used for Fetching Collections like => Men, 
 
   return {
     MainCollections
   };
 }
-// async function loadCriticalData({ context, request }: Route.LoaderArgs) {
-//   const paginationVariables = getPaginationVariables(request, {
-//     pageBy: 4,
-//   });
-
-//   const [collectionsData] = await Promise.all([
-//     context.storefront.query(COLLECTIONS_QUERY, {
-//       variables: paginationVariables,
-//     }),
-//     // Add other queries here, so that they are loaded in parallel
-//   ]);
-
-//   const collections = collectionsData.collections; // Used for Fetching Collections like => Men, 
-
-//   return { collections };
-// }
 
 
 
 export default function Collections() {
   const data = useLoaderData<typeof loader>();
 
-  console.log(`%c${JSON.stringify(data, null, 2)}`, 'color: purple; font-size: 20px;')
+  console.log(`%c${JSON.stringify(data)}`, 'color: purple; font-size: 20px;')
   // const collections = data.collections.nodes;
 
 
@@ -118,7 +100,54 @@ function CollectionItem({ collection, index, }: { collection: CollectionFragment
 
 
 
-const MAIN_MENU_QUERY = `#graphql
+
+
+export const MAINMENU_AND_SUBMENU_QUERY = `#graphql
+  query MainMenu($handle: String!) {
+    menu(handle: $handle) {
+      title
+      items {
+        id
+        title
+        url
+        resource {
+          ... on Collection {
+            handle
+            title
+          }
+        }
+        items {
+          id
+          title
+          url
+          resource {
+            ... on Collection {
+              handle
+              title
+            }
+          }
+        }
+      }
+    }
+    shop {
+      name
+      brand {
+        logo {
+          image {
+            url
+            altText
+            width
+            height
+          }
+        }
+        shortDescription
+        slogan
+      }
+    }
+  }
+` as const;
+
+export const MAINMENU_QUERY = `#graphql
   query MainMenu($handle: String!) {
     menu(handle: $handle) {
       title
@@ -144,12 +173,13 @@ const MAIN_MENU_QUERY = `#graphql
 
 
 
-export const MAIN_MENU_AND_PRODUCTS_QUERY = `#graphql
+export const MAINMENU_AND_PRODUCTS_QUERY = `#graphql
   query MainMenu($handle: String!) {
     menu(handle: $handle) {
       items {
         title
         resource {
+          # // Fetch collection details
           ... on Collection {
             id
             title
@@ -161,6 +191,7 @@ export const MAIN_MENU_AND_PRODUCTS_QUERY = `#graphql
               width
               height
             }
+            # // Fetch products associated with the collection
             products(first: 10) {
               nodes {
                 id

@@ -7,7 +7,6 @@ import {
 import type { HeaderQuery, CartApiQueryFragment } from 'storefrontapi.generated';
 import { useAside } from '~/components/Aside';
 import { Menu, SearchIcon, ShoppingBag, User } from "lucide-react";
-import { view } from 'framer-motion/client';
 
 
 
@@ -19,7 +18,6 @@ interface HeaderProps {
   publicStoreDomain: string;
 }
 
-type Viewport = 'desktop' | 'mobile';
 
 
 
@@ -70,9 +68,6 @@ export default function Header({ header, isLoggedIn, cart, publicStoreDomain, }:
 
       <HeaderMenu
         menu={menu}
-        viewport="desktop"
-        primaryDomainUrl={header.shop.primaryDomain.url}
-        publicStoreDomain={publicStoreDomain}
       />
       <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
     </header>
@@ -82,19 +77,19 @@ export default function Header({ header, isLoggedIn, cart, publicStoreDomain, }:
 
 
 // Header Menu Component inside the Header
-export function HeaderMenu({ menu, viewport }: { menu: HeaderProps['header']['menu']; primaryDomainUrl: HeaderProps['header']['shop']['primaryDomain']['url']; viewport: Viewport; publicStoreDomain: HeaderProps['publicStoreDomain']; }) {
+export function HeaderMenu({ menu }: { menu: any }) {
 
 
   const location = useLocation();
-  const currentPathname = location.pathname;
+  const currentTabURL = location.pathname.split('/').pop(); // Get the first segment of the path
+
 
 
   return (
     <nav role="navigation" className='flex lg:flex-row flex-col gap-3'>
 
 
-      {/* // // Mobile */}
-      {viewport === 'mobile' && (
+      {/* {(
         menu?.items.map((item) => {
           if (!item.url) return null;
 
@@ -111,43 +106,56 @@ export function HeaderMenu({ menu, viewport }: { menu: HeaderProps['header']['me
             </a>
           );
         })
-      )}
+      )} */}
 
-      {/* const isActive = currentPathname === new URL(item.url).pathname; */}
 
 
 
       <ul className="hidden lg:flex flex-row gap-6"> {/* Increased gap for better look */}
-        {menu?.items.map((item) => {
+        {menu?.items.map((menu: any) => {
           // Optional: Logic to determine if active
-          const isActive = false;
+
+          const isMainMenuActive = currentTabURL === menu.resource?.handle;
+          const isSubMenuActive = currentTabURL === menu.resource?.handle;
 
           return (
-            <li key={item.id} className="relative group ">
-              <a
-                href={item.url}
-                className={`text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 ${isActive ? 'text-orange-500' : 'text-black'
-                  }`}
+            <li
+              key={menu.id}
+              className="relative group"
+            >
+              <Link
+                to={`/collections/${menu?.resource?.handle || '#'}`}
+                key={menu.id}
+
+                className={`hover:text-orange-500 text-black font-bold text-start duration-500 
+                  ${isMainMenuActive ? 'text-orange-500' : 'text-black'}
+                  `}
               >
-                {item.title}
-              </a>
+                {menu.title}
+              </Link>
 
               {/* Dropdown Container */}
-              {item.items && item.items.length > 0 && (
-                <div className="absolute left-0 top-[100%] hidden group-hover:block w-64 pt-2 z-50">
-                  <ul className="bg-white shadow-xl border border-gray-100 rounded-md overflow-hidden py-2">
-                    {item.items.map((child) => (
-                      <li key={child.id}>
-                        <a
-                          href={child.url}
-                          className="block px-4 py-3 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-150 border-b border-gray-50 last:border-0"
-                        >
-                          {child.title}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              {menu.items && menu.items.length > 0 && (
+                <ul className="absolute left-0 top-5 hidden group-hover:block ">
+                  <div className='mt-7 rounded-2xl p-1 min-w-sm overflow-scroll HIDDEN_SCROLL bg-white border border-zinc-300 flex flex-col gap-1 max-h-[70vh]'>
+                    {menu.items.map((subMenu: any) => {
+                      const isSubMenuActive = currentTabURL === subMenu.resource?.handle;
+
+                      return (
+                          <Link
+                            to={`/collections/${subMenu?.resource?.handle || '#'}`}
+                            key={menu.id}
+
+                            className={`px-3 py-1 w-fit rounded-xl hover:text-orange-500 hover:bg-orange-100 text-black font-bold text-start duration-500
+                          ${isSubMenuActive ? 'text-orange-500' : 'text-black'}
+                          `}
+                          >
+                            {subMenu.title}
+                          </Link>
+                      )
+                    })}
+                  </div>
+                </ul>
               )}
             </li>
           );

@@ -1,1962 +1,1181 @@
-{
-    "id": "gid://shopify/Menu/252529148116",
-    "items": [
-        {
-            "id": "gid://shopify/MenuItem/608289194196",
-            "resourceId": "gid://shopify/Collection/449068073172",
-            "tags": [
-                "Men Accessories",
-                "Men Bottoms",
-                "Men Underwear & Loungewear",
-                "Men T Shirts",
-                "Men Outerwear & Jackets",
-                "Men Couple & Parent Child Clothing",
-                "Men Hats & Caps",
-                "Men Wigs & Extensions",
-                "Men Synthetic Hair",
-                "Men Skin Care",
-                "Men Beauty Tools",
-                "Men Food & Health",
-                "Men Nail Art & Tools"
-            ],
-            "title": "Men",
-            "type": "COLLECTION",
-            "url": "https://tedrk1-wu.myshopify.com/collections/men/Men-Accessories+Men-Bottoms+Men-Underwear-&-Loungewear+Men-T-Shirts+Men-Outerwear-&-Jackets+Men-Couple-&-Parent-Child-Clothing+Men-Hats-&-Caps+Men-Wigs-&-Extensions+Men-Synthetic-Hair+Men-Skin-Care+Men-Beauty-Tools+Men-Food-&-Health+Men-Nail-Art-&-Tools",
+[
+    {
+        "menu": {
+            "title": "main-menu",
             "items": [
                 {
-                    "id": "gid://shopify/MenuItem/608427999444",
-                    "resourceId": "gid://shopify/Collection/449253900500",
-                    "tags": [
-                        "Socks",
-                        "Men's Ties",
-                        "Scarves",
-                        "Man Gloves & Mittens",
-                        "Sullies & Beanies",
-                        "Belts"
-                    ],
-                    "title": "Men Accessories",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/men-accessories/Socks+Men's-Ties+Scarves+Man-Gloves-&-Mittens+Sullies-&-Beanies+Belts"
+                    "id": "gid://shopify/MenuItem/608289194196",
+                    "title": "Men",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/men/Men-Accessories+Men-Bottoms+Men-Underwear-&-Loungewear+Men-T-Shirts+Men-Outerwear-&-Jackets+Men-Couple-&-Parent-Child-Clothing+Men-Hats-&-Caps+Men-Wigs-&-Extensions+Men-Synthetic-Hair+Men-Skin-Care+Men-Beauty-Tools+Men-Food-&-Health+Men-Nail-Art-&-Tools",
+                    "resource": {
+                        "handle": "men",
+                        "title": "Men"
+                    },
+                    "items": [
+                        {
+                            "id": "gid://shopify/MenuItem/608427999444",
+                            "title": "Men Accessories",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-accessories/Socks+Men's-Ties+Scarves+Man-Gloves-&-Mittens+Sullies-&-Beanies+Belts",
+                            "resource": {
+                                "handle": "men-accessories",
+                                "title": "Men Accessories"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608431112404",
+                            "title": "Men Bottoms",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-bottom-1/Pajama-Sets+Man-Shorts+Cargo-Pants+Man-Jeans+Harem-Pants+Casual-Pants+Sweatpants",
+                            "resource": {
+                                "handle": "men-bottom-1",
+                                "title": "Men Bottom"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608431145172",
+                            "title": "Men Underwear & Loungewear",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/underwear-loungewear/Men's-Sleep-&-Lounge+Shorts+Briefs+Robes+Man-Pajama-Sets+Boxers+Long-Johns",
+                            "resource": {
+                                "handle": "underwear-loungewear",
+                                "title": "Men Underwear & Loungewear"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608431177940",
+                            "title": "Men T-Shirts",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/t-shirt/Geometric+Men's-Long-Sleeved+Striped+Solid+3D+Print",
+                            "resource": {
+                                "handle": "t-shirt",
+                                "title": "Men T-Shirt"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608433504468",
+                            "title": "Men Outerwear & Jackets",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-outerwear-jackets/Suits-&-Blazer+Men's-Sweaters+Genuine-Leather+Man-Trench+Men's-Shirts+Men's-Jackets+Men's-Suits+Man-Hoodies-&-Sweatshirts+Wool-&-Blends+Parkas+Down-Jackets",
+                            "resource": {
+                                "handle": "men-outerwear-jackets",
+                                "title": "Men Outerwear & Jackets"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608433537236",
+                            "title": "Men Couple & Parent-Child Clothing",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/couple-parent-child-clothing/Couple-&-Parent-Child-Sweatshirts%C2%B7+Couple-&-Parent-Child-Short-Sleeves+Couple-&-Parent--Child-Jackets+Couple-&-Parent-Child-Tops+Couple-&-Parent-Child-Suits+Couple-&-Parent-Child-Pants+Family-Matching-Outfits",
+                            "resource": {
+                                "handle": "couple-parent-child-clothing",
+                                "title": "Couple & Parent-Child Clothing"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608433570004",
+                            "title": "Men Hats & Caps",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/hats-caps/Baseball-Caps+Bomber-Hats+Berets+Fedoras",
+                            "resource": {
+                                "handle": "hats-caps",
+                                "title": "Hats & Caps"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608433602772",
+                            "title": "Men Wigs & Extensions",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-wigs-extensions/Human-Hair-Wigs+Synthetic-Hair-Pieces+Synthetic-Lace-Wigs+Human-Hair-Lace-Wigs+Hair-Braids+Synthetic-Wigs",
+                            "resource": {
+                                "handle": "men-wigs-extensions",
+                                "title": "Men Wigs & Extensions"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608433635540",
+                            "title": "Men Synthetic Hair",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-synthetic-hair/Cosplay-Wigs",
+                            "resource": {
+                                "handle": "men-synthetic-hair",
+                                "title": "Men Synthetic Hair"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608433668308",
+                            "title": "Men Skin Care",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-skin-care/Razor+Face-Masks+Sun-Care+Essential-Oil+Body-Care+Facial-Care",
+                            "resource": {
+                                "handle": "men-skin-care",
+                                "title": "Men Skin Care"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608433701076",
+                            "title": "Men Beauty Tools",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-beauty-tools/Mirrors+Straightening-Irons+Electric-Face-Cleanser+Face-Skin-Care-Tools+Curling-Iron+Facial-Steamer",
+                            "resource": {
+                                "handle": "men-beauty-tools",
+                                "title": "Men Beauty Tools"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608433733844",
+                            "title": "Men Food & Health",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-food-health/Health-Care-Products",
+                            "resource": {
+                                "handle": "men-food-health",
+                                "title": "Men Food & Health"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608433766612",
+                            "title": "Men Hair Weaves",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-hair-weaves/Pre-Colored-One-Pack+Hair-Weaving+Hair-Styling+Salon-Bundle-Hair+Pre-Colored-Hair-Weave",
+                            "resource": {
+                                "handle": "men-hair-weaves",
+                                "title": "Men Hair Weaves"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608433799380",
+                            "title": "Men Hair & Accessories",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-hair-accessories/Headband-&-Hair-Band-&-Hairpin+Human-Hair",
+                            "resource": {
+                                "handle": "men-hair-accessories",
+                                "title": "Men Hair & Accessories"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608433832148",
+                            "title": "Men's Watches",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/mens-watches/Quartz-Watches+Mechanical-Watches+Digital-Watches+Dual-Display-Watches+Men-Sports-Watches",
+                            "resource": {
+                                "handle": "mens-watches",
+                                "title": "Men's Watches"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608434061524",
+                            "title": "Men Fine Jewelry",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-fine-jewelry/Various-Gemstones+925-Silver-Jewelry+K-Gold+Pearls-Jewelry+Fine-Earrings+Men's-Fine-Jewelry+Fine-Jewelry-Sets",
+                            "resource": {
+                                "handle": "men-fine-jewelry",
+                                "title": "Men Fine Jewelry"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608434847956",
+                            "title": "Men Wedding & Engagement",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-wedding-engagement/Groom-Jewelry-Sets+Wedding-Hair-Jewelry+Engagement-Rings+Wedding-&-Engagement",
+                            "resource": {
+                                "handle": "men-wedding-engagement",
+                                "title": "Men Wedding & Engagement"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608434880724",
+                            "title": "Men Fashion Jewelry",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-fashion-jewelry/Bracelets-&-Bangles+Brooches+Keychains+Charms+Rings+Body-Jewelry+Fashion-Jewelry-Sets+Necklace-&-Pendants+Men's-Cuff-Links+Earrings",
+                            "resource": {
+                                "handle": "men-fashion-jewelry",
+                                "title": "Men Fashion Jewelry"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608435110100",
+                            "title": "Men's Shoes",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/mens-shoes/Man-Boots+Formal-Shoes+Men's-Insoles+Man-Slippers+Vulcanize-Shoe+Man-Sandals+Casual-Shoes",
+                            "resource": {
+                                "handle": "mens-shoes",
+                                "title": "Men's Shoes"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608435339476",
+                            "title": "Men's Luggage & Bags",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/mens-luggage-bags/Briefcases+Waist-Bags+Girls-Bags+Men's-Backpacks+Luggage-&-Travel-Bags+Crossbody-Bags+Man-Wallets",
+                            "resource": {
+                                "handle": "mens-luggage-bags",
+                                "title": "Men's Luggage & Bags"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608435372244",
+                            "title": "Men Other Sports Equipment",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/other-sports-equipment/Musical-Instruments+Hunting+Skiing-&-Snowboarding+Fitness-&-Bodybuilding+Camping-&-Hiking+Golf",
+                            "resource": {
+                                "handle": "other-sports-equipment",
+                                "title": "Other Sports Equipment"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608435437780",
+                            "title": "Men Swimming",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-swimming/Men's-Swimwear",
+                            "resource": {
+                                "handle": "men-swimming",
+                                "title": "Men Swimming"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608435470548",
+                            "title": "Men Sport Shoes",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/sport-shoes/Running-Shoes+Dance-Shoes+Skateboarding-Shoes+Hiking-Shoes+Soccer-Shoes+Basketball-Shoes",
+                            "resource": {
+                                "handle": "sport-shoes",
+                                "title": "Sport Shoes"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608435503316",
+                            "title": "Men Sportswear",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/sportswear/Jerseys+Sports-Accessories+Outdoor-Shorts+Sports-Bags+Hiking-Jackets+Pants",
+                            "resource": {
+                                "handle": "sportswear",
+                                "title": "Sportswear"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608435536084",
+                            "title": "Men Cycling",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/cycling/Bicycle-Lights+Scooters+Cycling-Gloves+Bicycle-Helmets+Bicycle-Frames+Cycling-Jerseys+Bicycles",
+                            "resource": {
+                                "handle": "cycling",
+                                "title": "Cycling"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608435568852",
+                            "title": "Men Fishing",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/fishing/Fishing-Reels+Rod-Combos+Fishing-Tackle-Boxes+Fishing-Lures+Fishing-Rods+Fishing-Lines",
+                            "resource": {
+                                "handle": "fishing",
+                                "title": "Fishing"
+                            }
+                        }
+                    ]
                 },
                 {
-                    "id": "gid://shopify/MenuItem/608431112404",
-                    "resourceId": "gid://shopify/Collection/449285947604",
-                    "tags": [
-                        "Pajama Sets",
-                        "Man Shorts",
-                        "Cargo Pants",
-                        "Man Jeans",
-                        "Harem Pants",
-                        "Casual Pants",
-                        "Sweatpants"
-                    ],
-                    "title": "Men Bottoms",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/men-bottom-1/Pajama-Sets+Man-Shorts+Cargo-Pants+Man-Jeans+Harem-Pants+Casual-Pants+Sweatpants"
+                    "id": "gid://shopify/MenuItem/606602395860",
+                    "title": "Woman",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/women/Women-Outerwear-&-Jackets+Women-Couple-&-Parent-Child-Clothing+Women-Baby-&-Mother+Women-Accessories+Women-Bottoms+Women-Tops-&-Sets+Women-Weddings-&-Events+Women-Makeup+Women-Wigs-&-Extensions+Women-Synthetic-Hair+Women-Synthetic-Hair+Women-Beauty-Tools+",
+                    "resource": {
+                        "handle": "women",
+                        "title": "Women"
+                    },
+                    "items": [
+                        {
+                            "id": "gid://shopify/MenuItem/608299155668",
+                            "title": "Outerwear & Jackets",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/women-clothing/Blazers+Wool-&-Blend+Women's-Padded-Jackets+Woman-Trench+Basic-Jacket+Leather-&-Suede+Real-Fur",
+                            "resource": {
+                                "handle": "women-clothing",
+                                "title": "Women Outerwear & Jackets"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608299188436",
+                            "title": "Couple & Parent-Child Clothing",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/couple-parent-child-clothing/Couple-&-Parent-Child-Sweatshirts%C2%B7+Couple-&-Parent-Child-Short-Sleeves+Couple-&-Parent--Child-Jackets+Couple-&-Parent-Child-Tops+Couple-&-Parent-Child-Suits+Couple-&-Parent-Child-Pants+Family-Matching-Outfits",
+                            "resource": {
+                                "handle": "couple-parent-child-clothing",
+                                "title": "Couple & Parent-Child Clothing"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608299221204",
+                            "title": "Baby & Mother",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/baby-mother/Nappy-Changing+Activity-&-Gear+Backpacks-&-Carriers+Baby-Care+Maternity",
+                            "resource": {
+                                "handle": "baby-mother",
+                                "title": "Baby & Mother"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608299253972",
+                            "title": "Women Accessories",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/accessories/Scarves-&-Wraps+Face-Masks+Belts-&-Cummerbunds+Woman-Gloves-&-Mittens+Woman-Socks+Woman-Hats-&-Caps",
+                            "resource": {
+                                "handle": "accessories",
+                                "title": "Women Accessories"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608299286740",
+                            "title": "Women bottom",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/bottom/Leggings+Skirts+Woman-Jeans+Woman-Shorts+Pants-&-Capris+Wide-Leg-Pants",
+                            "resource": {
+                                "handle": "bottom",
+                                "title": "Women Bottom"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608299319508",
+                            "title": "Tops & Sets",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/tops-sets/Ladies-Short-Sleeve+Women's-Camis+Women's-Vests+Women's-Short-Sleeved-Shirts+Women's-Long-Sleeved-Shirts+Blouses-&-Shirts+Woman-Hoodies-&-Sweatshirts+Jumpsuits+Rompers+Lady-Dresses+Sweaters+Suits-&-Sets",
+                            "resource": {
+                                "handle": "tops-sets",
+                                "title": "Tops & Sets"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608299352276",
+                            "title": "Weddings & Events",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/weddings-events/Cocktail-Dresses+Evening-Dresses+Bridesmaid-Dresses+Prom-Dresses+Wedding-Dresses+Flower-Girl-Dresses",
+                            "resource": {
+                                "handle": "weddings-events",
+                                "title": "Weddings & Events"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608299385044",
+                            "title": "Makeup",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/makeup/Eyebrow-Pencil+Makeup-Set+Eyeshadow+Makeup-Brushes+Lipstick+False-Eyelashes",
+                            "resource": {
+                                "handle": "makeup",
+                                "title": "Makeup"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608299417812",
+                            "title": "Wigs & Extensions",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/wigs-extensions/Human-Hair-Wigs+Synthetic-Hair-Pieces+Synthetic-Lace-Wigs+Human-Hair-Lace-Wigs+Hair-Braids+Synthetic-Wigs",
+                            "resource": {
+                                "handle": "wigs-extensions",
+                                "title": "Wigs & Extensions"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608299450580",
+                            "title": "Synthetic Hair",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/synthetic-hair/Cosplay-Wigs",
+                            "resource": {
+                                "handle": "synthetic-hair",
+                                "title": "Synthetic Hair"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608299483348",
+                            "title": "Skin Care",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/skin-care/Razor+Face-Masks+Sun-Care+Essential-Oil+Body-Care+Facial-Care",
+                            "resource": {
+                                "handle": "skin-care",
+                                "title": "Skin Care"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608299516116",
+                            "title": "Beauty Tools",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/beauty-tools/Mirrors+Straightening-Irons+Electric-Face-Cleanser+Face-Skin-Care-Tools+Curling-Iron+Facial-Steamer",
+                            "resource": {
+                                "handle": "beauty-tools",
+                                "title": "Beauty Tools"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608299548884",
+                            "title": "Food & Health",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/food-health/Health-Care-Products",
+                            "resource": {
+                                "handle": "food-health",
+                                "title": "Food & Health"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608299581652",
+                            "title": "Nail Art & Tools",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/nail-art-tools/Nail-Glitters+Stickers-&-Decals+Nail-Decorations+Nail-Gel+Nail-Dryers+Nail-Art-Kits",
+                            "resource": {
+                                "handle": "nail-art-tools",
+                                "title": "Nail Art & Tools"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608299614420",
+                            "title": "Hair Weaves",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/hair-weaves/Pre-Colored-One-Pack+Hair-Weaving+Hair-Styling+Salon-Bundle-Hair+Pre-Colored-Hair-Weave",
+                            "resource": {
+                                "handle": "hair-weaves",
+                                "title": "Hair Weaves"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608299647188",
+                            "title": "Hair & Accessories",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/hair-accessories/Headband-&-Hair-Band-&-Hairpin+Human-Hair",
+                            "resource": {
+                                "handle": "hair-accessories",
+                                "title": "Hair & Accessories"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608299679956",
+                            "title": "Women's Watches",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/watches/Women-Sports-Watches+Dress-Watches+Creative-Watches+Lovers'-Watches+Women's-Bracelet-Watches+Children's-Watches",
+                            "resource": {
+                                "handle": "watches",
+                                "title": "Women's Watches"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608426819796",
+                            "title": "Fine Jewelry",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/jewelry/Various-Gemstones+925-Silver-Jewelry+K-Gold+Pearls-Jewelry+Fine-Earrings+Men's-Fine-Jewelry+Fine-Jewelry-Sets",
+                            "resource": {
+                                "handle": "jewelry",
+                                "title": "Women Fine Jewelry"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608426852564",
+                            "title": "Wedding & Engagement",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/women-wedding-engagement/Bridal-Jewelry-Sets+Wedding-Hair-Jewelry+Engagement-Rings+Wedding-&-Engagement",
+                            "resource": {
+                                "handle": "women-wedding-engagement",
+                                "title": "Women Wedding & Engagement"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608426885332",
+                            "title": "Fashion Jewelry",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/women-fashion-jewelry/Bracelets-&-Bangles+Brooches+Keychains+Charms+Rings+Body-Jewelry+Fashion-Jewelry-Sets+Necklace-&-Pendants+Earrings",
+                            "resource": {
+                                "handle": "women-fashion-jewelry",
+                                "title": "Women Fashion jewelry"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608426918100",
+                            "title": "Women's Shoes",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/women-shoes/Woman-Boots+Vulcanize-Shoes+Women's-Insoles+Pumps+Woman-Slippers+Woman-Sandals+Flats",
+                            "resource": {
+                                "handle": "women-shoes",
+                                "title": "Women shoes"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608426950868",
+                            "title": "Women's Luggage & Bags",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/bags/Woman-Wallets+Women's-Crossbody-Bags+Bag-Accessories+Evening-Bags+Fashion-Backpacks+Shoulder-Bags+Totes+Boys-Bags+Clutches",
+                            "resource": {
+                                "handle": "bags",
+                                "title": "Women Luggage & Bags"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608426983636",
+                            "title": "Baby & Mother",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/baby-mother/Nappy-Changing+Activity-&-Gear+Backpacks-&-Carriers+Baby-Care+Maternity",
+                            "resource": {
+                                "handle": "baby-mother",
+                                "title": "Baby & Mother"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608427016404",
+                            "title": "Other Sports Equipment",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/other-sports-equipment/Musical-Instruments+Hunting+Skiing-&-Snowboarding+Fitness-&-Bodybuilding+Camping-&-Hiking+Golf",
+                            "resource": {
+                                "handle": "other-sports-equipment",
+                                "title": "Other Sports Equipment"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608427049172",
+                            "title": "Women Swimming",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/swimming/One-Piece-Suits+Bikini-Sets+Two-Piece-Suits+Cover-Ups",
+                            "resource": {
+                                "handle": "swimming",
+                                "title": "Women Swimming"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608427081940",
+                            "title": "Sneakers",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/sport-shoes/Running-Shoes+Dance-Shoes+Skateboarding-Shoes+Hiking-Shoes+Soccer-Shoes+Basketball-Shoes",
+                            "resource": {
+                                "handle": "sport-shoes",
+                                "title": "Sport Shoes"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608427114708",
+                            "title": "Sportswear",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/sportswear/Jerseys+Sports-Accessories+Outdoor-Shorts+Sports-Bags+Hiking-Jackets+Pants",
+                            "resource": {
+                                "handle": "sportswear",
+                                "title": "Sportswear"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608427147476",
+                            "title": "Cycling",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/cycling/Bicycle-Lights+Scooters+Cycling-Gloves+Bicycle-Helmets+Bicycle-Frames+Cycling-Jerseys+Bicycles",
+                            "resource": {
+                                "handle": "cycling",
+                                "title": "Cycling"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608427180244",
+                            "title": "Fishing",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/fishing/Fishing-Reels+Rod-Combos+Fishing-Tackle-Boxes+Fishing-Lures+Fishing-Rods+Fishing-Lines",
+                            "resource": {
+                                "handle": "fishing",
+                                "title": "Fishing"
+                            }
+                        }
+                    ]
                 },
                 {
-                    "id": "gid://shopify/MenuItem/608431145172",
-                    "resourceId": "gid://shopify/Collection/449227620564",
-                    "tags": [
-                        "Men's Sleep & Lounge",
-                        "Shorts",
-                        "Briefs",
-                        "Robes",
-                        "Man Pajama Sets",
-                        "Boxers",
-                        "Long Johns"
-                    ],
-                    "title": "Men Underwear & Loungewear",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/underwear-loungewear/Men's-Sleep-&-Lounge+Shorts+Briefs+Robes+Man-Pajama-Sets+Boxers+Long-Johns"
+                    "id": "gid://shopify/MenuItem/608289226964",
+                    "title": "Kids",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/kids/Boys-Clothing+Baby-Clothing+Shoes-&-Bags+Toys-&-Hobbies+Girls-Clothing+Baby-&-Mother+Outerwear-&-Jackets+Couple-&-Parent-Child-Clothing+Kids-Accessories+Kids-Bottoms+Kids-Tops-&-Sets+Other-Sports-Equipment+Kids-Swimming+Kids-Sneakers+Sportswear+Cycling+Fi",
+                    "resource": {
+                        "handle": "kids",
+                        "title": "Kids"
+                    },
+                    "items": [
+                        {
+                            "id": "gid://shopify/MenuItem/608436224212",
+                            "title": "Boys Clothing",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/boys-clothing/Boy-Jeans+Boy-T-Shirts+Boy-Hoodies-&-Sweatshirts+Outerwear-&-Coats+Boy-Clothing-Sets+Boy-Accessories",
+                            "resource": {
+                                "handle": "boys-clothing",
+                                "title": "Boys clothing"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608436256980",
+                            "title": "Kids Shoes & Bags",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/kids-shoes-bags/Children's-Shoes+Boys-Shoes+School-Bags+Kids-Wallets+Girls-Shoes+Baby's-First-Walkers",
+                            "resource": {
+                                "handle": "kids-shoes-bags",
+                                "title": "Kids Shoes & Bags"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608436289748",
+                            "title": "Baby Clothing",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/baby-clothing/Baby-Clothing-Sets+Baby-Rompers+Baby-Accessories+Baby-Outerwear+Baby-Dresses+Baby-Pants",
+                            "resource": {
+                                "handle": "baby-clothing",
+                                "title": "Baby Clothing"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608436322516",
+                            "title": "Toys & Hobbies",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/toys-hobbies/Electronic-Pets+Blocks+RC-Helicopters+Stuffed-&-Plush-Animals+Action-&-Toy-Figures",
+                            "resource": {
+                                "handle": "toys-hobbies",
+                                "title": "Toys & Hobbies"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608436355284",
+                            "title": "Girls Clothing",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/girls-clothing/Girls-Underwear+Sleepwear-&-Robes+Tops-&-Tees+Girl-Clothing-Sets+Girl-Accessories+Girl-Dresses",
+                            "resource": {
+                                "handle": "girls-clothing",
+                                "title": "Girls Clothing"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608436388052",
+                            "title": "Baby & Mother",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/baby-mother/Nappy-Changing+Activity-&-Gear+Backpacks-&-Carriers+Baby-Care+Maternity",
+                            "resource": {
+                                "handle": "baby-mother",
+                                "title": "Baby & Mother"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608436420820",
+                            "title": "Couple & Parent-Child Clothing",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/couple-parent-child-clothing/Couple-&-Parent-Child-Sweatshirts%C2%B7+Couple-&-Parent-Child-Short-Sleeves+Couple-&-Parent--Child-Jackets+Couple-&-Parent-Child-Tops+Couple-&-Parent-Child-Suits+Couple-&-Parent-Child-Pants+Family-Matching-Outfits",
+                            "resource": {
+                                "handle": "couple-parent-child-clothing",
+                                "title": "Couple & Parent-Child Clothing"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608436453588",
+                            "title": "Women Accessories",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/accessories/Scarves-&-Wraps+Face-Masks+Belts-&-Cummerbunds+Woman-Gloves-&-Mittens+Woman-Socks+Woman-Hats-&-Caps",
+                            "resource": {
+                                "handle": "accessories",
+                                "title": "Women Accessories"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608437076180",
+                            "title": "Kids Accessories",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/kids-accessories/Scarves-&-Wraps+Face-Masks+Belts-&-Cummerbunds+Woman-Gloves-&-Mittens+Woman-Socks+Woman-Hats-&-Caps+Ties+Sullies-&-Beanies",
+                            "resource": {
+                                "handle": "kids-accessories",
+                                "title": "Kids Accessories"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608438845652",
+                            "title": "Other Sports Equipment",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/other-sports-equipment/Musical-Instruments+Hunting+Skiing-&-Snowboarding+Fitness-&-Bodybuilding+Camping-&-Hiking+Golf",
+                            "resource": {
+                                "handle": "other-sports-equipment",
+                                "title": "Other Sports Equipment"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608438878420",
+                            "title": "Kids Swimming",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/kids-swimming/One-Piece-Suits+Bikini-Sets+Two-Piece-Suits+Men's-Swimwear+Cover-Ups+Children's-Swimwear",
+                            "resource": {
+                                "handle": "kids-swimming",
+                                "title": "Kids Swimming"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608438911188",
+                            "title": "Sport Shoes",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/sport-shoes/Running-Shoes+Dance-Shoes+Skateboarding-Shoes+Hiking-Shoes+Soccer-Shoes+Basketball-Shoes",
+                            "resource": {
+                                "handle": "sport-shoes",
+                                "title": "Sport Shoes"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608438943956",
+                            "title": "Sportswear",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/sportswear/Jerseys+Sports-Accessories+Outdoor-Shorts+Sports-Bags+Hiking-Jackets+Pants",
+                            "resource": {
+                                "handle": "sportswear",
+                                "title": "Sportswear"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608438976724",
+                            "title": "Cycling",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/cycling/Bicycle-Lights+Scooters+Cycling-Gloves+Bicycle-Helmets+Bicycle-Frames+Cycling-Jerseys+Bicycles",
+                            "resource": {
+                                "handle": "cycling",
+                                "title": "Cycling"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608439009492",
+                            "title": "Fishing",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/fishing/Fishing-Reels+Rod-Combos+Fishing-Tackle-Boxes+Fishing-Lures+Fishing-Rods+Fishing-Lines",
+                            "resource": {
+                                "handle": "fishing",
+                                "title": "Fishing"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608439042260",
+                            "title": "Women's Watches",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/watches/Creative-Watches+Children's-Watches+Digital-Watches+Dual-Display-Watches",
+                            "resource": {
+                                "handle": "watches",
+                                "title": "Women's Watches"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608439075028",
+                            "title": "Fine Jewelry",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/jewelry/Various-Gemstones+925-Silver-Jewelry+K-Gold+Pearls-Jewelry+Fine-Earrings+Fine-Jewelry+Fine-Jewelry-Sets",
+                            "resource": {
+                                "handle": "jewelry",
+                                "title": "Women Fine Jewelry"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608439107796",
+                            "title": "Women Fashion jewelry",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/women-fashion-jewelry/Bracelets-&-Bangles+Brooches+Keychains+Charms+Rings+Body-Jewelry+Fashion-Jewelry-Sets+Necklace-&-Pendants+Earrings",
+                            "resource": {
+                                "handle": "women-fashion-jewelry",
+                                "title": "Women Fashion jewelry"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608439140564",
+                            "title": "Skin Care",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/skin-care/Razor+Face-Masks+Sun-Care+Essential-Oil+Body-Care+Facial-Care",
+                            "resource": {
+                                "handle": "skin-care",
+                                "title": "Skin Care"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608439173332",
+                            "title": "Beauty Tools",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/beauty-tools/Mirrors+Straightening-Irons+Electric-Face-Cleanser+Face-Skin-Care-Tools+Curling-Iron+Facial-Steamer",
+                            "resource": {
+                                "handle": "beauty-tools",
+                                "title": "Beauty Tools"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608439206100",
+                            "title": "Food & Health",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/food-health/Health-Care-Products",
+                            "resource": {
+                                "handle": "food-health",
+                                "title": "Food & Health"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608439238868",
+                            "title": "Hair & Accessories",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/hair-accessories/Headband-&-Hair-Band-&-Hairpin+Human-Hair",
+                            "resource": {
+                                "handle": "hair-accessories",
+                                "title": "Hair & Accessories"
+                            }
+                        }
+                    ]
                 },
                 {
-                    "id": "gid://shopify/MenuItem/608431177940",
-                    "resourceId": "gid://shopify/Collection/449227555028",
-                    "tags": [
-                        "Geometric",
-                        "Men's Long Sleeved",
-                        "Striped",
-                        "Solid",
-                        "3D",
-                        "Print"
-                    ],
-                    "title": "Men T-Shirts",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/t-shirt/Geometric+Men's-Long-Sleeved+Striped+Solid+3D+Print"
+                    "id": "gid://shopify/MenuItem/608163135700",
+                    "title": "Pets",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pets/Pet-Outdoor-Supplies+Pet-Furniture+Pet-Drinking-&-Feeding+Fish-&-Aquatic+Pet-Collars+Harnesses-&-Accessories+Pet-Toys+Pet-Bedding+Pet-Apparels+Bird-Supplies+Pet-Grooming",
+                    "resource": {
+                        "handle": "pets",
+                        "title": "Pets"
+                    },
+                    "items": [
+                        {
+                            "id": "gid://shopify/MenuItem/608441565396",
+                            "title": "Pet Outdoor Supplies",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/pet-outdoor-supplies/Barking-Control-Equipments+Trainers+Dog-Training-Pads-&-Diapers+Pet-Snacks+Pet-Bags+Pet-Seat-Belts+Pet-Car-Mats+Pet-Guardrails",
+                            "resource": {
+                                "handle": "pet-outdoor-supplies",
+                                "title": "Pet Outdoor Supplies"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441598164",
+                            "title": "Pet Furniture",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/pet-furniture/Cat-Scratching-Posts+Pet-Furniture-Protectors+Cat-Trees-&-Condos+Pet-Furniture-Tools+Pet-Houses-&-Cages+Dog-Stairs-&-Steps+Pet-Tents+Pet-Hammocks",
+                            "resource": {
+                                "handle": "pet-furniture",
+                                "title": "Pet Furniture"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441630932",
+                            "title": "Pet Drinking & Feeding",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/pet-drinking-feeding/Pet-Bowls+Pet-Drinking-Tools+Pet-Feeding-Tools",
+                            "resource": {
+                                "handle": "pet-drinking-feeding",
+                                "title": "Pet Drinking & Feeding"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441663700",
+                            "title": "Fish & Aquatic Pets",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/fish-aquatic-pets/Fish-Tanks+Fish-Tank-Decorations+Fish-Tank-Cleaning-Supplies",
+                            "resource": {
+                                "handle": "fish-aquatic-pets",
+                                "title": "Fish & Aquatic Pets"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441696468",
+                            "title": "Pet Collars, Harnesses & Accessories",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/pet-collars-harnesses-accessories/Pet-Hair-Accessories+Pet-Bows-&-Ties+Pet-Necklaces+Pet-Headwears+Pet-Glasses+Pet-Collars+Pet-Leashes+Pet-Harnesses+Pet-Muzzles+Pet-Collar+Leash-&-Harness-Sets+Custom-Pet-tags+Collars+Leashes-&-Harnesses",
+                            "resource": {
+                                "handle": "pet-collars-harnesses-accessories",
+                                "title": "Pet Collars, Harnesses & Accessories"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441729236",
+                            "title": "Pet Toys",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/pet-toys/Pet-Chase-Toys+Pet-Chew-Toys+Pet-Training-and-Educational-Toys+Pet-Sound-Toys+Pet-Tunnel-Toys+Pet-Toy-Set+Pet-Plush-Toys",
+                            "resource": {
+                                "handle": "pet-toys",
+                                "title": "Pet Toys"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441762004",
+                            "title": "Pet Bedding",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/pet-bedding/Pet-Mats+Pet-Nests+Pet-Beds+Pet-Blankets-&-Quilts",
+                            "resource": {
+                                "handle": "pet-bedding",
+                                "title": "Pet Bedding"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441794772",
+                            "title": "Pet Apparels",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/pet-apparels/Pet-Dresses+Pet-Tops+Pet-Sweaters+Pet-Sweatshirts-&-Hoodies+Pet-Coats-&-Jackets+Pet-Jumpsuits+Pet-Pajamas+Pet-Clothings+Pet-Functional-Clothings+Pet-Clothing-Sets+Pet-Down-&-Parkas+Pet-Shoes-&-Socks+Pet-Scarves+Pet-Bags",
+                            "resource": {
+                                "handle": "pet-apparels",
+                                "title": "Pet Apparels"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441827540",
+                            "title": "Bird Supplies",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/bird-supplies/Bird-Feeders+Bird-Cages+Bird-Swings+Bird-Toys+Bird-Travel-Bags+Bird-Accessories",
+                            "resource": {
+                                "handle": "bird-supplies",
+                                "title": "Bird Supplies"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441860308",
+                            "title": "Pet Groomings",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/pet-grooming/Pet-Hair-Removers-&-Combs+Pet-Nail-Polishers+Pet-Shower-Products+Pet-Towels",
+                            "resource": {
+                                "handle": "pet-grooming",
+                                "title": "Pet Grooming"
+                            }
+                        }
+                    ]
                 },
                 {
-                    "id": "gid://shopify/MenuItem/608433504468",
-                    "resourceId": "gid://shopify/Collection/449287192788",
-                    "tags": [
-                        "Suits & Blazer",
-                        "Men's Sweaters",
-                        "Genuine Leather",
-                        "Man Trench",
-                        "Men's Shirts",
-                        "Men's Jackets",
-                        "Men's Suits",
-                        "Man Hoodies & Sweatshirts",
-                        "Wool & Blends",
-                        "Parkas",
-                        "Down Jackets"
-                    ],
-                    "title": "Men Outerwear & Jackets",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/men-outerwear-jackets/Suits-&-Blazer+Men's-Sweaters+Genuine-Leather+Man-Trench+Men's-Shirts+Men's-Jackets+Men's-Suits+Man-Hoodies-&-Sweatshirts+Wool-&-Blends+Parkas+Down-Jackets"
+                    "id": "gid://shopify/MenuItem/608163102932",
+                    "title": "Home Decoration",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/home-decoration/Home-Textiles+Festive-&-Party-Supplies+Arts+Crafts-&-Sewing+Kitchen+Dining-&-Bar+Home-Storage+Musical-Instruments+Outdoor-Lighting+Home-Appliances+Indoor-Lighting+LED-Lighting+Tools",
+                    "resource": {
+                        "handle": "home-decoration",
+                        "title": "Home Decoration"
+                    },
+                    "items": [
+                        {
+                            "id": "gid://shopify/MenuItem/608441893076",
+                            "title": "Home Textiles",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/home-textiles/Curtains+Cushion-Covers+Towels+Comforters+Bedding-Sets+Pillows",
+                            "resource": {
+                                "handle": "home-textiles",
+                                "title": "Home Textiles"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441925844",
+                            "title": "Festive & Party Supplies",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/festive-party-supplies/Christmas-Decoration-Supplies+Invitation-Cards+Cake-Decorating-Supplies+Decorative-Flowers-&-Wreaths+Party-Masks+Event-&-Party-Supplies",
+                            "resource": {
+                                "handle": "festive-party-supplies",
+                                "title": "Festive & Party Supplies"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441958612",
+                            "title": "Arts, Crafts & Sewing",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/arts-crafts-sewing/Decor-Paintings+Lace+Apparel-Sewing-&-Fabric+Cross-Stitch+Ribbons+Diamond-Painting-Cross-Stitch+Fabric",
+                            "resource": {
+                                "handle": "arts-crafts-sewing",
+                                "title": "Arts, Crafts & Sewing"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441991380",
+                            "title": "Kitchen, Dining & Bar",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/kitchen-dining-bar/Dinnerware+Kitchen-Knives-&-Accessories+Bakeware+Barware+Drinkware+Cooking-Tools",
+                            "resource": {
+                                "handle": "kitchen-dining-bar",
+                                "title": "Kitchen, Dining & Bar"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608442024148",
+                            "title": "Home Storage",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/home-storage/Stationeries+Furniture+Storage-Bags-&-Cases-&-Boxes+Kitchen-Storage+Home-Office-Storage+Clothing-&-Wardrobe-Storage+Bathroom-Storage+Storage-Bottles-&-Jars",
+                            "resource": {
+                                "handle": "home-storage",
+                                "title": "Home Storage"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608442056916",
+                            "title": "Musical Instruments",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/musical-instruments/Guitars+Violins",
+                            "resource": {
+                                "handle": "musical-instruments",
+                                "title": "Musical Instruments"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608442089684",
+                            "title": "Outdoor Lighting",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/outdoor-lighting/Flashlights-&-Torches+Floodlights+Underwater-Lights+String-Lights+Solar-Lamps",
+                            "resource": {
+                                "handle": "outdoor-lighting",
+                                "title": "Outdoor Lighting"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608442122452",
+                            "title": "Home Appliances",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/home-appliances/Personal-Care-Appliances+Cleaning-Appliances+Air-Conditioning-Appliances+Home-Appliance-Parts+Kitchen-Appliances",
+                            "resource": {
+                                "handle": "home-appliances",
+                                "title": "Home Appliances"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608442155220",
+                            "title": "Indoor Lighting",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/indoor-lighting/Chandeliers+Pendant-Lights+Downlights+Night-Lights+Wall-Lamps+Ceiling-Lights",
+                            "resource": {
+                                "handle": "indoor-lighting",
+                                "title": "Indoor Lighting"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608442187988",
+                            "title": "LED Lighting",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/led-lighting/LED-Spotlights",
+                            "resource": {
+                                "handle": "led-lighting",
+                                "title": "LED Lighting"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608442220756",
+                            "title": "Tools",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/tools-1/Measurement-&-Analysis+Welding-&-Soldering-Supplies+Welding-Equipment+Hand-Tools+Tool-Sets+Tools-Storage+Machine-Tools-&-Accessories+Power-Tools+Woodworking-Machinery+Garden-Tools",
+                            "resource": {
+                                "handle": "tools-1",
+                                "title": "Home Tools"
+                            }
+                        }
+                    ]
                 },
                 {
-                    "id": "gid://shopify/MenuItem/608433537236",
-                    "resourceId": "gid://shopify/Collection/449227063508",
-                    "tags": [
-                        "Couple & Parent Child Sweatshirts·",
-                        "Couple & Parent Child Short Sleeves",
-                        "Couple & Parent  Child Jackets",
-                        "Couple & Parent Child Tops",
-                        "Couple & Parent Child Suits",
-                        "Couple & Parent Child Pants",
-                        "Family Matching Outfits"
-                    ],
-                    "title": "Men Couple & Parent-Child Clothing",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/couple-parent-child-clothing/Couple-&-Parent-Child-Sweatshirts%C2%B7+Couple-&-Parent-Child-Short-Sleeves+Couple-&-Parent--Child-Jackets+Couple-&-Parent-Child-Tops+Couple-&-Parent-Child-Suits+Couple-&-Parent-Child-Pants+Family-Matching-Outfits"
+                    "id": "gid://shopify/MenuItem/607873466580",
+                    "title": "Electronics",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/electronics/Smart-Electronics+Camera-&-Photo+Accessories-&-Parts+Video-Games+Home-Audio-&-Video+Portable-Audio-&-Video+Mobile-Phone-Parts+Mobile-Phones+Mobile-Phone-Accessories+Cases-&-Covers+Storage-Devices+Tablet-&-Laptop-Accessories+Security-&-Protection+Laptop-&-",
+                    "resource": {
+                        "handle": "electronics",
+                        "title": "Electronics"
+                    },
+                    "items": [
+                        {
+                            "id": "gid://shopify/MenuItem/608443171028",
+                            "title": "Smart Electronics",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/smart-electronics/Wearable-Devices+Smart-Home-Appliances+Smart-Wearable-Accessories+Smart-Wristbands+Smart-Watches+Smart-Remote-Controls",
+                            "resource": {
+                                "handle": "smart-electronics",
+                                "title": "Smart Electronics"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443203796",
+                            "title": "Camera & Photo",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/camera-photo/Photo-Studio+Camera-Drones+Camera-&-Photo-Accessories+Digital-Cameras+Action-Cameras+Camcorders",
+                            "resource": {
+                                "handle": "camera-photo",
+                                "title": "Camera & Photo"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443236564",
+                            "title": "Accessories & Parts",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/accessories-parts/Digital-Cables+Home-Electronic-Accessories+Audio-&-Video-Cables+Charger+Batteries+Digital-Gear-Bags",
+                            "resource": {
+                                "handle": "accessories-parts",
+                                "title": "Accessories & Parts"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443269332",
+                            "title": "Video Games",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/video-games/Gamepads+Handheld-Game-Players+Video-Game-Consoles+Stickers+Joysticks",
+                            "resource": {
+                                "handle": "video-games",
+                                "title": "Video Games"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443302100",
+                            "title": "Home Audio & Video",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/home-audio-video/Projectors+Television+TV-Receivers+Audio-Amplifiers+Projectors-&-Accessories+Home-Audio-&-Video+TV-Sticks",
+                            "resource": {
+                                "handle": "home-audio-video",
+                                "title": "Home Audio & Video"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443334868",
+                            "title": "Portable Audio & Video",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/portable-audio-video/Microphones+Speakers+Earphones-&-Headphones+VR-&-AR-Devices+MP3-Players",
+                            "resource": {
+                                "handle": "portable-audio-video",
+                                "title": "Portable Audio & Video"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443367636",
+                            "title": "Mobile Phone Parts",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/mobile-phone-parts/SIM-Card-&-Tools+Mobile-Batteries+Housings+LCDs+Flex-Cables+Touch-Panel",
+                            "resource": {
+                                "handle": "mobile-phone-parts",
+                                "title": "Mobile Phone Parts"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443400404",
+                            "title": "Mobile Phones",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/mobile-phones/Quad-Core+Single-SIM-Card+Dual-SIM-Card+3GB-RAM+Octa-Core+5-inch-Display",
+                            "resource": {
+                                "handle": "mobile-phones",
+                                "title": "Mobile Phones"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443433172",
+                            "title": "Mobile Phone Accessories",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/mobile-phone-accessories/Cables+Power-Bank+Screen-Protectors+Lenses+Holders-&-Stands+Chargers",
+                            "resource": {
+                                "handle": "mobile-phone-accessories",
+                                "title": "Mobile Phone Accessories"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443465940",
+                            "title": "Cases & Covers",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/cases-covers/Huawei-Cases+Patterned-Cases+Cases-For-iPhone-6-&-6-Plus+Wallet-Cases+Cases-For-iPhone-7-&-7-Plus+Galaxy-S8-Cases+IPhone-X-Cases+Galaxy-S7-Cases+Cases-For-iPhone-8-&-8-Plus+Xiaomi-Cases+Silicone-Cases+Flip-Cases+Waterptoof-Cases+Leather-Cases",
+                            "resource": {
+                                "handle": "cases-covers",
+                                "title": "Cases & Covers"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443498708",
+                            "title": "Storage Devices",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/storage-devices/SSD+USB-Flash-Drives+HDD-Enclosures+Memory-Cards+External-Hard-Drives",
+                            "resource": {
+                                "handle": "storage-devices",
+                                "title": "Storage Devices"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443531476",
+                            "title": "Tablet & Laptop Accessories",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/tablet-laptop-accessories/Tablet-LCD-Screens+Laptop-Batteries+Laptop-Bags-&-Cases+Tablet-Cases+Tablet-Accessories",
+                            "resource": {
+                                "handle": "tablet-laptop-accessories",
+                                "title": "Tablet & Laptop Accessories"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443564244",
+                            "title": "Security & Protection",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/security-protection/Alarm-&-Sensor+Fire-Protection+Workplace-Safety-Supplies+Door-Intercom+Surveillance-Products",
+                            "resource": {
+                                "handle": "security-protection",
+                                "title": "Security & Protection"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443597012",
+                            "title": "Laptop & Tablets",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/laptop-tablets/Phone-Call-Tablets+2-in-1-Tablets+Laptops+Tablets+Gaming-Laptops",
+                            "resource": {
+                                "handle": "laptop-tablets",
+                                "title": "Laptop & Tablets"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443629780",
+                            "title": "Office Electronics",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/office-electronics/Office-&-School-Supplies+Computer-Tablet-Accessories+Printer-Supplies+3D-Printers+3D-Pens+Printers+Scanners",
+                            "resource": {
+                                "handle": "office-electronics",
+                                "title": "Office Electronics"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443662548",
+                            "title": "Networking",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/networking/Modem-Router-Combos+Wireless-Routers+Networking-Tools+3G-Modems+Network-Cards",
+                            "resource": {
+                                "handle": "networking",
+                                "title": "Networking"
+                            }
+                        }
+                    ]
                 },
                 {
-                    "id": "gid://shopify/MenuItem/608433570004",
-                    "resourceId": "gid://shopify/Collection/449227718868",
-                    "tags": [
-                        "Baseball Caps",
-                        "Bomber Hats",
-                        "Berets",
-                        "Fedoras"
-                    ],
-                    "title": "Men Hats & Caps",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/hats-caps/Baseball-Caps+Bomber-Hats+Berets+Fedoras"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608433602772",
-                    "resourceId": "gid://shopify/Collection/449286799572",
-                    "tags": [
-                        "Human Hair Wigs",
-                        "Synthetic Hair Pieces",
-                        "Synthetic Lace Wigs",
-                        "Human Hair Lace Wigs",
-                        "Hair Braids",
-                        "Synthetic Wigs"
-                    ],
-                    "title": "Men Wigs & Extensions",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/men-wigs-extensions/Human-Hair-Wigs+Synthetic-Hair-Pieces+Synthetic-Lace-Wigs+Human-Hair-Lace-Wigs+Hair-Braids+Synthetic-Wigs"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608433635540",
-                    "resourceId": "gid://shopify/Collection/449286766804",
-                    "tags": [
-                        "Cosplay Wigs"
-                    ],
-                    "title": "Men Synthetic Hair",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/men-synthetic-hair/Cosplay-Wigs"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608433668308",
-                    "resourceId": "gid://shopify/Collection/449286701268",
-                    "tags": [
-                        "Razor",
-                        "Face Masks",
-                        "Sun Care",
-                        "Essential Oil",
-                        "Body Care",
-                        "Facial Care"
-                    ],
-                    "title": "Men Skin Care",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/men-skin-care/Razor+Face-Masks+Sun-Care+Essential-Oil+Body-Care+Facial-Care"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608433701076",
-                    "resourceId": "gid://shopify/Collection/449286668500",
-                    "tags": [
-                        "Mirrors",
-                        "Straightening Irons",
-                        "Electric Face Cleanser",
-                        "Face Skin Care Tools",
-                        "Curling Iron",
-                        "Facial Steamer"
-                    ],
-                    "title": "Men Beauty Tools",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/men-beauty-tools/Mirrors+Straightening-Irons+Electric-Face-Cleanser+Face-Skin-Care-Tools+Curling-Iron+Facial-Steamer"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608433733844",
-                    "resourceId": "gid://shopify/Collection/449286537428",
-                    "tags": [
-                        "Health Care Products"
-                    ],
-                    "title": "Men Food & Health",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/men-food-health/Health-Care-Products"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608433766612",
-                    "resourceId": "gid://shopify/Collection/449286504660",
-                    "tags": [
-                        "Pre Colored One Pack",
-                        "Hair Weaving",
-                        "Hair Styling",
-                        "Salon Bundle Hair",
-                        "Pre Colored Hair Weave"
-                    ],
-                    "title": "Men Hair Weaves",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/men-hair-weaves/Pre-Colored-One-Pack+Hair-Weaving+Hair-Styling+Salon-Bundle-Hair+Pre-Colored-Hair-Weave"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608433799380",
-                    "resourceId": "gid://shopify/Collection/449286439124",
-                    "tags": [
-                        "Headband & Hair Band & Hairpin",
-                        "Human Hair"
-                    ],
-                    "title": "Men Hair & Accessories",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/men-hair-accessories/Headband-&-Hair-Band-&-Hairpin+Human-Hair"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608433832148",
-                    "resourceId": "gid://shopify/Collection/449255604436",
-                    "tags": [
-                        "Quartz Watches",
-                        "Mechanical Watches",
-                        "Digital Watches",
-                        "Dual Display Watches",
-                        "Men Sports Watches"
-                    ],
-                    "title": "Men's Watches",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/mens-watches/Quartz-Watches+Mechanical-Watches+Digital-Watches+Dual-Display-Watches+Men-Sports-Watches"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608434061524",
-                    "resourceId": "gid://shopify/Collection/449287487700",
-                    "tags": [
-                        "Various Gemstones",
-                        "925 Silver Jewelry",
-                        "K Gold",
-                        "Pearls Jewelry",
-                        "Fine Earrings",
-                        "Men's Fine Jewelry",
-                        "Fine Jewelry Sets"
-                    ],
-                    "title": "Men Fine Jewelry",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/men-fine-jewelry/Various-Gemstones+925-Silver-Jewelry+K-Gold+Pearls-Jewelry+Fine-Earrings+Men's-Fine-Jewelry+Fine-Jewelry-Sets"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608434847956",
-                    "resourceId": "gid://shopify/Collection/449287586004",
-                    "tags": [
-                        "Groom Jewelry Sets",
-                        "Wedding Hair Jewelry",
-                        "Engagement Rings",
-                        "Wedding & Engagement"
-                    ],
-                    "title": "Men Wedding & Engagement",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/men-wedding-engagement/Groom-Jewelry-Sets+Wedding-Hair-Jewelry+Engagement-Rings+Wedding-&-Engagement"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608434880724",
-                    "resourceId": "gid://shopify/Collection/449287913684",
-                    "tags": [
-                        "Bracelets & Bangles",
-                        "Brooches",
-                        "Keychains",
-                        "Charms",
-                        "Rings",
-                        "Body Jewelry",
-                        "Fashion Jewelry Sets",
-                        "Necklace & Pendants",
-                        "Men's Cuff Links",
-                        "Earrings"
-                    ],
-                    "title": "Men Fashion Jewelry",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/men-fashion-jewelry/Bracelets-&-Bangles+Brooches+Keychains+Charms+Rings+Body-Jewelry+Fashion-Jewelry-Sets+Necklace-&-Pendants+Men's-Cuff-Links+Earrings"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608435110100",
-                    "resourceId": "gid://shopify/Collection/449287946452",
-                    "tags": [
-                        "Man Boots",
-                        "Formal Shoes",
-                        "Men's Insoles",
-                        "Man Slippers",
-                        "Vulcanize Shoe",
-                        "Man Sandals",
-                        "Casual Shoes"
-                    ],
-                    "title": "Men's Shoes",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/mens-shoes/Man-Boots+Formal-Shoes+Men's-Insoles+Man-Slippers+Vulcanize-Shoe+Man-Sandals+Casual-Shoes"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608435339476",
-                    "resourceId": "gid://shopify/Collection/449288044756",
-                    "tags": [
-                        "Briefcases",
-                        "Waist Bags",
-                        "Girls Bags",
-                        "Men's Backpacks",
-                        "Luggage & Travel Bags",
-                        "Crossbody Bags",
-                        "Man Wallets"
-                    ],
-                    "title": "Men's Luggage & Bags",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/mens-luggage-bags/Briefcases+Waist-Bags+Girls-Bags+Men's-Backpacks+Luggage-&-Travel-Bags+Crossbody-Bags+Man-Wallets"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608435372244",
-                    "resourceId": "gid://shopify/Collection/449247641812",
-                    "tags": [
-                        "Musical Instruments",
-                        "Hunting",
-                        "Skiing & Snowboarding",
-                        "Fitness & Bodybuilding",
-                        "Camping & Hiking",
-                        "Golf"
-                    ],
-                    "title": "Men Other Sports Equipment",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/other-sports-equipment/Musical-Instruments+Hunting+Skiing-&-Snowboarding+Fitness-&-Bodybuilding+Camping-&-Hiking+Golf"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608435437780",
-                    "resourceId": "gid://shopify/Collection/449288143060",
-                    "tags": [
-                        "Men's Swimwear"
-                    ],
-                    "title": "Men Swimming",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/men-swimming/Men's-Swimwear"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608435470548",
-                    "resourceId": "gid://shopify/Collection/449247707348",
-                    "tags": [
-                        "Running Shoes",
-                        "Dance Shoes",
-                        "Skateboarding Shoes",
-                        "Hiking Shoes",
-                        "Soccer Shoes",
-                        "Basketball Shoes"
-                    ],
-                    "title": "Men Sport Shoes",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/sport-shoes/Running-Shoes+Dance-Shoes+Skateboarding-Shoes+Hiking-Shoes+Soccer-Shoes+Basketball-Shoes"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608435503316",
-                    "resourceId": "gid://shopify/Collection/449247838420",
-                    "tags": [
-                        "Jerseys",
-                        "Sports Accessories",
-                        "Outdoor Shorts",
-                        "Sports Bags",
-                        "Hiking Jackets",
-                        "Pants"
-                    ],
-                    "title": "Men Sportswear",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/sportswear/Jerseys+Sports-Accessories+Outdoor-Shorts+Sports-Bags+Hiking-Jackets+Pants"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608435536084",
-                    "resourceId": "gid://shopify/Collection/449247740116",
-                    "tags": [
-                        "Bicycle Lights",
-                        "Scooters",
-                        "Cycling Gloves",
-                        "Bicycle Helmets",
-                        "Bicycle Frames",
-                        "Cycling Jerseys",
-                        "Bicycles"
-                    ],
-                    "title": "Men Cycling",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/cycling/Bicycle-Lights+Scooters+Cycling-Gloves+Bicycle-Helmets+Bicycle-Frames+Cycling-Jerseys+Bicycles"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608435568852",
-                    "resourceId": "gid://shopify/Collection/449247871188",
-                    "tags": [
-                        "Fishing Reels",
-                        "Rod Combos",
-                        "Fishing Tackle Boxes",
-                        "Fishing Lures",
-                        "Fishing Rods",
-                        "Fishing Lines"
-                    ],
-                    "title": "Men Fishing",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/fishing/Fishing-Reels+Rod-Combos+Fishing-Tackle-Boxes+Fishing-Lures+Fishing-Rods+Fishing-Lines"
+                    "id": "gid://shopify/MenuItem/608289259732",
+                    "title": " Automobiles & Motorcycles",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/tools-maintenance-care/Motorcycle-Accessories-&-Parts+Interior-Accessories+Auto-Replacement-Parts+Tools+Maintenance-&-Care+Car-Electronics+Exterior-Accessories",
+                    "resource": {
+                        "handle": "tools-maintenance-care",
+                        "title": "Car Tools, Maintenance & Care"
+                    },
+                    "items": [
+                        {
+                            "id": "gid://shopify/MenuItem/608444252372",
+                            "title": "Motorcycle Accessories & Parts",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/motorcycle-accessories-parts/Lighting+Exhaust-&-Exhaust-Systems+Motor-Brake-System+Motorcycle-Seat-Covers+Other-Motorcycle-Accessories+Helmet-Headset+Body-&-Frame",
+                            "resource": {
+                                "handle": "motorcycle-accessories-parts",
+                                "title": "Motorcycle Accessories & Parts"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608444285140",
+                            "title": "Interior Accessories",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/interior-accessories/Floor-Mats+Key-Case-for-Car+Steering-Covers+Automobiles-Seat-Covers+Stowing-Tidying",
+                            "resource": {
+                                "handle": "interior-accessories",
+                                "title": "Interior Accessories"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608444317908",
+                            "title": "Auto Replacement Parts",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/auto-replacement-parts/Interior-Parts+Car-Brake-System+Spark-Plugs-&-Ignition-System+Automobiles-Sensors+Exterior-Parts+Other-Replacement-Parts+Car-Lights+Windscreen-Wipers-&-Windows",
+                            "resource": {
+                                "handle": "auto-replacement-parts",
+                                "title": "Auto Replacement Parts"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608444350676",
+                            "title": "Car Tools, Maintenance & Care",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/tools-maintenance-care/Car-Washer+Diagnostic-Tools+Paint-Care+Other-Maintenance-Products",
+                            "resource": {
+                                "handle": "tools-maintenance-care",
+                                "title": "Car Tools, Maintenance & Care"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608444383444",
+                            "title": "Car Electronics",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/car-electronics/Vehicle-Camera+DVR-&-Dash-Camera+Car-Monitors+Vehicle-GPS+Car-Mirror-Video+Car-Radios+GPS-Trackers+Car-Multimedia-Player+Alarm-Systems-&-Security+Jump-Starter",
+                            "resource": {
+                                "handle": "car-electronics",
+                                "title": "Car Electronics"
+                            }
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608444416212",
+                            "title": "Exterior Accessories",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/exterior-accessories/Car-Stickers+Other-Exterior-Accessories+Car-Covers",
+                            "resource": {
+                                "handle": "exterior-accessories",
+                                "title": "Exterior Accessories"
+                            }
+                        }
+                    ]
                 }
             ]
         },
-        {
-            "id": "gid://shopify/MenuItem/606602395860",
-            "resourceId": "gid://shopify/Collection/449068761300",
-            "tags": [
-                "Women Outerwear & Jackets",
-                "Women Couple & Parent Child Clothing",
-                "Women Baby & Mother",
-                "Women Accessories",
-                "Women Bottoms",
-                "Women Tops & Sets",
-                "Women Weddings & Events",
-                "Women Makeup",
-                "Women Wigs & Extensions",
-                "Women Synthetic Hair",
-                "Women Synthetic Hair",
-                "Women Beauty Tools"
-            ],
-            "title": "Woman",
-            "type": "COLLECTION",
-            "url": "https://tedrk1-wu.myshopify.com/collections/women/Women-Outerwear-&-Jackets+Women-Couple-&-Parent-Child-Clothing+Women-Baby-&-Mother+Women-Accessories+Women-Bottoms+Women-Tops-&-Sets+Women-Weddings-&-Events+Women-Makeup+Women-Wigs-&-Extensions+Women-Synthetic-Hair+Women-Synthetic-Hair+Women-Beauty-Tools+",
-            "items": [
-                {
-                    "id": "gid://shopify/MenuItem/608299155668",
-                    "resourceId": "gid://shopify/Collection/449225425108",
-                    "tags": [
-                        "Blazers",
-                        "Wool & Blend",
-                        "Women's Padded Jackets",
-                        "Woman Trench",
-                        "Basic Jacket",
-                        "Leather & Suede",
-                        "Real Fur"
-                    ],
-                    "title": "Outerwear & Jackets",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/women-clothing/Blazers+Wool-&-Blend+Women's-Padded-Jackets+Woman-Trench+Basic-Jacket+Leather-&-Suede+Real-Fur"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608299188436",
-                    "resourceId": "gid://shopify/Collection/449227063508",
-                    "tags": [
-                        "Couple & Parent Child Sweatshirts·",
-                        "Couple & Parent Child Short Sleeves",
-                        "Couple & Parent  Child Jackets",
-                        "Couple & Parent Child Tops",
-                        "Couple & Parent Child Suits",
-                        "Couple & Parent Child Pants",
-                        "Family Matching Outfits"
-                    ],
-                    "title": "Couple & Parent-Child Clothing",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/couple-parent-child-clothing/Couple-&-Parent-Child-Sweatshirts%C2%B7+Couple-&-Parent-Child-Short-Sleeves+Couple-&-Parent--Child-Jackets+Couple-&-Parent-Child-Tops+Couple-&-Parent-Child-Suits+Couple-&-Parent-Child-Pants+Family-Matching-Outfits"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608299221204",
-                    "resourceId": "gid://shopify/Collection/449247576276",
-                    "tags": [
-                        "Nappy Changing",
-                        "Activity & Gear",
-                        "Backpacks & Carriers",
-                        "Baby Care",
-                        "Maternity"
-                    ],
-                    "title": "Baby & Mother",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/baby-mother/Nappy-Changing+Activity-&-Gear+Backpacks-&-Carriers+Baby-Care+Maternity"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608299253972",
-                    "resourceId": "gid://shopify/Collection/449225949396",
-                    "tags": [
-                        "Scarves & Wraps",
-                        "Face Masks",
-                        "Belts & Cummerbunds",
-                        "Woman Gloves & Mittens",
-                        "Woman Socks",
-                        "Woman Hats & Caps"
-                    ],
-                    "title": "Women Accessories",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/accessories/Scarves-&-Wraps+Face-Masks+Belts-&-Cummerbunds+Woman-Gloves-&-Mittens+Woman-Socks+Woman-Hats-&-Caps"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608299286740",
-                    "resourceId": "gid://shopify/Collection/449227227348",
-                    "tags": [
-                        "Leggings",
-                        "Skirts",
-                        "Woman Jeans",
-                        "Woman Shorts",
-                        "Pants & Capris",
-                        "Wide Leg Pants"
-                    ],
-                    "title": "Women bottom",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/bottom/Leggings+Skirts+Woman-Jeans+Woman-Shorts+Pants-&-Capris+Wide-Leg-Pants"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608299319508",
-                    "resourceId": "gid://shopify/Collection/449226768596",
-                    "tags": [
-                        "Ladies Short Sleeve",
-                        "Women's Camis",
-                        "Women's Vests",
-                        "Women's Short Sleeved Shirts",
-                        "Women's Long Sleeved Shirts",
-                        "Blouses & Shirts",
-                        "Woman Hoodies & Sweatshirts",
-                        "Jumpsuits",
-                        "Rompers",
-                        "Lady Dresses",
-                        "Sweaters",
-                        "Suits & Sets"
-                    ],
-                    "title": "Tops & Sets",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/tops-sets/Ladies-Short-Sleeve+Women's-Camis+Women's-Vests+Women's-Short-Sleeved-Shirts+Women's-Long-Sleeved-Shirts+Blouses-&-Shirts+Woman-Hoodies-&-Sweatshirts+Jumpsuits+Rompers+Lady-Dresses+Sweaters+Suits-&-Sets"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608299352276",
-                    "resourceId": "gid://shopify/Collection/449254785236",
-                    "tags": [
-                        "Cocktail Dresses",
-                        "Evening Dresses",
-                        "Bridesmaid Dresses",
-                        "Prom Dresses",
-                        "Wedding Dresses",
-                        "Flower Girl Dresses"
-                    ],
-                    "title": "Weddings & Events",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/weddings-events/Cocktail-Dresses+Evening-Dresses+Bridesmaid-Dresses+Prom-Dresses+Wedding-Dresses+Flower-Girl-Dresses"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608299385044",
-                    "resourceId": "gid://shopify/Collection/449247903956",
-                    "tags": [
-                        "Eyebrow Pencil",
-                        "Makeup Set",
-                        "Eyeshadow",
-                        "Makeup Brushes",
-                        "Lipstick",
-                        "False Eyelashes"
-                    ],
-                    "title": "Makeup",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/makeup/Eyebrow-Pencil+Makeup-Set+Eyeshadow+Makeup-Brushes+Lipstick+False-Eyelashes"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608299417812",
-                    "resourceId": "gid://shopify/Collection/449248198868",
-                    "tags": [
-                        "Human Hair Wigs",
-                        "Synthetic Hair Pieces",
-                        "Synthetic Lace Wigs",
-                        "Human Hair Lace Wigs",
-                        "Hair Braids",
-                        "Synthetic Wigs"
-                    ],
-                    "title": "Wigs & Extensions",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/wigs-extensions/Human-Hair-Wigs+Synthetic-Hair-Pieces+Synthetic-Lace-Wigs+Human-Hair-Lace-Wigs+Hair-Braids+Synthetic-Wigs"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608299450580",
-                    "resourceId": "gid://shopify/Collection/449248362708",
-                    "tags": [
-                        "Cosplay Wigs"
-                    ],
-                    "title": "Synthetic Hair",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/synthetic-hair/Cosplay-Wigs"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608299483348",
-                    "resourceId": "gid://shopify/Collection/449248002260",
-                    "tags": [
-                        "Razor",
-                        "Face Masks",
-                        "Sun Care",
-                        "Essential Oil",
-                        "Body Care",
-                        "Facial Care"
-                    ],
-                    "title": "Skin Care",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/skin-care/Razor+Face-Masks+Sun-Care+Essential-Oil+Body-Care+Facial-Care"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608299516116",
-                    "resourceId": "gid://shopify/Collection/449248264404",
-                    "tags": [
-                        "Mirrors",
-                        "Straightening Irons",
-                        "Electric Face Cleanser",
-                        "Face Skin Care Tools",
-                        "Curling Iron",
-                        "Facial Steamer"
-                    ],
-                    "title": "Beauty Tools",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/beauty-tools/Mirrors+Straightening-Irons+Electric-Face-Cleanser+Face-Skin-Care-Tools+Curling-Iron+Facial-Steamer"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608299548884",
-                    "resourceId": "gid://shopify/Collection/449248395476",
-                    "tags": [
-                        "Health Care Products"
-                    ],
-                    "title": "Food & Health",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/food-health/Health-Care-Products"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608299581652",
-                    "resourceId": "gid://shopify/Collection/449248035028",
-                    "tags": [
-                        "Nail Glitters",
-                        "Stickers & Decals",
-                        "Nail Decorations",
-                        "Nail Gel",
-                        "Nail Dryers",
-                        "Nail Art Kits"
-                    ],
-                    "title": "Nail Art & Tools",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/nail-art-tools/Nail-Glitters+Stickers-&-Decals+Nail-Decorations+Nail-Gel+Nail-Dryers+Nail-Art-Kits"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608299614420",
-                    "resourceId": "gid://shopify/Collection/449248329940",
-                    "tags": [
-                        "Pre Colored One Pack",
-                        "Hair Weaving",
-                        "Hair Styling",
-                        "Salon Bundle Hair",
-                        "Pre Colored Hair Weave"
-                    ],
-                    "title": "Hair Weaves",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/hair-weaves/Pre-Colored-One-Pack+Hair-Weaving+Hair-Styling+Salon-Bundle-Hair+Pre-Colored-Hair-Weave"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608299647188",
-                    "resourceId": "gid://shopify/Collection/449248428244",
-                    "tags": [
-                        "Headband & Hair Band & Hairpin",
-                        "Human Hair"
-                    ],
-                    "title": "Hair & Accessories",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/hair-accessories/Headband-&-Hair-Band-&-Hairpin+Human-Hair"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608299679956",
-                    "resourceId": "gid://shopify/Collection/449226014932",
-                    "tags": [
-                        "Women Sports Watches",
-                        "Dress Watches",
-                        "Creative Watches",
-                        "Lovers' Watches",
-                        "Women's Bracelet Watches",
-                        "Children's Watches"
-                    ],
-                    "title": "Women's Watches",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/watches/Women-Sports-Watches+Dress-Watches+Creative-Watches+Lovers'-Watches+Women's-Bracelet-Watches+Children's-Watches"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608426819796",
-                    "resourceId": "gid://shopify/Collection/449226277076",
-                    "tags": [
-                        "Various Gemstones",
-                        "925 Silver Jewelry",
-                        "K Gold",
-                        "Pearls Jewelry",
-                        "Fine Earrings",
-                        "Men's Fine Jewelry",
-                        "Fine Jewelry Sets"
-                    ],
-                    "title": "Fine Jewelry",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/jewelry/Various-Gemstones+925-Silver-Jewelry+K-Gold+Pearls-Jewelry+Fine-Earrings+Men's-Fine-Jewelry+Fine-Jewelry-Sets"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608426852564",
-                    "resourceId": "gid://shopify/Collection/449283424468",
-                    "tags": [
-                        "Bridal Jewelry Sets",
-                        "Wedding Hair Jewelry",
-                        "Engagement Rings",
-                        "Wedding & Engagement"
-                    ],
-                    "title": "Wedding & Engagement",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/women-wedding-engagement/Bridal-Jewelry-Sets+Wedding-Hair-Jewelry+Engagement-Rings+Wedding-&-Engagement"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608426885332",
-                    "resourceId": "gid://shopify/Collection/449283522772",
-                    "tags": [
-                        "Bracelets & Bangles",
-                        "Brooches",
-                        "Keychains",
-                        "Charms",
-                        "Rings",
-                        "Body Jewelry",
-                        "Fashion Jewelry Sets",
-                        "Necklace & Pendants",
-                        "Earrings"
-                    ],
-                    "title": "Fashion Jewelry",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/women-fashion-jewelry/Bracelets-&-Bangles+Brooches+Keychains+Charms+Rings+Body-Jewelry+Fashion-Jewelry-Sets+Necklace-&-Pendants+Earrings"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608426918100",
-                    "resourceId": "gid://shopify/Collection/449225556180",
-                    "tags": [
-                        "Woman Boots",
-                        "Vulcanize Shoes",
-                        "Women's Insoles",
-                        "Pumps",
-                        "Woman Slippers",
-                        "Woman Sandals",
-                        "Flats"
-                    ],
-                    "title": "Women's Shoes",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/women-shoes/Woman-Boots+Vulcanize-Shoes+Women's-Insoles+Pumps+Woman-Slippers+Woman-Sandals+Flats"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608426950868",
-                    "resourceId": "gid://shopify/Collection/449225851092",
-                    "tags": [
-                        "Woman Wallets",
-                        "Women's Crossbody Bags",
-                        "Bag Accessories",
-                        "Evening Bags",
-                        "Fashion Backpacks",
-                        "Shoulder Bags",
-                        "Totes",
-                        "Boys Bags",
-                        "Clutches"
-                    ],
-                    "title": "Women's Luggage & Bags",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/bags/Woman-Wallets+Women's-Crossbody-Bags+Bag-Accessories+Evening-Bags+Fashion-Backpacks+Shoulder-Bags+Totes+Boys-Bags+Clutches"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608426983636",
-                    "resourceId": "gid://shopify/Collection/449247576276",
-                    "tags": [
-                        "Nappy Changing",
-                        "Activity & Gear",
-                        "Backpacks & Carriers",
-                        "Baby Care",
-                        "Maternity"
-                    ],
-                    "title": "Baby & Mother",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/baby-mother/Nappy-Changing+Activity-&-Gear+Backpacks-&-Carriers+Baby-Care+Maternity"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608427016404",
-                    "resourceId": "gid://shopify/Collection/449247641812",
-                    "tags": [
-                        "Musical Instruments",
-                        "Hunting",
-                        "Skiing & Snowboarding",
-                        "Fitness & Bodybuilding",
-                        "Camping & Hiking",
-                        "Golf"
-                    ],
-                    "title": "Other Sports Equipment",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/other-sports-equipment/Musical-Instruments+Hunting+Skiing-&-Snowboarding+Fitness-&-Bodybuilding+Camping-&-Hiking+Golf"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608427049172",
-                    "resourceId": "gid://shopify/Collection/449247772884",
-                    "tags": [
-                        "One Piece Suits",
-                        "Bikini Sets",
-                        "Two Piece Suits",
-                        "Cover Ups"
-                    ],
-                    "title": "Women Swimming",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/swimming/One-Piece-Suits+Bikini-Sets+Two-Piece-Suits+Cover-Ups"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608427081940",
-                    "resourceId": "gid://shopify/Collection/449247707348",
-                    "tags": [
-                        "Running Shoes",
-                        "Dance Shoes",
-                        "Skateboarding Shoes",
-                        "Hiking Shoes",
-                        "Soccer Shoes",
-                        "Basketball Shoes"
-                    ],
-                    "title": "Sneakers",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/sport-shoes/Running-Shoes+Dance-Shoes+Skateboarding-Shoes+Hiking-Shoes+Soccer-Shoes+Basketball-Shoes"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608427114708",
-                    "resourceId": "gid://shopify/Collection/449247838420",
-                    "tags": [
-                        "Jerseys",
-                        "Sports Accessories",
-                        "Outdoor Shorts",
-                        "Sports Bags",
-                        "Hiking Jackets",
-                        "Pants"
-                    ],
-                    "title": "Sportswear",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/sportswear/Jerseys+Sports-Accessories+Outdoor-Shorts+Sports-Bags+Hiking-Jackets+Pants"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608427147476",
-                    "resourceId": "gid://shopify/Collection/449247740116",
-                    "tags": [
-                        "Bicycle Lights",
-                        "Scooters",
-                        "Cycling Gloves",
-                        "Bicycle Helmets",
-                        "Bicycle Frames",
-                        "Cycling Jerseys",
-                        "Bicycles"
-                    ],
-                    "title": "Cycling",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/cycling/Bicycle-Lights+Scooters+Cycling-Gloves+Bicycle-Helmets+Bicycle-Frames+Cycling-Jerseys+Bicycles"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608427180244",
-                    "resourceId": "gid://shopify/Collection/449247871188",
-                    "tags": [
-                        "Fishing Reels",
-                        "Rod Combos",
-                        "Fishing Tackle Boxes",
-                        "Fishing Lures",
-                        "Fishing Rods",
-                        "Fishing Lines"
-                    ],
-                    "title": "Fishing",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/fishing/Fishing-Reels+Rod-Combos+Fishing-Tackle-Boxes+Fishing-Lures+Fishing-Rods+Fishing-Lines"
-                }
-            ]
-        },
-        {
-            "id": "gid://shopify/MenuItem/608289226964",
-            "resourceId": "gid://shopify/Collection/449114243284",
-            "tags": [
-                "Boys Clothing",
-                "Baby Clothing",
-                "Shoes & Bags",
-                "Toys & Hobbies",
-                "Girls Clothing",
-                "Baby & Mother",
-                "Outerwear & Jackets",
-                "Couple & Parent Child Clothing",
-                "Kids Accessories",
-                "Kids Bottoms",
-                "Kids Tops & Sets",
-                "Other Sports Equipment",
-                "Kids Swimming",
-                "Kids Sneakers",
-                "Sportswear",
-                "Cycling",
-                "Fi"
-            ],
-            "title": "Kids",
-            "type": "COLLECTION",
-            "url": "https://tedrk1-wu.myshopify.com/collections/kids/Boys-Clothing+Baby-Clothing+Shoes-&-Bags+Toys-&-Hobbies+Girls-Clothing+Baby-&-Mother+Outerwear-&-Jackets+Couple-&-Parent-Child-Clothing+Kids-Accessories+Kids-Bottoms+Kids-Tops-&-Sets+Other-Sports-Equipment+Kids-Swimming+Kids-Sneakers+Sportswear+Cycling+Fi",
-            "items": [
-                {
-                    "id": "gid://shopify/MenuItem/608436224212",
-                    "resourceId": "gid://shopify/Collection/449247314132",
-                    "tags": [
-                        "Boy Jeans",
-                        "Boy T Shirts",
-                        "Boy Hoodies & Sweatshirts",
-                        "Outerwear & Coats",
-                        "Boy Clothing Sets",
-                        "Boy Accessories"
-                    ],
-                    "title": "Boys Clothing",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/boys-clothing/Boy-Jeans+Boy-T-Shirts+Boy-Hoodies-&-Sweatshirts+Outerwear-&-Coats+Boy-Clothing-Sets+Boy-Accessories"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608436256980",
-                    "resourceId": "gid://shopify/Collection/449247379668",
-                    "tags": [
-                        "Children's Shoes",
-                        "Boys Shoes",
-                        "School Bags",
-                        "Kids Wallets",
-                        "Girls Shoes",
-                        "Baby's First Walkers"
-                    ],
-                    "title": "Kids Shoes & Bags",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/kids-shoes-bags/Children's-Shoes+Boys-Shoes+School-Bags+Kids-Wallets+Girls-Shoes+Baby's-First-Walkers"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608436289748",
-                    "resourceId": "gid://shopify/Collection/449247445204",
-                    "tags": [
-                        "Baby Clothing Sets",
-                        "Baby Rompers",
-                        "Baby Accessories",
-                        "Baby Outerwear",
-                        "Baby Dresses",
-                        "Baby Pants"
-                    ],
-                    "title": "Baby Clothing",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/baby-clothing/Baby-Clothing-Sets+Baby-Rompers+Baby-Accessories+Baby-Outerwear+Baby-Dresses+Baby-Pants"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608436322516",
-                    "resourceId": "gid://shopify/Collection/449247543508",
-                    "tags": [
-                        "Electronic Pets",
-                        "Blocks",
-                        "RC Helicopters",
-                        "Stuffed & Plush Animals",
-                        "Action & Toy Figures"
-                    ],
-                    "title": "Toys & Hobbies",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/toys-hobbies/Electronic-Pets+Blocks+RC-Helicopters+Stuffed-&-Plush-Animals+Action-&-Toy-Figures"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608436355284",
-                    "resourceId": "gid://shopify/Collection/449247412436",
-                    "tags": [
-                        "Girls Underwear",
-                        "Sleepwear & Robes",
-                        "Tops & Tees",
-                        "Girl Clothing Sets",
-                        "Girl Accessories",
-                        "Girl Dresses"
-                    ],
-                    "title": "Girls Clothing",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/girls-clothing/Girls-Underwear+Sleepwear-&-Robes+Tops-&-Tees+Girl-Clothing-Sets+Girl-Accessories+Girl-Dresses"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608436388052",
-                    "resourceId": "gid://shopify/Collection/449247576276",
-                    "tags": [
-                        "Nappy Changing",
-                        "Activity & Gear",
-                        "Backpacks & Carriers",
-                        "Baby Care",
-                        "Maternity"
-                    ],
-                    "title": "Baby & Mother",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/baby-mother/Nappy-Changing+Activity-&-Gear+Backpacks-&-Carriers+Baby-Care+Maternity"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608436420820",
-                    "resourceId": "gid://shopify/Collection/449227063508",
-                    "tags": [
-                        "Couple & Parent Child Sweatshirts·",
-                        "Couple & Parent Child Short Sleeves",
-                        "Couple & Parent  Child Jackets",
-                        "Couple & Parent Child Tops",
-                        "Couple & Parent Child Suits",
-                        "Couple & Parent Child Pants",
-                        "Family Matching Outfits"
-                    ],
-                    "title": "Couple & Parent-Child Clothing",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/couple-parent-child-clothing/Couple-&-Parent-Child-Sweatshirts%C2%B7+Couple-&-Parent-Child-Short-Sleeves+Couple-&-Parent--Child-Jackets+Couple-&-Parent-Child-Tops+Couple-&-Parent-Child-Suits+Couple-&-Parent-Child-Pants+Family-Matching-Outfits"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608436453588",
-                    "resourceId": "gid://shopify/Collection/449225949396",
-                    "tags": [
-                        "Scarves & Wraps",
-                        "Face Masks",
-                        "Belts & Cummerbunds",
-                        "Woman Gloves & Mittens",
-                        "Woman Socks",
-                        "Woman Hats & Caps"
-                    ],
-                    "title": "Women Accessories",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/accessories/Scarves-&-Wraps+Face-Masks+Belts-&-Cummerbunds+Woman-Gloves-&-Mittens+Woman-Socks+Woman-Hats-&-Caps"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608437076180",
-                    "resourceId": "gid://shopify/Collection/449288405204",
-                    "tags": [
-                        "Scarves & Wraps",
-                        "Face Masks",
-                        "Belts & Cummerbunds",
-                        "Woman Gloves & Mittens",
-                        "Woman Socks",
-                        "Woman Hats & Caps",
-                        "Ties",
-                        "Sullies & Beanies"
-                    ],
-                    "title": "Kids Accessories",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/kids-accessories/Scarves-&-Wraps+Face-Masks+Belts-&-Cummerbunds+Woman-Gloves-&-Mittens+Woman-Socks+Woman-Hats-&-Caps+Ties+Sullies-&-Beanies"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608438845652",
-                    "resourceId": "gid://shopify/Collection/449247641812",
-                    "tags": [
-                        "Musical Instruments",
-                        "Hunting",
-                        "Skiing & Snowboarding",
-                        "Fitness & Bodybuilding",
-                        "Camping & Hiking",
-                        "Golf"
-                    ],
-                    "title": "Other Sports Equipment",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/other-sports-equipment/Musical-Instruments+Hunting+Skiing-&-Snowboarding+Fitness-&-Bodybuilding+Camping-&-Hiking+Golf"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608438878420",
-                    "resourceId": "gid://shopify/Collection/449285161172",
-                    "tags": [
-                        "One Piece Suits",
-                        "Bikini Sets",
-                        "Two Piece Suits",
-                        "Men's Swimwear",
-                        "Cover Ups",
-                        "Children's Swimwear"
-                    ],
-                    "title": "Kids Swimming",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/kids-swimming/One-Piece-Suits+Bikini-Sets+Two-Piece-Suits+Men's-Swimwear+Cover-Ups+Children's-Swimwear"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608438911188",
-                    "resourceId": "gid://shopify/Collection/449247707348",
-                    "tags": [
-                        "Running Shoes",
-                        "Dance Shoes",
-                        "Skateboarding Shoes",
-                        "Hiking Shoes",
-                        "Soccer Shoes",
-                        "Basketball Shoes"
-                    ],
-                    "title": "Sport Shoes",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/sport-shoes/Running-Shoes+Dance-Shoes+Skateboarding-Shoes+Hiking-Shoes+Soccer-Shoes+Basketball-Shoes"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608438943956",
-                    "resourceId": "gid://shopify/Collection/449247838420",
-                    "tags": [
-                        "Jerseys",
-                        "Sports Accessories",
-                        "Outdoor Shorts",
-                        "Sports Bags",
-                        "Hiking Jackets",
-                        "Pants"
-                    ],
-                    "title": "Sportswear",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/sportswear/Jerseys+Sports-Accessories+Outdoor-Shorts+Sports-Bags+Hiking-Jackets+Pants"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608438976724",
-                    "resourceId": "gid://shopify/Collection/449247740116",
-                    "tags": [
-                        "Bicycle Lights",
-                        "Scooters",
-                        "Cycling Gloves",
-                        "Bicycle Helmets",
-                        "Bicycle Frames",
-                        "Cycling Jerseys",
-                        "Bicycles"
-                    ],
-                    "title": "Cycling",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/cycling/Bicycle-Lights+Scooters+Cycling-Gloves+Bicycle-Helmets+Bicycle-Frames+Cycling-Jerseys+Bicycles"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608439009492",
-                    "resourceId": "gid://shopify/Collection/449247871188",
-                    "tags": [
-                        "Fishing Reels",
-                        "Rod Combos",
-                        "Fishing Tackle Boxes",
-                        "Fishing Lures",
-                        "Fishing Rods",
-                        "Fishing Lines"
-                    ],
-                    "title": "Fishing",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/fishing/Fishing-Reels+Rod-Combos+Fishing-Tackle-Boxes+Fishing-Lures+Fishing-Rods+Fishing-Lines"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608439042260",
-                    "resourceId": "gid://shopify/Collection/449226014932",
-                    "tags": [
-                        "Creative Watches",
-                        "Children's Watches",
-                        "Digital Watches",
-                        "Dual Display Watches"
-                    ],
-                    "title": "Women's Watches",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/watches/Creative-Watches+Children's-Watches+Digital-Watches+Dual-Display-Watches"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608439075028",
-                    "resourceId": "gid://shopify/Collection/449226277076",
-                    "tags": [
-                        "Various Gemstones",
-                        "925 Silver Jewelry",
-                        "K Gold",
-                        "Pearls Jewelry",
-                        "Fine Earrings",
-                        "Fine Jewelry",
-                        "Fine Jewelry Sets"
-                    ],
-                    "title": "Fine Jewelry",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/jewelry/Various-Gemstones+925-Silver-Jewelry+K-Gold+Pearls-Jewelry+Fine-Earrings+Fine-Jewelry+Fine-Jewelry-Sets"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608439107796",
-                    "resourceId": "gid://shopify/Collection/449283522772",
-                    "tags": [
-                        "Bracelets & Bangles",
-                        "Brooches",
-                        "Keychains",
-                        "Charms",
-                        "Rings",
-                        "Body Jewelry",
-                        "Fashion Jewelry Sets",
-                        "Necklace & Pendants",
-                        "Earrings"
-                    ],
-                    "title": "Women Fashion jewelry",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/women-fashion-jewelry/Bracelets-&-Bangles+Brooches+Keychains+Charms+Rings+Body-Jewelry+Fashion-Jewelry-Sets+Necklace-&-Pendants+Earrings"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608439140564",
-                    "resourceId": "gid://shopify/Collection/449248002260",
-                    "tags": [
-                        "Razor",
-                        "Face Masks",
-                        "Sun Care",
-                        "Essential Oil",
-                        "Body Care",
-                        "Facial Care"
-                    ],
-                    "title": "Skin Care",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/skin-care/Razor+Face-Masks+Sun-Care+Essential-Oil+Body-Care+Facial-Care"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608439173332",
-                    "resourceId": "gid://shopify/Collection/449248264404",
-                    "tags": [
-                        "Mirrors",
-                        "Straightening Irons",
-                        "Electric Face Cleanser",
-                        "Face Skin Care Tools",
-                        "Curling Iron",
-                        "Facial Steamer"
-                    ],
-                    "title": "Beauty Tools",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/beauty-tools/Mirrors+Straightening-Irons+Electric-Face-Cleanser+Face-Skin-Care-Tools+Curling-Iron+Facial-Steamer"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608439206100",
-                    "resourceId": "gid://shopify/Collection/449248395476",
-                    "tags": [
-                        "Health Care Products"
-                    ],
-                    "title": "Food & Health",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/food-health/Health-Care-Products"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608439238868",
-                    "resourceId": "gid://shopify/Collection/449248428244",
-                    "tags": [
-                        "Headband & Hair Band & Hairpin",
-                        "Human Hair"
-                    ],
-                    "title": "Hair & Accessories",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/hair-accessories/Headband-&-Hair-Band-&-Hairpin+Human-Hair"
-                }
-            ]
-        },
-        {
-            "id": "gid://shopify/MenuItem/608163135700",
-            "resourceId": "gid://shopify/Collection/449223786708",
-            "tags": [
-                "Pet Outdoor Supplies",
-                "Pet Furniture",
-                "Pet Drinking & Feeding",
-                "Fish & Aquatic",
-                "Pet Collars",
-                "Harnesses & Accessories",
-                "Pet Toys",
-                "Pet Bedding",
-                "Pet Apparels",
-                "Bird Supplies",
-                "Pet Grooming"
-            ],
-            "title": "Pets",
-            "type": "COLLECTION",
-            "url": "https://tedrk1-wu.myshopify.com/collections/pets/Pet-Outdoor-Supplies+Pet-Furniture+Pet-Drinking-&-Feeding+Fish-&-Aquatic+Pet-Collars+Harnesses-&-Accessories+Pet-Toys+Pet-Bedding+Pet-Apparels+Bird-Supplies+Pet-Grooming",
-            "items": [
-                {
-                    "id": "gid://shopify/MenuItem/608441565396",
-                    "resourceId": "gid://shopify/Collection/449248559316",
-                    "tags": [
-                        "Barking Control Equipments",
-                        "Trainers",
-                        "Dog Training Pads & Diapers",
-                        "Pet Snacks",
-                        "Pet Bags",
-                        "Pet Seat Belts",
-                        "Pet Car Mats",
-                        "Pet Guardrails"
-                    ],
-                    "title": "Pet Outdoor Supplies",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-outdoor-supplies/Barking-Control-Equipments+Trainers+Dog-Training-Pads-&-Diapers+Pet-Snacks+Pet-Bags+Pet-Seat-Belts+Pet-Car-Mats+Pet-Guardrails"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608441598164",
-                    "resourceId": "gid://shopify/Collection/449248919764",
-                    "tags": [
-                        "Cat Scratching Posts",
-                        "Pet Furniture Protectors",
-                        "Cat Trees & Condos",
-                        "Pet Furniture Tools",
-                        "Pet Houses & Cages",
-                        "Dog Stairs & Steps",
-                        "Pet Tents",
-                        "Pet Hammocks"
-                    ],
-                    "title": "Pet Furniture",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-furniture/Cat-Scratching-Posts+Pet-Furniture-Protectors+Cat-Trees-&-Condos+Pet-Furniture-Tools+Pet-Houses-&-Cages+Dog-Stairs-&-Steps+Pet-Tents+Pet-Hammocks"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608441630932",
-                    "resourceId": "gid://shopify/Collection/449249050836",
-                    "tags": [
-                        "Pet Bowls",
-                        "Pet Drinking Tools",
-                        "Pet Feeding Tools"
-                    ],
-                    "title": "Pet Drinking & Feeding",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-drinking-feeding/Pet-Bowls+Pet-Drinking-Tools+Pet-Feeding-Tools"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608441663700",
-                    "resourceId": "gid://shopify/Collection/449249149140",
-                    "tags": [
-                        "Fish Tanks",
-                        "Fish Tank Decorations",
-                        "Fish Tank Cleaning Supplies"
-                    ],
-                    "title": "Fish & Aquatic Pets",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/fish-aquatic-pets/Fish-Tanks+Fish-Tank-Decorations+Fish-Tank-Cleaning-Supplies"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608441696468",
-                    "resourceId": "gid://shopify/Collection/449248821460",
-                    "tags": [
-                        "Pet Hair Accessories",
-                        "Pet Bows & Ties",
-                        "Pet Necklaces",
-                        "Pet Headwears",
-                        "Pet Glasses",
-                        "Pet Collars",
-                        "Pet Leashes",
-                        "Pet Harnesses",
-                        "Pet Muzzles",
-                        "Pet Collar",
-                        "Leash & Harness Sets",
-                        "Custom Pet tags",
-                        "Collars",
-                        "Leashes & Harnesses"
-                    ],
-                    "title": "Pet Collars, Harnesses & Accessories",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-collars-harnesses-accessories/Pet-Hair-Accessories+Pet-Bows-&-Ties+Pet-Necklaces+Pet-Headwears+Pet-Glasses+Pet-Collars+Pet-Leashes+Pet-Harnesses+Pet-Muzzles+Pet-Collar+Leash-&-Harness-Sets+Custom-Pet-tags+Collars+Leashes-&-Harnesses"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608441729236",
-                    "resourceId": "gid://shopify/Collection/449248952532",
-                    "tags": [
-                        "Pet Chase Toys",
-                        "Pet Chew Toys",
-                        "Pet Training and Educational Toys",
-                        "Pet Sound Toys",
-                        "Pet Tunnel Toys",
-                        "Pet Toy Set",
-                        "Pet Plush Toys"
-                    ],
-                    "title": "Pet Toys",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-toys/Pet-Chase-Toys+Pet-Chew-Toys+Pet-Training-and-Educational-Toys+Pet-Sound-Toys+Pet-Tunnel-Toys+Pet-Toy-Set+Pet-Plush-Toys"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608441762004",
-                    "resourceId": "gid://shopify/Collection/449249181908",
-                    "tags": [
-                        "Pet Mats",
-                        "Pet Nests",
-                        "Pet Beds",
-                        "Pet Blankets & Quilts"
-                    ],
-                    "title": "Pet Bedding",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-bedding/Pet-Mats+Pet-Nests+Pet-Beds+Pet-Blankets-&-Quilts"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608441794772",
-                    "resourceId": "gid://shopify/Collection/449248886996",
-                    "tags": [
-                        "Pet Dresses",
-                        "Pet Tops",
-                        "Pet Sweaters",
-                        "Pet Sweatshirts & Hoodies",
-                        "Pet Coats & Jackets",
-                        "Pet Jumpsuits",
-                        "Pet Pajamas",
-                        "Pet Clothings",
-                        "Pet Functional Clothings",
-                        "Pet Clothing Sets",
-                        "Pet Down & Parkas",
-                        "Pet Shoes & Socks",
-                        "Pet Scarves",
-                        "Pet Bags"
-                    ],
-                    "title": "Pet Apparels",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-apparels/Pet-Dresses+Pet-Tops+Pet-Sweaters+Pet-Sweatshirts-&-Hoodies+Pet-Coats-&-Jackets+Pet-Jumpsuits+Pet-Pajamas+Pet-Clothings+Pet-Functional-Clothings+Pet-Clothing-Sets+Pet-Down-&-Parkas+Pet-Shoes-&-Socks+Pet-Scarves+Pet-Bags"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608441827540",
-                    "resourceId": "gid://shopify/Collection/449248985300",
-                    "tags": [
-                        "Bird Feeders",
-                        "Bird Cages",
-                        "Bird Swings",
-                        "Bird Toys",
-                        "Bird Travel Bags",
-                        "Bird Accessories"
-                    ],
-                    "title": "Bird Supplies",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/bird-supplies/Bird-Feeders+Bird-Cages+Bird-Swings+Bird-Toys+Bird-Travel-Bags+Bird-Accessories"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608441860308",
-                    "resourceId": "gid://shopify/Collection/449249214676",
-                    "tags": [
-                        "Pet Hair Removers & Combs",
-                        "Pet Nail Polishers",
-                        "Pet Shower Products",
-                        "Pet Towels"
-                    ],
-                    "title": "Pet Groomings",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-grooming/Pet-Hair-Removers-&-Combs+Pet-Nail-Polishers+Pet-Shower-Products+Pet-Towels"
-                }
-            ]
-        },
-        {
-            "id": "gid://shopify/MenuItem/608163102932",
-            "resourceId": "gid://shopify/Collection/449223917780",
-            "tags": [
-                "Home Textiles",
-                "Festive & Party Supplies",
-                "Arts",
-                "Crafts & Sewing",
-                "Kitchen",
-                "Dining & Bar",
-                "Home Storage",
-                "Musical Instruments",
-                "Outdoor Lighting",
-                "Home Appliances",
-                "Indoor Lighting",
-                "LED Lighting",
-                "Tools"
-            ],
-            "title": "Home Decoration",
-            "type": "COLLECTION",
-            "url": "https://tedrk1-wu.myshopify.com/collections/home-decoration/Home-Textiles+Festive-&-Party-Supplies+Arts+Crafts-&-Sewing+Kitchen+Dining-&-Bar+Home-Storage+Musical-Instruments+Outdoor-Lighting+Home-Appliances+Indoor-Lighting+LED-Lighting+Tools",
-            "items": [
-                {
-                    "id": "gid://shopify/MenuItem/608441893076",
-                    "resourceId": "gid://shopify/Collection/449249280212",
-                    "tags": [
-                        "Curtains",
-                        "Cushion Covers",
-                        "Towels",
-                        "Comforters",
-                        "Bedding Sets",
-                        "Pillows"
-                    ],
-                    "title": "Home Textiles",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/home-textiles/Curtains+Cushion-Covers+Towels+Comforters+Bedding-Sets+Pillows"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608441925844",
-                    "resourceId": "gid://shopify/Collection/449249509588",
-                    "tags": [
-                        "Christmas Decoration Supplies",
-                        "Invitation Cards",
-                        "Cake Decorating Supplies",
-                        "Decorative Flowers & Wreaths",
-                        "Party Masks",
-                        "Event & Party Supplies"
-                    ],
-                    "title": "Festive & Party Supplies",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/festive-party-supplies/Christmas-Decoration-Supplies+Invitation-Cards+Cake-Decorating-Supplies+Decorative-Flowers-&-Wreaths+Party-Masks+Event-&-Party-Supplies"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608441958612",
-                    "resourceId": "gid://shopify/Collection/449249378516",
-                    "tags": [
-                        "Decor Paintings",
-                        "Lace",
-                        "Apparel Sewing & Fabric",
-                        "Cross Stitch",
-                        "Ribbons",
-                        "Diamond Painting Cross Stitch",
-                        "Fabric"
-                    ],
-                    "title": "Arts, Crafts & Sewing",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/arts-crafts-sewing/Decor-Paintings+Lace+Apparel-Sewing-&-Fabric+Cross-Stitch+Ribbons+Diamond-Painting-Cross-Stitch+Fabric"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608441991380",
-                    "resourceId": "gid://shopify/Collection/449249607892",
-                    "tags": [
-                        "Dinnerware",
-                        "Kitchen Knives & Accessories",
-                        "Bakeware",
-                        "Barware",
-                        "Drinkware",
-                        "Cooking Tools"
-                    ],
-                    "title": "Kitchen, Dining & Bar",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/kitchen-dining-bar/Dinnerware+Kitchen-Knives-&-Accessories+Bakeware+Barware+Drinkware+Cooking-Tools"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608442024148",
-                    "resourceId": "gid://shopify/Collection/449249444052",
-                    "tags": [
-                        "Stationeries",
-                        "Furniture",
-                        "Storage Bags & Cases & Boxes",
-                        "Kitchen Storage",
-                        "Home Office Storage",
-                        "Clothing & Wardrobe Storage",
-                        "Bathroom Storage",
-                        "Storage Bottles & Jars"
-                    ],
-                    "title": "Home Storage",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/home-storage/Stationeries+Furniture+Storage-Bags-&-Cases-&-Boxes+Kitchen-Storage+Home-Office-Storage+Clothing-&-Wardrobe-Storage+Bathroom-Storage+Storage-Bottles-&-Jars"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608442056916",
-                    "resourceId": "gid://shopify/Collection/449249640660",
-                    "tags": [
-                        "Guitars",
-                        "Violins"
-                    ],
-                    "title": "Musical Instruments",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/musical-instruments/Guitars+Violins"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608442089684",
-                    "resourceId": "gid://shopify/Collection/449250066644",
-                    "tags": [
-                        "Flashlights & Torches",
-                        "Floodlights",
-                        "Underwater Lights",
-                        "String Lights",
-                        "Solar Lamps"
-                    ],
-                    "title": "Outdoor Lighting",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/outdoor-lighting/Flashlights-&-Torches+Floodlights+Underwater-Lights+String-Lights+Solar-Lamps"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608442122452",
-                    "resourceId": "gid://shopify/Collection/449250099412",
-                    "tags": [
-                        "Personal Care Appliances",
-                        "Cleaning Appliances",
-                        "Air Conditioning Appliances",
-                        "Home Appliance Parts",
-                        "Kitchen Appliances"
-                    ],
-                    "title": "Home Appliances",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/home-appliances/Personal-Care-Appliances+Cleaning-Appliances+Air-Conditioning-Appliances+Home-Appliance-Parts+Kitchen-Appliances"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608442155220",
-                    "resourceId": "gid://shopify/Collection/449250132180",
-                    "tags": [
-                        "Chandeliers",
-                        "Pendant Lights",
-                        "Downlights",
-                        "Night Lights",
-                        "Wall Lamps",
-                        "Ceiling Lights"
-                    ],
-                    "title": "Indoor Lighting",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/indoor-lighting/Chandeliers+Pendant-Lights+Downlights+Night-Lights+Wall-Lamps+Ceiling-Lights"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608442187988",
-                    "resourceId": "gid://shopify/Collection/449250164948",
-                    "tags": [
-                        "LED Spotlights"
-                    ],
-                    "title": "LED Lighting",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/led-lighting/LED-Spotlights"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608442220756",
-                    "resourceId": "gid://shopify/Collection/449250230484",
-                    "tags": [
-                        "Measurement & Analysis",
-                        "Welding & Soldering Supplies",
-                        "Welding Equipment",
-                        "Hand Tools",
-                        "Tool Sets",
-                        "Tools Storage",
-                        "Machine Tools & Accessories",
-                        "Power Tools",
-                        "Woodworking Machinery",
-                        "Garden Tools"
-                    ],
-                    "title": "Tools",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/tools-1/Measurement-&-Analysis+Welding-&-Soldering-Supplies+Welding-Equipment+Hand-Tools+Tool-Sets+Tools-Storage+Machine-Tools-&-Accessories+Power-Tools+Woodworking-Machinery+Garden-Tools"
-                }
-            ]
-        },
-        {
-            "id": "gid://shopify/MenuItem/607873466580",
-            "resourceId": "gid://shopify/Collection/449223721172",
-            "tags": [
-                "Smart Electronics",
-                "Camera & Photo",
-                "Accessories & Parts",
-                "Video Games",
-                "Home Audio & Video",
-                "Portable Audio & Video",
-                "Mobile Phone Parts",
-                "Mobile Phones",
-                "Mobile Phone Accessories",
-                "Cases & Covers",
-                "Storage Devices",
-                "Tablet & Laptop Accessories",
-                "Security & Protection",
-                "Laptop & "
-            ],
-            "title": "Electronics",
-            "type": "COLLECTION",
-            "url": "https://tedrk1-wu.myshopify.com/collections/electronics/Smart-Electronics+Camera-&-Photo+Accessories-&-Parts+Video-Games+Home-Audio-&-Video+Portable-Audio-&-Video+Mobile-Phone-Parts+Mobile-Phones+Mobile-Phone-Accessories+Cases-&-Covers+Storage-Devices+Tablet-&-Laptop-Accessories+Security-&-Protection+Laptop-&-",
-            "items": [
-                {
-                    "id": "gid://shopify/MenuItem/608443171028",
-                    "resourceId": "gid://shopify/Collection/449249673428",
-                    "tags": [
-                        "Wearable Devices",
-                        "Smart Home Appliances",
-                        "Smart Wearable Accessories",
-                        "Smart Wristbands",
-                        "Smart Watches",
-                        "Smart Remote Controls"
-                    ],
-                    "title": "Smart Electronics",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/smart-electronics/Wearable-Devices+Smart-Home-Appliances+Smart-Wearable-Accessories+Smart-Wristbands+Smart-Watches+Smart-Remote-Controls"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608443203796",
-                    "resourceId": "gid://shopify/Collection/449249706196",
-                    "tags": [
-                        "Photo Studio",
-                        "Camera Drones",
-                        "Camera & Photo Accessories",
-                        "Digital Cameras",
-                        "Action Cameras",
-                        "Camcorders"
-                    ],
-                    "title": "Camera & Photo",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/camera-photo/Photo-Studio+Camera-Drones+Camera-&-Photo-Accessories+Digital-Cameras+Action-Cameras+Camcorders"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608443236564",
-                    "resourceId": "gid://shopify/Collection/449249804500",
-                    "tags": [
-                        "Digital Cables",
-                        "Home Electronic Accessories",
-                        "Audio & Video Cables",
-                        "Charger",
-                        "Batteries",
-                        "Digital Gear Bags"
-                    ],
-                    "title": "Accessories & Parts",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/accessories-parts/Digital-Cables+Home-Electronic-Accessories+Audio-&-Video-Cables+Charger+Batteries+Digital-Gear-Bags"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608443269332",
-                    "resourceId": "gid://shopify/Collection/449249870036",
-                    "tags": [
-                        "Gamepads",
-                        "Handheld Game Players",
-                        "Video Game Consoles",
-                        "Stickers",
-                        "Joysticks"
-                    ],
-                    "title": "Video Games",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/video-games/Gamepads+Handheld-Game-Players+Video-Game-Consoles+Stickers+Joysticks"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608443302100",
-                    "resourceId": "gid://shopify/Collection/449249902804",
-                    "tags": [
-                        "Projectors",
-                        "Television",
-                        "TV Receivers",
-                        "Audio Amplifiers",
-                        "Projectors & Accessories",
-                        "Home Audio & Video",
-                        "TV Sticks"
-                    ],
-                    "title": "Home Audio & Video",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/home-audio-video/Projectors+Television+TV-Receivers+Audio-Amplifiers+Projectors-&-Accessories+Home-Audio-&-Video+TV-Sticks"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608443334868",
-                    "resourceId": "gid://shopify/Collection/449249935572",
-                    "tags": [
-                        "Microphones",
-                        "Speakers",
-                        "Earphones & Headphones",
-                        "VR & AR Devices",
-                        "MP3 Players"
-                    ],
-                    "title": "Portable Audio & Video",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/portable-audio-video/Microphones+Speakers+Earphones-&-Headphones+VR-&-AR-Devices+MP3-Players"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608443367636",
-                    "resourceId": "gid://shopify/Collection/449250590932",
-                    "tags": [
-                        "SIM Card & Tools",
-                        "Mobile Batteries",
-                        "Housings",
-                        "LCDs",
-                        "Flex Cables",
-                        "Touch Panel"
-                    ],
-                    "title": "Mobile Phone Parts",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/mobile-phone-parts/SIM-Card-&-Tools+Mobile-Batteries+Housings+LCDs+Flex-Cables+Touch-Panel"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608443400404",
-                    "resourceId": "gid://shopify/Collection/449250623700",
-                    "tags": [
-                        "Quad Core",
-                        "Single SIM Card",
-                        "Dual SIM Card",
-                        "3GB RAM",
-                        "Octa Core",
-                        "5 inch Display"
-                    ],
-                    "title": "Mobile Phones",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/mobile-phones/Quad-Core+Single-SIM-Card+Dual-SIM-Card+3GB-RAM+Octa-Core+5-inch-Display"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608443433172",
-                    "resourceId": "gid://shopify/Collection/449250656468",
-                    "tags": [
-                        "Cables",
-                        "Power Bank",
-                        "Screen Protectors",
-                        "Lenses",
-                        "Holders & Stands",
-                        "Chargers"
-                    ],
-                    "title": "Mobile Phone Accessories",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/mobile-phone-accessories/Cables+Power-Bank+Screen-Protectors+Lenses+Holders-&-Stands+Chargers"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608443465940",
-                    "resourceId": "gid://shopify/Collection/449250689236",
-                    "tags": [
-                        "Huawei Cases",
-                        "Patterned Cases",
-                        "Cases For iPhone 6 & 6 Plus",
-                        "Wallet Cases",
-                        "Cases For iPhone 7 & 7 Plus",
-                        "Galaxy S8 Cases",
-                        "IPhone X Cases",
-                        "Galaxy S7 Cases",
-                        "Cases For iPhone 8 & 8 Plus",
-                        "Xiaomi Cases",
-                        "Silicone Cases",
-                        "Flip Cases",
-                        "Waterptoof Cases",
-                        "Leather Cases"
-                    ],
-                    "title": "Cases & Covers",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/cases-covers/Huawei-Cases+Patterned-Cases+Cases-For-iPhone-6-&-6-Plus+Wallet-Cases+Cases-For-iPhone-7-&-7-Plus+Galaxy-S8-Cases+IPhone-X-Cases+Galaxy-S7-Cases+Cases-For-iPhone-8-&-8-Plus+Xiaomi-Cases+Silicone-Cases+Flip-Cases+Waterptoof-Cases+Leather-Cases"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608443498708",
-                    "resourceId": "gid://shopify/Collection/449250787540",
-                    "tags": [
-                        "SSD",
-                        "USB Flash Drives",
-                        "HDD Enclosures",
-                        "Memory Cards",
-                        "External Hard Drives"
-                    ],
-                    "title": "Storage Devices",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/storage-devices/SSD+USB-Flash-Drives+HDD-Enclosures+Memory-Cards+External-Hard-Drives"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608443531476",
-                    "resourceId": "gid://shopify/Collection/449250853076",
-                    "tags": [
-                        "Tablet LCD Screens",
-                        "Laptop Batteries",
-                        "Laptop Bags & Cases",
-                        "Tablet Cases",
-                        "Tablet Accessories"
-                    ],
-                    "title": "Tablet & Laptop Accessories",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/tablet-laptop-accessories/Tablet-LCD-Screens+Laptop-Batteries+Laptop-Bags-&-Cases+Tablet-Cases+Tablet-Accessories"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608443564244",
-                    "resourceId": "gid://shopify/Collection/449250885844",
-                    "tags": [
-                        "Alarm & Sensor",
-                        "Fire Protection",
-                        "Workplace Safety Supplies",
-                        "Door Intercom",
-                        "Surveillance Products"
-                    ],
-                    "title": "Security & Protection",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/security-protection/Alarm-&-Sensor+Fire-Protection+Workplace-Safety-Supplies+Door-Intercom+Surveillance-Products"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608443597012",
-                    "resourceId": "gid://shopify/Collection/449251016916",
-                    "tags": [
-                        "Phone Call Tablets",
-                        "2 in 1 Tablets",
-                        "Laptops",
-                        "Tablets",
-                        "Gaming Laptops"
-                    ],
-                    "title": "Laptop & Tablets",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/laptop-tablets/Phone-Call-Tablets+2-in-1-Tablets+Laptops+Tablets+Gaming-Laptops"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608443629780",
-                    "resourceId": "gid://shopify/Collection/449251082452",
-                    "tags": [
-                        "Office & School Supplies",
-                        "Computer Tablet Accessories",
-                        "Printer Supplies",
-                        "3D Printers",
-                        "3D Pens",
-                        "Printers",
-                        "Scanners"
-                    ],
-                    "title": "Office Electronics",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/office-electronics/Office-&-School-Supplies+Computer-Tablet-Accessories+Printer-Supplies+3D-Printers+3D-Pens+Printers+Scanners"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608443662548",
-                    "resourceId": "gid://shopify/Collection/449251115220",
-                    "tags": [
-                        "Modem Router Combos",
-                        "Wireless Routers",
-                        "Networking Tools",
-                        "3G Modems",
-                        "Network Cards"
-                    ],
-                    "title": "Networking",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/networking/Modem-Router-Combos+Wireless-Routers+Networking-Tools+3G-Modems+Network-Cards"
-                }
-            ]
-        },
-        {
-            "id": "gid://shopify/MenuItem/608289259732",
-            "resourceId": "gid://shopify/Collection/449250492628",
-            "tags": [
-                "Motorcycle Accessories & Parts",
-                "Interior Accessories",
-                "Auto Replacement Parts",
-                "Tools",
-                "Maintenance & Care",
-                "Car Electronics",
-                "Exterior Accessories"
-            ],
-            "title": " Automobiles & Motorcycles",
-            "type": "COLLECTION",
-            "url": "https://tedrk1-wu.myshopify.com/collections/tools-maintenance-care/Motorcycle-Accessories-&-Parts+Interior-Accessories+Auto-Replacement-Parts+Tools+Maintenance-&-Care+Car-Electronics+Exterior-Accessories",
-            "items": [
-                {
-                    "id": "gid://shopify/MenuItem/608444252372",
-                    "resourceId": "gid://shopify/Collection/449250328788",
-                    "tags": [
-                        "Lighting",
-                        "Exhaust & Exhaust Systems",
-                        "Motor Brake System",
-                        "Motorcycle Seat Covers",
-                        "Other Motorcycle Accessories",
-                        "Helmet Headset",
-                        "Body & Frame"
-                    ],
-                    "title": "Motorcycle Accessories & Parts",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/motorcycle-accessories-parts/Lighting+Exhaust-&-Exhaust-Systems+Motor-Brake-System+Motorcycle-Seat-Covers+Other-Motorcycle-Accessories+Helmet-Headset+Body-&-Frame"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608444285140",
-                    "resourceId": "gid://shopify/Collection/449250361556",
-                    "tags": [
-                        "Floor Mats",
-                        "Key Case for Car",
-                        "Steering Covers",
-                        "Automobiles Seat Covers",
-                        "Stowing Tidying"
-                    ],
-                    "title": "Interior Accessories",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/interior-accessories/Floor-Mats+Key-Case-for-Car+Steering-Covers+Automobiles-Seat-Covers+Stowing-Tidying"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608444317908",
-                    "resourceId": "gid://shopify/Collection/449250427092",
-                    "tags": [
-                        "Interior Parts",
-                        "Car Brake System",
-                        "Spark Plugs & Ignition System",
-                        "Automobiles Sensors",
-                        "Exterior Parts",
-                        "Other Replacement Parts",
-                        "Car Lights",
-                        "Windscreen Wipers & Windows"
-                    ],
-                    "title": "Auto Replacement Parts",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/auto-replacement-parts/Interior-Parts+Car-Brake-System+Spark-Plugs-&-Ignition-System+Automobiles-Sensors+Exterior-Parts+Other-Replacement-Parts+Car-Lights+Windscreen-Wipers-&-Windows"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608444350676",
-                    "resourceId": "gid://shopify/Collection/449250492628",
-                    "tags": [
-                        "Car Washer",
-                        "Diagnostic Tools",
-                        "Paint Care",
-                        "Other Maintenance Products"
-                    ],
-                    "title": "Car Tools, Maintenance & Care",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/tools-maintenance-care/Car-Washer+Diagnostic-Tools+Paint-Care+Other-Maintenance-Products"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608444383444",
-                    "resourceId": "gid://shopify/Collection/449250525396",
-                    "tags": [
-                        "Vehicle Camera",
-                        "DVR & Dash Camera",
-                        "Car Monitors",
-                        "Vehicle GPS",
-                        "Car Mirror Video",
-                        "Car Radios",
-                        "GPS Trackers",
-                        "Car Multimedia Player",
-                        "Alarm Systems & Security",
-                        "Jump Starter"
-                    ],
-                    "title": "Car Electronics",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/car-electronics/Vehicle-Camera+DVR-&-Dash-Camera+Car-Monitors+Vehicle-GPS+Car-Mirror-Video+Car-Radios+GPS-Trackers+Car-Multimedia-Player+Alarm-Systems-&-Security+Jump-Starter"
-                },
-                {
-                    "id": "gid://shopify/MenuItem/608444416212",
-                    "resourceId": "gid://shopify/Collection/449250558164",
-                    "tags": [
-                        "Car Stickers",
-                        "Other Exterior Accessories",
-                        "Car Covers"
-                    ],
-                    "title": "Exterior Accessories",
-                    "type": "COLLECTION",
-                    "url": "https://tedrk1-wu.myshopify.com/collections/exterior-accessories/Car-Stickers+Other-Exterior-Accessories+Car-Covers"
-                }
-            ]
+        "shop": {
+            "name": "habebe",
+            "brand": {
+                "logo": {
+                    "image": {
+                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/logo_alone.png?v=1766853807",
+                        "altText": null,
+                        "width": 415,
+                        "height": 555
+                    }
+                },
+                "shortDescription": "Habebe is your go-to online store for unique, trendy, and fun products that make everyday life brighter. From must-have gadgets to stylish essential",
+                "slogan": "Buy Now, Regret Later."
+            }
         }
-    ]
-}
+    }
+]

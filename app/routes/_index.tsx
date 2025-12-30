@@ -7,7 +7,7 @@ import Reviews from '~/components/MINE/Reviews';
 
 // For the collection section
 import { getPaginationVariables } from '@shopify/hydrogen';
-import Collections, { MAIN_MENU_AND_PRODUCTS_QUERY } from './collections._index';
+import Collections, { MAINMENU_AND_PRODUCTS_QUERY } from './collections._index';
 import LoadingSpinner from '~/components/MINE/ReUsable/LoadingSpinner';
 import Logos from '~/components/MINE/Logos';
 
@@ -48,7 +48,7 @@ async function loadCriticalData({ context, request }: Route.LoaderArgs) {
 
 
   const [MainMenu] = await Promise.all([
-    context.storefront.query(MAIN_MENU_AND_PRODUCTS_QUERY, { variables: { handle: 'main-menu' } }), // 
+    context.storefront.query(MAINMENU_AND_PRODUCTS_QUERY, { variables: { handle: 'main-menu' } }), // 
     // Fetch the main menu and its associated products (only 10 products per collection)
 
   ]);

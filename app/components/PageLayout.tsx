@@ -2,24 +2,23 @@ import { Await, Link } from 'react-router';
 import { Suspense, useId } from 'react';
 import type {
   CartApiQueryFragment,
-  FooterQuery,
   HeaderQuery,
 } from 'storefrontapi.generated';
 import { Aside } from '~/components/Aside';
-import Header, { HeaderMenu } from '~/components/Header';
 import { CartMain } from '~/components/CartMain';
 import {
   SEARCH_ENDPOINT,
   SearchFormPredictive,
 } from '~/components/SearchFormPredictive';
 import { SearchResultsPredictive } from '~/components/SearchResultsPredictive';
-import SignUp from './MINE/SignUp';
 import FooterSection from './MINE/ReUsable/FooterSection';
 import Logos from './MINE/Logos';
+import Header from './Header';
+
+
 
 interface PageLayoutProps {
   cart: Promise<CartApiQueryFragment | null>;
-  footer: Promise<FooterQuery | null>;
   header: HeaderQuery;
   isLoggedIn: Promise<boolean>;
   publicStoreDomain: string;
@@ -28,16 +27,20 @@ interface PageLayoutProps {
 
 
 
-
 // This is the main layout for the entire app
-export function PageLayout({ cart, children = null, footer, header, isLoggedIn, publicStoreDomain, }: PageLayoutProps) {
+export function PageLayout({ cart, children = null, header, isLoggedIn, publicStoreDomain, }: PageLayoutProps) {
+
+
+console.log(`%c${JSON.stringify(header)}`, 'color: red; font-size: 20px;')
+
+
   return (
     <Aside.Provider>
 
       {/* This is the cart, search, and mobile menu */}
       <CartAside cart={cart} />
       <SearchAside />
-      <MobileMenuAside header={header} publicStoreDomain={publicStoreDomain} />
+
 
       {/* <Logos /> */}
       <div className='MAIN_COL_CONTAINER'>
@@ -55,9 +58,7 @@ export function PageLayout({ cart, children = null, footer, header, isLoggedIn, 
       {/* Footer for the entire app and all PAGES */}
       <Logos />
       <FooterSection
-        footer={footer}
         header={header}
-        publicStoreDomain={publicStoreDomain}
       />
     </Aside.Provider>
   );
@@ -161,25 +162,5 @@ function SearchAside() {
         </SearchResultsPredictive>
       </div>
     </Aside>
-  );
-}
-
-
-
-function MobileMenuAside({ header, publicStoreDomain, }: { header: PageLayoutProps['header']; publicStoreDomain: PageLayoutProps['publicStoreDomain']; }) {
-
-
-  return (
-    header.menu &&
-    header.shop.primaryDomain?.url && (
-      <Aside type="mobile" heading="MENU">
-        <HeaderMenu
-          menu={header.menu}
-          viewport="mobile"
-          primaryDomainUrl={header.shop.primaryDomain.url}
-          publicStoreDomain={publicStoreDomain}
-        />
-      </Aside>
-    )
   );
 }

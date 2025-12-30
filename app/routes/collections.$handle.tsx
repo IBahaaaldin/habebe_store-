@@ -281,9 +281,9 @@ const SUB_MENU_COLLECTIONS = `#graphql
       items {
         title
         url
+        # Add the image field here
         image {
           id
-          # Add the image field here
           url
           altText
           width

@@ -1,39 +1,15 @@
 import { FaEnvelope, FaFacebook, FaInstagram, FaTiktok, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
 import { Link } from "react-router";
-import type { FooterQuery, HeaderQuery } from "storefrontapi.generated";
 import { Image } from "@shopify/hydrogen";
 import PaymentIcons from "../UI/PaymentIcons";
 
 
 
 
-interface FooterProps {
-    footer: Promise<FooterQuery | null>;
-    header: HeaderQuery;
-    publicStoreDomain: string;
-}
 
 
-export default function FooterSection({ footer,
-    header,
-    publicStoreDomain }: FooterProps) {
-
-
-
-    /// 
-    interface PagesType {
-        name: string;
-        path?: string;
-        ref?: React.RefObject<HTMLDivElement>;
-    }
-
-    const pages: PagesType[] = [
-        { name: 'Collections', path: '/' },
-        { name: 'Projects', path: '/all-properties' },
-        { name: 'Contact', path: '/contact-us' },
-    ]
-
+export default function FooterSection({ header }: { header: any }) {
 
     const [email, setEmail] = useState<string>('')
 
@@ -47,9 +23,6 @@ export default function FooterSection({ footer,
             // toast.error('Please enter a valide email')
         }
     }
-
-
-
 
 
 
@@ -116,14 +89,14 @@ export default function FooterSection({ footer,
 
 
                 <div className="flex flex-col gap-2">
-                    {header.menu?.items.map((page, index) => (
+                    {header.menu?.items.map((menu: any) => (
                         <Link
-                            to={page.url || '#'}
-                            key={index}
+                            to={`/collections/${menu.resource?.handle || '#'}`}
+                            key={menu.id}
 
                             className="hover:text-orange-500 text-black font-bold text-start duration-500"
                         >
-                            {page.title}
+                            {menu.title}
                         </Link>
                     ))}
                 </div>
@@ -144,6 +117,7 @@ export default function FooterSection({ footer,
                     </figure>
                 )}
 
+                {/* //  */}
                 <div className="flex flex-col gap-3">
                     {header.shop.name && (
                         <h1 className="text-3xl text-nowrap font-bold">{header.shop.name}</h1>

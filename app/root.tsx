@@ -18,6 +18,7 @@ import resetStyles from '~/styles/reset.css?url';
 import appStyles from '~/styles/app.css?url';
 import tailwindCss from './styles/tailwind.css?url';
 import { PageLayout } from './components/PageLayout';
+import { MAINMENU_AND_SUBMENU_QUERY } from './routes/collections._index';
 
 
 
@@ -97,56 +98,36 @@ export async function loader(args: Route.LoaderArgs) {
   };
 }
 
-/**
- * Load data necessary for rendering content above the fold. This is the critical data
- * needed to render the page. If it's unavailable, the whole page should 400 or 500 error.
- */
+
+
 async function loadCriticalData({ context }: Route.LoaderArgs) {
   const { storefront } = context;
 
-  const [header] = await Promise.all([
-    storefront.query(HEADER_QUERY, {
+  const header = await Promise.all([
+    storefront.query(MAINMENU_AND_SUBMENU_QUERY, {
       cache: storefront.CacheLong(),
       variables: {
-        headerMenuHandle: 'main-menu', // Adjust to your header menu handle
+        handle: 'main-menu',
       },
     }),
-    // Add other queries here, so that they are loaded in parallel
   ]);
 
   return { header };
 }
 
-/**
- * Load data for rendering content below the fold. This data is deferred and will be
- * fetched after the initial page load. If it's unavailable, the page should still 200.
- * Make sure to not throw any errors here, as it will cause the page to 500.
- */
-function loadDeferredData({ context }: Route.LoaderArgs) {
-  const { storefront, customerAccount, cart } = context;
 
-  // defer the footer query (below the fold)
-  const footer = storefront
-    .query(FOOTER_QUERY, {
-      cache: storefront.CacheLong(),
-      variables: {
-        footerMenuHandle: 'footer', // Adjust to your footer menu handle
-      },
-    })
-    .catch((error: Error) => {
-      // Log query errors, but don't throw them so the page can still render
-      console.error(error);
-      return null;
-    });
+
+function loadDeferredData({ context }: Route.LoaderArgs) {
+  const { customerAccount, cart } = context;
+
   return {
     cart: cart.get(),
     isLoggedIn: customerAccount.isLoggedIn(),
-    footer,
   };
 }
 
 
-
+// Layout component that includes the HTML structure
 export function Layout({ children }: { children?: React.ReactNode }) {
   const nonce = useNonce();
 
@@ -171,8 +152,11 @@ export function Layout({ children }: { children?: React.ReactNode }) {
 }
 
 
+
+// The main App component
 export default function App() {
   const data = useRouteLoaderData<RootLoader>('root');
+
 
   if (!data) {
     return <Outlet />;
@@ -184,13 +168,17 @@ export default function App() {
       shop={data.shop}
       consent={data.consent}
     >
-      <PageLayout {...data}>
+      <PageLayout {...data} header={data.header[0]}>
         <Outlet />
       </PageLayout>
     </Analytics.Provider>
   );
 }
 
+
+
+
+// Error boundary for the root route
 export function ErrorBoundary() {
 
   const error = useRouteError();
