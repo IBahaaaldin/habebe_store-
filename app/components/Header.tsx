@@ -24,30 +24,31 @@ interface HeaderProps {
 
 // This is the main header component for the entire app
 export default function Header({ header, isLoggedIn, cart, publicStoreDomain, }: HeaderProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
 
 
 
   // Used to descale the header
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 0) {
+  //       setIsScrolled(true);
+  //     } else {
+  //       setIsScrolled(false);
+  //     }
+  //   };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
 
   const { menu } = header;
-  console.log(`%c${JSON.stringify(menu)}`, 'color: blue; font-size: 20px;')
 
+
+  // ${isScrolled ? 'scale-70 top-0 bg-white/40' : 'bg-zinc-100 scale-100 top-5'}
+  
   return (
-    <header className={`z-999 sticky left-0 right-0 backdrop-blur-sm rounded-full w-full max-w-[1750px] mx-auto flex flex-row items-center gap-5 px-5  p-3 duration-500
-      ${isScrolled ? 'scale-70 top-0 bg-white/40' : 'bg-zinc-100 scale-100 top-5'}
+    <header className={`z-999 sticky top-5 left-0 right-0 bg-white/10 border border-white/10 backdrop-blur-sm rounded-full w-full mx-auto flex flex-row items-center gap-5 px-5 p-3 duration-500
       `}
     >
       <NavLink

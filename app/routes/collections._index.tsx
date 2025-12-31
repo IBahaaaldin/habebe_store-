@@ -1,6 +1,6 @@
 import { useLoaderData, Link } from 'react-router';
 import type { Route } from './+types/collections._index';
-import { getPaginationVariables, Image } from '@shopify/hydrogen';
+import { Image } from '@shopify/hydrogen';
 import type { CollectionFragment } from 'storefrontapi.generated';
 import HeaderText from '~/components/MINE/UI/HeaderText';
 
@@ -100,12 +100,16 @@ function CollectionItem({ collection, index, }: { collection: CollectionFragment
 
 
 
+// Used this primarily in the header menu to fetch collections & used also in collections.$handle.tsx to filter it and get products of specific collection
 
+
+// ? The extracying name for this in the storefront is like {menu} = await storefront.query(...) but here we are using {mainMenu} to avoid confusion with other menu variables
 
 export const MAINMENU_AND_SUBMENU_QUERY = `#graphql
   query MainMenu($handle: String!) {
     menu(handle: $handle) {
       title
+      # Fetch mainmenu items
       items {
         id
         title
@@ -114,8 +118,16 @@ export const MAINMENU_AND_SUBMENU_QUERY = `#graphql
           ... on Collection {
             handle
             title
+            image {
+              id
+              url
+              altText
+              width
+              height
+            }
           }
         }
+        # Fetch submenu items
         items {
           id
           title
@@ -124,6 +136,13 @@ export const MAINMENU_AND_SUBMENU_QUERY = `#graphql
             ... on Collection {
               handle
               title
+              image {
+                id
+                url
+                altText
+                width
+                height
+              }
             }
           }
         }
@@ -146,6 +165,8 @@ export const MAINMENU_AND_SUBMENU_QUERY = `#graphql
     }
   }
 ` as const;
+
+
 
 export const MAINMENU_QUERY = `#graphql
   query MainMenu($handle: String!) {
@@ -183,6 +204,7 @@ export const MAINMENU_AND_PRODUCTS_QUERY = `#graphql
           ... on Collection {
             id
             title
+            description
             handle
             image {
               id

@@ -31,9 +31,6 @@ interface PageLayoutProps {
 export function PageLayout({ cart, children = null, header, isLoggedIn, publicStoreDomain, }: PageLayoutProps) {
 
 
-console.log(`%c${JSON.stringify(header)}`, 'color: red; font-size: 20px;')
-
-
   return (
     <Aside.Provider>
 

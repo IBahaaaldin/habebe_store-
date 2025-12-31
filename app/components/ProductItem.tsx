@@ -116,7 +116,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
       {/* <div className='absolute top-5 right-5'> */}
       <Share2
-        className="cursor-pointer absolute top-5 right-5 p-2.5 hover:bg-orange-500 duration-300 rounded-2xl z-100 bg-orange-500/50 backdrop-blur-sm text-white w-10 h-10"
+        className="cursor-pointer absolute top-5 right-5 hover:bg-orange-500 duration-300 rounded-2xl z-100 bg-orange-500/50 backdrop-blur-sm text-white md:p-2.5 p-1.5 md:w-10 md:h-10 w-8 h-8"
         size={40}
         onClick={handleShareClick}
       />

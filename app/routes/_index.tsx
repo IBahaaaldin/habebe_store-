@@ -2,14 +2,13 @@ import { Await, useLoaderData, Link } from 'react-router';
 import type { Route } from './+types/_index';
 import { Suspense } from 'react';
 import { ProductItem } from '~/components/ProductItem';
-import HeroSection from '~/components/MINE/HeroSection';
+import HeroSection, { AllCategories } from '~/components/MINE/HeroSection';
 import Reviews from '~/components/MINE/Reviews';
 
 // For the collection section
 import { getPaginationVariables } from '@shopify/hydrogen';
 import Collections, { MAINMENU_AND_PRODUCTS_QUERY } from './collections._index';
 import LoadingSpinner from '~/components/MINE/ReUsable/LoadingSpinner';
-import Logos from '~/components/MINE/Logos';
 
 
 
@@ -25,10 +24,7 @@ export const meta: Route.MetaFunction = () => [
 
 // Handle HTTP caching for the homepage
 export async function loader(args: Route.LoaderArgs) {
-  // Start fetching non-critical data without blocking time to first byte
   const deferredData = loadDeferredData(args);
-
-  // Await the critical data required to render initial state of the page
   const criticalData = await loadCriticalData(args);
 
   return { ...deferredData, ...criticalData };
@@ -36,21 +32,11 @@ export async function loader(args: Route.LoaderArgs) {
 
 
 
-/*
- * Load data necessary for rendering content above the fold. This is the critical data
- * needed to render the page. If it's unavailable, the whole page should 400 or 500 error.
-*/
-async function loadCriticalData({ context, request }: Route.LoaderArgs) {
+async function loadCriticalData({ context }: Route.LoaderArgs) {
 
-  const paginationVariables = getPaginationVariables(request, {
-    pageBy: 4,
-  });
-
-
+  // Fetch the main menu and its associated products (only 10 products per collection)
   const [MainMenu] = await Promise.all([
-    context.storefront.query(MAINMENU_AND_PRODUCTS_QUERY, { variables: { handle: 'main-menu' } }), // 
-    // Fetch the main menu and its associated products (only 10 products per collection)
-
+    context.storefront.query(MAINMENU_AND_PRODUCTS_QUERY, { variables: { handle: 'main-menu' } }),
   ]);
 
   const MainCollections = MainMenu.menu.items.map((item: any) => item.resource); // Used for Fetching Collections like => Men, Women, Unisex, ...
@@ -74,12 +60,22 @@ export default function Homepage() {
 
   const { MainCollections } = useLoaderData<typeof loader>();
 
-  console.log(`%c${JSON.stringify(MainCollections)}`, 'color: green; font-size: 20px;')
 
 
   return (
-    <div >
-      <HeroSection collection={MainCollections} />
+    <div className='space-y-10'>
+      <HeroSection
+        Collections={MainCollections}
+      />
+
+
+      {/* Render the CollectionsSection component, passing the collections data */}
+
+      <AllCategories
+        // Title=""
+        Collections={MainCollections}
+      />
+      {/* <Collections /> */}
 
 
       {MainCollections.map((collection: any) => (
@@ -103,8 +99,6 @@ export default function Homepage() {
       </Link>
 
 
-      {/* Render the CollectionsSection component, passing the collections data */}
-      <Collections />
 
       <Reviews />
     </div>
@@ -121,8 +115,8 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
     <div className="border-b border-black/10 pb-10">
 
 
-      <div className='flex flex-row justify-between items-start mb-[5%] px-[3%]'>
-        <h3 className='text-start w-full lg:text-4xl text-3xl capitalize'>
+      <div className='flex flex-row justify-between items-start mb-5 px-[3%]'>
+        <h3 className='text-start w-full md:text-3xl text-2xl capitalize'>
           {collectionTitle}&apos;s Collection
         </h3>
 

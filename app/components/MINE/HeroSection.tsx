@@ -1,91 +1,21 @@
-// /* eslint-disable jsx-a11y/img-redundant-alt */
-// // import { Button } from "./ui/button";
-
-// import { Image } from "@shopify/hydrogen";
-
-// const HeroSection = () => {
-
-
-
-//     const headerText = "FIND CLOTHES THAT MATCHES YOUR STYLE";
-//     const subheaderText = "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.";
-
-
-
-//     return (
-//         <section className="relative bg-red-900">
-//             <div className="section-padding py-10 md:py-0">
-//                 <div className="grid lg:grid-cols-2 gap-8 items-center">
-//                     {/* Text Content */}
-//                     <div className="space-y-6 py-8 lg:py-16">
-//                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
-//                             {headerText}
-//                         </h1>
-//                         <p className="text-muted-foreground max-w-md text-sm md:text-base">
-//                             {subheaderText}
-//                         </p>
-//                         <button>
-//                             Shop Now
-//                         </button>
-
-//                         {/* Stats */}
-//                         <div className="flex flex-wrap gap-8 pt-6">
-//                             <div>
-//                                 <p className="text-2xl md:text-3xl font-bold">200+</p>
-//                                 <p className="text-xs md:text-sm text-muted-foreground">International Brands</p>
-//                             </div>
-//                             <div className="border-l border-border pl-8">
-//                                 <p className="text-2xl md:text-3xl font-bold">2,000+</p>
-//                                 <p className="text-xs md:text-sm text-muted-foreground">High-Quality Products</p>
-//                             </div>
-//                             <div className="border-l border-border pl-8">
-//                                 <p className="text-2xl md:text-3xl font-bold">30,000+</p>
-//                                 <p className="text-xs md:text-sm text-muted-foreground">Happy Customers</p>
-//                             </div>
-//                         </div>
-//                     </div>
-
-//                     {/* Hero Image Placeholder */}
-//                     {/* <div className="w-full h-full bg-gradient-to-t from-muted to-secondary rounded-t-3xl flex items-center justify-center">
-//                             <div className="text-center text-muted-foreground">
-//                                 <div className="w-48 h-64 md:w-64 md:h-80 bg-muted rounded-2xl mx-auto flex items-center justify-center">
-//                                     <span className="text-sm">Hero Image</span>
-//                                 </div>
-//                             </div>
-//                         </div> */}
-
-
-//                     {/* Decorative Stars */}
-//                     <div className="absolute top-10 right-10 text-4xl">✦</div>
-//                     <div className="absolute bottom-32 left-10 text-2xl">✦</div>
-//                 </div>
-//             </div>
-
-
-//             <img src="https://images.pexels.com/photos/29531037/pexels-photo-29531037.jpeg" alt="Hero Image" className="absolute w-full h-full object-cover rounded-t-3xl" />
-//         </section>
-//     );
-// };
-
-// export default HeroSection;
-
-
-
-
 import { Image } from '@shopify/hydrogen';
 import type { FeaturedCollectionFragment } from 'storefrontapi.generated';
 import HeroText from "./UI/HeroText";
 import ArrowButton from './ReUsable/Buttons';
+import { Link } from 'react-router';
 
 
 
-export default function HeroSection({ collection, Title, Description, HeroImg }: { collection: FeaturedCollectionFragment, Title?: string, Description?: string, HeroImg?: string; }): JSX.Element {
+
+// Used in two main places: "HOMEPAGE" and "COLLECTION" Page
+export default function HeroSection({ Collections, Title, Description, HeroImg }: { Collections: FeaturedCollectionFragment, Title?: string, Description?: string, HeroImg?: string; }): JSX.Element {
 
 
-    const images = ["https://placehold.co/600x400/e2e8f0/1e293b?text=Image+1", "https://placehold.co/600x400/e2e8f0/1e293b?text=Image+2"]
 
-    const headText = Title ? Title : "FIND CLOTHES THAT MATCHES YOUR STYLE";
-    const subText = Description ? Description : "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.";
+    const defaultHeroImage = HeroImg ?? "https://images.pexels.com/photos/33020904/pexels-photo-33020904.jpeg"
+
+    const headText = Title ?? "Buy now, Regret later.";
+    const subText = Description ?? "Explore a curated selection of unique products, designed to inspire and delight. Find exactly what you need, or stumble upon something new.";
 
 
 
@@ -101,7 +31,7 @@ export default function HeroSection({ collection, Title, Description, HeroImg }:
 
                 <ArrowButton
                     CC={"w-fit"}
-                    Href={`/collections/${collection.handle}`}
+                    Href={`/collections/${Collections.handle}`}
                     Text="EXPLORE COLLECTION"
                 />
             </article>
@@ -110,7 +40,7 @@ export default function HeroSection({ collection, Title, Description, HeroImg }:
 
             {/* ABSOLUTE SECTION */}
             <Image
-                src={HeroImg ? HeroImg : collection?.image?.url ?? ''}
+                src={defaultHeroImage}
                 alt="Hero"
                 className="absolute inset-0 w-full h-full object-cover brightness-70"
             />
@@ -120,7 +50,7 @@ export default function HeroSection({ collection, Title, Description, HeroImg }:
 
 
 
-
+// TwoGrids component displays two grid items with images, titles, and buttons.
 export function TwoGrids({ Collection }: { Collection?: FeaturedCollectionFragment }) {
 
     const gridItems = [
@@ -152,7 +82,7 @@ export function TwoGrids({ Collection }: { Collection?: FeaturedCollectionFragme
                     />
 
 
-                    <h3 className='md:text-3xl text-2xl max-w-sm'>{item.title}</h3>
+                    <h4 className='md:text-3xl sm:text-2xl text-lg max-w-sm'>{item.title}</h4>
                     <button className='BUTTON1'>{item.buttonText}</button>
                 </figure>
             ))}
@@ -164,30 +94,8 @@ export function TwoGrids({ Collection }: { Collection?: FeaturedCollectionFragme
 
 
 
-import { Link } from 'react-router';
-
-const categories = [
-    {
-        name: 'SHOES',
-        image: 'https://images.pexels.com/photos/35119489/pexels-photo-35119489.jpeg',
-    },
-    {
-        name: 'BRASH', // Preserved the typo from your image
-        image: 'https://images.pexels.com/photos/35119489/pexels-photo-35119489.jpeg',
-    },
-    {
-        name: 'BAG',
-        image: 'https://images.pexels.com/photos/35119489/pexels-photo-35119489.jpeg',
-    },
-    {
-        name: 'T-SHIRT',
-        image: 'https://images.pexels.com/photos/35119489/pexels-photo-35119489.jpeg',
-    },
-];
-
-
-
-export function AllCategories({ Collection }: { Collection?: FeaturedCollectionFragment }) {
+// AllCategories component displays a horizontal scrollable list of collection categories.
+export function AllCategories({ Collections }: { Collections?: any }) {
 
 
 
@@ -198,21 +106,21 @@ export function AllCategories({ Collection }: { Collection?: FeaturedCollectionF
             </h2>
 
             <div className="flex flex-row gap-5 overflow-x-scroll HIDDEN_SCROLL pb-5">
-                {categories.map((category) => (
+                {Collections?.map((singleCollection: any) => (
                     <Link
-                        to={`/collections/${category.name.toLowerCase()}`}
-                        key={category.name}
+                        to={`/collections/${singleCollection.handle}`}
+                        key={singleCollection.title}
                         className="relative group cursor-pointer overflow-hidden rounded-3xl h-50 min-w-70"
                     >
-                        <img
-                            src={category.image}
-                            alt={category.name}
+                        <Image
+                            data={singleCollection.image}
+                            alt={singleCollection.altText}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
 
                         {/* Label Badge */}
-                        <caption className="absolute bottom-5 left-5 bg-white px-4 py-1.5 rounded-full text-xs font-bold uppercase">
-                            {category.name}
+                        <caption className="absolute bottom-3 left-3 bg-white px-3 py-1.5 rounded-full md:text-sm text-xs font-bold uppercase">
+                            {singleCollection.title}
                         </caption>
                     </Link>
                 ))}

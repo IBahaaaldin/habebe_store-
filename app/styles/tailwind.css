@@ -7,7 +7,7 @@
 
 
 .BUTTON1 {
-    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-4 py-2 font-bold text-white bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full duration-300 text-nowrap;
+    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-4 py-2 font-bold text-white bg-orange-600 rounded-full duration-300 text-nowrap;
 
     @apply lg:px-5 lg:py-3;
 

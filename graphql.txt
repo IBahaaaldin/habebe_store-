@@ -1,0 +1,101 @@
+Here’s a **concise cheat sheet** for using `storefront.query` and `Promise.all`:
+
+---
+
+## 1️⃣ GraphQL response = object
+
+* The **root field name in your query** is the key you destructure.
+
+Example:
+
+```graphql
+query {
+  collection { id title }
+  menu { title items }
+}
+```
+
+JS result:
+
+```js
+const { collection, menu } = await storefront.query(MAINMENU_AND_SUBMENU_QUERY);
+```
+
+---
+
+## 2️⃣ `Promise.all` = array
+
+* Always returns an array of query results.
+
+```js
+const results = await Promise.all([
+  storefront.query(COLLECTION_QUERY),
+  storefront.query(SUB_COLLECTION_QUERY),
+]);
+```
+
+* `results[0]` → first query result
+* `results[1]` → second query result
+
+---
+
+## 3️⃣ Array destructuring = `[ ]`
+
+* Pick items by position:
+
+```js
+const [collectionRes, subCollectionRes] = await Promise.all([...]);
+```
+
+* `collectionRes` = first query object
+* `subCollectionRes` = second query object
+
+> ⚠️ `[results]` = only first item of array
+
+---
+
+## 4️⃣ Object destructuring = `{ }`
+
+* Pick keys inside the query result:
+
+```js
+const { collection } = collectionRes;
+const { menu } = menuRes;
+```
+
+---
+
+## 5️⃣ Rename if needed
+
+```js
+const { menu: mainMenu } = menuRes;
+```
+
+---
+
+## 6️⃣ Returning data
+
+* **Different types → object** (recommended)
+
+```js
+return { collection, collections, mainMenu, shop };
+```
+
+* **Same type → array** (optional)
+
+```js
+return [collection, collections, mainMenu, shop];
+```
+
+---
+
+✅ **Rule of thumb:**
+
+* GraphQL field names → destructuring keys
+* `Promise.all` → array
+* `[ ]` = pick by position
+* `{ }` = pick by key
+
+---
+
+If you want, I can draw a **tiny visual diagram** showing query → `Promise.all` → destructuring → return object, so it’s crystal clear. Do you want me to?
