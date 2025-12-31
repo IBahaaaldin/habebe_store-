@@ -15,15 +15,12 @@ interface HeaderProps {
   header: HeaderQuery;
   cart: Promise<CartApiQueryFragment | null>;
   isLoggedIn: Promise<boolean>;
-  publicStoreDomain: string;
 }
 
 
 
-
-
 // This is the main header component for the entire app
-export default function Header({ header, isLoggedIn, cart, publicStoreDomain, }: HeaderProps) {
+export default function Header({ header, isLoggedIn, cart }: HeaderProps) {
   // const [isScrolled, setIsScrolled] = useState(false);
 
 
@@ -45,10 +42,8 @@ export default function Header({ header, isLoggedIn, cart, publicStoreDomain, }:
   const { menu } = header;
 
 
-  // ${isScrolled ? 'scale-70 top-0 bg-white/40' : 'bg-zinc-100 scale-100 top-5'}
-  
   return (
-    <header className={`z-999 sticky top-5 left-0 right-0 bg-white/10 border border-white/10 backdrop-blur-sm rounded-full w-full mx-auto flex flex-row items-center gap-5 px-5 p-3 duration-500
+    <header className={`z-999 sticky top-5 left-0 right-0 bg-white/50 border border-white/20 backdrop-blur-xs rounded-full w-full mx-auto flex flex-row items-center gap-5 px-5 p-3 duration-500
       `}
     >
       <NavLink
@@ -143,16 +138,16 @@ export function HeaderMenu({ menu }: { menu: any }) {
                       const isSubMenuActive = currentTabURL === subMenu.resource?.handle;
 
                       return (
-                          <Link
-                            to={`/collections/${subMenu?.resource?.handle || '#'}`}
-                            key={menu.id}
+                        <Link
+                          to={`/collections/${subMenu?.resource?.handle || '#'}`}
+                          key={menu.id}
 
-                            className={`px-3 py-1 w-fit rounded-xl hover:text-orange-500 hover:bg-orange-100 text-black font-bold text-start duration-500
+                          className={`px-3 py-1 w-fit rounded-xl hover:text-orange-500 hover:bg-orange-100 text-black font-bold text-start duration-500
                           ${isSubMenuActive ? 'text-orange-500' : 'text-black'}
                           `}
-                          >
-                            {subMenu.title}
-                          </Link>
+                        >
+                          {subMenu.title}
+                        </Link>
                       )
                     })}
                   </div>

@@ -45,6 +45,8 @@ async function loadCriticalData({ context, params, request }: Route.LoaderArgs) 
 
 
   // Promise.all Always returns an array
+  // Get collection data and main menu 
+  // Filter the main menu to get the specific collection by its TITLE
   const [
     { collection },
     { menu },
@@ -80,8 +82,18 @@ function loadDeferredData({ context }: Route.LoaderArgs) {
 export default function Collection() {
   const { collection, menu } = useLoaderData<typeof loader>();
 
+  console.log(`%c${JSON.stringify(collection)}`, 'color: white; font-size: 30px;')
 
-  console.log(`%c${JSON.stringify(menu)}`, 'color: white; font-size: 40px;')
+
+  // The title of the collection is used to filter the main menu 
+  // So both the collection title and the menu item title must be the same in shopify
+  const specificMenu = menu.items.filter((menuItem: any) => menuItem.title === collection.title)
+  // const specificMenu = menu.items.filter((menuItem: any) => menuItem.id === collection.items[0].id)
+  console.log(`%c${JSON.stringify(specificMenu)}`, 'color: gray; font-size: 40px;')
+
+  // "id":"gid://shopify/Collection/449068073172","handle":"men","title":"Men",
+
+
 
   return (
     <div className="SEC_COL_CONTAINER">
@@ -96,12 +108,14 @@ export default function Collection() {
       />
 
 
-      <TwoGrids Collection={collection} />
+      <TwoGrids
+        subTwoMenus={specificMenu[0]?.items}
+      />
 
-      {/* 
+
       <AllCategories
-        Collections={collection}
-      /> */}
+        allMenus={specificMenu[0]?.items}
+      />
 
 
       <div className='space-y-10'>

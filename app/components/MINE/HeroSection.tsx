@@ -51,39 +51,28 @@ export default function HeroSection({ Collections, Title, Description, HeroImg }
 
 
 // TwoGrids component displays two grid items with images, titles, and buttons.
-export function TwoGrids({ Collection }: { Collection?: FeaturedCollectionFragment }) {
+export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
 
-    const gridItems = [
-        {
-            imgSrc: "https://images.pexels.com/photos/19710025/pexels-photo-19710025.jpeg",
-            altText: "Hero 1",
-            title: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-            buttonText: "Shop Now"
-        },
-        {
-            imgSrc: "https://images.pexels.com/photos/18536062/pexels-photo-18536062.jpeg",
-            altText: "Hero 2",
-            title: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-            buttonText: "Shop Now"
-        }
-    ];
+
+
+
 
 
     return (
         <div className="grid grid-cols-2 gap-5 items-center h-50 " >
-            {gridItems.map((item, index) => (
+            {subTwoMenus?.slice(0, 2).map((subMenu: any) => (
                 <figure
-                    key={index}
-                    className='h-full w-full p-5 flex md:flex-row flex-col md:items-end items-start md:justify-between justify-end rounded-3xl overflow-hidden relative gap-5 text-white'
+                    key={subMenu.id}
+                    className='border  border-black h-full w-full p-5 flex md:flex-row flex-col md:items-end items-start md:justify-between justify-end rounded-3xl overflow-hidden relative gap-5 text-white'
                 >
-                    <img
-                        src={item.imgSrc}
-                        alt={item.altText} className='absolute inset-0 -z-1 h-full w-full object-cover brightness-75'
+                    <Image
+                        data={subMenu.imgSrc}
+                        alt={subMenu.altText}
+                        className='absolute inset-0 -z-1 h-full w-full object-cover brightness-75'
                     />
 
-
-                    <h4 className='md:text-3xl sm:text-2xl text-lg max-w-sm'>{item.title}</h4>
-                    <button className='BUTTON1'>{item.buttonText}</button>
+                    <h4 className='md:text-3xl sm:text-2xl text-lg max-w-sm'>{subMenu.title}</h4>
+                    <button className='BUTTON1'>Shop Now</button>
                 </figure>
             ))}
         </div>
@@ -95,9 +84,9 @@ export function TwoGrids({ Collection }: { Collection?: FeaturedCollectionFragme
 
 
 // AllCategories component displays a horizontal scrollable list of collection categories.
-export function AllCategories({ Collections }: { Collections?: any }) {
+export function AllCategories({ allMenus }: { allMenus?: any }) {
 
-
+    // console.log(`%c${JSON.stringify(allMenus)}`, 'color: red; font-size: 20px;')
 
     return (
         <div className="w-full flex flex-col gap-5">
@@ -106,21 +95,22 @@ export function AllCategories({ Collections }: { Collections?: any }) {
             </h2>
 
             <div className="flex flex-row gap-5 overflow-x-scroll HIDDEN_SCROLL pb-5">
-                {Collections?.map((singleCollection: any) => (
+                {allMenus?.slice(2).map((singleMenu: any) => (
                     <Link
-                        to={`/collections/${singleCollection.handle}`}
-                        key={singleCollection.title}
-                        className="relative group cursor-pointer overflow-hidden rounded-3xl h-50 min-w-70"
+                        to={`/collections/${singleMenu?.handle ?? singleMenu?.resource?.handle}`}
+                        // WWHY?? Because some menus are some are collection
+                        key={singleMenu.title}
+                        className="relative group border  border-black cursor-pointer overflow-hidden rounded-3xl h-50 min-w-70"
                     >
                         <Image
-                            data={singleCollection.image}
-                            alt={singleCollection.altText}
+                            data={singleMenu.image}
+                            alt={singleMenu?.altText}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
 
                         {/* Label Badge */}
                         <caption className="absolute bottom-3 left-3 bg-white px-3 py-1.5 rounded-full md:text-sm text-xs font-bold uppercase">
-                            {singleCollection.title}
+                            {singleMenu.title}
                         </caption>
                     </Link>
                 ))}

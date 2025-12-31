@@ -60,6 +60,7 @@ export default function Homepage() {
 
   const { MainCollections } = useLoaderData<typeof loader>();
 
+console.log(`%c${JSON.stringify(MainCollections)}`, 'color: red; font-size: 20px;')
 
 
   return (
@@ -72,8 +73,7 @@ export default function Homepage() {
       {/* Render the CollectionsSection component, passing the collections data */}
 
       <AllCategories
-        // Title=""
-        Collections={MainCollections}
+        allMenus={MainCollections}
       />
       {/* <Collections /> */}
 
