@@ -1,12 +1,13 @@
-import {Link, useFetcher, type Fetcher} from 'react-router';
-import {Image, Money} from '@shopify/hydrogen';
-import React, {useRef, useEffect} from 'react';
+import { Link, useFetcher, type Fetcher } from 'react-router';
+import { Image, Money } from '@shopify/hydrogen';
+import React, { useRef, useEffect } from 'react';
 import {
   getEmptyPredictiveSearchResult,
   urlWithTrackingParams,
   type PredictiveSearchReturn,
 } from '~/lib/search';
-import {useAside} from './Aside';
+import { useAside } from './Aside';
+import Prices from './MINE/UI/Prices';
 
 type PredictiveSearchItems = PredictiveSearchReturn['result']['items'];
 
@@ -43,7 +44,7 @@ export function SearchResultsPredictive({
   children,
 }: SearchResultsPredictiveProps) {
   const aside = useAside();
-  const {term, inputRef, fetcher, total, items} = usePredictiveSearch();
+  const { term, inputRef, fetcher, total, items } = usePredictiveSearch();
 
   /*
    * Utility that resets the search input
@@ -195,17 +196,22 @@ function SearchResultsPredictivePages({
   );
 }
 
-function SearchResultsPredictiveProducts({
+
+
+
+/// Search results for products
+export function SearchResultsPredictiveProducts({
   term,
   products,
   closeSearch,
 }: PartialPredictiveSearchResult<'products'>) {
   if (!products.length) return null;
 
+
   return (
-    <div className="predictive-search-result" key="products">
-      <h5>Products</h5>
-      <ul>
+    <div className="flex flex-col gap-5 mt-5" key="products">
+      <h5 className='md:text-xl text-lg font-bold'>Products</h5>
+      <ul className='flex flex-col gap-3'>
         {products.map((product) => {
           const productUrl = urlWithTrackingParams({
             baseUrl: `/products/${product.handle}`,
@@ -216,22 +222,23 @@ function SearchResultsPredictiveProducts({
           const price = product?.selectedOrFirstAvailableVariant?.price;
           const image = product?.selectedOrFirstAvailableVariant?.image;
           return (
-            <li className="predictive-search-result-item" key={product.id}>
-              <Link to={productUrl} onClick={closeSearch}>
-                {image && (
+            <Link className="flex flex-row gap-3" key={product.id} to={productUrl} onClick={closeSearch}>
+              {image && (
+                <figure className='group min-w-25 min-h-25 p-2 rounded-xl overflow-hidden bg-zinc-100'>
                   <Image
                     alt={image.altText ?? ''}
                     src={image.url}
                     width={50}
                     height={50}
+                    className='w-full h-full rounded-lg object-cover group-hover:scale-105 duration-300'
                   />
-                )}
-                <div>
-                  <p>{product.title}</p>
-                  <small>{price && <Money data={price} />}</small>
-                </div>
-              </Link>
-            </li>
+                </figure>
+              )}
+              <div>
+                <p className='font-bold'>{product.title}</p>
+                {price && <Prices price={price.amount} currency={price.currencyCode} />}
+              </div>
+            </Link>
           );
         })}
       </ul>
@@ -282,7 +289,7 @@ function SearchResultsPredictiveEmpty({
  * '''
  **/
 function usePredictiveSearch(): UsePredictiveSearchReturn {
-  const fetcher = useFetcher<PredictiveSearchReturn>({key: 'search'});
+  const fetcher = useFetcher<PredictiveSearchReturn>({ key: 'search' });
   const term = useRef<string>('');
   const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -297,8 +304,8 @@ function usePredictiveSearch(): UsePredictiveSearchReturn {
     }
   }, []);
 
-  const {items, total} =
+  const { items, total } =
     fetcher?.data?.result ?? getEmptyPredictiveSearchResult();
 
-  return {items, total, inputRef, term, fetcher};
+  return { items, total, inputRef, term, fetcher };
 }

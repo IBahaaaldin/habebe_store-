@@ -122,7 +122,7 @@ export default function Collection() {
 
         <Link
           to="https://wa.me/+971561576657?text=I'm%20interested%20in%20your%20ad%20on%20Hydrogen"
-          className='w-full lg:h-40 h-30 bg-zinc-50 lg:rounded-4xl rounded-2xl flex items-center justify-center LINK_BUTTON'
+          className='w-full lg:h-40 h-30 bg-zinc-50 lg:rounded-4xl rounded-2xl flex items-center justify-center LINK'
           target='_blank'
           rel="noreferrer"
         >

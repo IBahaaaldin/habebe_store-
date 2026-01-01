@@ -60,7 +60,7 @@ export default function Homepage() {
 
   const { MainCollections } = useLoaderData<typeof loader>();
 
-console.log(`%c${JSON.stringify(MainCollections)}`, 'color: red; font-size: 20px;')
+  console.log(`%c${JSON.stringify(MainCollections)}`, 'color: red; font-size: 20px;')
 
 
   return (
@@ -91,7 +91,7 @@ console.log(`%c${JSON.stringify(MainCollections)}`, 'color: red; font-size: 20px
 
       <Link
         to="https://wa.me/+971561576657?text=I'm%20interested%20in%20your%20ad%20on%20Hydrogen"
-        className='w-full lg:h-80 h-30 border border-zinc-100 bg-zinc-50 lg:rounded-4xl rounded-2xl flex items-center justify-center LINK_BUTTON'
+        className='w-full lg:h-80 h-30 border border-zinc-100 bg-zinc-50 lg:rounded-4xl rounded-2xl flex items-center justify-center LINK'
         target='_blank'
         rel="noreferrer"
       >
@@ -122,7 +122,7 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
 
         <Link
-          className='LINK_BUTTON'
+          className='LINK'
           prefetch="intent"
           to={`/collections/${Handle}`}
         >

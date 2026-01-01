@@ -94,7 +94,7 @@ export default function FooterSection({ header }: { header: any }) {
                             to={`/collections/${menu.resource?.handle || '#'}`}
                             key={menu.id}
 
-                            className="hover:text-orange-500 text-black font-bold text-start duration-500"
+                            className="hover:text-orange-400 text-black font-bold text-start duration-500"
                         >
                             {menu.title}
                         </Link>
@@ -130,7 +130,7 @@ export default function FooterSection({ header }: { header: any }) {
                                 <a
                                     key={index}
                                     href={link.path}
-                                    className="text-2xl mt-1 cursor-pointer hover:opacity-50 hover:text-orange-500 duration-300">
+                                    className="text-2xl mt-1 cursor-pointer hover:opacity-50 hover:text-orange-400 duration-300">
                                     {link.logo}
                                 </a>
                             )
@@ -174,7 +174,7 @@ export default function FooterSection({ header }: { header: any }) {
                     <Link
                         to={page.path || '#'}
                         key={index}
-                        className="hover:text-orange-500 text-black font-bold text-start duration-500"
+                        className="hover:text-orange-400 text-black font-bold text-start duration-500"
                     >
                         {page.name}
                     </Link>
@@ -195,7 +195,7 @@ export default function FooterSection({ header }: { header: any }) {
                             <button className="BUTTON2 ">Contact Us</button>
                         </Link>
                         <Link to={'mailto:info@habebe.store'} className=" text-black duration-500">
-                            <FaEnvelope className="text-2xl hover:text-orange-500 duration-500" />
+                            <FaEnvelope className="text-2xl hover:text-orange-400 duration-500" />
                         </Link>
                     </ul>
                 </div>

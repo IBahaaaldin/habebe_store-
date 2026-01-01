@@ -31,7 +31,7 @@ export default function HeroSection({ Collections, Title, Description, HeroImg }
 
                 <ArrowButton
                     CC={"w-fit"}
-                    Href={`/collections/${Collections.handle}`}
+                    Href={`/collections/${Collections?.handle ?? ''}`}
                     Text="EXPLORE COLLECTION"
                 />
             </article>
@@ -52,10 +52,6 @@ export default function HeroSection({ Collections, Title, Description, HeroImg }
 
 // TwoGrids component displays two grid items with images, titles, and buttons.
 export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
-
-
-
-
 
 
     return (

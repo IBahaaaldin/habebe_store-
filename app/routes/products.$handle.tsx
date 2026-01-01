@@ -115,6 +115,7 @@ export default function Product() {
 
 
 
+  // Get all available images for the "Color" option
   const availableColorImages = product.options
     .find(option => option.name === "Color")
     ?.optionValues
@@ -123,11 +124,9 @@ export default function Product() {
 
 
 
+
   return (
     <div>
-
-
-
       <div className='flex xl:flex-row flex-col gap-[3%]'>
         {/* Product Image */}
         <ProductImage
@@ -139,7 +138,7 @@ export default function Product() {
 
         {/* Product Details */}
         <section className="flex flex-col gap-10 mt-5 w-full xl:max-w-1/2">
-          <div className='flex flex-col gap-5'>
+          <article className='flex flex-col gap-5'>
             <h1 className='md:text-5xl text-3xl'>{title}</h1>
             <Prices
               CC1='lg:text-3xl text-2xl'
@@ -147,31 +146,31 @@ export default function Product() {
               currency={selectedVariant.price.currencyCode}
               price={selectedVariant.price.amount}
             />
-          </div>
+          </article>
 
 
 
 
-          <div className='flex flex-col gap-2 border-3 border-zinc-100 rounded-3xl p-4'>
+          <article className='flex flex-col gap-2 border-3 border-zinc-100 rounded-3xl p-4'>
             <span className='text-2xl font-bold'>Description: </span>
 
             <span className=" md:text-lg text-sm text-zinc-500">{product.description.slice(0, 155)}...</span>
 
-          </div>
+          </article>
 
 
-          <div className='flex flex-col gap-5'>
+          <article className='flex flex-col gap-5'>
             <h4 className='text-2xl font-bold'>Main Notes</h4>
-            <div className='flex flex-row gap-3'>
+            <div className='overflow-scroll HIDDEN_SCROLL flex flex-row gap-3'>
               {product.tags.map((tag: any) => (
                 <span
                   key={tag}
-                  className='font-semibold rounded-full border border-zinc-300 px-3 py-1 '>
+                  className='text-nowrap font-semibold rounded-3xl border border-zinc-300 px-3 py-1 '>
                   {tag}
                 </span>
               ))}
             </div>
-          </div>
+          </article>
 
           <ProductForm
             productOptions={productOptions}
@@ -188,11 +187,13 @@ export default function Product() {
       />
 
 
-
-      <SimilarProducts
-        Title={"Similar Products"}
-        products={similarProducts}
-      />
+      {
+        similarProducts.length > 0 &&
+        <SimilarProducts
+          Title={"Similar Products"}
+          products={similarProducts}
+        />
+      }
 
 
       {/* Used for analytics only */}
@@ -220,7 +221,7 @@ export default function Product() {
 function SimilarProducts({ products, Title }: { products: any; Title: string; }) {
   return (
     <div className="border-b border-black/30 pb-10">
-      <h3 className='text-start w-full text-4xl mb-10 capitalize font-bold'>
+      <h3 className='text-start w-full md:text-3xl text-2xl mb-10 capitalize'>
         {Title}
       </h3>
 

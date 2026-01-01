@@ -28,12 +28,11 @@ interface PageLayoutProps {
 
 
 // This is the main layout for the entire app
-export function PageLayout({ cart, children = null, header, isLoggedIn, publicStoreDomain, }: PageLayoutProps) {
+export function PageLayout({ cart, children = null, header, isLoggedIn }: PageLayoutProps) {
 
 
   return (
     <Aside.Provider>
-
       {/* This is the cart, search, and mobile menu */}
       <CartAside cart={cart} />
       <SearchAside />
@@ -46,11 +45,11 @@ export function PageLayout({ cart, children = null, header, isLoggedIn, publicSt
             header={header}
             cart={cart}
             isLoggedIn={isLoggedIn}
-            publicStoreDomain={publicStoreDomain}
           />
         )}
         <main>{children}</main>
       </div>
+
 
       {/* Footer for the entire app and all PAGES */}
       <Logos />
@@ -80,15 +79,15 @@ function CartAside({ cart }: { cart: PageLayoutProps['cart'] }) {
 
 
 
+// Search Aside component for predictive search
 function SearchAside() {
   const queriesDatalistId = useId();
   return (
     <Aside type="search" heading="SEARCH">
-      <div className="predictive-search">
-        <br />
+      <div className="flex flex-col gap-5">
         <SearchFormPredictive>
           {({ fetchResults, goToSearch, inputRef }) => (
-            <>
+            <div className="flex flex-row gap-2">
               <input
                 name="q"
                 onChange={fetchResults}
@@ -96,14 +95,18 @@ function SearchAside() {
                 placeholder="Search"
                 ref={inputRef}
                 type="search"
+                className='INPUT'
                 list={queriesDatalistId}
               />
-              &nbsp;
-              <button onClick={goToSearch}>Search</button>
-            </>
+
+              <button className='BUTTON1' onClick={goToSearch}>Search</button>
+            </div>
           )}
         </SearchFormPredictive>
 
+
+
+        {/* The search results */}
         <SearchResultsPredictive>
           {({ items, total, term, state, closeSearch }) => {
             const { articles, collections, pages, products, queries } = items;
@@ -118,39 +121,38 @@ function SearchAside() {
 
             return (
               <>
-                <SearchResultsPredictive.Queries
+                {/* <SearchResultsPredictive.Queries
                   queries={queries}
                   queriesDatalistId={queriesDatalistId}
-                />
+                /> */}
                 <SearchResultsPredictive.Products
                   products={products}
                   closeSearch={closeSearch}
                   term={term}
                 />
-                <SearchResultsPredictive.Collections
+                {/* <SearchResultsPredictive.Collections
                   collections={collections}
                   closeSearch={closeSearch}
                   term={term}
-                />
-                <SearchResultsPredictive.Pages
+                /> */}
+                {/* <SearchResultsPredictive.Pages
                   pages={pages}
                   closeSearch={closeSearch}
                   term={term}
-                />
-                <SearchResultsPredictive.Articles
+                /> */}
+                {/* <SearchResultsPredictive.Articles
                   articles={articles}
                   closeSearch={closeSearch}
                   term={term}
-                />
+                /> */}
                 {term.current && total ? (
                   <Link
                     onClick={closeSearch}
                     to={`${SEARCH_ENDPOINT}?q=${term.current}`}
+                    className='LINK'
                   >
-                    <p>
-                      View all results for <q>{term.current}</q>
-                      &nbsp; →
-                    </p>
+                    View all results for <q>{term.current}</q>
+                    &nbsp; →
                   </Link>
                 ) : null}
               </>

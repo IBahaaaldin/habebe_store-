@@ -291,56 +291,8 @@ button.reset:hover:not(:has(> *)) {
 * --------------------------------------------------
 * components/Search
 * --------------------------------------------------
-*/
-.predictive-search {
-  height: calc(100vh - var(--header-height) - 40px);
-  overflow-y: auto;
-}
 
-.predictive-search-form {
-  background: var(--color-light);
-  position: sticky;
-  top: 0;
-}
 
-.predictive-search-result {
-  margin-bottom: 2rem;
-}
-
-.predictive-search-result h5 {
-  text-transform: uppercase;
-}
-
-.predictive-search-result-item {
-  margin-bottom: 0.5rem;
-}
-
-.predictive-search-result-item a {
-  align-items: center;
-  display: flex;
-}
-
-.predictive-search-result-item a img {
-  margin-right: 0.75rem;
-  height: 100%;
-}
-
-.search-result {
-  margin-bottom: 1.5rem;
-}
-
-.search-results-item {
-  margin-bottom: 0.5rem;
-}
-
-.search-results-item a {
-  display: flex;
-  flex: row;
-  align-items: center;
-  gap: 1rem;
-}
-
-/*
 * --------------------------------------------------
 * routes/__index
 * --------------------------------------------------
@@ -359,11 +311,7 @@ button.reset:hover:not(:has(> *)) {
   }
 }
 
-.featured-collection img {
-  height: auto;
-  max-height: 100%;
-  object-fit: cover;
-}
+
 
 /* .recommended-products-grid {
   display: grid;
@@ -375,25 +323,12 @@ button.reset:hover:not(:has(> *)) {
   }
 } */
 
-.recommended-product img {
-  height: auto;
-}
-
 /*
 * --------------------------------------------------
 * routes/collections._index.tsx
 * --------------------------------------------------
 */
-.collections-grid {
-  display: grid;
-  grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
-  margin-bottom: 2rem;
-}
 
-.collection-item img {
-  height: auto;
-}
 
 /*
 * --------------------------------------------------
@@ -524,9 +459,6 @@ button.reset:hover:not(:has(> *)) {
 * Order Search Form - Minimal & Responsive
 * --------------------------------------------------
 */
-.order-search-form {
-  margin-bottom: 1.5rem;
-}
 
 .order-search-fieldset {
   border: 1px solid #e5e5e5;

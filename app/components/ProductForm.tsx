@@ -127,10 +127,7 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
       <div className='flex flex-row w-full'>
         <AddToCartButton
           disabled={!selectedVariant || !selectedVariant.availableForSale}
-          onClick={() => {
-            console.log(`%c${JSON.stringify(selectedVariant)}`, 'color: purple; font-size: 30px;');
-          }}
-          CC='w-full BUTTON1'
+          CC='w-full'
           lines={
             selectedVariant
               ? [
@@ -143,7 +140,7 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
               : []
           }
         >
-          {selectedVariant?.availableForSale ? <ShoppingCart /> : 'Sold out'}
+          {selectedVariant?.availableForSale ? `Add to Cart` : 'Sold out'}
         </AddToCartButton>
 
 

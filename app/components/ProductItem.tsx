@@ -8,7 +8,7 @@ import type {
 } from 'storefrontapi.generated';
 import { useVariantUrl } from '~/lib/variants';
 import Prices from './MINE/UI/Prices';
-import { Share2, Star } from 'lucide-react';
+import { Share2, ShoppingBag, ShoppingCart, Star } from 'lucide-react';
 import { AddToCartButton } from './AddToCartButton';
 // import { CartLineQuantity } from './CartLineItem';
 
@@ -83,7 +83,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
           <AddToCartButton
             disabled={!product?.variants.nodes[0]?.availableForSale}
-            CC='w-full scale-85'
+            CC='w-fit scale-85'
             lines={
               product?.variants.nodes[0]
                 ? [
@@ -96,27 +96,15 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
                 : []
             }
           >
-            {product?.variants.nodes[0]?.availableForSale ? "Add" : 'Sold out'}
+            {product?.variants.nodes[0]?.availableForSale ? <ShoppingCart /> : 'Sold out'}
           </AddToCartButton>
         </div>
       </article>
 
-      {/* <div className='flex flex-row flex-wrap w-full justify-between items-end'>
-        {[
-          { name: 'Stock', value: 500 },
-          { name: 'Sold', value: 200 }
-        ].map((item, index) => (
-          <div key={index} className="flex flex-row items-center gap-2">
-            <p><span className='text-zinc-500'>{item.name}:</span> {item.value}</p>
-          </div>
-        ))}
-      </div> */}
 
 
-
-      {/* <div className='absolute top-5 right-5'> */}
       <Share2
-        className="cursor-pointer absolute top-5 right-5 hover:bg-orange-500 duration-300 rounded-2xl z-100 bg-orange-500/50 backdrop-blur-sm text-white md:p-2.5 p-1.5 md:w-10 md:h-10 w-8 h-8"
+        className="cursor-pointer absolute top-5 right-5 hover:opacity-70 bg-orange-400 duration-300 rounded-2xl z-100 text-white md:p-2.5 p-1.5 md:w-10 md:h-10 w-8 h-8"
         size={40}
         onClick={handleShareClick}
       />
@@ -125,8 +113,6 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
           {copyMessage}
         </div>
       )}
-      {/* </div> */}
-      {/* <CartLineQuantity line={line} /> */}
     </article>
   );
 }

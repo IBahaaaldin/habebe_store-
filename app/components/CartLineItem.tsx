@@ -7,10 +7,10 @@ import { ProductPrice } from './ProductPrice';
 import { useAside } from './Aside';
 import type { CartApiQueryFragment } from 'storefrontapi.generated';
 import { Minus, Plus, Trash2 } from 'lucide-react';
-// import { toast } from 'react-toastify';
+
+
 
 type CartLine = OptimisticCartLine<CartApiQueryFragment>;
-
 
 
 
@@ -26,20 +26,33 @@ export function CartLineItem({ layout, line, }: { layout: CartLayout; line: Cart
   return (
     <li key={id} className="border border-zinc-300 p-5 rounded-4xl flex flex-row gap-5">
 
-      {/* Image */}
-      {image && (
-        <Image
-          className='object-cover min-w-40 max-w-40 min-h-full aspect-square rounded-2xl overflow-hidden'
-          alt={title}
-          data={image}
-          loading="lazy"
-        />
-      )}
+
+
+      {/* Left side: Image and Quantity controls */}
+      <article className='flex flex-col gap-1 '>
+        {/* Image */}
+        {image && (
+          <Link
+            to={lineItemUrl}
+            className='min-w-40 min-h-40 w-40 h-40 p-1.5 rounded-2xl overflow-hidden bg-zinc-100 flex'>
+            <Image
+              className='object-cover w-full h-full aspect-square rounded-xl overflow-hidden'
+              alt={title}
+              data={image}
+              loading="lazy"
+            />
+
+          </Link>
+        )}
+
+        {/* Quantity controls */}
+        <CartLineQuantity line={line} />
+      </article>
 
 
 
       {/* Details */}
-      <div className='flex flex-row justify-between w-full'>
+      <article className='flex flex-row justify-between w-full'>
         {/* LEFT */}
         <article className='flex flex-col justify-between gap-3'>
           <Link
@@ -71,11 +84,10 @@ export function CartLineItem({ layout, line, }: { layout: CartLayout; line: Cart
 
 
         {/* RIGHT */}
-        <article className='flex flex-col items-end justify-between'>
+        <article className='flex sm:flex-col flex-row sm:items-start items-center justify-between'>
           <CartLineRemoveButton lineIds={[id]} disabled={false} />
-          <CartLineQuantity line={line} />
         </article>
-      </div>
+      </article>
 
     </li>
   );
@@ -93,7 +105,7 @@ export function CartLineQuantity({ line }: { line: CartLine }) {
   const nextQuantity = Number((quantity + 1).toFixed(0));
 
   return (
-    <div className="flex flex-row items-center justify-center bg-zinc-100 w-fit px-3 py-2 rounded-full gap-5">
+    <div className="flex flex-row items-center justify-center bg-zinc-100 w-full h-fit px-3 py-2 rounded-full gap-5">
 
       <CartLineUpdateButton lines={[{ id: lineId, quantity: prevQuantity }]}>
         <button
@@ -140,7 +152,11 @@ function CartLineRemoveButton({ lineIds, disabled, }: { lineIds: string[]; disab
       action={CartForm.ACTIONS.LinesRemove}
       inputs={{ lineIds }}
     >
-      <button disabled={disabled} type="submit" className='cursor-pointer hover:opacity-50 duration-300'>
+      <button
+        disabled={disabled}
+        type="submit"
+        className='w-full flex items-end justify-end cursor-pointer hover:opacity-50 duration-300'
+      >
         <Trash2 className='text-red-600 p-2.5 rounded-full w-10 h-10 bg-red-100' />
       </button>
     </CartForm>

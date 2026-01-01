@@ -10,6 +10,7 @@ import {
   ScrollRestoration,
   useRouteLoaderData,
   Link,
+  type LinksFunction,
 } from 'react-router';
 import type { Route } from './+types/root';
 import favicon from '~/assets/favicon.svg';
@@ -45,7 +46,8 @@ export const shouldRevalidate: ShouldRevalidateFunction = ({
   return false;
 };
 
-/**
+
+/*
  * The main and reset stylesheets are added in the Layout component
  * to prevent a bug in development HMR updates.
  *
@@ -55,19 +57,12 @@ export const shouldRevalidate: ShouldRevalidateFunction = ({
  * It's a temporary fix until the issue is resolved.
  * https://github.com/remix-run/remix/issues/9242
  */
-export function links() {
-  return [
-    {
-      rel: 'preconnect',
-      href: 'https://cdn.shopify.com',
-    },
-    {
-      rel: 'preconnect',
-      href: 'https://shop.app',
-    },
-    { rel: 'icon', type: 'image/svg+xml', href: favicon },
-  ];
-}
+
+
+export const links: LinksFunction = () => [
+  { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+];
+
 
 export async function loader(args: Route.LoaderArgs) {
   // Start fetching non-critical data without blocking time to first byte
@@ -149,6 +144,8 @@ export function Layout({ children }: { children?: React.ReactNode }) {
     </html>
   );
 }
+
+
 
 
 
