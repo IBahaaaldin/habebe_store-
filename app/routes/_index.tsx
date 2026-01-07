@@ -2,13 +2,15 @@ import { Await, useLoaderData, Link } from 'react-router';
 import type { Route } from './+types/_index';
 import { Suspense } from 'react';
 import { ProductItem } from '~/components/ProductItem';
-import HeroSection, { AllCategories } from '~/components/MINE/HeroSection';
+import HeroSection, { AllCategories, TwoGrids } from '~/components/MINE/HeroSection';
 import Reviews from '~/components/MINE/Reviews';
 
 // For the collection section
 import { getPaginationVariables } from '@shopify/hydrogen';
 import Collections, { MAINMENU_AND_PRODUCTS_QUERY } from './collections._index';
 import LoadingSpinner from '~/components/MINE/ReUsable/LoadingSpinner';
+import Logos from '~/components/MINE/Logos';
+import FAQs from '~/components/MINE/FAQs';
 
 
 
@@ -69,17 +71,20 @@ export default function Homepage() {
         Collections={MainCollections}
       />
 
-
       {/* Render the CollectionsSection component, passing the collections data */}
 
+      <TwoGrids
+        subTwoMenus={MainCollections.slice(0, 2)}
+      />
+
       <AllCategories
-        allMenus={MainCollections}
+        allMenus={MainCollections.slice(2)}
       />
       {/* <Collections /> */}
 
 
       {MainCollections.map((collection: any) => (
-        <div key={collection.id} className="mb-20">
+        <div key={collection.id} className="mb-10">
           <MainCollectionsProductsSample
             products={collection.products}
             collectionTitle={collection.title}
@@ -89,14 +94,17 @@ export default function Homepage() {
       ))}
 
 
-      <Link
+      {/* <Link
         to="https://wa.me/+971561576657?text=I'm%20interested%20in%20your%20ad%20on%20Hydrogen"
-        className='w-full lg:h-80 h-30 border border-zinc-100 bg-zinc-50 lg:rounded-4xl rounded-2xl flex items-center justify-center LINK'
+        className='w-full lg:h-80 h-30 border border-zinc-100 bg-zinc-50 lg:rounded-3xl rounded-2xl flex items-center justify-center LINK'
         target='_blank'
         rel="noreferrer"
       >
         your ad here
-      </Link>
+      </Link> */}
+
+
+      <FAQs />
 
 
 
@@ -134,7 +142,7 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
       <Suspense fallback={<LoadingSpinner />}>
         <Await resolve={products}>
           {(response) => (
-            <div className="GRID_CONTAINER">
+            <div className="PRODUCTS_GRID_CONTAINER">
               {response
                 ? response?.nodes?.map((product: any) => (
 

@@ -228,7 +228,7 @@ function SimilarProducts({ products, Title }: { products: any; Title: string; })
       <Suspense fallback={<LoadingSpinner />}>
         <Await resolve={products}>
           {(response) => (
-            <div className="GRID_CONTAINER overflow-scroll HIDDEN_SCROLL">
+            <div className="PRODUCTS_GRID_CONTAINER overflow-scroll HIDDEN_SCROLL">
               {products.map((item: any) => (
                 <ProductItem key={item.node.id} product={item.node} />
               ))}

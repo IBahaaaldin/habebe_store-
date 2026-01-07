@@ -25,7 +25,7 @@ export default function Prices({ price, currency, CC1, CC2 }: { price: string, c
 
     return (
         <article className='flex flex-col flex-wrap items-start mt-3 '>
-            <span className={`${CC1 ?? 'md:text-lg'}  text-black font-bold`}>{currency}{numericPrice.toFixed(2)}</span>
+            <span className={`${CC1 ?? 'md:text-lg'} text-nowrap text-black font-bold`}>{currency} {numericPrice.toFixed(2)}</span>
 
 
             {discountPercentage > 0 &&

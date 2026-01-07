@@ -1,1715 +1,1337 @@
-[
-    {
-        "id": "gid://shopify/Collection/449068073172",
-        "title": "Men",
-        "description": "Discover our Men’s Collection—crafted for style, comfort, and confidence. From everyday essentials to statement pieces, each item blends quality materials with modern design, perfect for any occasion.",
-        "handle": "men",
-        "image": {
-            "id": "gid://shopify/CollectionImage/1709073301716",
-            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-pixabay-157928_fb3d8146-4a33-4d57-a5d3-e0e8693c0580.jpg?v=1766849463",
-            "altText": "Men Collection",
-            "width": 5706,
-            "height": 3804
+{
+    "title": "main-menu",
+    "items": [
+        {
+            "id": "gid://shopify/MenuItem/608289194196",
+            "title": "Men",
+            "url": "https://tedrk1-wu.myshopify.com/collections/men/Men-Accessories+Men-Bottoms+Men-Underwear-&-Loungewear+Men-T-Shirts+Men-Outerwear-&-Jackets+Men-Couple-&-Parent-Child-Clothing+Men-Hats-&-Caps+Men-Wigs-&-Extensions+Men-Synthetic-Hair+Men-Skin-Care+Men-Beauty-Tools+Men-Food-&-Health+Men-Nail-Art-&-Tools",
+            "resource": {
+                "handle": "men",
+                "title": "Men",
+                "image": {
+                    "id": "gid://shopify/CollectionImage/1709073301716",
+                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-pixabay-157928_fb3d8146-4a33-4d57-a5d3-e0e8693c0580.jpg?v=1766849463",
+                    "altText": "Men Collection",
+                    "width": 5706,
+                    "height": 3804
+                }
+            },
+            "items": [
+                {
+                    "id": "gid://shopify/MenuItem/608427999444",
+                    "title": "Men Accessories",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/men-accessories/Socks+Men's-Ties+Scarves+Man-Gloves-&-Mittens+Sullies-&-Beanies+Belts",
+                    "resource": {
+                        "handle": "men-accessories",
+                        "title": "Men Accessories",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608431112404",
+                    "title": "Men Bottoms",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/men-bottom-1/Pajama-Sets+Man-Shorts+Cargo-Pants+Man-Jeans+Harem-Pants+Casual-Pants+Sweatpants",
+                    "resource": {
+                        "handle": "men-bottom-1",
+                        "title": "Men Bottom",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608431145172",
+                    "title": "Men Underwear & Loungewear",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/underwear-loungewear/Men's-Sleep-&-Lounge+Shorts+Briefs+Robes+Man-Pajama-Sets+Boxers+Long-Johns",
+                    "resource": {
+                        "handle": "underwear-loungewear",
+                        "title": "Men Underwear & Loungewear",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608431177940",
+                    "title": "Men T-Shirts",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/t-shirt/Geometric+Men's-Long-Sleeved+Striped+Solid+3D+Print",
+                    "resource": {
+                        "handle": "t-shirt",
+                        "title": "Men T-Shirt",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608433504468",
+                    "title": "Men Outerwear & Jackets",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/men-outerwear-jackets/Suits-&-Blazer+Men's-Sweaters+Genuine-Leather+Man-Trench+Men's-Shirts+Men's-Jackets+Men's-Suits+Man-Hoodies-&-Sweatshirts+Wool-&-Blends+Parkas+Down-Jackets",
+                    "resource": {
+                        "handle": "men-outerwear-jackets",
+                        "title": "Men Outerwear & Jackets",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608433537236",
+                    "title": "Men Couple & Parent-Child Clothing",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/couple-parent-child-clothing/Couple-&-Parent-Child-Sweatshirts%C2%B7+Couple-&-Parent-Child-Short-Sleeves+Couple-&-Parent--Child-Jackets+Couple-&-Parent-Child-Tops+Couple-&-Parent-Child-Suits+Couple-&-Parent-Child-Pants+Family-Matching-Outfits",
+                    "resource": {
+                        "handle": "couple-parent-child-clothing",
+                        "title": "Couple & Parent-Child Clothing",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608433570004",
+                    "title": "Men Hats & Caps",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/hats-caps/Baseball-Caps+Bomber-Hats+Berets+Fedoras",
+                    "resource": {
+                        "handle": "hats-caps",
+                        "title": "Hats & Caps",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608433602772",
+                    "title": "Men Wigs & Extensions",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/men-wigs-extensions/Human-Hair-Wigs+Synthetic-Hair-Pieces+Synthetic-Lace-Wigs+Human-Hair-Lace-Wigs+Hair-Braids+Synthetic-Wigs",
+                    "resource": {
+                        "handle": "men-wigs-extensions",
+                        "title": "Men Wigs & Extensions",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608433635540",
+                    "title": "Men Synthetic Hair",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/men-synthetic-hair/Cosplay-Wigs",
+                    "resource": {
+                        "handle": "men-synthetic-hair",
+                        "title": "Men Synthetic Hair",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608433668308",
+                    "title": "Men Skin Care",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/men-skin-care/Razor+Face-Masks+Sun-Care+Essential-Oil+Body-Care+Facial-Care",
+                    "resource": {
+                        "handle": "men-skin-care",
+                        "title": "Men Skin Care",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608433701076",
+                    "title": "Men Beauty Tools",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/men-beauty-tools/Mirrors+Straightening-Irons+Electric-Face-Cleanser+Face-Skin-Care-Tools+Curling-Iron+Facial-Steamer",
+                    "resource": {
+                        "handle": "men-beauty-tools",
+                        "title": "Men Beauty Tools",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608433733844",
+                    "title": "Men Food & Health",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/men-food-health/Health-Care-Products",
+                    "resource": {
+                        "handle": "men-food-health",
+                        "title": "Men Food & Health",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608433766612",
+                    "title": "Men Hair Weaves",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/men-hair-weaves/Pre-Colored-One-Pack+Hair-Weaving+Hair-Styling+Salon-Bundle-Hair+Pre-Colored-Hair-Weave",
+                    "resource": {
+                        "handle": "men-hair-weaves",
+                        "title": "Men Hair Weaves",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608433799380",
+                    "title": "Men Hair & Accessories",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/men-hair-accessories/Headband-&-Hair-Band-&-Hairpin+Human-Hair",
+                    "resource": {
+                        "handle": "men-hair-accessories",
+                        "title": "Men Hair & Accessories",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608433832148",
+                    "title": "Men's Watches",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/mens-watches/Quartz-Watches+Mechanical-Watches+Digital-Watches+Dual-Display-Watches+Men-Sports-Watches",
+                    "resource": {
+                        "handle": "mens-watches",
+                        "title": "Men's Watches",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608434061524",
+                    "title": "Men Fine Jewelry",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/men-fine-jewelry/Various-Gemstones+925-Silver-Jewelry+K-Gold+Pearls-Jewelry+Fine-Earrings+Men's-Fine-Jewelry+Fine-Jewelry-Sets",
+                    "resource": {
+                        "handle": "men-fine-jewelry",
+                        "title": "Men Fine Jewelry",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608434847956",
+                    "title": "Men Wedding & Engagement",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/men-wedding-engagement/Groom-Jewelry-Sets+Wedding-Hair-Jewelry+Engagement-Rings+Wedding-&-Engagement",
+                    "resource": {
+                        "handle": "men-wedding-engagement",
+                        "title": "Men Wedding & Engagement",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608434880724",
+                    "title": "Men Fashion Jewelry",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/men-fashion-jewelry/Bracelets-&-Bangles+Brooches+Keychains+Charms+Rings+Body-Jewelry+Fashion-Jewelry-Sets+Necklace-&-Pendants+Men's-Cuff-Links+Earrings",
+                    "resource": {
+                        "handle": "men-fashion-jewelry",
+                        "title": "Men Fashion Jewelry",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608435110100",
+                    "title": "Men's Shoes",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/mens-shoes/Man-Boots+Formal-Shoes+Men's-Insoles+Man-Slippers+Vulcanize-Shoe+Man-Sandals+Casual-Shoes",
+                    "resource": {
+                        "handle": "mens-shoes",
+                        "title": "Men's Shoes",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608435339476",
+                    "title": "Men's Luggage & Bags",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/mens-luggage-bags/Briefcases+Waist-Bags+Girls-Bags+Men's-Backpacks+Luggage-&-Travel-Bags+Crossbody-Bags+Man-Wallets",
+                    "resource": {
+                        "handle": "mens-luggage-bags",
+                        "title": "Men's Luggage & Bags",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608435372244",
+                    "title": "Men Other Sports Equipment",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/other-sports-equipment/Musical-Instruments+Hunting+Skiing-&-Snowboarding+Fitness-&-Bodybuilding+Camping-&-Hiking+Golf",
+                    "resource": {
+                        "handle": "other-sports-equipment",
+                        "title": "Other Sports Equipment",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608435437780",
+                    "title": "Men Swimming",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/men-swimming/Men's-Swimwear",
+                    "resource": {
+                        "handle": "men-swimming",
+                        "title": "Men Swimming",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608435470548",
+                    "title": "Men Sport Shoes",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/sport-shoes/Running-Shoes+Dance-Shoes+Skateboarding-Shoes+Hiking-Shoes+Soccer-Shoes+Basketball-Shoes",
+                    "resource": {
+                        "handle": "sport-shoes",
+                        "title": "Sport Shoes",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608435503316",
+                    "title": "Men Sportswear",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/sportswear/Jerseys+Sports-Accessories+Outdoor-Shorts+Sports-Bags+Hiking-Jackets+Pants",
+                    "resource": {
+                        "handle": "sportswear",
+                        "title": "Sportswear",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608435536084",
+                    "title": "Men Cycling",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/cycling/Bicycle-Lights+Scooters+Cycling-Gloves+Bicycle-Helmets+Bicycle-Frames+Cycling-Jerseys+Bicycles",
+                    "resource": {
+                        "handle": "cycling",
+                        "title": "Cycling",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608435568852",
+                    "title": "Men Fishing",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/fishing/Fishing-Reels+Rod-Combos+Fishing-Tackle-Boxes+Fishing-Lures+Fishing-Rods+Fishing-Lines",
+                    "resource": {
+                        "handle": "fishing",
+                        "title": "Fishing",
+                        "image": null
+                    }
+                }
+            ]
         },
-        "products": {
-            "nodes": [
+        {
+            "id": "gid://shopify/MenuItem/606602395860",
+            "title": "Woman",
+            "url": "https://tedrk1-wu.myshopify.com/collections/women/Women-Outerwear-&-Jackets+Women-Couple-&-Parent-Child-Clothing+Women-Baby-&-Mother+Women-Accessories+Women-Bottoms+Women-Tops-&-Sets+Women-Weddings-&-Events+Women-Makeup+Women-Wigs-&-Extensions+Women-Synthetic-Hair+Women-Synthetic-Hair+Women-Beauty-Tools+",
+            "resource": {
+                "handle": "women",
+                "title": "Women",
+                "image": {
+                    "id": "gid://shopify/CollectionImage/1709073334484",
+                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-elif-s-986907269-35349238.jpg?v=1766849431",
+                    "altText": null,
+                    "width": 6000,
+                    "height": 4000
+                }
+            },
+            "items": [
                 {
-                    "id": "gid://shopify/Product/9028663214292",
-                    "title": "Classic Waffle Henley Tshirt Men 2022 New Crew Neck Long Sleeve Slim Fit Tee Shirt Homme Casual Heavy Weight T Shirts Male",
-                    "handle": "classic-waffle-henley-tshirt-men-2022-new-crew-neck-long-sleeve-slim-fit-tee-shirt-homme-casual-heavy-weight-t-shirts-male",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "31.26",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45922187477204",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/2bce4e57-72f9-4c8a-ae85-58eb788feaf5.jpg?v=1767046046",
-                        "altText": null,
-                        "width": 800,
-                        "height": 800
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47401439723732",
-                                "availableForSale": true,
-                                "title": "L",
-                                "sku": "CJMS212868503CX",
-                                "price": {
-                                    "amount": "31.26",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47401439756500",
-                                "availableForSale": true,
-                                "title": "M",
-                                "sku": "CJMS212868502BY",
-                                "price": {
-                                    "amount": "31.26",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47401439789268",
-                                "availableForSale": true,
-                                "title": "S",
-                                "sku": "CJMS212868501AZ",
-                                "price": {
-                                    "amount": "31.26",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47401439822036",
-                                "availableForSale": true,
-                                "title": "XL",
-                                "sku": "CJMS212868504DW",
-                                "price": {
-                                    "amount": "31.26",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47401439854804",
-                                "availableForSale": true,
-                                "title": "XXL",
-                                "sku": "CJMS212868505EV",
-                                "price": {
-                                    "amount": "31.26",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
+                    "id": "gid://shopify/MenuItem/608299155668",
+                    "title": "Outerwear & Jackets",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/women-clothing/Blazers+Wool-&-Blend+Women's-Padded-Jackets+Woman-Trench+Basic-Jacket+Leather-&-Suede+Real-Fur",
+                    "resource": {
+                        "handle": "women-clothing",
+                        "title": "Women Outerwear & Jackets",
+                        "image": null
                     }
                 },
                 {
-                    "id": "gid://shopify/Product/9028578017492",
-                    "title": "High Street Alphanumeric",
-                    "handle": "high-street-alphanumeric-printing-v-neck-patchwork-short-sleeve",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "17.6",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45920980173012",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/4a3684b4-ef9d-4c33-adff-f6b9144f2afd.jpg?v=1767019185",
-                        "altText": null,
-                        "width": 800,
-                        "height": 800
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47400716337364",
-                                "availableForSale": true,
-                                "title": "Black / L",
-                                "sku": "CJYH247829902BY",
-                                "price": {
-                                    "amount": "17.6",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47400716370132",
-                                "availableForSale": true,
-                                "title": "Black / M",
-                                "sku": "CJYH247829901AZ",
-                                "price": {
-                                    "amount": "17.6",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47400716402900",
-                                "availableForSale": true,
-                                "title": "Black / XL",
-                                "sku": "CJYH247829903CX",
-                                "price": {
-                                    "amount": "17.6",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
+                    "id": "gid://shopify/MenuItem/608299188436",
+                    "title": "Couple & Parent-Child Clothing",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/couple-parent-child-clothing/Couple-&-Parent-Child-Sweatshirts%C2%B7+Couple-&-Parent-Child-Short-Sleeves+Couple-&-Parent--Child-Jackets+Couple-&-Parent-Child-Tops+Couple-&-Parent-Child-Suits+Couple-&-Parent-Child-Pants+Family-Matching-Outfits",
+                    "resource": {
+                        "handle": "couple-parent-child-clothing",
+                        "title": "Couple & Parent-Child Clothing",
+                        "image": null
                     }
                 },
                 {
-                    "id": "gid://shopify/Product/9028519002324",
-                    "title": "Handmade Men Shoes",
-                    "handle": "handmade-men-shoes",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "254.16",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45920314392788",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/1585024169784.jpg?v=1767011120",
-                        "altText": null,
-                        "width": 640,
-                        "height": 640
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47400561049812",
-                                "availableForSale": true,
-                                "title": "02Yellow / 38.",
-                                "sku": "CJBHNSNS01977-02Yellow-38.",
-                                "price": {
-                                    "amount": "270.51",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47400561082580",
-                                "availableForSale": true,
-                                "title": "02Yellow / 39.",
-                                "sku": "CJBHNSNS01977-02Yellow-39.",
-                                "price": {
-                                    "amount": "274.28",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47400561115348",
-                                "availableForSale": true,
-                                "title": "02Yellow / 40.",
-                                "sku": "CJBHNSNS01977-02Yellow-40.",
-                                "price": {
-                                    "amount": "274.28",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47400561148116",
-                                "availableForSale": true,
-                                "title": "02Yellow / 41.",
-                                "sku": "CJBHNSNS01977-02Yellow-41.",
-                                "price": {
-                                    "amount": "274.28",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47400561180884",
-                                "availableForSale": true,
-                                "title": "02Yellow / 42.",
-                                "sku": "CJBHNSNS01977-02Yellow-42.",
-                                "price": {
-                                    "amount": "274.28",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
+                    "id": "gid://shopify/MenuItem/608299221204",
+                    "title": "Baby & Mother",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/baby-mother/Nappy-Changing+Activity-&-Gear+Backpacks-&-Carriers+Baby-Care+Maternity",
+                    "resource": {
+                        "handle": "baby-mother",
+                        "title": "Baby & Mother",
+                        "image": null
                     }
                 },
                 {
-                    "id": "gid://shopify/Product/9026417426644",
-                    "title": "Lil Peep Tshirt",
-                    "handle": "lil-peep-tshirt",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "101.29",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45900160368852",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/3748181878235.jpg?v=1766628844",
-                        "altText": null,
-                        "width": 865,
-                        "height": 852
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47393710833876",
-                                "availableForSale": true,
-                                "title": "Black / 3XL",
-                                "sku": "CJNSTXYH00333-Black-3XL",
-                                "price": {
-                                    "amount": "101.29",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47393710866644",
-                                "availableForSale": true,
-                                "title": "Black / L",
-                                "sku": "CJNSTXYH00333-Black-L",
-                                "price": {
-                                    "amount": "101.29",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47393710899412",
-                                "availableForSale": true,
-                                "title": "Black / M",
-                                "sku": "CJNSTXYH00333-Black-M",
-                                "price": {
-                                    "amount": "101.29",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47393710932180",
-                                "availableForSale": true,
-                                "title": "Black / S",
-                                "sku": "CJNSTXYH00333-Black-S",
-                                "price": {
-                                    "amount": "101.29",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47393710964948",
-                                "availableForSale": true,
-                                "title": "Black / XL",
-                                "sku": "CJNSTXYH00333-Black-XL",
-                                "price": {
-                                    "amount": "101.29",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
+                    "id": "gid://shopify/MenuItem/608299253972",
+                    "title": "Women Accessories",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/accessories/Scarves-&-Wraps+Face-Masks+Belts-&-Cummerbunds+Woman-Gloves-&-Mittens+Woman-Socks+Woman-Hats-&-Caps",
+                    "resource": {
+                        "handle": "accessories",
+                        "title": "Women Accessories",
+                        "image": null
                     }
                 },
                 {
-                    "id": "gid://shopify/Product/9026020770004",
-                    "title": "Kids Dinosaur Print Summer Short Sleeve",
-                    "handle": "kids-dinosaur-print-summer-short-sleeve",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "45.27",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45895786954964",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/1622635728150.jpg?v=1766537826",
-                        "altText": null,
-                        "width": 800,
-                        "height": 800
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47391656083668",
-                                "availableForSale": true,
-                                "title": "Red / 2T",
-                                "sku": "CJNT115652506FU",
-                                "price": {
-                                    "amount": "45.27",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391656116436",
-                                "availableForSale": true,
-                                "title": "Red / 3T",
-                                "sku": "CJNT115652501AZ",
-                                "price": {
-                                    "amount": "45.97",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391656149204",
-                                "availableForSale": true,
-                                "title": "Red / 4T",
-                                "sku": "CJNT115652502BY",
-                                "price": {
-                                    "amount": "46.67",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391656181972",
-                                "availableForSale": true,
-                                "title": "Red / 5T",
-                                "sku": "CJNT115652503CX",
-                                "price": {
-                                    "amount": "47.41",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391656214740",
-                                "availableForSale": true,
-                                "title": "Red / 6T",
-                                "sku": "CJNT115652504DW",
-                                "price": {
-                                    "amount": "48.11",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
+                    "id": "gid://shopify/MenuItem/608299286740",
+                    "title": "Women bottom",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/bottom/Leggings+Skirts+Woman-Jeans+Woman-Shorts+Pants-&-Capris+Wide-Leg-Pants",
+                    "resource": {
+                        "handle": "bottom",
+                        "title": "Women Bottom",
+                        "image": null
                     }
                 },
                 {
-                    "id": "gid://shopify/Product/9023775080660",
-                    "title": "Are we great yet!",
-                    "handle": "are-we-great-yet-outfit-unisex-t-shirt-cotton-tee-graphic-printing-tops-t-shirt-1",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "70.82",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45879340138708",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/Sf0dba3155f8646cea60095c30ae11ba0W_0a921146-86cd-4de3-8bd0-4dc11b5a7fb3.webp?v=1766443330",
-                        "altText": null,
-                        "width": 2000,
-                        "height": 2000
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47387289780436",
-                                "availableForSale": true,
-                                "title": "11 / M",
-                                "sku": "14:200002130#11;5:361386",
-                                "price": {
-                                    "amount": "70.82",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387289813204",
-                                "availableForSale": true,
-                                "title": "11 / L",
-                                "sku": "14:200002130#11;5:361385",
-                                "price": {
-                                    "amount": "70.82",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387289845972",
-                                "availableForSale": true,
-                                "title": "10 / 6XL",
-                                "sku": "14:200004889#10;5:200005259",
-                                "price": {
-                                    "amount": "76.77",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387289878740",
-                                "availableForSale": true,
-                                "title": "11 / S",
-                                "sku": "14:200002130#11;5:100014064",
-                                "price": {
-                                    "amount": "70.82",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387289911508",
-                                "availableForSale": true,
-                                "title": "11 / XXXL",
-                                "sku": "14:200002130#11;5:4183",
-                                "price": {
-                                    "amount": "70.82",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
+                    "id": "gid://shopify/MenuItem/608299319508",
+                    "title": "Tops & Sets",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/tops-sets/Ladies-Short-Sleeve+Women's-Camis+Women's-Vests+Women's-Short-Sleeved-Shirts+Women's-Long-Sleeved-Shirts+Blouses-&-Shirts+Woman-Hoodies-&-Sweatshirts+Jumpsuits+Rompers+Lady-Dresses+Sweaters+Suits-&-Sets",
+                    "resource": {
+                        "handle": "tops-sets",
+                        "title": "Tops & Sets",
+                        "image": null
                     }
                 },
                 {
-                    "id": "gid://shopify/Product/9023771967700",
-                    "title": "Are We Great Yet Outfit Unisex T Shirt Cotton Tee Graphic Printing  Tops T-shirt",
-                    "handle": "are-we-great-yet-outfit-unisex-t-shirt-cotton-tee-graphic-printing-tops-t-shirt",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "70.82",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45879326114004",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/Sf0dba3155f8646cea60095c30ae11ba0W.webp?v=1766442284",
-                        "altText": null,
-                        "width": 2000,
-                        "height": 2000
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47387277000916",
-                                "availableForSale": true,
-                                "title": "11 / M",
-                                "sku": "14:200002130#11;5:361386",
-                                "price": {
-                                    "amount": "70.82",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387277033684",
-                                "availableForSale": true,
-                                "title": "11 / L",
-                                "sku": "14:200002130#11;5:361385",
-                                "price": {
-                                    "amount": "70.82",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387277066452",
-                                "availableForSale": true,
-                                "title": "10 / 6XL",
-                                "sku": "14:200004889#10;5:200005259",
-                                "price": {
-                                    "amount": "76.77",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387277099220",
-                                "availableForSale": true,
-                                "title": "11 / S",
-                                "sku": "14:200002130#11;5:100014064",
-                                "price": {
-                                    "amount": "70.82",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387277131988",
-                                "availableForSale": true,
-                                "title": "11 / XXXL",
-                                "sku": "14:200002130#11;5:4183",
-                                "price": {
-                                    "amount": "70.82",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
+                    "id": "gid://shopify/MenuItem/608299352276",
+                    "title": "Weddings & Events",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/weddings-events/Cocktail-Dresses+Evening-Dresses+Bridesmaid-Dresses+Prom-Dresses+Wedding-Dresses+Flower-Girl-Dresses",
+                    "resource": {
+                        "handle": "weddings-events",
+                        "title": "Weddings & Events",
+                        "image": null
                     }
                 },
                 {
-                    "id": "gid://shopify/Product/9023771771092",
-                    "title": "You Sir Are A Twat",
-                    "handle": "you-sir-are-a-twat-t-shirt-funny-rude-offensive-insulting-sarcastic-joke-gift-o-neck-short-sleeve-high-quality-cotton-tops",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "46.02",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45879324901588",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/Sff9d34d34ab740b3831773ed71e99fb7r.webp?v=1766442170",
-                        "altText": null,
-                        "width": 1000,
-                        "height": 1000
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47387275591892",
-                                "availableForSale": true,
-                                "title": "army green / XL",
-                                "sku": "14:1254#army green;5:100014065",
-                                "price": {
-                                    "amount": "50.36",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387275624660",
-                                "availableForSale": true,
-                                "title": "army green / XXL",
-                                "sku": "14:1254#army green;5:4182",
-                                "price": {
-                                    "amount": "50.36",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387275657428",
-                                "availableForSale": true,
-                                "title": "army green / M",
-                                "sku": "14:1254#army green;5:361386",
-                                "price": {
-                                    "amount": "50.36",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387275690196",
-                                "availableForSale": true,
-                                "title": "army green / L",
-                                "sku": "14:1254#army green;5:361385",
-                                "price": {
-                                    "amount": "50.36",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387275722964",
-                                "availableForSale": true,
-                                "title": "army green / XXXL",
-                                "sku": "14:1254#army green;5:4183",
-                                "price": {
-                                    "amount": "50.36",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
+                    "id": "gid://shopify/MenuItem/608299385044",
+                    "title": "Makeup",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/makeup/Eyebrow-Pencil+Makeup-Set+Eyeshadow+Makeup-Brushes+Lipstick+False-Eyelashes",
+                    "resource": {
+                        "handle": "makeup",
+                        "title": "Makeup",
+                        "image": null
                     }
                 },
                 {
-                    "id": "gid://shopify/Product/9023726158036",
-                    "title": "Solid-color Light-luxury Mens Casual Suit Jacket",
-                    "handle": "solid-color-light-luxury-mens-casual-suit-jacket",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "258.89",
-                            "currencyCode": "USD"
+                    "id": "gid://shopify/MenuItem/608299417812",
+                    "title": "Wigs & Extensions",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/wigs-extensions/Human-Hair-Wigs+Synthetic-Hair-Pieces+Synthetic-Lace-Wigs+Human-Hair-Lace-Wigs+Hair-Braids+Synthetic-Wigs",
+                    "resource": {
+                        "handle": "wigs-extensions",
+                        "title": "Wigs & Extensions",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608299450580",
+                    "title": "Synthetic Hair",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/synthetic-hair/Cosplay-Wigs",
+                    "resource": {
+                        "handle": "synthetic-hair",
+                        "title": "Synthetic Hair",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608299483348",
+                    "title": "Skin Care",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/skin-care/Razor+Face-Masks+Sun-Care+Essential-Oil+Body-Care+Facial-Care",
+                    "resource": {
+                        "handle": "skin-care",
+                        "title": "Skin Care",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608299516116",
+                    "title": "Beauty Tools",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/beauty-tools/Mirrors+Straightening-Irons+Electric-Face-Cleanser+Face-Skin-Care-Tools+Curling-Iron+Facial-Steamer",
+                    "resource": {
+                        "handle": "beauty-tools",
+                        "title": "Beauty Tools",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608299548884",
+                    "title": "Food & Health",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/food-health/Health-Care-Products",
+                    "resource": {
+                        "handle": "food-health",
+                        "title": "Food & Health",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608299581652",
+                    "title": "Nail Art & Tools",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/nail-art-tools/Nail-Glitters+Stickers-&-Decals+Nail-Decorations+Nail-Gel+Nail-Dryers+Nail-Art-Kits",
+                    "resource": {
+                        "handle": "nail-art-tools",
+                        "title": "Nail Art & Tools",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608299614420",
+                    "title": "Hair Weaves",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/hair-weaves/Pre-Colored-One-Pack+Hair-Weaving+Hair-Styling+Salon-Bundle-Hair+Pre-Colored-Hair-Weave",
+                    "resource": {
+                        "handle": "hair-weaves",
+                        "title": "Hair Weaves",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608299647188",
+                    "title": "Hair & Accessories",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/hair-accessories/Headband-&-Hair-Band-&-Hairpin+Human-Hair",
+                    "resource": {
+                        "handle": "hair-accessories",
+                        "title": "Hair & Accessories",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608299679956",
+                    "title": "Women's Watches",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/watches/Women-Sports-Watches+Dress-Watches+Creative-Watches+Lovers'-Watches+Women's-Bracelet-Watches+Children's-Watches",
+                    "resource": {
+                        "handle": "watches",
+                        "title": "Women's Watches",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608426819796",
+                    "title": "Fine Jewelry",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/jewelry/Various-Gemstones+925-Silver-Jewelry+K-Gold+Pearls-Jewelry+Fine-Earrings+Men's-Fine-Jewelry+Fine-Jewelry-Sets",
+                    "resource": {
+                        "handle": "jewelry",
+                        "title": "Women Fine Jewelry",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608426852564",
+                    "title": "Wedding & Engagement",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/women-wedding-engagement/Bridal-Jewelry-Sets+Wedding-Hair-Jewelry+Engagement-Rings+Wedding-&-Engagement",
+                    "resource": {
+                        "handle": "women-wedding-engagement",
+                        "title": "Women Wedding & Engagement",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608426885332",
+                    "title": "Fashion Jewelry",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/women-fashion-jewelry/Bracelets-&-Bangles+Brooches+Keychains+Charms+Rings+Body-Jewelry+Fashion-Jewelry-Sets+Necklace-&-Pendants+Earrings",
+                    "resource": {
+                        "handle": "women-fashion-jewelry",
+                        "title": "Women Fashion jewelry",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608426918100",
+                    "title": "Women's Shoes",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/women-shoes/Woman-Boots+Vulcanize-Shoes+Women's-Insoles+Pumps+Woman-Slippers+Woman-Sandals+Flats",
+                    "resource": {
+                        "handle": "women-shoes",
+                        "title": "Women shoes",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608426950868",
+                    "title": "Women's Luggage & Bags",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/bags/Woman-Wallets+Women's-Crossbody-Bags+Bag-Accessories+Evening-Bags+Fashion-Backpacks+Shoulder-Bags+Totes+Boys-Bags+Clutches",
+                    "resource": {
+                        "handle": "bags",
+                        "title": "Women Luggage & Bags",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608426983636",
+                    "title": "Baby & Mother",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/baby-mother/Nappy-Changing+Activity-&-Gear+Backpacks-&-Carriers+Baby-Care+Maternity",
+                    "resource": {
+                        "handle": "baby-mother",
+                        "title": "Baby & Mother",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608427016404",
+                    "title": "Other Sports Equipment",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/other-sports-equipment/Musical-Instruments+Hunting+Skiing-&-Snowboarding+Fitness-&-Bodybuilding+Camping-&-Hiking+Golf",
+                    "resource": {
+                        "handle": "other-sports-equipment",
+                        "title": "Other Sports Equipment",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608427049172",
+                    "title": "Women Swimming",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/swimming/One-Piece-Suits+Bikini-Sets+Two-Piece-Suits+Cover-Ups",
+                    "resource": {
+                        "handle": "swimming",
+                        "title": "Women Swimming",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608427081940",
+                    "title": "Sneakers",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/sport-shoes/Running-Shoes+Dance-Shoes+Skateboarding-Shoes+Hiking-Shoes+Soccer-Shoes+Basketball-Shoes",
+                    "resource": {
+                        "handle": "sport-shoes",
+                        "title": "Sport Shoes",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608427114708",
+                    "title": "Sportswear",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/sportswear/Jerseys+Sports-Accessories+Outdoor-Shorts+Sports-Bags+Hiking-Jackets+Pants",
+                    "resource": {
+                        "handle": "sportswear",
+                        "title": "Sportswear",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608427147476",
+                    "title": "Cycling",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/cycling/Bicycle-Lights+Scooters+Cycling-Gloves+Bicycle-Helmets+Bicycle-Frames+Cycling-Jerseys+Bicycles",
+                    "resource": {
+                        "handle": "cycling",
+                        "title": "Cycling",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608427180244",
+                    "title": "Fishing",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/fishing/Fishing-Reels+Rod-Combos+Fishing-Tackle-Boxes+Fishing-Lures+Fishing-Rods+Fishing-Lines",
+                    "resource": {
+                        "handle": "fishing",
+                        "title": "Fishing",
+                        "image": null
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gid://shopify/MenuItem/608289226964",
+            "title": "Kids",
+            "url": "https://tedrk1-wu.myshopify.com/collections/kids/Boys-Clothing+Baby-Clothing+Shoes-&-Bags+Toys-&-Hobbies+Girls-Clothing+Baby-&-Mother+Outerwear-&-Jackets+Couple-&-Parent-Child-Clothing+Kids-Accessories+Kids-Bottoms+Kids-Tops-&-Sets+Other-Sports-Equipment+Kids-Swimming+Kids-Sneakers+Sportswear+Cycling+Fi",
+            "resource": {
+                "handle": "kids",
+                "title": "Kids",
+                "image": {
+                    "id": "gid://shopify/CollectionImage/1709073367252",
+                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-pixabay-157928.jpg?v=1766849334",
+                    "altText": null,
+                    "width": 5472,
+                    "height": 3648
+                }
+            },
+            "items": [
+                {
+                    "id": "gid://shopify/MenuItem/608436224212",
+                    "title": "Boys Clothing",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/boys-clothing/Boy-Jeans+Boy-T-Shirts+Boy-Hoodies-&-Sweatshirts+Outerwear-&-Coats+Boy-Clothing-Sets+Boy-Accessories",
+                    "resource": {
+                        "handle": "boys-clothing",
+                        "title": "Boys clothing",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608436256980",
+                    "title": "Kids Shoes & Bags",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/kids-shoes-bags/Children's-Shoes+Boys-Shoes+School-Bags+Kids-Wallets+Girls-Shoes+Baby's-First-Walkers",
+                    "resource": {
+                        "handle": "kids-shoes-bags",
+                        "title": "Kids Shoes & Bags",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608436289748",
+                    "title": "Baby Clothing",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/baby-clothing/Baby-Clothing-Sets+Baby-Rompers+Baby-Accessories+Baby-Outerwear+Baby-Dresses+Baby-Pants",
+                    "resource": {
+                        "handle": "baby-clothing",
+                        "title": "Baby Clothing",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608436322516",
+                    "title": "Toys & Hobbies",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/toys-hobbies/Electronic-Pets+Blocks+RC-Helicopters+Stuffed-&-Plush-Animals+Action-&-Toy-Figures",
+                    "resource": {
+                        "handle": "toys-hobbies",
+                        "title": "Toys & Hobbies",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608436355284",
+                    "title": "Girls Clothing",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/girls-clothing/Girls-Underwear+Sleepwear-&-Robes+Tops-&-Tees+Girl-Clothing-Sets+Girl-Accessories+Girl-Dresses",
+                    "resource": {
+                        "handle": "girls-clothing",
+                        "title": "Girls Clothing",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608436388052",
+                    "title": "Baby & Mother",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/baby-mother/Nappy-Changing+Activity-&-Gear+Backpacks-&-Carriers+Baby-Care+Maternity",
+                    "resource": {
+                        "handle": "baby-mother",
+                        "title": "Baby & Mother",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608436420820",
+                    "title": "Couple & Parent-Child Clothing",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/couple-parent-child-clothing/Couple-&-Parent-Child-Sweatshirts%C2%B7+Couple-&-Parent-Child-Short-Sleeves+Couple-&-Parent--Child-Jackets+Couple-&-Parent-Child-Tops+Couple-&-Parent-Child-Suits+Couple-&-Parent-Child-Pants+Family-Matching-Outfits",
+                    "resource": {
+                        "handle": "couple-parent-child-clothing",
+                        "title": "Couple & Parent-Child Clothing",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608436453588",
+                    "title": "Women Accessories",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/accessories/Scarves-&-Wraps+Face-Masks+Belts-&-Cummerbunds+Woman-Gloves-&-Mittens+Woman-Socks+Woman-Hats-&-Caps",
+                    "resource": {
+                        "handle": "accessories",
+                        "title": "Women Accessories",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608437076180",
+                    "title": "Kids Accessories",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/kids-accessories/Scarves-&-Wraps+Face-Masks+Belts-&-Cummerbunds+Woman-Gloves-&-Mittens+Woman-Socks+Woman-Hats-&-Caps+Ties+Sullies-&-Beanies",
+                    "resource": {
+                        "handle": "kids-accessories",
+                        "title": "Kids Accessories",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608438845652",
+                    "title": "Other Sports Equipment",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/other-sports-equipment/Musical-Instruments+Hunting+Skiing-&-Snowboarding+Fitness-&-Bodybuilding+Camping-&-Hiking+Golf",
+                    "resource": {
+                        "handle": "other-sports-equipment",
+                        "title": "Other Sports Equipment",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608438878420",
+                    "title": "Kids Swimming",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/kids-swimming/One-Piece-Suits+Bikini-Sets+Two-Piece-Suits+Men's-Swimwear+Cover-Ups+Children's-Swimwear",
+                    "resource": {
+                        "handle": "kids-swimming",
+                        "title": "Kids Swimming",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608438911188",
+                    "title": "Sport Shoes",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/sport-shoes/Running-Shoes+Dance-Shoes+Skateboarding-Shoes+Hiking-Shoes+Soccer-Shoes+Basketball-Shoes",
+                    "resource": {
+                        "handle": "sport-shoes",
+                        "title": "Sport Shoes",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608438943956",
+                    "title": "Sportswear",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/sportswear/Jerseys+Sports-Accessories+Outdoor-Shorts+Sports-Bags+Hiking-Jackets+Pants",
+                    "resource": {
+                        "handle": "sportswear",
+                        "title": "Sportswear",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608438976724",
+                    "title": "Cycling",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/cycling/Bicycle-Lights+Scooters+Cycling-Gloves+Bicycle-Helmets+Bicycle-Frames+Cycling-Jerseys+Bicycles",
+                    "resource": {
+                        "handle": "cycling",
+                        "title": "Cycling",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608439009492",
+                    "title": "Fishing",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/fishing/Fishing-Reels+Rod-Combos+Fishing-Tackle-Boxes+Fishing-Lures+Fishing-Rods+Fishing-Lines",
+                    "resource": {
+                        "handle": "fishing",
+                        "title": "Fishing",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608439042260",
+                    "title": "Women's Watches",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/watches/Creative-Watches+Children's-Watches+Digital-Watches+Dual-Display-Watches",
+                    "resource": {
+                        "handle": "watches",
+                        "title": "Women's Watches",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608439075028",
+                    "title": "Fine Jewelry",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/jewelry/Various-Gemstones+925-Silver-Jewelry+K-Gold+Pearls-Jewelry+Fine-Earrings+Fine-Jewelry+Fine-Jewelry-Sets",
+                    "resource": {
+                        "handle": "jewelry",
+                        "title": "Women Fine Jewelry",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608439107796",
+                    "title": "Women Fashion jewelry",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/women-fashion-jewelry/Bracelets-&-Bangles+Brooches+Keychains+Charms+Rings+Body-Jewelry+Fashion-Jewelry-Sets+Necklace-&-Pendants+Earrings",
+                    "resource": {
+                        "handle": "women-fashion-jewelry",
+                        "title": "Women Fashion jewelry",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608439140564",
+                    "title": "Skin Care",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/skin-care/Razor+Face-Masks+Sun-Care+Essential-Oil+Body-Care+Facial-Care",
+                    "resource": {
+                        "handle": "skin-care",
+                        "title": "Skin Care",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608439173332",
+                    "title": "Beauty Tools",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/beauty-tools/Mirrors+Straightening-Irons+Electric-Face-Cleanser+Face-Skin-Care-Tools+Curling-Iron+Facial-Steamer",
+                    "resource": {
+                        "handle": "beauty-tools",
+                        "title": "Beauty Tools",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608439206100",
+                    "title": "Food & Health",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/food-health/Health-Care-Products",
+                    "resource": {
+                        "handle": "food-health",
+                        "title": "Food & Health",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608439238868",
+                    "title": "Hair & Accessories",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/hair-accessories/Headband-&-Hair-Band-&-Hairpin+Human-Hair",
+                    "resource": {
+                        "handle": "hair-accessories",
+                        "title": "Hair & Accessories",
+                        "image": null
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gid://shopify/MenuItem/608163135700",
+            "title": "Pets",
+            "url": "https://tedrk1-wu.myshopify.com/collections/pets/Pet-Outdoor-Supplies+Pet-Furniture+Pet-Drinking-&-Feeding+Fish-&-Aquatic+Pet-Collars+Harnesses-&-Accessories+Pet-Toys+Pet-Bedding+Pet-Apparels+Bird-Supplies+Pet-Grooming",
+            "resource": {
+                "handle": "pets",
+                "title": "Pets",
+                "image": {
+                    "id": "gid://shopify/CollectionImage/1709086703828",
+                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-marcello-sokal-62573206-8556247.jpg?v=1766848247",
+                    "altText": null,
+                    "width": 3008,
+                    "height": 2000
+                }
+            },
+            "items": [
+                {
+                    "id": "gid://shopify/MenuItem/608441565396",
+                    "title": "Pet Outdoor Supplies",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-outdoor-supplies/Barking-Control-Equipments+Trainers+Dog-Training-Pads-&-Diapers+Pet-Snacks+Pet-Bags+Pet-Seat-Belts+Pet-Car-Mats+Pet-Guardrails",
+                    "resource": {
+                        "handle": "pet-outdoor-supplies",
+                        "title": "Pet Outdoor Supplies",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441598164",
+                    "title": "Pet Furniture",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-furniture/Cat-Scratching-Posts+Pet-Furniture-Protectors+Cat-Trees-&-Condos+Pet-Furniture-Tools+Pet-Houses-&-Cages+Dog-Stairs-&-Steps+Pet-Tents+Pet-Hammocks",
+                    "resource": {
+                        "handle": "pet-furniture",
+                        "title": "Pet Furniture",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441630932",
+                    "title": "Pet Drinking & Feeding",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-drinking-feeding/Pet-Bowls+Pet-Drinking-Tools+Pet-Feeding-Tools",
+                    "resource": {
+                        "handle": "pet-drinking-feeding",
+                        "title": "Pet Drinking & Feeding",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441663700",
+                    "title": "Fish & Aquatic Pets",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/fish-aquatic-pets/Fish-Tanks+Fish-Tank-Decorations+Fish-Tank-Cleaning-Supplies",
+                    "resource": {
+                        "handle": "fish-aquatic-pets",
+                        "title": "Fish & Aquatic Pets",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441696468",
+                    "title": "Pet Collars, Harnesses & Accessories",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-collars-harnesses-accessories/Pet-Hair-Accessories+Pet-Bows-&-Ties+Pet-Necklaces+Pet-Headwears+Pet-Glasses+Pet-Collars+Pet-Leashes+Pet-Harnesses+Pet-Muzzles+Pet-Collar+Leash-&-Harness-Sets+Custom-Pet-tags+Collars+Leashes-&-Harnesses",
+                    "resource": {
+                        "handle": "pet-collars-harnesses-accessories",
+                        "title": "Pet Collars, Harnesses & Accessories",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441729236",
+                    "title": "Pet Toys",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-toys/Pet-Chase-Toys+Pet-Chew-Toys+Pet-Training-and-Educational-Toys+Pet-Sound-Toys+Pet-Tunnel-Toys+Pet-Toy-Set+Pet-Plush-Toys",
+                    "resource": {
+                        "handle": "pet-toys",
+                        "title": "Pet Toys",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441762004",
+                    "title": "Pet Bedding",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-bedding/Pet-Mats+Pet-Nests+Pet-Beds+Pet-Blankets-&-Quilts",
+                    "resource": {
+                        "handle": "pet-bedding",
+                        "title": "Pet Bedding",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441794772",
+                    "title": "Pet Apparels",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-apparels/Pet-Dresses+Pet-Tops+Pet-Sweaters+Pet-Sweatshirts-&-Hoodies+Pet-Coats-&-Jackets+Pet-Jumpsuits+Pet-Pajamas+Pet-Clothings+Pet-Functional-Clothings+Pet-Clothing-Sets+Pet-Down-&-Parkas+Pet-Shoes-&-Socks+Pet-Scarves+Pet-Bags",
+                    "resource": {
+                        "handle": "pet-apparels",
+                        "title": "Pet Apparels",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441827540",
+                    "title": "Bird Supplies",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/bird-supplies/Bird-Feeders+Bird-Cages+Bird-Swings+Bird-Toys+Bird-Travel-Bags+Bird-Accessories",
+                    "resource": {
+                        "handle": "bird-supplies",
+                        "title": "Bird Supplies",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441860308",
+                    "title": "Pet Groomings",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-grooming/Pet-Hair-Removers-&-Combs+Pet-Nail-Polishers+Pet-Shower-Products+Pet-Towels",
+                    "resource": {
+                        "handle": "pet-grooming",
+                        "title": "Pet Grooming",
+                        "image": null
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gid://shopify/MenuItem/608163102932",
+            "title": "Home Decoration",
+            "url": "https://tedrk1-wu.myshopify.com/collections/home-decoration/Home-Textiles+Festive-&-Party-Supplies+Arts+Crafts-&-Sewing+Kitchen+Dining-&-Bar+Home-Storage+Musical-Instruments+Outdoor-Lighting+Home-Appliances+Indoor-Lighting+LED-Lighting+Tools",
+            "resource": {
+                "handle": "home-decoration",
+                "title": "Home Decoration",
+                "image": {
+                    "id": "gid://shopify/CollectionImage/1709086769364",
+                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-masoodaslami-19429417.jpg?v=1766848544",
+                    "altText": null,
+                    "width": 4864,
+                    "height": 3243
+                }
+            },
+            "items": [
+                {
+                    "id": "gid://shopify/MenuItem/608441893076",
+                    "title": "Home Textiles",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/home-textiles/Curtains+Cushion-Covers+Towels+Comforters+Bedding-Sets+Pillows",
+                    "resource": {
+                        "handle": "home-textiles",
+                        "title": "Home Textiles",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441925844",
+                    "title": "Festive & Party Supplies",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/festive-party-supplies/Christmas-Decoration-Supplies+Invitation-Cards+Cake-Decorating-Supplies+Decorative-Flowers-&-Wreaths+Party-Masks+Event-&-Party-Supplies",
+                    "resource": {
+                        "handle": "festive-party-supplies",
+                        "title": "Festive & Party Supplies",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441958612",
+                    "title": "Arts, Crafts & Sewing",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/arts-crafts-sewing/Decor-Paintings+Lace+Apparel-Sewing-&-Fabric+Cross-Stitch+Ribbons+Diamond-Painting-Cross-Stitch+Fabric",
+                    "resource": {
+                        "handle": "arts-crafts-sewing",
+                        "title": "Arts, Crafts & Sewing",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441991380",
+                    "title": "Kitchen, Dining & Bar",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/kitchen-dining-bar/Dinnerware+Kitchen-Knives-&-Accessories+Bakeware+Barware+Drinkware+Cooking-Tools",
+                    "resource": {
+                        "handle": "kitchen-dining-bar",
+                        "title": "Kitchen, Dining & Bar",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608442024148",
+                    "title": "Home Storage",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/home-storage/Stationeries+Furniture+Storage-Bags-&-Cases-&-Boxes+Kitchen-Storage+Home-Office-Storage+Clothing-&-Wardrobe-Storage+Bathroom-Storage+Storage-Bottles-&-Jars",
+                    "resource": {
+                        "handle": "home-storage",
+                        "title": "Home Storage",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608442056916",
+                    "title": "Musical Instruments",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/musical-instruments/Guitars+Violins",
+                    "resource": {
+                        "handle": "musical-instruments",
+                        "title": "Musical Instruments",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608442089684",
+                    "title": "Outdoor Lighting",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/outdoor-lighting/Flashlights-&-Torches+Floodlights+Underwater-Lights+String-Lights+Solar-Lamps",
+                    "resource": {
+                        "handle": "outdoor-lighting",
+                        "title": "Outdoor Lighting",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608442122452",
+                    "title": "Home Appliances",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/home-appliances/Personal-Care-Appliances+Cleaning-Appliances+Air-Conditioning-Appliances+Home-Appliance-Parts+Kitchen-Appliances",
+                    "resource": {
+                        "handle": "home-appliances",
+                        "title": "Home Appliances",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608442155220",
+                    "title": "Indoor Lighting",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/indoor-lighting/Chandeliers+Pendant-Lights+Downlights+Night-Lights+Wall-Lamps+Ceiling-Lights",
+                    "resource": {
+                        "handle": "indoor-lighting",
+                        "title": "Indoor Lighting",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608442187988",
+                    "title": "LED Lighting",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/led-lighting/LED-Spotlights",
+                    "resource": {
+                        "handle": "led-lighting",
+                        "title": "LED Lighting",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608442220756",
+                    "title": "Tools",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/tools-1/Measurement-&-Analysis+Welding-&-Soldering-Supplies+Welding-Equipment+Hand-Tools+Tool-Sets+Tools-Storage+Machine-Tools-&-Accessories+Power-Tools+Woodworking-Machinery+Garden-Tools",
+                    "resource": {
+                        "handle": "tools-1",
+                        "title": "Home Tools",
+                        "image": null
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gid://shopify/MenuItem/607873466580",
+            "title": "Electronics",
+            "url": "https://tedrk1-wu.myshopify.com/collections/electronics/Smart-Electronics+Camera-&-Photo+Accessories-&-Parts+Video-Games+Home-Audio-&-Video+Portable-Audio-&-Video+Mobile-Phone-Parts+Mobile-Phones+Mobile-Phone-Accessories+Cases-&-Covers+Storage-Devices+Tablet-&-Laptop-Accessories+Security-&-Protection+Laptop-&-",
+            "resource": {
+                "handle": "electronics",
+                "title": "Electronics",
+                "image": {
+                    "id": "gid://shopify/CollectionImage/1709086671060",
+                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-sound-on-3761106.jpg?v=1766848055",
+                    "altText": null,
+                    "width": 6137,
+                    "height": 4172
+                }
+            },
+            "items": [
+                {
+                    "id": "gid://shopify/MenuItem/608443171028",
+                    "title": "Smart Electronics",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/smart-electronics/Wearable-Devices+Smart-Home-Appliances+Smart-Wearable-Accessories+Smart-Wristbands+Smart-Watches+Smart-Remote-Controls",
+                    "resource": {
+                        "handle": "smart-electronics",
+                        "title": "Smart Electronics",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443203796",
+                    "title": "Camera & Photo",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/camera-photo/Photo-Studio+Camera-Drones+Camera-&-Photo-Accessories+Digital-Cameras+Action-Cameras+Camcorders",
+                    "resource": {
+                        "handle": "camera-photo",
+                        "title": "Camera & Photo",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443236564",
+                    "title": "Accessories & Parts",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/accessories-parts/Digital-Cables+Home-Electronic-Accessories+Audio-&-Video-Cables+Charger+Batteries+Digital-Gear-Bags",
+                    "resource": {
+                        "handle": "accessories-parts",
+                        "title": "Accessories & Parts",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443269332",
+                    "title": "Video Games",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/video-games/Gamepads+Handheld-Game-Players+Video-Game-Consoles+Stickers+Joysticks",
+                    "resource": {
+                        "handle": "video-games",
+                        "title": "Video Games",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443302100",
+                    "title": "Home Audio & Video",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/home-audio-video/Projectors+Television+TV-Receivers+Audio-Amplifiers+Projectors-&-Accessories+Home-Audio-&-Video+TV-Sticks",
+                    "resource": {
+                        "handle": "home-audio-video",
+                        "title": "Home Audio & Video",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443334868",
+                    "title": "Portable Audio & Video",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/portable-audio-video/Microphones+Speakers+Earphones-&-Headphones+VR-&-AR-Devices+MP3-Players",
+                    "resource": {
+                        "handle": "portable-audio-video",
+                        "title": "Portable Audio & Video",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443367636",
+                    "title": "Mobile Phone Parts",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/mobile-phone-parts/SIM-Card-&-Tools+Mobile-Batteries+Housings+LCDs+Flex-Cables+Touch-Panel",
+                    "resource": {
+                        "handle": "mobile-phone-parts",
+                        "title": "Mobile Phone Parts",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443400404",
+                    "title": "Mobile Phones",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/mobile-phones/Quad-Core+Single-SIM-Card+Dual-SIM-Card+3GB-RAM+Octa-Core+5-inch-Display",
+                    "resource": {
+                        "handle": "mobile-phones",
+                        "title": "Mobile Phones",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443433172",
+                    "title": "Mobile Phone Accessories",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/mobile-phone-accessories/Cables+Power-Bank+Screen-Protectors+Lenses+Holders-&-Stands+Chargers",
+                    "resource": {
+                        "handle": "mobile-phone-accessories",
+                        "title": "Mobile Phone Accessories",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443465940",
+                    "title": "Cases & Covers",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/cases-covers/Huawei-Cases+Patterned-Cases+Cases-For-iPhone-6-&-6-Plus+Wallet-Cases+Cases-For-iPhone-7-&-7-Plus+Galaxy-S8-Cases+IPhone-X-Cases+Galaxy-S7-Cases+Cases-For-iPhone-8-&-8-Plus+Xiaomi-Cases+Silicone-Cases+Flip-Cases+Waterptoof-Cases+Leather-Cases",
+                    "resource": {
+                        "handle": "cases-covers",
+                        "title": "Cases & Covers",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443498708",
+                    "title": "Storage Devices",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/storage-devices/SSD+USB-Flash-Drives+HDD-Enclosures+Memory-Cards+External-Hard-Drives",
+                    "resource": {
+                        "handle": "storage-devices",
+                        "title": "Storage Devices",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443531476",
+                    "title": "Tablet & Laptop Accessories",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/tablet-laptop-accessories/Tablet-LCD-Screens+Laptop-Batteries+Laptop-Bags-&-Cases+Tablet-Cases+Tablet-Accessories",
+                    "resource": {
+                        "handle": "tablet-laptop-accessories",
+                        "title": "Tablet & Laptop Accessories",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443564244",
+                    "title": "Security & Protection",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/security-protection/Alarm-&-Sensor+Fire-Protection+Workplace-Safety-Supplies+Door-Intercom+Surveillance-Products",
+                    "resource": {
+                        "handle": "security-protection",
+                        "title": "Security & Protection",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443597012",
+                    "title": "Laptop & Tablets",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/laptop-tablets/Phone-Call-Tablets+2-in-1-Tablets+Laptops+Tablets+Gaming-Laptops",
+                    "resource": {
+                        "handle": "laptop-tablets",
+                        "title": "Laptop & Tablets",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443629780",
+                    "title": "Office Electronics",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/office-electronics/Office-&-School-Supplies+Computer-Tablet-Accessories+Printer-Supplies+3D-Printers+3D-Pens+Printers+Scanners",
+                    "resource": {
+                        "handle": "office-electronics",
+                        "title": "Office Electronics",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443662548",
+                    "title": "Networking",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/networking/Modem-Router-Combos+Wireless-Routers+Networking-Tools+3G-Modems+Network-Cards",
+                    "resource": {
+                        "handle": "networking",
+                        "title": "Networking",
+                        "image": null
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gid://shopify/MenuItem/608289259732",
+            "title": " Automobiles & Motorcycles",
+            "url": "https://tedrk1-wu.myshopify.com/collections/tools-maintenance-care/Motorcycle-Accessories-&-Parts+Interior-Accessories+Auto-Replacement-Parts+Tools+Maintenance-&-Care+Car-Electronics+Exterior-Accessories",
+            "resource": {
+                "handle": "tools-maintenance-care",
+                "title": "Car Tools, Maintenance & Care",
+                "image": {
+                    "id": "gid://shopify/CollectionImage/1709105545428",
+                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-olavi-anttila-264846761-13143615.jpg?v=1767200107",
+                    "altText": null,
+                    "width": 4653,
+                    "height": 3102
+                }
+            },
+            "items": [
+                {
+                    "id": "gid://shopify/MenuItem/608444252372",
+                    "title": "Motorcycle Accessories & Parts",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/motorcycle-accessories-parts/Lighting+Exhaust-&-Exhaust-Systems+Motor-Brake-System+Motorcycle-Seat-Covers+Other-Motorcycle-Accessories+Helmet-Headset+Body-&-Frame",
+                    "resource": {
+                        "handle": "motorcycle-accessories-parts",
+                        "title": "Motorcycle Accessories & Parts",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608444285140",
+                    "title": "Interior Accessories",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/interior-accessories/Floor-Mats+Key-Case-for-Car+Steering-Covers+Automobiles-Seat-Covers+Stowing-Tidying",
+                    "resource": {
+                        "handle": "interior-accessories",
+                        "title": "Interior Accessories",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608444317908",
+                    "title": "Auto Replacement Parts",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/auto-replacement-parts/Interior-Parts+Car-Brake-System+Spark-Plugs-&-Ignition-System+Automobiles-Sensors+Exterior-Parts+Other-Replacement-Parts+Car-Lights+Windscreen-Wipers-&-Windows",
+                    "resource": {
+                        "handle": "auto-replacement-parts",
+                        "title": "Auto Replacement Parts",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608444350676",
+                    "title": "Car Tools, Maintenance & Care",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/tools-maintenance-care/Car-Washer+Diagnostic-Tools+Paint-Care+Other-Maintenance-Products",
+                    "resource": {
+                        "handle": "tools-maintenance-care",
+                        "title": "Car Tools, Maintenance & Care",
+                        "image": {
+                            "id": "gid://shopify/CollectionImage/1709105545428",
+                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-olavi-anttila-264846761-13143615.jpg?v=1767200107",
+                            "altText": null,
+                            "width": 4653,
+                            "height": 3102
                         }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45879055614164",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/42f57669-78aa-4ba5-b349-46f29db8e858.jpg?v=1766433180",
-                        "altText": null,
-                        "width": 800,
-                        "height": 800
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47387079573716",
-                                "availableForSale": true,
-                                "title": "Black / 3XL",
-                                "sku": "CJYD266371312LO",
-                                "price": {
-                                    "amount": "261.77",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387079606484",
-                                "availableForSale": true,
-                                "title": "Black / 4XL",
-                                "sku": "CJYD266371313MN",
-                                "price": {
-                                    "amount": "262.51",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387079639252",
-                                "availableForSale": true,
-                                "title": "Black / 5XL",
-                                "sku": "CJYD266371314NM",
-                                "price": {
-                                    "amount": "263.21",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387079672020",
-                                "availableForSale": true,
-                                "title": "Black / L",
-                                "sku": "CJYD266371309IR",
-                                "price": {
-                                    "amount": "259.63",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387079704788",
-                                "availableForSale": true,
-                                "title": "Black / M",
-                                "sku": "CJYD266371308HS",
-                                "price": {
-                                    "amount": "258.89",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608444383444",
+                    "title": "Car Electronics",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/car-electronics/Vehicle-Camera+DVR-&-Dash-Camera+Car-Monitors+Vehicle-GPS+Car-Mirror-Video+Car-Radios+GPS-Trackers+Car-Multimedia-Player+Alarm-Systems-&-Security+Jump-Starter",
+                    "resource": {
+                        "handle": "car-electronics",
+                        "title": "Car Electronics",
+                        "image": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608444416212",
+                    "title": "Exterior Accessories",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/exterior-accessories/Car-Stickers+Other-Exterior-Accessories+Car-Covers",
+                    "resource": {
+                        "handle": "exterior-accessories",
+                        "title": "Exterior Accessories",
+                        "image": null
                     }
                 }
             ]
         }
-    },
-    {
-        "id": "gid://shopify/Collection/449068761300",
-        "title": "Women",
-        "description": "Explore our Women’s Collection—elegant, versatile, and designed for every moment. From timeless basics to bold statement pieces, each item combines comfort and style for a look that’s uniquely yours.",
-        "handle": "women",
-        "image": {
-            "id": "gid://shopify/CollectionImage/1709073334484",
-            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-elif-s-986907269-35349238.jpg?v=1766849431",
-            "altText": null,
-            "width": 6000,
-            "height": 4000
-        },
-        "products": {
-            "nodes": [
-                {
-                    "id": "gid://shopify/Product/9026610462932",
-                    "title": "Sexy Alluring",
-                    "handle": "sexy-alluring-halter-neck-camisole-for-women-perfect-for-summer",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "90.0",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45903125610708",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/7ef5f7af-3fea-46dd-afea-7e7b9f8e2226.jpg?v=1766662179",
-                        "altText": null,
-                        "width": 694,
-                        "height": 694
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47394720940244",
-                                "availableForSale": true,
-                                "title": "Black / M",
-                                "sku": "CJCS267773302BY",
-                                "price": {
-                                    "amount": "90.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394720973012",
-                                "availableForSale": true,
-                                "title": "Black / S",
-                                "sku": "CJCS267773301AZ",
-                                "price": {
-                                    "amount": "90.0",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "id": "gid://shopify/Product/9026610102484",
-                    "title": "Women's tie",
-                    "handle": "womens-sexy-basic-tee-summer-short-sleeve-crewneck-slim-fit-top",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "90.0",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45902784364756",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/572eaf51-abfa-414e-b356-a9f8d64d8e1c.jpg?v=1766661607",
-                        "altText": null,
-                        "width": 800,
-                        "height": 800
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47394718580948",
-                                "availableForSale": true,
-                                "title": "Black / 2XL",
-                                "sku": "CJWS268175205EV",
-                                "price": {
-                                    "amount": "90.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394718613716",
-                                "availableForSale": true,
-                                "title": "Black / 3XL",
-                                "sku": "CJWS268175206FU",
-                                "price": {
-                                    "amount": "90.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394718646484",
-                                "availableForSale": true,
-                                "title": "Black / L",
-                                "sku": "CJWS268175203CX",
-                                "price": {
-                                    "amount": "90.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394718679252",
-                                "availableForSale": true,
-                                "title": "Black / M",
-                                "sku": "CJWS268175202BY",
-                                "price": {
-                                    "amount": "90.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394718712020",
-                                "availableForSale": true,
-                                "title": "Black / S",
-                                "sku": "CJWS268175201AZ",
-                                "price": {
-                                    "amount": "90.0",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "id": "gid://shopify/Product/9026610036948",
-                    "title": "Long-sleeved Yoga",
-                    "handle": "long-sleeved-yoga-clothes-and-small-round-neck-exercise",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "70.0",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45902773289172",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/f530cc32-2015-4b17-ad61-a09fc2a5fe57.jpg?v=1766661584",
-                        "altText": null,
-                        "width": 800,
-                        "height": 800
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47394717860052",
-                                "availableForSale": true,
-                                "title": "Black / Long sleeve / L",
-                                "sku": "CJQB268208412LO",
-                                "price": {
-                                    "amount": "70.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394717892820",
-                                "availableForSale": true,
-                                "title": "Black / Long sleeve / M",
-                                "sku": "CJQB268208411KP",
-                                "price": {
-                                    "amount": "70.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394717925588",
-                                "availableForSale": true,
-                                "title": "Black / Long sleeve / S",
-                                "sku": "CJQB268208410JQ",
-                                "price": {
-                                    "amount": "70.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394717958356",
-                                "availableForSale": true,
-                                "title": "Black / Short sleeves / L",
-                                "sku": "CJQB268208409IR",
-                                "price": {
-                                    "amount": "70.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394717991124",
-                                "availableForSale": true,
-                                "title": "Black / Short sleeves / M",
-                                "sku": "CJQB268208408HS",
-                                "price": {
-                                    "amount": "70.0",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "id": "gid://shopify/Product/9026609840340",
-                    "title": "Tropical Floral Print V-neck Split Dress For A Vacation Vibe",
-                    "handle": "tropical-floral-print-v-neck-split-dress-for-a-vacation-vibe",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "80.0",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45902751236308",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/2d2ec1f2-2e17-4e74-8813-6e3f20877844_fine.jpg?v=1766661264",
-                        "altText": null,
-                        "width": 593,
-                        "height": 593
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47394717073620",
-                                "availableForSale": true,
-                                "title": "White / L",
-                                "sku": "CJLY268239903CX",
-                                "price": {
-                                    "amount": "80.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394717106388",
-                                "availableForSale": true,
-                                "title": "White / M",
-                                "sku": "CJLY268239902BY",
-                                "price": {
-                                    "amount": "80.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394717139156",
-                                "availableForSale": true,
-                                "title": "White / S",
-                                "sku": "CJLY268239901AZ",
-                                "price": {
-                                    "amount": "80.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394717171924",
-                                "availableForSale": true,
-                                "title": "White / XL",
-                                "sku": "CJLY268239904DW",
-                                "price": {
-                                    "amount": "80.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394717204692",
-                                "availableForSale": true,
-                                "title": "White / XXL",
-                                "sku": "CJLY268239905EV",
-                                "price": {
-                                    "amount": "80.0",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "id": "gid://shopify/Product/9026609807572",
-                    "title": "Thickened Warm",
-                    "handle": "thickened-warm-bread-jacket-with-a-stand-up-collar",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "60.0",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45902749237460",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/2012883f-4e3c-4834-929d-489beeb5d7b4.jpg?v=1766661194",
-                        "altText": null,
-                        "width": 763,
-                        "height": 763
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47394716745940",
-                                "availableForSale": true,
-                                "title": "Pink / L",
-                                "sku": "CJJK268232507GT",
-                                "price": {
-                                    "amount": "60.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394716778708",
-                                "availableForSale": true,
-                                "title": "Pink / M",
-                                "sku": "CJJK268232506FU",
-                                "price": {
-                                    "amount": "60.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394716811476",
-                                "availableForSale": true,
-                                "title": "Pink / S",
-                                "sku": "CJJK268232505EV",
-                                "price": {
-                                    "amount": "60.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394716844244",
-                                "availableForSale": true,
-                                "title": "Pink / XL",
-                                "sku": "CJJK268232508HS",
-                                "price": {
-                                    "amount": "60.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394716877012",
-                                "availableForSale": true,
-                                "title": "Yellow / L",
-                                "sku": "CJJK268232503CX",
-                                "price": {
-                                    "amount": "60.0",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "id": "gid://shopify/Product/9026609316052",
-                    "title": "Black White Crinkle",
-                    "handle": "black-white-crinkle-graphic-textured-scarf-high-contrast-abstrac-crinkle-texture-adds-depth-scarf-vacation-daily-life-evening-party-office-appropriate-subtlety-for-women-men",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "50.0",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45902728364244",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/1a2d38d5-729e-4b71-b859-5fe46e8bace9.jpg?v=1766660612",
-                        "altText": null,
-                        "width": 1000,
-                        "height": 1000
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47394714419412",
-                                "availableForSale": true,
-                                "title": "Black",
-                                "sku": "CJWJ268991001AZ",
-                                "price": {
-                                    "amount": "50.0",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "id": "gid://shopify/Product/9026609217748",
-                    "title": "Womens Fashion Casual Solid-Color Off-the-Shoulder Dress",
-                    "handle": "womens-fashion-casual-solid-color-off-the-shoulder-dress",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "150.0",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45902724006100",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/ba454f93-90e8-46ba-81c4-d22272af960b.jpg?v=1766660507",
-                        "altText": null,
-                        "width": 1200,
-                        "height": 1200
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47394713305300",
-                                "availableForSale": true,
-                                "title": "Black / L",
-                                "sku": "CJLY268675903CX",
-                                "price": {
-                                    "amount": "150.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394713338068",
-                                "availableForSale": true,
-                                "title": "Black / M",
-                                "sku": "CJLY268675902BY",
-                                "price": {
-                                    "amount": "150.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394713370836",
-                                "availableForSale": true,
-                                "title": "Black / S",
-                                "sku": "CJLY268675901AZ",
-                                "price": {
-                                    "amount": "150.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394713403604",
-                                "availableForSale": true,
-                                "title": "Black / XL",
-                                "sku": "CJLY268675904DW",
-                                "price": {
-                                    "amount": "150.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47394713436372",
-                                "availableForSale": true,
-                                "title": "Black / XXL",
-                                "sku": "CJLY268675905EV",
-                                "price": {
-                                    "amount": "150.0",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "id": "gid://shopify/Product/9023724978388",
-                    "title": "Thick Round Neck Women's Loose All-matching Knitted Pullover Sweater",
-                    "handle": "thick-round-neck-womens-loose-all-matching-knitted-pullover-sweater",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "199.96",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45879046209748",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/d2ef9054-069b-4702-987a-e1d356fa8408.jpg?v=1766432874",
-                        "altText": null,
-                        "width": 800,
-                        "height": 800
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47387066663124",
-                                "availableForSale": true,
-                                "title": "Apricot 2 / 2XL",
-                                "sku": "CJMY257631234HS",
-                                "price": {
-                                    "amount": "211.37",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387066695892",
-                                "availableForSale": true,
-                                "title": "Apricot 2 / 3XL",
-                                "sku": "CJMY257631251YB",
-                                "price": {
-                                    "amount": "209.31",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387066728660",
-                                "availableForSale": true,
-                                "title": "Apricot 2 / 4XL",
-                                "sku": "CJMY257631252ZA",
-                                "price": {
-                                    "amount": "210.75",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387066761428",
-                                "availableForSale": true,
-                                "title": "Apricot 2 / L",
-                                "sku": "CJMY257631229CX",
-                                "price": {
-                                    "amount": "220.6",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47387066794196",
-                                "availableForSale": true,
-                                "title": "Apricot 2 / M",
-                                "sku": "CJMY257631230DW",
-                                "price": {
-                                    "amount": "210.56",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-    },
-    {
-        "id": "gid://shopify/Collection/449114243284",
-        "title": "Kids",
-        "description": "Shop our Kids’ Collection—fun, comfy, and full of vibrant styles. From playful everyday wear to cute statement pieces, each item is made to keep your little ones happy and stylish.",
-        "handle": "kids",
-        "image": {
-            "id": "gid://shopify/CollectionImage/1709073367252",
-            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-pixabay-157928.jpg?v=1766849334",
-            "altText": null,
-            "width": 5472,
-            "height": 3648
-        },
-        "products": {
-            "nodes": [
-                {
-                    "id": "gid://shopify/Product/9026022342868",
-                    "title": "Kids Fashion Lace Wedding Party Dress",
-                    "handle": "kids-fashion-lace-wedding-party-dress",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "230.34",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45895816577236",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/79434629-c53e-4f8a-8b00-d95ef26ca0c3.jpg?v=1766537969",
-                        "altText": null,
-                        "width": 800,
-                        "height": 800
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47391684362452",
-                                "availableForSale": true,
-                                "title": "Champagne / Long / 100cm",
-                                "sku": "CJNT149827002BY",
-                                "price": {
-                                    "amount": "240.87",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391684395220",
-                                "availableForSale": true,
-                                "title": "Champagne / Long / 110cm",
-                                "sku": "CJNT149827003CX",
-                                "price": {
-                                    "amount": "241.61",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391684427988",
-                                "availableForSale": true,
-                                "title": "Champagne / Long / 120cm",
-                                "sku": "CJNT149827004DW",
-                                "price": {
-                                    "amount": "242.27",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391684460756",
-                                "availableForSale": true,
-                                "title": "Champagne / Long / 130cm",
-                                "sku": "CJNT149827005EV",
-                                "price": {
-                                    "amount": "242.94",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391684493524",
-                                "availableForSale": true,
-                                "title": "Champagne / Long / 140cm",
-                                "sku": "CJNT149827006FU",
-                                "price": {
-                                    "amount": "243.64",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "id": "gid://shopify/Product/9026021982420",
-                    "title": "Kids Motorcycle",
-                    "handle": "kids-motorcycle-ride-on-motorcycle-kids-electric-motorcycle-12v-two-seat-motorcycle-for-kids-motorbike-for-kids-with-key-start-3-wheels-headlight-storage-box-two-motor-two-seat",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "2754.31",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45895813365972",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/8db93644-3e60-4126-9c98-e9a2fd0d040e.jpg?v=1766537943",
-                        "altText": null,
-                        "width": 494,
-                        "height": 494
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47391682855124",
-                                "availableForSale": true,
-                                "title": "White",
-                                "sku": "CJYZ262170901AZ",
-                                "price": {
-                                    "amount": "2754.31",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "id": "gid://shopify/Product/9026021720276",
-                    "title": "12",
-                    "handle": "12",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "43.02",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45895806582996",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/eeff3774-4a2f-443f-8e4d-f389aee7d490.jpg?v=1766537914",
-                        "altText": null,
-                        "width": 800,
-                        "height": 800
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47391677186260",
-                                "availableForSale": true,
-                                "title": "Bear",
-                                "sku": "CJET172797303CX",
-                                "price": {
-                                    "amount": "43.02",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391677219028",
-                                "availableForSale": true,
-                                "title": "Bulldog",
-                                "sku": "CJET172797317QJ",
-                                "price": {
-                                    "amount": "43.02",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391677251796",
-                                "availableForSale": true,
-                                "title": "Butterfly",
-                                "sku": "CJET172797307GT",
-                                "price": {
-                                    "amount": "43.02",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391677284564",
-                                "availableForSale": true,
-                                "title": "Cat",
-                                "sku": "CJET172797306FU",
-                                "price": {
-                                    "amount": "43.02",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391677317332",
-                                "availableForSale": true,
-                                "title": "Dairy Cattle",
-                                "sku": "CJET172797312LO",
-                                "price": {
-                                    "amount": "43.02",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "id": "gid://shopify/Product/9026021458132",
-                    "title": "Cute Candy Color Key Case Macaron Coin Purse",
-                    "handle": "cute-candy-color-key-case-macaron-coin-purse",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "23.67",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45895800291540",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/2428606520_480916207.jpg?v=1766537890",
-                        "altText": null,
-                        "width": 400,
-                        "height": 400
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47391670436052",
-                                "availableForSale": true,
-                                "title": "Bule",
-                                "sku": "CJWJXDET00063-Bule",
-                                "price": {
-                                    "amount": "23.67",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391670468820",
-                                "availableForSale": true,
-                                "title": "Green",
-                                "sku": "CJWJXDET00063-Green",
-                                "price": {
-                                    "amount": "23.67",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391670501588",
-                                "availableForSale": true,
-                                "title": "Orange",
-                                "sku": "CJWJXDET00063-Orange",
-                                "price": {
-                                    "amount": "23.67",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391670534356",
-                                "availableForSale": true,
-                                "title": "Pink",
-                                "sku": "CJWJXDET00063-Pink",
-                                "price": {
-                                    "amount": "23.67",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391670567124",
-                                "availableForSale": true,
-                                "title": "White",
-                                "sku": "CJWJXDET00063-White",
-                                "price": {
-                                    "amount": "23.67",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "id": "gid://shopify/Product/9026021261524",
-                    "title": "Baby Kids Pajamas Sets Girl Boy Sleepwear Suit Autumn Kids",
-                    "handle": "baby-kids-pajamas-sets-girl-boy-sleepwear-suit-autumn-kids",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "89.43",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45895795376340",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/ded5d0ed-f0cd-4673-8e21-2d0de76ef61e.jpg?v=1766537867",
-                        "altText": null,
-                        "width": 1406,
-                        "height": 1406
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47391664799956",
-                                "availableForSale": true,
-                                "title": "A / 12and18 Months",
-                                "sku": "CJYE162771201AZ",
-                                "price": {
-                                    "amount": "89.43",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391664832724",
-                                "availableForSale": true,
-                                "title": "A / 2Y",
-                                "sku": "CJYE162771202BY",
-                                "price": {
-                                    "amount": "96.64",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391664865492",
-                                "availableForSale": true,
-                                "title": "A / 3Y",
-                                "sku": "CJYE162771203CX",
-                                "price": {
-                                    "amount": "98.0",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391664898260",
-                                "availableForSale": true,
-                                "title": "A / 4Y",
-                                "sku": "CJYE162771204DW",
-                                "price": {
-                                    "amount": "100.77",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391664931028",
-                                "availableForSale": true,
-                                "title": "A / 5and6Y",
-                                "sku": "CJYE162771205EV",
-                                "price": {
-                                    "amount": "102.1",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "id": "gid://shopify/Product/9026020966612",
-                    "title": "Kids Motorcycle.",
-                    "handle": "kids-motorcycle-ride-on-motorcycle-kids-electric-motorcycle-12v-two-seat-motorcycle-for-kids-motorbike-for-kids-with-key-start-3-wheels-headlightstorage-box-two-motor-two-seat",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "2754.31",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45895789215956",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/c8b78586-e596-4f50-a69a-47f0952334b8.jpg?v=1766537842",
-                        "altText": null,
-                        "width": 611,
-                        "height": 610
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47391659819220",
-                                "availableForSale": true,
-                                "title": "Black",
-                                "sku": "CJYZ262183701AZ",
-                                "price": {
-                                    "amount": "2754.31",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "id": "gid://shopify/Product/9026020770004",
-                    "title": "Kids Dinosaur Print Summer Short Sleeve",
-                    "handle": "kids-dinosaur-print-summer-short-sleeve",
-                    "priceRange": {
-                        "minVariantPrice": {
-                            "amount": "45.27",
-                            "currencyCode": "USD"
-                        }
-                    },
-                    "featuredImage": {
-                        "id": "gid://shopify/ProductImage/45895786954964",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/1622635728150.jpg?v=1766537826",
-                        "altText": null,
-                        "width": 800,
-                        "height": 800
-                    },
-                    "variants": {
-                        "nodes": [
-                            {
-                                "id": "gid://shopify/ProductVariant/47391656083668",
-                                "availableForSale": true,
-                                "title": "Red / 2T",
-                                "sku": "CJNT115652506FU",
-                                "price": {
-                                    "amount": "45.27",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391656116436",
-                                "availableForSale": true,
-                                "title": "Red / 3T",
-                                "sku": "CJNT115652501AZ",
-                                "price": {
-                                    "amount": "45.97",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391656149204",
-                                "availableForSale": true,
-                                "title": "Red / 4T",
-                                "sku": "CJNT115652502BY",
-                                "price": {
-                                    "amount": "46.67",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391656181972",
-                                "availableForSale": true,
-                                "title": "Red / 5T",
-                                "sku": "CJNT115652503CX",
-                                "price": {
-                                    "amount": "47.41",
-                                    "currencyCode": "USD"
-                                }
-                            },
-                            {
-                                "id": "gid://shopify/ProductVariant/47391656214740",
-                                "availableForSale": true,
-                                "title": "Red / 6T",
-                                "sku": "CJNT115652504DW",
-                                "price": {
-                                    "amount": "48.11",
-                                    "currencyCode": "USD"
-                                }
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-    },
-    {
-        "id": "gid://shopify/Collection/449223786708",
-        "title": "Pets",
-        "description": "Pets Collection",
-        "handle": "pets",
-        "image": {
-            "id": "gid://shopify/CollectionImage/1709086703828",
-            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-marcello-sokal-62573206-8556247.jpg?v=1766848247",
-            "altText": null,
-            "width": 3008,
-            "height": 2000
-        },
-        "products": {
-            "nodes": []
-        }
-    },
-    {
-        "id": "gid://shopify/Collection/449223917780",
-        "title": "Home Decoration",
-        "description": "Home Collection",
-        "handle": "home-decoration",
-        "image": {
-            "id": "gid://shopify/CollectionImage/1709086769364",
-            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-masoodaslami-19429417.jpg?v=1766848544",
-            "altText": null,
-            "width": 4864,
-            "height": 3243
-        },
-        "products": {
-            "nodes": []
-        }
-    },
-    {
-        "id": "gid://shopify/Collection/449223721172",
-        "title": "Electronics",
-        "description": "Discover our Electronics Collection, where smart design meets everyday power. From must-have gadgets to reliable tech essentials, each product is chosen for performance, durability, and ease of use. Upgrade your daily life with technology that keeps you connected, productive, and ahead of the curve.",
-        "handle": "electronics",
-        "image": {
-            "id": "gid://shopify/CollectionImage/1709086671060",
-            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-sound-on-3761106.jpg?v=1766848055",
-            "altText": null,
-            "width": 6137,
-            "height": 4172
-        },
-        "products": {
-            "nodes": []
-        }
-    },
-    {
-        "id": "gid://shopify/Collection/449250492628",
-        "title": "Car Tools, Maintenance & Care",
-        "description": "Car Tools, Maintenance & Care Collection",
-        "handle": "tools-maintenance-care",
-        "image": null,
-        "products": {
-            "nodes": []
-        }
-    }
-]
-
-
-
-
-[
-    {
-        "__typename": "Image",
-        "id": "gid://shopify/ProductImage/45920314589396",
-        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/51114e2a-d395-4cf4-b10e-b54d82650b44.jpg?v=1767011126",
-        "altText": null,
-        "width": 800,
-        "height": 800
-    },
-    {
-        "__typename": "Image",
-        "id": "gid://shopify/ProductImage/45920314622164",
-        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/14614888529280.jpg?v=1767011126",
-        "altText": null,
-        "width": 800,
-        "height": 800
-    },
-    {
-        "__typename": "Image",
-        "id": "gid://shopify/ProductImage/45920314654932",
-        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/1585024169784_bd800d26-327c-4db4-a3c5-a2c296449ab7.jpg?v=1767011126",
-        "altText": null,
-        "width": 640,
-        "height": 640
-    },
-    {
-        "__typename": "Image",
-        "id": "gid://shopify/ProductImage/45920314687700",
-        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/4943783784940.jpg?v=1767011126",
-        "altText": null,
-        "width": 640,
-        "height": 640
-    },
-    {
-        "__typename": "Image",
-        "id": "gid://shopify/ProductImage/45920314720468",
-        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/2309925913996.jpg?v=1767011126",
-        "altText": null,
-        "width": 640,
-        "height": 640
-    }
-]
+    ]
+}

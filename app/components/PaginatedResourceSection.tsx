@@ -15,7 +15,7 @@ export function PaginatedResourceSection<NodesType>({ connection, children, reso
 
         return (
           <>
-            <div className='GRID_CONTAINER gap-y-10 w-full'>
+            <div className='PRODUCTS_GRID_CONTAINER gap-y-10 w-full'>
 
               <PreviousLink>
                 {isLoading ? 'Loading...' : <span className='BUTTON1'>Load previous</span>}

@@ -47,23 +47,21 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
   return (
-    <article className='relative w-full h-fit items-end flex flex-col gap-3 p-3 bg-zinc-50 rounded-4xl overflow-hidden'>
+    <article className='relative w-full h-fit items-end flex flex-col gap-3 p-2 bg-zinc-50 rounded-3xl overflow-hidden'>
       {image && (
         <Link
-          className="w-full rounded-3xl overflow-hidden "
+          className="w-full rounded-2xl overflow-hidden "
           key={product.id}
           prefetch="intent"
           to={variantUrl}
         >
-          <figure className='relative w-full h-full rounded-lg overflow-hidden '>
-            <Image
-              alt={image.altText || product.title}
-              aspectRatio="1/1"
-              data={image}
-              loading={loading}
-              className='hover:scale-105 duration-300'
-            />
-          </figure>
+          <Image
+            alt={image.altText || product.title}
+            aspectRatio="1/1"
+            data={image}
+            loading={loading}
+            className='hover:scale-105 duration-300'
+          />
         </Link>
       )}
 
@@ -77,13 +75,15 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
         <div className='flex flex-row w-full justify-between items-end '>
           <Prices
+            CC1='text-sm'
+            CC2='text-xs'
             price={price}
             currency={currency}
           />
 
           <AddToCartButton
             disabled={!product?.variants.nodes[0]?.availableForSale}
-            CC='w-fit scale-85'
+            CC='w-fit md:text-xs text-xs'
             lines={
               product?.variants.nodes[0]
                 ? [
@@ -96,7 +96,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
                 : []
             }
           >
-            {product?.variants.nodes[0]?.availableForSale ? <ShoppingCart /> : 'Sold out'}
+            {product?.variants.nodes[0]?.availableForSale ? <ShoppingCart size={15}/> : 'Sold out'}
           </AddToCartButton>
         </div>
       </article>
@@ -104,12 +104,12 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
       <Share2
-        className="cursor-pointer absolute top-5 right-5 hover:opacity-70 bg-orange-400 duration-300 rounded-2xl z-100 text-white md:p-2.5 p-1.5 md:w-10 md:h-10 w-8 h-8"
+        className="cursor-pointer absolute top-5 right-5 bg-white/50 backdrop-blur-xs hover:bg-white/70 duration-300 rounded-2xl z-100 text-orange-400 md:p-2 p-1.5 md:w-9 md:h-9 w-7 h-7"
         size={40}
         onClick={handleShareClick}
       />
       {showCopyMessage && (
-        <div className="absolute top-6 right-17 px-3 py-1 bg-green-900/70 backdrop-blur-sm rounded-full text-white text-sm">
+        <div className="absolute top-6 right-17 px-3 py-1 bg-green-700/70 backdrop-blur-sm rounded-full text-white text-sm">
           {copyMessage}
         </div>
       )}
@@ -125,7 +125,7 @@ export default function Ratings({ RATING }: { RATING: number }) {
 
 
       <span className="flex flex-row  gap-1">
-        <Star className="text-transparent w-7 h-7 fill-green-500" />
+        <Star className="text-transparent w-7 h-7 fill-green-700" />
       </span>
 
 

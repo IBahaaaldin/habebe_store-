@@ -185,7 +185,7 @@ const ContactUs: React.FC = () => {
                 </div>
 
                 {status === 'success' && (
-                    <p className="mt-4 text-center text-sm font-semibold text-green-600">
+                    <p className="mt-4 text-center text-sm font-semibold text-green-700">
                         Thank you! Your message has been sent successfully.
                     </p>
                 )}

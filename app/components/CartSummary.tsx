@@ -118,7 +118,7 @@ function CartDiscounts() {
       setError(''); // Clear error message
       setShake(false); // Reset shake state after animation
       setCode(''); // Clear input after showing error
-    }, 3000); 
+    }, 3000);
   };
 
   return (

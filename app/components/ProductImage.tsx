@@ -48,7 +48,7 @@ export function ProductImage({ image, OtherImages }: { image: ProductVariantFrag
 
   return (
     <section className="flex flex-col gap-5 w-full">
-      <figure className='relative p-3 rounded-4xl overflow-hidden
+      <figure className='relative p-3 rounded-3xl overflow-hidden
     bg-zinc-50 min-w-70 w-full aspect-square'>
         <Image
           alt={mainImage?.altText || 'Product Image'}
@@ -68,7 +68,7 @@ export function ProductImage({ image, OtherImages }: { image: ProductVariantFrag
 
 
         {showCopyMessage && (
-          <div className="absolute top-6 right-17 px-3 py-1 bg-green-900/70 backdrop-blur-sm rounded-full text-white text-sm">
+          <div className="absolute top-6 right-17 px-3 py-1 bg-green-700/70 backdrop-blur-sm rounded-full text-white text-sm">
             {copyMessage}
           </div>
         )}

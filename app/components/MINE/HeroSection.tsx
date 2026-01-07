@@ -20,7 +20,7 @@ export default function HeroSection({ Collections, Title, Description, HeroImg }
 
 
     return (
-        <div className='rounded-4xl overflow-hidden px-[3%] mx-auto relative text-white flex flex-col gap-20 justify-center items-start py-20'>
+        <div className='mb-3 w-full rounded-3xl overflow-hidden px-[3%] mx-auto relative text-white flex flex-col gap-20 justify-center items-start py-10'>
             <article className='max-w-[80%] mx-auto text-center z-10 w-full relative flex flex-col items-center gap-10'>
 
                 <HeroText
@@ -55,20 +55,20 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
 
 
     return (
-        <div className="grid grid-cols-2 gap-5 items-center h-50 " >
-            {subTwoMenus?.slice(0, 2).map((subMenu: any) => (
+        <div className="grid grid-cols-2 gap-3 items-center h-50 " >
+            {subTwoMenus?.map((subMenu: any) => (
                 <figure
                     key={subMenu.id}
-                    className='border  border-black h-full w-full p-5 flex md:flex-row flex-col md:items-end items-start md:justify-between justify-end rounded-3xl overflow-hidden relative gap-5 text-white'
+                    className='h-full w-full p-5 flex md:flex-row flex-col md:items-end items-start md:justify-between justify-end rounded-3xl overflow-hidden relative gap-5 text-white'
                 >
                     <Image
-                        data={subMenu.imgSrc}
+                        data={subMenu.image}
                         alt={subMenu.altText}
                         className='absolute inset-0 -z-1 h-full w-full object-cover brightness-75'
                     />
 
-                    <h4 className='md:text-3xl sm:text-2xl text-lg max-w-sm'>{subMenu.title}</h4>
-                    <button className='BUTTON1'>Shop Now</button>
+                    <h4 className='md:text-2xl text-xl max-w-sm'>{subMenu.title}</h4>
+                    <Link to={`/collections/${subMenu.handle}`} className='BUTTON1'>Shop Now</Link>
                 </figure>
             ))}
         </div>
@@ -91,12 +91,12 @@ export function AllCategories({ allMenus }: { allMenus?: any }) {
             </h2>
 
             <div className="flex flex-row gap-5 overflow-x-scroll HIDDEN_SCROLL pb-5">
-                {allMenus?.slice(2).map((singleMenu: any) => (
+                {allMenus?.map((singleMenu: any) => (
                     <Link
                         to={`/collections/${singleMenu?.handle ?? singleMenu?.resource?.handle}`}
                         // WWHY?? Because some menus are some are collection
                         key={singleMenu.title}
-                        className="relative group border  border-black cursor-pointer overflow-hidden rounded-3xl h-50 min-w-70"
+                        className="relative group cursor-pointer overflow-hidden rounded-3xl h-40 min-w-50"
                     >
                         <Image
                             data={singleMenu.image}

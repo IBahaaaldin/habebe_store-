@@ -1,4 +1,4 @@
-import { Await, Link } from 'react-router';
+import { Await, Link, useLocation } from 'react-router';
 import { Suspense, useId } from 'react';
 import type {
   CartApiQueryFragment,
@@ -14,6 +14,7 @@ import { SearchResultsPredictive } from '~/components/SearchResultsPredictive';
 import FooterSection from './MINE/ReUsable/FooterSection';
 import Logos from './MINE/Logos';
 import Header from './Header';
+import LoadingSpinner from './MINE/ReUsable/LoadingSpinner';
 
 
 
@@ -36,6 +37,7 @@ export function PageLayout({ cart, children = null, header, isLoggedIn }: PageLa
       {/* This is the cart, search, and mobile menu */}
       <CartAside cart={cart} />
       <SearchAside />
+      <MenuAside menu={header.menu} />
 
 
       {/* <Logos /> */}
@@ -63,17 +65,63 @@ export function PageLayout({ cart, children = null, header, isLoggedIn }: PageLa
 
 
 
+/// SIDEBAR menu "Will appear only when the user clicks the menu icon"
+function MenuAside({ menu }: any) {
+
+
+  const location = useLocation();
+  const currentTabURL = location.pathname.split('/').pop(); // Get the first segment of the path
+
+  
+  return (
+    <Aside type="mobile" heading="MENU">
+      <Suspense fallback={<LoadingSpinner />}>
+        <Await resolve={null}>
+          <ul className='flex flex-col gap-5'>
+            {menu?.items.map((item: any) => {
+
+              const isMainMenuActive = currentTabURL === item.resource?.handle;
+
+              return (
+                <li
+                  key={item.id}
+                  className="relative group"
+                >
+                  <Link
+                    to={`/collections/${item.resource?.handle || '#'}`}
+                    key={item.id}
+
+                    className={`hover:text-orange-400 text-black font-bold text-start duration-500 
+                  ${isMainMenuActive ? 'text-orange-400' : 'text-black'}
+                  `}
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              );
+            })
+            }
+          </ul>
+        </Await>
+      </Suspense>
+    </Aside>
+  );
+}
+
+
+
+// Redirect directly to the cart page
 function CartAside({ cart }: { cart: PageLayoutProps['cart'] }) {
   return (
     <Aside type="cart" heading="CART">
-      <Suspense fallback={<p>Loading cart ...</p>}>
+      <Suspense fallback={<LoadingSpinner />}>
         <Await resolve={cart}>
           {(cart) => {
             return <CartMain cart={cart} layout="aside" />;
           }}
         </Await>
       </Suspense>
-    </Aside>
+    </Aside >
   );
 }
 

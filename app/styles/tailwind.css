@@ -7,9 +7,9 @@
 
 
 .BUTTON1 {
-    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-4 py-2 font-bold text-white bg-orange-400 rounded-full duration-300 text-nowrap;
+    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-3 py-2 font-bold text-white bg-orange-400 rounded-full duration-300 text-nowrap text-xs;
 
-    @apply lg:px-5 lg:py-3;
+    @apply md:px-5 md:py-3 md:text-base;
 
     &:hover {
         @apply opacity-70;
@@ -22,9 +22,9 @@
 
 
 .BUTTON2 {
-    @apply flex flex-row w-fit cursor-pointer gap-3 items-center justify-center px-4 py-2 font-bold text-orange-400 bg-white border border-orange-400 rounded-full duration-300 text-nowrap;
+    @apply flex flex-row w-fit cursor-pointer gap-3 items-center justify-center px-3 py-2 font-bold text-orange-400 bg-white border border-orange-400 rounded-full duration-300 text-nowrap text-xs;
 
-    @apply lg:px-5 lg:py-3;
+    @apply md:px-5 md:py-3 md:text-base;
 
     &:hover {
         @apply bg-orange-400 text-white;
@@ -82,8 +82,8 @@ small {
 }
 
 
-.GRID_CONTAINER {
-    @apply grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-10 gap-[2%] h-full;
+.PRODUCTS_GRID_CONTAINER {
+    @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-y-5 gap-[2%] h-full;
 }
 
 
@@ -109,5 +109,10 @@ small {
 
 /* This is for the AddToCart button  */
 form {
-    @apply w-fit max-h-fit;
+    @apply w-full max-h-fit flex flex-col gap-5;
+}
+
+
+form {
+    @apply w-full max-h-fit;
 }

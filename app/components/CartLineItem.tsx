@@ -24,7 +24,7 @@ export function CartLineItem({ layout, line, }: { layout: CartLayout; line: Cart
 
 
   return (
-    <li key={id} className="border border-zinc-300 p-5 rounded-4xl flex flex-row gap-5">
+    <li key={id} className="border border-zinc-300 p-5 rounded-3xl flex flex-row gap-5">
 
 
 

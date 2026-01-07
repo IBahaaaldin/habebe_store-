@@ -140,7 +140,7 @@ export default function Reviews({ Title, ProductId }: { Title?: string, ProductI
 
                             <span className='flex flex-row '>
                                 {Array.from({ length: 5 }, (_, index) => index + 1).map((star, index) =>
-                                    (testimonial.rating >= star ? <Star size={22} key={index} className='fill-green-600 text-transparent' /> : <StarHalf size={22} className='fill-green-600 text-transparent' key={index} />)
+                                    (testimonial.rating >= star ? <Star size={22} key={index} className='fill-green-700 text-transparent' /> : <StarHalf size={22} className='fill-green-700 text-transparent' key={index} />)
                                 )}
                             </span>
 
@@ -152,7 +152,7 @@ export default function Reviews({ Title, ProductId }: { Title?: string, ProductI
 
                                 {testimonial.verified ?
                                     <div className="flex items-center text-sm">
-                                        <IoCheckmarkCircle className="text-green-500 mr-1" />
+                                        <IoCheckmarkCircle className="text-green-700 mr-1" />
                                         <span className="">Verified Rating</span>
                                     </div>
                                     :
@@ -182,8 +182,8 @@ export default function Reviews({ Title, ProductId }: { Title?: string, ProductI
             <article className="flex flex-col gap-5 items-start justify-start w-full lg:my-10 my-3">
 
                 {commentSubmited ? (
-                    <div className="w-full flex flex-col gap-5 items-center justify-center p-10 border border-green-500 rounded-3xl bg-green-50">
-                        <IoCheckmarkCircle className="text-green-500 h-20 w-20" />
+                    <div className="w-full flex flex-col gap-5 items-center justify-center p-10 border border-green-700 rounded-3xl bg-green-50">
+                        <IoCheckmarkCircle className="text-green-700 h-20 w-20" />
                         <h3 className="text-2xl font-bold">Thank you for your comment!</h3>
                         <p className="text-center text-zinc-700">We appreciate your feedback and will use it to improve our products and services.</p>
                     </div>

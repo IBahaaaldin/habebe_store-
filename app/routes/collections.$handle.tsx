@@ -1,6 +1,6 @@
 import { Link, redirect, useLoaderData } from 'react-router';
 import type { Route } from './+types/collections.$handle';
-import { getPaginationVariables, Analytics } from '@shopify/hydrogen';
+import { getPaginationVariables } from '@shopify/hydrogen';
 import { PaginatedResourceSection } from '~/components/PaginatedResourceSection';
 import { redirectIfHandleIsLocalized } from '~/lib/redirect';
 import { ProductItem } from '~/components/ProductItem';
@@ -33,9 +33,6 @@ async function loadCriticalData({ context, params, request }: Route.LoaderArgs) 
   const paginationVariables = getPaginationVariables(request, {
     pageBy: 8,
   });
-
-
-  console.log(`%c${JSON.stringify(handle)}`, 'color: red; font-size: 20px;')
 
 
   if (!handle) {
@@ -108,9 +105,9 @@ export default function Collection() {
       />
 
 
-      <TwoGrids
+      {/* <TwoGrids
         subTwoMenus={specificMenu[0]?.items}
-      />
+      /> */}
 
 
       <AllCategories
@@ -122,7 +119,7 @@ export default function Collection() {
 
         <Link
           to="https://wa.me/+971561576657?text=I'm%20interested%20in%20your%20ad%20on%20Hydrogen"
-          className='w-full lg:h-40 h-30 bg-zinc-50 lg:rounded-4xl rounded-2xl flex items-center justify-center LINK'
+          className='w-full lg:h-40 h-30 bg-zinc-50 lg:rounded-3xl rounded-2xl flex items-center justify-center LINK'
           target='_blank'
           rel="noreferrer"
         >

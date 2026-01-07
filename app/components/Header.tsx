@@ -26,7 +26,7 @@ export default function Header({ header, isLoggedIn, cart }: HeaderProps) {
 
 
   return (
-    <header className={`z-999 sticky top-5 left-0 right-0 bg-white/70 border border-black/5 backdrop-blur-sm rounded-full w-full mx-auto flex flex-row items-center gap-5 px-5 p-3 duration-500
+    <header className={`z-999 sticky top-5 left-0 right-0 bg-white border border-black/5 backdrop-blur-sm rounded-full w-full mx-auto flex flex-row items-center gap-5 px-5 p-3 duration-500
       `}
     >
       <NavLink
@@ -41,6 +41,7 @@ export default function Header({ header, isLoggedIn, cart }: HeaderProps) {
           src={header.shop.brand?.logo?.image?.url}
           width={30}
           height={30}
+          className='scale-130'
         />
       </NavLink>
 
@@ -68,26 +69,6 @@ export function HeaderMenu({ menu }: { menu: any }) {
     <nav role="navigation" className='flex lg:flex-row flex-col gap-3'>
 
 
-      {/* {(
-        menu?.items.map((item) => {
-          if (!item.url) return null;
-
-          const isActive = currentPathname === new URL(item.url).pathname;
-
-          return (
-            <a
-              href={item.url}
-              key={item.id}
-              rel="noopener noreferrer"
-              className={`flex px-3 py-2 rounded-full hover:opacity-50 font-bold duration-300 ${isActive ? 'bg-white text-orange-400' : 'text-black'}`}
-            >
-              {item.title}
-            </a>
-          );
-        })
-      )} */}
-
-
 
 
       <ul className="hidden lg:flex flex-row gap-6"> {/* Increased gap for better look */}
@@ -95,7 +76,6 @@ export function HeaderMenu({ menu }: { menu: any }) {
           // Optional: Logic to determine if active
 
           const isMainMenuActive = currentTabURL === menu.resource?.handle;
-          const isSubMenuActive = currentTabURL === menu.resource?.handle;
 
           return (
             <li
@@ -177,7 +157,7 @@ function HeaderMenuMobileToggle() {
       className="block lg:hidden bg-orange-400 text-black p-2 rounded-xl cursor-pointer hover:opacity-70 duration-300"
       onClick={() => open('mobile')}
     >
-      <Menu className='text-white' />
+      <Menu className='text-white ' size={15} />
     </button>
   );
 }
