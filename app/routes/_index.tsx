@@ -9,7 +9,7 @@ import Reviews from '~/components/MINE/Reviews';
 import { MAINMENU_AND_PRODUCTS_QUERY } from './collections._index';
 import LoadingSpinner from '~/components/MINE/ReUsable/LoadingSpinner';
 import FAQs from '~/components/MINE/FAQs';
-import HeaderText from '~/components/MINE/UI/HeaderText';
+import HeaderText, { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
 
 
 
@@ -61,8 +61,6 @@ export default function Homepage() {
 
   const { MainCollections } = useLoaderData<typeof loader>();
 
-  console.log(`%c${JSON.stringify(MainCollections)}`, 'color: red; font-size: 20px;')
-
 
   return (
     <div className='space-y-10'>
@@ -97,17 +95,6 @@ export default function Homepage() {
         </div>
       ))}
 
-
-      {/* <Link
-        to="https://wa.me/+971561576657?text=I'm%20interested%20in%20your%20ad%20on%20Hydrogen"
-        className='w-full lg:h-80 h-30 border border-zinc-100 bg-zinc-50 lg:rounded-3xl rounded-2xl flex items-center justify-center LINK'
-        target='_blank'
-        rel="noreferrer"
-      >
-        your ad here
-      </Link> */}
-
-
       <FAQs />
       <Reviews />
     </div>
@@ -116,15 +103,16 @@ export default function Homepage() {
 
 
 
+// MainCollectionsProductsSample component
 export function MainCollectionsProductsSample({ products, collectionTitle, Handle }: { products: any; collectionTitle: string; Handle: string; }) {
 
 
 
   return (
-    <section className="border-b border-black/10 pb-10">
+    <section className="flex flex-col gap-5  pb-10">
 
 
-      <div className='flex flex-row justify-between items-start mb-5 px-[3%]'>
+      <div className='flex flex-row justify-between items-start px-[3%]'>
         <h3 className='text-start w-full md:text-3xl text-2xl capitalize'>
           {collectionTitle}&apos;s Collection
         </h3>
@@ -140,6 +128,7 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
       </div>
 
 
+      {/* //  */}
       <Suspense fallback={<LoadingSpinner />}>
         <Await resolve={products}>
           {(response) => (
@@ -161,19 +150,22 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
 
 
-      <article className='flex flex-row bg-zinc-50 border border-black/10 rounded-3xl'>
-        <HeaderText
-          HEAD={`Top Picks from ${collectionTitle}`}
-          SUBHEAD={`Explore our curated selection of top picks from the ${collectionTitle} collection, featuring the best products chosen just for you.`}
+      {/* //  */}
+      <article className='flex lg:flex-row flex-col gap-5 gap-y-7 md:p-10 p-5 bg-zinc-200 border border-black/10 rounded-3xl'>
+
+
+        <SmallHeaderText
+          HEAD={<>Top Picks from <b>{collectionTitle}</b></>}
+          SUBHEAD={<>Explore our curated selection of top picks from the <b>{collectionTitle}</b> collection.</>}
         />
 
 
         <Suspense fallback={<LoadingSpinner />}>
           <Await resolve={products}>
             {(response) => (
-              <div className="grid grid-cols-3 overflow-scroll HIDDEN_SCROLL">
+              <div className="w-full grid sm:grid-cols-3 grid-cols-2 gap-5 overflow-scroll HIDDEN_SCROLL ">
                 {response
-                  ? response?.nodes?.slice(0, 3).map((product: any) => (
+                  ? response?.nodes?.slice(0, 3)?.map((product: any) => (
 
                     <ProductItem
                       key={product.id}

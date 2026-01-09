@@ -3,6 +3,7 @@ import type { FeaturedCollectionFragment } from 'storefrontapi.generated';
 import HeroText from "./UI/HeroText";
 import ArrowButton from './ReUsable/Buttons';
 import { Link } from 'react-router';
+import { SmallHeaderText } from './UI/HeaderText';
 
 
 
@@ -85,11 +86,10 @@ export function AllCategories({ allMenus }: { allMenus?: any }) {
 
     return (
         <div className="w-full flex flex-col gap-5">
-            <h2 className="md:text-3xl text-2xl">
-                Browse by categories
-            </h2>
+            <SmallHeaderText HEAD='Browse by categories' />
 
-            <div className="flex flex-row gap-5 overflow-x-scroll HIDDEN_SCROLL pb-5">
+
+            <div className="flex flex-row gap-5 overflow-x-scroll  pb-5">
                 {allMenus?.map((singleMenu: any) => (
                     <Link
                         to={`/collections/${singleMenu?.handle ?? singleMenu?.resource?.handle}`}
@@ -104,7 +104,7 @@ export function AllCategories({ allMenus }: { allMenus?: any }) {
                         />
 
                         {/* Label Badge */}
-                        <caption className="absolute bottom-3 left-3 bg-white px-3 py-1.5 rounded-full md:text-sm text-xs font-bold uppercase">
+                        <caption className="absolute bottom-3 left-3 bg-white px-3 py-1.5 rounded-full md:text-sm text-xs text-start font-bold uppercase">
                             {singleMenu.title}
                         </caption>
                     </Link>

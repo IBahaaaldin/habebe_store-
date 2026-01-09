@@ -104,12 +104,12 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
       <Share2
-        className="cursor-pointer absolute top-5 right-5 bg-white/50 backdrop-blur-xs hover:bg-white/70 duration-300 rounded-lg z-100 text-orange-400 md:p-2 p-1.5 md:w-9 md:h-9 w-7 h-7"
+        className="cursor-pointer absolute top-5 right-5 bg-white/80 backdrop-blur-xs hover:bg-white duration-300 rounded-xl z-100 text-orange-400 md:p-2 p-1.5 md:w-9 md:h-9 w-7 h-7"
         size={40}
         onClick={handleShareClick}
       />
       {showCopyMessage && (
-        <div className="absolute top-6 right-17 px-3 py-1 bg-green-700/70 backdrop-blur-sm rounded-full text-white text-sm">
+        <div className="absolute top-6 right-17 px-3 py-1 bg-green-700/70 backdrop-blur-sm rounded-xl text-white text-sm">
           {copyMessage}
         </div>
       )}

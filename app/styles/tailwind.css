@@ -22,7 +22,7 @@
 
 
 .BUTTON2 {
-    @apply flex flex-row w-fit cursor-pointer gap-3 items-center justify-center px-3 py-2 font-bold text-orange-400 bg-white border border-orange-400 rounded-full duration-300 text-nowrap text-xs;
+    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-3 py-2 font-bold text-orange-400 bg-white border border-orange-400 rounded-full duration-300 text-nowrap text-xs;
 
     @apply md:px-5 md:py-3 md:text-base;
 
@@ -112,6 +112,7 @@ form {
 }
 
 
-form {
-    @apply w-full max-h-fit;
+.SEARCH_CONTAINERS {
+    @apply flex absolute top-20 right-0 left-0 bg-white rounded-3xl overflow-hidden p-5 border 
+    @apply md:p-10
 }

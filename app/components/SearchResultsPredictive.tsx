@@ -275,7 +275,7 @@ function SearchResultsPredictiveEmpty({
   }
 
   return (
-    <p>
+    <p className='font-bold text-xl '>
       No results found for <q>{term.current}</q>
     </p>
   );

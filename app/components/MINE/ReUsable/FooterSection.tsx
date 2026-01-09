@@ -72,6 +72,14 @@ export default function FooterSection({ header }: { header: any }) {
         {
             name: "cart",
             path: "/cart",
+        },
+        {
+            name: "Terms & Conditions",
+            path: "terms-conditions"
+        },
+        {
+            name: "Privacy Policy",
+            path: "privacy-policy"
         }
     ];
 
@@ -81,10 +89,31 @@ export default function FooterSection({ header }: { header: any }) {
         <footer className="max-w-[1750px] px-[5%] mx-auto duration-500 grid lg:grid-cols-3 md:grid-cols-2 md:gap-15 gap-10 md:gap-y-5 gap-y-5 items-between justify-between bg-white rounded-3xl relative overflow-hidden py-10 *:min-w-1/3 *:w-full">
 
 
-            {/* /// MENU */}
+
+            {/* /// SECOND MENU */}
             <section className='flex flex-col min-h-full gap-2'>
                 <h3 className="text-black/50 mb-3">
                     Quick Navigation
+                </h3>
+
+                {PagesLinks.map((page, index) => (
+                    <Link
+                        to={page.path || '#'}
+                        key={index}
+                        className="hover:text-orange-400 text-black font-bold text-start duration-500"
+                    >
+                        {page.name}
+                    </Link>
+                ))}
+            </section>
+
+
+
+
+            {/* /// MENU */}
+            <section className='flex flex-col min-h-full gap-2'>
+                <h3 className="text-black/50 mb-3">
+                    Main Categories
                 </h3>
 
 
@@ -101,6 +130,30 @@ export default function FooterSection({ header }: { header: any }) {
                     ))}
                 </div>
             </section>
+
+
+
+            {/* /// Subscribe */}
+            <section className='flex flex-col min-h-full justify-start gap-5'>
+                <div className="flex flex-col gap-3">
+                    <h3 className="text-black">
+                        Subscribe to our newsletter
+                    </h3>
+                    <p className="text-black/50  ">Dont miss our latest news, updates, and exclusive offers and stay ahead of your peers</p>
+                </div>
+
+                <input
+                    type="text"
+                    placeholder="Enter your email"
+                    className="placeholder:text-black/40 w-full bg-transparent p-1 text-black border-b border-black/40 py-1 outline-none"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                />
+                <button className="BUTTON2 w-full"
+                    onClick={() => subscribeFun()}
+                >Subscribe</button>
+            </section>
+
 
 
 
@@ -141,48 +194,6 @@ export default function FooterSection({ header }: { header: any }) {
 
 
 
-            {/* /// Subscribe */}
-            <section className='flex flex-col min-h-full justify-between gap-5'>
-                <div className="flex flex-col gap-3">
-                    <h3 className="text-black">
-                        Subscribe to our newsletter
-                    </h3>
-                    <p className="text-black/50  ">Dont miss our latest news, updates, and exclusive offers and stay ahead of your peers</p>
-                </div>
-
-                <input
-                    type="text"
-                    placeholder="Enter your email"
-                    className="placeholder:text-black/40 w-full bg-transparent p-1 text-black border-b border-black/40 py-1 outline-none"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                />
-                <button className="BUTTON2 "
-                    onClick={() => subscribeFun()}
-                >Subscribe</button>
-            </section>
-
-
-
-            {/* /// SECOND MENU */}
-            <section className='flex flex-col min-h-full gap-2'>
-                <h3 className="text-black/50 mb-3">
-                    Quick Navigation
-                </h3>
-
-                {PagesLinks.map((page, index) => (
-                    <Link
-                        to={page.path || '#'}
-                        key={index}
-                        className="hover:text-orange-400 text-black font-bold text-start duration-500"
-                    >
-                        {page.name}
-                    </Link>
-                ))}
-            </section>
-
-
-
             {/* /// Social Media */}
             <section className='flex flex-col min-h-full justify-start gap-10'>
                 <div className="flex flex-col gap-5">
@@ -199,34 +210,12 @@ export default function FooterSection({ header }: { header: any }) {
                         </Link>
                     </ul>
                 </div>
-
-
-                <div className="flex flex-col gap-3">
-                    <p className="text-black/50">
-                        Copyright 2025 @ what ever shit it is.
-                    </p>
-
-                    <div className="flex flex-row justify-between w-full font-bold">
-                        <Link to={'terms-conditions'}>Terms & Conditions</Link>
-                        <Link to={'privacy-policy'}>Privacy Policy</Link>
-                    </div>
-                </div>
             </section>
 
 
 
-            {/* /// Location */}
-            <section className="flex flex-col gap-3">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.526358678226!2d55.25913717631394!3d25.185465977718472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69d103361679%3A0x13f2d0058a5050cf!2sOntario%20Tower%20-%20Business%20Bay%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sus!4v1763540311131!5m2!1sen!2sus"
-                    className="rounded-3xl "
-                    loading="lazy"
-                    title="Our head office"
-                />
-
-                <PaymentIcons />
-            </section>
-
+            {/* /// PAYMENT */}
+            <PaymentIcons />
         </footer>
     )
 }

@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, useId } from 'react';
 import { Await, Link, NavLink, useAsyncValue, useLocation } from 'react-router';
 import {
   Image,
@@ -7,6 +7,9 @@ import {
 import type { HeaderQuery, CartApiQueryFragment } from 'storefrontapi.generated';
 import { useAside } from '~/components/Aside';
 import { Menu, SearchIcon, ShoppingBag, User } from "lucide-react";
+import { SearchFormPredictive } from './SearchFormPredictive';
+import LoadingSpinner from './MINE/ReUsable/LoadingSpinner';
+import { SearchResultsPredictive } from './SearchResultsPredictive';
 
 
 
@@ -24,15 +27,13 @@ export default function Header({ header, isLoggedIn, cart }: HeaderProps) {
 
   const { menu } = header;
 
-
   return (
-    <header className={`z-999 sticky top-5 left-0 right-0 bg-white border border-black/5 backdrop-blur-sm md:rounded-full w-full mx-auto flex flex-row items-center gap-5 px-5 p-3 duration-500
+    <header className={`z-999 sticky md:top-5 top-0 left-0 right-0 bg-white border border-black/5 backdrop-blur-sm md:rounded-full w-full mx-auto flex flex-row items-center gap-5 px-5 p-3 duration-500
       `}
     >
       <NavLink
         prefetch="intent"
         to="/"
-        style={activeLinkStyle}
         end
       >
         {/* LOGO on TOP */}
@@ -56,7 +57,7 @@ export default function Header({ header, isLoggedIn, cart }: HeaderProps) {
 
 
 
-// Header Menu Component inside the Header
+/// Header Menu Component inside the Header
 export function HeaderMenu({ menu }: { menu: any }) {
 
 
@@ -72,7 +73,7 @@ export function HeaderMenu({ menu }: { menu: any }) {
 
 
       <ul className="hidden lg:flex flex-row gap-6"> {/* Increased gap for better look */}
-        {menu?.items.map((menu: any) => {
+        {menu?.items.slice(0, 5).map((menu: any) => {
           // Optional: Logic to determine if active
 
           const isMainMenuActive = currentTabURL === menu.resource?.handle;
@@ -127,16 +128,19 @@ export function HeaderMenu({ menu }: { menu: any }) {
 
 
 function HeaderCtas({ isLoggedIn, cart, }: Pick<HeaderProps, 'isLoggedIn' | 'cart'>) {
+
   return (
     <nav className="header-ctas" role="navigation">
       {/* Mobile Menu */}
       <HeaderMenuMobileToggle />
       {/* Search functionality */}
       <SearchToggle />
+      <SamePageSearch />
+
       {/* Cart icon and count */}
       <CartToggle cart={cart} />
       {/* Account link, showing 'Account' if logged in, otherwise a User icon */}
-      <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
+      <NavLink prefetch="intent" to="/account">
         <Suspense fallback="Sign in">
           <Await resolve={isLoggedIn} errorElement="Sign in">
             {(isLoggedIn) => (isLoggedIn ? 'Account' : <User className='text-black hover:text-orange-400 duration-300 cursor-pointer' />)}
@@ -154,23 +158,10 @@ function HeaderMenuMobileToggle() {
   const { open } = useAside();
   return (
     <button
-      className="block lg:hidden bg-orange-400 text-black p-2 rounded-xl cursor-pointer hover:opacity-70 duration-300"
+      className="block lg:hidden bg-orange-400 text-black p-1.5 rounded-lg cursor-pointer hover:opacity-70 duration-300"
       onClick={() => open('mobile')}
     >
-      <Menu className='text-white ' size={15} />
-    </button>
-  );
-}
-
-
-
-/// Search Toggle Button
-function SearchToggle() {
-
-  const { open } = useAside();
-  return (
-    <button className="reset" onClick={() => open('search')}>
-      <SearchIcon className='text-black hover:text-orange-400 duration-300 cursor-pointer' />
+      <Menu className='text-white ' size={20} />
     </button>
   );
 }
@@ -194,10 +185,15 @@ function CartBadge({ count }: { count: number | null }) {
 
 /// Cart Toggle Button with Suspense
 function CartToggle({ cart }: Pick<HeaderProps, 'cart'>) {
+
+  const originalCart = useAsyncValue() as CartApiQueryFragment | null;
+  const cart1 = useOptimisticCart(originalCart);
+
   return (
     <Suspense fallback={<CartBadge count={null} />}>
       <Await resolve={cart}>
-        <CartBanner />
+        {/* <CartBanner /> */}
+        <CartBadge count={cart1?.totalQuantity ?? 0} />
       </Await>
     </Suspense>
   );
@@ -205,23 +201,75 @@ function CartToggle({ cart }: Pick<HeaderProps, 'cart'>) {
 
 
 
-function CartBanner() {
-  const originalCart = useAsyncValue() as CartApiQueryFragment | null;
-  const cart = useOptimisticCart(originalCart);
-  return <CartBadge count={cart?.totalQuantity ?? 0} />;
+
+
+
+/// Search Toggle Button
+function SearchToggle() {
+
+  const { open } = useAside();
+  return (
+    <button className="sm:hidden flex" onClick={() => open('search')}>
+      <SearchIcon className='text-black hover:text-orange-400 duration-300 cursor-pointer' />
+    </button>
+  );
 }
 
 
+/// Display the search results in the same page
+function SamePageSearch() {
+  const queriesDatalistId = useId();
 
-function activeLinkStyle({
-  isActive,
-  isPending,
-}: {
-  isActive: boolean;
-  isPending: boolean;
-}) {
-  return {
-    fontWeight: isActive ? 'bold' : undefined,
-    color: isPending ? 'grey' : 'black',
-  };
+
+  return (
+    <div className='hidden sm:flex'>
+      <SearchFormPredictive>
+        {({ fetchResults, goToSearch, inputRef }) => (
+          <div className="flex flex-row gap-2">
+            <input
+              name="q"
+              onChange={fetchResults}
+              onFocus={fetchResults}
+              placeholder="Search"
+              ref={inputRef}
+              type="search"
+              className='INPUT'
+              list={queriesDatalistId}
+            />
+          </div>
+        )}
+      </SearchFormPredictive>
+
+
+      <SearchResultsPredictive>
+        {({ items, total, term, state, closeSearch }) => {
+          const { products } = items;
+
+          if (state === 'loading' && term.current) {
+            return <div className='SEARCH_CONTAINERS'><LoadingSpinner /></div>;
+          }
+
+          if (!term.current) {
+            return null
+          }
+
+          if (!total) {
+            return <div className='SEARCH_CONTAINERS'>
+              <SearchResultsPredictive.Empty term={term} />
+            </div>;
+          }
+
+          return (
+            <div className='SEARCH_CONTAINERS'>
+              <SearchResultsPredictive.Products
+                products={products}
+                closeSearch={closeSearch}
+                term={term}
+              />
+            </div>
+          );
+        }}
+      </SearchResultsPredictive>
+    </div>
+  )
 }

@@ -11,12 +11,12 @@ const paymentMethods: string[] = [
 
 export default function PaymentIcons() {
     return (
-        <div className="mt-5 flex flex-row flex-wrap gap-x-3 justify-start items-center min-w-full" >
+        <section className="flex flex-row flex-wrap gap-x-3 justify-start items-start" >
             {paymentMethods.map((icon, index) => (
-                <div key={index} className="min-w-12 max-w-12">
+                <div key={index} className="min-w-10 max-w-10">
                     <img src={icon} alt="payment method" />
                 </div>
             ))}
-        </div >
+        </section >
     );
 }

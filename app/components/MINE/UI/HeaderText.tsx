@@ -53,3 +53,25 @@ export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?:
         </div>
     )
 }
+
+
+
+
+
+export function SmallHeaderText({ HEAD, SUBHEAD }: { HEAD?: React.ReactNode, SUBHEAD?: React.ReactNode }) {
+    return (
+        <div className="flex flex-col z-1 capitalize items-start justify-start gap-3 lg:max-w-xs w-full" >
+            {HEAD &&
+                <h3 className='md:text-3xl text-2xl flex-wrap flex flex-row gap-2 w-full'>
+                    {HEAD}
+                </h3>
+            }
+
+            {SUBHEAD &&
+                <h6 className='text-zinc-500 md:text-lg text-sm w-full'>
+                    {SUBHEAD}
+                </h6>
+            }
+        </div>
+    )
+}

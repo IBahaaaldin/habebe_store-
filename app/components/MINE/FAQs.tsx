@@ -44,14 +44,15 @@ export default function FAQs() {
 
 
     return (
-        <div className="flex flex-col items-start justify-start w-full gap-5 md:p-10 p-5 border border-black/10 rounded-3xl">
+        <div className="flex flex-col items-start justify-start w-full gap-3 md:p-10 p-5 border border-black/10 rounded-3xl">
 
             <HeaderText
                 HEAD="Frequently Asked Questions"
+                SUBHEAD='Find answers to the most common questions about our products and services.'
             />
 
 
-            <div className="bg-zinc-50 p-5 rounded-3xl overflow-hidden">
+            <div className="w-full bg-zinc-50 p-5 rounded-3xl overflow-hidden">
                 {faqs.map((faq, index) => (
                     <div
                         key={index}
@@ -82,4 +83,3 @@ export default function FAQs() {
         </div>
     );
 };
-
