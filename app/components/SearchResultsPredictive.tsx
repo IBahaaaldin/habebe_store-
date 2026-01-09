@@ -224,16 +224,17 @@ export function SearchResultsPredictiveProducts({
           return (
             <Link className="flex flex-row gap-3" key={product.id} to={productUrl} onClick={closeSearch}>
               {image && (
-                <figure className='group min-w-25 min-h-25 p-2 rounded-xl overflow-hidden bg-zinc-100'>
+                <figure className='min-w-25 min-h-25 p-1.5 rounded-xl overflow-hidden bg-zinc-100'>
                   <Image
                     alt={image.altText ?? ''}
                     src={image.url}
                     width={50}
                     height={50}
-                    className='w-full h-full rounded-lg object-cover group-hover:scale-105 duration-300'
+                    className='w-full h-full rounded-lg object-cover hover:scale-105 duration-300'
                   />
                 </figure>
               )}
+
               <div>
                 <p className='font-bold'>{product.title}</p>
                 {price && <Prices price={price.amount} currency={price.currencyCode} />}

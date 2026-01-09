@@ -47,7 +47,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
   return (
-    <article className='relative w-full h-fit items-end flex flex-col gap-3 p-2 bg-zinc-50 rounded-3xl overflow-hidden'>
+    <article className='min-w-40 max-w-60 relative w-full h-fit items-end flex flex-col gap-3 p-2 bg-zinc-50 rounded-3xl overflow-hidden'>
       {image && (
         <Link
           className="w-full rounded-2xl overflow-hidden "
@@ -71,12 +71,12 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
       {/* /// Details */}
       <article className='px-2 flex flex-col w-full justify-between items-end gap-2'>
-        <h4 className='md:text-xl capitalize w-full'>{product.title.length > 15 ? product.title.slice(0, 15) + '...' : product.title}</h4>
+        <h4 className='md:text-lg capitalize w-full'>{product.title.length > 15 ? product.title.slice(0, 15) + '...' : product.title}</h4>
 
-        <div className='flex flex-row w-full justify-between items-end '>
+        <div className='flex flex-row w-full justify-between items-start '>
           <Prices
-            CC1='text-sm'
-            CC2='text-xs'
+            CC1='md:text-lg text-sm'
+            CC2='md:text-sm text-xs'
             price={price}
             currency={currency}
           />
@@ -96,7 +96,8 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
                 : []
             }
           >
-            {product?.variants.nodes[0]?.availableForSale ? <ShoppingCart size={15}/> : 'Sold out'}
+            {/* The Sold out is hidden  from the comp itself */}
+            {product?.variants.nodes[0]?.availableForSale ? <ShoppingCart size={15}/> : 'Sold out'} 
           </AddToCartButton>
         </div>
       </article>
@@ -104,7 +105,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
       <Share2
-        className="cursor-pointer absolute top-5 right-5 bg-white/80 backdrop-blur-xs hover:bg-white duration-300 rounded-xl z-100 text-orange-400 md:p-2 p-1.5 md:w-9 md:h-9 w-7 h-7"
+        className="cursor-pointer absolute top-5 right-5 bg-white/80 backdrop-blur-xs hover:bg-white duration-300 rounded-xl z-100 text-orange-400 md:p-2 p-1.5 md:w-8 md:h-8 w-6 h-6"
         size={40}
         onClick={handleShareClick}
       />
@@ -119,20 +120,20 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
 
-export default function Ratings({ RATING }: { RATING: number }) {
-  return (
-    <div className="text-xl flex flex-row items-center gap-2">
+// export default function Ratings({ RATING }: { RATING: number }) {
+//   return (
+//     <div className="text-xl flex flex-row items-center gap-2">
 
 
-      <span className="flex flex-row  gap-1">
-        <Star className="text-transparent w-7 h-7 fill-green-700" />
-      </span>
+//       <span className="flex flex-row  gap-1">
+//         <Star className="text-transparent w-7 h-7 fill-green-700" />
+//       </span>
 
 
-      <small>({RATING}/5)</small>
-    </div>
-  )
-}
+//       <small>({RATING}/5)</small>
+//     </div>
+//   )
+// }
 
 
 

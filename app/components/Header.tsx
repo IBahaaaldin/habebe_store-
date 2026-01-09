@@ -28,7 +28,7 @@ export default function Header({ header, isLoggedIn, cart }: HeaderProps) {
   const { menu } = header;
 
   return (
-    <header className={`z-999 sticky md:top-5 top-0 left-0 right-0 bg-white border border-black/5 backdrop-blur-sm md:rounded-full w-full mx-auto flex flex-row items-center gap-5 px-5 p-3 duration-500
+    <header className={`z-999 sticky md:top-5 top-0 left-0 right-0 bg-white md:border border-black/5 backdrop-blur-sm md:rounded-full rounded-b-3xl w-full mx-auto flex flex-row items-center gap-5 px-5 p-3 duration-500
       `}
     >
       <NavLink

@@ -107,12 +107,11 @@ export default function Homepage() {
 export function MainCollectionsProductsSample({ products, collectionTitle, Handle }: { products: any; collectionTitle: string; Handle: string; }) {
 
 
-
   return (
-    <section className="flex flex-col gap-5  pb-10">
+    <section className="flex flex-col gap-5 pb-10">
 
 
-      <div className='flex flex-row justify-between items-start px-[3%]'>
+      <div className='flex flex-row justify-between items-start'>
         <h3 className='text-start w-full md:text-3xl text-2xl capitalize'>
           {collectionTitle}&apos;s Collection
         </h3>
@@ -151,8 +150,7 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
 
       {/* //  */}
-      <article className='flex lg:flex-row flex-col gap-5 gap-y-7 md:p-10 p-5 bg-zinc-200 border border-black/10 rounded-3xl'>
-
+      <article className='flex lg:flex-row flex-col justify-between w-full gap-5 gap-y-7 md:p-10 p-5 bg-zinc-200 rounded-3xl'>
 
         <SmallHeaderText
           HEAD={<>Top Picks from <b>{collectionTitle}</b></>}
@@ -163,7 +161,7 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
         <Suspense fallback={<LoadingSpinner />}>
           <Await resolve={products}>
             {(response) => (
-              <div className="w-full grid sm:grid-cols-3 grid-cols-2 gap-5 overflow-scroll HIDDEN_SCROLL ">
+              <div className="flex flex-row gap-5 overflow-x-scroll HIDDEN_SCROLL">
                 {response
                   ? response?.nodes?.slice(0, 3)?.map((product: any) => (
 

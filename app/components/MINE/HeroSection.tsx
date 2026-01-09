@@ -57,7 +57,7 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
     return (
         <div className="grid grid-cols-2 gap-3 items-center md:h-50 h-40">
             {subTwoMenus?.map((subMenu: any) => (
-                <figure
+                <Link to={`/collections/${subMenu.handle}`}
                     key={subMenu.id}
                     className='h-full w-full p-5 flex md:flex-row flex-col md:items-end items-start md:justify-between justify-end rounded-3xl overflow-hidden relative gap-5 text-white'
                 >
@@ -68,8 +68,7 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
                     />
 
                     <h4 className='md:text-2xl text-xl max-w-sm'>{subMenu.title}</h4>
-                    <Link to={`/collections/${subMenu.handle}`} className='BUTTON1'>Shop Now</Link>
-                </figure>
+                </Link>
             ))}
         </div>
     );
@@ -82,7 +81,7 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
 // AllCategories component displays a horizontal scrollable list of collection categories.
 export function AllCategories({ allMenus }: { allMenus?: any }) {
 
-    // console.log(`%c${JSON.stringify(allMenus)}`, 'color: red; font-size: 20px;')
+
 
     return (
         <div className="w-full flex flex-col gap-5">
@@ -104,7 +103,7 @@ export function AllCategories({ allMenus }: { allMenus?: any }) {
                         />
 
                         {/* Label Badge */}
-                        <caption className="absolute bottom-3 left-3 bg-white px-3 py-1.5 rounded-full md:text-sm text-xs text-start font-bold uppercase">
+                        <caption className="max-w-[80%] absolute bottom-3 left-3 bg-white px-3 py-1.5 rounded-full text-xs text-start font-bold uppercase">
                             {singleMenu.title}
                         </caption>
                     </Link>

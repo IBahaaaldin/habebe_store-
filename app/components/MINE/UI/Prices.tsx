@@ -1,7 +1,6 @@
 
 
 // CC1 and CC2 
-
 export default function Prices({ price, currency, CC1, CC2 }: { price: string, currency: string, CC1?: string, CC2?: string }) {
 
 
@@ -24,7 +23,7 @@ export default function Prices({ price, currency, CC1, CC2 }: { price: string, c
 
 
     return (
-        <article className='flex flex-col flex-wrap items-start mt-3 '>
+        <article className='flex flex-col flex-wrap items-start'>
             <span className={`${CC1 ?? 'md:text-lg'} text-nowrap text-black font-bold`}>{currency} {numericPrice.toFixed(2)}</span>
 
 
