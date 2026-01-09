@@ -11,7 +11,6 @@ import { Link } from 'react-router';
 export default function HeroSection({ Collections, Title, Description, HeroImg }: { Collections: FeaturedCollectionFragment, Title?: string, Description?: string, HeroImg?: string; }): JSX.Element {
 
 
-
     const defaultHeroImage = HeroImg ?? "https://images.pexels.com/photos/33020904/pexels-photo-33020904.jpeg"
 
     const headText = Title ?? "Buy now, Regret later.";
@@ -55,7 +54,7 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
 
 
     return (
-        <div className="grid grid-cols-2 gap-3 items-center h-50 " >
+        <div className="grid grid-cols-2 gap-3 items-center md:h-50 h-40">
             {subTwoMenus?.map((subMenu: any) => (
                 <figure
                     key={subMenu.id}

@@ -6,11 +6,10 @@ import HeroSection, { AllCategories, TwoGrids } from '~/components/MINE/HeroSect
 import Reviews from '~/components/MINE/Reviews';
 
 // For the collection section
-import { getPaginationVariables } from '@shopify/hydrogen';
-import Collections, { MAINMENU_AND_PRODUCTS_QUERY } from './collections._index';
+import { MAINMENU_AND_PRODUCTS_QUERY } from './collections._index';
 import LoadingSpinner from '~/components/MINE/ReUsable/LoadingSpinner';
-import Logos from '~/components/MINE/Logos';
 import FAQs from '~/components/MINE/FAQs';
+import HeaderText from '~/components/MINE/UI/HeaderText';
 
 
 
@@ -71,18 +70,23 @@ export default function Homepage() {
         Collections={MainCollections}
       />
 
+
       {/* Render the CollectionsSection component, passing the collections data */}
+      {MainCollections.length > 0 &&
+        <TwoGrids
+          subTwoMenus={MainCollections.slice(0, 2)}
+        />
+      }
 
-      <TwoGrids
-        subTwoMenus={MainCollections.slice(0, 2)}
-      />
 
-      <AllCategories
-        allMenus={MainCollections.slice(2)}
-      />
+      {MainCollections.length > 2 &&
+        <AllCategories
+          allMenus={MainCollections.slice(2)}
+        />
+      }
+
+
       {/* <Collections /> */}
-
-
       {MainCollections.map((collection: any) => (
         <div key={collection.id} className="mb-10">
           <MainCollectionsProductsSample
@@ -105,9 +109,6 @@ export default function Homepage() {
 
 
       <FAQs />
-
-
-
       <Reviews />
     </div>
   );
@@ -120,7 +121,7 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
 
   return (
-    <div className="border-b border-black/10 pb-10">
+    <section className="border-b border-black/10 pb-10">
 
 
       <div className='flex flex-row justify-between items-start mb-5 px-[3%]'>
@@ -158,6 +159,35 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
         </Await>
       </Suspense>
 
-    </div>
+
+
+      <article className='flex flex-row bg-zinc-50 border border-black/10 rounded-3xl'>
+        <HeaderText
+          HEAD={`Top Picks from ${collectionTitle}`}
+          SUBHEAD={`Explore our curated selection of top picks from the ${collectionTitle} collection, featuring the best products chosen just for you.`}
+        />
+
+
+        <Suspense fallback={<LoadingSpinner />}>
+          <Await resolve={products}>
+            {(response) => (
+              <div className="grid grid-cols-3 overflow-scroll HIDDEN_SCROLL">
+                {response
+                  ? response?.nodes?.slice(0, 3).map((product: any) => (
+
+                    <ProductItem
+                      key={product.id}
+                      product={product}
+                    />
+
+                  ))
+                  : null}
+              </div>
+            )}
+          </Await>
+        </Suspense>
+      </article>
+
+    </section>
   );
 }

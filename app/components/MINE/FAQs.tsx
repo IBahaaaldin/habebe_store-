@@ -8,59 +8,23 @@ export default function FAQs() {
     const faqs = [
         {
             question: "What is habebe.store?",
-            answer: "habebe.store is a global online marketplace where you can shop for a wide variety of products, all in one place."
-        },
-        {
-            question: "What kind of products do you sell?",
-            answer: "We offer products across many categories including fashion, electronics, home, lifestyle, accessories, gifts, and more."
+            answer: "habebe.store is an online marketplace where you can shop for a wide range of products in one place."
         },
         {
             question: "Do you ship internationally?",
-            answer: "Yes, we ship worldwide. Shipping availability and delivery times may vary by location."
+            answer: "Yes, we ship worldwide. Delivery times vary depending on your location."
         },
         {
             question: "How long does shipping take?",
-            answer: "Delivery times depend on your location and the product. Estimated shipping times are shown at checkout."
-        },
-        {
-            question: "How can I contact customer support?",
-            answer: "You can reach our support team via email or through our official social media channels."
+            answer: "Shipping time depends on the product and destination. Estimated delivery time is shown at checkout."
         },
         {
             question: "What is your return policy?",
-            answer: "We accept returns within 14 days of delivery, as long as the item is unused and in its original condition."
+            answer: "You can return items within 14 days of delivery if they are unused and in original condition."
         },
         {
-            question: "Can I cancel my order?",
-            answer: "Yes, orders can be canceled before they are shipped. Please contact support as soon as possible."
-        },
-        {
-            question: "What payment methods do you accept?",
-            answer: "We accept major credit and debit cards, PayPal, and other secure online payment methods."
-        },
-        {
-            question: "How do I track my order?",
-            answer: "Once your order ships, you’ll receive a confirmation email with tracking details."
-        },
-        {
-            question: "What if my item arrives damaged?",
-            answer: "If your item arrives damaged, contact us within 48 hours of delivery and we’ll arrange a replacement or refund."
-        },
-        {
-            question: "What if I receive the wrong item?",
-            answer: "If you receive an incorrect item, please contact us and we’ll resolve it quickly."
-        },
-        {
-            question: "Can I exchange an item?",
-            answer: "Yes, exchanges are available within 14 days of delivery, subject to product availability."
-        },
-        {
-            question: "Are your products authentic?",
-            answer: "Yes, we work with verified sellers and suppliers to ensure product quality and authenticity."
-        },
-        {
-            question: "Do I need an account to place an order?",
-            answer: "No, you can checkout as a guest without creating an account."
+            question: "How can I contact customer support?",
+            answer: "You can contact us via email or through our official social media channels."
         }
     ];
 
@@ -80,11 +44,10 @@ export default function FAQs() {
 
 
     return (
-        <div className="flex md:flex-row flex-col items-start justify-start w-full gap-10 md:p-10 p-5 border border-black/10 rounded-3xl">
+        <div className="flex flex-col items-start justify-start w-full gap-5 md:p-10 p-5 border border-black/10 rounded-3xl">
 
             <HeaderText
                 HEAD="Frequently Asked Questions"
-                SUBHEAD="Have questions about our services or how we can help your business? Here are some answers to the most frequently asked questions we receive. If you have any other questions or concerns, please don't hesitate to reach out. We're here to help!"
             />
 
 

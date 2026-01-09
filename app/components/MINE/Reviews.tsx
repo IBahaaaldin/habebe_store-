@@ -95,7 +95,7 @@ const testimonials = [
 
 
 
-export default function Reviews({ Title, ProductId }: { Title?: string, ProductId?: string }) {
+export default function Reviews({ Title }: { Title?: string }) {
 
 
     const Head = Title ? `${Title}'s Reviews` : "What our clients say"
@@ -125,9 +125,11 @@ export default function Reviews({ Title, ProductId }: { Title?: string, ProductI
         <section className="flex flex-col items-start justify-start mx-auto w-full">
 
 
-            <HeaderText
-                HEAD={Head}
-            />
+            {Title &&
+                <HeaderText
+                    HEAD={Head}
+                />
+            }
 
 
             <div className='relative w-full'>

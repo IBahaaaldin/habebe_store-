@@ -3,8 +3,6 @@ import AutoScrollArray from "./ReUsable/AutoScrollArray";
 
 
 
-
-
 export const PromotionArray = [
     "Premium quality products across all categories — enjoy exclusive discounts for a limited time",
     "Limited-time offers on best-selling items — save more before deals expire",
@@ -24,6 +22,7 @@ export const PromotionArray = [
 ]
 
 
+
 export default function Logos({ ArrayOfText }: { ArrayOfText?: string[] }) {
     const AltArray = ArrayOfText || PromotionArray
 
@@ -31,6 +30,7 @@ export default function Logos({ ArrayOfText }: { ArrayOfText?: string[] }) {
 
     const reference = useRef<HTMLDivElement>(null)
     AutoScrollArray({ REFERENCE: reference })
+
 
 
     return (

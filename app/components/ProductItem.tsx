@@ -104,7 +104,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
       <Share2
-        className="cursor-pointer absolute top-5 right-5 bg-white/50 backdrop-blur-xs hover:bg-white/70 duration-300 rounded-2xl z-100 text-orange-400 md:p-2 p-1.5 md:w-9 md:h-9 w-7 h-7"
+        className="cursor-pointer absolute top-5 right-5 bg-white/50 backdrop-blur-xs hover:bg-white/70 duration-300 rounded-lg z-100 text-orange-400 md:p-2 p-1.5 md:w-9 md:h-9 w-7 h-7"
         size={40}
         onClick={handleShareClick}
       />

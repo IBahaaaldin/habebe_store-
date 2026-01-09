@@ -2,15 +2,14 @@
 
 
 
-import React from 'react'
 import { motion } from 'framer-motion'
 
 
 
 export default function HeroText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?: string }) {
     return (
-        <div className="flex flex-col z-1 capitalize w-full items-center justify-center gap-5 mb-5" >
-            <h3 className='md:text-7xl text-5xl flex flex-row flex-wrap items-center justify-center  gap-2'>
+        <div className="flex flex-col z-1 capitalize w-full items-start justify-start gap-5 mb-5" >
+            <h3 className='md:text-7xl text-5xl flex flex-row flex-wrap items-start justify-start  gap-2'>
                 {HEAD!.split(' ').map((word, index) => (
                     <span
                         key={index}
@@ -32,7 +31,7 @@ export default function HeroText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?: s
 
 
             {SUBHEAD &&
-                <h4 className='md:text-lg flex flex-row flex-wrap  items-center justify-center gap-1.5 text-wrap text-zinc-300'>
+                <h4 className='md:text-lg flex flex-row flex-wrap  items-start justify-start gap-1.5 text-wrap text-zinc-300'>
                     {SUBHEAD.split(' ').map((word, index) => (
                         <span
                             key={index}

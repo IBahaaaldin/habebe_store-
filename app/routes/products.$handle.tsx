@@ -159,7 +159,8 @@ export default function Product() {
           </article>
 
 
-          <article className='flex flex-col gap-5'>
+          {/* Main notes (TAGS) */}
+          {/* <article className='flex flex-col gap-5'>
             <h4 className='text-2xl font-bold'>Main Notes</h4>
             <div className='overflow-scroll HIDDEN_SCROLL flex flex-row gap-3'>
               {product.tags.map((tag: any) => (
@@ -170,7 +171,7 @@ export default function Product() {
                 </span>
               ))}
             </div>
-          </article>
+          </article> */}
 
           <ProductForm
             productOptions={productOptions}
@@ -183,7 +184,6 @@ export default function Product() {
 
       <Reviews
         Title={title}
-        ProductId={product.id}
       />
 
 
