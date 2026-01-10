@@ -10,6 +10,7 @@ import { MAINMENU_AND_PRODUCTS_QUERY } from './collections._index';
 import LoadingSpinner from '~/components/MINE/ReUsable/LoadingSpinner';
 import FAQs from '~/components/MINE/FAQs';
 import HeaderText, { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
+import { AdsSection } from '~/components/MINE/AdsSections';
 
 
 
@@ -107,15 +108,35 @@ export default function Homepage() {
 export function MainCollectionsProductsSample({ products, collectionTitle, Handle }: { products: any; collectionTitle: string; Handle: string; }) {
 
 
+
+  const MenAds = [
+    "/Images/1.png",
+    "/Images/1.png",
+    "/Images/1.png",
+  ]
+  const WomenAds = [
+    "/Images/2.png",
+    "/Images/2.png",
+    "/Images/2.png",
+  ]
+  const ToolsAds = [
+    "/Images/3.png",
+    "/Images/3.png",
+    "/Images/3.png",
+  ]
+  const ElectronicsnAds = [
+    "/Images/4.png",
+    "/Images/4.png",
+    "/Images/4.png",
+  ]
+
+
   return (
     <section className="flex flex-col gap-5 pb-10">
 
 
       <div className='flex flex-row justify-between items-start'>
-        <h3 className='text-start w-full md:text-3xl text-2xl capitalize'>
-          {collectionTitle}&apos;s Collection
-        </h3>
-
+        <SmallHeaderText HEAD={`${collectionTitle}${collectionTitle.endsWith('s') ? "'" : "'s"} Collection`} />
 
         <Link
           className='LINK'
@@ -127,7 +148,32 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
       </div>
 
 
-      {/* //  */}
+      {/* /// ADS Section */}
+      {(Handle === 'men') &&
+        <AdsSection Array={MenAds} Title={`${collectionTitle}'s Features`} ColHandle={Handle} />
+      }
+      {(Handle === 'women') &&
+        <AdsSection Array={WomenAds} Title={`${collectionTitle}'s Features`} ColHandle={Handle} />
+      }
+      {(Handle === 'tools') &&
+        <AdsSection Array={ToolsAds} Title={`${collectionTitle}'s Features`} ColHandle={Handle} />
+      }
+      {(Handle === 'electronics') &&
+        <AdsSection Array={ElectronicsnAds} Title={`${collectionTitle}'s Features`} ColHandle={Handle} />
+      }
+
+
+
+
+      {(Handle === 'kids') &&
+        <AdsSection Array={ElectronicsnAds} Title={`${collectionTitle}'s Features`} ColHandle={Handle} />
+      }
+
+
+
+
+
+      {/* /   */}
       <Suspense fallback={<LoadingSpinner />}>
         <Await resolve={products}>
           {(response) => (
@@ -181,3 +227,4 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
     </section>
   );
 }
+

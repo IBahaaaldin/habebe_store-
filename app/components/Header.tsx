@@ -13,7 +13,6 @@ import { SearchResultsPredictive } from './SearchResultsPredictive';
 
 
 
-
 interface HeaderProps {
   header: HeaderQuery;
   cart: Promise<CartApiQueryFragment | null>;
@@ -63,7 +62,6 @@ export function HeaderMenu({ menu }: { menu: any }) {
 
   const location = useLocation();
   const currentTabURL = location.pathname.split('/').pop(); // Get the first segment of the path
-
 
 
   return (
@@ -216,10 +214,10 @@ function SearchToggle() {
 }
 
 
+
 /// Display the search results in the same page
 function SamePageSearch() {
   const queriesDatalistId = useId();
-
 
   return (
     <div className='hidden sm:flex'>

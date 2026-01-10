@@ -7,6 +7,9 @@ import { ProductItem } from '~/components/ProductItem';
 import type { ProductFragment } from 'storefrontapi.generated';
 import HeroSection, { AllCategories } from '~/components/MINE/HeroSection';
 import { MAINMENU_AND_SUBMENU_QUERY } from './collections._index';
+import { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
+import { useState, useEffect } from 'react';
+import MainAdsSection from '~/components/MINE/AdsSections';
 
 
 
@@ -77,13 +80,20 @@ function loadDeferredData({ context }: Route.LoaderArgs) {
 export default function Collection() {
   const { collection, menu } = useLoaderData<typeof loader>();
 
-  console.log(`%c${JSON.stringify(collection)}`, 'color: white; font-size: 30px;')
+  // console.log(`%c${JSON.stringify(collection)}`, 'color: white; font-size: 30px;')
 
 
   // The title of the collection is used to filter the main menu 
   // So both the collection title and the menu item title must be the same in shopify
   const specificMenu = menu.items.filter((menuItem: any) => menuItem.title === collection.title)
 
+
+
+  const AdsArray = [
+    "/Images/collectionBanner.png",
+    "/Images/collectionBanner2.png",
+    "/Images/collectionBanner3.png",
+  ]
 
 
   return (
@@ -99,26 +109,18 @@ export default function Collection() {
       />
 
 
-      {/* <TwoGrids
-        subTwoMenus={specificMenu[0]?.items}
-      /> */}
-
       {specificMenu.length > 0 &&
         <AllCategories
           allMenus={specificMenu[0]?.items}
         />
       }
 
-      <div className='space-y-10'>
 
-        <Link
-          to="https://wa.me/+971561576657?text=I'm%20interested%20in%20your%20ad%20on%20Hydrogen"
-          className='w-full lg:h-40 h-30 bg-zinc-50 lg:rounded-3xl rounded-2xl flex items-center justify-center LINK'
-          target='_blank'
-          rel="noreferrer"
-        >
-          your ad here
-        </Link>
+      <div className='space-y-10'>
+        <MainAdsSection
+          Array={AdsArray}
+        />
+
 
 
         <PaginatedResourceSection<ProductFragment>

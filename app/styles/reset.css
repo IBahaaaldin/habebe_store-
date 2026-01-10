@@ -32,14 +32,6 @@ body {
   position: relative;
 }
 
-section {
-  padding: 1rem 0;
-
-  @media (min-width: 768px) {
-    padding: 2rem 0;
-  }
-}
-
 fieldset {
   display: flex;
   flex-direction: column;
