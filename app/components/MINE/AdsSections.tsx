@@ -69,7 +69,7 @@ export function AdsSection({ Array, Title, ColHandle }: { Array: any[], Title: s
                     <Link
                         to={`/collections/${ColHandle}`}
                         key={index}
-                        className='min-w-[45%] aspect-2/1 overflow-hidden bg-center flex flex-col items-start justify-center md:rounded-3xl rounded-2xl'
+                        className='w-[45%] max-h-50 aspect-2/1 overflow-hidden bg-center flex flex-col items-start justify-center md:rounded-3xl rounded-2xl'
                     >
 
                         <img
