@@ -60,7 +60,7 @@ function loadDeferredData({ context }: Route.LoaderArgs) {
 // The homepage component
 export default function Homepage() {
 
-  // const { MainCollections } = useLoaderData<typeof loader>();
+  const { MainCollections } = useLoaderData<typeof loader>();
   // console.log(`%c${JSON.stringify(MainCollections, null, 3)}`, 'color: red; font-size: 20px;')
 
 
