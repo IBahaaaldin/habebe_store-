@@ -10,7 +10,7 @@ import { MAINMENU_AND_PRODUCTS_QUERY } from './collections._index';
 import LoadingSpinner from '~/components/MINE/ReUsable/LoadingSpinner';
 import FAQs from '~/components/MINE/FAQs';
 import HeaderText, { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
-import { AdsSection } from '~/components/MINE/AdsSections';
+import MainAdsSection, { AdsSection } from '~/components/MINE/AdsSections';
 
 
 
@@ -61,6 +61,7 @@ function loadDeferredData({ context }: Route.LoaderArgs) {
 export default function Homepage() {
 
   const { MainCollections } = useLoaderData<typeof loader>();
+  console.log(`%c${JSON.stringify(MainCollections, null, 3)}`, 'color: red; font-size: 20px;')
 
 
   return (
@@ -89,7 +90,8 @@ export default function Homepage() {
       {MainCollections.map((collection: any) => (
         <div key={collection.id} className="mb-10">
           <MainCollectionsProductsSample
-            products={collection.products}
+            mainBanners={collection?.mainBanners?.references?.nodes} // Get the matafield called "main_banners" that has the banners for each collection (if we assigned it to it)
+            products={collection.products} // 
             collectionTitle={collection.title}
             Handle={collection.handle}
           />
@@ -105,7 +107,7 @@ export default function Homepage() {
 
 
 // MainCollectionsProductsSample component
-export function MainCollectionsProductsSample({ products, collectionTitle, Handle }: { products: any; collectionTitle: string; Handle: string; }) {
+export function MainCollectionsProductsSample({ products, collectionTitle, Handle, mainBanners }: { products: any; collectionTitle: string; Handle: string; mainBanners?: any; }) {
 
 
 
@@ -125,16 +127,35 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
     "/Images/3.png",
   ]
   const ElectronicsnAds = [
-    "/Images/4.png",
-    "/Images/4.png",
-    "/Images/4.png",
+    "/Images/3.png",
+    "/Images/3.png",
+    "/Images/3.png",
   ]
+
+  const KidsAds = [
+    "/Images/collectionBanner.png",
+    "/Images/collectionBanner2.png",
+    "/Images/collectionBanner3.png",
+  ]
+
+  const ToolsnAds = [
+    "/Images/collectionBanner.png",
+    "/Images/collectionBanner2.png",
+    "/Images/collectionBanner3.png",
+  ]
+
 
 
   return (
     <section className="flex flex-col gap-5 pb-10">
 
+      {/* /// ADS Section */}
+      {/* {mainBanners.length > 0 &&
+        <MainAdsSection Array={mainBanners} />
+      } */}
 
+
+      {/*  // */}
       <div className='flex flex-row justify-between items-start'>
         <SmallHeaderText HEAD={`${collectionTitle}${collectionTitle.endsWith('s') ? "'" : "'s"} Collection`} />
 
@@ -149,7 +170,7 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
 
       {/* /// ADS Section */}
-      {(Handle === 'men') &&
+      {/* {(Handle === 'men') &&
         <AdsSection Array={MenAds} Title={`${collectionTitle}'s Features`} ColHandle={Handle} />
       }
       {(Handle === 'women') &&
@@ -166,8 +187,11 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
 
       {(Handle === 'kids') &&
-        <AdsSection Array={ElectronicsnAds} Title={`${collectionTitle}'s Features`} ColHandle={Handle} />
+        <MainAdsSection Array={KidsAds} />
       }
+      {(Handle === 'tools') &&
+        <MainAdsSection Array={ToolsnAds} />
+        } */}
 
 
 

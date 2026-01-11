@@ -194,6 +194,8 @@ export const MAINMENU_QUERY = `#graphql
 
 
 
+
+
 export const MAINMENU_AND_PRODUCTS_QUERY = `#graphql
   query MainMenu($handle: String!) {
     menu(handle: $handle) {
@@ -212,6 +214,20 @@ export const MAINMENU_AND_PRODUCTS_QUERY = `#graphql
               altText
               width
               height
+            }
+            mainBanners: metafield(namespace: "custom", key: "main_banners") {
+              references(first: 10) {
+                nodes {
+                  ... on MediaImage {
+                    image {
+                      url
+                      altText
+                      width
+                      height
+                    }
+                  }
+                }
+              }
             }
             # // Fetch products associated with the collection
             products(first: 10) {
