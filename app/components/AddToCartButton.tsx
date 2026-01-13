@@ -23,7 +23,7 @@ export function AddToCartButton({ analytics, children, disabled, lines, onClick,
           <div className='w-full flex items-end justify-end'>
             <button
               type="submit"
-              className={`text-nowrap ${disabled ? 'hidden text-zinc-400 bg-orange-100 rounded-full px-5 py-3 cursor-not-allowed' : `BUTTON1`} ${CC}`}
+              className={`text-nowrap md:text-sm text-xs ${disabled ? 'text-white bg-orange-100 rounded-full md:px-4 py-2 cursor-not-allowed' : `bg-orange-400 p-1.5 text-white rounded-lg hover:bg-orange-300 duration-300 cursor-pointer`} ${CC}`}
               onClick={() => {
                 onClick?.();
                 // toast.success('Item added to cart');

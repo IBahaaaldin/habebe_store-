@@ -45,12 +45,11 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
 
-
   return (
-    <article className='min-w-40 max-w-60 relative w-full h-fit items-end flex flex-col gap-3 p-2 bg-zinc-50 rounded-3xl overflow-hidden'>
+    <article className='w-full max-w-45 min-w-35 relative h-fit items-end flex flex-col gap-3 md:p-2 p-1 bg-zinc-50 md:rounded-2xl rounded-xl overflow-hidden'>
       {image && (
         <Link
-          className="w-full rounded-2xl overflow-hidden "
+          className="w-full rounded-2xl overflow-hidden"
           key={product.id}
           prefetch="intent"
           to={variantUrl}
@@ -60,7 +59,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
             aspectRatio="1/1"
             data={image}
             loading={loading}
-            className='hover:scale-105 duration-300'
+            className='hover:scale-105 duration-300 object-cover min-h-40'
           />
         </Link>
       )}
@@ -71,19 +70,20 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
       {/* /// Details */}
       <article className='px-2 flex flex-col w-full justify-between items-end gap-2'>
-        <h4 className='md:text-lg capitalize w-full'>{product.title.length > 15 ? product.title.slice(0, 15) + '...' : product.title}</h4>
+        <Link to={variantUrl} className='flex w-full hover:underline'>
+          <span className='capitalize w-full'>{product.title.length > 15 ? product.title.slice(0, 15) + '...' : product.title}</span>
+        </Link>
 
         <div className='flex flex-row w-full justify-between items-start '>
           <Prices
-            CC1='md:text-lg text-sm'
-            CC2='md:text-sm text-xs'
+            CC1='text-xs'
             price={price}
             currency={currency}
           />
 
           <AddToCartButton
             disabled={!product?.variants.nodes[0]?.availableForSale}
-            CC='w-fit md:text-xs text-xs'
+            CC='w-fit'
             lines={
               product?.variants.nodes[0]
                 ? [
@@ -97,7 +97,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
             }
           >
             {/* The Sold out is hidden  from the comp itself */}
-            {product?.variants.nodes[0]?.availableForSale ? <ShoppingCart size={15}/> : 'Sold out'} 
+            {product?.variants.nodes[0]?.availableForSale ? <ShoppingCart size={15} /> : 'Sold out'}
           </AddToCartButton>
         </div>
       </article>
@@ -105,35 +105,18 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
       <Share2
-        className="cursor-pointer absolute top-5 right-5 bg-white/80 backdrop-blur-xs hover:bg-white duration-300 rounded-xl z-100 text-orange-400 md:p-2 p-1.5 md:w-8 md:h-8 w-6 h-6"
+        className="cursor-pointer absolute top-4 right-4 bg-white/80 backdrop-blur-xs hover:bg-white duration-300 rounded-lg z-100 text-orange-400 p-1.5 w-7 h-7"
         size={40}
         onClick={handleShareClick}
       />
       {showCopyMessage && (
-        <div className="absolute top-6 right-17 px-3 py-1 bg-green-700/70 backdrop-blur-sm rounded-xl text-white text-sm">
+        <span className="absolute top-15 right-5 px-3 py-1 bg-green-700/70 backdrop-blur-sm rounded-lg text-white">
           {copyMessage}
-        </div>
+        </span>
       )}
     </article>
   );
 }
-
-
-
-// export default function Ratings({ RATING }: { RATING: number }) {
-//   return (
-//     <div className="text-xl flex flex-row items-center gap-2">
-
-
-//       <span className="flex flex-row  gap-1">
-//         <Star className="text-transparent w-7 h-7 fill-green-700" />
-//       </span>
-
-
-//       <small>({RATING}/5)</small>
-//     </div>
-//   )
-// }
 
 
 

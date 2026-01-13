@@ -17,7 +17,7 @@ import { SearchFormPredictive } from '~/components/SearchFormPredictive';
 
 
 export const meta: Route.MetaFunction = () => {
-  return [{ title: `Hydrogen | Search` }];
+  return [{ title: `HABEBE | Search` }];
 };
 
 

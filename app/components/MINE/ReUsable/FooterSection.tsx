@@ -86,38 +86,42 @@ export default function FooterSection({ header }: { header: any }) {
 
 
     return (
-        <footer className="max-w-[1750px] px-[5%] mx-auto duration-500 grid lg:grid-cols-3 md:grid-cols-2 md:gap-15 gap-10 md:gap-y-5 gap-y-5 items-between justify-between bg-white rounded-3xl relative overflow-hidden py-10 *:min-w-1/3 *:w-full">
+        <footer className="HOME_WRAPPER duration-500 grid lg:grid-cols-3 md:grid-cols-2 md:gap-x-10 gap-x-5 md:gap-y-15 gap-y-10 items-between justify-between bg-white md:rounded-2xl rounded-xl relative overflow-hidden py-10 *:min-w-1/3 *:w-full">
 
 
 
             {/* /// SECOND MENU */}
-            <section className='flex flex-col min-h-full gap-2'>
-                <h3 className="text-black/50 mb-3">
+            <section className='flex flex-col min-h-full gap-1'>
+                <h5 className="text-black/50 mb-3">
                     Quick Navigation
-                </h3>
+                </h5>
 
-                {PagesLinks.map((page, index) => (
-                    <Link
-                        to={page.path || '#'}
-                        key={index}
-                        className="hover:text-orange-400 text-black font-bold text-start duration-500"
-                    >
-                        {page.name}
-                    </Link>
-                ))}
+                <div className="flex flex-col gap-1">
+                    {PagesLinks.map((page, index) => (
+                        <Link
+                            to={page.path || '#'}
+                            key={index}
+                            className="hover:text-orange-400 text-black font-bold text-start duration-500"
+                        >
+                            <span>
+                                {page.name}
+                            </span>
+                        </Link>
+                    ))}
+                </div>
             </section>
 
 
 
 
             {/* /// MENU */}
-            <section className='flex flex-col min-h-full gap-2'>
-                <h3 className="text-black/50 mb-3">
+            <section className='flex flex-col min-h-full gap-1'>
+                <h5 className="text-black/50 mb-3">
                     Main Categories
-                </h3>
+                </h5>
 
 
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-1">
                     {header.menu?.items.map((menu: any) => (
                         <Link
                             to={`/collections/${menu.resource?.handle || '#'}`}
@@ -125,7 +129,9 @@ export default function FooterSection({ header }: { header: any }) {
 
                             className="hover:text-orange-400 text-black font-bold text-start duration-500"
                         >
-                            {menu.title}
+                            <span>
+                                {menu.title}
+                            </span>
                         </Link>
                     ))}
                 </div>
@@ -136,16 +142,16 @@ export default function FooterSection({ header }: { header: any }) {
             {/* /// Subscribe */}
             <section className='flex flex-col min-h-full justify-start gap-5'>
                 <div className="flex flex-col gap-3">
-                    <h3 className="text-black">
+                    <h5 className="text-black/50">
                         Subscribe to our newsletter
-                    </h3>
-                    <p className="text-black/50  ">Dont miss our latest news, updates, and exclusive offers and stay ahead of your peers</p>
+                    </h5>
+                    <span className="text-black">Dont miss our latest news, updates, and exclusive offers and stay ahead of your peers</span>
                 </div>
 
                 <input
                     type="text"
                     placeholder="Enter your email"
-                    className="placeholder:text-black/40 w-full bg-transparent p-1 text-black border-b border-black/40 py-1 outline-none"
+                    className="INPUT"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
@@ -160,7 +166,7 @@ export default function FooterSection({ header }: { header: any }) {
             {/* /// ABOUT US */}
             <section className="w-full flex flex-row gap-3 items-start justify-start">
                 {header.shop.brand?.logo?.image?.url && (
-                    <figure className=" max-w-20 max-h-20 overflow-hidden">
+                    <figure className="w-17  overflow-hidden">
                         <Image
                             src={header.shop.brand.logo.image.url}
                             alt={header.shop.name}
@@ -173,17 +179,17 @@ export default function FooterSection({ header }: { header: any }) {
                 {/* //  */}
                 <div className="flex flex-col gap-3">
                     {header.shop.name && (
-                        <h1 className="text-3xl text-nowrap font-bold">{header.shop.name}</h1>
+                        <h4 className="text-nowrap font-bold">{header.shop.name}</h4>
                     )}
 
 
-                    <article className=" w-fit flex flex-row items-center gap-5 ">
-                        {socialLinks.map((link, index) => (
+                    <article className=" w-fit flex flex-row items-center gap-3">
+                        {socialLinks.map((link, index: number) => (
                             link && (
                                 <a
                                     key={index}
                                     href={link.path}
-                                    className="text-2xl mt-1 cursor-pointer hover:opacity-50 hover:text-orange-400 duration-300">
+                                    className="text-lg mt-1 cursor-pointer hover:opacity-50 hover:text-orange-400 duration-300">
                                     {link.logo}
                                 </a>
                             )
@@ -197,16 +203,16 @@ export default function FooterSection({ header }: { header: any }) {
             {/* /// Social Media */}
             <section className='flex flex-col min-h-full justify-start gap-10'>
                 <div className="flex flex-col gap-5">
-                    <p className=" text-black/50   leading-5">
+                    <span className=" text-black/50 ">
                         We are here to make life easier, Everything you want, in one place.
-                    </p>
+                    </span>
 
                     <ul className="flex flex-row items-center gap-5 ">
                         <Link to={'/contact-us'}>
                             <button className="BUTTON2 ">Contact Us</button>
                         </Link>
                         <Link to={'mailto:info@habebe.store'} className=" text-black duration-500">
-                            <FaEnvelope className="text-2xl hover:text-orange-400 duration-500" />
+                            <FaEnvelope className="text-lg hover:text-orange-400 duration-500" />
                         </Link>
                     </ul>
                 </div>

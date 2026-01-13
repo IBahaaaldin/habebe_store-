@@ -14,7 +14,7 @@ import MainAdsSection from '~/components/MINE/AdsSections';
 
 
 export const meta: Route.MetaFunction = ({ data }) => {
-  return [{ title: `Hydrogen | ${data?.collection.title ?? ''} Collection` }];
+  return [{ title: `HABEBE | ${data?.collection.title ?? ''} Collection` }];
 };
 
 
@@ -89,11 +89,12 @@ export default function Collection() {
 
 
 
-  const AdsArray = [
-    "/Images/collectionBanner.png",
-    "/Images/collectionBanner2.png",
-    "/Images/collectionBanner3.png",
-  ]
+  // BANNERS for 3th level nested menus if NOT then 2nd level
+
+  const bannersArray =
+    menu?.items.filter((item: { title: any; }) => item.title === collection.title)[0]?.resource?.mainBanners?.references?.nodes ?? menu?.items[0]?.items.filter((item: { title: any; }) => item.title === collection.title)[0]?.resource?.mainBanners?.references?.nodes
+
+  console.log(`%c${JSON.stringify(bannersArray, null, 3)}`, 'color: red; font-size: 20px;')
 
 
   return (
@@ -109,18 +110,18 @@ export default function Collection() {
       />
 
 
-      {specificMenu.length > 0 &&
-        <AllCategories
-          allMenus={specificMenu[0]?.items}
-        />
-      }
+      <AllCategories
+        allMenus={specificMenu[0]?.items}
+      />
 
 
       <div className='space-y-10'>
-        <MainAdsSection
-          Array={AdsArray}
-        />
 
+        {Array.isArray(bannersArray) && bannersArray.length > 0 &&
+          <MainAdsSection
+            bannerArray={bannersArray}
+          />
+        }
 
 
         <PaginatedResourceSection<ProductFragment>

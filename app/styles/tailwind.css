@@ -7,9 +7,9 @@
 
 
 .BUTTON1 {
-    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-3 py-2 font-bold text-white bg-orange-400 rounded-full duration-300 text-nowrap text-xs;
+    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-3 py-1.5 font-bold text-white bg-orange-400 md:rounded-3xl rounded-2xl duration-300 text-nowrap text-xs;
 
-    @apply md:px-5 md:py-3 md:text-base;
+    @apply md:px-5 md:py-2 md:text-sm;
 
     &:hover {
         @apply opacity-70;
@@ -22,9 +22,9 @@
 
 
 .BUTTON2 {
-    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-3 py-2 font-bold text-orange-400 bg-white border border-orange-400 rounded-full duration-300 text-nowrap text-xs;
+    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-3 py-1.5 font-bold text-orange-400 bg-white border border-orange-400 md:rounded-3xl rounded-2xl duration-300 text-nowrap text-xs;
 
-    @apply md:px-5 md:py-3 md:text-base;
+    @apply md:px-5 md:py-2 md:text-sm;
 
     &:hover {
         @apply bg-orange-400 text-white;
@@ -52,8 +52,7 @@
 
 
 .MAIN_COL_CONTAINER {
-    @apply flex flex-col px-[3%] gap-7 my-5 max-w-[1750px] w-full mx-auto h-fit;
-    @apply lg:gap-10 lg:py-3 lg:text-base;
+    @apply flex flex-col px-[2.5%] gap-3 mb-5 max-w-437.5 w-full mx-auto h-fit;
 }
 
 .SEC_COL_CONTAINER {
@@ -71,24 +70,25 @@ small {
 
 
 .INPUT {
-    @apply px-5 py-3 bg-zinc-100 outline-none rounded-3xl w-full;
+    @apply px-3 py-2 bg-zinc-100 outline-none md:rounded-2xl rounded-xl w-full;
+    @apply md:px-4 md:py-2 md:text-sm text-xs;
 }
 
 
 .LINK {
-    @apply text-blue-700 text-nowrap outline-none underline text-sm;
-    @apply lg:text-lg
+    @apply text-blue-700 text-nowrap outline-none underline text-xs;
+    @apply md:text-sm
 }
 
 
 .PRODUCTS_GRID_CONTAINER {
-    @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-y-5 gap-[2%] h-full;
+    @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-y-5 gap-3 h-full;
 }
 
 
 .TAB {
     @apply bg-zinc-50 border border-orange-400 rounded-full px-4 py-2 text-orange-400 text-nowrap;
-    @apply lg:px-5 lg:py-3 lg:text-lg;
+    @apply md:px-5 md:py-3 md:text-lg;
 
     &:hover {
         @apply opacity-50 duration-300;
@@ -98,7 +98,7 @@ small {
 
 .ACTIVE_TAB {
     @apply bg-orange-400 font-bold rounded-full px-4 py-2 text-white text-nowrap;
-    @apply lg:px-5 lg:py-3 lg:text-lg;
+    @apply md:px-5 md:py-3 md:text-lg;
 
     &:hover {
         @apply opacity-50 duration-300;
@@ -113,6 +113,57 @@ form {
 
 
 .SEARCH_CONTAINERS {
-    @apply flex absolute top-20 right-0 left-0 bg-white rounded-3xl overflow-hidden p-5 border border-black/10;
+    @apply flex absolute top-20 right-0 left-0 bg-white md:rounded-2xl rounded-xl overflow-hidden p-5 border border-black/10;
     @apply md:p-10;
 }
+
+.LINK {
+    @apply text-blue-500 underline hover:text-blue-300 active:text-blue-300 duration-300
+}
+
+.HOME_WRAPPER {
+    @apply w-full max-w-437.5 px-[5%] mx-auto;
+}
+
+h1 {
+    @apply md:text-8xl text-6xl
+}
+
+h2 {
+    @apply md:text-5xl text-3xl;
+}
+
+h3 {
+    @apply md:text-4xl text-2xl;
+}
+
+h4 {
+    @apply md:text-2xl text-xl
+}
+
+h5 {
+    @apply md:text-xl text-base
+}
+
+h6 {
+    @apply md:text-lg text-base
+}
+
+p {
+    @apply md:text-base text-sm;
+}
+
+span {
+    @apply md:text-sm text-xs;
+}
+
+/* 
+  h1: 8xl - 5xl
+  h2: 6xl - 3xl
+  h3: 4xl - 2xl
+  h4: 2xl - xl
+  h5: xl - lg
+  h6: lg - base
+  p: base - sm
+  span: sm - xs
+*/

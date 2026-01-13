@@ -105,7 +105,6 @@ export default function Reviews({ Title }: { Title?: string }) {
     const [commentSubmited, setcommentSubmited] = useState(false)
 
 
-
     function handleCommentSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
@@ -133,36 +132,30 @@ export default function Reviews({ Title }: { Title?: string }) {
 
 
             <div className='relative w-full'>
-                <div ref={containerRef} className='flex flex-row overflow-hidden py-5 gap-5 justify-start w-full'>
+                <div ref={containerRef} className='flex flex-row overflow-hidden py-5 gap-3 justify-start w-full'>
                     {testimonials.map((testimonial, index) => (
                         <article
                             key={index}
-                            className="overflow-hidden border border-black/10  min-w-80 min-h-full flex flex-col items-stretch gap-5 bg-white  rounded-3xl p-10"
+                            className="min-w-60 overflow-hidden border border-black/10 flex flex-col items-stretch gap-3 bg-white  md:rounded-2xl rounded-xl md:px-5 md:py-7 p-3"
                         >
 
                             <span className='flex flex-row '>
-                                {Array.from({ length: 5 }, (_, index) => index + 1).map((star, index) =>
-                                    (testimonial.rating >= star ? <Star size={22} key={index} className='fill-green-700 text-transparent' /> : <StarHalf size={22} className='fill-green-700 text-transparent' key={index} />)
+                                {Array.from({ length: 5 }, (_, index: number) => index + 1).map((star, index) =>
+                                    (testimonial.rating >= star ? <Star size={20} key={index} className='fill-green-700 text-transparent' /> : <StarHalf size={22} className='fill-green-700 text-transparent' key={index} />)
                                 )}
                             </span>
 
-                            <p className='md:text-lg text-sm'> {testimonial.text}</p>
+                            <span> {testimonial.text}</span>
 
                             <div className='flex flex-col items-start justify-start'>
-                                <p className="text-black/30 text-sm">@{testimonial.user}</p>
+                                <span className="text-black/30 ">@{testimonial.user}</span>
 
 
-                                {testimonial.verified ?
-                                    <div className="flex items-center text-sm">
-                                        <IoCheckmarkCircle className="text-green-700 mr-1" />
-                                        <span className="">Verified Rating</span>
-                                    </div>
-                                    :
-                                    <div className="flex items-center text-sm">
-                                        <IoCheckmarkCircle className="text-zinc-500 mr-1" />
-                                        <span className="">Unverified Rating</span>
-                                    </div>
-                                }
+
+                                <p className="flex items-center">
+                                    <IoCheckmarkCircle className={`${testimonial.verified ? "text-green-700" : "text-zinc-500 "} mr-1`} />
+                                    <span className="">{testimonial.verified ? "Unverified Rating" : "Verified Rating"}</span>
+                                </p>
                             </div>
                         </article>
                     ))}
@@ -172,29 +165,29 @@ export default function Reviews({ Title }: { Title?: string }) {
 
                 {/* ABSOLUTE */}
                 <div
-                    className="z-1 absolute bg-gradient-to-r to-white from-transparent top-0 right-0 lg:w-40 w-20 h-full pointer-events-none"
+                    className="z-1 absolute bg-linear-to-r to-white from-transparent top-0 right-0 w-[10%] h-full pointer-events-none"
                 />
-                <div className="z-1 absolute bg-gradient-to-r from-white to-transparent top-0 left-0 lg:w-40 w-20 h-full pointer-events-none" />
+                <div className="z-1 absolute bg-linear-to-r from-white to-transparent top-0 left-0 w-[10%] h-full pointer-events-none" />
 
             </div>
 
 
 
             {/* Comments section */}
-            <article className="flex flex-col gap-5 items-start justify-start w-full lg:my-10 my-3">
+            <article className="flex flex-col gap-5 items-start justify-start w-full lg:my-7 my-3">
 
                 {commentSubmited ? (
-                    <div className="w-full flex flex-col gap-5 items-center justify-center p-10 border border-green-700 rounded-3xl bg-green-50">
+                    <div className="w-full flex flex-col items-center justify-center p-10 border border-green-700/20 md:rounded-2xl rounded-xl bg-green-50">
                         <IoCheckmarkCircle className="text-green-700 h-20 w-20" />
-                        <h3 className="text-2xl font-bold">Thank you for your comment!</h3>
-                        <p className="text-center text-zinc-700">We appreciate your feedback and will use it to improve our products and services.</p>
+                        <h4 className="font-bold">Thank you for your comment!</h4>
+                        <span className="text-center text-zinc-500">We appreciate your feedback and will use it to improve our products and services.</span>
                     </div>
                 ) : (
                     <form onSubmit={handleCommentSubmit} className="flex flex-col min-w-full gap-5 items-start justify-start">
                         <textarea
                             maxLength={200}
                             onChange={(e) => setComment(e.target.value)}
-                            className="w-full bg-zinc-50 resize-none p-5 h-30 rounded-2xl border border-black/5"
+                            className="md:text-sm text-xs w-full bg-zinc-50 resize-none p-5 h-30 rounded-2xl border border-black/5"
                             placeholder="Write a comment for us (Praise or Demolish)"
                         />
                         <button type="submit" className="BUTTON1">Submit</button>

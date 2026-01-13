@@ -81,7 +81,7 @@ function CollectionItem({ collection, index, }: { collection: CollectionFragment
       to={`/collections/${collection.handle}`}
     // prefetch="intent"
     >
-      <div className='max-h-100 h-full lg:rounded-3xl rounded-xl overflow-hidden'>
+      <div className='max-h-100 h-full md:rounded-2xl rounded-xl overflow-hidden'>
         {collection?.image && (
           <Image
             className='object-cover hover:scale-110 duration-500 h-full -z-1'
@@ -109,12 +109,12 @@ export const MAINMENU_AND_SUBMENU_QUERY = `#graphql
   query MainMenu($handle: String!) {
     menu(handle: $handle) {
       title
-      # Fetch mainmenu items
       items {
         id
         title
         url
         resource {
+          # /// Fetch mainmenu items
           ... on Collection {
             handle
             title
@@ -125,9 +125,24 @@ export const MAINMENU_AND_SUBMENU_QUERY = `#graphql
               width
               height
             }
+            # /// Fetch metafield for main banners only for 2nd level array
+            mainBanners: metafield(namespace: "custom", key: "main_banners") {
+              references(first: 10) {
+                nodes {
+                  ... on MediaImage {
+                    image {
+                      url
+                      altText
+                      width
+                      height
+                    }
+                  }
+                }
+              }
+            }
           }
         }
-        # Fetch submenu items
+        # /// Fetch submenu items
         items {
           id
           title
@@ -142,6 +157,21 @@ export const MAINMENU_AND_SUBMENU_QUERY = `#graphql
                 altText
                 width
                 height
+              }
+              # /// Fetch metafield for main banners only for 3th level array
+              mainBanners: metafield(namespace: "custom", key: "main_banners") {
+                references(first: 10) {
+                  nodes {
+                    ... on MediaImage {
+                      image {
+                        url
+                        altText
+                        width
+                        height
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -202,7 +232,7 @@ export const MAINMENU_AND_PRODUCTS_QUERY = `#graphql
       items {
         title
         resource {
-          # // Fetch collection details
+          # /// Fetch collection details
           ... on Collection {
             id
             title
@@ -215,6 +245,7 @@ export const MAINMENU_AND_PRODUCTS_QUERY = `#graphql
               width
               height
             }
+            # /// Fetch metafield for main banner
             mainBanners: metafield(namespace: "custom", key: "main_banners") {
               references(first: 10) {
                 nodes {
@@ -229,7 +260,35 @@ export const MAINMENU_AND_PRODUCTS_QUERY = `#graphql
                 }
               }
             }
-            # // Fetch products associated with the collection
+            scrollableBanners: metafield(namespace: "custom", key: "scroll_banners") {
+              references(first: 10) {
+                nodes {
+                  ... on MediaImage {
+                    image {
+                      url
+                      altText
+                      width
+                      height
+                    }
+                  }
+                }
+              }
+            }
+              gridBanners: metafield(namespace: "custom", key: "grid_banners") {
+              references(first: 10) {
+                nodes {
+                  ... on MediaImage {
+                    image {
+                      url
+                      altText
+                      width
+                      height
+                    }
+                  }
+                }
+              }
+            }
+            # /// Fetch products associated with the collection
             products(first: 10) {
               nodes {
                 id

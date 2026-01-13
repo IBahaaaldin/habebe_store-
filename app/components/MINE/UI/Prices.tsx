@@ -24,13 +24,13 @@ export default function Prices({ price, currency, CC1, CC2 }: { price: string, c
 
     return (
         <article className='flex flex-col flex-wrap items-start'>
-            <span className={`${CC1 ?? 'md:text-lg'} text-nowrap text-black font-bold`}>{currency} {numericPrice.toFixed(2)}</span>
+            <div className={`${CC1 ?? 'text-sm'} text-nowrap text-black font-bold`}>{currency} {numericPrice.toFixed(2)}</div>
 
 
             {discountPercentage > 0 &&
-                (<span className={`${CC2 ?? 'md:text-sm'} text-zinc-400 line-through`}>
+                (<div className={`${CC2 ?? 'text-xs'} text-zinc-400 line-through`}>
                     {fakeOriginalPrice.toFixed(2)}
-                </span>)
+                </div>)
             }
 
         </article >

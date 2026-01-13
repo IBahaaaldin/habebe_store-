@@ -10,7 +10,7 @@ import { MAINMENU_AND_PRODUCTS_QUERY } from './collections._index';
 import LoadingSpinner from '~/components/MINE/ReUsable/LoadingSpinner';
 import FAQs from '~/components/MINE/FAQs';
 import HeaderText, { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
-import MainAdsSection, { AdsSection } from '~/components/MINE/AdsSections';
+import MainAdsSection, { GridAdsSection, ScrollAdsSection } from '~/components/MINE/AdsSections';
 
 
 
@@ -18,7 +18,7 @@ import MainAdsSection, { AdsSection } from '~/components/MINE/AdsSections';
 
 // Set the seo meta tags for the homepage
 export const meta: Route.MetaFunction = () => [
-  { title: 'Hydrogen | Home' },
+  { title: 'HABEBE | Home' },
   { name: 'description', content: 'Welcome to our awesome shop — discover featured collections and great products!' },
 ];
 
@@ -41,7 +41,7 @@ async function loadCriticalData({ context }: Route.LoaderArgs) {
     context.storefront.query(MAINMENU_AND_PRODUCTS_QUERY, { variables: { handle: 'main-menu' } }),
   ]);
 
-  const MainCollections = MainMenu.menu.items.map((item: any) => item.resource); // Used for Fetching Collections like => Men, Women, Unisex, ...
+  const MainCollections = MainMenu?.menu?.items?.map((item: any) => item.resource); // Used for Fetching Collections like => Men, Women, Unisex, ...
 
 
   return {
@@ -72,18 +72,14 @@ export default function Homepage() {
 
 
       {/* Render the CollectionsSection component, passing the collections data */}
-      {MainCollections.length > 0 &&
-        <TwoGrids
-          subTwoMenus={MainCollections.slice(0, 2)}
-        />
-      }
+      <TwoGrids
+        subTwoMenus={MainCollections.slice(0, 2)}
+      />
 
 
-      {MainCollections.length > 2 &&
-        <AllCategories
-          allMenus={MainCollections.slice(2)}
-        />
-      }
+      <AllCategories
+        allMenus={MainCollections.slice(2)}
+      />
 
 
       {/* <Collections /> */}
@@ -91,9 +87,11 @@ export default function Homepage() {
         <div key={collection.id} className="mb-10">
           <MainCollectionsProductsSample
             mainBanners={collection?.mainBanners?.references?.nodes} // Get the matafield called "main_banners" that has the banners for each collection (if we assigned it to it)
-            products={collection.products} // 
-            collectionTitle={collection.title}
-            Handle={collection.handle}
+            scrollBanners={collection?.scrollBanners?.references?.nodes}
+            gridBanners={collection?.gridBanners?.references?.nodes}
+            products={collection?.products} // 
+            collectionTitle={collection?.title}
+            Handle={collection?.handle}
           />
         </div>
       ))}
@@ -107,57 +105,29 @@ export default function Homepage() {
 
 
 // MainCollectionsProductsSample component
-export function MainCollectionsProductsSample({ products, collectionTitle, Handle, mainBanners }: { products: any; collectionTitle: string; Handle: string; mainBanners?: any; }) {
+export function MainCollectionsProductsSample({ products, collectionTitle, Handle, mainBanners, scrollBanners, gridBanners }: { products: any; collectionTitle: string; Handle: string; mainBanners?: any; scrollBanners?: any; gridBanners?: any; }) {
 
 
-
-  const MenAds = [
-    "/Images/1.png",
-    "/Images/1.png",
-    "/Images/1.png",
-  ]
-  const WomenAds = [
-    "/Images/2.png",
-    "/Images/2.png",
-    "/Images/2.png",
-  ]
-  const ToolsAds = [
-    "/Images/3.png",
-    "/Images/3.png",
-    "/Images/3.png",
-  ]
-  const ElectronicsnAds = [
-    "/Images/3.png",
-    "/Images/3.png",
-    "/Images/3.png",
-  ]
-
-  const KidsAds = [
-    "/Images/collectionBanner.png",
-    "/Images/collectionBanner2.png",
-    "/Images/collectionBanner3.png",
-  ]
-
-  const ToolsnAds = [
-    "/Images/collectionBanner.png",
-    "/Images/collectionBanner2.png",
-    "/Images/collectionBanner3.png",
-  ]
-
-
+  console.log(`%c${scrollBanners}`, 'color: green; font-size: 20px;')
 
   return (
     <section className="flex flex-col gap-5 pb-10">
 
-      {/* /// ADS Section */}
-      {/* {mainBanners.length > 0 &&
-        <MainAdsSection Array={mainBanners} />
+      {/* /// ADS Section for MainBanners */}
+      {/* {mainBanners && mainBanners?.length > 0 &&
+        <MainAdsSection bannerArray={mainBanners} />
       } */}
+
+      {/* /// ADS Section for MainBanners */}
+      <ScrollAdsSection bannerArray={scrollBanners} Title={collectionTitle} ColHandle={Handle} />
+
+      {/* /// ADS Section for MainBanners */}
+      <GridAdsSection ColHandle={Handle} bannerArray={gridBanners} />
 
 
       {/*  // */}
       <div className='flex flex-row justify-between items-start'>
-        <SmallHeaderText HEAD={`${collectionTitle}${collectionTitle.endsWith('s') ? "'" : "'s"} Collection`} />
+        <SmallHeaderText HEAD={`${collectionTitle}${collectionTitle?.endsWith('s') ? "'" : "'s"} Collection`} />
 
         <Link
           className='LINK'
@@ -169,34 +139,6 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
       </div>
 
 
-      {/* /// ADS Section */}
-      {/* {(Handle === 'men') &&
-        <AdsSection Array={MenAds} Title={`${collectionTitle}'s Features`} ColHandle={Handle} />
-      }
-      {(Handle === 'women') &&
-        <AdsSection Array={WomenAds} Title={`${collectionTitle}'s Features`} ColHandle={Handle} />
-      }
-      {(Handle === 'tools') &&
-        <AdsSection Array={ToolsAds} Title={`${collectionTitle}'s Features`} ColHandle={Handle} />
-      }
-      {(Handle === 'electronics') &&
-        <AdsSection Array={ElectronicsnAds} Title={`${collectionTitle}'s Features`} ColHandle={Handle} />
-      }
-
-
-
-
-      {(Handle === 'kids') &&
-        <MainAdsSection Array={KidsAds} />
-      }
-      {(Handle === 'tools') &&
-        <MainAdsSection Array={ToolsnAds} />
-        } */}
-
-
-
-
-
       {/* /   */}
       <Suspense fallback={<LoadingSpinner />}>
         <Await resolve={products}>
@@ -206,7 +148,7 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
                 ? response?.nodes?.map((product: any) => (
 
                   <ProductItem
-                    key={product.id}
+                    key={product?.id}
                     product={product}
                   />
 
@@ -220,7 +162,7 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
 
       {/* //  */}
-      <article className='flex lg:flex-row flex-col justify-between w-full gap-5 gap-y-7 md:p-10 p-5 bg-zinc-200 rounded-3xl'>
+      <article className='flex lg:flex-row flex-col justify-between w-full gap-5 gap-y-7 md:p-7 p-5 bg-zinc-200 md:rounded-2xl rounded-xl'>
 
         <SmallHeaderText
           HEAD={<>Top Picks from <b>{collectionTitle}</b></>}
@@ -231,12 +173,12 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
         <Suspense fallback={<LoadingSpinner />}>
           <Await resolve={products}>
             {(response) => (
-              <div className="flex flex-row gap-5 overflow-x-scroll HIDDEN_SCROLL">
+              <div className="flex flex-row gap-3 overflow-x-scroll HIDDEN_SCROLL">
                 {response
                   ? response?.nodes?.slice(0, 3)?.map((product: any) => (
 
                     <ProductItem
-                      key={product.id}
+                      key={product?.id}
                       product={product}
                     />
 

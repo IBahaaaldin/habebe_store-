@@ -4,9 +4,6 @@ import type { Maybe, ProductOptionValueSwatch, } from '@shopify/hydrogen/storefr
 import { AddToCartButton } from './AddToCartButton';
 import { useAside } from './Aside';
 import type { ProductFragment } from 'storefrontapi.generated';
-import { ShoppingCart } from 'lucide-react';
-import { CartLineQuantity } from './CartLineItem';
-import { useCart } from '@shopify/hydrogen-react';
 
 
 
@@ -36,10 +33,10 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
           <div key={option.name}>
 
             {/* TITLE for Size & Color */}
-            <h5 className='text-zinc-300 mb-3'>Pick your {option.name}</h5>
+            <p className='text-zinc-300 mb-3'>Pick your {option.name}</p>
 
 
-            <div className="flex flex-row flex-wrap gap-3">
+            <div className="flex flex-row overflow-x-scroll w-full gap-3">
               {option.optionValues.map((value) => {
                 const {
                   name,
@@ -85,7 +82,7 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
                     <button
                       type="button"
                       key={option.name + name}
-                      className={`px-5 py-2 rounded-full
+                      className={`md:px-4 px-3 py-2 rounded-full text-nowrap text-xs
                         ${!available
                           ? 'opacity-40 bg-zinc-100 text-black cursor-not-allowed ' : `
                             ${option.name.toLowerCase() === 'size' &&
@@ -110,7 +107,7 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
 
                       }}
                     >
-                      <ProductOptionSwatch swatch={swatch} name={name} />
+                        <ProductOptionSwatch swatch={swatch} name={name} />
                     </button>
                   );
                 }
@@ -167,7 +164,7 @@ function ProductOptionSwatch({ swatch, name, }: { swatch?: Maybe<ProductOptionVa
 
 
   return (
-    <div
+    <span
       aria-label={name}
       className={`w-10 h-10 rounded-full `}
       style={{
@@ -176,6 +173,6 @@ function ProductOptionSwatch({ swatch, name, }: { swatch?: Maybe<ProductOptionVa
     >
       {/* {color} */}
       {!!image && <img src={image} alt={name} />}
-    </div>
+    </span>
   );
 }

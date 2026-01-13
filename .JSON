@@ -1,37 +1,736 @@
-[
-    {
-        "id": "gid://shopify/Collection/449068073172",
-        "title": "Men",
-        "description": "Discover our Men’s Collection—crafted for style, comfort, and confidence. From everyday essentials to statement pieces, each item blends quality materials with modern design, perfect for any occasion.",
-        "handle": "men",
-        "image": {
-            "id": "gid://shopify/CollectionImage/1709073301716",
-            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-pixabay-157928_fb3d8146-4a33-4d57-a5d3-e0e8693c0580.jpg?v=1766849463",
-            "altText": "Men Collection",
-            "width": 5706,
-            "height": 3804
-        },
-        "mainBanners": {
-            "references": {
-                "nodes": [
-                    {
+{
+    "title": "main-menu",
+    "items": [
+        {
+            "id": "gid://shopify/MenuItem/610680504532",
+            "title": "Fashion",
+            "url": "https://tedrk1-wu.myshopify.com/collections/fashion",
+            "resource": {
+                "handle": "fashion",
+                "title": "Fashion",
+                "image": {
+                    "id": "gid://shopify/CollectionImage/1709086736596",
+                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-chuchuphinh-6201198.jpg?v=1766848309",
+                    "altText": null,
+                    "width": 5968,
+                    "height": 3984
+                }
+            },
+            "items": [
+                {
+                    "id": "gid://shopify/MenuItem/611002876116",
+                    "title": "Women",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/women",
+                    "resource": {
+                        "handle": "women",
+                        "title": "Women",
                         "image": {
-                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/Black_Brown_and_Orange_Modern_Tires_Photo_Automotive_Banner.jpg?v=1768129331",
+                            "id": "gid://shopify/CollectionImage/1709073334484",
+                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-elif-s-986907269-35349238.jpg?v=1766849431",
                             "altText": null,
-                            "width": 3780,
-                            "height": 1890
-                        }
-                    },
-                    {
+                            "width": 6000,
+                            "height": 4000
+                        },
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/611002253524",
+                    "title": "Men",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/men",
+                    "resource": {
+                        "handle": "men",
+                        "title": "Men",
                         "image": {
-                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/Black_and_Beige_Minimalist_Black_Friday_Sale_Banner.jpg?v=1768129310",
-                            "altText": null,
-                            "width": 3780,
-                            "height": 1890
+                            "id": "gid://shopify/CollectionImage/1709073301716",
+                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-pixabay-157928_fb3d8146-4a33-4d57-a5d3-e0e8693c0580.jpg?v=1766849463",
+                            "altText": "Men Collection",
+                            "width": 5706,
+                            "height": 3804
+                        },
+                        "mainBanners": {
+                            "references": {
+                                "nodes": [
+                                    {
+                                        "image": {
+                                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/wide1.jpg?v=1768145267",
+                                            "altText": null,
+                                            "width": 350,
+                                            "height": 50
+                                        }
+                                    },
+                                    {
+                                        "image": {
+                                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/wide2.jpg?v=1768145267",
+                                            "altText": null,
+                                            "width": 350,
+                                            "height": 50
+                                        }
+                                    },
+                                    {
+                                        "image": {
+                                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/wide3.jpg?v=1768145267",
+                                            "altText": null,
+                                            "width": 350,
+                                            "height": 50
+                                        }
+                                    }
+                                ]
+                            }
                         }
                     }
-                ]
-            }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/611002220756",
+                    "title": "Kids",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/kids",
+                    "resource": {
+                        "handle": "kids",
+                        "title": "Kids",
+                        "image": {
+                            "id": "gid://shopify/CollectionImage/1709073367252",
+                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-pixabay-157928.jpg?v=1766849334",
+                            "altText": null,
+                            "width": 5472,
+                            "height": 3648
+                        },
+                        "mainBanners": null
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gid://shopify/MenuItem/608163135700",
+            "title": "Pets",
+            "url": "https://tedrk1-wu.myshopify.com/collections/pets/Pet-Outdoor-Supplies+Pet-Furniture+Pet-Drinking-&-Feeding+Fish-&-Aquatic+Pet-Collars+Harnesses-&-Accessories+Pet-Toys+Pet-Bedding+Pet-Apparels+Bird-Supplies+Pet-Grooming",
+            "resource": {
+                "handle": "pets",
+                "title": "Pets",
+                "image": {
+                    "id": "gid://shopify/CollectionImage/1709086703828",
+                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-marcello-sokal-62573206-8556247.jpg?v=1766848247",
+                    "altText": null,
+                    "width": 3008,
+                    "height": 2000
+                }
+            },
+            "items": [
+                {
+                    "id": "gid://shopify/MenuItem/608441565396",
+                    "title": "Pet Outdoor Supplies",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-outdoor-supplies/Barking-Control-Equipments+Trainers+Dog-Training-Pads-&-Diapers+Pet-Snacks+Pet-Bags+Pet-Seat-Belts+Pet-Car-Mats+Pet-Guardrails",
+                    "resource": {
+                        "handle": "pet-outdoor-supplies",
+                        "title": "Pet Outdoor Supplies",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441598164",
+                    "title": "Pet Furniture",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-furniture/Cat-Scratching-Posts+Pet-Furniture-Protectors+Cat-Trees-&-Condos+Pet-Furniture-Tools+Pet-Houses-&-Cages+Dog-Stairs-&-Steps+Pet-Tents+Pet-Hammocks",
+                    "resource": {
+                        "handle": "pet-furniture",
+                        "title": "Pet Furniture",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441630932",
+                    "title": "Pet Drinking & Feeding",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-drinking-feeding/Pet-Bowls+Pet-Drinking-Tools+Pet-Feeding-Tools",
+                    "resource": {
+                        "handle": "pet-drinking-feeding",
+                        "title": "Pet Drinking & Feeding",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441663700",
+                    "title": "Fish & Aquatic Pets",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/fish-aquatic-pets/Fish-Tanks+Fish-Tank-Decorations+Fish-Tank-Cleaning-Supplies",
+                    "resource": {
+                        "handle": "fish-aquatic-pets",
+                        "title": "Fish & Aquatic Pets",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441696468",
+                    "title": "Pet Collars, Harnesses & Accessories",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-collars-harnesses-accessories/Pet-Hair-Accessories+Pet-Bows-&-Ties+Pet-Necklaces+Pet-Headwears+Pet-Glasses+Pet-Collars+Pet-Leashes+Pet-Harnesses+Pet-Muzzles+Pet-Collar+Leash-&-Harness-Sets+Custom-Pet-tags+Collars+Leashes-&-Harnesses",
+                    "resource": {
+                        "handle": "pet-collars-harnesses-accessories",
+                        "title": "Pet Collars, Harnesses & Accessories",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441729236",
+                    "title": "Pet Toys",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-toys/Pet-Chase-Toys+Pet-Chew-Toys+Pet-Training-and-Educational-Toys+Pet-Sound-Toys+Pet-Tunnel-Toys+Pet-Toy-Set+Pet-Plush-Toys",
+                    "resource": {
+                        "handle": "pet-toys",
+                        "title": "Pet Toys",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441762004",
+                    "title": "Pet Bedding",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-bedding/Pet-Mats+Pet-Nests+Pet-Beds+Pet-Blankets-&-Quilts",
+                    "resource": {
+                        "handle": "pet-bedding",
+                        "title": "Pet Bedding",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441794772",
+                    "title": "Pet Apparels",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-apparels/Pet-Dresses+Pet-Tops+Pet-Sweaters+Pet-Sweatshirts-&-Hoodies+Pet-Coats-&-Jackets+Pet-Jumpsuits+Pet-Pajamas+Pet-Clothings+Pet-Functional-Clothings+Pet-Clothing-Sets+Pet-Down-&-Parkas+Pet-Shoes-&-Socks+Pet-Scarves+Pet-Bags",
+                    "resource": {
+                        "handle": "pet-apparels",
+                        "title": "Pet Apparels",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441827540",
+                    "title": "Bird Supplies",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/bird-supplies/Bird-Feeders+Bird-Cages+Bird-Swings+Bird-Toys+Bird-Travel-Bags+Bird-Accessories",
+                    "resource": {
+                        "handle": "bird-supplies",
+                        "title": "Bird Supplies",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441860308",
+                    "title": "Pet Groomings",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pet-grooming/Pet-Hair-Removers-&-Combs+Pet-Nail-Polishers+Pet-Shower-Products+Pet-Towels",
+                    "resource": {
+                        "handle": "pet-grooming",
+                        "title": "Pet Grooming",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gid://shopify/MenuItem/608163102932",
+            "title": "Home",
+            "url": "https://tedrk1-wu.myshopify.com/collections/home/Home-Textiles+Festive-&-Party-Supplies+Arts+Crafts-&-Sewing+Kitchen+Dining-&-Bar+Home-Storage+Musical-Instruments+Outdoor-Lighting+Home-Appliances+Indoor-Lighting+LED-Lighting+Tools",
+            "resource": {
+                "handle": "home",
+                "title": "Home",
+                "image": {
+                    "id": "gid://shopify/CollectionImage/1709086769364",
+                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-masoodaslami-19429417.jpg?v=1766848544",
+                    "altText": null,
+                    "width": 4864,
+                    "height": 3243
+                }
+            },
+            "items": [
+                {
+                    "id": "gid://shopify/MenuItem/608441893076",
+                    "title": "Home Textiles",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/home-textiles/Curtains+Cushion-Covers+Towels+Comforters+Bedding-Sets+Pillows",
+                    "resource": {
+                        "handle": "home-textiles",
+                        "title": "Home Textiles",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441925844",
+                    "title": "Festive & Party Supplies",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/festive-party-supplies/Christmas-Decoration-Supplies+Invitation-Cards+Cake-Decorating-Supplies+Decorative-Flowers-&-Wreaths+Party-Masks+Event-&-Party-Supplies",
+                    "resource": {
+                        "handle": "festive-party-supplies",
+                        "title": "Festive & Party Supplies",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441958612",
+                    "title": "Arts, Crafts & Sewing",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/arts-crafts-sewing/Decor-Paintings+Lace+Apparel-Sewing-&-Fabric+Cross-Stitch+Ribbons+Diamond-Painting-Cross-Stitch+Fabric",
+                    "resource": {
+                        "handle": "arts-crafts-sewing",
+                        "title": "Arts, Crafts & Sewing",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608441991380",
+                    "title": "Kitchen, Dining & Bar",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/kitchen-dining-bar/Dinnerware+Kitchen-Knives-&-Accessories+Bakeware+Barware+Drinkware+Cooking-Tools",
+                    "resource": {
+                        "handle": "kitchen-dining-bar",
+                        "title": "Kitchen, Dining & Bar",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608442024148",
+                    "title": "Home Storage",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/home-storage/Stationeries+Furniture+Storage-Bags-&-Cases-&-Boxes+Kitchen-Storage+Home-Office-Storage+Clothing-&-Wardrobe-Storage+Bathroom-Storage+Storage-Bottles-&-Jars",
+                    "resource": {
+                        "handle": "home-storage",
+                        "title": "Home Storage",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608442056916",
+                    "title": "Musical Instruments",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/musical-instruments/Guitars+Violins",
+                    "resource": {
+                        "handle": "musical-instruments",
+                        "title": "Musical Instruments",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608442089684",
+                    "title": "Outdoor Lighting",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/outdoor-lighting/Flashlights-&-Torches+Floodlights+Underwater-Lights+String-Lights+Solar-Lamps",
+                    "resource": {
+                        "handle": "outdoor-lighting",
+                        "title": "Outdoor Lighting",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608442122452",
+                    "title": "Home Appliances",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/home-appliances/Personal-Care-Appliances+Cleaning-Appliances+Air-Conditioning-Appliances+Home-Appliance-Parts+Kitchen-Appliances",
+                    "resource": {
+                        "handle": "home-appliances",
+                        "title": "Home Appliances",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608442155220",
+                    "title": "Indoor Lighting",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/indoor-lighting/Chandeliers+Pendant-Lights+Downlights+Night-Lights+Wall-Lamps+Ceiling-Lights",
+                    "resource": {
+                        "handle": "indoor-lighting",
+                        "title": "Indoor Lighting",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608442187988",
+                    "title": "LED Lighting",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/led-lighting/LED-Spotlights",
+                    "resource": {
+                        "handle": "led-lighting",
+                        "title": "LED Lighting",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608442220756",
+                    "title": "Tools",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/tools-1/Measurement-&-Analysis+Welding-&-Soldering-Supplies+Welding-Equipment+Hand-Tools+Tool-Sets+Tools-Storage+Machine-Tools-&-Accessories+Power-Tools+Woodworking-Machinery+Garden-Tools",
+                    "resource": {
+                        "handle": "tools-1",
+                        "title": "Home Tools",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gid://shopify/MenuItem/607873466580",
+            "title": "Electronics",
+            "url": "https://tedrk1-wu.myshopify.com/collections/electronics/Smart-Electronics+Camera-&-Photo+Accessories-&-Parts+Video-Games+Home-Audio-&-Video+Portable-Audio-&-Video+Mobile-Phone-Parts+Mobile-Phones+Mobile-Phone-Accessories+Cases-&-Covers+Storage-Devices+Tablet-&-Laptop-Accessories+Security-&-Protection+Laptop-&-",
+            "resource": {
+                "handle": "electronics",
+                "title": "Electronics",
+                "image": {
+                    "id": "gid://shopify/CollectionImage/1709086671060",
+                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-sound-on-3761106.jpg?v=1766848055",
+                    "altText": null,
+                    "width": 6137,
+                    "height": 4172
+                }
+            },
+            "items": [
+                {
+                    "id": "gid://shopify/MenuItem/608443171028",
+                    "title": "Smart Electronics",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/smart-electronics/Wearable-Devices+Smart-Home-Appliances+Smart-Wearable-Accessories+Smart-Wristbands+Smart-Watches+Smart-Remote-Controls",
+                    "resource": {
+                        "handle": "smart-electronics",
+                        "title": "Smart Electronics",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443203796",
+                    "title": "Camera & Photo",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/camera-photo/Photo-Studio+Camera-Drones+Camera-&-Photo-Accessories+Digital-Cameras+Action-Cameras+Camcorders",
+                    "resource": {
+                        "handle": "camera-photo",
+                        "title": "Camera & Photo",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443236564",
+                    "title": "Accessories & Parts",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/accessories-parts/Digital-Cables+Home-Electronic-Accessories+Audio-&-Video-Cables+Charger+Batteries+Digital-Gear-Bags",
+                    "resource": {
+                        "handle": "accessories-parts",
+                        "title": "Accessories & Parts",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443269332",
+                    "title": "Video Games",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/video-games/Gamepads+Handheld-Game-Players+Video-Game-Consoles+Stickers+Joysticks",
+                    "resource": {
+                        "handle": "video-games",
+                        "title": "Video Games",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443302100",
+                    "title": "Home Audio & Video",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/home-audio-video/Projectors+Television+TV-Receivers+Audio-Amplifiers+Projectors-&-Accessories+Home-Audio-&-Video+TV-Sticks",
+                    "resource": {
+                        "handle": "home-audio-video",
+                        "title": "Home Audio & Video",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443334868",
+                    "title": "Portable Audio & Video",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/portable-audio-video/Microphones+Speakers+Earphones-&-Headphones+VR-&-AR-Devices+MP3-Players",
+                    "resource": {
+                        "handle": "portable-audio-video",
+                        "title": "Portable Audio & Video",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443367636",
+                    "title": "Mobile Phone Parts",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/mobile-phone-parts/SIM-Card-&-Tools+Mobile-Batteries+Housings+LCDs+Flex-Cables+Touch-Panel",
+                    "resource": {
+                        "handle": "mobile-phone-parts",
+                        "title": "Mobile Phone Parts",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443400404",
+                    "title": "Mobile Phones",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/mobile-phones/Quad-Core+Single-SIM-Card+Dual-SIM-Card+3GB-RAM+Octa-Core+5-inch-Display",
+                    "resource": {
+                        "handle": "mobile-phones",
+                        "title": "Mobile Phones",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443433172",
+                    "title": "Mobile Phone Accessories",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/mobile-phone-accessories/Cables+Power-Bank+Screen-Protectors+Lenses+Holders-&-Stands+Chargers",
+                    "resource": {
+                        "handle": "mobile-phone-accessories",
+                        "title": "Mobile Phone Accessories",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443465940",
+                    "title": "Cases & Covers",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/cases-covers/Huawei-Cases+Patterned-Cases+Cases-For-iPhone-6-&-6-Plus+Wallet-Cases+Cases-For-iPhone-7-&-7-Plus+Galaxy-S8-Cases+IPhone-X-Cases+Galaxy-S7-Cases+Cases-For-iPhone-8-&-8-Plus+Xiaomi-Cases+Silicone-Cases+Flip-Cases+Waterptoof-Cases+Leather-Cases",
+                    "resource": {
+                        "handle": "cases-covers",
+                        "title": "Cases & Covers",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443498708",
+                    "title": "Storage Devices",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/storage-devices/SSD+USB-Flash-Drives+HDD-Enclosures+Memory-Cards+External-Hard-Drives",
+                    "resource": {
+                        "handle": "storage-devices",
+                        "title": "Storage Devices",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443531476",
+                    "title": "Tablet & Laptop Accessories",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/tablet-laptop-accessories/Tablet-LCD-Screens+Laptop-Batteries+Laptop-Bags-&-Cases+Tablet-Cases+Tablet-Accessories",
+                    "resource": {
+                        "handle": "tablet-laptop-accessories",
+                        "title": "Tablet & Laptop Accessories",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443564244",
+                    "title": "Security & Protection",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/security-protection/Alarm-&-Sensor+Fire-Protection+Workplace-Safety-Supplies+Door-Intercom+Surveillance-Products",
+                    "resource": {
+                        "handle": "security-protection",
+                        "title": "Security & Protection",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443597012",
+                    "title": "Laptop & Tablets",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/laptop-tablets/Phone-Call-Tablets+2-in-1-Tablets+Laptops+Tablets+Gaming-Laptops",
+                    "resource": {
+                        "handle": "laptop-tablets",
+                        "title": "Laptop & Tablets",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443629780",
+                    "title": "Office Electronics",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/office-electronics/Office-&-School-Supplies+Computer-Tablet-Accessories+Printer-Supplies+3D-Printers+3D-Pens+Printers+Scanners",
+                    "resource": {
+                        "handle": "office-electronics",
+                        "title": "Office Electronics",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608443662548",
+                    "title": "Networking",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/networking/Modem-Router-Combos+Wireless-Routers+Networking-Tools+3G-Modems+Network-Cards",
+                    "resource": {
+                        "handle": "networking",
+                        "title": "Networking",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                }
+            ]
+        },
+        {
+            "id": "gid://shopify/MenuItem/608289259732",
+            "title": " Automobiles",
+            "url": "https://tedrk1-wu.myshopify.com/collections/automobiles/Motorcycle-Accessories-&-Parts+Interior-Accessories+Auto-Replacement-Parts+Tools+Maintenance-&-Care+Car-Electronics+Exterior-Accessories",
+            "resource": {
+                "handle": "automobiles",
+                "title": "Automobiles",
+                "image": {
+                    "id": "gid://shopify/CollectionImage/1709086802132",
+                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-rulomx-4394396.jpg?v=1766931444",
+                    "altText": null,
+                    "width": 6000,
+                    "height": 4000
+                }
+            },
+            "items": [
+                {
+                    "id": "gid://shopify/MenuItem/608444252372",
+                    "title": "Motorcycle Accessories & Parts",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/motorcycle-accessories-parts",
+                    "resource": {
+                        "handle": "motorcycle-accessories-parts",
+                        "title": "Motorcycle Accessories & Parts",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608444285140",
+                    "title": "Interior Accessories",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/interior-accessories",
+                    "resource": {
+                        "handle": "interior-accessories",
+                        "title": "Interior Accessories",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608444317908",
+                    "title": "Auto Replacement Parts",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/auto-replacement-parts/Interior-Parts+Car-Brake-System+Spark-Plugs-&-Ignition-System+Automobiles-Sensors+Exterior-Parts+Other-Replacement-Parts+Car-Lights+Windscreen-Wipers-&-Windows",
+                    "resource": {
+                        "handle": "auto-replacement-parts",
+                        "title": "Auto Replacement Parts",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608444350676",
+                    "title": "Car Tools, Maintenance & Care",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/tools/Car-Washer+Diagnostic-Tools+Paint-Care+Other-Maintenance-Products",
+                    "resource": {
+                        "handle": "tools",
+                        "title": "Tools",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608444383444",
+                    "title": "Car Electronics",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/car-electronics/Vehicle-Camera+DVR-&-Dash-Camera+Car-Monitors+Vehicle-GPS+Car-Mirror-Video+Car-Radios+GPS-Trackers+Car-Multimedia-Player+Alarm-Systems-&-Security+Jump-Starter",
+                    "resource": {
+                        "handle": "car-electronics",
+                        "title": "Car Electronics",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608444416212",
+                    "title": "Exterior Accessories",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/exterior-accessories/Car-Stickers+Other-Exterior-Accessories+Car-Covers",
+                    "resource": {
+                        "handle": "exterior-accessories",
+                        "title": "Exterior Accessories",
+                        "image": null,
+                        "mainBanners": null
+                    }
+                }
+            ]
         }
+    ]
+}
+
+
+[
+    {
+        "id": "gid://shopify/MenuItem/608289259732",
+        "title": "Automobiles",
+        "url": "https://tedrk1-wu.myshopify.com/collections/automobiles/Motorcycle-Accessories-&-Parts+Interior-Accessories+Auto-Replacement-Parts+Tools+Maintenance-&-Care+Car-Electronics+Exterior-Accessories",
+        "resource": {
+            "handle": "automobiles",
+            "title": "Automobiles",
+            "image": {
+                "id": "gid://shopify/CollectionImage/1709086802132",
+                "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-rulomx-4394396.jpg?v=1766931444",
+                "altText": null,
+                "width": 6000,
+                "height": 4000
+            }
+        },
+        "items": [
+            {
+                "id": "gid://shopify/MenuItem/608444252372",
+                "title": "Motorcycle Accessories & Parts",
+                "url": "https://tedrk1-wu.myshopify.com/collections/motorcycle-accessories-parts",
+                "resource": {
+                    "handle": "motorcycle-accessories-parts",
+                    "title": "Motorcycle Accessories & Parts",
+                    "image": null,
+                    "mainBanners": null
+                }
+            },
+            {
+                "id": "gid://shopify/MenuItem/608444285140",
+                "title": "Interior Accessories",
+                "url": "https://tedrk1-wu.myshopify.com/collections/interior-accessories",
+                "resource": {
+                    "handle": "interior-accessories",
+                    "title": "Interior Accessories",
+                    "image": null,
+                    "mainBanners": null
+                }
+            },
+            {
+                "id": "gid://shopify/MenuItem/608444317908",
+                "title": "Auto Replacement Parts",
+                "url": "https://tedrk1-wu.myshopify.com/collections/auto-replacement-parts/Interior-Parts+Car-Brake-System+Spark-Plugs-&-Ignition-System+Automobiles-Sensors+Exterior-Parts+Other-Replacement-Parts+Car-Lights+Windscreen-Wipers-&-Windows",
+                "resource": {
+                    "handle": "auto-replacement-parts",
+                    "title": "Auto Replacement Parts",
+                    "image": null,
+                    "mainBanners": null
+                }
+            },
+            {
+                "id": "gid://shopify/MenuItem/608444350676",
+                "title": "Car Tools, Maintenance & Care",
+                "url": "https://tedrk1-wu.myshopify.com/collections/tools/Car-Washer+Diagnostic-Tools+Paint-Care+Other-Maintenance-Products",
+                "resource": {
+                    "handle": "tools",
+                    "title": "Tools",
+                    "image": null,
+                    "mainBanners": null
+                }
+            },
+            {
+                "id": "gid://shopify/MenuItem/608444383444",
+                "title": "Car Electronics",
+                "url": "https://tedrk1-wu.myshopify.com/collections/car-electronics/Vehicle-Camera+DVR-&-Dash-Camera+Car-Monitors+Vehicle-GPS+Car-Mirror-Video+Car-Radios+GPS-Trackers+Car-Multimedia-Player+Alarm-Systems-&-Security+Jump-Starter",
+                "resource": {
+                    "handle": "car-electronics",
+                    "title": "Car Electronics",
+                    "image": null,
+                    "mainBanners": null
+                }
+            },
+            {
+                "id": "gid://shopify/MenuItem/608444416212",
+                "title": "Exterior Accessories",
+                "url": "https://tedrk1-wu.myshopify.com/collections/exterior-accessories/Car-Stickers+Other-Exterior-Accessories+Car-Covers",
+                "resource": {
+                    "handle": "exterior-accessories",
+                    "title": "Exterior Accessories",
+                    "image": null,
+                    "mainBanners": null
+                }
+            }
+        ]
     }
 ]

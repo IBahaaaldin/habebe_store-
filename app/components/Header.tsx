@@ -27,21 +27,21 @@ export default function Header({ header, isLoggedIn, cart }: HeaderProps) {
   const { menu } = header;
 
   return (
-    <header className={`z-999 sticky md:top-5 top-0 left-0 right-0 bg-white md:border border-black/5 backdrop-blur-sm md:rounded-full rounded-b-3xl w-full mx-auto flex flex-row items-center gap-5 px-5 p-3 duration-500
+    <header className={`z-999 sticky top-0 left-0 right-0 bg-white backdrop-blur-sm w-full mx-auto flex flex-row items-center gap-5 px-5 py-4 duration-500 
       `}
     >
+      {/* LOGO on TOP */}
       <NavLink
         prefetch="intent"
         to="/"
         end
       >
-        {/* LOGO on TOP */}
         <Image
           alt={header.shop.name}
           src={header.shop.brand?.logo?.image?.url}
           width={30}
           height={30}
-          className='scale-130'
+          className='scale-120'
         />
       </NavLink>
 
@@ -53,7 +53,6 @@ export default function Header({ header, isLoggedIn, cart }: HeaderProps) {
     </header>
   );
 }
-
 
 
 /// Header Menu Component inside the Header
@@ -70,7 +69,7 @@ export function HeaderMenu({ menu }: { menu: any }) {
 
 
 
-      <ul className="hidden lg:flex flex-row gap-6"> {/* Increased gap for better look */}
+      <ul className="hidden lg:flex flex-row gap-5"> {/* Increased gap for better look */}
         {menu?.items.slice(0, 5).map((menu: any) => {
           // Optional: Logic to determine if active
 
@@ -85,16 +84,18 @@ export function HeaderMenu({ menu }: { menu: any }) {
                 to={`/collections/${menu?.resource?.handle || '#'}`}
                 key={menu.id}
 
-                className={`hover:text-orange-400 text-black font-bold text-start duration-500 
+                className={`hover:text-orange-400 text-black text-start duration-500 
                   ${isMainMenuActive ? 'text-orange-400' : 'text-black'}
                   `}
               >
-                {menu.title}
+                <span>
+                  {menu.title}
+                </span>
               </Link>
 
               {/* Dropdown Container */}
               {menu.items && menu.items.length > 0 && (
-                <ul className="absolute left-0 top-5 hidden group-hover:block ">
+                <ul className="absolute left-0 top-3 hidden group-hover:block ">
                   <div className='mt-7 rounded-2xl p-1 min-w-sm overflow-scroll HIDDEN_SCROLL bg-white border border-zinc-300 flex flex-col gap-1 max-h-[70vh]'>
                     {menu.items.map((subMenu: any) => {
                       const isSubMenuActive = currentTabURL === subMenu.resource?.handle;
@@ -104,11 +105,13 @@ export function HeaderMenu({ menu }: { menu: any }) {
                           to={`/collections/${subMenu?.resource?.handle || '#'}`}
                           key={menu.id}
 
-                          className={`px-3 py-1 w-fit rounded-xl hover:text-orange-400 hover:bg-orange-100 text-black font-bold text-start duration-500
+                          className={`px-3 py-0.5 w-fit rounded-xl hover:text-orange-400 hover:bg-orange-100 text-black text-start duration-500
                           ${isSubMenuActive ? 'text-orange-400' : 'text-black'}
                           `}
                         >
-                          {subMenu.title}
+                          <span>
+                            {subMenu.title}
+                          </span>
                         </Link>
                       )
                     })}
@@ -118,7 +121,6 @@ export function HeaderMenu({ menu }: { menu: any }) {
             </li>
           );
         })}
-        ...
       </ul>
     </nav>
   );
@@ -142,7 +144,7 @@ function HeaderCtas({ isLoggedIn, cart, }: Pick<HeaderProps, 'isLoggedIn' | 'car
       <NavLink prefetch="intent" to="/account">
         <Suspense fallback="Sign in">
           <Await resolve={isLoggedIn} errorElement="Sign in">
-            {(isLoggedIn) => (isLoggedIn ? 'Account' : <User className='text-black hover:text-orange-400 duration-300 cursor-pointer' />)}
+            {(isLoggedIn) => (isLoggedIn ? 'Account' : <User size={20} className='text-black hover:text-orange-400 duration-300 cursor-pointer' />)}
           </Await>
         </Suspense>
       </NavLink>
@@ -175,8 +177,8 @@ function CartBadge({ count }: { count: number | null }) {
       className='relative flex flex-row items-center gap-2'
       to="/cart"
     >
-      <ShoppingBag className='text-black hover:text-orange-400 duration-300 cursor-pointer' />
-      {count !== null && <span className='absolute -top-3 left-3 text-xs w-6 h-6 flex items-center justify-center bg-orange-400 text-white rounded-full'>{count}</span>}
+      <ShoppingBag size={20} className='text-black hover:text-orange-400 duration-300 cursor-pointer' />
+      {count !== null && <span className='absolute -top-3 left-3 w-5 h-5 flex items-center justify-center bg-orange-400 text-white rounded-full'>{count}</span>}
     </Link>
   );
 }

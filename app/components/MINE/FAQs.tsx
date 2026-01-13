@@ -44,7 +44,7 @@ export default function FAQs() {
 
 
     return (
-        <div className="flex flex-col items-start justify-start w-full gap-3 md:p-10 p-5 border border-black/10 rounded-3xl">
+        <div className="flex flex-col items-start justify-start w-full gap-3 md:p-10 p-5 border border-black/10 md:rounded-2xl rounded-xl">
 
             <HeaderText
                 HEAD="Frequently Asked Questions"
@@ -52,7 +52,7 @@ export default function FAQs() {
             />
 
 
-            <div className="w-full bg-zinc-50 p-5 rounded-3xl overflow-hidden">
+            <div className="w-full bg-zinc-50 p-5 md:rounded-2xl rounded-xl overflow-hidden">
                 {faqs.map((faq, index) => (
                     <div
                         key={index}
@@ -65,18 +65,20 @@ export default function FAQs() {
                             viewport={{ once: true }}
                             aria-label='Toggle FAQ'
                             onClick={() => toggleFAQ(index)} // Pass the index to toggle the specific FAQ
-                            className={`${openFAQ === index ? '' : ''} flex gap-5 cursor-pointer w-full text-left md:text-lg font-semibold justify-between items-center focus:outline-none`}
+                            className={`${openFAQ === index ? '' : ''} flex gap-5 cursor-pointer w-full text-left font-semibold justify-between items-center focus:outline-none`}
                         >
                             <p> {faq.question}</p>
-                            <span className="text-xl">{openFAQ === index ? "-" : "+"}</span>
+                            <p className="text-xl">{openFAQ === index ? "-" : "+"}</p>
                         </motion.button>
 
-                        <div
-                            className={`overflow-hidden text-black text-sm transition-all duration-300 ease-in-out ${openFAQ === index ? 'max-h-100 opacity-100 mt-1' : 'max-h-0 opacity-0'
+                        <span
+                            className={`overflow-hidden text-zinc-500 transition-all duration-300 ease-in-out ${openFAQ === index ? 'max-h-100 opacity-100 mt-1' : 'max-h-0 opacity-0 hidden'
                                 }`}
                         >
-                            <p>{faq.answer}</p>
-                        </div>
+                            <span className=''>
+                                {faq.answer}
+                            </span>
+                        </span>
                     </div>
                 ))}
             </div>

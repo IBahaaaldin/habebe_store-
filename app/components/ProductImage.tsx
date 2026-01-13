@@ -1,7 +1,8 @@
 import type { ProductVariantFragment } from 'storefrontapi.generated';
 import { Image } from '@shopify/hydrogen';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Share2 } from 'lucide-react';
+import { useLocation } from 'react-router';
 
 
 
@@ -22,8 +23,15 @@ export function ProductImage({ image, OtherImages }: { image: ProductVariantFrag
 
 
 
-  /// 
+  /// Change the main image to fetch the new product's main image
+  const location = useLocation()
 
+  useEffect(() => {
+    setMainImage(image); // Revert to the original main image
+  }, [location.pathname])
+
+
+  /// 
   const [showCopyMessage, setShowCopyMessage] = useState(false);
   const [copyMessage, setCopyMessage] = useState('');
 
@@ -48,14 +56,13 @@ export function ProductImage({ image, OtherImages }: { image: ProductVariantFrag
 
   return (
     <section className="flex flex-col gap-5 w-full">
-      <figure className='relative p-3 rounded-3xl overflow-hidden
-    bg-zinc-50 min-w-70 w-full aspect-square'>
+      <figure className='relative p-2 md:rounded-2xl rounded-xl overflow-hidden
+    bg-zinc-50 min-w-70 w-full h-fit'>
         <Image
           alt={mainImage?.altText || 'Product Image'}
-          aspectRatio="1/1"
           data={mainImage!}
           key={mainImage?.id}
-          className='rounded-3xl overflow-hidden'
+          className='z-0 rounded-2xl overflow-hidden object-cover max-h-[70vh]'
         />
 
 
@@ -79,7 +86,7 @@ export function ProductImage({ image, OtherImages }: { image: ProductVariantFrag
       {/* Sub Images */}
       <div className='flex flex-row gap-3 overflow-scroll HIDDEN_SCROLL max-w-2xl' >
         {OtherImages?.map((imgData) => (
-          <figure key={imgData?.id} className='min-w-25 max-w-25 rounded-xl p-2 bg-zinc-50 aspect-square overflow-hidden'
+          <figure key={imgData?.id} className='min-w-25 max-w-25 rounded-xl p-1.5 bg-zinc-50 aspect-square overflow-hidden'
             onMouseEnter={() => handleMouseEnter(imgData as any)}
             onMouseLeave={handleMouseLeave}
           >

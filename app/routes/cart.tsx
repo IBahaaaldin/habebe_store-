@@ -7,7 +7,7 @@ import { CartMain } from '~/components/CartMain';
 
 
 export const meta: Route.MetaFunction = () => {
-  return [{ title: `Hydrogen | Cart` }];
+  return [{ title: `HABEBE | Cart` }];
 };
 
 

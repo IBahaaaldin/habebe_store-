@@ -8,14 +8,14 @@ import { motion } from 'framer-motion'
 
 export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?: string }) {
     return (
-        <div className="flex flex-col z-1 capitalize items-start justify-start w-full gap-4 mb-5" >
-            <h3 className='lg:text-5xl text-4xl flex-wrap flex flex-row gap-2 '>
+        <div className="flex flex-col z-1 capitalize items-start justify-start w-full gap-1 mb-5" >
+            <h3 className='flex-wrap flex flex-row gap-2 '>
                 {HEAD!.split(' ').map((word, index) => (
-                    <span
+                    <div
                         key={index}
                         className='inline-block overflow-hidden '
                     >
-                        <motion.span
+                        <motion.div
                             initial={{ y: '100%' }}
                             whileInView={{ y: 0 }}
                             transition={{ duration: 1, delay: index * 0.06, ease: [0.165, 0.84, 0.44, 1] }}
@@ -23,21 +23,21 @@ export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?:
                             className='inline-block'
                         >
                             {word}
-                        </motion.span>
-                    </span>
+                        </motion.div>
+                    </div>
                 ))}
             </h3>
 
 
 
             {SUBHEAD &&
-                <h6 className='flex flex-row flex-wrap gap-1.5 text-wrap'>
+                <p className='flex flex-row flex-wrap gap-1.5 text-wrap'>
                     {SUBHEAD.split(' ').map((word, index) => (
-                        <span
+                        <div
                             key={index}
                             className='inline-block overflow-hidden'
                         >
-                            <motion.span
+                            <motion.div
                                 initial={{ opacity: 0, filter: 'blur(5px)' }}
                                 whileInView={{ opacity: 1, filter: 'blur(0px)' }}
                                 transition={{ duration: 1, delay: index * 0.06, ease: [0.165, 0.84, 0.44, 1] }}
@@ -45,10 +45,10 @@ export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?:
                                 className='inline-block'
                             >
                                 {word}
-                            </motion.span>
-                        </span>
+                            </motion.div>
+                        </div>
                     ))}
-                </h6>
+                </p>
             }
         </div>
     )
@@ -56,21 +56,19 @@ export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?:
 
 
 
-
-
 export function SmallHeaderText({ HEAD, SUBHEAD }: { HEAD?: React.ReactNode, SUBHEAD?: React.ReactNode }) {
     return (
-        <div className="flex flex-col z-1 capitalize items-start justify-start gap-3 lg:max-w-xs w-full" >
+        <div className="flex flex-col z-1 capitalize items-start justify-start gap-y-2 lg:max-w-xs w-full" >
             {HEAD &&
-                <h3 className='md:text-3xl text-2xl flex-wrap flex flex-row gap-2 w-full'>
+                <h4 className='flex-nowrap gap-x-1.5 text-nowrap flex flex-row w-full'>
                     {HEAD}
-                </h3>
+                </h4>
             }
 
             {SUBHEAD &&
-                <h6 className='text-zinc-500 md:text-lg text-sm w-full'>
+                <span className='text-zinc-500 w-full'>
                     {SUBHEAD}
-                </h6>
+                </span>
             }
         </div>
     )
