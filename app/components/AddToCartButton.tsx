@@ -23,14 +23,16 @@ export function AddToCartButton({ analytics, children, disabled, lines, onClick,
           <div className='w-full flex items-end justify-end'>
             <button
               type="submit"
-              className={`text-nowrap md:text-sm text-xs ${disabled ? 'text-white bg-orange-100 rounded-full md:px-4 py-2 cursor-not-allowed' : `bg-orange-400 p-1.5 text-white rounded-lg hover:bg-orange-300 duration-300 cursor-pointer`} ${CC}`}
+              className={`text-nowrap ${disabled ? ' text-white bg-orange-100 rounded-full md:px-2 py-1 cursor-not-allowed' : `bg-orange-400 p-1.5 text-white rounded-lg hover:bg-orange-300 duration-300 cursor-pointer`} ${CC}`}
               onClick={() => {
                 onClick?.();
                 // toast.success('Item added to cart');
               }}
               disabled={disabled || fetcher.state !== 'idle'}
             >
-              {children}
+              <span>
+                {children}
+              </span>
             </button>
           </div>
         </>

@@ -97,7 +97,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
             }
           >
             {/* The Sold out is hidden  from the comp itself */}
-            {product?.variants.nodes[0]?.availableForSale ? <ShoppingCart size={15} /> : 'Sold out'}
+            {product?.variants.nodes[0]?.availableForSale ? <ShoppingCart size={15} /> : 'Sold'}
           </AddToCartButton>
         </div>
       </article>

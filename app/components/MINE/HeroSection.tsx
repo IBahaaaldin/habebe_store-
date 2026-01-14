@@ -90,8 +90,6 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
     }
 
 
-    console.log(`%c${JSON.stringify(allSubMenus, null, 3)}`, 'color: red; font-size: 20px;')
-
 
     return (
         <article className="flex flex-row md:gap-3 gap-2 overflow-x-scroll pb-5">
@@ -109,7 +107,7 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
                     />
 
                     {/* Label Badge */}
-                    <span className="max-w-[80%] absolute bottom-3 left-3 bg-white px-2 py-1 rounded-lg text-start font-bold ">
+                    <span className="max-w-[80%] absolute bottom-3 left-3 text-white px-2 py-1 rounded-lg text-start font-bold ">
                         {singleMenu.title}
                     </span>
                 </Link>

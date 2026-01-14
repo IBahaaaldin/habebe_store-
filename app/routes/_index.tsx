@@ -78,7 +78,7 @@ export default function Homepage() {
 
 
       <AllCategories
-        allMenus={MainCollections.slice(2)}
+        allSubMenus={MainCollections.slice(2)}
       />
 
 
