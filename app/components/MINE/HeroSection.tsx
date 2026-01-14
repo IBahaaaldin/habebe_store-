@@ -20,7 +20,7 @@ export default function HeroSection({ Collections, Title, Description, HeroImg }
 
 
     return (
-        <div className='w-full md:rounded-2xl rounded-xl overflow-hidden px-[3%] mx-auto relative text-white flex flex-col gap-20 justify-center items-start py-10 min-h-[50vh]'>
+        <div className='w-full md:rounded-2xl rounded-xl overflow-hidden px-[3%] mx-auto relative text-white flex flex-col gap-20 justify-center items-start py-20 '>
             <article className='max-w-[80%] mx-auto text-center z-10 w-full relative flex flex-col items-center gap-10'>
 
                 <HeroText
@@ -83,24 +83,27 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
 
 
 // AllCategories component displays a horizontal scrollable list of collection categories.
-export function AllCategories({ allMenus }: { allMenus?: any }) {
+export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
 
-    if (allMenus?.length <= 1) {
-        return null
+    if (!Array.isArray(allSubMenus)) {
+        return null;
     }
+
+
+    console.log(`%c${JSON.stringify(allSubMenus, null, 3)}`, 'color: red; font-size: 20px;')
 
 
     return (
         <article className="flex flex-row md:gap-3 gap-2 overflow-x-scroll pb-5">
-            {allMenus?.map((singleMenu: any) => (
+            {allSubMenus?.map((singleMenu: any) => (
                 <Link
                     to={`/collections/${singleMenu?.handle ?? singleMenu?.resource?.handle}`}
                     // WWHY?? Because some menus are some are collection
                     key={singleMenu.title}
-                    className="relative group cursor-pointer overflow-hidden md:rounded-2xl rounded-xl md:h-25 h-20 md:w-40 w-30"
+                    className="relative group cursor-pointer overflow-hidden md:rounded-2xl rounded-xl md:h-25 h-20 md:min-w-40 min-w-30"
                 >
                     <Image
-                        data={singleMenu?.image}
+                        data={singleMenu?.image ?? singleMenu?.resource?.image}
                         alt={singleMenu?.altText}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />

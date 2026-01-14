@@ -45,7 +45,7 @@ export default function SearchPage() {
   if (type === 'predictive') return null;
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-3">
       <SearchFormPredictive>
         {({ fetchResults, goToSearch, inputRef }) => (
           <div className="flex flex-row gap-2">

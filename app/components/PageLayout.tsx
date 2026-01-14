@@ -132,7 +132,7 @@ function SearchAside() {
   const queriesDatalistId = useId();
   return (
     <Aside type="search" heading="SEARCH">
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-3">
         <SearchFormPredictive>
           {({ fetchResults, goToSearch, inputRef }) => (
             <div className="flex flex-row gap-2">

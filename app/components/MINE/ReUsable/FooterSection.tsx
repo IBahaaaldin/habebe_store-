@@ -140,7 +140,7 @@ export default function FooterSection({ header }: { header: any }) {
 
 
             {/* /// Subscribe */}
-            <section className='flex flex-col min-h-full justify-start gap-5'>
+            <section className='flex flex-col min-h-full justify-start gap-3'>
                 <div className="flex flex-col gap-3">
                     <h5 className="text-black/50">
                         Subscribe to our newsletter
@@ -202,7 +202,7 @@ export default function FooterSection({ header }: { header: any }) {
 
             {/* /// Social Media */}
             <section className='flex flex-col min-h-full justify-start gap-10'>
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-3">
                     <span className=" text-black/50 ">
                         We are here to make life easier, Everything you want, in one place.
                     </span>

@@ -61,7 +61,7 @@ function loadDeferredData({ context }: Route.LoaderArgs) {
 export default function Homepage() {
 
   const { MainCollections } = useLoaderData<typeof loader>();
-  // console.log(`%c${JSON.stringify(MainCollections, null, 3)}`, 'color: red; font-size: 20px;')
+  console.log(`%c${JSON.stringify(MainCollections, null, 3)}`, 'color: blue; font-size: 20px;')
 
 
   return (
@@ -108,10 +108,8 @@ export default function Homepage() {
 export function MainCollectionsProductsSample({ products, collectionTitle, Handle, mainBanners, scrollBanners, gridBanners }: { products: any; collectionTitle: string; Handle: string; mainBanners?: any; scrollBanners?: any; gridBanners?: any; }) {
 
 
-  console.log(`%c${scrollBanners}`, 'color: green; font-size: 20px;')
-
   return (
-    <section className="flex flex-col gap-5 pb-10">
+    <section className="flex flex-col gap-3 pb-10">
 
       {/* /// ADS Section for MainBanners */}
       {/* {mainBanners && mainBanners?.length > 0 &&

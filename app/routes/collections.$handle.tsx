@@ -80,21 +80,23 @@ function loadDeferredData({ context }: Route.LoaderArgs) {
 export default function Collection() {
   const { collection, menu } = useLoaderData<typeof loader>();
 
-  // console.log(`%c${JSON.stringify(collection)}`, 'color: white; font-size: 30px;')
-
 
   // The title of the collection is used to filter the main menu 
   // So both the collection title and the menu item title must be the same in shopify
-  const specificMenu = menu.items.filter((menuItem: any) => menuItem.title === collection.title)
+  const specificMenu =
+    menu?.items?.filter((menuItem: any) => menuItem.title === collection.title)[0]?.items ??
+    menu?.items[0]?.items.filter((menuItem: any) => menuItem.title === collection.title)[0]?.items
+
+  // console.log(`%c${JSON.stringify(collection, null, 4)}`, 'color: white; font-size: 20px;')
+  console.log(`%c${JSON.stringify(specificMenu, null, 4)}`, 'color: gray; font-size: 20px;')
 
 
 
   // BANNERS for 3th level nested menus if NOT then 2nd level
-
   const bannersArray =
-    menu?.items.filter((item: { title: any; }) => item.title === collection.title)[0]?.resource?.mainBanners?.references?.nodes ?? menu?.items[0]?.items.filter((item: { title: any; }) => item.title === collection.title)[0]?.resource?.mainBanners?.references?.nodes
+    menu?.items.filter((item: { title: any; }) => item.title === collection.title)[0]?.resource?.mainBanners?.references?.nodes ?? // 2nd level menu
+    menu?.items[0]?.items.filter((item: { title: any; }) => item.title === collection.title)[0]?.resource?.mainBanners?.references?.nodes // 3th level menu (fashion)
 
-  console.log(`%c${JSON.stringify(bannersArray, null, 3)}`, 'color: red; font-size: 20px;')
 
 
   return (
@@ -111,7 +113,7 @@ export default function Collection() {
 
 
       <AllCategories
-        allMenus={specificMenu[0]?.items}
+        allSubMenus={specificMenu}
       />
 
 

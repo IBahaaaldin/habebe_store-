@@ -55,7 +55,7 @@ export function ProductImage({ image, OtherImages }: { image: ProductVariantFrag
 
 
   return (
-    <section className="flex flex-col gap-5 w-full">
+    <section className="flex flex-col gap-3 w-full">
       <figure className='relative p-2 md:rounded-2xl rounded-xl overflow-hidden
     bg-zinc-50 min-w-70 w-full h-fit'>
         <Image
@@ -68,7 +68,7 @@ export function ProductImage({ image, OtherImages }: { image: ProductVariantFrag
 
 
         <Share2
-          className="cursor-pointer absolute top-5 right-5 hover:bg-orange-400 duration-300 rounded-lg z-100 bg-orange-400 backdrop-blur-sm text-white md:p-2.5 p-1.5 md:w-10 md:h-10 w-8 h-8"
+          className="cursor-pointer absolute top-5 right-5 hover:bg-orange-400 duration-300 rounded-lg z-100 bg-orange-400 backdrop-blur-sm text-white p-2 w-8 h-8"
           size={40}
           onClick={() => void handleShareClick()}
         />

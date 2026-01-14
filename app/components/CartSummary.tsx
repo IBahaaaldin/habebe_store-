@@ -30,7 +30,7 @@ export function CartSummary({ cart, layout }: CartSummaryProps) {
 
     // Calculate and accumulate discount amount
     if (discountPercent > 0) {
-      const discountAmount = price * (discountPercent / 100);
+      const discountAmount = Math.round(price * discountPercent) / 100;
       totalDiscountOnAllProducts += discountAmount;
     }
   });
@@ -41,32 +41,35 @@ export function CartSummary({ cart, layout }: CartSummaryProps) {
     <div
       aria-labelledby="cart-summary" className="w-full"
     >
-      <h3 className='lg:text-3xl text-2xl font-bold'>Order Summary</h3>
+      <h4 className='font-bold'>Order Summary</h4>
 
-      <dl className="flex flex-row justify-between">
-        <dt className='text-zinc-300'>Subtotal</dt>
-        <dd className=' font-bold'>
-          {cart?.cost?.subtotalAmount?.currencyCode} {Number(cart?.cost?.subtotalAmount?.amount) + Number(totalDiscountOnAllProducts)}
-        </dd>
-      </dl>
+      <div className='flex flex-col gap-1 py-3'>
+        <dl className="flex flex-row justify-between">
+          <dt className='text-zinc-300'><p>Subtotal</p></dt>
+          <dd className=' font-bold'>
+            <p> {cart?.cost?.subtotalAmount?.currencyCode} {Number(cart?.cost?.subtotalAmount?.amount) + Number(totalDiscountOnAllProducts)}</p>
+          </dd>
+        </dl>
 
-      <dl className="flex flex-row justify-between">
-        <dt className='text-zinc-300'>Discounts</dt>
-        <dd className='text-red-500 font-bold'>
-          - {cart?.cost?.totalAmount?.currencyCode} {totalDiscountOnAllProducts}
-        </dd>
-      </dl>
+        <dl className="flex flex-row justify-between">
+          <dt className='text-zinc-300'><p>Discounts</p></dt>
+          <dd className='text-red-500 font-bold'>
+            <p>- {cart?.cost?.totalAmount?.currencyCode} {totalDiscountOnAllProducts.toFixed(2)}</p>
+          </dd>
+        </dl>
 
-      <dl className="flex flex-row justify-between">
-        <dt className='text-zinc-300'>Delivery fee</dt>
-        <dd className='text-green-700'>Free</dd>
-      </dl>
+        <dl className="flex flex-row justify-between">
+          <dt className='text-zinc-300'><p>Delivery fee</p></dt>
+          <dd className='text-green-700'><p>Free</p></dd>
+        </dl>
+      </div>
 
 
-      <dl className="text-2xl flex flex-row justify-between border-t border-zinc-300 py-3">
-        <dt className='text-zinc-300'>Total</dt>
+
+      <dl className="flex flex-row justify-between border-t border-zinc-300 py-3">
+        <dt className='text-zinc-300'><h4>Total</h4></dt>
         <dd className='font-bold'>
-          {cart?.cost?.totalAmount?.currencyCode} {cart?.cost?.totalAmount?.amount}
+          <h4>{cart?.cost?.totalAmount?.currencyCode} {cart?.cost?.totalAmount?.amount}</h4>
         </dd>
       </dl>
 
@@ -86,8 +89,8 @@ function CartCheckoutActions({ checkoutUrl }: { checkoutUrl?: string }) {
   if (!checkoutUrl) return null;
 
   return (
-    <a href={checkoutUrl} target="_self" className=''>
-      <button className='BUTTON1 min-w-full'>Checkout <CircleChevronRight size={25} /> </button>
+    <a href={checkoutUrl} target="_self" className='w-full flex items-center justify-center'>
+      <button className='BUTTON1 w-full'>Checkout</button>
     </a>
   );
 }
@@ -107,8 +110,6 @@ function CartDiscounts() {
   const handleApply = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (code.trim().length < 3) return; // ignore if too short
-
     // Fake invalid code
     setError('This discount code is not applicable.');
     setShake(true);
@@ -125,26 +126,29 @@ function CartDiscounts() {
     <div className="relative flex flex-col gap-3 w-full">
 
 
-      <form onSubmit={handleApply} className='flex flex-row w-full gap-3'>
-        <input
-          className={`w-full px-5 py-1 rounded-full bg-zinc-100 transition-all ${shake ? 'animate-pulse border-2 border-red-500' : ''
-            }`}
-          type="text"
-          value={code}
-          onChange={(e) => {
-            setCode(e.target.value);
-            setError('');
-          }}
-          placeholder="Discount code"
-        />
+      <form onSubmit={handleApply} className='w-full '>
+        <div className='flex flex-row gap-3'>
+          <input
+            className={`INPUT ${shake ? 'animate-pulse border-2 border-red-500' : ''
+              }`}
+            type="text"
+            value={code}
+            onChange={(e) => {
+              setCode(e.target.value);
+              setError('');
+            }}
+            placeholder="Discount code"
+          />
 
 
-        <button className="BUTTON1" type="submit">
-          Apply
-        </button>
+
+          <button onClick={handleApply} className="BUTTON1 w-fit" type="submit">
+            Apply
+          </button>
+        </div>
       </form>
 
-      {error && <p className="z-1 text-red-500 text-sm px-3">{error}</p>}
+      {error && <span className="z-1 text-red-500 text-sm px-3">{error}</span>}
     </div>
   );
 }

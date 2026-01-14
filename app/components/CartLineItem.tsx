@@ -24,71 +24,73 @@ export function CartLineItem({ layout, line, }: { layout: CartLayout; line: Cart
 
 
   return (
-    <li key={id} className="border border-zinc-300 p-5 md:rounded-2xl rounded-xl flex flex-row gap-5">
+    <li key={id} className="border border-zinc-300 p-3 md:rounded-2xl rounded-xl flex flex-row justify-between gap-3">
 
 
 
-      {/* Left side: Image and Quantity controls */}
-      <article className='flex flex-col gap-1 '>
-        {/* Image */}
-        {image && (
-          <Link
-            to={lineItemUrl}
-            className='min-w-40 min-h-40 w-40 h-40 p-1.5 rounded-2xl overflow-hidden bg-zinc-100 flex'>
-            <Image
-              className='object-cover w-full h-full aspect-square rounded-xl overflow-hidden'
-              alt={title}
-              data={image}
-              loading="lazy"
-            />
+      {/* /// Left side: Image and Quantity controls */}
+      <div className='flex flex-row gap-3'>
+        <article className='flex flex-col gap-1 '>
+          {/* Image */}
+          {image && (
+            <Link
+              to={lineItemUrl}
+              className='w-35 min-h-full p-1.5 rounded-2xl overflow-hidden bg-zinc-100 flex'>
+              <Image
+                className='object-cover w-full h-full aspect-square rounded-xl overflow-hidden'
+                alt={title}
+                data={image}
+                loading="lazy"
+              />
 
-          </Link>
-        )}
+            </Link>
+          )}
+
+        </article>
+
+
+
+        {/* /// Details */}
+        <article className='flex flex-row justify-between w-full'>
+          {/* LEFT */}
+          <div className='flex flex-col justify-between gap-3'>
+            <Link
+              prefetch="intent"
+              to={lineItemUrl}
+              onClick={() => {
+                if (layout === 'aside') {
+                  close();
+                }
+              }}
+            >
+              <h5 className=' uppercase text-wrap max-w-sm overflow-hidden hover:underline'>{product.title}</h5>
+            </Link>
+
+
+            <div>
+              {selectedOptions.map((option) => (
+                <div key={option.name}>
+                    <span className='text-black'>{option.name}</span>: <span className='text-zinc-400 font-bold'>{option.value}</span>
+                </div>
+              ))}
+            </div>
+
+
+            <ProductPrice price={line?.cost?.totalAmount} />
+          </div>
+
+        </article>
+      </div>
+
+
+
+      {/* /// DELETE AND INCREASE */}
+      <article className='flex flex-col items-end justify-between'>
+        <CartLineRemoveButton lineIds={[id]} disabled={false} />
 
         {/* Quantity controls */}
         <CartLineQuantity line={line} />
       </article>
-
-
-
-      {/* Details */}
-      <article className='flex flex-row justify-between w-full'>
-        {/* LEFT */}
-        <article className='flex flex-col justify-between gap-3'>
-          <Link
-            prefetch="intent"
-            to={lineItemUrl}
-            onClick={() => {
-              if (layout === 'aside') {
-                close();
-              }
-            }}
-          >
-            <h2 className='text-xl uppercase text-wrap max-w-sm'>{product.title}</h2>
-          </Link>
-
-
-          <ul>
-            {selectedOptions.map((option) => (
-              <li key={option.name}>
-                <small>
-                  <span className='text-black'>{option.name}</span>: <strong className=''>{option.value}</strong>
-                </small>
-              </li>
-            ))}
-          </ul>
-
-
-          <ProductPrice price={line?.cost?.totalAmount} />
-        </article>
-
-
-        {/* RIGHT */}
-        <article className='flex sm:flex-col flex-row sm:items-start items-center justify-between'>
-          <CartLineRemoveButton lineIds={[id]} disabled={false} />
-        </article>
-      </article>
-
     </li>
   );
 }
@@ -105,7 +107,7 @@ export function CartLineQuantity({ line }: { line: CartLine }) {
   const nextQuantity = Number((quantity + 1).toFixed(0));
 
   return (
-    <div className="flex flex-row items-center justify-center bg-zinc-100 w-full h-fit px-3 py-2 rounded-full gap-5">
+    <div className="flex flex-row items-center justify-center bg-zinc-100 w-full h-fit px-2 py-1 rounded-full gap-1">
 
       <CartLineUpdateButton lines={[{ id: lineId, quantity: prevQuantity }]}>
         <button
@@ -114,11 +116,11 @@ export function CartLineQuantity({ line }: { line: CartLine }) {
           name="decrease-quantity"
           value={prevQuantity}
         >
-          <Minus size={25} className='hover:bg-white rounded-full p-1 cursor-pointer' />
+          <Minus size={20} className='hover:bg-white rounded-full p-1 cursor-pointer' />
         </button>
       </CartLineUpdateButton>
 
-      <strong className='text-black'>{quantity}</strong>
+      <span className='text-black font-bold'>{quantity}</span>
 
       <CartLineUpdateButton lines={[{ id: lineId, quantity: nextQuantity }]}>
         <button
@@ -127,7 +129,7 @@ export function CartLineQuantity({ line }: { line: CartLine }) {
           value={nextQuantity}
           disabled={!!isOptimistic}
         >
-          <Plus size={25} className='hover:bg-white rounded-full p-1 cursor-pointer' />
+          <Plus size={20} className='hover:bg-white rounded-full p-1 cursor-pointer' />
         </button>
       </CartLineUpdateButton>
 
@@ -157,7 +159,7 @@ function CartLineRemoveButton({ lineIds, disabled, }: { lineIds: string[]; disab
         type="submit"
         className='w-full flex items-end justify-end cursor-pointer hover:opacity-50 duration-300'
       >
-        <Trash2 className='text-red-600 p-2.5 rounded-full w-10 h-10 bg-red-100' />
+        <Trash2 className='text-red-600 p-2 rounded-xl w-8 h-8 bg-red-100' />
       </button>
     </CartForm>
   );

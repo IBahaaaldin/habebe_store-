@@ -95,7 +95,7 @@ export function HeaderMenu({ menu }: { menu: any }) {
 
               {/* Dropdown Container */}
               {menu.items && menu.items.length > 0 && (
-                <ul className="absolute left-0 top-3 hidden group-hover:block ">
+                <ul className="absolute left-0 top-5 hidden group-hover:block ">
                   <div className='mt-7 rounded-2xl p-1 min-w-sm overflow-scroll HIDDEN_SCROLL bg-white border border-zinc-300 flex flex-col gap-1 max-h-[70vh]'>
                     {menu.items.map((subMenu: any) => {
                       const isSubMenuActive = currentTabURL === subMenu.resource?.handle;
@@ -159,7 +159,7 @@ function HeaderMenuMobileToggle() {
   const { open } = useAside();
   return (
     <button
-      className="block lg:hidden bg-orange-400 text-black p-1.5 rounded-lg cursor-pointer hover:opacity-70 duration-300"
+      className="block lg:hidden bg-orange-400 text-black p-1 rounded-lg cursor-pointer hover:opacity-70 duration-300"
       onClick={() => open('mobile')}
     >
       <Menu className='text-white ' size={20} />

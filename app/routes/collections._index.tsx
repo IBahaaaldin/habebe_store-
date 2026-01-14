@@ -109,12 +109,13 @@ export const MAINMENU_AND_SUBMENU_QUERY = `#graphql
   query MainMenu($handle: String!) {
     menu(handle: $handle) {
       title
+      # /// ===== LEVEL 1 =====
       items {
         id
         title
         url
+
         resource {
-          # /// Fetch mainmenu items
           ... on Collection {
             handle
             title
@@ -142,11 +143,12 @@ export const MAINMENU_AND_SUBMENU_QUERY = `#graphql
             }
           }
         }
-        # /// Fetch submenu items
+        # /// # ===== LEVEL 2 =====
         items {
           id
           title
           url
+
           resource {
             ... on Collection {
               handle
@@ -168,6 +170,41 @@ export const MAINMENU_AND_SUBMENU_QUERY = `#graphql
                         altText
                         width
                         height
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          # /// ===== LEVEL 3 =====
+          items {
+          id
+          title
+          url
+
+            resource {
+              ... on Collection {
+                handle
+                title
+                image {
+                  id
+                  url
+                  altText
+                  width
+                  height
+                }
+                # /// Fetch metafield for main banners only for 2nd level array
+                mainBanners: metafield(namespace: "custom", key: "main_banners") {
+                  references(first: 10) {
+                    nodes {
+                      ... on MediaImage {
+                        image {
+                          url
+                          altText
+                          width
+                          height
+                        }
                       }
                     }
                   }
@@ -260,7 +297,7 @@ export const MAINMENU_AND_PRODUCTS_QUERY = `#graphql
                 }
               }
             }
-            scrollableBanners: metafield(namespace: "custom", key: "scroll_banners") {
+            scrollBanners: metafield(namespace: "custom", key: "scroll_banners") {
               references(first: 10) {
                 nodes {
                   ... on MediaImage {

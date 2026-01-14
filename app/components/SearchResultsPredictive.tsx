@@ -209,7 +209,7 @@ export function SearchResultsPredictiveProducts({
 
 
   return (
-    <div className="flex flex-col gap-5 mt-5" key="products">
+    <div className="flex flex-col gap-3 mt-5" key="products">
       <h5 className='md:text-xl text-lg font-bold'>Products</h5>
       <ul className='flex flex-col gap-3'>
         {products.map((product) => {

@@ -63,8 +63,8 @@ export default function FilterSidebar({ AvailableSize, AvailableColor, Available
 
 
     return (
-        <div className="sticky self-start max-w-sm flex flex-col gap-5 border border-zinc-300 md:rounded-2xl rounded-xl p-5 h-fit">
-            <div className="flex flex-col gap-5">
+        <div className="sticky self-start max-w-sm flex flex-col gap-3 border border-zinc-300 md:rounded-2xl rounded-xl p-5 h-fit">
+            <div className="flex flex-col gap-3">
                 <div className="flex flex-row w-full justify-between border-b border-zinc-300 pb-3">
                     <h5 className="text-xl font-bold ">Size</h5>
                     {/* <ChevronDown /> */}
@@ -88,7 +88,7 @@ export default function FilterSidebar({ AvailableSize, AvailableColor, Available
 
 
             {/* COLOR */}
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-3">
                 <div className="flex flex-row w-full justify-between border-b border-zinc-300 pb-3">
                     <h5 className="text-xl font-bold ">Color</h5>
                     {/* <ChevronDown /> */}
@@ -111,7 +111,7 @@ export default function FilterSidebar({ AvailableSize, AvailableColor, Available
 
 
 
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-3">
                 <div className="flex flex-row w-full justify-between border-b border-zinc-300 pb-3">
                     <h5 className="text-xl font-bold ">Price</h5>
                     <ChevronUp />
@@ -136,7 +136,7 @@ export default function FilterSidebar({ AvailableSize, AvailableColor, Available
 
 
 
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-3">
                 <div className="flex flex-row w-full justify-between border-b border-zinc-300 pb-3">
                     <h5 className="text-xl font-bold ">Dress Style</h5>
                     {/* <ChevronDown /> */}

@@ -145,7 +145,7 @@ export default function Product() {
         {/* /// Product Details */}
         <section className="flex flex-col gap-7 mt-5 w-full xl:max-w-1/2">
           <article className='flex flex-col gap-2'>
-            <h3 className=''>{title}</h3>
+            <h4>{title}</h4>
             <Prices
               CC1='lg:text-2xl text-xl'
               CC2='lg:text-xl text-lg'

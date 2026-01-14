@@ -38,7 +38,7 @@ export function CartMain({ layout, cart: originalCart }: CartMainProps) {
 
       {/* Show the cart lines */}
       <div className="flex xl:flex-row flex-col gap-10">
-        <ul className='flex flex-col gap-5 lg:min-w-2xl'>
+        <ul className='flex flex-col gap-3 lg:min-w-2xl'>
           {(cart?.lines?.nodes ?? []).map((line) => (
             <CartLineItem key={line.id} line={line} layout={layout} />
           ))}

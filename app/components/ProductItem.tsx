@@ -46,7 +46,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
   return (
-    <article className='w-full max-w-45 min-w-35 relative h-fit items-end flex flex-col gap-3 md:p-2 p-1 bg-zinc-50 md:rounded-2xl rounded-xl overflow-hidden'>
+    <article className='w-full max-w-40 min-w-35 relative h-fit items-end flex flex-col gap-3 md:p-2 p-1 bg-zinc-50 md:rounded-2xl rounded-xl overflow-hidden'>
       {image && (
         <Link
           className="w-full rounded-2xl overflow-hidden"
@@ -69,7 +69,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
       {/* /// Details */}
-      <article className='px-2 flex flex-col w-full justify-between items-end gap-2'>
+      <article className='px-2 pb-2 flex flex-col w-full justify-between items-end gap-2'>
         <Link to={variantUrl} className='flex w-full hover:underline'>
           <span className='capitalize w-full'>{product.title.length > 15 ? product.title.slice(0, 15) + '...' : product.title}</span>
         </Link>
@@ -110,7 +110,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
         onClick={handleShareClick}
       />
       {showCopyMessage && (
-        <span className="absolute top-15 right-5 px-3 py-1 bg-green-700/70 backdrop-blur-sm rounded-lg text-white">
+        <span className="absolute top-15 left-5 max-w-[80%] px-3 py-1 bg-green-700/70 backdrop-blur-sm rounded-lg text-white">
           {copyMessage}
         </span>
       )}

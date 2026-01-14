@@ -174,7 +174,7 @@ export default function Reviews({ Title }: { Title?: string }) {
 
 
             {/* Comments section */}
-            <article className="flex flex-col gap-5 items-start justify-start w-full lg:my-7 my-3">
+            <article className="flex flex-col gap-3 items-start justify-start w-full lg:my-7 my-3">
 
                 {commentSubmited ? (
                     <div className="w-full flex flex-col items-center justify-center p-10 border border-green-700/20 md:rounded-2xl rounded-xl bg-green-50">
