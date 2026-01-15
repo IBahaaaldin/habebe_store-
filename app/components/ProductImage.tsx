@@ -1,3 +1,5 @@
+/* eslint-disable eslint-comments/disable-enable-pair */
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import type { ProductVariantFragment } from 'storefrontapi.generated';
 import { Image } from '@shopify/hydrogen';
 import { useEffect, useState } from 'react';
@@ -68,16 +70,14 @@ export function ProductImage({ image, OtherImages }: { image: ProductVariantFrag
 
 
         <Share2
-          className="cursor-pointer absolute top-5 right-5 hover:bg-orange-400 duration-300 rounded-lg z-100 bg-orange-400 backdrop-blur-sm text-white p-2 w-8 h-8"
+          className="cursor-pointer absolute top-4 right-4 bg-white/80 backdrop-blur-xs hover:bg-white duration-300 rounded-lg z-100 text-orange-400 p-1.5 w-7 h-7"
           size={40}
-          onClick={() => void handleShareClick()}
+          onClick={handleShareClick}
         />
-
-
         {showCopyMessage && (
-          <div className="absolute top-6 right-17 px-3 py-1 bg-green-700/70 backdrop-blur-sm rounded-full text-white text-sm">
+          <span className="absolute top-15 right-4 max-w-[80%] px-3 py-1 bg-green-700/70 backdrop-blur-sm rounded-lg text-white">
             {copyMessage}
-          </div>
+          </span>
         )}
       </figure>
 

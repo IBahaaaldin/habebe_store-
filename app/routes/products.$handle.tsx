@@ -115,15 +115,8 @@ export default function Product() {
 
 
 
-  // Get all available images for the "Color" option
-  const availableColorImages = product.options
-    .find(option => option.name === "Color")
-    ?.optionValues
-    .map(value => value?.firstSelectableVariant?.image)
-    .filter((image) => image);
-
-
-
+  // Get MEDIA to get the other images
+  const availableColorImages = similarProducts?.media?.nodes?.map((node: any) => node?.image) // Second Image only in the media
 
 
   /// Show Full description 
@@ -360,6 +353,28 @@ const SIMILAR_PRODUCTS_QUERY = `#graphql
                   id
                   title
                   handle
+                   # /// Fetch media to display other images for the same product
+                  media(first: 10) {
+                    nodes {
+                      mediaContentType
+                      alt
+                      ... on MediaImage {
+                        image {
+                          id
+                          url
+                          altText
+                          width
+                          height
+                        }
+                      }
+                      ... on Video {
+                        sources {
+                          url
+                        }
+                      }
+                      # You can add 3DModel if needed
+                    }
+                  }
                   priceRange {
                     minVariantPrice {
                       amount

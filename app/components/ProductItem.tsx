@@ -8,19 +8,20 @@ import type {
 } from 'storefrontapi.generated';
 import { useVariantUrl } from '~/lib/variants';
 import Prices from './MINE/UI/Prices';
-import { Share2, ShoppingBag, ShoppingCart, Star } from 'lucide-react';
+import { Share2, ShoppingCart } from 'lucide-react';
 import { AddToCartButton } from './AddToCartButton';
-// import { CartLineQuantity } from './CartLineItem';
 
 
 
 // Get the first varient 
 export function ProductItem({ product, loading }: { product: | CollectionItemFragment | any; loading?: 'eager' | 'lazy'; }) {
-  const [showCopyMessage, setShowCopyMessage] = useState(false);
-  const [copyMessage, setCopyMessage] = useState('');
+  const [showCopyMessage, setShowCopyMessage] = useState<boolean>(false);
+  const [copyMessage, setCopyMessage] = useState<string>('');
 
   const variantUrl = useVariantUrl(product.handle);
-  const image = product.featuredImage;
+  const image = product.featuredImage; // Main Image
+  const secondImage = product?.media?.nodes[1]?.image // Second Image only in the media
+  console.log(`%c${JSON.stringify(secondImage, null, 3)}`, 'color: white; font-size: 20px;')
 
   const price = product.priceRange?.minVariantPrice?.amount;
   const currency = product.priceRange?.minVariantPrice?.currencyCode;
@@ -45,21 +46,28 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
 
+
+  /// Change the image when hover
+  const [displayImage, setDisplayImage] = useState(image)
+
+
   return (
     <article className='w-full max-w-40 min-w-35 relative h-fit items-end flex flex-col gap-3 md:p-2 p-1 bg-zinc-50 md:rounded-2xl rounded-xl overflow-hidden'>
       {image && (
         <Link
-          className="w-full rounded-2xl overflow-hidden"
+          className="w-full md:rounded-2xl rounded-xl overflow-hidden"
           key={product.id}
           prefetch="intent"
           to={variantUrl}
+          onMouseEnter={() => setDisplayImage(secondImage)}
+          onMouseLeave={() => setDisplayImage(image)}
         >
           <Image
-            alt={image.altText || product.title}
+            // alt={image.altText || product.title}
             aspectRatio="1/1"
-            data={image}
+            data={secondImage}
             loading={loading}
-            className='hover:scale-105 duration-300 object-cover min-h-40'
+            className='object-cover min-h-40'
           />
         </Link>
       )}

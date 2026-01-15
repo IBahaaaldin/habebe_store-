@@ -331,6 +331,28 @@ export const MAINMENU_AND_PRODUCTS_QUERY = `#graphql
                 id
                 title
                 handle
+                # /// Fetch media to display other images for the same product
+                media(first: 10) {
+                  nodes {
+                    mediaContentType
+                    alt
+                    ... on MediaImage {
+                      image {
+                        id
+                        url
+                        altText
+                        width
+                        height
+                      }
+                    }
+                    ... on Video {
+                      sources {
+                        url
+                      }
+                    }
+                    # You can add 3DModel if needed
+                  }
+                }
                 priceRange {
                   minVariantPrice {
                     amount

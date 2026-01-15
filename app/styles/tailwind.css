@@ -52,7 +52,7 @@
 
 
 .MAIN_COL_CONTAINER {
-    @apply flex flex-col px-[2.5%] gap-3 mb-5 max-w-437.5 w-full mx-auto h-fit;
+    @apply flex flex-col px-[2.5%] gap-3 mb-5 max-w-400 w-full mx-auto h-fit;
 }
 
 .SEC_COL_CONTAINER {
@@ -125,7 +125,7 @@ form {
 }
 
 .HOME_WRAPPER {
-    @apply w-full max-w-437.5 px-[5%] mx-auto;
+    @apply w-full max-w-400 px-[5%] mx-auto;
 }
 
 h1 {
