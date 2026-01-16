@@ -2,15 +2,16 @@ import { Await, useLoaderData, Link } from 'react-router';
 import type { Route } from './+types/_index';
 import { Suspense } from 'react';
 import { ProductItem } from '~/components/ProductItem';
-import HeroSection, { AllCategories, TwoGrids } from '~/components/MINE/HeroSection';
+import CollectionsHero, { AllCategories, TwoGrids } from '~/components/MINE/CollectionsHero';
 import Reviews from '~/components/MINE/Reviews';
 
 // For the collection section
 import { MAINMENU_AND_PRODUCTS_QUERY } from './collections._index';
 import LoadingSpinner from '~/components/MINE/ReUsable/LoadingSpinner';
 import FAQs from '~/components/MINE/FAQs';
-import HeaderText, { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
-import MainAdsSection, { GridAdsSection, ScrollAdsSection } from '~/components/MINE/AdsSections';
+import { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
+import { EventAdsSection, GridAdsSection, ScrollAdsSection } from '~/components/MINE/AdsSections';
+import HeroSlider from '~/components/MINE/HeroSlider';
 
 
 
@@ -61,14 +62,15 @@ function loadDeferredData({ context }: Route.LoaderArgs) {
 export default function Homepage() {
 
   const { MainCollections } = useLoaderData<typeof loader>();
-  console.log(`%c${JSON.stringify(MainCollections, null, 3)}`, 'color: blue; font-size: 20px;')
 
 
   return (
     <div className='space-y-10'>
-      <HeroSection
+      {/* <CollectionsHero
         Collections={MainCollections}
-      />
+      /> */}
+
+      <HeroSlider mainCollections={MainCollections} />
 
 
       {/* Render the CollectionsSection component, passing the collections data */}
@@ -103,7 +105,6 @@ export default function Homepage() {
 }
 
 
-
 // MainCollectionsProductsSample component
 export function MainCollectionsProductsSample({ products, collectionTitle, Handle, mainBanners, scrollBanners, gridBanners }: { products: any; collectionTitle: string; Handle: string; mainBanners?: any; scrollBanners?: any; gridBanners?: any; }) {
 
@@ -117,11 +118,13 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
       } */}
 
       {/* /// ADS Section for MainBanners */}
-      <ScrollAdsSection bannerArray={scrollBanners} Title={collectionTitle} ColHandle={Handle} />
+      <ScrollAdsSection bannerArray={scrollBanners} Title={collectionTitle} collectionHandle={Handle} />
 
       {/* /// ADS Section for MainBanners */}
-      <GridAdsSection ColHandle={Handle} bannerArray={gridBanners} />
+      <GridAdsSection collectionHandle={Handle} bannerArray={gridBanners} />
 
+
+      <EventAdsSection bannerArray={scrollBanners} collectionHandle={Handle} />
 
       {/*  // */}
       <div className='flex flex-row justify-between items-start'>
@@ -160,7 +163,7 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
 
       {/* //  */}
-      <article className='flex lg:flex-row flex-col justify-between w-full gap-5 gap-y-7 md:p-7 p-5 bg-zinc-200 md:rounded-2xl rounded-xl'>
+      <article className='flex lg:flex-row flex-col justify-between w-full gap-5 gap-y-7  p-5 bg-zinc-200 md:rounded-2xl rounded-xl'>
 
         <SmallHeaderText
           HEAD={<>Top Picks from <b>{collectionTitle}</b></>}

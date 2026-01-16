@@ -3,13 +3,11 @@ import type { FeaturedCollectionFragment } from 'storefrontapi.generated';
 import HeroText from "./UI/HeroText";
 import ArrowButton from './ReUsable/Buttons';
 import { Link } from 'react-router';
-import { SmallHeaderText } from './UI/HeaderText';
-
 
 
 
 // Used in two main places: "HOMEPAGE" and "COLLECTION" Page
-export default function HeroSection({ Collections, Title, Description, HeroImg }: { Collections: FeaturedCollectionFragment, Title?: string, Description?: string, HeroImg?: string; }): JSX.Element {
+export default function CollectionsHero({ Collections, Title, Description, HeroImg }: { Collections: FeaturedCollectionFragment, Title?: string, Description?: string, HeroImg?: string; }): JSX.Element {
 
 
     const defaultHeroImage = HeroImg ?? "https://images.pexels.com/photos/33020904/pexels-photo-33020904.jpeg"
@@ -28,12 +26,12 @@ export default function HeroSection({ Collections, Title, Description, HeroImg }
                     SUBHEAD={subText}
                 />
 
-
+{/* 
                 <ArrowButton
                     CC={"w-fit"}
                     Href={`/collections/${Collections?.handle ?? ''}`}
                     Text="EXPLORE COLLECTION"
-                />
+                /> */}
             </article>
 
 
@@ -96,9 +94,9 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
             {allSubMenus?.map((singleMenu: any) => (
                 <Link
                     to={`/collections/${singleMenu?.handle ?? singleMenu?.resource?.handle}`}
-                    // WWHY?? Because some menus are some are collection
+                    // WWHY?? Because some menus AND some are collection
                     key={singleMenu.title}
-                    className="relative group cursor-pointer overflow-hidden md:rounded-2xl rounded-xl md:h-25 h-20 md:min-w-40 min-w-30"
+                    className="relative group cursor-pointer overflow-hidden md:rounded-2xl rounded-xl md:h-25 h-20 md:min-w-40 min-w-30 flex-1"
                 >
                     <Image
                         data={singleMenu?.image ?? singleMenu?.resource?.image}

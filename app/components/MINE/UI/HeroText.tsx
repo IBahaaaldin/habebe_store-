@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
 export default function HeroText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?: string }) {
     return (
         <div className="flex flex-col z-1 capitalize w-full items-start justify-start gap-1 mb-5" >
-            <h2 className='flex flex-row flex-wrap items-start justify-start'>
+            <h2 className='flex flex-row flex-wrap gap-2 items-start justify-start font-bold'>
                 {HEAD!.split(' ').map((word, index) => (
                     <div
                         key={index}

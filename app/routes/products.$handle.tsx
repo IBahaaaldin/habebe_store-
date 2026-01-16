@@ -12,7 +12,6 @@ import { ProductImage } from '~/components/ProductImage';
 import { ProductForm } from '~/components/ProductForm';
 import { ProductItem } from '~/components/ProductItem';
 import Reviews from '~/components/MINE/Reviews';
-// import { RecommendedProducts } from './_index';
 import { Suspense, useState } from 'react';
 import LoadingSpinner from '~/components/MINE/ReUsable/LoadingSpinner';
 import Prices from '~/components/MINE/UI/Prices';
@@ -43,7 +42,7 @@ export async function loader(args: Route.LoaderArgs) {
 
 
 async function loadCriticalData({ context, params, request }: Route.LoaderArgs) {
-  const { handle } = params;
+  const { handle } = params; // Gettign the product's HANDLE from the url
   const { storefront } = context;
 
   if (!handle) {
@@ -111,13 +110,13 @@ export default function Product() {
     selectedOrFirstAvailableVariant: selectedVariant,
   });
 
-  const { title } = product;
+  const { title,  } = product;
 
 
 
   // Get MEDIA to get the other images
-  const availableColorImages = similarProducts?.media?.nodes?.map((node: any) => node?.image) // Second Image only in the media
-
+  const productMedia = product.media.edges // Second Image only in the media
+  console.log(`%c${JSON.stringify(productMedia, null, 3)}`, 'color: green; font-size: 20px;')
 
   /// Show Full description 
   const [more, setMore] = useState(150)
@@ -129,8 +128,8 @@ export default function Product() {
       <div className='flex xl:flex-row flex-col gap-x-7'>
         {/* /// Product Image */}
         <ProductImage
-          image={selectedVariant?.image}
-          OtherImages={availableColorImages}
+          image={product?.featuredImage}
+          productMedia={productMedia}
         />
 
 
@@ -335,6 +334,33 @@ const PRODUCT_QUERY = `#graphql
   ) @inContext(country: $country, language: $language) {
     product(handle: $handle) {
       ...Product
+      featuredImage {
+        id  
+        url
+        width
+        height
+      }
+      media(first: 10) {
+        edges {
+          node {
+            mediaContentType
+            alt
+            ... on MediaImage {
+              image {
+                id  
+                url
+                width
+                height
+              }
+            }
+            ... on Video {
+              sources {
+                url
+              }
+            }
+          }
+        }
+      }
     }
   }
   ${PRODUCT_FRAGMENT}

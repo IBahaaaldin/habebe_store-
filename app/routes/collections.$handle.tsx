@@ -5,7 +5,7 @@ import { PaginatedResourceSection } from '~/components/PaginatedResourceSection'
 import { redirectIfHandleIsLocalized } from '~/lib/redirect';
 import { ProductItem } from '~/components/ProductItem';
 import type { ProductFragment } from 'storefrontapi.generated';
-import HeroSection, { AllCategories } from '~/components/MINE/HeroSection';
+import CollectionsHero, { AllCategories } from '~/components/MINE/CollectionsHero';
 import { MAINMENU_AND_SUBMENU_QUERY } from './collections._index';
 import { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
 import { useState, useEffect } from 'react';
@@ -87,9 +87,6 @@ export default function Collection() {
     menu?.items?.filter((menuItem: any) => menuItem.title === collection.title)[0]?.items ??
     menu?.items[0]?.items.filter((menuItem: any) => menuItem.title === collection.title)[0]?.items
 
-  // console.log(`%c${JSON.stringify(collection, null, 4)}`, 'color: white; font-size: 20px;')
-  console.log(`%c${JSON.stringify(specificMenu, null, 4)}`, 'color: gray; font-size: 20px;')
-
 
 
   // BANNERS for 3th level nested menus if NOT then 2nd level
@@ -104,7 +101,7 @@ export default function Collection() {
 
 
       {/* Being displayed only in each collection */}
-      <HeroSection
+      <CollectionsHero
         Title={collection.title}
         Description={collection.description}
         Collections={collection as any}
@@ -162,6 +159,27 @@ export const PRODUCT_ITEM_FRAGMENT = `#graphql
       width
       height
     }
+
+    media(first: 10) {
+      nodes {
+        mediaContentType
+        alt
+        ... on MediaImage {
+          image {
+            id
+            url
+            width
+            height
+          }
+        }
+        ... on Video {
+          sources {
+            url
+          }
+        }
+      }
+    }
+
     priceRange {
       minVariantPrice {
         ...MoneyProductItem

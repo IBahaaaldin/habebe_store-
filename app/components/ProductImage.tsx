@@ -8,7 +8,7 @@ import { useLocation } from 'react-router';
 
 
 
-export function ProductImage({ image, OtherImages }: { image: ProductVariantFragment['image']; OtherImages?: ProductVariantFragment['image'][]; }) {
+export function ProductImage({ image, productMedia }: { image: ProductVariantFragment['image']; productMedia?: any }) {
 
 
   // Handlers for hovering over sub images to change main image
@@ -30,7 +30,7 @@ export function ProductImage({ image, OtherImages }: { image: ProductVariantFrag
 
   useEffect(() => {
     setMainImage(image); // Revert to the original main image
-  }, [location.pathname])
+  }, [image, location.pathname])
 
 
   /// 
@@ -85,15 +85,17 @@ export function ProductImage({ image, OtherImages }: { image: ProductVariantFrag
 
       {/* Sub Images */}
       <div className='flex flex-row gap-3 overflow-scroll HIDDEN_SCROLL max-w-2xl' >
-        {OtherImages?.map((imgData) => (
-          <figure key={imgData?.id} className='min-w-25 max-w-25 rounded-xl p-1.5 bg-zinc-50 aspect-square overflow-hidden'
-            onMouseEnter={() => handleMouseEnter(imgData as any)}
+        {productMedia?.map((imgData: any, index: number) => (
+          <figure
+            key={index}
+            className='min-w-25 max-w-25 rounded-xl p-1.5 bg-zinc-50 aspect-square overflow-hidden'
+            onMouseEnter={() => handleMouseEnter(imgData.node.image as any)}
             onMouseLeave={handleMouseLeave}
           >
             <Image
-              alt={imgData?.altText || 'Product Image'}
+              alt={imgData?.altText || ""}
               aspectRatio="1/1"
-              data={imgData!}
+              data={imgData.node?.image}
               className='object-cover rounded-lg'
             />
           </figure>

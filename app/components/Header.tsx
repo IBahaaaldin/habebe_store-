@@ -70,7 +70,7 @@ export function HeaderMenu({ menu }: { menu: any }) {
 
 
       <ul className="hidden lg:flex flex-row gap-5"> {/* Increased gap for better look */}
-        {menu?.items.slice(0, 5).map((menu: any) => {
+        {menu?.items.slice(0, 7).map((menu: any) => {
           // Optional: Logic to determine if active
 
           const isMainMenuActive = currentTabURL === menu.resource?.handle;
@@ -96,7 +96,7 @@ export function HeaderMenu({ menu }: { menu: any }) {
               {/* Dropdown Container */}
               {menu.items && menu.items.length > 0 && (
                 <ul className="absolute left-0 top-5 hidden group-hover:block ">
-                  <div className='mt-7 rounded-2xl p-1 min-w-sm overflow-scroll HIDDEN_SCROLL bg-white border border-zinc-300 flex flex-col gap-1 max-h-[70vh]'>
+                  <div className='mt-5 border-5 border-zinc-50 rounded-2xl p-1 min-w-sm overflow-scroll HIDDEN_SCROLL bg-white flex flex-col gap-1 max-h-[70vh]'>
                     {menu.items.map((subMenu: any) => {
                       const isSubMenuActive = currentTabURL === subMenu.resource?.handle;
 
@@ -121,6 +121,8 @@ export function HeaderMenu({ menu }: { menu: any }) {
             </li>
           );
         })}
+
+        {menu.items.length > 7 ? "..." : ""}
       </ul>
     </nav>
   );

@@ -52,7 +52,7 @@ export default function AccountLayout() {
   return (
     <div>
       <div className='flex flex-col gap-3'>
-        <h1 className='lg:text-5xl text-3xl font-bold'>{heading}</h1>
+        <h2 className='font-bold'>{heading}</h2>
         <br />
         <AccountMenu />
         <br />
@@ -77,7 +77,7 @@ function AccountMenu() {
 
   return (
     <nav role="navigation" className='flex flex-row gap-5 items-center justify-between'>
-      <div className='flex flex-row flex-wrap gap-5'>
+      <span className='flex flex-row flex-wrap gap-5'>
         <NavLink to="/account/orders" className={isActiveClass}>
           Orders
         </NavLink>
@@ -89,7 +89,7 @@ function AccountMenu() {
         <NavLink to="/account/addresses" className={isActiveClass}>
           Addresses
         </NavLink>
-      </div>
+      </span>
 
       <Logout />
     </nav>

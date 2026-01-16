@@ -21,7 +21,8 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
   const variantUrl = useVariantUrl(product.handle);
   const image = product.featuredImage; // Main Image
   const secondImage = product?.media?.nodes[1]?.image // Second Image only in the media
-  console.log(`%c${JSON.stringify(secondImage, null, 3)}`, 'color: white; font-size: 20px;')
+  // console.log(`%c${JSON.stringify(secondImage, null, 3)}`, 'color: green; font-size: 20px;')
+
 
   const price = product.priceRange?.minVariantPrice?.amount;
   const currency = product.priceRange?.minVariantPrice?.currencyCode;
@@ -63,9 +64,9 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
           onMouseLeave={() => setDisplayImage(image)}
         >
           <Image
-            // alt={image.altText || product.title}
+            alt={image.altText || ""}
             aspectRatio="1/1"
-            data={secondImage}
+            data={displayImage}
             loading={loading}
             className='object-cover min-h-40'
           />
