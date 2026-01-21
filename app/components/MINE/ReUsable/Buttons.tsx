@@ -23,46 +23,84 @@ export default function ArrowButton({ Href, Text, CC }: { Href?: string; Text?: 
 
 
 /// 
+// export function SliderButtons({
+//     passedArray,
+//     changeIndex,
+// }: {
+//     passedArray: any;
+//     changeIndex: (value: number | ((prevIndex: number) => number)) => void;
+// }) {
+//     // RIGHT Button
+//     const nextSlide = () => {
+//         if (!passedArray?.length) return;
+//         changeIndex((prevIndex) => (prevIndex + 1) % passedArray.length);
+//     };
+
+//     // LEFT Button
+//     const prevSlide = () => {
+//         if (!passedArray?.length) return;
+//         changeIndex((prevIndex) => (prevIndex - 1 + passedArray.length) % passedArray.length);
+//     };
+
+
+//     return (
+//         <>
+//             {/* Navigation Buttons */}
+//             <button
+//                 onClick={prevSlide}
+//                 className="cursor-pointer absolute -left-2 top-1/2 -translate-y-1/2 z-10 bg-zinc-100 shadow hover:bg-white duration-300 text-black md:p-3 p-2 rounded-full "
+//                 aria-label="Previous slide"
+//             >
+//                 <ChevronLeft size={24} />
+//             </button>
+
+//             <button
+//                 onClick={nextSlide}
+//                 className="cursor-pointer absolute -right-1 top-1/2 -translate-y-1/2 z-10 bg-zinc-100 shadow hover:bg-bg-white duration-300 text-black md:p-3 p-2 rounded-full"
+//                 aria-label="Next slide"
+//             >
+//                 <ChevronRight size={24} />
+//             </button>
+//         </>
+//     );
+// }
+
+
+
 export function SliderButtons({
     passedArray,
     changeIndex,
 }: {
-    passedArray: any;
-    changeIndex: (value: number | ((prevIndex: number) => number)) => void;
+    passedArray: any[];
+    changeIndex: (value: number | ((prev: number) => number)) => void;
 }) {
-    // RIGHT Button
     const nextSlide = () => {
-        if (!passedArray?.length) return;
-        changeIndex((prevIndex) => (prevIndex + 1) % passedArray.length);
+        changeIndex((prev) => (prev + 1) % passedArray.length); // loop to start
     };
 
-    // LEFT Button
     const prevSlide = () => {
-        if (!passedArray?.length) return;
-        changeIndex((prevIndex) => (prevIndex - 1 + passedArray.length) % passedArray.length);
+        changeIndex((prev) => (prev - 1 + passedArray.length) % passedArray.length); // loop to end
     };
 
     return (
         <>
-            {/* Navigation Buttons */}
             <button
                 onClick={prevSlide}
-                className="cursor-pointer absolute -left-2 top-1/2 -translate-y-1/2 z-10 bg-zinc-100 shadow hover:bg-white duration-300 text-black md:p-3 p-2 rounded-full "
-                aria-label="Previous slide"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-zinc-100 p-2 rounded-full"
             >
                 <ChevronLeft size={24} />
             </button>
 
             <button
                 onClick={nextSlide}
-                className="cursor-pointer absolute -right-1 top-1/2 -translate-y-1/2 z-10 bg-zinc-100 shadow hover:bg-bg-white duration-300 text-black md:p-3 p-2 rounded-full"
-                aria-label="Next slide"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-zinc-100 p-2 rounded-full"
             >
                 <ChevronRight size={24} />
             </button>
         </>
     );
 }
+
 
 
 

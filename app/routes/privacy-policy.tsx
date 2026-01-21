@@ -131,16 +131,16 @@ export default function PrivacyPage() {
     return (
         <main>
             <div className="max-w-4xl mx-auto px-6 py-16 font-sans text-black">
-                <h1 className="text-4xl font-bold text-center mb-4 text-black">Privacy Policy</h1>
+                <h3 className="text-4xl font-bold text-center mb-1 text-black">Privacy Policy</h3>
                 <p className="text-center text-zinc-500 ">
                     Last Updated: <span className="font-medium">{lastUpdated}</span>
                 </p>
 
                 {privacyData.map((section) => (
                     <section key={section.id} className=" scroll-mt-24" id={`section-${section.id}`}>
-                        <h2 className="text-2xl font-semibold mb-4 text-black">
+                        <h5 className="mt-5 font-semibold mb-3 text-black">
                             {section.id}. {section.title}
-                        </h2>
+                        </h5>
 
                         <div className="text-base leading-relaxed prose prose-lg max-w-none text-black">
                             {section.content}
@@ -154,7 +154,7 @@ export default function PrivacyPage() {
                             )}
 
                             {section.contactInfo && (
-                                <ul className="mt-6 space-y-3 text-black">
+                                <ul className="mt-6 space-y-1 text-black">
                                     {section.contactInfo.map((info, i) => (
                                         <li key={i}>
                                             <span className="font-medium">{info.label}:</span>{" "}

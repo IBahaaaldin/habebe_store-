@@ -53,7 +53,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
   return (
-    <article className='w-full max-w-40 min-w-35 relative h-fit items-end flex flex-col gap-3 md:p-2 p-1 bg-zinc-50 md:rounded-2xl rounded-xl overflow-hidden'>
+    <article className='w-full max-w-50 min-w-40 flex-1 relative h-fit items-end flex flex-col gap-3 md:p-2 p-1 bg-zinc-50 md:rounded-2xl rounded-xl overflow-hidden'>
       {image && (
         <Link
           className="w-full md:rounded-2xl rounded-xl overflow-hidden"
@@ -106,7 +106,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
             }
           >
             {/* The Sold out is hidden  from the comp itself */}
-            {product?.variants.nodes[0]?.availableForSale ? <ShoppingCart size={15} /> : 'Sold'}
+            {product?.variants.nodes[0]?.availableForSale ? <ShoppingCart size={20} /> : 'Sold'}
           </AddToCartButton>
         </div>
       </article>

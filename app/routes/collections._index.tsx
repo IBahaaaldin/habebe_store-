@@ -13,61 +13,59 @@ export async function loader(args: Route.LoaderArgs) {
 
 
 async function loadCriticalData({ context }: Route.LoaderArgs) {
+  const MainCollections = await context.storefront.query(MAINMENU_QUERY, {
+    variables: { handle: 'main-menu' },
+  });
 
-
-  const MainCollections = ([
-    context.storefront.query(MAINMENU_QUERY, {
-      variables: { handle: 'main-menu' }
-    }),
-  ]);
-
-
-  return {
-    MainCollections
-  };
+  return { MainCollections };
 }
 
 
 
 export default function Collections() {
-  const data = useLoaderData<typeof loader>();
+  const { MainCollections } = useLoaderData<typeof loader>();
 
-  console.log(`%c${JSON.stringify(data)}`, 'color: purple; font-size: 20px;')
-  // const collections = data.collections.nodes;
+  const items = MainCollections.menu.items;
+  console.log(`%c${JSON.stringify(items, null, 3)}`, 'color: white; font-size: 20px;')
 
 
 
   return (
-    <div></div>
-    // <section>
+    <div className="flex flex-col gap-5 ">
+      <h3 className="font-semibold">Discover our collections</h3>
 
-    //   <HeaderText HEAD='Collections' />
-    //   <div className="relative flex flex-col lg:gap-3 gap-1">
-    //     {collections.map((collection, index) => {
-    //       const isEvenPair = Math.floor(index / 2) % 2 === 0; // Determines if it's the first or second pair in a set of four
-    //       const isFirstInPair = index % 2 === 0; // Determines if it's the first item in a pair
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+        {items.map((item: any) => {
+          const image = item.resource?.image;
 
-    //       let firstItemWidth = 'w-1/3';
-    //       let secondItemWidth = 'w-2/3';
+          return (
+            <Link
+              to={`collections/${item.resource.handle}`}
+              key={item.id}
+              className="flex flex-col gap-2 group md:rounded-3xl rounded-2xl overflow-hidden border-7 border-zinc-100 bg-zinc-100 hover:shadow-lg "
+            >
+              <figure className="md:h-60 h-40 bg-gray-100 overflow-hidden md:rounded-3xl rounded-2xl">
+                {image ? (
+                  <Image
+                    data={image}
+                    alt={image.altText ?? item.title}
+                    className="h-full w-full object-cover group-hover:scale-105 duration-300 "
+                  />
+                ) : (
+                  <div className="h-full w-full flex items-center justify-center text-gray-400">
+                    No image
+                  </div>
+                )}
+              </figure>
 
-    //       if (!isEvenPair) { // For the second pair (index 2, 3, 6, 7, etc.)
-    //         firstItemWidth = 'w-2/3';
-    //         secondItemWidth = 'w-1/3';
-    //       }
-
-    //       return (
-    //         <div key={collection.id} className={`flex flex-row lg:gap-3 gap-1 ${isFirstInPair ? 'flex-row' : 'flex-row-reverse'}`}>
-    //           <div className={`${isFirstInPair ? firstItemWidth : secondItemWidth}`}>
-    //             <CollectionItem collection={collection} index={index} />
-    //           </div>
-    //           <div className={`${isFirstInPair ? secondItemWidth : firstItemWidth}`}>
-    //             {collections[index + 1] && <CollectionItem collection={collections[index + 1]} index={index + 1} />}
-    //           </div>
-    //         </div>
-    //       );
-    //     }).filter((_, index) => index % 2 === 0)} {/* Render only even indices to group pairs */}
-    //   </div>
-    // </section>
+              <p className="font-bold p-3 text-center bg-white hover:bg-orange-100 duration-300 md:rounded-3xl rounded-2xl ">
+                {item.title}
+              </p>
+            </Link>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
@@ -148,7 +146,6 @@ export const MAINMENU_AND_SUBMENU_QUERY = `#graphql
           id
           title
           url
-
           resource {
             ... on Collection {
               handle
@@ -182,7 +179,6 @@ export const MAINMENU_AND_SUBMENU_QUERY = `#graphql
           id
           title
           url
-
             resource {
               ... on Collection {
                 handle
@@ -245,6 +241,7 @@ export const MAINMENU_QUERY = `#graphql
         url
         resource {
           ... on Collection {
+            handle
             image {
               id
               url
@@ -258,8 +255,6 @@ export const MAINMENU_QUERY = `#graphql
     }
   }
 ` as const;
-
-
 
 
 
@@ -311,8 +306,36 @@ export const MAINMENU_AND_PRODUCTS_QUERY = `#graphql
                 }
               }
             }
-              gridBanners: metafield(namespace: "custom", key: "grid_banners") {
+            gridBanners: metafield(namespace: "custom", key: "grid_banners") {
               references(first: 10) {
+                nodes {
+                  ... on MediaImage {
+                    image {
+                      url
+                      altText
+                      width
+                      height
+                    }
+                  }
+                }
+              }
+            }
+            platinumBanners: metafield(namespace: "custom", key: "platinum_banners") {
+              references(first: 10) {
+                nodes {
+                  ... on MediaImage {
+                    image {
+                      url
+                      altText
+                      width
+                      height
+                    }
+                  }
+                }
+              }
+            }
+            casualBanners: metafield(namespace: "custom", key: "casual_banners") {
+              references(first: 4) {
                 nodes {
                   ... on MediaImage {
                     image {

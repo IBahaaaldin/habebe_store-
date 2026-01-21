@@ -1,8 +1,10 @@
 import { Image } from '@shopify/hydrogen';
 import type { FeaturedCollectionFragment } from 'storefrontapi.generated';
 import HeroText from "./UI/HeroText";
-import ArrowButton from './ReUsable/Buttons';
+import ArrowButton, { SliderButtons } from './ReUsable/Buttons';
 import { Link } from 'react-router';
+import { number } from 'framer-motion';
+import { useState } from 'react';
 
 
 
@@ -26,12 +28,12 @@ export default function CollectionsHero({ Collections, Title, Description, HeroI
                     SUBHEAD={subText}
                 />
 
-{/* 
+
                 <ArrowButton
                     CC={"w-fit"}
                     Href={`/collections/${Collections?.handle ?? ''}`}
                     Text="EXPLORE COLLECTION"
-                /> */}
+                />
             </article>
 
 
@@ -83,33 +85,41 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
 // AllCategories component displays a horizontal scrollable list of collection categories.
 export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
 
+
+    const [currentIndex, setCurrentIndex] = useState<number>(0)
+
+
     if (!Array.isArray(allSubMenus)) {
         return null;
     }
 
 
-
     return (
-        <article className="flex flex-row md:gap-3 gap-2 overflow-x-scroll pb-5">
-            {allSubMenus?.map((singleMenu: any) => (
-                <Link
-                    to={`/collections/${singleMenu?.handle ?? singleMenu?.resource?.handle}`}
-                    // WWHY?? Because some menus AND some are collection
-                    key={singleMenu.title}
-                    className="relative group cursor-pointer overflow-hidden md:rounded-2xl rounded-xl md:h-25 h-20 md:min-w-40 min-w-30 flex-1"
-                >
-                    <Image
-                        data={singleMenu?.image ?? singleMenu?.resource?.image}
-                        alt={singleMenu?.altText}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+        <div className="relative overflow-hidden">
 
-                    {/* Label Badge */}
-                    <span className="max-w-[80%] absolute bottom-3 left-3 text-white px-2 py-1 rounded-lg text-start font-bold ">
-                        {singleMenu.title}
-                    </span>
-                </Link>
-            ))}
-        </article>
+
+            {/* SLIDES */}
+            <article
+                className="flex gap-3 transition-transform duration-500 ease-in-out overflow-scroll"
+            >
+                {allSubMenus?.map((menu: any) => (
+                    <Link
+                        key={menu.id || menu.handle}
+                        to={`/collections/${menu.handle ?? menu.resource?.handle}`}
+                        className="group relative shrink-0 w-40 h-24 rounded-xl overflow-hidden"
+                    >
+                        <Image
+                            data={menu.image ?? menu.resource?.image}
+                            alt={menu.altText || menu.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+
+                        <span className="absolute bottom-2 left-2 text-white font-bold bg-black/30 px-2 py-1 rounded-xl max-w-[80%]">
+                            {menu.title}
+                        </span>
+                    </Link>
+                ))}
+            </article>
+        </div>
     );
 };

@@ -17,6 +17,9 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
   // const { lines || [] } = useCart();
 
 
+  console.log(`%c${JSON.stringify(productOptions)}`, 'color: gray; font-size: 20px;')
+  console.log(`%c${JSON.stringify(selectedVariant)}`, 'color: white; font-size: 20px;')
+
 
   // Used to get the current cart line
   // const currentCartLine = lines?.find((line) => line?.merchandise?.id === selectedVariant?.id);

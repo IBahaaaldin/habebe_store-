@@ -9,7 +9,7 @@ import CollectionsHero, { AllCategories } from '~/components/MINE/CollectionsHer
 import { MAINMENU_AND_SUBMENU_QUERY } from './collections._index';
 import { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
 import { useState, useEffect } from 'react';
-import MainAdsSection from '~/components/MINE/AdsSections';
+import MainBanners from '~/components/MINE/AdsSections';
 
 
 
@@ -117,7 +117,7 @@ export default function Collection() {
       <div className='space-y-10'>
 
         {Array.isArray(bannersArray) && bannersArray.length > 0 &&
-          <MainAdsSection
+          <MainBanners
             bannerArray={bannersArray}
           />
         }

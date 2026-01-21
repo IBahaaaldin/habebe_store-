@@ -10,8 +10,9 @@ import { MAINMENU_AND_PRODUCTS_QUERY } from './collections._index';
 import LoadingSpinner from '~/components/MINE/ReUsable/LoadingSpinner';
 import FAQs from '~/components/MINE/FAQs';
 import { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
-import { EventAdsSection, GridAdsSection, ScrollAdsSection } from '~/components/MINE/AdsSections';
+import { PlatinumBanners, GridBanners, ScrollBanners, CasualBanners } from '~/components/MINE/AdsSections';
 import HeroSlider from '~/components/MINE/HeroSlider';
+import ArrowButton from '~/components/MINE/ReUsable/Buttons';
 
 
 
@@ -74,13 +75,13 @@ export default function Homepage() {
 
 
       {/* Render the CollectionsSection component, passing the collections data */}
-      <TwoGrids
+      {/* <TwoGrids
         subTwoMenus={MainCollections.slice(0, 2)}
-      />
+      /> */}
 
 
       <AllCategories
-        allSubMenus={MainCollections.slice(2)}
+        allSubMenus={MainCollections}
       />
 
 
@@ -91,6 +92,8 @@ export default function Homepage() {
             mainBanners={collection?.mainBanners?.references?.nodes} // Get the matafield called "main_banners" that has the banners for each collection (if we assigned it to it)
             scrollBanners={collection?.scrollBanners?.references?.nodes}
             gridBanners={collection?.gridBanners?.references?.nodes}
+            platinumBanners={collection?.platinumBanners?.references?.nodes} //
+            casualBanners={collection?.casualBanners?.references?.nodes}
             products={collection?.products} // 
             collectionTitle={collection?.title}
             Handle={collection?.handle}
@@ -106,28 +109,21 @@ export default function Homepage() {
 
 
 // MainCollectionsProductsSample component
-export function MainCollectionsProductsSample({ products, collectionTitle, Handle, mainBanners, scrollBanners, gridBanners }: { products: any; collectionTitle: string; Handle: string; mainBanners?: any; scrollBanners?: any; gridBanners?: any; }) {
+export function MainCollectionsProductsSample({ products, collectionTitle, Handle, mainBanners, scrollBanners, gridBanners, platinumBanners, casualBanners }: { products: any; collectionTitle: string; Handle: string; mainBanners?: any; scrollBanners?: any; gridBanners?: any; platinumBanners: any, casualBanners?: any; }) {
 
 
   return (
     <section className="flex flex-col gap-3 pb-10">
 
       {/* /// ADS Section for MainBanners */}
-      {/* {mainBanners && mainBanners?.length > 0 &&
-        <MainAdsSection bannerArray={mainBanners} />
-      } */}
-
-      {/* /// ADS Section for MainBanners */}
-      <ScrollAdsSection bannerArray={scrollBanners} Title={collectionTitle} collectionHandle={Handle} />
-
-      {/* /// ADS Section for MainBanners */}
-      <GridAdsSection collectionHandle={Handle} bannerArray={gridBanners} />
+      <ScrollBanners bannerArray={scrollBanners} Title={collectionTitle} collectionHandle={Handle} />
+      <GridBanners collectionHandle={Handle} bannerArray={gridBanners} />
+      <PlatinumBanners bannerArray={platinumBanners} collectionHandle={Handle} />
+      <CasualBanners bannerArray={casualBanners} collectionHandle={Handle} />
 
 
-      <EventAdsSection bannerArray={scrollBanners} collectionHandle={Handle} />
-
-      {/*  // */}
-      <div className='flex flex-row justify-between items-start'>
+      {/*  /// Header text */}
+      {/* <div className='flex flex-row justify-between items-start'>
         <SmallHeaderText HEAD={`${collectionTitle}${collectionTitle?.endsWith('s') ? "'" : "'s"} Collection`} />
 
         <Link
@@ -137,11 +133,11 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
         >
           See More
         </Link>
-      </div>
+      </div> */}
 
 
       {/* /   */}
-      <Suspense fallback={<LoadingSpinner />}>
+      {/* <Suspense fallback={<LoadingSpinner />}>
         <Await resolve={products}>
           {(response) => (
             <div className="PRODUCTS_GRID_CONTAINER">
@@ -158,17 +154,39 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
             </div>
           )}
         </Await>
-      </Suspense>
+      </Suspense> */}
 
 
 
       {/* //  */}
-      <article className='flex lg:flex-row flex-col justify-between w-full gap-5 gap-y-7  p-5 bg-zinc-200 md:rounded-2xl rounded-xl'>
+      <article className='flex lg:flex-row flex-col justify-between w-full gap-5 gap-y-7 p-5 bg-zinc-200 md:rounded-2xl rounded-xl'>
 
-        <SmallHeaderText
-          HEAD={<>Top Picks from <b>{collectionTitle}</b></>}
-          SUBHEAD={<>Explore our curated selection of top picks from the <b>{collectionTitle}</b> collection.</>}
-        />
+
+        <div className='flex flex-col justify-between'>
+
+          <SmallHeaderText
+            HEAD={<>Top Picks from <b>{collectionTitle}</b> Collection</>}
+            SUBHEAD={<>Explore our curated selection of top picks from the <b>{collectionTitle}</b> collection.</>}
+          />
+
+          {/* <Link
+            className='BUTTON1 w-fit'
+            prefetch="intent"
+            to={`/collections/${Handle}`}
+          >
+            See More
+          </Link> */}
+
+
+
+          {/* < */}
+
+          <ArrowButton
+            Text='Explore Collection'
+            CC='w-fit'
+            Href={`/collections/${Handle}`}
+          />
+        </div>
 
 
         <Suspense fallback={<LoadingSpinner />}>
@@ -176,7 +194,7 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
             {(response) => (
               <div className="flex flex-row gap-3 overflow-x-scroll HIDDEN_SCROLL">
                 {response
-                  ? response?.nodes?.slice(0, 3)?.map((product: any) => (
+                  ? response?.nodes?.slice(0, 20)?.map((product: any) => (
 
                     <ProductItem
                       key={product?.id}

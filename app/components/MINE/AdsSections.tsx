@@ -6,9 +6,15 @@ import { SliderButtons, SmallIndexButtons } from "./ReUsable/Buttons";
 
 
 
+export type Banner = {
+    image?: { url?: string } | any;
+    link?: string;
+};
+
+
 
 // Main banner section
-export default function MainAdsSection({ bannerArray }: { bannerArray?: any }) {
+export default function MainBanners({ bannerArray }: { bannerArray?: Banner[] }) {
 
     const [index, setIndex] = useState<number>(0);
 
@@ -25,16 +31,16 @@ export default function MainAdsSection({ bannerArray }: { bannerArray?: any }) {
 
 
     return (
-        <section className="flex flex-row w-full overflow-hidden">
+        <section className="flex flex-row w-full overflow-hidden bg-zinc-100">
             <div
-                className="flex h-40 transition-transform duration-700 ease-in-out"
+                className="flex h-40 transition-transform duration-700" 
                 style={{ transform: `translateX(-${index * 100}%)` }}
             >
                 {bannerArray?.map((ad: any, index: number) => (
                     <Image
                         key={index}
                         data={ad.image}
-                        className="min-w-full h-full px-5 object-cover"
+                        className="min-w-full h-full p-2 object-cover"
                         alt="ad"
                     />
                 ))}
@@ -46,7 +52,7 @@ export default function MainAdsSection({ bannerArray }: { bannerArray?: any }) {
 
 
 // Scrollable Banners
-export function ScrollAdsSection({ bannerArray, Title, collectionHandle }: { bannerArray: any[], Title: string, collectionHandle: string }) {
+export function ScrollBanners({ bannerArray, Title, collectionHandle }: { bannerArray: Banner[], Title: string, collectionHandle: string }) {
 
     const [currentIndex, setCurrentIndex] = useState<number>(0);
 
@@ -81,10 +87,10 @@ export function ScrollAdsSection({ bannerArray, Title, collectionHandle }: { ban
                         transform: `translateX(-${currentIndex * 100}%)`,
                     }}
                 >
-                    {bannerArray.map((banner: any) => (
+                    {bannerArray.map((banner: Banner) => (
                         <Link
                             to={`/collections/${collectionHandle}`}
-                            key={banner.image.url}
+                            key={banner?.image?.url}
                             className="min-w-full h-50 overflow-hidden bg-center flex items-center justify-center rounded-2xl"
                         >
                             <Image
@@ -110,7 +116,7 @@ export function ScrollAdsSection({ bannerArray, Title, collectionHandle }: { ban
 
 
 // Grid Banners
-export function GridAdsSection({ bannerArray, collectionHandle }: { bannerArray: any[], collectionHandle: string }) {
+export function GridBanners({ bannerArray, collectionHandle }: { bannerArray: Banner[], collectionHandle: string }) {
 
 
     if (!Array.isArray(bannerArray)) {
@@ -120,7 +126,7 @@ export function GridAdsSection({ bannerArray, collectionHandle }: { bannerArray:
 
     return (
         <section className="w-full overflow-x-scroll flex flex-row sm:grid grid-cols-2 lg:grid-cols-4 gap-3 ">
-            {bannerArray.map((banner: any, index: number) => (
+            {bannerArray.map((banner: Banner, index: number) => (
                 <figure key={index} className="object-cover min-w-[70%] sm:w-full h-full rounded-xl overflow-hidden">
                     <Image
                         key={index}
@@ -139,7 +145,7 @@ export function GridAdsSection({ bannerArray, collectionHandle }: { bannerArray:
 
 
 
-export function EventAdsSection({ bannerArray, collectionHandle }: { bannerArray: any, collectionHandle: string }) {
+export function PlatinumBanners({ bannerArray, collectionHandle }: { bannerArray: Banner[], collectionHandle: string }) {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
 
     useEffect(() => {
@@ -172,14 +178,14 @@ export function EventAdsSection({ bannerArray, collectionHandle }: { bannerArray
                         transform: `translateX(-${currentIndex * 100}%)`,
                     }}
                 >
-                    {bannerArray.map((banner: any) => (
+                    {bannerArray.map((banner: Banner) => (
                         <div
-                            key={banner.image.url}
+                            key={banner?.image?.url}
                             className="flex min-w-full border border-black/10 rounded-2xl shadow-[0px_0px_15px_-10px] overflow-hidden"
                         >
                             {/* Image */}
                             <Image
-                                data={banner.image}
+                                data={banner?.image}
                                 alt={collectionHandle}
                                 className="min-w-[50%] h-full object-cover"
                             />
@@ -216,7 +222,7 @@ export function EventAdsSection({ bannerArray, collectionHandle }: { bannerArray
 
 
             {/* Footer Section */}
-            <div className="pt-5 w-full text-end">
+            <div className="pt-3 w-full text-end">
                 <span className="text-gray-600 text-sm">
                     Sponsors &nbsp;
                     <Link
@@ -229,5 +235,53 @@ export function EventAdsSection({ bannerArray, collectionHandle }: { bannerArray
             </div>
         </section>
 
+    );
+};
+
+
+
+// / Casual Banners
+export function CasualBanners({ bannerArray, collectionHandle }: { bannerArray: Banner[], collectionHandle: string }) {
+
+
+    if (!Array.isArray(bannerArray)) {
+        return null;
+    }
+
+
+    return (
+        <section className="flex flex-col sm:flex-row gap-2 md:h-80">
+            {/* LEFT */}
+            <Link
+                to={`collections/${collectionHandle}`}
+                aria-label={collectionHandle}
+                className="md:rounded-3xl rounded-2xl md:h-full h-40 sm:w-2/3 overflow-hidden border"
+            >
+                <Image
+                    data={bannerArray[0]?.image}
+                    alt={collectionHandle}
+                    className="object-cover w-full h-full hover:scale-105  duration-500"
+                />
+            </Link>
+
+
+            {/* /// RIGHT */}
+            <div className="w-full h-full sm:w-1/3 flex sm:flex-col flex-row gap-2">
+                {bannerArray.slice(1, 3).map((banner: Banner, index) => (
+                    <Link
+                        key={index}
+                        to={`collections/${collectionHandle}`}
+                        aria-label={collectionHandle}
+                        className="w-full md:h-full h-20 relative md:rounded-2xl rounded-xl overflow-hidden border"
+                    >
+                        <Image
+                            data={banner?.image}
+                            alt={collectionHandle}
+                            className="object-cover  h-full w-full hover:scale-105 duration-500"
+                        />
+                    </Link>
+                ))}
+            </div>
+        </section>
     );
 };

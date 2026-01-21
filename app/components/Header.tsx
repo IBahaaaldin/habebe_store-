@@ -27,7 +27,7 @@ export default function Header({ header, isLoggedIn, cart }: HeaderProps) {
   const { menu } = header;
 
   return (
-    <header className={`z-999 sticky top-0 left-0 right-0 bg-white backdrop-blur-sm w-full mx-auto flex flex-row items-center gap-5 px-5 py-4 duration-500 
+    <header className={`z-999 sticky top-0 left-0 right-0 bg-white backdrop-blur-sm w-full mx-auto flex flex-row items-center gap-5 py-4 duration-500 
       `}
     >
       {/* LOGO on TOP */}

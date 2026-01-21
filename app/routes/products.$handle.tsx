@@ -325,6 +325,47 @@ export const PRODUCT_FRAGMENT = `#graphql
   ${PRODUCT_VARIANT_FRAGMENT}
 ` as const;
 
+// const PRODUCT_QUERY = `#graphql
+//   query Product(
+//     $country: CountryCode
+//     $handle: String!
+//     $language: LanguageCode
+//     $selectedOptions: [SelectedOptionInput!]!
+//   ) @inContext(country: $country, language: $language) {
+//     product(handle: $handle) {
+//       ...Product
+//       featuredImage {
+//         id  
+//         url
+//         width
+//         height
+//       }
+//       media(first: 10) {
+//         edges {
+//           node {
+//             mediaContentType
+//             alt
+//             ... on MediaImage {
+//               image {
+//                 id  
+//                 url
+//                 width
+//                 height
+//               }
+//             }
+//             ... on Video {
+//               sources {
+//                 url
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+//   ${PRODUCT_FRAGMENT}
+// ` as const;
+
 const PRODUCT_QUERY = `#graphql
   query Product(
     $country: CountryCode
@@ -365,7 +406,6 @@ const PRODUCT_QUERY = `#graphql
   }
   ${PRODUCT_FRAGMENT}
 ` as const;
-
 
 const SIMILAR_PRODUCTS_QUERY = `#graphql
   query SimilarProducts($productId: ID!) {

@@ -45,7 +45,7 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Feat
                             </figure>
 
 
-                            <div className="flex flex-col my-10 justify-end p-6 md:p-12">
+                            <div className="flex flex-col my-20 justify-end md:px-15 px-10">
                                 <div className="text-white">
                                     <h2 className="font-bold mb-3">{collection.title}</h2>
                                     <h6 className="font-semibold text-white mb-2">

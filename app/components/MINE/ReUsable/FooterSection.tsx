@@ -86,142 +86,146 @@ export default function FooterSection({ header }: { header: any }) {
 
 
     return (
-        <footer className="HOME_WRAPPER duration-500 grid lg:grid-cols-3 md:grid-cols-2 md:gap-x-10 gap-x-5 md:gap-y-15 gap-y-10 items-between justify-between bg-white md:rounded-2xl rounded-xl relative overflow-hidden py-10 *:min-w-1/3 *:w-full">
+        <div className="flex flex-col HOME_WRAPPER w-full">
 
 
+            <div className=" grid lg:grid-cols-3 md:grid-cols-2 md:gap-x-10 gap-x-5 md:gap-y-15 gap-y-10 items-between justify-between bg-white md:rounded-2xl rounded-xl relative overflow-hidden py-10 *:min-w-1/3 *:w-full">
 
-            {/* /// SECOND MENU */}
-            <section className='flex flex-col min-h-full gap-1'>
-                <h5 className="text-black/50 mb-3">
-                    Quick Navigation
-                </h5>
-
-                <div className="flex flex-col gap-1">
-                    {PagesLinks.map((page, index) => (
-                        <Link
-                            to={page.path || '#'}
-                            key={index}
-                            className="hover:text-orange-400 text-black font-bold text-start duration-500"
-                        >
-                            <span>
-                                {page.name}
-                            </span>
-                        </Link>
-                    ))}
-                </div>
-            </section>
-
-
-
-
-            {/* /// MENU */}
-            <section className='flex flex-col min-h-full gap-1'>
-                <h5 className="text-black/50 mb-3">
-                    Main Categories
-                </h5>
-
-
-                <div className="flex flex-col gap-1">
-                    {header.menu?.items.map((menu: any) => (
-                        <Link
-                            to={`/collections/${menu.resource?.handle || '#'}`}
-                            key={menu.id}
-
-                            className="hover:text-orange-400 text-black font-bold text-start duration-500"
-                        >
-                            <span>
-                                {menu.title}
-                            </span>
-                        </Link>
-                    ))}
-                </div>
-            </section>
-
-
-
-            {/* /// Subscribe */}
-            <section className='flex flex-col min-h-full justify-start gap-3'>
-                <div className="flex flex-col gap-3">
-                    <h5 className="text-black/50">
-                        Subscribe to our newsletter
+                {/* /// SECOND MENU */}
+                <section className='flex flex-col min-h-full gap-1'>
+                    <h5 className="text-black/50 mb-3">
+                        Quick Navigation
                     </h5>
-                    <span className="text-black">Dont miss our latest news, updates, and exclusive offers and stay ahead of your peers</span>
-                </div>
 
-                <input
-                    type="text"
-                    placeholder="Enter your email"
-                    className="INPUT"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                />
-                <button className="BUTTON2 w-full"
-                    onClick={() => subscribeFun()}
-                >Subscribe</button>
-            </section>
+                    <div className="flex flex-col gap-1">
+                        {PagesLinks.map((page, index) => (
+                            <Link
+                                to={page.path || '#'}
+                                key={index}
+                                className="hover:text-orange-400 text-black font-bold text-start duration-500"
+                            >
+                                <span>
+                                    {page.name}
+                                </span>
+                            </Link>
+                        ))}
+                    </div>
+                </section>
 
 
 
 
-            {/* /// ABOUT US */}
-            <section className="w-full flex flex-row gap-3 items-start justify-start">
-                {header.shop.brand?.logo?.image?.url && (
-                    <figure className="w-17  overflow-hidden">
-                        <Image
-                            src={header.shop.brand.logo.image.url}
-                            alt={header.shop.name}
-                            className="object-cover w-full aspect-square scale-110"
-                            aspectRatio="1/1"
-                        />
-                    </figure>
-                )}
+                {/* /// MENU */}
+                <section className='flex flex-col min-h-full gap-1'>
+                    <h5 className="text-black/50 mb-3">
+                        Main Categories
+                    </h5>
 
-                {/* //  */}
-                <div className="flex flex-col gap-3">
-                    {header.shop.name && (
-                        <h4 className="text-nowrap font-bold">{header.shop.name}</h4>
+
+                    <div className="flex flex-col gap-1">
+                        {header.menu?.items.map((menu: any) => (
+                            <Link
+                                to={`/collections/${menu.resource?.handle || '#'}`}
+                                key={menu.id}
+
+                                className="hover:text-orange-400 text-black font-bold text-start duration-500"
+                            >
+                                <span>
+                                    {menu.title}
+                                </span>
+                            </Link>
+                        ))}
+                    </div>
+                </section>
+
+
+
+                {/* /// Subscribe */}
+                <section className='flex flex-col min-h-full justify-start gap-3'>
+                    <div className="flex flex-col gap-3">
+                        <h5 className="text-black/50">
+                            Subscribe to our newsletter
+                        </h5>
+                        <span className="text-black">Dont miss our latest news, updates, and exclusive offers and stay ahead of your peers</span>
+                    </div>
+
+                    <input
+                        type="text"
+                        placeholder="Enter your email"
+                        className="INPUT"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                    />
+                    <button className="BUTTON2 w-full"
+                        onClick={() => subscribeFun()}
+                    >Subscribe</button>
+                </section>
+
+
+
+
+                {/* /// ABOUT US */}
+                <section className="w-full flex flex-row gap-3 items-start justify-start">
+                    {header.shop.brand?.logo?.image?.url && (
+                        <figure className="w-17  overflow-hidden">
+                            <Image
+                                src={header.shop.brand.logo.image.url}
+                                alt={header.shop.name}
+                                className="object-cover w-full aspect-square scale-110"
+                                aspectRatio="1/1"
+                            />
+                        </figure>
                     )}
 
-
-                    <article className=" w-fit flex flex-row items-center gap-3">
-                        {socialLinks.map((link, index: number) => (
-                            link && (
-                                <a
-                                    key={index}
-                                    href={link.path}
-                                    className="text-lg mt-1 cursor-pointer hover:opacity-50 hover:text-orange-400 duration-300">
-                                    {link.logo}
-                                </a>
-                            )
-                        ))}
-                    </article>
-                </div>
-            </section>
+                    {/* //  */}
+                    <div className="flex flex-col gap-3">
+                        {header.shop.name && (
+                            <h4 className="text-nowrap font-bold">{header.shop.name}</h4>
+                        )}
 
 
-
-            {/* /// Social Media */}
-            <section className='flex flex-col min-h-full justify-start gap-10'>
-                <div className="flex flex-col gap-3">
-                    <span className=" text-black/50 ">
-                        We are here to make life easier, Everything you want, in one place.
-                    </span>
-
-                    <ul className="flex flex-row items-center gap-5 ">
-                        <Link to={'/contact-us'}>
-                            <button className="BUTTON2 ">Contact Us</button>
-                        </Link>
-                        <Link to={'mailto:info@habebe.store'} className=" text-black duration-500">
-                            <FaEnvelope className="text-lg hover:text-orange-400 duration-500" />
-                        </Link>
-                    </ul>
-                </div>
-            </section>
+                        <article className=" w-fit flex flex-row items-center gap-3">
+                            {socialLinks.map((link, index: number) => (
+                                link && (
+                                    <a
+                                        key={index}
+                                        href={link.path}
+                                        className="text-lg mt-1 cursor-pointer hover:opacity-50 hover:text-orange-400 duration-300">
+                                        {link.logo}
+                                    </a>
+                                )
+                            ))}
+                        </article>
+                    </div>
+                </section>
 
 
 
-            {/* /// PAYMENT */}
-            <PaymentIcons />
-        </footer>
+                {/* /// Social Media */}
+                <section className='flex flex-col min-h-full justify-start gap-10'>
+                    <div className="flex flex-col gap-3">
+                        <span className=" text-black/50 ">
+                            We are here to make life easier, Everything you want, in one place.
+                        </span>
+
+                        <ul className="flex flex-row items-center gap-5 ">
+                            <Link to={'/contact-us'}>
+                                <button className="BUTTON2 ">Contact Us</button>
+                            </Link>
+                            <Link to={'mailto:info@habebe.store'} className=" text-black duration-500">
+                                <FaEnvelope className="text-lg hover:text-orange-400 duration-500" />
+                            </Link>
+                        </ul>
+                    </div>
+                </section>
+
+                {/* /// PAYMENT */}
+                <PaymentIcons />
+            </div>
+
+            <span className="border-t border-black/20 my-3 pt-3 w-ful text-center text-zinc-500">
+                © {new Date().getFullYear()} Your Company Name. All rights reserved.
+            </span>
+        </div>
     )
 }
