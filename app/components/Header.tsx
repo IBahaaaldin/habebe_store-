@@ -27,7 +27,7 @@ export default function Header({ header, isLoggedIn, cart }: HeaderProps) {
   const { menu } = header;
 
   return (
-    <header className={`z-999 sticky top-0 left-0 right-0 bg-white backdrop-blur-sm w-full mx-auto flex flex-row items-center gap-5 py-4 duration-500 
+    <header className={`z-999 sticky top-0 left-0 right-0 bg-white backdrop-blur-sm w-full mx-auto flex flex-row items-center gap-5 py-3.5 duration-500 
       `}
     >
       {/* LOGO on TOP */}
@@ -44,7 +44,6 @@ export default function Header({ header, isLoggedIn, cart }: HeaderProps) {
           className='scale-120'
         />
       </NavLink>
-
 
       <HeaderMenu
         menu={menu}
@@ -66,10 +65,7 @@ export function HeaderMenu({ menu }: { menu: any }) {
   return (
     <nav role="navigation" className='flex lg:flex-row flex-col gap-3'>
 
-
-
-
-      <ul className="hidden lg:flex flex-row gap-5"> {/* Increased gap for better look */}
+      <ul className="hidden lg:flex flex-row rounded-full"> {/* Increased gap for better look */}
         {menu?.items.slice(0, 7).map((menu: any) => {
           // Optional: Logic to determine if active
 
@@ -78,7 +74,7 @@ export function HeaderMenu({ menu }: { menu: any }) {
           return (
             <li
               key={menu.id}
-              className="relative group"
+              className={`relative group ${isMainMenuActive ? 'border-b border-l border-black/10 bg-zinc-100 font-bold' : ''} px-3 py-1 rounded-full`}
             >
               <Link
                 to={`/collections/${menu?.resource?.handle || '#'}`}

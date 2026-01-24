@@ -2,7 +2,7 @@ import { Await, useLoaderData, Link } from 'react-router';
 import type { Route } from './+types/_index';
 import { Suspense } from 'react';
 import { ProductItem } from '~/components/ProductItem';
-import CollectionsHero, { AllCategories, TwoGrids } from '~/components/MINE/CollectionsHero';
+import CollectionsHero, { AllCategories, CollectionsNewHero, TwoGrids } from '~/components/MINE/CollectionsHero';
 import Reviews from '~/components/MINE/Reviews';
 
 // For the collection section
@@ -13,6 +13,7 @@ import { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
 import { PlatinumBanners, GridBanners, ScrollBanners, CasualBanners } from '~/components/MINE/AdsSections';
 import HeroSlider from '~/components/MINE/HeroSlider';
 import ArrowButton from '~/components/MINE/ReUsable/Buttons';
+import { ConsumerElectronicsBanner, HomeGardenFurnitureBanner, PetsSuppliesBanner } from '~/components/MINE/NewCollectionsBanners';
 
 
 
@@ -71,17 +72,13 @@ export default function Homepage() {
         Collections={MainCollections}
       /> */}
 
-      <HeroSlider mainCollections={MainCollections} />
-
-
-      {/* Render the CollectionsSection component, passing the collections data */}
-      {/* <TwoGrids
-        subTwoMenus={MainCollections.slice(0, 2)}
-      /> */}
+      <HeroSlider
+        mainCollections={MainCollections}
+      />
 
 
       <AllCategories
-        allSubMenus={MainCollections}
+        allSubMenus={MainCollections.slice(2)}
       />
 
 
@@ -97,6 +94,8 @@ export default function Homepage() {
             products={collection?.products} // 
             collectionTitle={collection?.title}
             Handle={collection?.handle}
+
+
           />
         </div>
       ))}
@@ -113,13 +112,30 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
 
   return (
-    <section className="flex flex-col gap-3 pb-10">
+    <section className="flex flex-col gap-10 pb-10">
 
       {/* /// ADS Section for MainBanners */}
-      <ScrollBanners bannerArray={scrollBanners} Title={collectionTitle} collectionHandle={Handle} />
+      {/* <ScrollBanners bannerArray={scrollBanners} Title={collectionTitle} collectionHandle={Handle} />
       <GridBanners collectionHandle={Handle} bannerArray={gridBanners} />
       <PlatinumBanners bannerArray={platinumBanners} collectionHandle={Handle} />
       <CasualBanners bannerArray={casualBanners} collectionHandle={Handle} />
+ */}
+
+
+      {Handle === "pets-supplies" &&
+        <PetsSuppliesBanner />
+      }
+      {Handle === "home-garden-furniture" &&
+        <HomeGardenFurnitureBanner />
+      }
+      {Handle === "consumer-electronics" &&
+        <ConsumerElectronicsBanner />
+      }
+
+      {Handle === "men-clothing" &&
+        <PlatinumBanners collectionHandle='men-clothing' />
+      }
+
 
 
       {/*  /// Header text */}
@@ -137,7 +153,7 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
 
       {/* /   */}
-      {/* <Suspense fallback={<LoadingSpinner />}>
+      <Suspense fallback={<LoadingSpinner />}>
         <Await resolve={products}>
           {(response) => (
             <div className="PRODUCTS_GRID_CONTAINER">
@@ -154,61 +170,7 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
             </div>
           )}
         </Await>
-      </Suspense> */}
-
-
-
-      {/* //  */}
-      <article className='flex lg:flex-row flex-col justify-between w-full gap-5 gap-y-7 p-5 bg-zinc-200 md:rounded-2xl rounded-xl'>
-
-
-        <div className='flex flex-col justify-between'>
-
-          <SmallHeaderText
-            HEAD={<>Top Picks from <b>{collectionTitle}</b> Collection</>}
-            SUBHEAD={<>Explore our curated selection of top picks from the <b>{collectionTitle}</b> collection.</>}
-          />
-
-          {/* <Link
-            className='BUTTON1 w-fit'
-            prefetch="intent"
-            to={`/collections/${Handle}`}
-          >
-            See More
-          </Link> */}
-
-
-
-          {/* < */}
-
-          <ArrowButton
-            Text='Explore Collection'
-            CC='w-fit'
-            Href={`/collections/${Handle}`}
-          />
-        </div>
-
-
-        <Suspense fallback={<LoadingSpinner />}>
-          <Await resolve={products}>
-            {(response) => (
-              <div className="flex flex-row gap-3 overflow-x-scroll HIDDEN_SCROLL">
-                {response
-                  ? response?.nodes?.slice(0, 20)?.map((product: any) => (
-
-                    <ProductItem
-                      key={product?.id}
-                      product={product}
-                    />
-
-                  ))
-                  : null}
-              </div>
-            )}
-          </Await>
-        </Suspense>
-      </article>
-
+      </Suspense>
     </section>
   );
 }

@@ -7,63 +7,19 @@ export default function ArrowButton({ Href, Text, CC }: { Href?: string; Text?: 
     return (
         <Link
             to={Href ?? '/'}
-            className={`flex flex-row items-center justify-between md:gap-5 gap-3 md:pl-5 pl-3 pr-1 py-1 rounded-full bg-white  hover:bg-orange-100 active:bg-orange-100 text-black duration-300 ${CC}`}
+            className={`group flex flex-row items-center justify-between md:gap-5 gap-3 md:pl-5 pl-3 pr-1 py-1 rounded-full bg-white  hover:bg-black hover:text-white active:bg-orange-100 text-black duration-300 ${CC}`}
         >
             <span className='text-nowrap'>{Text}</span>
 
             <div className="bg-black rounded-full p-1 flex items-center justify-center">
                 <ArrowRight
-                    className="md:w-6 md:h-6 w-4 h-4 text-white"
+                    className="group-hover:translate-x-1 duration-300 md:w-6 md:h-6 w-4 h-4 text-white"
                 />
             </div>
         </Link>
     );
 };
 
-
-
-/// 
-// export function SliderButtons({
-//     passedArray,
-//     changeIndex,
-// }: {
-//     passedArray: any;
-//     changeIndex: (value: number | ((prevIndex: number) => number)) => void;
-// }) {
-//     // RIGHT Button
-//     const nextSlide = () => {
-//         if (!passedArray?.length) return;
-//         changeIndex((prevIndex) => (prevIndex + 1) % passedArray.length);
-//     };
-
-//     // LEFT Button
-//     const prevSlide = () => {
-//         if (!passedArray?.length) return;
-//         changeIndex((prevIndex) => (prevIndex - 1 + passedArray.length) % passedArray.length);
-//     };
-
-
-//     return (
-//         <>
-//             {/* Navigation Buttons */}
-//             <button
-//                 onClick={prevSlide}
-//                 className="cursor-pointer absolute -left-2 top-1/2 -translate-y-1/2 z-10 bg-zinc-100 shadow hover:bg-white duration-300 text-black md:p-3 p-2 rounded-full "
-//                 aria-label="Previous slide"
-//             >
-//                 <ChevronLeft size={24} />
-//             </button>
-
-//             <button
-//                 onClick={nextSlide}
-//                 className="cursor-pointer absolute -right-1 top-1/2 -translate-y-1/2 z-10 bg-zinc-100 shadow hover:bg-bg-white duration-300 text-black md:p-3 p-2 rounded-full"
-//                 aria-label="Next slide"
-//             >
-//                 <ChevronRight size={24} />
-//             </button>
-//         </>
-//     );
-// }
 
 
 
@@ -86,14 +42,14 @@ export function SliderButtons({
         <>
             <button
                 onClick={prevSlide}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-zinc-100 p-2 rounded-full"
+                className="cursor-pointer absolute -left-2 top-1/2 -translate-y-1/2 z-10 bg-zinc-100 hover:bg-white/30 duration-300 backdrop-blur-sm p-2 rounded-r-full"
             >
                 <ChevronLeft size={24} />
             </button>
 
             <button
                 onClick={nextSlide}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-zinc-100 p-2 rounded-full"
+                className="cursor-pointer absolute -right-2 top-1/2 -translate-y-1/2 z-10 bg-zinc-100 hover:bg-white/30 duration-300 backdrop-blur-sm p-2 rounded-l-full"
             >
                 <ChevronRight size={24} />
             </button>

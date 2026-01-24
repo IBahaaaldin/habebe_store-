@@ -58,10 +58,6 @@ export default function FooterSection({ header }: { header: any }) {
 
     const PagesLinks = [
         {
-            name: "About",
-            path: "/about",
-        },
-        {
             name: "Contact",
             path: "/contact",
         },
@@ -209,7 +205,7 @@ export default function FooterSection({ header }: { header: any }) {
                         </span>
 
                         <ul className="flex flex-row items-center gap-5 ">
-                            <Link to={'/contact-us'}>
+                            <Link to={'/contact'}>
                                 <button className="BUTTON2 ">Contact Us</button>
                             </Link>
                             <Link to={'mailto:info@habebe.store'} className=" text-black duration-500">

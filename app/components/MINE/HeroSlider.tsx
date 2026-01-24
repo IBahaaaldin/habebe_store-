@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import type { FeaturedCollectionFragment } from 'storefrontapi.generated';
 import { Image } from '@shopify/hydrogen';
 import ArrowButton, { SliderButtons, SmallIndexButtons } from './ReUsable/Buttons';
+import { AllCategories, TwoGrids } from './CollectionsHero';
+
 
 
 
@@ -22,9 +24,9 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Feat
 
 
     return (
-        <section className="relative w-full h-[50vh]">
+        <section className="relative w-full flex flex-col gap-3 overflow-hidden">
             {/* Slides */}
-            <div className="relative h-full w-full overflow-hidden md:rounded-2xl rounded-xl">
+            <article className="relative h-full w-full overflow-hidden md:rounded-2xl rounded-xl">
                 <div
                     className="relative flex transition-transform duration-700 ease-in-out h-full"
                     style={{
@@ -67,15 +69,19 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Feat
                         </div>
                     ))}
                 </div>
-            </div>
 
 
-            {/* Slider Buttons to swipe arrays */}
-            <SliderButtons passedArray={mainCollections} changeIndex={setCurrentIndex} />
+
+                {/* Slider Buttons to swipe arrays */}
+                <SliderButtons passedArray={mainCollections ?? []} changeIndex={setCurrentIndex} />
+                {/* Dots Navigation */}
+                <SmallIndexButtons changeIndex={setCurrentIndex} currentIndex={currentIndex} passedArray={mainCollections ?? []} />
+            </article>
 
 
-            {/* Dots Navigation */}
-            <SmallIndexButtons changeIndex={setCurrentIndex} currentIndex={currentIndex} passedArray={mainCollections} />
+            <TwoGrids
+                subTwoMenus={mainCollections?.slice(0, 2)}
+            />
         </section>
     );
 };

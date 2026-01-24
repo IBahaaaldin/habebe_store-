@@ -1,15 +1,14 @@
-import { Link, redirect, useLoaderData } from 'react-router';
+import { redirect, useLoaderData } from 'react-router';
 import type { Route } from './+types/collections.$handle';
 import { getPaginationVariables } from '@shopify/hydrogen';
 import { PaginatedResourceSection } from '~/components/PaginatedResourceSection';
 import { redirectIfHandleIsLocalized } from '~/lib/redirect';
 import { ProductItem } from '~/components/ProductItem';
 import type { ProductFragment } from 'storefrontapi.generated';
-import CollectionsHero, { AllCategories } from '~/components/MINE/CollectionsHero';
+import { AllCategories, CollectionsNewHero } from '~/components/MINE/CollectionsHero';
 import { MAINMENU_AND_SUBMENU_QUERY } from './collections._index';
-import { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
-import { useState, useEffect } from 'react';
 import MainBanners from '~/components/MINE/AdsSections';
+import BestSeller from '~/components/MINE/BestSeller';
 
 
 
@@ -32,7 +31,7 @@ async function loadCriticalData({ context, params, request }: Route.LoaderArgs) 
   const { handle } = params;
   const { storefront } = context;
   const paginationVariables = getPaginationVariables(request, {
-    pageBy: 8,
+    pageBy: 16,
   });
 
 
@@ -101,11 +100,12 @@ export default function Collection() {
 
 
       {/* Being displayed only in each collection */}
-      <CollectionsHero
+      <CollectionsNewHero
         Title={collection.title}
         Description={collection.description}
         Collections={collection as any}
         HeroImg={collection.image?.url}
+        subTwoMenus={specificMenu.slice(0, 2)}
       />
 
 
@@ -114,13 +114,18 @@ export default function Collection() {
       />
 
 
-      <div className='space-y-10'>
+      <div className='space-y-5'>
 
-        {Array.isArray(bannersArray) && bannersArray.length > 0 &&
-          <MainBanners
-            bannerArray={bannersArray}
-          />
-        }
+        <MainBanners
+          bannerArray={bannersArray}
+        />
+
+
+        <BestSeller
+          products={collection.products}
+          Handle={collection.handle}
+          collectionTitle={collection.title}
+        />
 
 
         <PaginatedResourceSection<ProductFragment>
@@ -131,7 +136,7 @@ export default function Collection() {
             <ProductItem
               key={product.id}
               product={product}
-              loading={index < 8 ? 'eager' : undefined}
+              loading={index < 16 ? 'eager' : undefined}
             />
           )}
         </PaginatedResourceSection>

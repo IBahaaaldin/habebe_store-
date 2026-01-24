@@ -1,10 +1,10 @@
 import AutoScrollArray from '../MINE/ReUsable/AutoScrollArray';
 import HeaderText from '../MINE/UI/HeaderText';
-import { motion } from 'framer-motion';
 import { Star, StarHalf } from 'lucide-react';
 import React, { useRef, useState } from 'react';
 import { IoCheckmarkCircle } from 'react-icons/io5';
-// import { toast } from 'react-toastify';
+
+
 
 const testimonials = [
     {
@@ -168,7 +168,6 @@ export default function Reviews({ Title }: { Title?: string }) {
                     className="z-1 absolute bg-linear-to-r to-white from-transparent top-0 right-0 w-[10%] h-full pointer-events-none"
                 />
                 <div className="z-1 absolute bg-linear-to-r from-white to-transparent top-0 left-0 w-[10%] h-full pointer-events-none" />
-
             </div>
 
 
