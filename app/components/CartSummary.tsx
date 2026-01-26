@@ -41,19 +41,19 @@ export function CartSummary({ cart, layout }: CartSummaryProps) {
     <div
       aria-labelledby="cart-summary" className="w-full"
     >
-      <h4 className='font-bold'>Order Summary</h4>
+      <h4 className='font-medium'>Order Summary</h4>
 
       <div className='flex flex-col gap-1 py-3'>
         <dl className="flex flex-row justify-between">
           <dt className='text-zinc-300'><p>Subtotal</p></dt>
-          <dd className=' font-bold'>
+          <dd className=' font-medium'>
             <p> {cart?.cost?.subtotalAmount?.currencyCode} {Number(cart?.cost?.subtotalAmount?.amount) + Number(totalDiscountOnAllProducts)}</p>
           </dd>
         </dl>
 
         <dl className="flex flex-row justify-between">
           <dt className='text-zinc-300'><p>Discounts</p></dt>
-          <dd className='text-red-500 font-bold'>
+          <dd className='text-red-500 font-medium'>
             <p>- {cart?.cost?.totalAmount?.currencyCode} {totalDiscountOnAllProducts.toFixed(2)}</p>
           </dd>
         </dl>
@@ -68,7 +68,7 @@ export function CartSummary({ cart, layout }: CartSummaryProps) {
 
       <dl className="flex flex-row justify-between border-t border-zinc-300 py-3">
         <dt className='text-zinc-300'><h4>Total</h4></dt>
-        <dd className='font-bold'>
+        <dd className='font-medium'>
           <h4>{cart?.cost?.totalAmount?.currencyCode} {cart?.cost?.totalAmount?.amount}</h4>
         </dd>
       </dl>

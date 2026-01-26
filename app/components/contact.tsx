@@ -5,7 +5,7 @@ const ContactPage = () => {
 
 
 
-    
+
     return (
         <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 lg:p-8 font-sans">
             <section className="max-w-6xl w-full  md:rounded-2xl rounded-xl overflow-hidden flex flex-col lg:flex-row">
@@ -20,7 +20,7 @@ const ContactPage = () => {
                                 <div className="w-2 h-2 bg-black rounded-full"></div>
                                 <div className="w-2 h-2 bg-black rounded-full"></div>
                             </div>
-                            <span className="font-bold text-xl">Untitled UI</span>
+                            <span className="font-medium text-xl">Untitled UI</span>
                         </div>
                     </div>
 
@@ -83,7 +83,7 @@ const ContactPage = () => {
                 {/* Right Side: The Form */}
                 <section className="lg:w-3/5 bg-[#D4FF5F] p-8 lg:p-16 flex flex-col justify-center">
                     <div className="max-w-xl mx-auto w-full">
-                        <h1 className="text-5xl font-bold text-gray-900 mb-4">Contact us</h1>
+                        <h1 className="text-5xl font-medium text-gray-900 mb-4">Contact us</h1>
                         <p className="text-lg text-gray-800 mb-10">Reach out and we'll get in touch within 24 hours.</p>
 
                         <form className="space-y-6">
@@ -130,7 +130,7 @@ const ContactPage = () => {
                                 <label htmlFor="privacy" className="text-sm">You agree to our friendly <span className="underline cursor-pointer">privacy policy</span>.</label>
                             </div>
 
-                            <button className="w-full bg-[#1A1A1A] text-white font-bold py-4 rounded-xl hover:bg-black transition-colors">
+                            <button className="w-full bg-[#1A1A1A] text-white font-medium py-4 rounded-xl hover:bg-black transition-colors">
                                 Send message
                             </button>
                         </form>
@@ -138,11 +138,11 @@ const ContactPage = () => {
                         {/* Social Proof Logotypes */}
                         <div className="mt-12 pt-8 border-t border-black/10">
                             <div className="flex flex-wrap justify-center gap-8 opacity-70 grayscale">
-                                <span className="font-bold text-xl">contentful</span>
-                                <span className="font-bold text-xl">stripe</span>
-                                <span className="font-bold text-xl">toggl</span>
-                                <span className="font-bold text-xl">Evernote</span>
-                                <span className="font-bold text-xl">zapier</span>
+                                <span className="font-medium text-xl">contentful</span>
+                                <span className="font-medium text-xl">stripe</span>
+                                <span className="font-medium text-xl">toggl</span>
+                                <span className="font-medium text-xl">Evernote</span>
+                                <span className="font-medium text-xl">zapier</span>
                             </div>
                         </div>
                     </div>

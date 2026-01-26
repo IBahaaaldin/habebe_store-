@@ -30,16 +30,16 @@ export default function MainBanners({ bannerArray }: { bannerArray?: any }) {
 
 
     return (
-        <section className="flex flex-row w-full overflow-hidden bg-zinc-100">
+        <section className="flex flex-row w-full bg-zinc-100  rounded-3xl overflow-hidden">
             <div
-                className="flex h-40 transition-transform duration-700"
+                className="flex h-50 transition-transform duration-700 "
                 style={{ transform: `translateX(-${index * 100}%)` }}
             >
                 {bannerArray?.map((ad: any, index: number) => (
                     <Image
                         key={index}
                         data={ad.image}
-                        className="min-w-full h-full p-2 object-cover"
+                        className="min-w-full h-full object-cover rounded-3xl"
                         alt="ad"
                     />
                 ))}
@@ -180,14 +180,14 @@ export function PlatinumBanners({ bannerArray, collectionHandle }: { bannerArray
 
 
                 <div
-                    className="flex h-70  transition-transform duration-700 ease-in-out"
+                    className="flex h-70 transition-transform duration-700 ease-in-out"
                     style={{
                         transform: `translateX(-${currentIndex * 100}%)`,
                     }}
                 >
                     {fakeData.map((banner: any) => (
                         <Link
-                            to={`collections/${collectionHandle}`}
+                            to={`/collections/${collectionHandle}`}
                             key={banner?.image}
                             className="flex min-w-full border md:rounded-3xl rounded-2xl overflow-hidden"
                         >
@@ -201,7 +201,7 @@ export function PlatinumBanners({ bannerArray, collectionHandle }: { bannerArray
 
                             {/* Content */}
                             <article className="bg-orange-50 relative p-5 flex flex-col justify-center gap-2 w-full">
-                                <h3 className="font-bold uppercase">
+                                <h3 className="font-medium uppercase">
                                     {collectionHandle} Collection
                                 </h3>
 
@@ -210,7 +210,7 @@ export function PlatinumBanners({ bannerArray, collectionHandle }: { bannerArray
                                 </p>
 
                                 <Link
-                                    to={`collections/${collectionHandle}`}
+                                    to={`/collections/${collectionHandle}`}
                                     className="absolute right-5 bottom-5 bg-white shadow duration-300 p-2 rounded-full"
                                 >
                                     <ChevronRight size={24} />
@@ -269,7 +269,7 @@ export function PlatinumBanners({ bannerArray, collectionHandle }: { bannerArray
 
 //             {/* Content */}
 //             <div className="relative p-5 flex flex-col justify-center gap-2 w-full">
-//                 <h3 className="font-bold uppercase">
+//                 <h3 className="font-medium uppercase">
 //                     {collectionHandle} Collection
 //                 </h3>
 
@@ -306,7 +306,7 @@ export function CasualBanners({ bannerArray, collectionHandle }: { bannerArray: 
         <section className="flex flex-col sm:flex-row gap-2 md:h-80">
             {/* LEFT */}
             <Link
-                to={`collections/${collectionHandle}`}
+                to={`/collections/${collectionHandle}`}
                 aria-label={collectionHandle}
                 className="md:rounded-3xl rounded-2xl md:h-full h-40 sm:w-2/3 overflow-hidden border"
             >
@@ -323,7 +323,7 @@ export function CasualBanners({ bannerArray, collectionHandle }: { bannerArray: 
                 {bannerArray.slice(1, 3).map((banner: any, index) => (
                     <Link
                         key={index}
-                        to={`collections/${collectionHandle}`}
+                        to={`/collections/${collectionHandle}`}
                         aria-label={collectionHandle}
                         className="w-full md:h-full h-20 relative md:rounded-2xl rounded-xl overflow-hidden border"
                     >

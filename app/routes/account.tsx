@@ -52,7 +52,7 @@ export default function AccountLayout() {
   return (
     <div>
       <div className='flex flex-col gap-3'>
-        <h2 className='font-bold'>{heading}</h2>
+        <h2 className='font-medium'>{heading}</h2>
         <br />
         <AccountMenu />
         <br />

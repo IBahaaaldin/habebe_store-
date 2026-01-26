@@ -91,7 +91,7 @@ function MenuAside({ menu }: any) {
                     to={`/collections/${item.resource?.handle || '#'}`}
                     key={item.id}
 
-                    className={`hover:text-orange-400 text-black font-bold text-start duration-500 
+                    className={`hover:text-orange-400 text-black font-medium text-start duration-500 
                   ${isMainMenuActive ? 'text-orange-400' : 'text-black'}
                   `}
                   >

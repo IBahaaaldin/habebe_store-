@@ -68,11 +68,7 @@ export default function Homepage() {
 
   return (
     <div className='space-y-10'>
-      {/* <CollectionsHero
-        Collections={MainCollections}
-      /> */}
-
-      <HeroSlider
+       <HeroSlider
         mainCollections={MainCollections}
       />
 

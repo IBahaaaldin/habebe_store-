@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
 export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?: string }) {
     return (
         <div className="flex flex-col z-1 capitalize items-start justify-start w-full gap-1 mb-5" >
-            <h3 className='flex-wrap flex flex-row gap-2 '>
+            <h3 className='flex-wrap flex flex-row gap-x-2 leading-tight'>
                 {HEAD!.split(' ').map((word, index) => (
                     <div
                         key={index}
@@ -58,9 +58,9 @@ export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?:
 
 export function SmallHeaderText({ HEAD, SUBHEAD }: { HEAD?: React.ReactNode, SUBHEAD?: React.ReactNode }) {
     return (
-        <div className="flex flex-col z-1 capitalize items-start justify-start gap-y-1 lg:max-w-sm w-full" >
+        <div className="flex flex-col flex-wrap z-1 capitalize items-start justify-start gap-y-1 lg:max-w-sm w-full text-wrap" >
             {HEAD &&
-                <h4 className='flex-nowrap gap-x-1.5 text-nowrap flex flex-row w-full'>
+                <h4 className='flex-wrap gap-x-1.5 text-nowrap flex flex-row w-full'>
                     {HEAD}
                 </h4>
             }

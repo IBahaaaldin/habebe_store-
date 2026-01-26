@@ -193,7 +193,7 @@ export function ErrorBoundary() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-center px-4">
-      <h2 className="font-bold mb-4">404</h2>
+      <h2 className="font-medium mb-4">404</h2>
       <h6 className="mb-8">Sorry, this page not found.</h6>
       <Link to="/" className="BUTTON2">
         Go back home

@@ -40,16 +40,16 @@ export default function Collections() {
 
           return (
             <Link
-              to={`collections/${item.resource.handle}`}
+              to={`${item.resource.handle}`}
               key={item.id}
-              className="flex flex-col gap-2 group md:rounded-3xl rounded-2xl overflow-hidden border-7 border-zinc-100 bg-zinc-100 hover:shadow-lg "
+              className="flex flex-col gap-2 group md:rounded-3xl rounded-2xl overflow-hidden border-7 border-zinc-100 bg-zinc-100 hover:shadow-lg shadow-xs duration-500"
             >
               <figure className="md:h-60 h-40 bg-gray-100 overflow-hidden md:rounded-3xl rounded-2xl">
                 {image ? (
                   <Image
                     data={image}
                     alt={image.altText ?? item.title}
-                    className="h-full w-full object-cover group-hover:scale-105 duration-300 "
+                    className="h-full w-full object-cover group-hover:scale-105 duration-500 "
                   />
                 ) : (
                   <div className="h-full w-full flex items-center justify-center text-gray-400">
@@ -58,7 +58,7 @@ export default function Collections() {
                 )}
               </figure>
 
-              <p className="font-bold p-3 text-center bg-white hover:bg-orange-100 duration-300 md:rounded-3xl rounded-2xl ">
+              <p className="hover:underline font-medium p-3 text-center bg-white md:rounded-3xl rounded-2xl ">
                 {item.title}
               </p>
             </Link>
@@ -76,7 +76,7 @@ function CollectionItem({ collection, index, }: { collection: CollectionFragment
     <Link
       className="relative"
       key={collection.id}
-      to={`/collections/${collection.handle}`}
+      to={`/${collection.handle}`}
     // prefetch="intent"
     >
       <div className='max-h-100 h-full md:rounded-2xl rounded-xl overflow-hidden'>
@@ -89,7 +89,7 @@ function CollectionItem({ collection, index, }: { collection: CollectionFragment
           />
         )}
       </div>
-      <h2 className='absolute z-1 bg-green-700/40 backdrop-blur-sm px-3 py-2 capitalize font-bold lg:top-10 top-5 lg:left-10 left-5 lg:text-3xl text-xl text-white rounded-full'>
+      <h2 className='absolute z-1 bg-green-700/40 backdrop-blur-sm px-3 py-2 capitalize font-medium lg:top-10 top-5 lg:left-10 left-5 lg:text-3xl text-xl text-white rounded-full'>
         {collection.title}
       </h2>
     </Link>

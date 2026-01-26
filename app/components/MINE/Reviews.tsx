@@ -178,7 +178,7 @@ export default function Reviews({ Title }: { Title?: string }) {
                 {commentSubmited ? (
                     <div className="w-full flex flex-col items-center justify-center p-10 border border-green-700/20 md:rounded-2xl rounded-xl bg-green-50">
                         <IoCheckmarkCircle className="text-green-700 h-20 w-20" />
-                        <h4 className="font-bold">Thank you for your comment!</h4>
+                        <h4 className="font-medium">Thank you for your comment!</h4>
                         <span className="text-center text-zinc-500">We appreciate your feedback and will use it to improve our products and services.</span>
                     </div>
                 ) : (

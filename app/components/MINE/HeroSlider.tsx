@@ -26,7 +26,7 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Feat
     return (
         <section className="relative w-full flex flex-col gap-3 overflow-hidden">
             {/* Slides */}
-            <article className="relative h-full w-full overflow-hidden md:rounded-2xl rounded-xl">
+            <article className="max-h-150 h-[50vh] relative w-full overflow-hidden md:rounded-2xl rounded-xl">
                 <div
                     className="relative flex transition-transform duration-700 ease-in-out h-full"
                     style={{
@@ -36,7 +36,7 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Feat
                     {mainCollections?.map((collection: any) => (
                         <div
                             key={collection.id}
-                            className="flex items-end justify-start min-w-full h-full"
+                            className="flex items-end justify-start min-w-full min-h-full "
                         >
                             <figure className="h-full w-full absolute -z-1">
                                 <Image
@@ -49,7 +49,7 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Feat
 
                             <div className="flex flex-col my-20 justify-end md:px-15 px-10">
                                 <div className="text-white">
-                                    <h2 className="font-bold mb-3">{collection.title}</h2>
+                                    <h2 className="font-medium mb-3">{collection.title}</h2>
                                     <h6 className="font-semibold text-white mb-2">
                                         {collection.description.slice(0, 70)}...
                                     </h6>
@@ -57,7 +57,7 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Feat
                                         <span className="bg-orange-300 px-3 py-1 rounded">
                                             {collection.location}
                                         </span>
-                                        <span className="font-bold">Starts from: AED 10</span>
+                                        <span className="font-medium">Starts from: AED 10</span>
                                     </div>
                                     <ArrowButton
                                         CC="w-fit"

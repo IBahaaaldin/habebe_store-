@@ -210,7 +210,7 @@ export function SearchResultsPredictiveProducts({
 
   return (
     <div className="flex flex-col gap-3 mt-5" key="products">
-      <h5 className='md:text-xl text-lg font-bold'>Products</h5>
+      <h5 className='md:text-xl text-lg font-medium'>Products</h5>
       <ul className='flex flex-col gap-3'>
         {products.map((product) => {
           const productUrl = urlWithTrackingParams({
@@ -236,7 +236,7 @@ export function SearchResultsPredictiveProducts({
               )}
 
               <div>
-                <p className='font-bold'>{product.title}</p>
+                <p className='font-medium'>{product.title}</p>
                 {price && <Prices price={price.amount} currency={price.currencyCode} />}
               </div>
             </Link>
@@ -276,7 +276,7 @@ function SearchResultsPredictiveEmpty({
   }
 
   return (
-    <p className='font-bold text-xl '>
+    <p className='font-medium text-xl '>
       No results found for <q>{term.current}</q>
     </p>
   );

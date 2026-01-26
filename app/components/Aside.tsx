@@ -55,7 +55,7 @@ export function Aside({ children, heading, type, }: { children?: React.ReactNode
   return (
     <aside className={`z-1000 shadow-xl fixed right-0 min-w-sm w-[70%] h-full bg-white p-5 duration-300 ${expanded ? 'translate-x-0' : 'translate-x-full'}`}>
       <header className='flex justify-between items-center mb-5'>
-        <h3 className="text-xl font-bold">{heading}</h3>
+        <h3 className="text-xl font-medium">{heading}</h3>
         <button className="cursor-pointer bg-black text-white p-2 rounded-xl hover:opacity-50 duration-300" onClick={close} aria-label="Close">
           <X />
         </button>

@@ -98,7 +98,7 @@ const ContactUs: React.FC = () => {
                             <div key={i} className="w-2 h-2 bg-black rounded-full"></div>
                         ))}
                     </div>
-                    <h4 className="font-bold">Habebe</h4>
+                    <h4 className="font-medium">Habebe</h4>
                 </div>
 
                 {/* Abstract Radial Background with Avatars */}
@@ -137,7 +137,7 @@ const ContactUs: React.FC = () => {
                                     href={link.path}
                                     className="mt-1 flex gap-1 cursor-pointer hover:opacity-50 hover:text-orange-400 duration-300">
                                     {link.logo}
-                                    <span className="font-bold">@habebe.store</span>
+                                    <span className="font-medium">@habebe.store</span>
                                 </a>
                             </div>
                         )
@@ -150,8 +150,8 @@ const ContactUs: React.FC = () => {
             {/* Right Side: The Form */}
             <section className="lg:w-3/5 bg-lime-300 p-5 lg:p-10 flex flex-col justify-center md:rounded-3xl rounded-3xl">
                 <div className="max-w-xl mx-auto w-full flex flex-col gap-3">
-                    <h2 className=" font-bold">Contact us</h2>
-                    <h6 className="font-bold">Reach out and we'll get in touch within 24 hours.</h6>
+                    <h2 className=" font-medium">Contact us</h2>
+                    <h6 className="font-medium">Reach out and we'll get in touch within 24 hours.</h6>
 
                     <form onSubmit={handleSubmit} className="w-full mt-5">
                         <div className="w-full grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
@@ -272,7 +272,7 @@ const ContactUs: React.FC = () => {
 
                         <button
                             disabled={status === 'submitting'}
-                            className="w-full bg-black text-white font-bold py-3 rounded-xl hover:bg-zinc-900 duration-300"
+                            className="w-full bg-black text-white font-medium py-3 rounded-xl hover:bg-zinc-900 duration-300"
                         >
                             <p>
                                 {status === 'submitting' ? 'Sending...' : 'Send message'}
@@ -303,7 +303,7 @@ const ContactUs: React.FC = () => {
                             "Evernote",
                             "zapier",
                         ].map((brand) => (
-                            <span key={brand} className="font-bold text-xl">
+                            <span key={brand} className="font-medium text-xl">
                                 {brand}
                             </span>
                         ))}

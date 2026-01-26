@@ -62,7 +62,7 @@ function CartEmpty({ hidden = false, }: { hidden: boolean; layout?: CartMainProp
 
   return (
     <div hidden={hidden} className='min-h-[50vh] flex flex-col items-center justify-center'>
-      <div className='text-center font-bold w-full text-xl'>
+      <div className='text-center font-medium w-full text-xl'>
         Looks like you haven&rsquo;t added anything yet, let&rsquo;s get you
         started!
       </div>

@@ -8,13 +8,23 @@
   --color-light: #fff;
 }
 
+@font-face {
+  font-family: 'GoogleSansFlex';
+  src: url('/fonts/GoogleSansFlex-VariableFont_GRAD,ROND,opsz,slnt,wdth,wght.ttf');
+}
 
-/*
-* --------------------------------------------------
-* Non anchor links
-* --------------------------------------------------
-*/
-
+body {
+  font-family: 'GoogleSansFlex', sans-serif;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.05em;
+  position: relative;
+  background-repeat: repeat;
+  background-position: center;
+  background-size: auto;
+  color: black;
+  background-color: #ffffff;
+}
 
 /*
 * --------------------------------------------------

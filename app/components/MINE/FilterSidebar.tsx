@@ -66,7 +66,7 @@ export default function FilterSidebar({ AvailableSize, AvailableColor, Available
         <div className="sticky self-start max-w-sm flex flex-col gap-3 border border-zinc-300 md:rounded-2xl rounded-xl p-5 h-fit">
             <div className="flex flex-col gap-3">
                 <div className="flex flex-row w-full justify-between border-b border-zinc-300 pb-3">
-                    <h5 className="text-xl font-bold ">Size</h5>
+                    <h5 className="text-xl font-medium ">Size</h5>
                     {/* <ChevronDown /> */}
                     <ChevronUp />
                 </div>
@@ -90,7 +90,7 @@ export default function FilterSidebar({ AvailableSize, AvailableColor, Available
             {/* COLOR */}
             <div className="flex flex-col gap-3">
                 <div className="flex flex-row w-full justify-between border-b border-zinc-300 pb-3">
-                    <h5 className="text-xl font-bold ">Color</h5>
+                    <h5 className="text-xl font-medium ">Color</h5>
                     {/* <ChevronDown /> */}
                     <ChevronUp />
                 </div>
@@ -113,7 +113,7 @@ export default function FilterSidebar({ AvailableSize, AvailableColor, Available
 
             <div className="flex flex-col gap-3">
                 <div className="flex flex-row w-full justify-between border-b border-zinc-300 pb-3">
-                    <h5 className="text-xl font-bold ">Price</h5>
+                    <h5 className="text-xl font-medium ">Price</h5>
                     <ChevronUp />
                 </div>
 
@@ -138,7 +138,7 @@ export default function FilterSidebar({ AvailableSize, AvailableColor, Available
 
             <div className="flex flex-col gap-3">
                 <div className="flex flex-row w-full justify-between border-b border-zinc-300 pb-3">
-                    <h5 className="text-xl font-bold ">Dress Style</h5>
+                    <h5 className="text-xl font-medium ">Dress Style</h5>
                     {/* <ChevronDown /> */}
                     <ChevronUp />
                 </div>

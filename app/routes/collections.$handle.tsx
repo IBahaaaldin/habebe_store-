@@ -7,7 +7,7 @@ import { ProductItem } from '~/components/ProductItem';
 import type { ProductFragment } from 'storefrontapi.generated';
 import { AllCategories, CollectionsNewHero } from '~/components/MINE/CollectionsHero';
 import { MAINMENU_AND_SUBMENU_QUERY } from './collections._index';
-import MainBanners from '~/components/MINE/AdsSections';
+import MainBanners, { CasualBanners } from '~/components/MINE/AdsSections';
 import BestSeller from '~/components/MINE/BestSeller';
 
 
@@ -87,7 +87,6 @@ export default function Collection() {
     menu?.items[0]?.items.filter((menuItem: any) => menuItem.title === collection.title)[0]?.items
 
 
-
   // BANNERS for 3th level nested menus if NOT then 2nd level
   const bannersArray =
     menu?.items.filter((item: { title: any; }) => item.title === collection.title)[0]?.resource?.mainBanners?.references?.nodes ?? // 2nd level menu
@@ -114,11 +113,11 @@ export default function Collection() {
       />
 
 
-      <div className='space-y-5'>
+      <MainBanners
+        bannerArray={bannersArray}
+      />
 
-        <MainBanners
-          bannerArray={bannersArray}
-        />
+      <div className='space-y-5'>
 
 
         <BestSeller
@@ -127,6 +126,7 @@ export default function Collection() {
           collectionTitle={collection.title}
         />
 
+        <CasualBanners collectionHandle='' bannerArray={bannersArray} />
 
         <PaginatedResourceSection<ProductFragment>
           connection={collection.products}

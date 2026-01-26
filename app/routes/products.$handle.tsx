@@ -110,7 +110,7 @@ export default function Product() {
     selectedOrFirstAvailableVariant: selectedVariant,
   });
 
-  const { title,  } = product;
+  const { title, } = product;
 
 
 
@@ -150,7 +150,7 @@ export default function Product() {
 
 
           <article className='flex flex-col gap-2 border-3 border-zinc-100 md:rounded-2xl rounded-xl p-4'>
-            <p className='font-bold'>Description: </p>
+            <p className='font-medium'>Description: </p>
 
             <span className=" text-zinc-500">
               {product.description.slice(0, more)}

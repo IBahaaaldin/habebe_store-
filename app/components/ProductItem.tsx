@@ -53,7 +53,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
   return (
-    <article className='w-full max-w-50 min-w-40 flex-1 relative h-fit items-end flex flex-col gap-3 md:p-2 p-1 bg-zinc-50 md:rounded-2xl rounded-xl overflow-hidden'>
+    <article className='flex-1 relative h-fit items-end flex flex-col gap-3 md:p-3 p-2 bg-zinc-100 md:rounded-3xl rounded-2xl overflow-hidden'>
       {image && (
         <Link
           className="w-full md:rounded-2xl rounded-xl overflow-hidden"
@@ -80,42 +80,41 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
       {/* /// Details */}
       <article className='px-2 pb-2 flex flex-col w-full justify-between items-end gap-2'>
         <Link to={variantUrl} className='flex w-full hover:underline'>
-          <span className='capitalize w-full'>{product.title.length > 15 ? product.title.slice(0, 15) + '...' : product.title}</span>
+          <h6 className='capitalize w-full'>{product.title.length > 15 ? product.title.slice(0, 15) + '...' : product.title}</h6>
         </Link>
 
         <div className='flex flex-row w-full justify-between items-start '>
           <Prices
-            CC1='text-xs'
             price={price}
             currency={currency}
           />
 
-          <AddToCartButton
-            disabled={!product?.variants.nodes[0]?.availableForSale}
-            CC='w-fit'
-            lines={
-              product?.variants.nodes[0]
-                ? [
-                  {
-                    merchandiseId: product?.variants.nodes[0].id,
-                    quantity: 1,
-                    // The Varient itself should be passed here
-                  }
-                ]
-                : []
-            }
-          >
-            {/* The Sold out is hidden  from the comp itself */}
-            {product?.variants.nodes[0]?.availableForSale ? <ShoppingCart size={20} /> : 'Sold'}
-          </AddToCartButton>
         </div>
+
+        <AddToCartButton
+          disabled={!product?.variants.nodes[0]?.availableForSale}
+          CC='w-full'
+          lines={
+            product?.variants.nodes[0]
+              ? [
+                {
+                  merchandiseId: product?.variants.nodes[0].id,
+                  quantity: 1,
+                  // The Varient itself should be passed here
+                }
+              ]
+              : []
+          }
+        >
+          {/* The Sold out is hidden  from the comp itself */}
+          {product?.variants.nodes[0]?.availableForSale ? <div className='flex gap-2'><ShoppingCart size={20} /> Add</div> : 'Sold'}
+        </AddToCartButton>
       </article>
 
 
 
       <Share2
-        className="cursor-pointer absolute top-4 right-4 bg-white/80 backdrop-blur-xs hover:bg-white duration-300 rounded-lg z-100 text-orange-400 p-1.5 w-7 h-7"
-        size={40}
+        className="cursor-pointer absolute top-5 right-5 bg-white/80 backdrop-blur-xs hover:bg-white duration-300 rounded-lg z-100 text-orange-400 p-1.5 w-8 h-8"
         onClick={handleShareClick}
       />
       {showCopyMessage && (

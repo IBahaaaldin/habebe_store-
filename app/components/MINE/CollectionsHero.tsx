@@ -102,13 +102,15 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
         return null;
     }
 
+    console.log(`%c${JSON.stringify(subTwoMenus, null, 3)}`, 'color: white; font-size: 20px;')
+
     return (
         <div className="w-full flex flex-row gap-3 md:h-60 h-30">
             {subTwoMenus?.map((subMenu: any, index: number) => (
                 <Link
                     to={`/collections/${subMenu.handle ?? subMenu.resource?.handle}`}
                     key={subMenu.id}
-                    className={`group w-1/2 font-bold text-white
+                    className={`group w-1/2 font-medium text-white
                     md:rounded-3xl rounded-2xl md:p-7 p-5
                     flex flex-col justify-between relative overflow-hidden h-full
                     ${index === 0 ? 'md:w-2/3' : 'md:w-1/3'}
@@ -121,13 +123,13 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
                     />
 
 
-                    <div
+                    {/* <div
                         key={index}
                         className={`flex flex-col space-y-1 bg-black/10 absolute top-10 md:right-10 right-5 border-b-2 border-l border-white/10 backdrop-blur-sm md:p-3 p-3 md:rounded-3xl rounded-2xl ${index === 0 ? '-rotate-5 top-10' : 'rotate-10 top-20'} z-20 max-w-40 `}
                     >
-                        <span className="font-bold leading-tight">UP TO 70% OFF</span>
+                        <span className="font-medium leading-tight">UP TO 70% OFF</span>
                         <span className="font-thin leading-tight">On orders more than $100</span>
-                    </div>
+                    </div> */}
 
                     <HeaderText
                         HEAD={subMenu.title}
@@ -159,7 +161,7 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
         <div className="relative overflow-hidden">
             {/* SLIDES */}
             <article
-                className="items-center justify-center flex gap-5 transition-transform duration-500 ease-in-out overflow-x-scroll"
+                className="items-start justify-start flex gap-5 transition-transform duration-500 ease-in-out overflow-x-scroll"
             >
                 {allSubMenus?.map((menu: any) => (
                     <Link
@@ -173,7 +175,7 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
 
-                        <span className="absolute bottom-2 left-2 text-white font-bold bg-black/30 px-2 py-1 rounded-xl max-w-[80%]">
+                        <span className="absolute bottom-2 left-2 text-white font-medium bg-black/30 px-2 py-1 rounded-xl max-w-[80%]">
                             {menu.title}
                         </span>
                     </Link>

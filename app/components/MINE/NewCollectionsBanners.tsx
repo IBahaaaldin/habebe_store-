@@ -33,7 +33,7 @@ export function HomeGardenFurnitureBanner() {
 
 
                     {product.wide &&
-                        <span className='font-bold absolute top-5 left-5 bg-green-400 px-2 py-1 rounded-xl text-white shadow'>
+                        <span className='font-medium absolute top-5 left-5 bg-green-400 px-2 py-1 rounded-xl text-white shadow'>
                             Best Seller
                         </span>
                     }
@@ -43,9 +43,9 @@ export function HomeGardenFurnitureBanner() {
                     {/* Footer Info */}
                     <article className="p-5 flex gap-2 justify-between items-end">
                         <div>
-                            <h4 className='font-bold' >{product.name}</h4>
+                            <h4 className='font-medium' >{product.name}</h4>
                             <div className="flex gap-2 items-center">
-                                <span className="font-bold">${product.price}</span>
+                                <span className="font-medium">${product.price}</span>
                                 {product.oldPrice && <span className="text-gray-400 line-through text-sm">${product.oldPrice}</span>}
                             </div>
                         </div>
@@ -64,7 +64,7 @@ export function HomeGardenFurnitureBanner() {
                             hover:bg-orange-500
                         `}
                         >
-                            <span className=" text-nowrap font-bold
+                            <span className=" text-nowrap font-medium
                             opacity-0 max-w-0 
                             group-hover:opacity-100 group-hover:max-w-35 transition-all duration-500 ease-out overflow-hidden">
                                 Discover collection!
@@ -130,7 +130,7 @@ export function PetsSuppliesBanner() {
             <div className="w-full flex flex-row gap-2 h-60">
                 {bannerArray.slice(0, 2).map((banner: any, index) => (
                     <Link
-                        to={`collections/${collectionHandle}`}
+                        to={`/collections/${collectionHandle}`}
                         aria-label={collectionHandle}
                         className={`md:rounded-3xl rounded-2xl md:h-full h-40 overflow-hidden border
                             ${index % 2 === 0 ? "w-2/3" : "w-1/3"}
@@ -150,7 +150,7 @@ export function PetsSuppliesBanner() {
             <div className="w-full flex flex-row gap-2 h-60">
                 {bannerArray.slice(2, 5).map((banner: any, index) => (
                     <Link
-                        to={`collections/${collectionHandle}`}
+                        to={`/collections/${collectionHandle}`}
                         aria-label={collectionHandle}
                         className={`md:rounded-3xl rounded-2xl md:h-full h-40 overflow-hidden border w-1/3
                         `}
@@ -221,7 +221,7 @@ export function ConsumerElectronicsBanner() {
         <div className="flex flex-col gap-3 ">
             {/* Main Watch Section */}
             <div className="relative flex md:flex-row flex-col gap-3 h-full ">
-                <article className="text-white relative md:p-10 p-5 overflow-hidden md:h-100 h-70 md:w-2/3 w-full bg-center">
+                <article className="text-white relative md:p-10 p-5 overflow-hidden md:h-70 h-50 md:w-2/3 w-full bg-center">
 
                     <Image
                         src='https://images.pexels.com/photos/792345/pexels-photo-792345.jpeg'
@@ -240,19 +240,19 @@ export function ConsumerElectronicsBanner() {
                     />
 
                     {/* Discount Badges */}
-                    {absoluteDiscount.map((badge, index) => (
+                    {/* {absoluteDiscount.map((badge, index) => (
                         <div
                             key={index}
                             className={`absolute ${badge.position} backdrop-blur-sm md:p-5 p-3 md:rounded-3xl rounded-2xl ${badge.rotate} z-20 max-w-40 bg-white/20`}
                         >
-                            <p className="font-bold leading-tight">UP TO {badge.discount}% OFF</p>
+                            <p className="font-medium leading-tight">UP TO {badge.discount}% OFF</p>
                             <span className="">{badge.discountType}</span>
                         </div>
-                    ))}
+                    ))} */}
                 </article>
 
 
-                <article className="flex md:flex-col flex-row  min-h-full md:w-1/3 w-full gap-3">
+                <article className="flex md:flex-col flex-row md:h-70 h-30 min-h-full md:w-1/3 w-full gap-3">
                     {products.slice(0, 2).map((product, index) => (
                         <div
                             key={index}
@@ -270,8 +270,6 @@ export function ConsumerElectronicsBanner() {
                         </div>
                     ))}
                 </article>
-
-
             </div>
 
 
@@ -281,7 +279,7 @@ export function ConsumerElectronicsBanner() {
                 {products.map((product, index) => (
                     <div
                         key={index}
-                        className={`text-white relative md:h-70 h-50 overflow-hidden ${product.gradient} p-5 text-center flex flex-col justify-between`}
+                        className={`text-white relative md:h-50 h-30 overflow-hidden ${product.gradient} p-5 text-center flex flex-col justify-between`}
                     >
                         <Image
                             src={"https://images.pexels.com/photos/6370375/pexels-photo-6370375.jpeg"}

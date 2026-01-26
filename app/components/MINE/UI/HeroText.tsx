@@ -11,7 +11,7 @@ export default function HeroText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?: s
         <div className="flex flex-col gap-3 z-1 capitalize w-full items-start justify-start mb-5" >
 
             {HEAD &&
-                <h2 className='flex flex-row flex-wrap gap-x-2 items-start justify-start font-bold'>
+                <h2 className='flex flex-row flex-wrap gap-x-2 items-start justify-start font-medium'>
                     {HEAD!.split(' ').map((word, index) => (
                         <div
                             key={index}

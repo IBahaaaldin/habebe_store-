@@ -9,10 +9,10 @@ export default function Prices({ price, currency, CC1, CC2 }: { price: string, c
     let discountPercentage = 0;
 
     // Apply a 7% discount if the price is 500 or more
-    if (numericPrice >= 500) {
+    if (numericPrice >= 200) {
         discountPercentage = 7;
     } // Apply a 10% discount if the price is between 100 and 499.99
-    else if (numericPrice >= 100) {
+    else if (numericPrice >= 50) {
         discountPercentage = 10;
     }
 
@@ -24,13 +24,13 @@ export default function Prices({ price, currency, CC1, CC2 }: { price: string, c
 
     return (
         <article className='flex flex-col flex-wrap items-start'>
-            <div className={`${CC1 ?? 'text-sm'} text-nowrap text-black font-bold`}>{currency} {numericPrice.toFixed(2)}</div>
+            <h5 className={`${CC1 ?? 'text-sm'} text-nowrap text-black font-medium`}>{currency} {numericPrice.toFixed(2)}</h5>
 
 
             {discountPercentage > 0 &&
-                (<div className={`${CC2 ?? 'text-xs'} text-zinc-400 line-through`}>
-                    {fakeOriginalPrice.toFixed(2)}
-                </div>)
+                (<span className={`${CC2 ?? 'text-xs'} text-zinc-400 line-through`}>
+                   {currency} {fakeOriginalPrice.toFixed(2)}
+                </span>)
             }
 
         </article >

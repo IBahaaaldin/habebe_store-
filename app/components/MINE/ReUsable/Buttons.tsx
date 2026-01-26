@@ -21,43 +21,83 @@ export default function ArrowButton({ Href, Text, CC }: { Href?: string; Text?: 
 };
 
 
-
-
 export function SliderButtons({
     passedArray,
     changeIndex,
 }: {
+
     passedArray: any[];
     changeIndex: (value: number | ((prev: number) => number)) => void;
 }) {
+
+    // const nextSlide = () => {
+    //     changeIndex((prev) => (prev + 1) % passedArray.length); // loop to start
+    // };
+
+
+
+    // const prevSlide = () => {
+    //     changeIndex((prev) => (prev - 1 + passedArray.length) % passedArray.length); // loop to end
+    // };
+
     const nextSlide = () => {
-        changeIndex((prev) => (prev + 1) % passedArray.length); // loop to start
+        changeIndex((prev) => {
+            const next = prev + 1;
+            if (next >= passedArray.length) {
+                // Jump to start without animation
+                setTimeout(() => changeIndex(0), 0);
+                return passedArray.length; // show last item briefly then jump
+            }
+            return next;
+        });
     };
 
     const prevSlide = () => {
-        changeIndex((prev) => (prev - 1 + passedArray.length) % passedArray.length); // loop to end
+        changeIndex((prev) => {
+            const next = prev - 1;
+            if (next < 0) {
+                setTimeout(() => changeIndex(passedArray.length - 1), 0);
+                return -1; // fake position
+            }
+            return next;
+        });
     };
+
 
     return (
         <>
+
             <button
+
                 onClick={prevSlide}
+
                 className="cursor-pointer absolute -left-2 top-1/2 -translate-y-1/2 z-10 bg-zinc-100 hover:bg-white/30 duration-300 backdrop-blur-sm p-2 rounded-r-full"
+
             >
+
                 <ChevronLeft size={24} />
+
             </button>
+
+
 
             <button
+
                 onClick={nextSlide}
+
                 className="cursor-pointer absolute -right-2 top-1/2 -translate-y-1/2 z-10 bg-zinc-100 hover:bg-white/30 duration-300 backdrop-blur-sm p-2 rounded-l-full"
+
             >
+
                 <ChevronRight size={24} />
+
             </button>
+
         </>
+
     );
+
 }
-
-
 
 
 /// 

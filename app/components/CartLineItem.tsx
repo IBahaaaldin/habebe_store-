@@ -70,7 +70,7 @@ export function CartLineItem({ layout, line, }: { layout: CartLayout; line: Cart
             <div>
               {selectedOptions.map((option) => (
                 <div key={option.name}>
-                    <span className='text-black'>{option.name}</span>: <span className='text-zinc-400 font-bold'>{option.value}</span>
+                  <span className='text-black'>{option.name}</span>: <span className='text-zinc-400 font-medium'>{option.value}</span>
                 </div>
               ))}
             </div>
@@ -120,7 +120,7 @@ export function CartLineQuantity({ line }: { line: CartLine }) {
         </button>
       </CartLineUpdateButton>
 
-      <span className='text-black font-bold'>{quantity}</span>
+      <span className='text-black font-medium'>{quantity}</span>
 
       <CartLineUpdateButton lines={[{ id: lineId, quantity: nextQuantity }]}>
         <button

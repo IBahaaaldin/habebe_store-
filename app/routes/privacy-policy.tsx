@@ -131,7 +131,7 @@ export default function PrivacyPage() {
     return (
         <main>
             <div className="max-w-4xl mx-auto px-6 py-16 font-sans text-black">
-                <h3 className="text-4xl font-bold text-center mb-1 text-black">Privacy Policy</h3>
+                <h3 className="text-4xl font-medium text-center mb-1 text-black">Privacy Policy</h3>
                 <p className="text-center text-zinc-500 ">
                     Last Updated: <span className="font-medium">{lastUpdated}</span>
                 </p>

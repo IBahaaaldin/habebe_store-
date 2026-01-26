@@ -98,7 +98,7 @@ export default function FooterSection({ header }: { header: any }) {
                             <Link
                                 to={page.path || '#'}
                                 key={index}
-                                className="hover:text-orange-400 text-black font-bold text-start duration-500"
+                                className="hover:text-orange-400 text-black font-medium text-start duration-500"
                             >
                                 <span>
                                     {page.name}
@@ -124,7 +124,7 @@ export default function FooterSection({ header }: { header: any }) {
                                 to={`/collections/${menu.resource?.handle || '#'}`}
                                 key={menu.id}
 
-                                className="hover:text-orange-400 text-black font-bold text-start duration-500"
+                                className="hover:text-orange-400 text-black font-medium text-start duration-500"
                             >
                                 <span>
                                     {menu.title}
@@ -176,7 +176,7 @@ export default function FooterSection({ header }: { header: any }) {
                     {/* //  */}
                     <div className="flex flex-col gap-3">
                         {header.shop.name && (
-                            <h4 className="text-nowrap font-bold">{header.shop.name}</h4>
+                            <h4 className="text-nowrap font-medium">{header.shop.name}</h4>
                         )}
 
 

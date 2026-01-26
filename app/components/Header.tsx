@@ -2,7 +2,9 @@ import { Suspense, useId } from 'react';
 import { Await, Link, NavLink, useAsyncValue, useLocation } from 'react-router';
 import {
   Image,
+  useAnalytics,
   useOptimisticCart,
+  type CartViewPayload,
 } from '@shopify/hydrogen';
 import type { HeaderQuery, CartApiQueryFragment } from 'storefrontapi.generated';
 import { useAside } from '~/components/Aside';
@@ -27,7 +29,7 @@ export default function Header({ header, isLoggedIn, cart }: HeaderProps) {
   const { menu } = header;
 
   return (
-    <header className={`z-999 sticky top-0 left-0 right-0 bg-white backdrop-blur-sm w-full mx-auto flex flex-row items-center gap-5 py-3.5 duration-500 
+    <header className={`z-999 sticky top-0 left-0 right-0 bg-white backdrop-blur-sm w-full mx-auto flex flex-row items-center gap-5 px-[2.5%] py-3.5 duration-500 
       `}
     >
       {/* LOGO on TOP */}
@@ -66,7 +68,7 @@ export function HeaderMenu({ menu }: { menu: any }) {
     <nav role="navigation" className='flex lg:flex-row flex-col gap-3'>
 
       <ul className="hidden lg:flex flex-row rounded-full"> {/* Increased gap for better look */}
-        {menu?.items.slice(0, 7).map((menu: any) => {
+        {menu?.items.slice(0, 5).map((menu: any) => { // Slice only the first 5 menus
           // Optional: Logic to determine if active
 
           const isMainMenuActive = currentTabURL === menu.resource?.handle;
@@ -74,13 +76,19 @@ export function HeaderMenu({ menu }: { menu: any }) {
           return (
             <li
               key={menu.id}
-              className={`relative group ${isMainMenuActive ? 'border-b border-l border-black/10 bg-zinc-100 font-bold' : ''} px-3 py-1 rounded-full`}
+              className={`relative group px-3 py-1 rounded-full`}
             >
+
+              {/* The Active Line */}
+              {isMainMenuActive && (
+                <div className="absolute left-0 right-0 top-10 h-0.5 bg-orange-400 mx-3 duration-300" />
+              )}
+
               <Link
                 to={`/collections/${menu?.resource?.handle || '#'}`}
                 key={menu.id}
 
-                className={`hover:text-orange-400 text-black text-start duration-500 
+                className={`hover:text-orange-400 text-nowrap text-black text-start duration-500 
                   ${isMainMenuActive ? 'text-orange-400' : 'text-black'}
                   `}
               >
@@ -89,9 +97,14 @@ export function HeaderMenu({ menu }: { menu: any }) {
                 </span>
               </Link>
 
+
               {/* Dropdown Container */}
               {menu.items && menu.items.length > 0 && (
-                <ul className="absolute left-0 top-5 hidden group-hover:block ">
+                <ul className={`
+                  absolute left-0 top-5 
+                  opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                  transition-all duration-300
+                `}>
                   <div className='mt-5 border-5 border-zinc-50 rounded-2xl p-1 min-w-sm overflow-scroll HIDDEN_SCROLL bg-white flex flex-col gap-1 max-h-[70vh]'>
                     {menu.items.map((subMenu: any) => {
                       const isSubMenuActive = currentTabURL === subMenu.resource?.handle;
@@ -118,7 +131,7 @@ export function HeaderMenu({ menu }: { menu: any }) {
           );
         })}
 
-        {menu.items.length > 7 ? "..." : ""}
+        {menu.items.length > 5 ? "..." : ""}
       </ul>
     </nav>
   );
@@ -167,37 +180,55 @@ function HeaderMenuMobileToggle() {
 
 
 
-/// Cart Badge showing number of items in cart
-function CartBadge({ count }: { count: number | null }) {
 
-  return (
-    <Link
-      className='relative flex flex-row items-center gap-2'
-      to="/cart"
-    >
-      <ShoppingBag size={20} className='text-black hover:text-orange-400 duration-300 cursor-pointer' />
-      {count !== null && <span className='absolute -top-3 left-3 w-5 h-5 flex items-center justify-center bg-orange-400 text-white rounded-full'>{count}</span>}
-    </Link>
-  );
-}
-
-
-/// Cart Toggle Button with Suspense
 function CartToggle({ cart }: Pick<HeaderProps, 'cart'>) {
-
-  const originalCart = useAsyncValue() as CartApiQueryFragment | null;
-  const cart1 = useOptimisticCart(originalCart);
-
   return (
     <Suspense fallback={<CartBadge count={null} />}>
       <Await resolve={cart}>
-        {/* <CartBanner /> */}
-        <CartBadge count={cart1?.totalQuantity ?? 0} />
+        <CartBanner />
       </Await>
     </Suspense>
   );
 }
 
+
+function CartBanner() {
+  const originalCart = useAsyncValue() as CartApiQueryFragment | null;
+  const cart = useOptimisticCart(originalCart);
+
+  return <CartBadge count={cart?.totalQuantity ?? 0} />;
+}
+
+
+
+function CartBadge({ count }: { count: number | null }) {
+  const { open } = useAside();
+  {/* [START cartview] */ }
+  const { publish, shop, cart, prevCart } = useAnalytics();
+  {/* [END cartview] */ }
+
+  return (
+    <Link
+      className='relative '
+      to="/cart"
+      onClick={(e) => {
+        e.preventDefault();
+        open('cart');
+        {/* [START cartview] */ }
+        publish('cart_viewed', {
+          cart,
+          prevCart,
+          shop,
+          url: window.location.href || '',
+        } as CartViewPayload);
+        {/* [END cartview] */ }
+      }}
+    >
+      <ShoppingBag size={20} className='text-black hover:text-orange-400 duration-300 cursor-pointer' />
+      {count !== null && <span className='absolute z-1 -top-3 left-3 w-5 h-5 flex items-center justify-center bg-orange-400 text-white rounded-full'>{count}</span>}
+    </Link>
+  );
+}
 
 
 

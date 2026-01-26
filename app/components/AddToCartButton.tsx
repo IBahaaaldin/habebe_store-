@@ -7,8 +7,8 @@ export function AddToCartButton({ analytics, children, disabled, lines, onClick,
 
 
 
-  console.log(`%c${JSON.stringify(lines)}`, 'color: red; font-size: 20px;')
-  console.log(`%c${JSON.stringify(disabled)}`, 'color: red; font-size: 20px;')
+  // console.log(`%c${JSON.stringify(lines)}`, 'color: red; font-size: 20px;')
+  // console.log(`%c${JSON.stringify(disabled)}`, 'color: red; font-size: 20px;')
 
 
 
@@ -22,9 +22,9 @@ export function AddToCartButton({ analytics, children, disabled, lines, onClick,
             value={JSON.stringify(analytics)}
           />
           <div className='w-full flex items-end justify-end'>
-            <button
+            {/* <button
               type="submit"
-              className={`text-nowrap p-1.5 ${disabled ? ' text-white bg-orange-100 rounded-lg cursor-not-allowed' : `bg-orange-400 text-white rounded-lg hover:bg-orange-300 duration-300 cursor-pointer`} ${CC}`}
+              className={`text-nowrap px-3.5 py-2.5 md:rounded-2xl rounded-2xl ${disabled ? ' text-white bg-orange-100 rounded-xl cursor-not-allowed' : `bg-orange-400 text-white  hover:bg-orange-300 duration-300 cursor-pointer`} ${CC}`}
               onClick={() => {
                 onClick?.();
                 // toast.success('Item added to cart');
@@ -34,6 +34,19 @@ export function AddToCartButton({ analytics, children, disabled, lines, onClick,
               <span>
                 {children}
               </span>
+            </button> */}
+            <button
+              type="submit"
+              className={` ${disabled ? '' : `BUTTON1`} ${CC}`}
+              onClick={() => {
+                onClick?.();
+                // toast.success('Item added to cart');
+              }}
+              disabled={disabled || fetcher.state !== 'idle'}
+            >
+              <p>
+                {children}
+              </p>
             </button>
           </div>
         </>
