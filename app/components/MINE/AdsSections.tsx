@@ -180,7 +180,7 @@ export function PlatinumBanners({ bannerArray, collectionHandle }: { bannerArray
 
 
                 <div
-                    className="flex h-70 transition-transform duration-700 ease-in-out"
+                    className="flex md:h-70 h-50 transition-transform duration-700 ease-in-out"
                     style={{
                         transform: `translateX(-${currentIndex * 100}%)`,
                     }}
@@ -201,13 +201,13 @@ export function PlatinumBanners({ bannerArray, collectionHandle }: { bannerArray
 
                             {/* Content */}
                             <article className="bg-orange-50 relative p-5 flex flex-col justify-center gap-2 w-full">
-                                <h3 className="font-medium uppercase">
+                                <h4 className="font-medium uppercase">
                                     {collectionHandle} Collection
-                                </h3>
+                                </h4>
 
-                                <p>
-                                    Go and buy something you son of a bitch. Just kidding, have a good day.
-                                </p>
+                                <span>
+                                    Go and buy something you son of a bitch.
+                                </span>
 
                                 <Link
                                     to={`/collections/${collectionHandle}`}

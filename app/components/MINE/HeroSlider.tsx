@@ -3,6 +3,7 @@ import type { FeaturedCollectionFragment } from 'storefrontapi.generated';
 import { Image } from '@shopify/hydrogen';
 import ArrowButton, { SliderButtons, SmallIndexButtons } from './ReUsable/Buttons';
 import { AllCategories, TwoGrids } from './CollectionsHero';
+import HeaderText from './UI/HeaderText';
 
 
 
@@ -82,6 +83,16 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Feat
             <TwoGrids
                 subTwoMenus={mainCollections?.slice(0, 2)}
             />
+
+            <div className='mt-3'>
+                <HeaderText
+                    HEAD='Browse By Collection'
+                />
+                <AllCategories
+                    allSubMenus={mainCollections}
+                />
+            </div>
+
         </section>
     );
 };

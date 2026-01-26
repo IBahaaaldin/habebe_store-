@@ -149,18 +149,95 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
 export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
 
 
-    const [currentIndex, setCurrentIndex] = useState<number>(0)
-
-
     if (!Array.isArray(allSubMenus)) {
         return null;
     }
 
 
     return (
-        <div className="relative overflow-hidden">
+        <div className="flex flex-row gap-5 relative overflow-x-scroll HIDDEN_SCROLL">
             {/* SLIDES */}
             <article
+                className="items-start justify-start flex gap-5 transition-transform duration-500 ease-in-out overflow-x-scroll HIDDEN_SCROLL"
+            >
+                {allSubMenus?.map((menu: any) => (
+                    <Link
+                        to={`/collections/${menu.handle ?? menu.resource?.handle}`}
+                        key={menu.id || menu.handle}
+                        className='flex flex-col gap-3 w-fit'
+                    >
+                        <figure
+                            className="group relative h-30 w-30 rounded-full overflow-hidden"
+                        >
+                            <Image
+                                data={menu.image ?? menu.resource?.image}
+                                alt={menu.altText || menu.title}
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                        </figure>
+
+                        <p className="text-black font-medium text-wrap w-30 text-center">
+                            {menu.title.length > 20 ? menu.title.slice(0, 15) + "..." : menu.title}
+                        </p>
+                    </Link>
+                ))}
+            </article>
+
+            <article
+                className="items-start justify-start flex gap-5 transition-transform duration-500 ease-in-out overflow-x-scroll HIDDEN_SCROLL"
+            >
+                {allSubMenus?.map((menu: any) => (
+                    <Link
+                        to={`/collections/${menu.handle ?? menu.resource?.handle}`}
+                        key={menu.id || menu.handle}
+                        className='flex flex-col gap-3 w-fit'
+                    >
+                        <figure
+                            className="group relative h-30 w-30 rounded-full overflow-hidden"
+                        >
+                            <Image
+                                data={menu.image ?? menu.resource?.image}
+                                alt={menu.altText || menu.title}
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                        </figure>
+
+                        <p className="text-black font-medium text-wrap w-30 text-center">
+                            {menu.title.length > 20 ? menu.title.slice(0, 15) + "..." : menu.title}
+                        </p>
+                    </Link>
+                ))}
+            </article>
+
+            <article
+                className="items-start justify-start flex gap-5 transition-transform duration-500 ease-in-out overflow-x-scroll HIDDEN_SCROLL"
+            >
+                {allSubMenus?.map((menu: any) => (
+                    <Link
+                        to={`/collections/${menu.handle ?? menu.resource?.handle}`}
+                        key={menu.id || menu.handle}
+                        className='flex flex-col gap-3 w-fit'
+                    >
+                        <figure
+                            className="group relative h-30 w-30 rounded-full overflow-hidden"
+                        >
+                            <Image
+                                data={menu.image ?? menu.resource?.image}
+                                alt={menu.altText || menu.title}
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                        </figure>
+
+                        <p className="text-black font-medium text-wrap w-30 text-center">
+                            {menu.title.length > 20 ? menu.title.slice(0, 15) + "..." : menu.title}
+                        </p>
+                    </Link>
+                ))}
+            </article>
+
+
+            
+            {/* <article
                 className="items-start justify-start flex gap-5 transition-transform duration-500 ease-in-out overflow-x-scroll"
             >
                 {allSubMenus?.map((menu: any) => (
@@ -180,7 +257,7 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
                         </span>
                     </Link>
                 ))}
-            </article>
+            </article> */}
         </div>
     );
 };

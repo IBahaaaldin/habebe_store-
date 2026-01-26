@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { Link } from 'react-router';
 import { Image } from '@shopify/hydrogen';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import type {
   CollectionItemFragment,
 } from 'storefrontapi.generated';
@@ -52,11 +52,47 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
   const [displayImage, setDisplayImage] = useState(image)
 
 
+
+
+  // badges.ts
+  const fakeBadges = [
+    {
+      label: "Best Seller",
+      bg: "bg-yellow-500/50",
+      text: "text-white",
+    },
+    {
+      label: "Hot Deal",
+      bg: "bg-red-500/50",
+      text: "text-white",
+    },
+    {
+      label: "New Arrival",
+      bg: "bg-emerald-500/50",
+      text: "text-white",
+    },
+    {
+      label: "Trending",
+      bg: "bg-purple-500/50",
+      text: "text-white",
+    },
+    {
+      label: "Limited Stock",
+      bg: "bg-orange-500/50",
+      text: "text-white",
+    }
+  ] as const;
+
+  // const randomBadgeIndex = Math.floor(Math.random() * fakeBadges.length);
+  const randomBadgeIndex = useMemo(() => Math.floor(Math.random() * fakeBadges.length), [])
+  const badge = fakeBadges[randomBadgeIndex];
+
+
   return (
     <article className='flex-1 relative h-fit items-end flex flex-col gap-3 md:p-3 p-2 bg-zinc-100 md:rounded-3xl rounded-2xl overflow-hidden'>
       {image && (
         <Link
-          className="w-full md:rounded-2xl rounded-xl overflow-hidden"
+          className="relative w-full md:rounded-2xl rounded-xl overflow-hidden"
           key={product.id}
           prefetch="intent"
           to={variantUrl}
@@ -70,6 +106,16 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
             loading={loading}
             className='object-cover min-h-40'
           />
+
+
+          <span
+            className={`
+                absolute top-3 left-3 px-3 py-0.5 rounded-full font-thin backdrop-blur-sm
+                ${badge.bg} ${badge.text} border-b-2 border-l-2 border-white/20
+          `}
+          >
+            {badge.label}
+          </span>
         </Link>
       )}
 

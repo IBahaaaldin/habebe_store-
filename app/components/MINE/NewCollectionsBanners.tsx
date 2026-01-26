@@ -21,9 +21,9 @@ export function HomeGardenFurnitureBanner() {
 
 
     return (
-        <section className="grid grid-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+        <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {products.map(product =>
-                <div className={`relative h-70 overflow-hidden border rounded-2xl flex flex-col justify-end ${product.wide ? 'md:col-span-2' : 'col-span-1'}`}>
+                <div className={`relative md:h-70 h-40 overflow-hidden border rounded-2xl flex flex-col justify-end ${product.wide ? 'md:col-span-2' : 'col-span-1'}`}>
                     {/* Product Image */}
                     <Image
                         src={product.img}
@@ -127,38 +127,55 @@ export function PetsSuppliesBanner() {
         <section className="flex flex-col sm:flex-col gap-2">
             {/* LEFT */}
 
-            <div className="w-full flex flex-row gap-2 h-60">
+            <div className="w-full flex flex-row gap-2 md:h-70 h-50">
                 {bannerArray.slice(0, 2).map((banner: any, index) => (
                     <Link
                         to={`/collections/${collectionHandle}`}
                         aria-label={collectionHandle}
-                        className={`md:rounded-3xl rounded-2xl md:h-full h-40 overflow-hidden border
+                        className={`relative md:p-10 p-5 text-white md:rounded-3xl rounded-2xl md:h-full overflow-hidden 
                             ${index % 2 === 0 ? "w-2/3" : "w-1/3"}
                         `}
                     >
                         <Image
                             data={bannerArray[0]?.image}
                             alt={collectionHandle}
-                            className="object-cover md:rounded-3xl rounded-2xlw-full h-full hover:scale-105  duration-500"
+                            className="-z-1 absolute inset-0 object-cover md:rounded-3xl rounded-2xl w-full h-full hover:scale-105  duration-500"
                         />
+
+                        <HeaderText
+                            HEAD='Watch Wearable Device'
+                        />
+                        {index % 2 === 0 &&
+                            <ArrowButton
+                                Text='Show Now'
+                                CC='w-fit'
+                                Href='/collections/electronics'
+                            />
+                        }
                     </Link>
                 ))}
             </div>
 
 
             {/* /// RIGHT */}
-            <div className="w-full flex flex-row gap-2 h-60">
+            <div className="w-full flex flex-row gap-2 md:h-50 h-30">
                 {bannerArray.slice(2, 5).map((banner: any, index) => (
                     <Link
                         to={`/collections/${collectionHandle}`}
                         aria-label={collectionHandle}
-                        className={`md:rounded-3xl rounded-2xl md:h-full h-40 overflow-hidden border w-1/3
+                        className={`relative md:p-7 p-5 text-white md:rounded-3xl rounded-2xl md:h-full overflow-hidden w-1/3
                         `}
                     >
+
+
+                        <SmallHeaderText
+                            HEAD='Cat & Dog'
+                        />
+
                         <Image
                             data={banner?.image}
                             alt={collectionHandle}
-                            className="object-cover md:rounded-3xl rounded-2xl h-full w-full hover:scale-105 duration-500"
+                            className="-z-1 absolute inset-0 object-cover md:rounded-3xl rounded-2xl h-full w-full hover:scale-105 duration-500"
                         />
                     </Link>
                 ))}

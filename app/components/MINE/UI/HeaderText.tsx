@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
 export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?: string }) {
     return (
         <div className="flex flex-col z-1 capitalize items-start justify-start w-full gap-1 mb-5" >
-            <h3 className='flex-wrap flex flex-row gap-x-2 leading-tight'>
+            <h3 className='font-normal flex-wrap flex flex-row md:gap-x-2 gap-x-1.5 leading-tight'>
                 {HEAD!.split(' ').map((word, index) => (
                     <div
                         key={index}
@@ -31,9 +31,9 @@ export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?:
 
 
             {SUBHEAD &&
-                <p className='flex flex-row flex-wrap gap-1.5 text-wrap'>
+                <div className='flex flex-row flex-wrap gap-1.5 text-wrap'>
                     {SUBHEAD.split(' ').map((word, index) => (
-                        <div
+                        <p
                             key={index}
                             className='inline-block overflow-hidden'
                         >
@@ -46,9 +46,9 @@ export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?:
                             >
                                 {word}
                             </motion.div>
-                        </div>
+                        </p>
                     ))}
-                </p>
+                </div>
             }
         </div>
     )
@@ -58,15 +58,15 @@ export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?:
 
 export function SmallHeaderText({ HEAD, SUBHEAD }: { HEAD?: React.ReactNode, SUBHEAD?: React.ReactNode }) {
     return (
-        <div className="flex flex-col flex-wrap z-1 capitalize items-start justify-start gap-y-1 lg:max-w-sm w-full text-wrap" >
+        <div className="flex flex-col flex-wrap z-1 capitalize items-start justify-start gap-y-1 lg:max-w-sm w-full text-wrap mb-5" >
             {HEAD &&
-                <h4 className='flex-wrap gap-x-1.5 text-nowrap flex flex-row w-full'>
+                <h5 className='flex-wrap gap-x-1.5 text-nowrap flex flex-row w-full'>
                     {HEAD}
-                </h4>
+                </h5>
             }
 
             {SUBHEAD &&
-                <span className='text-zinc-400'>
+                <span className='text-start opacity-80'>
                     {SUBHEAD}
                 </span>
             }
