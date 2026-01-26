@@ -167,7 +167,7 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
                         className='flex flex-col gap-3 w-fit'
                     >
                         <figure
-                            className="group relative h-30 w-30 rounded-full overflow-hidden"
+                            className="group relative md:h-30 md:w-30 w-20 h-20 rounded-full overflow-hidden"
                         >
                             <Image
                                 data={menu.image ?? menu.resource?.image}
@@ -176,7 +176,7 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
                             />
                         </figure>
 
-                        <p className="text-black font-medium text-wrap w-30 text-center">
+                        <p className="text-black font-medium text-wrap text-center">
                             {menu.title.length > 20 ? menu.title.slice(0, 15) + "..." : menu.title}
                         </p>
                     </Link>
@@ -193,7 +193,7 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
                         className='flex flex-col gap-3 w-fit'
                     >
                         <figure
-                            className="group relative h-30 w-30 rounded-full overflow-hidden"
+                            className="group relative  md:h-30 md:w-30 w-20 h-20 rounded-full overflow-hidden"
                         >
                             <Image
                                 data={menu.image ?? menu.resource?.image}
@@ -202,7 +202,7 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
                             />
                         </figure>
 
-                        <p className="text-black font-medium text-wrap w-30 text-center">
+                        <p className="text-black font-medium text-wrap text-center">
                             {menu.title.length > 20 ? menu.title.slice(0, 15) + "..." : menu.title}
                         </p>
                     </Link>
@@ -219,7 +219,7 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
                         className='flex flex-col gap-3 w-fit'
                     >
                         <figure
-                            className="group relative h-30 w-30 rounded-full overflow-hidden"
+                            className="group relative  md:h-30 md:w-30 w-20 h-20 rounded-full overflow-hidden"
                         >
                             <Image
                                 data={menu.image ?? menu.resource?.image}
@@ -228,7 +228,7 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
                             />
                         </figure>
 
-                        <p className="text-black font-medium text-wrap w-30 text-center">
+                        <p className="text-black font-medium text-wrap text-center">
                             {menu.title.length > 20 ? menu.title.slice(0, 15) + "..." : menu.title}
                         </p>
                     </Link>
