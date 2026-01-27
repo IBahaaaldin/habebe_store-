@@ -77,7 +77,7 @@ export function ScrollBanners({ bannerArray, Title, collectionHandle }: { banner
 
 
     return (
-        <section className="relative w-full flex flex-col gap-3 md:rounded-2xl rounded-xl p-2 bg-zinc-50">
+        <section className="relative w-full flex flex-col gap-3 md:rounded-3xl rounded-2xl p-2 bg-zinc-50">
 
             <div className="w-full overflow-hidden">
                 <div
@@ -131,7 +131,7 @@ export function GridBanners({ bannerArray, collectionHandle }: { bannerArray: an
                         key={index}
                         data={banner?.image}
                         alt={`${collectionHandle}`}
-                        className='md:rounded-2xl rounded-xl'
+                        className='md:rounded-3xl rounded-2xl'
                     />
                 </figure>
             ))}
@@ -325,7 +325,7 @@ export function CasualBanners({ bannerArray, collectionHandle }: { bannerArray: 
                         key={index}
                         to={`/collections/${collectionHandle}`}
                         aria-label={collectionHandle}
-                        className="w-full md:h-full h-20 relative md:rounded-2xl rounded-xl overflow-hidden border"
+                        className="w-full md:h-full h-20 relative md:rounded-3xl rounded-2xl overflow-hidden border"
                     >
                         <Image
                             data={banner?.image}

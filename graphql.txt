@@ -25,7 +25,7 @@ const { collection, menu } = await storefront.query(MAINMENU_AND_SUBMENU_QUERY);
 
 ## 2️⃣ `Promise.all` = array
 
-* Always returns an array of query results.
+* Always returns an ARRAY of query results.
 
 ```js
 const results = await Promise.all([

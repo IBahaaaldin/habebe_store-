@@ -22,8 +22,8 @@ export function HomeGardenFurnitureBanner() {
 
     return (
         <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {products.map(product =>
-                <div className={`relative md:h-70 h-40 overflow-hidden border rounded-2xl flex flex-col justify-end ${product.wide ? 'md:col-span-2' : 'col-span-1'}`}>
+            {products.map((product) => (
+                <div key={product.id} className={`relative md:h-70 h-40 overflow-hidden border rounded-2xl flex flex-col justify-end ${product.wide ? 'md:col-span-2' : 'col-span-1'}`}>
                     {/* Product Image */}
                     <Image
                         src={product.img}
@@ -74,7 +74,7 @@ export function HomeGardenFurnitureBanner() {
                         </button>
                     </article>
                 </div>
-            )}
+            ))}
         </section>
     );
 }
@@ -130,6 +130,7 @@ export function PetsSuppliesBanner() {
             <div className="w-full flex flex-row gap-2 md:h-70 h-50">
                 {bannerArray.slice(0, 2).map((banner: any, index) => (
                     <Link
+                        key={banner}
                         to={`/collections/${collectionHandle}`}
                         aria-label={collectionHandle}
                         className={`relative md:p-10 p-5 text-white md:rounded-3xl rounded-2xl md:h-full overflow-hidden 
@@ -161,6 +162,7 @@ export function PetsSuppliesBanner() {
             <div className="w-full flex flex-row gap-2 md:h-50 h-30">
                 {bannerArray.slice(2, 5).map((banner: any, index) => (
                     <Link
+                        key={banner.id}
                         to={`/collections/${collectionHandle}`}
                         aria-label={collectionHandle}
                         className={`relative md:p-7 p-5 text-white md:rounded-3xl rounded-2xl md:h-full overflow-hidden w-1/3

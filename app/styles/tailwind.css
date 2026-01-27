@@ -7,7 +7,7 @@
 
 
 .BUTTON1 {
-    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-3 py-1.5 font-medium text-white bg-orange-400 md:rounded-3xl rounded-2xl duration-300 text-nowrap text-xs;
+    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-4 py-1.5 font-medium text-white bg-orange-400 md:rounded-3xl rounded-2xl duration-300 text-nowrap text-xs;
 
     @apply md:px-7 md:py-3 md:text-sm;
 
@@ -61,7 +61,7 @@
 
 
 .INPUT {
-    @apply px-3 py-2 bg-zinc-100 outline-none md:rounded-2xl rounded-xl w-full;
+    @apply px-3 py-2 bg-zinc-100 outline-none md:rounded-3xl rounded-2xl w-full;
     @apply md:px-4 md:py-2 md:text-sm text-xs;
 }
 
@@ -107,7 +107,7 @@ form {
 
 
 .SEARCH_CONTAINERS {
-    @apply flex absolute top-20 right-0 left-0 bg-white md:rounded-2xl rounded-xl overflow-hidden p-5 border border-black/10;
+    @apply flex absolute top-16 right-0 left-0 bg-white md:rounded-3xl rounded-2xl overflow-hidden p-5 border border-black/10;
     @apply md:p-10;
 }
 

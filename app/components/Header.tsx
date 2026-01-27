@@ -89,7 +89,7 @@ export function HeaderMenu({ menu }: { menu: any }) {
                 key={menu.id}
 
                 className={`hover:text-orange-400 text-nowrap text-black text-start duration-500 
-                  ${isMainMenuActive ? 'text-orange-400' : 'text-black'}
+                  ${isMainMenuActive ? 'text-orange-400' : ' text-black'}
                   `}
               >
                 <span>
@@ -207,25 +207,26 @@ function CartBadge({ count }: { count: number | null }) {
   const { publish, shop, cart, prevCart } = useAnalytics();
   {/* [END cartview] */ }
 
+
   return (
     <Link
       className='relative '
       to="/cart"
-      onClick={(e) => {
-        e.preventDefault();
-        open('cart');
-        {/* [START cartview] */ }
-        publish('cart_viewed', {
-          cart,
-          prevCart,
-          shop,
-          url: window.location.href || '',
-        } as CartViewPayload);
-        {/* [END cartview] */ }
-      }}
+    // onClick={(e) => {
+    //   e.preventDefault();
+    //   open('cart');
+    //   {/* [START cartview] */ }
+    //   publish('cart_viewed', {
+    //     cart,
+    //     prevCart,
+    //     shop,
+    //     url: window.location.href || '',
+    //   } as CartViewPayload);
+    //   {/* [END cartview] */ }
+    // }}
     >
       <ShoppingBag size={20} className='text-black hover:text-orange-400 duration-300 cursor-pointer' />
-      {count !== null && <span className='absolute z-1 -top-3 left-3 w-5 h-5 flex items-center justify-center bg-orange-400 text-white rounded-full'>{count}</span>}
+      {count !== null && <span className='absolute z-1 -top-3 left-3 w-5 h-5 flex items-center justify-center bg-orange-400 text-white rounded-md'>{count}</span>}
     </Link>
   );
 }

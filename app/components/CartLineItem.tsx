@@ -24,7 +24,7 @@ export function CartLineItem({ layout, line, }: { layout: CartLayout; line: Cart
 
 
   return (
-    <li key={id} className="border border-zinc-300 p-3 md:rounded-2xl rounded-xl flex flex-row justify-between gap-3">
+    <li key={id} className="border border-zinc-300 p-3 md:rounded-3xl rounded-2xl flex flex-row justify-between gap-3">
 
 
 
@@ -63,7 +63,9 @@ export function CartLineItem({ layout, line, }: { layout: CartLayout; line: Cart
                 }
               }}
             >
-              <h5 className=' uppercase text-wrap max-w-sm overflow-hidden hover:underline'>{product.title}</h5>
+              <h5 className=' uppercase text-wrap max-w-sm overflow-hidden hover:underline'>
+                {product.title.length > 50 ? product.title.slice(0, 50) + "..." : product.title}
+              </h5>
             </Link>
 
 
@@ -106,8 +108,11 @@ export function CartLineQuantity({ line }: { line: CartLine }) {
   const prevQuantity = Number(Math.max(0, quantity - 1).toFixed(0));
   const nextQuantity = Number((quantity + 1).toFixed(0));
 
+
+  // console.log(`%c${JSON.stringify(line, null, 3)}`, 'color: white; font-size: 20px;')
+
   return (
-    <div className="flex flex-row items-center justify-center bg-zinc-100 w-full h-fit px-2 py-1 rounded-full gap-1">
+    <div className="flex flex-row items-center justify-center bg-zinc-100 w-full h-fit p-1.5 py-1 rounded-full gap-2">
 
       <CartLineUpdateButton lines={[{ id: lineId, quantity: prevQuantity }]}>
         <button
@@ -116,11 +121,11 @@ export function CartLineQuantity({ line }: { line: CartLine }) {
           name="decrease-quantity"
           value={prevQuantity}
         >
-          <Minus size={20} className='hover:bg-white rounded-full p-1 cursor-pointer' />
+          <Minus size={25} className='hover:bg-white/0 duration-300 bg-white rounded-full p-1 cursor-pointer' />
         </button>
       </CartLineUpdateButton>
 
-      <span className='text-black font-medium'>{quantity}</span>
+      <h4 className='text-black font-medium leading-tight'>{quantity}</h4>
 
       <CartLineUpdateButton lines={[{ id: lineId, quantity: nextQuantity }]}>
         <button
@@ -129,7 +134,7 @@ export function CartLineQuantity({ line }: { line: CartLine }) {
           value={nextQuantity}
           disabled={!!isOptimistic}
         >
-          <Plus size={20} className='hover:bg-white rounded-full p-1 cursor-pointer' />
+          <Plus size={25} className='hover:bg-white/0 duration-300 bg-white rounded-full p-1 cursor-pointer' />
         </button>
       </CartLineUpdateButton>
 

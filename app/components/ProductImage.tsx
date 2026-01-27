@@ -5,6 +5,7 @@ import { Image } from '@shopify/hydrogen';
 import { useEffect, useState } from 'react';
 import { Share2 } from 'lucide-react';
 import { useLocation } from 'react-router';
+import { SliderButtons } from './MINE/ReUsable/Buttons';
 
 
 
@@ -57,25 +58,28 @@ export function ProductImage({ image, productMedia }: { image: ProductVariantFra
 
 
   return (
-    <section className="flex flex-col gap-3 w-full">
-      <figure className='relative p-2 md:rounded-2xl rounded-xl overflow-hidden
-    bg-zinc-50 min-w-70 w-full h-fit'>
+    <section className="flex flex-col gap-3 w-full md:max-w-1/2">
+      <figure className='relative p-2 md:rounded-3xl rounded-2xl overflow-hidden
+    bg-zinc-50 w-full aspect-square h-fit'>
         <Image
           alt={mainImage?.altText || 'Product Image'}
           data={mainImage!}
           key={mainImage?.id}
-          className='z-0 rounded-2xl overflow-hidden object-cover max-h-[70vh]'
+          className='z-0 rounded-2xl overflow-hidden object-cover aspect-square'
+          sizes='100vw'
+        // width={1000}
+        // height={1000}
         />
 
 
 
         <Share2
-          className="cursor-pointer absolute top-4 right-4 bg-white/80 backdrop-blur-xs hover:bg-white duration-300 rounded-lg z-100 text-orange-400 p-1.5 w-7 h-7"
-          size={40}
+          className="cursor-pointer absolute top-5 right-5 bg-white backdrop-blur-xs hover:bg-white/80 duration-300 rounded-lg z-100 text-orange-400 p-1.5 "
+          size={35}
           onClick={handleShareClick}
         />
         {showCopyMessage && (
-          <span className="absolute top-15 right-4 max-w-[80%] px-3 py-1 bg-green-700/70 backdrop-blur-sm rounded-lg text-white">
+          <span className="absolute md:top-5 md:right-16 top-17 right-5 max-w-[80%] px-3 py-1 bg-white rounded-lg text-black">
             {copyMessage}
           </span>
         )}
@@ -84,22 +88,25 @@ export function ProductImage({ image, productMedia }: { image: ProductVariantFra
 
 
       {/* Sub Images */}
-      <div className='flex flex-row gap-3 overflow-scroll HIDDEN_SCROLL max-w-2xl' >
+      <div className='relative flex flex-row gap-3 overflow-scroll HIDDEN_SCROLL w-full' >
         {productMedia?.map((imgData: any, index: number) => (
           <figure
             key={index}
-            className='min-w-25 max-w-25 rounded-xl p-1.5 bg-zinc-50 aspect-square overflow-hidden'
+            className='min-w-20 md:rounded-3xl rounded-2xl p-1.5 bg-zinc-50 aspect-square overflow-hidden cursor-pointer border border-black/0 
+              hover:border-black active:border-black hover:brightness-60 active:brightness-60 duration-300 '
             onMouseEnter={() => handleMouseEnter(imgData.node.image as any)}
             onMouseLeave={handleMouseLeave}
           >
             <Image
               alt={imgData?.altText || ""}
-              aspectRatio="1/1"
               data={imgData.node?.image}
               className='object-cover rounded-lg'
+              sizes='100px'
             />
           </figure>
         ))}
+
+        <SliderButtons changeIndex={() => { }} passedArray={productMedia} />
       </div>
     </section>
   );

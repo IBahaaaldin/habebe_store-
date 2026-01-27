@@ -3,6 +3,7 @@ import type { CartLayout } from '~/components/CartMain';
 import { type OptimisticCart } from '@shopify/hydrogen';
 import { useEffect, useRef, useState } from 'react';
 import { CircleChevronRight } from 'lucide-react';
+import { Features } from './ProductForm';
 
 
 
@@ -37,26 +38,43 @@ export function CartSummary({ cart, layout }: CartSummaryProps) {
 
 
 
+
+  const subTotalPrice = Number(cart?.cost?.subtotalAmount?.amount)
+  const totalPrice = Number(cart?.cost?.totalAmount?.amount)
+  const totalDiscount = (subTotalPrice - totalPrice).toFixed(2)
+
+  const currency = cart?.cost?.totalAmount?.currencyCode ?? 'USD';
+
+
   return (
-    <div
-      aria-labelledby="cart-summary" className="w-full"
-    >
+    <div aria-labelledby="cart-summary" className="sticky top-20 w-full">
       <h4 className='font-medium'>Order Summary</h4>
 
       <div className='flex flex-col gap-1 py-3'>
         <dl className="flex flex-row justify-between">
           <dt className='text-zinc-300'><p>Subtotal</p></dt>
           <dd className=' font-medium'>
-            <p> {cart?.cost?.subtotalAmount?.currencyCode} {Number(cart?.cost?.subtotalAmount?.amount) + Number(totalDiscountOnAllProducts)}</p>
+            <p> {cart?.cost?.subtotalAmount?.currencyCode} {Number(cart?.cost?.subtotalAmount?.amount ?? 0) + totalDiscountOnAllProducts}</p>
           </dd>
         </dl>
 
+
         <dl className="flex flex-row justify-between">
-          <dt className='text-zinc-300'><p>Discounts</p></dt>
+          <dt className='text-zinc-300'><p>Products Discounts</p></dt>
           <dd className='text-red-500 font-medium'>
-            <p>- {cart?.cost?.totalAmount?.currencyCode} {totalDiscountOnAllProducts.toFixed(2)}</p>
+            <p>- {currency} {totalDiscountOnAllProducts.toFixed(2)}</p>
           </dd>
         </dl>
+
+
+        {Number(cart?.cost?.subtotalAmount?.amount ?? 0) > 200 &&
+          <dl className="flex flex-row justify-between">
+            <dt className='text-zinc-300'><p> Discounts on orders above <u>$100</u></p></dt>
+            <dd className='text-red-500 font-medium'>
+              <p>- {currency} {totalDiscount}</p>
+            </dd>
+          </dl>
+        }
 
         <dl className="flex flex-row justify-between">
           <dt className='text-zinc-300'><p>Delivery fee</p></dt>
@@ -67,9 +85,9 @@ export function CartSummary({ cart, layout }: CartSummaryProps) {
 
 
       <dl className="flex flex-row justify-between border-t border-zinc-300 py-3">
-        <dt className='text-zinc-300'><h4>Total</h4></dt>
+        <dt className='text-zinc-300'><h4 className='text-black'>Total <sup className='text-zinc-400'>price</sup></h4></dt>
         <dd className='font-medium'>
-          <h4>{cart?.cost?.totalAmount?.currencyCode} {cart?.cost?.totalAmount?.amount}</h4>
+          <h4>{currency} {cart?.cost?.totalAmount?.amount}</h4>
         </dd>
       </dl>
 
@@ -78,12 +96,45 @@ export function CartSummary({ cart, layout }: CartSummaryProps) {
         <CartDiscounts />
         <CartCheckoutActions checkoutUrl={cart?.checkoutUrl} />
       </div>
+
+      <br />
+
+      <Features />
     </div>
   );
 }
 
 
+// <div className="w-full p-4 bg-white border border-gray-100 rounded-xl shadow-sm">
+//   <div className="flex justify-between mb-2 text-sm font-medium text-gray-700">
+//     {progress < 100 ? (
+//       `Add EGP ${remaining.toFixed(2)} more for Free Delivery`
+//     ) : (
+//       <h6 className="flex items-center gap-2 text-zinc-700">
+//         You&apos;sve unlocked Free Shipping!
+//         <PartyPopper size={18} />
+//       </h6>
+//     )}
+//   </div>
 
+//   {/* Progress Bar Container */}
+//   {/* Animated Progress Fill */}
+//   <div className='w-full h-2 rounded-full bg-zinc-50'>
+//     <div
+//       className={`h-full rounded-full ${totalPrice > 1000 ? "bg-green-500" : "bg-indigo-500"} transition-all duration-500 ease-out`}
+//       style={{ width: `${progress}%` }}
+//     />
+//   </div>
+
+//   <div className="mt-2 flex gap-2 justify-start text-zinc-500">
+//     <TruckElectric size={19} />
+//     <p className="">
+//       Free Delivery on all orders over <u className='font-medium'>EGP 1000</u>
+//     </p>
+//   </div>
+
+//   <Link href="/shop" className='underline LINK mt-2'><p>Get free delivery!</p></Link>
+// </div>
 
 function CartCheckoutActions({ checkoutUrl }: { checkoutUrl?: string }) {
   if (!checkoutUrl) return null;

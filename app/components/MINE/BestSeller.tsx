@@ -19,8 +19,8 @@ export default function BestSeller({
 
 
     const [currentIndex, setCurrentIndex] = useState<number>(0);
+    console.log(`%c${JSON.stringify(currentIndex, null, 3)}`, 'color: white; font-size: 20px;')
 
-    const productRef = useRef<HTMLDivElement>(null);
 
     return (
         <div className='flex lg:flex-row flex-col justify-between w-full gap-10 p-5 border md:rounded-3xl rounded-2xl'>
@@ -43,31 +43,36 @@ export default function BestSeller({
 
 
 
-
-            <Suspense fallback={<LoadingSpinner />}>
-                <Await resolve={products}>
-                    {(response) => (
-                        <div
-                            className='bg-red-900 flex flex-row gap-3 px-5 overflow-x-scroll HIDDEN_SCROLL justify-start transition-transform duration-700 '
-                            style={{
-                                transform: `translateX(-${currentIndex * (100 / 3)}%)`,
-                            }}
-                        >
-                            {response
-                                ? response?.nodes?.slice(0, 10)?.map((product: any) => (
-                                    <div
-                                        className='min-w-[30%] px-1'
-                                    >
-                                        <ProductItem
+            <div className='relative overflow-hidden'>
+                <Suspense fallback={<LoadingSpinner />}>
+                    <Await resolve={products}>
+                        {(response) => (
+                            <div
+                                className='bg-red-900 flex flex-row gap-3 px-5 justify-start transition-transform duration-700 '
+                                style={{
+                                    transform: `translateX(-${currentIndex * 280}px)`,
+                                    // transform: `translateX(-${currentIndex * (100 / 3)}%)`,
+                                }}
+                            >
+                                {response
+                                    ? response?.nodes?.slice(0, 10)?.map((product: any) => (
+                                        <div
                                             key={product?.id}
-                                            product={product}
-                                        />
-                                    </div>
-                                ))
-                                : null}
-                        </div>
-                    )}
-                </Await>
-            </Suspense>
-        </div>)
+                                            className='min-w-70'
+                                        >
+                                            <ProductItem
+                                                product={product}
+                                            />
+                                        </div>
+                                    ))
+                                    : null}
+                            </div>
+                        )}
+                    </Await>
+                </Suspense>
+
+                <SliderButtons changeIndex={setCurrentIndex} passedArray={products?.response?.nodes} />
+            </div>
+        </div>
+    )
 }

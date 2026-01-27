@@ -125,7 +125,7 @@ export default function Product() {
 
   return (
     <div className='flex flex-col gap-10'>
-      <div className='flex xl:flex-row flex-col gap-x-7'>
+      <div className='flex md:flex-row flex-col gap-x-7'>
         {/* /// Product Image */}
         <ProductImage
           image={product?.featuredImage}
@@ -135,12 +135,11 @@ export default function Product() {
 
 
         {/* /// Product Details */}
-        <section className="flex flex-col gap-7 mt-5 w-full xl:max-w-1/2">
+        <section className="flex flex-col gap-7 mt-5 w-full md:w-1/2">
           <article className='flex flex-col gap-2'>
-            <h4>{title}</h4>
+            <h3>{title}</h3>
             <Prices
-              CC1='lg:text-2xl text-xl'
-              CC2='lg:text-xl text-lg'
+              isBig={true}
               currency={selectedVariant.price.currencyCode}
               price={selectedVariant.price.amount}
             />
@@ -149,7 +148,7 @@ export default function Product() {
 
 
 
-          <article className='flex flex-col gap-2 border-3 border-zinc-100 md:rounded-2xl rounded-xl p-4'>
+          <article className='flex flex-col gap-2 border-3 border-zinc-100 md:rounded-3xl rounded-2xl p-4'>
             <p className='font-medium'>Description: </p>
 
             <span className=" text-zinc-500">
@@ -173,7 +172,7 @@ export default function Product() {
               {product.tags.map((tag: any) => (
                 <span
                   key={tag}
-                  className='text-nowrap md:rounded-2xl rounded-xl border border-zinc-300 px-3 py-1 '>
+                  className='text-nowrap md:rounded-3xl rounded-2xl border border-zinc-300 px-3 py-1 '>
                   {tag}
                 </span>
               ))}
@@ -230,13 +229,11 @@ function SimilarProducts({ products, Title }: { products: any; Title: string; })
 
       <Suspense fallback={<LoadingSpinner />}>
         <Await resolve={products}>
-          {(response) => (
-            <div className="PRODUCTS_GRID_CONTAINER overflow-scroll HIDDEN_SCROLL">
-              {products.map((item: any) => (
-                <ProductItem key={item.node.id} product={item.node} />
-              ))}
-            </div>
-          )}
+          <div className="PRODUCTS_GRID_CONTAINER overflow-scroll HIDDEN_SCROLL">
+            {products.map((item: any) => (
+              <ProductItem key={item.node.id} product={item.node} />
+            ))}
+          </div>
         </Await>
       </Suspense>
     </div>

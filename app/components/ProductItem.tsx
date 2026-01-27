@@ -8,8 +8,9 @@ import type {
 } from 'storefrontapi.generated';
 import { useVariantUrl } from '~/lib/variants';
 import Prices from './MINE/UI/Prices';
-import { Share2, ShoppingCart } from 'lucide-react';
+import { Share2 } from 'lucide-react';
 import { AddToCartButton } from './AddToCartButton';
+import { QuantityButton } from './MINE/ReUsable/Buttons';
 
 
 
@@ -50,6 +51,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
   /// Change the image when hover
   const [displayImage, setDisplayImage] = useState(image)
+  const [quantity, setQuantity] = useState<number>(1) // For updating the quantity to send it to the cart Updated already
 
 
 
@@ -92,7 +94,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
     <article className='flex-1 relative h-fit items-end flex flex-col gap-3 md:p-3 p-2 bg-zinc-100 md:rounded-3xl rounded-2xl overflow-hidden'>
       {image && (
         <Link
-          className="relative w-full md:rounded-2xl rounded-xl overflow-hidden"
+          className="relative w-full md:rounded-3xl rounded-2xl overflow-hidden"
           key={product.id}
           prefetch="intent"
           to={variantUrl}
@@ -101,10 +103,12 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
         >
           <Image
             alt={image.altText || ""}
-            aspectRatio="1/1"
             data={displayImage}
             loading={loading}
             className='object-cover min-h-40'
+            sizes='400px'
+            width={400}
+            height={400}
           />
 
 
@@ -124,39 +128,43 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
       {/* /// Details */}
-      <article className='px-2 pb-2 flex flex-col w-full justify-between items-end gap-2'>
+      <article className='px-2 pb-2 flex flex-col w-full justify-between items-start gap-2'>
         <Link to={variantUrl} className='flex w-full hover:underline'>
-          <h6 className='capitalize w-full'>{product.title.length > 15 ? product.title.slice(0, 15) + '...' : product.title}</h6>
+          <h5 className='capitalize w-full'>{product.title.length > 15 ? product.title.slice(0, 15) + '...' : product.title}</h5>
         </Link>
 
+        <Prices
+          price={price}
+          currency={currency}
+          isBig={false}
+        />
+
+
+
         <div className='flex flex-row w-full justify-between items-start '>
-          <Prices
-            price={price}
-            currency={currency}
-          />
+          <QuantityButton setQuantity={setQuantity} quantity={quantity} />
+
+          <AddToCartButton
+            disabled={!product?.variants.nodes[0]?.availableForSale}
+            CC='w-fit'
+            lines={
+              product?.variants.nodes[0]
+                ? [
+                  {
+                    merchandiseId: product?.variants.nodes[0].id,
+                    quantity: quantity,
+                    // The Varient itself should be passed here
+                  }
+                ]
+                : []
+            }
+          >
+            {/* The Sold out is hidden  from the comp itself */}
+            {product?.variants.nodes[0]?.availableForSale ? <div className='flex gap-2'>Add</div> : 'Sold'}
+          </AddToCartButton>
 
         </div>
-
-        <AddToCartButton
-          disabled={!product?.variants.nodes[0]?.availableForSale}
-          CC='w-full'
-          lines={
-            product?.variants.nodes[0]
-              ? [
-                {
-                  merchandiseId: product?.variants.nodes[0].id,
-                  quantity: 1,
-                  // The Varient itself should be passed here
-                }
-              ]
-              : []
-          }
-        >
-          {/* The Sold out is hidden  from the comp itself */}
-          {product?.variants.nodes[0]?.availableForSale ? <div className='flex gap-2'><ShoppingCart size={20} /> Add</div> : 'Sold'}
-        </AddToCartButton>
       </article>
-
 
 
       <Share2

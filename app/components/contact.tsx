@@ -8,7 +8,7 @@ const ContactPage = () => {
 
     return (
         <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 lg:p-8 font-sans">
-            <section className="max-w-6xl w-full  md:rounded-2xl rounded-xl overflow-hidden flex flex-col lg:flex-row">
+            <section className="max-w-6xl w-full  md:rounded-3xl rounded-2xl overflow-hidden flex flex-col lg:flex-row">
 
                 {/* Left Side: Branding & Graphics */}
                 <section className="bg-lime-300  w-full">

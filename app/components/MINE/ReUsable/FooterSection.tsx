@@ -85,7 +85,7 @@ export default function FooterSection({ header }: { header: any }) {
         <div className="flex flex-col HOME_WRAPPER w-full">
 
 
-            <div className=" grid lg:grid-cols-3 md:grid-cols-2 md:gap-x-10 gap-x-5 md:gap-y-15 gap-y-10 items-between justify-between bg-white md:rounded-2xl rounded-xl relative overflow-hidden py-10 *:min-w-1/3 *:w-full">
+            <div className=" grid lg:grid-cols-3 md:grid-cols-2 md:gap-x-10 gap-x-5 md:gap-y-15 gap-y-10 items-between justify-between bg-white md:rounded-3xl rounded-2xl relative overflow-hidden py-10 *:min-w-1/3 *:w-full">
 
                 {/* /// SECOND MENU */}
                 <section className='flex flex-col min-h-full gap-1'>

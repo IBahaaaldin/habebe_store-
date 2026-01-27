@@ -1,4 +1,4 @@
-import { Analytics, getShopAnalytics, useNonce } from '@shopify/hydrogen';
+import { Analytics, getShopAnalytics, Image, useNonce } from '@shopify/hydrogen';
 import {
   Outlet,
   useRouteError,
@@ -97,16 +97,24 @@ export async function loader(args: Route.LoaderArgs) {
 async function loadCriticalData({ context }: Route.LoaderArgs) {
   const { storefront } = context;
 
-  const header = await Promise.all([
+
+
+  // Extracting first object as menuData to match the query instead of returning all as one object and then pick [0], [1]
+  // Extracting second object as shopData
+  const [menuData, shopData] = await Promise.all([
     storefront.query(MAINMENU_AND_SUBMENU_QUERY, {
       cache: storefront.CacheLong(),
       variables: {
         handle: 'main-menu',
       },
     }),
+    storefront.query(SHOP_LOGO),
   ]);
 
-  return { header };
+  return {
+    menuData,
+    shopData
+  };
 }
 
 
@@ -152,6 +160,7 @@ export function Layout({ children }: { children?: React.ReactNode }) {
 // The main App component
 export default function App() {
   const data = useRouteLoaderData<RootLoader>('root');
+  // console.log(`%c${JSON.stringify(data, null, 3)}`, 'color: white; font-size: 20px;')
 
 
   if (!data) {
@@ -164,7 +173,7 @@ export default function App() {
       shop={data.shop}
       consent={data.consent}
     >
-      <PageLayout {...data} header={data.header[0]}>
+      <PageLayout {...data} header={data.menuData}>
         <Outlet />
       </PageLayout>
     </Analytics.Provider>
@@ -176,6 +185,10 @@ export default function App() {
 
 // Error boundary for the root route
 export function ErrorBoundary() {
+
+  const data = useRouteLoaderData<RootLoader>('root');
+  const shopData = data?.shopData;
+  // console.log(`%c${JSON.stringify(shopData, null, 3)}`, 'color: white; font-size: 20px;')
 
   const error = useRouteError();
   let errorMessage = 'Unknown error';
@@ -192,12 +205,36 @@ export function ErrorBoundary() {
 
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4">
-      <h2 className="font-medium mb-4">404</h2>
-      <h6 className="mb-8">Sorry, this page not found.</h6>
+    <div className="HOME_WRAPPER relative min-h-screen flex flex-col items-center justify-center text-center ">
+      <h1 className="font-medium mb-4">404</h1>
+      <h3 className="mb-8">Sorry, this page not found.</h3>
       <Link to="/" className="BUTTON2">
         Go back home
       </Link>
+
+
+      <Image
+        data={shopData?.shop.brand?.logo?.image}
+        className='absolute bottom-[5%] -left-[20%] -z-1 max-w-200 aspect-auto object-cover blur-2xl opacity-70'
+      />
     </div>
   );
 }
+
+
+export const SHOP_LOGO = `#graphql
+  query Shop {
+      shop {
+        brand {
+          logo {
+            image {
+              url
+              altText
+              width
+              height
+            }
+          }
+        }
+      }
+    }
+`;

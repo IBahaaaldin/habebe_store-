@@ -79,7 +79,7 @@ function CollectionItem({ collection, index, }: { collection: CollectionFragment
       to={`/${collection.handle}`}
     // prefetch="intent"
     >
-      <div className='max-h-100 h-full md:rounded-2xl rounded-xl overflow-hidden'>
+      <div className='max-h-100 h-full md:rounded-3xl rounded-2xl overflow-hidden'>
         {collection?.image && (
           <Image
             className='object-cover hover:scale-110 duration-500 h-full -z-1'

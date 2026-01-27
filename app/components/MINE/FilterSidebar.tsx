@@ -63,7 +63,7 @@ export default function FilterSidebar({ AvailableSize, AvailableColor, Available
 
 
     return (
-        <div className="sticky self-start max-w-sm flex flex-col gap-3 border border-zinc-300 md:rounded-2xl rounded-xl p-5 h-fit">
+        <div className="sticky self-start max-w-sm flex flex-col gap-3 border border-zinc-300 md:rounded-3xl rounded-2xl p-5 h-fit">
             <div className="flex flex-col gap-3">
                 <div className="flex flex-row w-full justify-between border-b border-zinc-300 pb-3">
                     <h5 className="text-xl font-medium ">Size</h5>

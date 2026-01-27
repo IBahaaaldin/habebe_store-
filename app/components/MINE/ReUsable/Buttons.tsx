@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight, Minus, Plus } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router';
 
@@ -23,7 +23,6 @@ export default function ArrowButton({ Href, Text, CC }: { Href?: string; Text?: 
 
 
 export function SliderButtons({
-    currentIndex,
     passedArray,
     changeIndex,
 }: {
@@ -32,6 +31,8 @@ export function SliderButtons({
     changeIndex: (value: number | ((prev: number) => number)) => void;
 }) {
 
+
+    console.log(`%c${JSON.stringify(passedArray, null, 3)}`, 'color: white; font-size: 20px;')
 
     const nextSlide = () => {
         changeIndex((prev) => (prev + 1) % passedArray.length);
@@ -94,6 +95,40 @@ export function SmallIndexButtons({
                     aria-label={`Go to slide ${index + 1}`}
                 />
             ))}
+        </div>
+    )
+}
+
+
+export function QuantityButton({ quantity, setQuantity, CC, MCC }: { quantity: number, setQuantity: React.Dispatch<React.SetStateAction<number>>, CC?: string, MCC?: string }) {
+
+
+    return (
+        <div className={`${MCC || "bg-white"} w-fit flex flex-row gap-3 items-center justify-center  h-fit md:p-2.5 p-2 md:py-2 py-1 rounded-full '`}>
+            <button
+                type="button"
+                aria-label="Decrease quantity"
+                disabled={quantity <= 1}
+                className={`${CC || "bg-zinc-200 hover:bg-zinc-200/50"} rounded-full p-1 duration-300 cursor-pointer `}
+                onClick={() => setQuantity(q => Math.max(1, q - 1))}
+            >
+                <Minus
+                    size={20}
+                />
+            </button>
+
+            <h4 className="text-black font-medium">{quantity}</h4>
+
+            <button
+                type="button"
+                aria-label="Increase quantity"
+                className={`${CC || "bg-zinc-200 hover:bg-zinc-200/50"} rounded-full p-1 duration-300 cursor-pointer `}
+                onClick={() => setQuantity(q => q + 1)}
+            >
+                <Plus
+                    size={20}
+                />
+            </button>
         </div>
     )
 }

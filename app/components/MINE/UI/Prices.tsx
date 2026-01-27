@@ -1,7 +1,7 @@
 
 
 // CC1 and CC2 
-export default function Prices({ price, currency, CC1, CC2 }: { price: string, currency: string, CC1?: string, CC2?: string }) {
+export default function Prices({ price, currency, isBig }: { price: string, currency: string, isBig?: boolean }) {
 
 
     const numericPrice = Number(price);
@@ -24,15 +24,22 @@ export default function Prices({ price, currency, CC1, CC2 }: { price: string, c
 
     return (
         <article className='flex flex-col flex-wrap items-start'>
-            <h5 className={`${CC1 ?? 'text-sm'} text-nowrap text-black font-medium`}>{currency} {numericPrice.toFixed(2)}</h5>
+            {/* <h5 className={`text-nowrap text-black font-medium`}>{currency} {numericPrice.toFixed(2)}</h5> */}
 
-
-            {discountPercentage > 0 &&
-                (<span className={`${CC2 ?? 'text-xs'} text-zinc-400 line-through`}>
-                   {currency} {fakeOriginalPrice.toFixed(2)}
-                </span>)
+            {isBig ?
+                <h3 className={`mt-3 text-nowrap text-black font-medium`}>{currency} {numericPrice.toFixed(2)}
+                    <sup className={`ml-2 text-zinc-400 line-through`}>
+                        {fakeOriginalPrice.toFixed(2)}
+                    </sup>
+                </h3>
+                :
+                <h5 className={`text-nowrap text-black font-medium`}>{currency} {numericPrice.toFixed(2)}
+                    <sup className={`ml-2 text-zinc-400 line-through`}>
+                        {fakeOriginalPrice.toFixed(2)}
+                    </sup>
+                </h5>
             }
 
-        </article >
+        </article>
     )
 }

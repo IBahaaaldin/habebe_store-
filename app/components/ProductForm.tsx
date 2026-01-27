@@ -4,6 +4,9 @@ import type { Maybe, ProductOptionValueSwatch, } from '@shopify/hydrogen/storefr
 import { AddToCartButton } from './AddToCartButton';
 import { useAside } from './Aside';
 import type { ProductFragment } from 'storefrontapi.generated';
+import { QuantityButton } from './MINE/ReUsable/Buttons';
+import { useState, type ReactNode } from 'react';
+import { ShieldCheck, Truck, RefreshCcw, Shirt } from 'lucide-react';
 
 
 
@@ -14,17 +17,7 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
   const navigate = useNavigate();
   const { open } = useAside();
 
-  // const { lines || [] } = useCart();
-
-
-  console.log(`%c${JSON.stringify(productOptions)}`, 'color: gray; font-size: 20px;')
-  console.log(`%c${JSON.stringify(selectedVariant)}`, 'color: white; font-size: 20px;')
-
-
-  // Used to get the current cart line
-  // const currentCartLine = lines?.find((line) => line?.merchandise?.id === selectedVariant?.id);
-  // console.log(`%c${JSON.stringify(currentCartLine)}`, 'color: black; font-size: 20px;')
-
+  const [quantity, setQuantity] = useState<number>(1)
 
   return (
     <section>
@@ -39,7 +32,7 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
             <p className='text-zinc-300 mb-3'>Pick your {option.name}</p>
 
 
-            <div className="flex flex-row overflow-x-scroll w-full gap-3">
+            <div className="flex flex-row flex-wrap w-full gap-3">
               {option.optionValues.map((value) => {
                 const {
                   name,
@@ -85,18 +78,18 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
                     <button
                       type="button"
                       key={option.name + name}
-                      className={`md:px-4 px-3 py-2 rounded-full text-nowrap text-xs
+                      className={`md:px-4 px-3 py-2 rounded-full border text-nowrap duration-300 text-xs
                         ${!available
-                          ? 'opacity-40 bg-zinc-100 text-black cursor-not-allowed ' : `
+                          ? 'opacity-30 line-through decoration-wavy text-black cursor-not-allowed ' : `
                             ${option.name.toLowerCase() === 'size' &&
                           (selected
                             ? 'bg-black text-white'
-                            : ' cursor-pointer bg-zinc-100 text-black hover:bg-black hover:text-white')
+                            : ' cursor-pointer text-black hover:bg-black hover:text-white')
                           }
                             ${option.name.toLowerCase() === 'color' &&
                           (selected
                             ? 'bg-black text-white'
-                            : ' cursor-pointer bg-zinc-100 text-black hover:bg-black hover:text-white')
+                            : ' cursor-pointer text-black hover:bg-black hover:text-white')
                           }
                           `}
                       `}
@@ -110,7 +103,7 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
 
                       }}
                     >
-                        <ProductOptionSwatch swatch={swatch} name={name} />
+                      <ProductOptionSwatch swatch={swatch} name={name} />
                     </button>
                   );
                 }
@@ -124,7 +117,7 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
 
 
 
-      <div className='flex flex-row w-full'>
+      <div className='flex flex-row gap-5 w-full'>
         <AddToCartButton
           disabled={!selectedVariant || !selectedVariant.availableForSale}
           CC='w-full'
@@ -144,20 +137,19 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
         </AddToCartButton>
 
 
-        {/*  */}
-        {/* {currentCartLine && (
-          <CartLineQuantity line={currentCartLine} />
-        )} */}
+        <QuantityButton CC="bg-white hover:bg-white/50" MCC={"bg-zinc-100"} quantity={quantity} setQuantity={setQuantity} />
       </div>
-    </section>
+
+      <br />
+
+      <Features />
+
+    </section >
   );
 }
 
 
-
 function ProductOptionSwatch({ swatch, name, }: { swatch?: Maybe<ProductOptionValueSwatch> | undefined; name: string; }) {
-
-
   const image = swatch?.image?.previewImage?.url;
   const color = swatch?.color;
 
@@ -177,5 +169,39 @@ function ProductOptionSwatch({ swatch, name, }: { swatch?: Maybe<ProductOptionVa
       {/* {color} */}
       {!!image && <img src={image} alt={name} />}
     </span>
+  );
+}
+
+
+
+
+
+
+
+interface FeatureProps {
+  icon: ReactNode;          // Can be an SVG, icon component, emoji, etc.
+  text: string;
+}
+
+export function Features() {
+
+
+  const features: FeatureProps[] = [
+    { icon: <ShieldCheck size={20} />, text: "Secure payment" },
+    { icon: <Shirt size={20} />, text: "Size & Fit" },
+    { icon: <Truck size={20} />, text: "Free shipping" },
+    { icon: <RefreshCcw size={20} />, text: "Free Shipping & Returns" },
+  ] as const;
+
+
+  return (
+    <div className="grid grid-cols-2 gap-3 text-zinc-700">
+      {features.map((feature) => (
+        <div key={feature.text} className="flex flex-row items-center gap-3">
+          <div className="p-2 bg-gray-100 rounded-xl w-fit">{feature.icon}</div>
+          <span>{feature.text}</span>
+        </div>
+      ))}
+    </div>
   );
 }

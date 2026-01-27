@@ -136,7 +136,7 @@ export default function Reviews({ Title }: { Title?: string }) {
                     {testimonials.map((testimonial, index) => (
                         <article
                             key={index}
-                            className="min-w-60 overflow-hidden border border-black/10 flex flex-col items-stretch gap-3 bg-white  md:rounded-2xl rounded-xl md:px-5 md:py-7 p-3"
+                            className="min-w-60 overflow-hidden border border-black/10 flex flex-col items-stretch gap-3 bg-white  md:rounded-3xl rounded-2xl md:px-5 md:py-7 p-3"
                         >
 
                             <span className='flex flex-row '>
@@ -176,7 +176,7 @@ export default function Reviews({ Title }: { Title?: string }) {
             <article className="flex flex-col gap-3 items-start justify-start w-full lg:my-7 my-3">
 
                 {commentSubmited ? (
-                    <div className="w-full flex flex-col items-center justify-center p-10 border border-green-700/20 md:rounded-2xl rounded-xl bg-green-50">
+                    <div className="w-full flex flex-col items-center justify-center p-10 border border-green-700/20 md:rounded-3xl rounded-2xl bg-green-50">
                         <IoCheckmarkCircle className="text-green-700 h-20 w-20" />
                         <h4 className="font-medium">Thank you for your comment!</h4>
                         <span className="text-center text-zinc-500">We appreciate your feedback and will use it to improve our products and services.</span>

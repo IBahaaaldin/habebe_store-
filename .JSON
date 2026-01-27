@@ -1,155 +1,1080 @@
 {
-    "menu": {
-        "title": "main-menu",
-        "items": [
+    "id": "gid://shopify/CartLine/fcc073dc-f5a7-4faf-96da-495a5617b28f?cart=hWN82RIys0Ad0q72JagoTzpz",
+    "quantity": 1,
+    "attributes": [],
+    "cost": {
+        "totalAmount": {
+            "currencyCode": "USD",
+            "amount": "111.44"
+        },
+        "amountPerQuantity": {
+            "currencyCode": "USD",
+            "amount": "111.44"
+        },
+        "compareAtAmountPerQuantity": null
+    },
+    "merchandise": {
+        "id": "gid://shopify/ProductVariant/47473118937300",
+        "availableForSale": true,
+        "compareAtPrice": null,
+        "price": {
+            "currencyCode": "USD",
+            "amount": "111.44"
+        },
+        "requiresShipping": true,
+        "title": "White / American Standard",
+        "image": {
+            "id": "gid://shopify/ProductImage/46080348684500",
+            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/d1db7ffa-5b6c-440b-be0b-f4a9aaa58abc.jpg?v=1769240669",
+            "altText": null,
+            "width": 381,
+            "height": 395
+        },
+        "product": {
+            "handle": "barrel-machine-hy300-smart-anzhuohd-projection-screen-home-recommend-projector",
+            "title": "Barrel Machine Hy300 Smart AnzhuoHD Projection Screen Home Recommend Projector",
+            "id": "gid://shopify/Product/9048464359636",
+            "vendor": "cjdropshipping"
+        },
+        "selectedOptions": [
             {
-                "id": "gid://shopify/MenuItem/610680504532",
-                "title": "Fashion",
-                "url": "https://tedrk1-wu.myshopify.com/collections/fashion",
-                "resource": {
-                    "image": {
-                        "id": "gid://shopify/CollectionImage/1709086736596",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-chuchuphinh-6201198.jpg?v=1766848309",
-                        "altText": null,
-                        "width": 5968,
-                        "height": 3984
-                    }
-                }
+                "name": "Color",
+                "value": "White"
             },
             {
-                "id": "gid://shopify/MenuItem/608163102932",
-                "title": "Home",
-                "url": "https://tedrk1-wu.myshopify.com/collections/home/Home-Textiles+Festive-&-Party-Supplies+Arts+Crafts-&-Sewing+Kitchen+Dining-&-Bar+Home-Storage+Musical-Instruments+Outdoor-Lighting+Home-Appliances+Indoor-Lighting+LED-Lighting+Tools",
-                "resource": {
-                    "image": {
-                        "id": "gid://shopify/CollectionImage/1709086769364",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-masoodaslami-19429417.jpg?v=1766848544",
-                        "altText": null,
-                        "width": 4864,
-                        "height": 3243
-                    }
-                }
-            },
-            {
-                "id": "gid://shopify/MenuItem/608163135700",
-                "title": "Pets",
-                "url": "https://tedrk1-wu.myshopify.com/collections/pets/Pet-Outdoor-Supplies+Pet-Furniture+Pet-Drinking-&-Feeding+Fish-&-Aquatic+Pet-Collars+Harnesses-&-Accessories+Pet-Toys+Pet-Bedding+Pet-Apparels+Bird-Supplies+Pet-Grooming",
-                "resource": {
-                    "image": {
-                        "id": "gid://shopify/CollectionImage/1709086703828",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-marcello-sokal-62573206-8556247.jpg?v=1766848247",
-                        "altText": null,
-                        "width": 3008,
-                        "height": 2000
-                    }
-                }
-            },
-            {
-                "id": "gid://shopify/MenuItem/607873466580",
-                "title": "Electronics",
-                "url": "https://tedrk1-wu.myshopify.com/collections/electronics/Smart-Electronics+Camera-&-Photo+Accessories-&-Parts+Video-Games+Home-Audio-&-Video+Portable-Audio-&-Video+Mobile-Phone-Parts+Mobile-Phones+Mobile-Phone-Accessories+Cases-&-Covers+Storage-Devices+Tablet-&-Laptop-Accessories+Security-&-Protection+Laptop-&-",
-                "resource": {
-                    "image": {
-                        "id": "gid://shopify/CollectionImage/1709086671060",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-sound-on-3761106.jpg?v=1766848055",
-                        "altText": null,
-                        "width": 6137,
-                        "height": 4172
-                    }
-                }
-            },
-            {
-                "id": "gid://shopify/MenuItem/608289259732",
-                "title": "Automobiles",
-                "url": "https://tedrk1-wu.myshopify.com/collections/automobiles/Motorcycle-Accessories-&-Parts+Interior-Accessories+Auto-Replacement-Parts+Tools+Maintenance-&-Care+Car-Electronics+Exterior-Accessories",
-                "resource": {
-                    "image": {
-                        "id": "gid://shopify/CollectionImage/1709086802132",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-rulomx-4394396.jpg?v=1766931444",
-                        "altText": null,
-                        "width": 6000,
-                        "height": 4000
-                    }
-                }
-            },
-            {
-                "id": "gid://shopify/MenuItem/611230056660",
-                "title": "Sports",
-                "url": "https://tedrk1-wu.myshopify.com/collections/sports",
-                "resource": {
-                    "image": {
-                        "id": "gid://shopify/CollectionImage/1709255819476",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-izonin-19882423.jpg?v=1768411032",
-                        "altText": null,
-                        "width": 3269,
-                        "height": 3269
-                    }
-                }
-            },
-            {
-                "id": "gid://shopify/MenuItem/611230089428",
-                "title": "Trends",
-                "url": "https://tedrk1-wu.myshopify.com/collections/trendings",
-                "resource": {
-                    "image": {
-                        "id": "gid://shopify/CollectionImage/1709255721172",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-dianislight-30354874.jpg?v=1768410809",
-                        "altText": null,
-                        "width": 5617,
-                        "height": 3745
-                    }
-                }
-            },
-            {
-                "id": "gid://shopify/MenuItem/611230122196",
-                "title": "Brands",
-                "url": "https://tedrk1-wu.myshopify.com/collections/brands",
-                "resource": {
-                    "image": {
-                        "id": "gid://shopify/CollectionImage/1709255786708",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-dianislight-30354874_314b10ed-5507-47c8-9729-a2024239d5b7.jpg?v=1768410785",
-                        "altText": null,
-                        "width": 6240,
-                        "height": 4160
-                    }
-                }
-            },
-            {
-                "id": "gid://shopify/MenuItem/611230154964",
-                "title": "Super Deals",
-                "url": "https://tedrk1-wu.myshopify.com/collections/super-deals",
-                "resource": {
-                    "image": {
-                        "id": "gid://shopify/CollectionImage/1709255917780",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-angela-roma-7319313_a44fa07c-4ef8-48f0-bad9-53670cef238e.jpg?v=1768411821",
-                        "altText": null,
-                        "width": 5040,
-                        "height": 3360
-                    }
-                }
-            },
-            {
-                "id": "gid://shopify/MenuItem/611230187732",
-                "title": "Video Products",
-                "url": "https://tedrk1-wu.myshopify.com/collections/video-products",
-                "resource": {
-                    "image": {
-                        "id": "gid://shopify/CollectionImage/1709255753940",
-                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-cottonbro-9243843.jpg?v=1768410696",
-                        "altText": null,
-                        "width": 6168,
-                        "height": 4112
-                    }
-                }
-            },
-            {
-                "id": "gid://shopify/MenuItem/611384819924",
-                "title": "Accessories",
-                "url": "https://tedrk1-wu.myshopify.com/collections/accessories",
-                "resource": {
-                    "image": null
-                }
+                "name": "Specifications",
+                "value": "American Standard"
             }
         ]
+    }
+}
+
+
+{
+    "cart": {},
+    "isLoggedIn": {},
+    "results": [
+        {
+            "menu": {
+                "title": "main-menu",
+                "items": [
+                    {
+                        "id": "gid://shopify/MenuItem/607873466580",
+                        "title": "Consumer Electronics",
+                        "url": "https://tedrk1-wu.myshopify.com/collections/consumer-electronics",
+                        "resource": {
+                            "handle": "consumer-electronics",
+                            "title": "Consumer Electronics",
+                            "image": {
+                                "id": "gid://shopify/CollectionImage/1709086671060",
+                                "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-sound-on-3761106.jpg?v=1766848055",
+                                "altText": null,
+                                "width": 6137,
+                                "height": 4172
+                            },
+                            "mainBanners": {
+                                "references": {
+                                    "nodes": [
+                                        {
+                                            "image": {
+                                                "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/wide3.jpg?v=1768145267",
+                                                "altText": null,
+                                                "width": 350,
+                                                "height": 50
+                                            }
+                                        },
+                                        {
+                                            "image": {
+                                                "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/wide2.jpg?v=1768145267",
+                                                "altText": null,
+                                                "width": 350,
+                                                "height": 50
+                                            }
+                                        },
+                                        {
+                                            "image": {
+                                                "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/wide1.jpg?v=1768145267",
+                                                "altText": null,
+                                                "width": 350,
+                                                "height": 50
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "items": [
+                            {
+                                "id": "gid://shopify/MenuItem/608443171028",
+                                "title": "Smart Electronics",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/smart-electronics",
+                                "resource": {
+                                    "handle": "smart-electronics",
+                                    "title": "Smart Electronics",
+                                    "image": {
+                                        "id": "gid://shopify/CollectionImage/1709304742100",
+                                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-a-very-simple-icon-for-smart-electronics-with-no-captions-please-with-white-background.png?v=1769235125",
+                                        "altText": null,
+                                        "width": 1024,
+                                        "height": 1024
+                                    },
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/608443203796",
+                                "title": "Camera & Photo",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/camera-photo",
+                                "resource": {
+                                    "handle": "camera-photo",
+                                    "title": "Camera & Photo",
+                                    "image": {
+                                        "id": "gid://shopify/CollectionImage/1709304774868",
+                                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-a-very-simple-icon-for-camera-photo-with-white-background-and-no-captions.png?v=1769235182",
+                                        "altText": null,
+                                        "width": 1024,
+                                        "height": 1024
+                                    },
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/608443236564",
+                                "title": "Accessories & Parts",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/accessories-parts",
+                                "resource": {
+                                    "handle": "accessories-parts",
+                                    "title": "Accessories & Parts",
+                                    "image": {
+                                        "id": "gid://shopify/CollectionImage/1709307134164",
+                                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-a-very-simple-icon-for-accessories-parts-for-electronics-with-white-background-with-no-captions.png?v=1769235242",
+                                        "altText": null,
+                                        "width": 1024,
+                                        "height": 1024
+                                    },
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/608443269332",
+                                "title": "Video Games",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/video-games",
+                                "resource": {
+                                    "handle": "video-games",
+                                    "title": "Video Games",
+                                    "image": {
+                                        "id": "gid://shopify/CollectionImage/1709307166932",
+                                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-a-very-simple-icon-for-video-games-with-white-background-and-no-captions.png?v=1769235504",
+                                        "altText": null,
+                                        "width": 1024,
+                                        "height": 1024
+                                    },
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/608443302100",
+                                "title": "Home Audio & Video",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/home-audio-video",
+                                "resource": {
+                                    "handle": "home-audio-video",
+                                    "title": "Home Audio & Video",
+                                    "image": {
+                                        "id": "gid://shopify/CollectionImage/1709307199700",
+                                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-a-very-simple-icon-for-home-audio-video-with-white-background-and-no-captions.png?v=1769235067",
+                                        "altText": null,
+                                        "width": 1024,
+                                        "height": 1024
+                                    },
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/608443334868",
+                                "title": "Portable Audio & Video",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/portable-audio-video",
+                                "resource": {
+                                    "handle": "portable-audio-video",
+                                    "title": "Portable Audio & Video",
+                                    "image": {
+                                        "id": "gid://shopify/CollectionImage/1709307232468",
+                                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-a-very-simple-icon-for-portable-audio-video-with-white-background-and-no-captions.png?v=1769234955",
+                                        "altText": null,
+                                        "width": 1024,
+                                        "height": 1024
+                                    },
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "gid://shopify/MenuItem/611944693972",
+                        "title": "Men's Clothing",
+                        "url": "https://tedrk1-wu.myshopify.com/collections/men-clothing",
+                        "resource": {
+                            "handle": "men-clothing",
+                            "title": "Men's Clothing",
+                            "image": {
+                                "id": "gid://shopify/CollectionImage/1709272596692",
+                                "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-cottonbro-8679913.jpg?v=1768698076",
+                                "altText": null,
+                                "width": 5706,
+                                "height": 3804
+                            },
+                            "mainBanners": null
+                        },
+                        "items": [
+                            {
+                                "id": "gid://shopify/MenuItem/611944726740",
+                                "title": "Men's Hats & Caps",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/men-hats-caps",
+                                "resource": {
+                                    "handle": "men-hats-caps",
+                                    "title": "Men's Hats & Caps",
+                                    "image": {
+                                        "id": "gid://shopify/CollectionImage/1709309329620",
+                                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-an-image-for-mens-hats-caps-collection.png?v=1769276392",
+                                        "altText": null,
+                                        "width": 1248,
+                                        "height": 832
+                                    },
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/611944759508",
+                                "title": "Men's Accessories",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/men-accessories",
+                                "resource": {
+                                    "handle": "men-accessories",
+                                    "title": "Men's Accessories",
+                                    "image": {
+                                        "id": "gid://shopify/CollectionImage/1709309362388",
+                                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-an-image-for-mens-accessories-collection.png?v=1769276464",
+                                        "altText": null,
+                                        "width": 1248,
+                                        "height": 832
+                                    },
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/611944792276",
+                                "title": "Men's Bottom",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/men-bottom",
+                                "resource": {
+                                    "handle": "men-bottom",
+                                    "title": "Men's Bottom",
+                                    "image": null,
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/611944825044",
+                                "title": "Men's Underwear & Loungewear",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/men-underwear-loungewear",
+                                "resource": {
+                                    "handle": "men-underwear-loungewear",
+                                    "title": "Men's Underwear & Loungewear",
+                                    "image": null,
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/611944857812",
+                                "title": "Men's Outerwear & Jackets",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/men-outerwear-jackets",
+                                "resource": {
+                                    "handle": "men-outerwear-jackets",
+                                    "title": "Men's Outerwear & Jackets",
+                                    "image": null,
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/611944890580",
+                                "title": "Men's T-Shirt",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/men-tshirt",
+                                "resource": {
+                                    "handle": "men-tshirt",
+                                    "title": "Men's T-Shirt",
+                                    "image": null,
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "gid://shopify/MenuItem/608163135700",
+                        "title": "Pets Supplies",
+                        "url": "https://tedrk1-wu.myshopify.com/collections/pets-supplies",
+                        "resource": {
+                            "handle": "pets-supplies",
+                            "title": "Pets Supplies",
+                            "image": {
+                                "id": "gid://shopify/CollectionImage/1709086703828",
+                                "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/add-a-dog-also-to-the-photo-please.png?v=1769270197",
+                                "altText": null,
+                                "width": 1248,
+                                "height": 832
+                            },
+                            "mainBanners": {
+                                "references": {
+                                    "nodes": [
+                                        {
+                                            "image": {
+                                                "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/wide3.jpg?v=1768145267",
+                                                "altText": null,
+                                                "width": 350,
+                                                "height": 50
+                                            }
+                                        },
+                                        {
+                                            "image": {
+                                                "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/wide2.jpg?v=1768145267",
+                                                "altText": null,
+                                                "width": 350,
+                                                "height": 50
+                                            }
+                                        },
+                                        {
+                                            "image": {
+                                                "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/wide1.jpg?v=1768145267",
+                                                "altText": null,
+                                                "width": 350,
+                                                "height": 50
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "items": [
+                            {
+                                "id": "gid://shopify/MenuItem/608441565396",
+                                "title": "Pet Outdoor Supplies",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/pet-outdoor-supplies",
+                                "resource": {
+                                    "handle": "pet-outdoor-supplies",
+                                    "title": "Pet Outdoor Supplies",
+                                    "image": null,
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/608441598164",
+                                "title": "Pet Furniture",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/pet-furniture",
+                                "resource": {
+                                    "handle": "pet-furniture",
+                                    "title": "Pet Furniture",
+                                    "image": null,
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/608441630932",
+                                "title": "Pet Drinking & Feeding",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/pet-drinking-feeding",
+                                "resource": {
+                                    "handle": "pet-drinking-feeding",
+                                    "title": "Pet Drinking & Feeding",
+                                    "image": null,
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/608441663700",
+                                "title": "Fish & Aquatic Pets",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/fish-aquatic-pets",
+                                "resource": {
+                                    "handle": "fish-aquatic-pets",
+                                    "title": "Fish & Aquatic Pets",
+                                    "image": null,
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/608441696468",
+                                "title": "Pet Collars, Harnesses & Accessories",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/pet-collars-harnesses-accessories",
+                                "resource": {
+                                    "handle": "pet-collars-harnesses-accessories",
+                                    "title": "Pet Collars, Harnesses & Accessories",
+                                    "image": null,
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/608441729236",
+                                "title": "Pet Toys",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/pet-toys",
+                                "resource": {
+                                    "handle": "pet-toys",
+                                    "title": "Pet Toys",
+                                    "image": null,
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/608441762004",
+                                "title": "Pet Bedding",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/pet-bedding",
+                                "resource": {
+                                    "handle": "pet-bedding",
+                                    "title": "Pet Bedding",
+                                    "image": null,
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/608441794772",
+                                "title": "Pet Apparels",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/pet-apparels",
+                                "resource": {
+                                    "handle": "pet-apparels",
+                                    "title": "Pet Apparels",
+                                    "image": null,
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/608441827540",
+                                "title": "Bird Supplies",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/bird-supplies",
+                                "resource": {
+                                    "handle": "bird-supplies",
+                                    "title": "Bird Supplies",
+                                    "image": null,
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            },
+                            {
+                                "id": "gid://shopify/MenuItem/608441860308",
+                                "title": "Pet Groomings",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/pet-grooming",
+                                "resource": {
+                                    "handle": "pet-grooming",
+                                    "title": "Pet Grooming",
+                                    "image": null,
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "gid://shopify/MenuItem/612677714132",
+                        "title": "Home & Garden & Furniture",
+                        "url": "https://tedrk1-wu.myshopify.com/collections/home-garden-furniture",
+                        "resource": {
+                            "handle": "home-garden-furniture",
+                            "title": "Home & Garden & Furniture",
+                            "image": {
+                                "id": "gid://shopify/CollectionImage/1709299990740",
+                                "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-an-image-for-home-garden-furniture.png?v=1769124682",
+                                "altText": null,
+                                "width": 1248,
+                                "height": 832
+                            },
+                            "mainBanners": null
+                        },
+                        "items": [
+                            {
+                                "id": "gid://shopify/MenuItem/612677746900",
+                                "title": "Arts & Crafts & Sewing",
+                                "url": "https://tedrk1-wu.myshopify.com/collections/arts-crafts-sewing",
+                                "resource": {
+                                    "handle": "arts-crafts-sewing",
+                                    "title": "Arts & Crafts & Sewing",
+                                    "image": {
+                                        "id": "gid://shopify/CollectionImage/1709300023508",
+                                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/arts-crafts-sewing.png?v=1769124993",
+                                        "altText": null,
+                                        "width": 1248,
+                                        "height": 832
+                                    },
+                                    "mainBanners": null
+                                },
+                                "items": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            "shop": {
+                "name": "habebe",
+                "brand": {
+                    "logo": {
+                        "image": {
+                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/logo_alone_28675303-f172-4505-a36a-34150e918702.png?v=1767305571",
+                            "altText": null,
+                            "width": 555,
+                            "height": 555
+                        }
+                    },
+                    "shortDescription": "Habebe is your go-to online store for unique, trendy, and fun products that make everyday life brighter. From must-have gadgets to stylish essential",
+                    "slogan": "Buy Now, Regret Later."
+                }
+            }
+        },
+        {
+            "shop": {
+                "brand": {
+                    "logo": {
+                        "image": {
+                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/logo_alone_28675303-f172-4505-a36a-34150e918702.png?v=1767305571",
+                            "altText": null,
+                            "width": 555,
+                            "height": 555
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "publicStoreDomain": "tedrk1-wu.myshopify.com",
+    "shop": {},
+    "consent": {
+        "storefrontAccessToken": "7bea180dd39eecdf730b0615cac91727",
+        "withPrivacyBanner": false,
+        "country": "US",
+        "language": "EN"
+    }
+}
+
+
+{
+    "cart": {},
+    "isLoggedIn": {},
+    "menuData": {
+        "menu": {
+            "title": "main-menu",
+            "items": [
+                {
+                    "id": "gid://shopify/MenuItem/607873466580",
+                    "title": "Consumer Electronics",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/consumer-electronics",
+                    "resource": {
+                        "handle": "consumer-electronics",
+                        "title": "Consumer Electronics",
+                        "image": {
+                            "id": "gid://shopify/CollectionImage/1709086671060",
+                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-sound-on-3761106.jpg?v=1766848055",
+                            "altText": null,
+                            "width": 6137,
+                            "height": 4172
+                        },
+                        "mainBanners": {
+                            "references": {
+                                "nodes": [
+                                    {
+                                        "image": {
+                                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/wide3.jpg?v=1768145267",
+                                            "altText": null,
+                                            "width": 350,
+                                            "height": 50
+                                        }
+                                    },
+                                    {
+                                        "image": {
+                                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/wide2.jpg?v=1768145267",
+                                            "altText": null,
+                                            "width": 350,
+                                            "height": 50
+                                        }
+                                    },
+                                    {
+                                        "image": {
+                                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/wide1.jpg?v=1768145267",
+                                            "altText": null,
+                                            "width": 350,
+                                            "height": 50
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "items": [
+                        {
+                            "id": "gid://shopify/MenuItem/608443171028",
+                            "title": "Smart Electronics",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/smart-electronics",
+                            "resource": {
+                                "handle": "smart-electronics",
+                                "title": "Smart Electronics",
+                                "image": {
+                                    "id": "gid://shopify/CollectionImage/1709304742100",
+                                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-a-very-simple-icon-for-smart-electronics-with-no-captions-please-with-white-background.png?v=1769235125",
+                                    "altText": null,
+                                    "width": 1024,
+                                    "height": 1024
+                                },
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443203796",
+                            "title": "Camera & Photo",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/camera-photo",
+                            "resource": {
+                                "handle": "camera-photo",
+                                "title": "Camera & Photo",
+                                "image": {
+                                    "id": "gid://shopify/CollectionImage/1709304774868",
+                                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-a-very-simple-icon-for-camera-photo-with-white-background-and-no-captions.png?v=1769235182",
+                                    "altText": null,
+                                    "width": 1024,
+                                    "height": 1024
+                                },
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443236564",
+                            "title": "Accessories & Parts",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/accessories-parts",
+                            "resource": {
+                                "handle": "accessories-parts",
+                                "title": "Accessories & Parts",
+                                "image": {
+                                    "id": "gid://shopify/CollectionImage/1709307134164",
+                                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-a-very-simple-icon-for-accessories-parts-for-electronics-with-white-background-with-no-captions.png?v=1769235242",
+                                    "altText": null,
+                                    "width": 1024,
+                                    "height": 1024
+                                },
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443269332",
+                            "title": "Video Games",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/video-games",
+                            "resource": {
+                                "handle": "video-games",
+                                "title": "Video Games",
+                                "image": {
+                                    "id": "gid://shopify/CollectionImage/1709307166932",
+                                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-a-very-simple-icon-for-video-games-with-white-background-and-no-captions.png?v=1769235504",
+                                    "altText": null,
+                                    "width": 1024,
+                                    "height": 1024
+                                },
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443302100",
+                            "title": "Home Audio & Video",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/home-audio-video",
+                            "resource": {
+                                "handle": "home-audio-video",
+                                "title": "Home Audio & Video",
+                                "image": {
+                                    "id": "gid://shopify/CollectionImage/1709307199700",
+                                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-a-very-simple-icon-for-home-audio-video-with-white-background-and-no-captions.png?v=1769235067",
+                                    "altText": null,
+                                    "width": 1024,
+                                    "height": 1024
+                                },
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608443334868",
+                            "title": "Portable Audio & Video",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/portable-audio-video",
+                            "resource": {
+                                "handle": "portable-audio-video",
+                                "title": "Portable Audio & Video",
+                                "image": {
+                                    "id": "gid://shopify/CollectionImage/1709307232468",
+                                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-a-very-simple-icon-for-portable-audio-video-with-white-background-and-no-captions.png?v=1769234955",
+                                    "altText": null,
+                                    "width": 1024,
+                                    "height": 1024
+                                },
+                                "mainBanners": null
+                            },
+                            "items": []
+                        }
+                    ]
+                },
+                {
+                    "id": "gid://shopify/MenuItem/611944693972",
+                    "title": "Men's Clothing",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/men-clothing",
+                    "resource": {
+                        "handle": "men-clothing",
+                        "title": "Men's Clothing",
+                        "image": {
+                            "id": "gid://shopify/CollectionImage/1709272596692",
+                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/pexels-cottonbro-8679913.jpg?v=1768698076",
+                            "altText": null,
+                            "width": 5706,
+                            "height": 3804
+                        },
+                        "mainBanners": null
+                    },
+                    "items": [
+                        {
+                            "id": "gid://shopify/MenuItem/611944726740",
+                            "title": "Men's Hats & Caps",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-hats-caps",
+                            "resource": {
+                                "handle": "men-hats-caps",
+                                "title": "Men's Hats & Caps",
+                                "image": {
+                                    "id": "gid://shopify/CollectionImage/1709309329620",
+                                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-an-image-for-mens-hats-caps-collection.png?v=1769276392",
+                                    "altText": null,
+                                    "width": 1248,
+                                    "height": 832
+                                },
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/611944759508",
+                            "title": "Men's Accessories",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-accessories",
+                            "resource": {
+                                "handle": "men-accessories",
+                                "title": "Men's Accessories",
+                                "image": {
+                                    "id": "gid://shopify/CollectionImage/1709309362388",
+                                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-an-image-for-mens-accessories-collection.png?v=1769276464",
+                                    "altText": null,
+                                    "width": 1248,
+                                    "height": 832
+                                },
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/611944792276",
+                            "title": "Men's Bottom",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-bottom",
+                            "resource": {
+                                "handle": "men-bottom",
+                                "title": "Men's Bottom",
+                                "image": null,
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/611944825044",
+                            "title": "Men's Underwear & Loungewear",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-underwear-loungewear",
+                            "resource": {
+                                "handle": "men-underwear-loungewear",
+                                "title": "Men's Underwear & Loungewear",
+                                "image": null,
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/611944857812",
+                            "title": "Men's Outerwear & Jackets",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-outerwear-jackets",
+                            "resource": {
+                                "handle": "men-outerwear-jackets",
+                                "title": "Men's Outerwear & Jackets",
+                                "image": null,
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/611944890580",
+                            "title": "Men's T-Shirt",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/men-tshirt",
+                            "resource": {
+                                "handle": "men-tshirt",
+                                "title": "Men's T-Shirt",
+                                "image": null,
+                                "mainBanners": null
+                            },
+                            "items": []
+                        }
+                    ]
+                },
+                {
+                    "id": "gid://shopify/MenuItem/608163135700",
+                    "title": "Pets Supplies",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/pets-supplies",
+                    "resource": {
+                        "handle": "pets-supplies",
+                        "title": "Pets Supplies",
+                        "image": {
+                            "id": "gid://shopify/CollectionImage/1709086703828",
+                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/add-a-dog-also-to-the-photo-please.png?v=1769270197",
+                            "altText": null,
+                            "width": 1248,
+                            "height": 832
+                        },
+                        "mainBanners": {
+                            "references": {
+                                "nodes": [
+                                    {
+                                        "image": {
+                                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/wide3.jpg?v=1768145267",
+                                            "altText": null,
+                                            "width": 350,
+                                            "height": 50
+                                        }
+                                    },
+                                    {
+                                        "image": {
+                                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/wide2.jpg?v=1768145267",
+                                            "altText": null,
+                                            "width": 350,
+                                            "height": 50
+                                        }
+                                    },
+                                    {
+                                        "image": {
+                                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/wide1.jpg?v=1768145267",
+                                            "altText": null,
+                                            "width": 350,
+                                            "height": 50
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "items": [
+                        {
+                            "id": "gid://shopify/MenuItem/608441565396",
+                            "title": "Pet Outdoor Supplies",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/pet-outdoor-supplies",
+                            "resource": {
+                                "handle": "pet-outdoor-supplies",
+                                "title": "Pet Outdoor Supplies",
+                                "image": null,
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441598164",
+                            "title": "Pet Furniture",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/pet-furniture",
+                            "resource": {
+                                "handle": "pet-furniture",
+                                "title": "Pet Furniture",
+                                "image": null,
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441630932",
+                            "title": "Pet Drinking & Feeding",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/pet-drinking-feeding",
+                            "resource": {
+                                "handle": "pet-drinking-feeding",
+                                "title": "Pet Drinking & Feeding",
+                                "image": null,
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441663700",
+                            "title": "Fish & Aquatic Pets",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/fish-aquatic-pets",
+                            "resource": {
+                                "handle": "fish-aquatic-pets",
+                                "title": "Fish & Aquatic Pets",
+                                "image": null,
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441696468",
+                            "title": "Pet Collars, Harnesses & Accessories",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/pet-collars-harnesses-accessories",
+                            "resource": {
+                                "handle": "pet-collars-harnesses-accessories",
+                                "title": "Pet Collars, Harnesses & Accessories",
+                                "image": null,
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441729236",
+                            "title": "Pet Toys",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/pet-toys",
+                            "resource": {
+                                "handle": "pet-toys",
+                                "title": "Pet Toys",
+                                "image": null,
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441762004",
+                            "title": "Pet Bedding",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/pet-bedding",
+                            "resource": {
+                                "handle": "pet-bedding",
+                                "title": "Pet Bedding",
+                                "image": null,
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441794772",
+                            "title": "Pet Apparels",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/pet-apparels",
+                            "resource": {
+                                "handle": "pet-apparels",
+                                "title": "Pet Apparels",
+                                "image": null,
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441827540",
+                            "title": "Bird Supplies",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/bird-supplies",
+                            "resource": {
+                                "handle": "bird-supplies",
+                                "title": "Bird Supplies",
+                                "image": null,
+                                "mainBanners": null
+                            },
+                            "items": []
+                        },
+                        {
+                            "id": "gid://shopify/MenuItem/608441860308",
+                            "title": "Pet Groomings",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/pet-grooming",
+                            "resource": {
+                                "handle": "pet-grooming",
+                                "title": "Pet Grooming",
+                                "image": null,
+                                "mainBanners": null
+                            },
+                            "items": []
+                        }
+                    ]
+                },
+                {
+                    "id": "gid://shopify/MenuItem/612677714132",
+                    "title": "Home & Garden & Furniture",
+                    "url": "https://tedrk1-wu.myshopify.com/collections/home-garden-furniture",
+                    "resource": {
+                        "handle": "home-garden-furniture",
+                        "title": "Home & Garden & Furniture",
+                        "image": {
+                            "id": "gid://shopify/CollectionImage/1709299990740",
+                            "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/create-an-image-for-home-garden-furniture.png?v=1769124682",
+                            "altText": null,
+                            "width": 1248,
+                            "height": 832
+                        },
+                        "mainBanners": null
+                    },
+                    "items": [
+                        {
+                            "id": "gid://shopify/MenuItem/612677746900",
+                            "title": "Arts & Crafts & Sewing",
+                            "url": "https://tedrk1-wu.myshopify.com/collections/arts-crafts-sewing",
+                            "resource": {
+                                "handle": "arts-crafts-sewing",
+                                "title": "Arts & Crafts & Sewing",
+                                "image": {
+                                    "id": "gid://shopify/CollectionImage/1709300023508",
+                                    "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/collections/arts-crafts-sewing.png?v=1769124993",
+                                    "altText": null,
+                                    "width": 1248,
+                                    "height": 832
+                                },
+                                "mainBanners": null
+                            },
+                            "items": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "shop": {
+            "name": "habebe",
+            "brand": {
+                "logo": {
+                    "image": {
+                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/logo_alone_28675303-f172-4505-a36a-34150e918702.png?v=1767305571",
+                        "altText": null,
+                        "width": 555,
+                        "height": 555
+                    }
+                },
+                "shortDescription": "Habebe is your go-to online store for unique, trendy, and fun products that make everyday life brighter. From must-have gadgets to stylish essential",
+                "slogan": "Buy Now, Regret Later."
+            }
+        }
+    },
+    "shopData": {
+        "shop": {
+            "brand": {
+                "logo": {
+                    "image": {
+                        "url": "https://cdn.shopify.com/s/files/1/0801/9361/8132/files/logo_alone_28675303-f172-4505-a36a-34150e918702.png?v=1767305571",
+                        "altText": null,
+                        "width": 555,
+                        "height": 555
+                    }
+                }
+            }
+        }
+    },
+    "publicStoreDomain": "tedrk1-wu.myshopify.com",
+    "shop": {},
+    "consent": {
+        "storefrontAccessToken": "7bea180dd39eecdf730b0615cac91727",
+        "withPrivacyBanner": false,
+        "country": "US",
+        "language": "EN"
     }
 }

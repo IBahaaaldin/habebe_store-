@@ -44,7 +44,7 @@ export default function FAQs() {
 
 
     return (
-        <div className="flex flex-col items-start justify-start w-full gap-3 md:p-10 p-5 border border-black/10 md:rounded-2xl rounded-xl">
+        <div className="flex flex-col items-start justify-start w-full gap-3 md:p-10 p-5 border border-black/10 md:rounded-3xl rounded-2xl">
 
             <HeaderText
                 HEAD="Frequently Asked Questions"
@@ -52,7 +52,7 @@ export default function FAQs() {
             />
 
 
-            <div className="w-full bg-zinc-50 p-5 md:rounded-2xl rounded-xl overflow-hidden">
+            <div className="w-full bg-zinc-50 p-5 md:rounded-3xl rounded-2xl overflow-hidden">
                 {faqs.map((faq, index) => (
                     <div
                         key={index}
@@ -67,18 +67,16 @@ export default function FAQs() {
                             onClick={() => toggleFAQ(index)} // Pass the index to toggle the specific FAQ
                             className={`${openFAQ === index ? '' : ''} flex gap-5 cursor-pointer w-full text-left font-semibold justify-between items-center focus:outline-none`}
                         >
-                            <p> {faq.question}</p>
-                            <p className="text-xl">{openFAQ === index ? "-" : "+"}</p>
+                            <h6> {faq.question}</h6>
+                            <p className="">{openFAQ === index ? "-" : "+"}</p>
                         </motion.button>
 
-                        <span
+                        <div
                             className={`overflow-hidden text-zinc-500 transition-all duration-300 ease-in-out ${openFAQ === index ? 'max-h-100 opacity-100 mt-1' : 'max-h-0 opacity-0 hidden'
                                 }`}
                         >
-                            <span className=''>
-                                {faq.answer}
-                            </span>
-                        </span>
+                            {faq.answer}
+                        </div>
                     </div>
                 ))}
             </div>

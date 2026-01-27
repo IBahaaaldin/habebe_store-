@@ -21,7 +21,7 @@ export default function CollectionsHero({ Collections, Title, Description, HeroI
 
 
     return (
-        <div className='w-full md:rounded-2xl rounded-xl overflow-hidden px-[3%] mx-auto relative text-white flex flex-col gap-20 justify-center items-start py-20 '>
+        <div className='w-full md:rounded-3xl rounded-2xl overflow-hidden px-[3%] mx-auto relative text-white flex flex-col gap-20 justify-center items-start py-20 '>
             <article className='max-w-[80%] mx-auto text-center z-10 w-full relative flex flex-col items-center gap-10'>
 
                 <HeroText
@@ -65,7 +65,7 @@ export function CollectionsNewHero({ Collections, Title, Description, HeroImg, s
     return (
         <div className="w-full flex flex-col gap-3">
             {/* /// Main Hero Banner */}
-            <article className="text-white relative md:rounded-3xl rounded-2xl md:p-10 p-7 overflow-hidden md:h-100 h-70 flex flex-col justify-between">
+            <article className="text-white relative md:rounded-3xl rounded-2xl md:p-10 p-7 overflow-hidden max-h-150 h-[50vh] flex flex-col justify-center gap-5">
 
                 <HeroText
                     HEAD={"Modern Minimalist Furniture"}
@@ -82,6 +82,11 @@ export function CollectionsNewHero({ Collections, Title, Description, HeroImg, s
                     src={defaultHeroImage}
                     alt="Hero"
                     className="absolute -z-1 inset-0 w-full h-full object-cover"
+                    sizes='100vw'
+                    width={1000}
+                    height={1000}
+                    fetchPriority={'high'}
+
                 />
             </article>
 
@@ -102,7 +107,7 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
         return null;
     }
 
-    console.log(`%c${JSON.stringify(subTwoMenus, null, 3)}`, 'color: white; font-size: 20px;')
+    // console.log(`%c${JSON.stringify(subTwoMenus, null, 3)}`, 'color: white; font-size: 20px;')
 
     return (
         <div className="w-full flex flex-row gap-3 md:h-60 h-30">
@@ -120,16 +125,8 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
                         data={subMenu.image ?? subMenu.resource?.image}
                         alt={subMenu.altText}
                         className="absolute inset-0 -z-1 h-full w-full object-cover group-hover:scale-105 duration-500"
+                        sizes='400px'
                     />
-
-
-                    {/* <div
-                        key={index}
-                        className={`flex flex-col space-y-1 bg-black/10 absolute top-10 md:right-10 right-5 border-b-2 border-l border-white/10 backdrop-blur-sm md:p-3 p-3 md:rounded-3xl rounded-2xl ${index === 0 ? '-rotate-5 top-10' : 'rotate-10 top-20'} z-20 max-w-40 `}
-                    >
-                        <span className="font-medium leading-tight">UP TO 70% OFF</span>
-                        <span className="font-thin leading-tight">On orders more than $100</span>
-                    </div> */}
 
                     <HeaderText
                         HEAD={subMenu.title}
@@ -148,14 +145,14 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
 // AllCategories component displays a horizontal scrollable list of collection categories.
 export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
 
-
+const [currentIndex, setCurrentIndex] = useState(0)
     if (!Array.isArray(allSubMenus)) {
         return null;
     }
 
 
     return (
-        <div className="flex flex-row gap-5 relative overflow-x-scroll HIDDEN_SCROLL">
+        <div className="relative flex flex-row gap-5 overflow-x-scroll HIDDEN_SCROLL">
             {/* SLIDES */}
             <article
                 className="items-start justify-start flex gap-5 transition-transform duration-500 ease-in-out overflow-x-scroll HIDDEN_SCROLL"
@@ -173,6 +170,9 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
                                 data={menu.image ?? menu.resource?.image}
                                 alt={menu.altText || menu.title}
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                sizes='150px'
+                                width={150}
+                                height={150}
                             />
                         </figure>
 
@@ -181,11 +181,7 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
                         </p>
                     </Link>
                 ))}
-            </article>
 
-            <article
-                className="items-start justify-start flex gap-5 transition-transform duration-500 ease-in-out overflow-x-scroll HIDDEN_SCROLL"
-            >
                 {allSubMenus?.map((menu: any) => (
                     <Link
                         to={`/collections/${menu.handle ?? menu.resource?.handle}`}
@@ -199,6 +195,9 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
                                 data={menu.image ?? menu.resource?.image}
                                 alt={menu.altText || menu.title}
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                sizes='150px'
+                                width={150}
+                                height={150}
                             />
                         </figure>
 
@@ -207,11 +206,7 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
                         </p>
                     </Link>
                 ))}
-            </article>
 
-            <article
-                className="items-start justify-start flex gap-5 transition-transform duration-500 ease-in-out overflow-x-scroll HIDDEN_SCROLL"
-            >
                 {allSubMenus?.map((menu: any) => (
                     <Link
                         to={`/collections/${menu.handle ?? menu.resource?.handle}`}
@@ -225,6 +220,9 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
                                 data={menu.image ?? menu.resource?.image}
                                 alt={menu.altText || menu.title}
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                sizes='150px'
+                                width={150}
+                                height={150}
                             />
                         </figure>
 
@@ -236,28 +234,7 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
             </article>
 
 
-            
-            {/* <article
-                className="items-start justify-start flex gap-5 transition-transform duration-500 ease-in-out overflow-x-scroll"
-            >
-                {allSubMenus?.map((menu: any) => (
-                    <Link
-                        key={menu.id || menu.handle}
-                        to={`/collections/${menu.handle ?? menu.resource?.handle}`}
-                        className="group relative shrink-0 w-40 h-30 md:rounded-3xl rounded-2xl overflow-hidden"
-                    >
-                        <Image
-                            data={menu.image ?? menu.resource?.image}
-                            alt={menu.altText || menu.title}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-
-                        <span className="absolute bottom-2 left-2 text-white font-medium bg-black/30 px-2 py-1 rounded-xl max-w-[80%]">
-                            {menu.title}
-                        </span>
-                    </Link>
-                ))}
-            </article> */}
+            <SliderButtons changeIndex={setCurrentIndex}  passedArray={allSubMenus} />
         </div>
     );
 };

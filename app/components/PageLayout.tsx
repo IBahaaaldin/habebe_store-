@@ -78,13 +78,13 @@ function MenuAside({ menu }: any) {
       <Suspense fallback={<LoadingSpinner />}>
         <Await resolve={null}>
           <ul className='flex flex-col gap-3'>
-            {menu?.items.map((item: any) => {
+            {menu?.items.map((item: any, index: number) => {
 
               const isMainMenuActive = currentTabURL === item.resource?.handle;
 
               return (
                 <li
-                  key={item.id}
+                  key={index}
                   className="relative group"
                 >
                   <Link

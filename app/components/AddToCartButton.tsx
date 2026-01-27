@@ -22,22 +22,9 @@ export function AddToCartButton({ analytics, children, disabled, lines, onClick,
             value={JSON.stringify(analytics)}
           />
           <div className='w-full flex items-end justify-end'>
-            {/* <button
-              type="submit"
-              className={`text-nowrap px-3.5 py-2.5 md:rounded-2xl rounded-2xl ${disabled ? ' text-white bg-orange-100 rounded-xl cursor-not-allowed' : `bg-orange-400 text-white  hover:bg-orange-300 duration-300 cursor-pointer`} ${CC}`}
-              onClick={() => {
-                onClick?.();
-                // toast.success('Item added to cart');
-              }}
-              disabled={disabled || fetcher.state !== 'idle'}
-            >
-              <span>
-                {children}
-              </span>
-            </button> */}
             <button
               type="submit"
-              className={` ${disabled ? '' : `BUTTON1`} ${CC}`}
+              className={` ${CC} ${disabled ? 'text-white bg-orange-100 md:rounded-3xl rounded-2xl cursor-not-allowed items-center justify-center px-3 py-1.5 font-medium duration-300 text-nowrap md:px-7 md:py-3 md:text-sm text-xs' : `BUTTON1`}`}
               onClick={() => {
                 onClick?.();
                 // toast.success('Item added to cart');

@@ -37,8 +37,8 @@ export function CartMain({ layout, cart: originalCart }: CartMainProps) {
 
 
       {/* Show the cart lines */}
-      <div className="flex xl:flex-row flex-col gap-10">
-        <ul className='flex flex-col gap-3 lg:min-w-2xl'>
+      <div className="relative flex xl:flex-row flex-col gap-10 ">
+        <ul className='flex flex-col gap-3 lg:min-w-2xl '>
           {(cart?.lines?.nodes ?? []).map((line) => (
             <CartLineItem key={line.id} line={line} layout={layout} />
           ))}
@@ -46,7 +46,9 @@ export function CartMain({ layout, cart: originalCart }: CartMainProps) {
 
 
         {/* Right Side */}
-        {cartHasItems && <CartSummary cart={cart} layout={layout} />}
+        <div className='w-full'>
+          {cartHasItems && <CartSummary cart={cart} layout={layout} />}
+        </div>
       </div>
     </div>
   );
@@ -56,16 +58,15 @@ export function CartMain({ layout, cart: originalCart }: CartMainProps) {
 
 function CartEmpty({ hidden = false, }: { hidden: boolean; layout?: CartMainProps['layout']; }) {
 
-
   const { close } = useAside();
 
 
   return (
     <div hidden={hidden} className='min-h-[50vh] flex flex-col items-center justify-center'>
-      <div className='text-center font-medium w-full text-xl'>
+      <h5 className='text-center font-medium w-full'>
         Looks like you haven&rsquo;t added anything yet, let&rsquo;s get you
         started!
-      </div>
+      </h5>
       <br />
       <Link to="/collections" onClick={close} prefetch="viewport" className='BUTTON2'>
         Continue shopping →

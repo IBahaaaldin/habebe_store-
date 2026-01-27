@@ -9,7 +9,7 @@ const LoadingSpinner = () => {
             <section className="animate-pulse md:flex md:space-x-10">
 
                 {/* Right Image Placeholder */}
-                <article className="md:w-1/2 w-full mb-5 md:mb-0 h-95 bg-zinc-100 md:rounded-2xl rounded-xl" />
+                <article className="md:w-1/2 w-full mb-5 md:mb-0 h-95 bg-zinc-100 md:rounded-3xl rounded-2xl" />
 
                 {/* Left Content Placeholder */}
                 <article className="md:w-1/2 w-full space-y-5">
@@ -26,8 +26,8 @@ const LoadingSpinner = () => {
 
                     {/* Action Buttons Placeholder */}
                     <div className="flex space-x-5 pt-2">
-                        <div className="h-12 bg-green-100 md:rounded-2xl rounded-xl w-2/5"></div>
-                        <div className="h-12 bg-zinc-100 md:rounded-2xl rounded-xl w-1/5"></div>
+                        <div className="h-12 bg-green-100 md:rounded-3xl rounded-2xl w-2/5"></div>
+                        <div className="h-12 bg-zinc-100 md:rounded-3xl rounded-2xl w-1/5"></div>
                     </div>
 
                     {/* Short Description */}
