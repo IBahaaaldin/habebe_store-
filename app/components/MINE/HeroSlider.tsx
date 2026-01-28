@@ -74,7 +74,7 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Feat
 
 
                 {/* Slider Buttons to swipe arrays */}
-                <SliderButtons passedArray={mainCollections ?? []} changeIndex={setCurrentIndex} />
+                <SliderButtons itemsToShow={1} passedArray={mainCollections ?? []} changeIndex={setCurrentIndex} />
                 {/* Dots Navigation */}
                 <SmallIndexButtons changeIndex={setCurrentIndex} currentIndex={currentIndex} passedArray={mainCollections ?? []} />
             </article>

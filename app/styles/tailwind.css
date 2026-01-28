@@ -50,6 +50,24 @@
 }
 
 
+/* SCROLL colorful */
+.SCROLL::-webkit-scrollbar {
+    /* width: 10px; */
+    height: 5px;
+}
+
+.SCROLL::-webkit-scrollbar-track {
+    background: transparent;
+    /* dark background */
+    border-radius: 10px;
+}
+
+.SCROLL::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #fed7aa, #fdba74, #f97316);
+    border-radius: 10px;
+}
+
+
 
 .MAIN_COL_CONTAINER {
     @apply flex flex-col px-[2.5%] gap-3 mb-5 max-w-400 w-full mx-auto h-fit;

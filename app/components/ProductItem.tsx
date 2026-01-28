@@ -125,8 +125,6 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
 
-
-
       {/* /// Details */}
       <article className='px-2 pb-2 flex flex-col w-full justify-between items-start gap-2'>
         <Link to={variantUrl} className='flex w-full hover:underline'>
@@ -141,12 +139,12 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
 
-        <div className='flex flex-row w-full justify-between items-start '>
+        <div className='flex flex-row w-full justify-between items-center '>
           <QuantityButton setQuantity={setQuantity} quantity={quantity} />
 
           <AddToCartButton
             disabled={!product?.variants.nodes[0]?.availableForSale}
-            CC='w-fit'
+            CC='w-fit h-full'
             lines={
               product?.variants.nodes[0]
                 ? [

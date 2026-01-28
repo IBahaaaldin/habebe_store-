@@ -95,26 +95,7 @@ export default function Collection() {
 
 
 
-  const [index, setIndex] = useState(0);
-  // Demo data: 10 elements
-  const items = Array.from({ length: 10 }, (_, i) => ({
-    id: i + 1,
-    text: `Item ${i + 1}`,
-    color: i % 2 === 0 ? 'bg-blue-400' : 'bg-indigo-500',
-  }));
 
-  const itemsToShow = 4;
-  const maxIndex = items.length - itemsToShow;
-
-  const nextSlide = () => {
-    // If at the end, jump back to start
-    setIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-  };
-
-  const prevSlide = () => {
-    // If at the start, jump to the last possible view
-    setIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
-  };
 
   return (
     <div className="SEC_COL_CONTAINER">
@@ -136,39 +117,6 @@ export default function Collection() {
 
 
 
-      <div className="relative w-full max-w-5xl mx-auto overflow-hidden bg-gray-100 p-4 rounded-xl">
-        {/* Wrapper */}
-        <div
-          className="flex transition-transform duration-500 ease-out"
-          style={{ transform: `translateX(-${index * (100 / itemsToShow)}%)` }}
-        >
-          {items.map((item) => (
-            <div
-              key={item.id}
-              className="min-w-[25%] px-2" // Each item is 1/4 width
-              // className="min-w-[25%] px-2" // Each item is 1/4 width
-            >
-              <div className={`h-40 ${item.color} flex items-center justify-center text-white font-bold rounded-lg shadow-md`}>
-                {item.text}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Buttons */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white shadow-lg text-gray-800 p-3 rounded-full z-10"
-        >
-          ❮
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white shadow-lg text-gray-800 p-3 rounded-full z-10"
-        >
-          ❯
-        </button>
-      </div>
 
       <MainBanners
         bannerArray={bannersArray}

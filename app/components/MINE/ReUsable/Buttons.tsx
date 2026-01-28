@@ -23,26 +23,33 @@ export default function ArrowButton({ Href, Text, CC }: { Href?: string; Text?: 
 
 
 export function SliderButtons({
-    passedArray,
+    passedArray = [],
     changeIndex,
+    itemsToShow,
 }: {
-    currentIndex?: number;
     passedArray: any[];
     changeIndex: (value: number | ((prev: number) => number)) => void;
+    itemsToShow: number;
 }) {
 
 
-    console.log(`%c${JSON.stringify(passedArray, null, 3)}`, 'color: white; font-size: 20px;')
+    console.log(`%c${JSON.stringify(passedArray)}`, 'color: white; font-size: 20px;')
+
+
+    // 2. Ensure we don't call .length on undefined
+    const arrayLength = passedArray?.length || 0;
+    const maxIndex = Math.max(0, arrayLength - itemsToShow);
 
     const nextSlide = () => {
-        changeIndex((prev) => (prev + 1) % passedArray.length);
+        changeIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
     };
 
     const prevSlide = () => {
-        changeIndex((prev) =>
-            (prev - 1 + passedArray.length) % passedArray.length
-        );
+        changeIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
     };
+
+    // 3. Don't show buttons if there is nothing to slide
+    // if (arrayLength === 0) return null;
 
 
     return (
@@ -104,16 +111,16 @@ export function QuantityButton({ quantity, setQuantity, CC, MCC }: { quantity: n
 
 
     return (
-        <div className={`${MCC || "bg-white"} w-fit flex flex-row gap-3 items-center justify-center  h-fit md:p-2.5 p-2 md:py-2 py-1 rounded-full '`}>
+        <div className={`${MCC || "bg-white"} w-fit flex flex-row gap-3 items-center justify-center  h-fit md:px-2.5 px-1 md:py-2 py-0.5 rounded-full '`}>
             <button
                 type="button"
                 aria-label="Decrease quantity"
                 disabled={quantity <= 1}
-                className={`${CC || "bg-zinc-200 hover:bg-zinc-200/50"} rounded-full p-1 duration-300 cursor-pointer `}
+                className={`${CC || "bg-zinc-200 hover:bg-zinc-200/50"} rounded-full md:p-1 p-0.5 duration-300 cursor-pointer `}
                 onClick={() => setQuantity(q => Math.max(1, q - 1))}
             >
                 <Minus
-                    size={20}
+                    size={17}
                 />
             </button>
 
@@ -122,11 +129,11 @@ export function QuantityButton({ quantity, setQuantity, CC, MCC }: { quantity: n
             <button
                 type="button"
                 aria-label="Increase quantity"
-                className={`${CC || "bg-zinc-200 hover:bg-zinc-200/50"} rounded-full p-1 duration-300 cursor-pointer `}
+                className={`${CC || "bg-zinc-200 hover:bg-zinc-200/50"} rounded-full md:p-1 p-0.5 duration-300 cursor-pointer `}
                 onClick={() => setQuantity(q => q + 1)}
             >
                 <Plus
-                    size={20}
+                    size={17}
                 />
             </button>
         </div>

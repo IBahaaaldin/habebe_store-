@@ -4,6 +4,7 @@ import { type OptimisticCart } from '@shopify/hydrogen';
 import { useEffect, useRef, useState } from 'react';
 import { CircleChevronRight } from 'lucide-react';
 import { Features } from './ProductForm';
+import { firstFakeDiscount, price1, price2, secondFakeDiscount } from './MINE/UI/Prices';
 
 
 
@@ -23,15 +24,14 @@ export function CartSummary({ cart, layout }: CartSummaryProps) {
   cart?.lines?.nodes.forEach((line) => {
     const price = Number(line.cost.totalAmount.amount);
 
-    let discountPercent = 0; // Initialize discount percentage
+    let discountPercentage = 0; // Initialize discount percentage
 
     // Apply discount based on price ranges
-    if (price >= 500) discountPercent = 7;
-    else if (price >= 100) discountPercent = 10;
-
+    if (price >= price1) discountPercentage = firstFakeDiscount;
+    else if (price >= price2) discountPercentage = secondFakeDiscount;
     // Calculate and accumulate discount amount
-    if (discountPercent > 0) {
-      const discountAmount = Math.round(price * discountPercent) / 100;
+    if (discountPercentage > 0) {
+      const discountAmount = Math.round(price * discountPercentage) / 100;
       totalDiscountOnAllProducts += discountAmount;
     }
   });

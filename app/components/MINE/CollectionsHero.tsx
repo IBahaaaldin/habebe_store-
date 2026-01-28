@@ -3,9 +3,8 @@ import type { FeaturedCollectionFragment } from 'storefrontapi.generated';
 import HeroText from "./UI/HeroText";
 import ArrowButton, { SliderButtons } from './ReUsable/Buttons';
 import { Link } from 'react-router';
-import { number } from 'framer-motion';
-import { useState } from 'react';
-import HeaderText, { SmallHeaderText } from './UI/HeaderText';
+import { useEffect, useState } from 'react';
+import HeaderText from './UI/HeaderText';
 
 
 
@@ -115,8 +114,8 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
                 <Link
                     to={`/collections/${subMenu.handle ?? subMenu.resource?.handle}`}
                     key={subMenu.id}
-                    className={`group w-1/2 font-medium text-white
-                    md:rounded-3xl rounded-2xl md:p-7 p-5
+                    className={`group w-1/2 font-medium text-white 
+                    md:rounded-3xl rounded-2xl md:p-7 p-5  border  border-black
                     flex flex-col justify-between relative overflow-hidden h-full
                     ${index === 0 ? 'md:w-2/3' : 'md:w-1/3'}
                 `}
@@ -134,10 +133,8 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
                 </Link>
             ))}
         </div>
-
     );
 }
-
 
 
 
@@ -145,76 +142,21 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
 // AllCategories component displays a horizontal scrollable list of collection categories.
 export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
 
-const [currentIndex, setCurrentIndex] = useState(0)
-    if (!Array.isArray(allSubMenus)) {
-        return null;
-    }
-
-
     return (
-        <div className="relative flex flex-row gap-5 overflow-x-scroll HIDDEN_SCROLL">
+        <div className="relative">
             {/* SLIDES */}
             <article
-                className="items-start justify-start flex gap-5 transition-transform duration-500 ease-in-out overflow-x-scroll HIDDEN_SCROLL"
+                className=" flex items-start justify-start md:gap-5 gap-3 w-full transition-transform duration-500 ease-out overflow-x-scroll SCROLL"
             >
                 {allSubMenus?.map((menu: any) => (
                     <Link
                         to={`/collections/${menu.handle ?? menu.resource?.handle}`}
                         key={menu.id || menu.handle}
-                        className='flex flex-col gap-3 w-fit'
+                        className='flex flex-col items-center gap-3 w-30'
+
                     >
                         <figure
-                            className="group relative md:h-30 md:w-30 w-20 h-20 rounded-full overflow-hidden"
-                        >
-                            <Image
-                                data={menu.image ?? menu.resource?.image}
-                                alt={menu.altText || menu.title}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                sizes='150px'
-                                width={150}
-                                height={150}
-                            />
-                        </figure>
-
-                        <p className="text-black font-medium text-wrap text-center">
-                            {menu.title.length > 20 ? menu.title.slice(0, 15) + "..." : menu.title}
-                        </p>
-                    </Link>
-                ))}
-
-                {allSubMenus?.map((menu: any) => (
-                    <Link
-                        to={`/collections/${menu.handle ?? menu.resource?.handle}`}
-                        key={menu.id || menu.handle}
-                        className='flex flex-col gap-3 w-fit'
-                    >
-                        <figure
-                            className="group relative  md:h-30 md:w-30 w-20 h-20 rounded-full overflow-hidden"
-                        >
-                            <Image
-                                data={menu.image ?? menu.resource?.image}
-                                alt={menu.altText || menu.title}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                sizes='150px'
-                                width={150}
-                                height={150}
-                            />
-                        </figure>
-
-                        <p className="text-black font-medium text-wrap text-center">
-                            {menu.title.length > 20 ? menu.title.slice(0, 15) + "..." : menu.title}
-                        </p>
-                    </Link>
-                ))}
-
-                {allSubMenus?.map((menu: any) => (
-                    <Link
-                        to={`/collections/${menu.handle ?? menu.resource?.handle}`}
-                        key={menu.id || menu.handle}
-                        className='flex flex-col gap-3 w-fit'
-                    >
-                        <figure
-                            className="group relative  md:h-30 md:w-30 w-20 h-20 rounded-full overflow-hidden"
+                            className="group relative rounded-full md:w-25 w-20 overflow-hidden border"
                         >
                             <Image
                                 data={menu.image ?? menu.resource?.image}
@@ -232,9 +174,6 @@ const [currentIndex, setCurrentIndex] = useState(0)
                     </Link>
                 ))}
             </article>
-
-
-            <SliderButtons changeIndex={setCurrentIndex}  passedArray={allSubMenus} />
         </div>
     );
 };

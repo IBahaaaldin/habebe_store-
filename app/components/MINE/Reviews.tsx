@@ -136,7 +136,7 @@ export default function Reviews({ Title }: { Title?: string }) {
                     {testimonials.map((testimonial, index) => (
                         <article
                             key={index}
-                            className="min-w-60 overflow-hidden border border-black/10 flex flex-col items-stretch gap-3 bg-white  md:rounded-3xl rounded-2xl md:px-5 md:py-7 p-3"
+                            className="min-w-60 overflow-hidden border border-black/10 flex flex-col items-stretch gap-3 md:rounded-3xl rounded-2xl md:px-5 md:py-7 p-3 bg-linear-to-br from-orange-500/10 to-40% to-white  "
                         >
 
                             <span className='flex flex-row '>
