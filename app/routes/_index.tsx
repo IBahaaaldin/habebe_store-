@@ -148,18 +148,36 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
       {Handle === "pets-supplies" &&
         <div>
-          <HeaderText
-            HEAD={`${randomWord} our ${collectionTitle}`}
-          />
+
+          <div className='flex flex-row gap-10 justify-between'>
+            <HeaderText
+              HEAD={`${randomPromotion} ${collectionTitle}`}
+            />
+
+            <ArrowButton
+              Text={`Explore`}
+              CC='border h-fit'
+              Href={`/collections/${Handle}`}
+            />
+          </div>
           <PetsSuppliesBanner />
         </div>
       }
 
       {Handle === "home-garden-furniture" &&
         <div>
-          <HeaderText
-            HEAD={`${randomWord} our ${collectionTitle}`}
-          />
+
+          <div className='flex flex-row gap-10 justify-between'>
+            <HeaderText
+              HEAD={`${randomPromotion} ${collectionTitle}`}
+            />
+
+            <ArrowButton
+              Text={`Explore`}
+              CC='border h-fit'
+              Href={`/collections/${Handle}`}
+            />
+          </div>
           <HomeGardenFurnitureBanner />
         </div>
       }
@@ -167,9 +185,18 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
       {Handle === "consumer-electronics" &&
         <div>
-          <HeaderText
-            HEAD={`${randomWord} our ${collectionTitle}`}
-          />
+
+          <div className='flex flex-row gap-10 justify-between'>
+            <HeaderText
+              HEAD={`${randomPromotion} ${collectionTitle}`}
+            />
+
+            <ArrowButton
+              Text={`Explore`}
+              CC='border h-fit'
+              Href={`/collections/${Handle}`}
+            />
+          </div>
           <ConsumerElectronicsBanner />
         </div>
       }
@@ -177,9 +204,18 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
       {Handle === "men-clothing" &&
         <div>
-          <HeaderText
-            HEAD={`${randomWord} our ${collectionTitle}`}
-          />
+
+          <div className='flex flex-row gap-10 justify-between'>
+            <HeaderText
+              HEAD={`${randomPromotion} ${collectionTitle}`}
+            />
+
+            <ArrowButton
+              Text={`Explore`}
+              CC='border h-fit'
+              Href={`/collections/${Handle}`}
+            />
+          </div>
           <PlatinumBanners collectionHandle='men-clothing' />
         </div>
       }

@@ -27,7 +27,7 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Feat
     return (
         <section className="relative w-full flex flex-col gap-3 overflow-hidden">
             {/* Slides */}
-            <article className="max-h-150 h-[50vh] relative w-full overflow-hidden md:rounded-3xl rounded-2xl">
+            <article className="max-h-150 h-[70vh] relative w-full overflow-hidden md:rounded-3xl rounded-2xl">
                 <div
                     className="relative flex transition-transform duration-700 ease-in-out h-full"
                     style={{
@@ -80,9 +80,9 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Feat
             </article>
 
 
-            <TwoGrids
+            {/* <TwoGrids
                 subTwoMenus={mainCollections?.slice(0, 2)}
-            />
+            /> */}
 
             <div className='mt-3'>
                 <HeaderText
