@@ -6,7 +6,7 @@ import { useAside } from './Aside';
 import type { ProductFragment } from 'storefrontapi.generated';
 import { QuantityButton } from './MINE/ReUsable/Buttons';
 import { useState, type ReactNode } from 'react';
-import { ShieldCheck, Truck, RefreshCcw, Shirt } from 'lucide-react';
+import { ShieldCheck, Truck, RefreshCcw, Shirt, RulerDimensionLine } from 'lucide-react';
 
 
 
@@ -188,7 +188,7 @@ export function Features() {
 
   const features: FeatureProps[] = [
     { icon: <ShieldCheck size={20} />, text: "Secure payment" },
-    { icon: <Shirt size={20} />, text: "Size & Fit" },
+    { icon: <RulerDimensionLine size={20} />, text: "Size & Fit" },
     { icon: <Truck size={20} />, text: "Free shipping" },
     { icon: <RefreshCcw size={20} />, text: "Free Shipping & Returns" },
   ] as const;

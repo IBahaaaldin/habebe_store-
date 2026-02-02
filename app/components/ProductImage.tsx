@@ -65,10 +65,8 @@ export function ProductImage({ image, productMedia }: { image: ProductVariantFra
           alt={mainImage?.altText || 'Product Image'}
           data={mainImage!}
           key={mainImage?.id}
-          className='z-0 rounded-2xl overflow-hidden object-cover aspect-square'
+          className='w-full h-full z-0 rounded-2xl overflow-hidden object-cover aspect-square'
           sizes='100vw'
-        // width={1000}
-        // height={1000}
         />
 
 
@@ -88,25 +86,25 @@ export function ProductImage({ image, productMedia }: { image: ProductVariantFra
 
 
       {/* Sub Images */}
-      <div className='relative flex flex-row gap-3 overflow-scroll HIDDEN_SCROLL w-full' >
+      <div className='relative flex flex-row gap-3 overflow-x-scroll HIDDEN_SCROLL w-full' >
         {productMedia?.map((imgData: any, index: number) => (
           <figure
             key={index}
-            className='min-w-20 md:rounded-3xl rounded-2xl p-1.5 bg-zinc-50 aspect-square overflow-hidden cursor-pointer border border-black/0 
+            className='min-w-25 md:rounded-2xl rounded-xl p-1.5 bg-zinc-50 aspect-square overflow-hidden cursor-pointer border border-black/0 
               hover:border-black active:border-black hover:brightness-60 active:brightness-60 duration-300 '
             onMouseEnter={() => handleMouseEnter(imgData.node.image as any)}
-            onMouseLeave={handleMouseLeave}
+            // onMouseLeave={handleMouseLeave}
           >
             <Image
               alt={imgData?.altText || ""}
               data={imgData.node?.image}
-              className='object-cover rounded-lg'
+              className='object-cover rounded-lg w-full h-full'
               sizes='100px'
             />
           </figure>
         ))}
 
-        <SliderButtons changeIndex={() => { }} passedArray={productMedia} />
+        {/* <SliderButtons itemsToShow={5} changeIndex={() => { }} passedArray={productMedia} /> */}
       </div>
     </section>
   );
