@@ -7,7 +7,7 @@
 
 
 .BUTTON1 {
-    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-4 py-1.5 font-medium text-white bg-orange-400 md:rounded-3xl rounded-2xl duration-300 text-nowrap text-xs;
+    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-3 py-1.5 font-medium text-white bg-orange-400 md:rounded-3xl rounded-2xl duration-300 text-nowrap text-xs;
 
     @apply md:px-7 md:py-3 md:text-sm;
 
@@ -22,7 +22,7 @@
 
 
 .BUTTON2 {
-    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-4 py-1.5 font-medium text-orange-400 bg-white border border-orange-400 md:rounded-3xl rounded-2xl duration-300 text-nowrap text-xs;
+    @apply flex flex-row cursor-pointer gap-3 items-center justify-center px-3 py-1.5 font-medium text-orange-400 bg-white border border-orange-400 md:rounded-3xl rounded-2xl duration-300 text-nowrap text-xs;
 
     @apply md:px-7 md:py-3 md:text-sm;
 
