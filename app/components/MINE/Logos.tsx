@@ -37,11 +37,11 @@ export default function Logos({ ArrayOfText }: { ArrayOfText?: string[] }) {
         <div ref={reference} className="flex flex-row items-center justify-start gap-20 overflow-hidden w-full bg-green-700">
             {AltArray.map((logo, index) => (
                 <div key={index} className="flex flex-row items-center lg:gap-40 gap-30">
-                    <h6 className="py-2 text-white text-nowrap text-center uppercase">
+                    <h5 className="py-2 text-white text-nowrap text-center uppercase">
                         <q className="">
                             {logo}
                         </q>
-                    </h6>
+                    </h5>
                 </div>
             ))}
         </div>

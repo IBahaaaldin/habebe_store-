@@ -65,7 +65,7 @@ export function ProductImage({ image, productMedia }: { image: ProductVariantFra
           alt={mainImage?.altText || 'Product Image'}
           data={mainImage!}
           key={mainImage?.id}
-          className='w-full h-full z-0 rounded-2xl overflow-hidden object-cover aspect-square'
+          className='w-full h-full z-0 md:rounded-2xl rounded-xl robject-cover aspect-square'
           sizes='100vw'
         />
 

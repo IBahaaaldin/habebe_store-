@@ -102,10 +102,10 @@ export function ScrollBanners({ bannerArray, Title, collectionHandle }: { banner
                 </div>
             </div>
 
-            <SliderButtons
+            {/* <SliderButtons
                 changeIndex={setCurrentIndex}
                 passedArray={bannerArray}
-            />
+            /> */}
 
         </section>
 
@@ -231,7 +231,7 @@ export function PlatinumBanners({ bannerArray, collectionHandle }: { bannerArray
 
 
             {/* Footer Section */}
-            <div className="pt-3 w-full text-end">
+            {/* <div className="pt-3 w-full text-end">
                 <span className="text-gray-600 text-sm">
                     Sponsors &nbsp;
                     <Link
@@ -241,7 +241,7 @@ export function PlatinumBanners({ bannerArray, collectionHandle }: { bannerArray
                         Advertising with us
                     </Link>
                 </span>
-            </div>
+            </div> */}
         </section>
 
     );

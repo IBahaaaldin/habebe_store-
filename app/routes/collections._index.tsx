@@ -103,136 +103,13 @@ function CollectionItem({ collection, index, }: { collection: CollectionFragment
 
 // ? The extracying name for this in the storefront is like {menu} = await storefront.query(...) but here we are using {mainMenu} to avoid confusion with other menu variables
 
-export const MAINMENU_AND_SUBMENU_QUERY = `#graphql
-  query MainMenu($handle: String!) {
-    menu(handle: $handle) {
-      title
-      # /// ===== LEVEL 1 =====
-      items {
-        id
-        title
-        url
 
-        resource {
-          ... on Collection {
-            handle
-            title
-            image {
-              id
-              url
-              altText
-              width
-              height
-            }
-            # /// Fetch metafield for main banners only for 2nd level array
-            mainBanners: metafield(namespace: "custom", key: "main_banners") {
-              references(first: 10) {
-                nodes {
-                  ... on MediaImage {
-                    image {
-                      url
-                      altText
-                      width
-                      height
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        # /// # ===== LEVEL 2 =====
-        items {
-          id
-          title
-          url
-          resource {
-            ... on Collection {
-              handle
-              title
-              image {
-                id
-                url
-                altText
-                width
-                height
-              }
-              # /// Fetch metafield for main banners only for 3th level array
-              mainBanners: metafield(namespace: "custom", key: "main_banners") {
-                references(first: 10) {
-                  nodes {
-                    ... on MediaImage {
-                      image {
-                        url
-                        altText
-                        width
-                        height
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-          # /// ===== LEVEL 3 =====
-          items {
-          id
-          title
-          url
-            resource {
-              ... on Collection {
-                handle
-                title
-                image {
-                  id
-                  url
-                  altText
-                  width
-                  height
-                }
-                # /// Fetch metafield for main banners only for 2nd level array
-                mainBanners: metafield(namespace: "custom", key: "main_banners") {
-                  references(first: 10) {
-                    nodes {
-                      ... on MediaImage {
-                        image {
-                          url
-                          altText
-                          width
-                          height
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    shop {
-      name
-      brand {
-        logo {
-          image {
-            url
-            altText
-            width
-            height
-          }
-        }
-        shortDescription
-        slogan
-      }
-    }
-  }
-` as const;
+
 
 
 
 export const MAINMENU_QUERY = `#graphql
-  query MainMenu($handle: String!) {
+  query MainMenuCollections($handle: String!) {
     menu(handle: $handle) {
       title
       items {

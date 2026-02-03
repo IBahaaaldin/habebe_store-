@@ -223,9 +223,9 @@ function SimilarProducts({ products, Title }: { products: any; Title: string; })
 
   return (
     <div className="border-b border-black/30 pb-10 flex flex-col gap-3">
-      <h4 className='text-start w-full capitalize'>
+      <h3 className='text-start w-full capitalize'>
         {Title}
-      </h4>
+      </h3>
 
       <Suspense fallback={<LoadingSpinner />}>
         <Await resolve={products}>
@@ -373,6 +373,7 @@ const PRODUCT_QUERY = `#graphql
     product(handle: $handle) {
       ...Product
       featuredImage {
+        __typename
         id  
         url
         width
@@ -384,6 +385,7 @@ const PRODUCT_QUERY = `#graphql
             mediaContentType
             alt
             ... on MediaImage {
+              __typename
               image {
                 id  
                 url

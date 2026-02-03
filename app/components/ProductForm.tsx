@@ -29,8 +29,9 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
           <div key={option.name}>
 
             {/* TITLE for Size & Color */}
-            <p className='text-zinc-300 mb-3'>Pick your {option.name}</p>
+            {/* <p className='text-zinc-300 mb-3'>Pick your {option.name}</p> */}
 
+            <div className='w-full h-[0.5px] bg-zinc-300 my-3' />
 
             <div className="flex flex-row flex-wrap w-full gap-3">
               {option.optionValues.map((value) => {
@@ -109,13 +110,13 @@ export function ProductForm({ productOptions, selectedVariant, }: { productOptio
                 }
               })}
             </div>
-            <br />
           </div>
         );
       })}
 
 
 
+      <br />
 
       <div className='flex flex-row gap-5 w-full'>
         <AddToCartButton

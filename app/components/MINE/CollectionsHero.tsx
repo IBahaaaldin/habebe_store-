@@ -1,5 +1,5 @@
 import { Image } from '@shopify/hydrogen';
-import type { FeaturedCollectionFragment } from 'storefrontapi.generated';
+import type { CollectionItemFragment } from 'storefrontapi.generated';
 import HeroText from "./UI/HeroText";
 import ArrowButton, { SliderButtons } from './ReUsable/Buttons';
 import { Link } from 'react-router';
@@ -9,7 +9,7 @@ import HeaderText from './UI/HeaderText';
 
 
 // Used in two main places: "HOMEPAGE" and "COLLECTION" Page
-export default function CollectionsHero({ Collections, Title, Description, HeroImg }: { Collections: FeaturedCollectionFragment, Title?: string, Description?: string, HeroImg?: string; }): JSX.Element {
+export default function CollectionsHero({ Collections, Title, Description, HeroImg }: { Collections: CollectionItemFragment, Title?: string, Description?: string, HeroImg?: string; }): JSX.Element {
 
 
     const defaultHeroImage = HeroImg ?? "https://images.pexels.com/photos/33020904/pexels-photo-33020904.jpeg"
@@ -52,7 +52,7 @@ export default function CollectionsHero({ Collections, Title, Description, HeroI
 
 
 
-export function CollectionsNewHero({ Collections, Title, Description, HeroImg, subTwoMenus }: { Collections: FeaturedCollectionFragment, Title?: string, Description?: string, HeroImg?: string, subTwoMenus: any }) {
+export function CollectionsNewHero({ Collections, Title, Description, HeroImg, subTwoMenus }: { Collections: CollectionItemFragment, Title?: string, Description?: string, HeroImg?: string, subTwoMenus: any }) {
 
 
     const defaultHeroImage = HeroImg ?? "https://images.pexels.com/photos/33020904/pexels-photo-33020904.jpeg"
@@ -62,9 +62,9 @@ export function CollectionsNewHero({ Collections, Title, Description, HeroImg, s
 
 
     return (
-        <div className="w-full flex flex-col gap-3">
+        <div className="w-full flex flex-col gap-3 ">
             {/* /// Main Hero Banner */}
-            <article className="text-white relative md:rounded-3xl rounded-2xl md:p-10 p-7 overflow-hidden max-h-150 h-[50vh] flex flex-col justify-center gap-5">
+            <article className="border border-black text-white relative md:rounded-3xl rounded-2xl md:p-10 p-7 overflow-hidden max-h-150 h-[50vh] flex flex-col justify-center gap-5">
 
                 <HeroText
                     HEAD={"Modern Minimalist Furniture"}
@@ -89,9 +89,8 @@ export function CollectionsNewHero({ Collections, Title, Description, HeroImg, s
                 />
             </article>
 
-            {Array.isArray(subTwoMenus) &&
-                <TwoGrids subTwoMenus={subTwoMenus} />
-            }
+            <TwoGrids subTwoMenus={subTwoMenus} />
+
         </div>
     );
 }
@@ -102,11 +101,10 @@ export function CollectionsNewHero({ Collections, Title, Description, HeroImg, s
 export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
 
 
-    if (!Array.isArray(subTwoMenus)) {
+    if (!Array.isArray(subTwoMenus) || subTwoMenus.length === 0) {
         return null;
     }
 
-    // console.log(`%c${JSON.stringify(subTwoMenus, null, 3)}`, 'color: white; font-size: 20px;')
 
     return (
         <div className="w-full flex flex-row gap-3 md:h-60 h-30">

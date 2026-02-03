@@ -40,7 +40,7 @@ export default function BestSeller({
 
 
 
-    return (
+    return  (
         <div className='flex flex-col justify-between w-full'>
 
 
@@ -49,7 +49,7 @@ export default function BestSeller({
             />
 
 
-            <div className='relative overflow-hidden'>
+            <div className='border py-3 md:rounded-3xl rounded-2xl relative overflow-hidden'>
                 <Suspense fallback={<LoadingSpinner />}>
                     <Await resolve={products}>
                         {(response) => {

@@ -66,7 +66,7 @@ export function HomeGardenFurnitureBanner() {
                         >
                             <span className=" text-nowrap font-medium
                             opacity-0 max-w-0 
-                            group-hover:opacity-100 group-hover:max-w-35 transition-all duration-500 ease-out overflow-hidden">
+                            group-hover:opacity-100 group-hover:max-w-38 transition-all duration-500 ease-out overflow-hidden">
                                 Discover collection!
                             </span>
 

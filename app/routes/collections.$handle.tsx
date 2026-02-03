@@ -6,7 +6,7 @@ import { redirectIfHandleIsLocalized } from '~/lib/redirect';
 import { ProductItem } from '~/components/ProductItem';
 import type { ProductFragment } from 'storefrontapi.generated';
 import { AllCategories, CollectionsNewHero } from '~/components/MINE/CollectionsHero';
-import { MAINMENU_AND_SUBMENU_QUERY } from './collections._index';
+import { MAINMENU_AND_SUBMENU_QUERY } from '~/graphql/sharedQueries';
 import MainBanners, { CasualBanners } from '~/components/MINE/AdsSections';
 import BestSeller from '~/components/MINE/BestSeller';
 import { useState } from 'react';
@@ -125,29 +125,30 @@ export default function Collection() {
       />
 
       <div className='space-y-5'>
-
-
-        <BestSeller
-          products={collection.products}
-          Handle={collection.handle}
-          collectionTitle={collection.title}
-        />
-
-        <CasualBanners collectionHandle='' bannerArray={bannersArray} />
-
-        <PaginatedResourceSection<ProductFragment>
-          connection={collection.products}
-          resourcesClassName=""
-        >
-          {({ node: product, index }) => (
-            <ProductItem
-              key={product.id}
-              product={product}
-              loading={index < 16 ? 'eager' : undefined}
+        {collection.products.nodes.length > 0 && (
+          <>
+            <BestSeller
+              products={collection.products}
+              Handle={collection.handle}
+              collectionTitle={collection.title}
             />
-          )}
-        </PaginatedResourceSection>
 
+            <CasualBanners collectionHandle='' bannerArray={bannersArray} />
+
+            <PaginatedResourceSection<ProductFragment>
+              connection={collection.products}
+              resourcesClassName=""
+            >
+              {({ node: product, index }) => (
+                <ProductItem
+                  key={product.id}
+                  product={product}
+                  loading={index < 16 ? 'eager' : undefined}
+                />
+              )}
+            </PaginatedResourceSection>
+          </>
+        )}
       </div>
     </div>
   );

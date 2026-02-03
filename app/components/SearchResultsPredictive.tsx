@@ -211,7 +211,7 @@ export function SearchResultsPredictiveProducts({
   return (
     <div className="flex flex-col gap-3 mt-5" key="products">
       <h5 className='md:text-xl text-lg font-medium'>Products</h5>
-      <ul className='flex flex-col gap-3'>
+      <ul className='flex flex-col gap-3 overflow-y-scroll'>
         {products.map((product) => {
           const productUrl = urlWithTrackingParams({
             baseUrl: `/products/${product.handle}`,
@@ -230,6 +230,7 @@ export function SearchResultsPredictiveProducts({
                     src={image.url}
                     width={50}
                     height={50}
+                    sizes='100px'
                     className='w-full h-full rounded-lg object-cover hover:scale-105 duration-300'
                   />
                 </figure>

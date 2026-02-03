@@ -54,7 +54,6 @@ export function PageLayout({ cart, children = null, header, isLoggedIn }: PageLa
 
 
       {/* Footer for the entire app and all PAGES */}
-      <Logos />
       <FooterSection
         header={header}
       />

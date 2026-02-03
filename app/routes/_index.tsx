@@ -14,6 +14,7 @@ import { PlatinumBanners, GridBanners, ScrollBanners, CasualBanners } from '~/co
 import HeroSlider from '~/components/MINE/HeroSlider';
 import ArrowButton, { SliderButtons } from '~/components/MINE/ReUsable/Buttons';
 import { ConsumerElectronicsBanner, HomeGardenFurnitureBanner, PetsSuppliesBanner } from '~/components/MINE/NewCollectionsBanners';
+import Logos from '~/components/MINE/Logos';
 
 
 
@@ -69,12 +70,12 @@ export default function Homepage() {
   return (
     <div className='space-y-10'>
       <HeroSlider
-        mainCollections={MainCollections}
+        mainCollections={MainCollections ?? []}
       />
 
 
       {/* <Collections /> */}
-      {MainCollections.map((collection: any) => (
+      {MainCollections?.map((collection: any) => (
         <div
           key={collection.id}
         >
@@ -136,7 +137,7 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
   const randomPromotion = useMemo(() => arrayOfPromotions[Math.floor(Math.random() * arrayOfPromotions.length)], [])
 
   return (
-    <section className="flex flex-col gap-5">
+    <section className="flex flex-col gap-10">
 
       {/* /// ADS Section for MainBanners */}
       {/* <ScrollBanners bannerArray={scrollBanners} Title={collectionTitle} collectionHandle={Handle} />
@@ -242,17 +243,6 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
           {(response) => (
             <div className=''>
 
-              <div className='flex flex-row gap-10 justify-between'>
-                <HeaderText
-                  HEAD={`${randomPromotion} ${collectionTitle}`}
-                />
-
-                <ArrowButton
-                  Text={`Explore`}
-                  CC='border h-fit'
-                  Href={`/collections/${Handle}`}
-                />
-              </div>
               <div className="PRODUCTS_GRID_CONTAINER">
 
                 {response

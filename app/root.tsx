@@ -18,7 +18,7 @@ import resetStyles from '~/styles/reset.css?url';
 import appStyles from '~/styles/app.css?url';
 import tailwindCss from './styles/tailwind.css?url';
 import { PageLayout } from './components/PageLayout';
-import { MAINMENU_AND_SUBMENU_QUERY } from './routes/collections._index';
+import { MAINMENU_AND_SUBMENU_QUERY } from '~/graphql/sharedQueries';
 
 
 
@@ -228,6 +228,7 @@ export const SHOP_LOGO = `#graphql
         brand {
           logo {
             image {
+              id
               url
               altText
               width

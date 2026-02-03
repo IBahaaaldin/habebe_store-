@@ -1,14 +1,22 @@
 import { useEffect, useState } from 'react';
-import type { FeaturedCollectionFragment } from 'storefrontapi.generated';
+import type { CollectionItemFragment } from 'storefrontapi.generated';
 import { Image } from '@shopify/hydrogen';
 import ArrowButton, { SliderButtons, SmallIndexButtons } from './ReUsable/Buttons';
 import { AllCategories, TwoGrids } from './CollectionsHero';
 import HeaderText from './UI/HeaderText';
+import Logos from './Logos';
 
 
 
 
-export default function HeroSlider({ mainCollections }: { mainCollections?: FeaturedCollectionFragment[] }) {
+export default function HeroSlider({ mainCollections }: { mainCollections?: CollectionItemFragment[] }) {
+    const promotions = [
+        "Free shipping on orders over AED 200",
+        "New arrivals in Fashion - Up to 30% off",
+        "Join our loyalty program for exclusive deals",
+        "Flash Sale: 24 hours only on Electronics",
+        "Quality guaranteed on all home furniture"
+    ];
     const [currentIndex, setCurrentIndex] = useState<number>(0);
 
 
@@ -25,9 +33,9 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Feat
 
 
     return (
-        <section className="relative w-full flex flex-col gap-3 overflow-hidden">
+        <section className="relative w-full flex flex-col overflow-hidden">
             {/* Slides */}
-            <article className="max-h-150 h-[70vh] relative w-full overflow-hidden md:rounded-3xl rounded-2xl">
+            <article className="max-h-150 h-[70vh] relative w-full overflow-hidden md:rounded-t-3xl rounded-t-2xl">
                 <div
                     className="relative flex transition-transform duration-700 ease-in-out h-full"
                     style={{
@@ -78,6 +86,8 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Feat
                 {/* Dots Navigation */}
                 <SmallIndexButtons changeIndex={setCurrentIndex} currentIndex={currentIndex} passedArray={mainCollections ?? []} />
             </article>
+
+            <Logos ArrayOfText={promotions} />
 
 
             {/* <TwoGrids
