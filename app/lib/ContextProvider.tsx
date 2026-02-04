@@ -2,11 +2,14 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 export const currencies = [
   { code: 'USD', symbol: '$', name: 'United States', flag: '🇺🇸', rate: 1 },
-  { code: 'EGP', symbol: 'E£', name: 'Egypt', flag: '🇪🇬', rate: 48.50 },
-  { code: 'AED', symbol: 'د.إ', name: 'UAE', flag: '🇦🇪', rate: 3.67 },
-  { code: 'SAR', symbol: 'ر.س', name: 'Saudi Arabia', flag: '🇸🇦', rate: 3.75 },
-  { code: 'IQD', symbol: 'ع.د', name: 'Iraq', flag: '🇮🇶', rate: 1310 },
+  { code: 'EGP', symbol: 'EGP', name: 'Egypt', flag: '🇪🇬', rate: 48.50 },
+  { code: 'AED', symbol: 'AED', name: 'UAE', flag: '🇦🇪', rate: 3.67 },
+  { code: 'SAR', symbol: 'SAR', name: 'Saudi Arabia', flag: '🇸🇦', rate: 3.75 },
+  { code: 'IQD', symbol: 'IQD', name: 'Iraq', flag: '🇮🇶', rate: 1310 },
   { code: 'CAD', symbol: 'C$', name: 'Canada', flag: '🇨🇦', rate: 1.36 },
+  { code: 'EUR', symbol: '€', name: 'Europe', flag: '🇪🇺', rate: 0.92 },
+  { code: 'SYP', symbol: 'LS', name: 'Syria', flag: '🇸🇾', rate: 13000 },
+
 ] as const;
 
 export type CurrencyCode = typeof currencies[number]['code'];

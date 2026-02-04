@@ -36,16 +36,23 @@ export default function Prices({ price, isBig }: { price: string; isBig?: boolea
     // Helper for heading size
     const Tag = isBig ? 'h3' : 'h5';
 
+    const formatPrice = (val: number) => {
+        if (val >= 100000) {
+            return `${(val / 1000).toFixed(1)}K`;
+        }
+        return val.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    };
+
     return (
         <article className='flex flex-col flex-wrap items-start'>
             <Tag className="text-nowrap text-black font-medium">
-                {symbol}{convertedPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                {symbol}
+                {formatPrice(convertedPrice)}
 
                 {discountPercentage > 0 && (
                     <>
-                        {/* <span className="ml-2 text-red-300 font-bold">({discountPercentage}% OFF)</span> */}
                         <sup className="ml-2 text-red-300 line-through">
-                            {fakeOriginalPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                            {formatPrice(fakeOriginalPrice)}
                         </sup>
                     </>
                 )}
