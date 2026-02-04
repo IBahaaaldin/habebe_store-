@@ -1,5 +1,5 @@
 import { Await, useLoaderData, Link } from 'react-router';
-import type { Route } from './+types/_index';
+import type { Route } from './+types/($locale)._index';
 import { Suspense, useMemo, } from 'react';
 import { ProductItem } from '~/components/ProductItem';
 import CollectionsHero, { AllCategories, CollectionsNewHero, TwoGrids } from '~/components/MINE/CollectionsHero';
@@ -42,11 +42,14 @@ async function loadCriticalData({ context }: Route.LoaderArgs) {
 
   // Fetch the main menu and its associated products (only 10 products per collection)
   const [MainMenu] = await Promise.all([
-    context.storefront.query(MAINMENU_AND_PRODUCTS_QUERY, { variables: { handle: 'main-menu' } }),
+    context.storefront.query(MAINMENU_AND_PRODUCTS_QUERY, {
+      variables: {
+        handle: 'main-menu',
+      }
+    }),
   ]);
 
   const MainCollections = MainMenu?.menu?.items?.map((item: any) => item.resource); // Used for Fetching Collections like => Men, Women, Unisex, ...
-
 
   return {
     MainCollections, // Object called Collections
@@ -65,6 +68,10 @@ function loadDeferredData({ context }: Route.LoaderArgs) {
 export default function Homepage() {
 
   const { MainCollections } = useLoaderData<typeof loader>();
+
+  const usdPrice = 100; // Default price for conversion example
+
+
 
 
   return (

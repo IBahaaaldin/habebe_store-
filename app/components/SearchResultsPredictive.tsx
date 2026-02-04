@@ -1,4 +1,4 @@
-import { Link, useFetcher, type Fetcher } from 'react-router';
+import { Link, useFetcher, useLocation, type Fetcher } from 'react-router';
 import { Image, Money } from '@shopify/hydrogen';
 import React, { useRef, useEffect } from 'react';
 import {
@@ -206,10 +206,36 @@ export function SearchResultsPredictiveProducts({
   closeSearch,
 }: PartialPredictiveSearchResult<'products'>) {
   if (!products.length) return null;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+
+  // Close search when URL changes
+  useEffect(() => {
+    if (location.pathname || location.search) {
+      closeSearch();
+    }
+  }, [location, closeSearch]);
+
+
+  console.log(`%c${JSON.stringify(location.pathname, null, 3)}`, 'color: white; font-size: 20px;')
+
+
+  // Close search when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        closeSearch();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [closeSearch]);
+
 
 
   return (
-    <div className="flex flex-col gap-3 mt-5" key="products">
+    <div ref={containerRef} className="flex flex-col gap-3 w-full" key="products">
       <h5 className='md:text-xl text-lg font-medium'>Products</h5>
       <ul className='flex flex-col gap-3 overflow-y-scroll'>
         {products.map((product) => {
@@ -221,6 +247,7 @@ export function SearchResultsPredictiveProducts({
 
           const price = product?.selectedOrFirstAvailableVariant?.price;
           const image = product?.selectedOrFirstAvailableVariant?.image;
+
           return (
             <Link className="flex flex-row gap-3" key={product.id} to={productUrl} onClick={closeSearch}>
               {image && (

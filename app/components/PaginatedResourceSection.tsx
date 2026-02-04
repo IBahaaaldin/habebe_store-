@@ -18,8 +18,6 @@ export function PaginatedResourceSection<NodesType>({ connection, children, reso
           if (nextLinkRef.current && nextPageUrl && !isLoading) {
             const observer = new IntersectionObserver(([entry]) => {
               if (entry.isIntersecting) nextLinkRef.current?.click();
-            }, {
-              rootMargin: '0px 0px 400px 0px',
             });
             observer.observe(nextLinkRef.current);
             return () => observer.disconnect();
@@ -30,11 +28,11 @@ export function PaginatedResourceSection<NodesType>({ connection, children, reso
 
         return (
           <>
-            <div className='flex justify-center mt-10'>
+            {/* <div className='flex justify-center mt-10'>
               <PreviousLink>
                 {isLoading ? 'Loading...' : <span className='BUTTON1'>Load previous</span>}
               </PreviousLink>
-            </div>
+            </div> */}
 
 
             <div className='PRODUCTS_GRID_CONTAINER gap-y-10 w-full'>
@@ -48,7 +46,7 @@ export function PaginatedResourceSection<NodesType>({ connection, children, reso
 
             <div className='flex justify-center mt-10'>
               <NextLink ref={nextLinkRef} className='text-orange-400 font-bold animate-pulse'>
-                {isLoading ? 'Loading...' : <span className='BUTTON1 opacity-0'>Load more </span>}
+                {isLoading ? 'Loading...' : <span className='BUTTON1 opacity-100'>Load more </span>}
               </NextLink>
             </div>
           </>

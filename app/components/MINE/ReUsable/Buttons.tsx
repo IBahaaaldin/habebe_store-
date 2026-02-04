@@ -33,7 +33,7 @@ export function SliderButtons({
 }) {
 
 
-    console.log(`%c${JSON.stringify(passedArray)}`, 'color: white; font-size: 20px;')
+    // console.log(`%c${JSON.stringify(passedArray)}`, 'color: white; font-size: 20px;')
 
 
     // 2. Ensure we don't call .length on undefined
@@ -111,7 +111,7 @@ export function QuantityButton({ quantity, setQuantity, CC, MCC }: { quantity: n
 
 
     return (
-        <div className={`${MCC || "bg-white"} w-fit flex flex-row gap-3 items-center justify-center  h-fit md:px-2.5 px-1 md:py-2 py-0.5 rounded-full '`}>
+        <div className={`${MCC || "bg-white"} w-fit flex flex-row gap-3 items-center justify-center  h-fit md:px-2 px-1 md:py-1.5 py-0.5 rounded-full '`}>
             <button
                 type="button"
                 aria-label="Decrease quantity"

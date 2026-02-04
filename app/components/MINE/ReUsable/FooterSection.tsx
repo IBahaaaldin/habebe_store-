@@ -82,7 +82,7 @@ export default function FooterSection({ header }: { header: any }) {
 
 
     return (
-        <div className="flex flex-col px-[3%] mx-auto  w-full">
+        <div className="flex flex-col px-[2.5%] gap-3 mb-3 max-w-400 mx-auto  w-full">
 
 
             <div className=" grid lg:grid-cols-3 md:grid-cols-2 md:gap-x-10 gap-x-5 md:gap-y-15 gap-y-10 items-between justify-between bg-zinc-50 md:rounded-3xl rounded-2xl relative overflow-hidden px-7 py-10 *:min-w-1/3 *:w-full">
@@ -219,7 +219,7 @@ export default function FooterSection({ header }: { header: any }) {
                 <PaymentIcons />
             </div>
 
-            <span className="border-t border-black/20 my-3 pt-3 w-ful text-center text-zinc-500">
+            <span className="w-ful text-center text-zinc-500">
                 © {new Date().getFullYear()} Your Company Name. All rights reserved.
             </span>
         </div>

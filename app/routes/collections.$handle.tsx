@@ -111,13 +111,25 @@ export default function Collection() {
       />
 
 
-      {specificMenu &&
-        <AllCategories
-          allSubMenus={specificMenu}
-        />
-      }
+      <h2 className="
+        relative overflow-hidden
+        bg-linear-to-r from-blue-800 via-blue-700 to-blue-900
+        text-white 
+        font-bold text-2xl md:text-4xl lg:text-5xl
+        text-center py-12 md:py-16 lg:py-20
+        tracking-wide
+        shadow-2xl
+      ">
+        {/* Optional subtle overlay pattern / shine */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.08)_0%,transparent_50%)] pointer-events-none" />
+
+        BANNER PLACEHOLDER YA ALI
+      </h2>
 
 
+      <AllCategories
+        allSubMenus={specificMenu}
+      />
 
 
       <MainBanners

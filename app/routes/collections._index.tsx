@@ -1,7 +1,7 @@
 import { useLoaderData, Link } from 'react-router';
 import type { Route } from './+types/collections._index';
 import { Image } from '@shopify/hydrogen';
-import type { CollectionFragment } from 'storefrontapi.generated';
+import type { CollectionItemFragment } from 'storefrontapi.generated';
 import HeaderText from '~/components/MINE/UI/HeaderText';
 
 
@@ -25,7 +25,7 @@ async function loadCriticalData({ context }: Route.LoaderArgs) {
 export default function Collections() {
   const { MainCollections } = useLoaderData<typeof loader>();
 
-  const items = MainCollections.menu.items;
+  const items = MainCollections?.menu?.items || [];
   console.log(`%c${JSON.stringify(items, null, 3)}`, 'color: white; font-size: 20px;')
 
 
@@ -71,20 +71,20 @@ export default function Collections() {
 
 
 
-function CollectionItem({ collection, index, }: { collection: CollectionFragment; index: number; }) {
+function CollectionItem({ collection, index, }: { collection: CollectionItemFragment; index: number; }) {
   return (
     <Link
       className="relative"
       key={collection.id}
-      to={`/${collection.handle}`}
+      to={`/collections/${collection.handle}`}
     // prefetch="intent"
     >
       <div className='max-h-100 h-full md:rounded-3xl rounded-2xl overflow-hidden'>
-        {collection?.image && (
+        {collection?.featuredImage && (
           <Image
             className='object-cover hover:scale-110 duration-500 h-full -z-1'
-            alt={collection.image.altText || collection.title}
-            data={collection.image}
+            alt={collection.featuredImage.altText || collection.title}
+            data={collection.featuredImage}
             loading={index < 3 ? 'eager' : undefined}
           />
         )}
@@ -136,7 +136,12 @@ export const MAINMENU_QUERY = `#graphql
 
 
 export const MAINMENU_AND_PRODUCTS_QUERY = `#graphql
-  query MainMenu($handle: String!) {
+  # /// query MainMenu($handle: String!) {
+  query MainMenu(
+    $handle: String!,
+    $country: CountryCode,
+    $language: LanguageCode
+  ) @inContext(country: $country, language: $language) { # Use them here
     menu(handle: $handle) {
       items {
         title

@@ -19,7 +19,7 @@ import appStyles from '~/styles/app.css?url';
 import tailwindCss from './styles/tailwind.css?url';
 import { PageLayout } from './components/PageLayout';
 import { MAINMENU_AND_SUBMENU_QUERY } from '~/graphql/sharedQueries';
-
+import { ContextProvider } from './lib/ContextProvider';
 
 
 export type RootLoader = typeof loader;
@@ -47,16 +47,6 @@ export const shouldRevalidate: ShouldRevalidateFunction = ({
 };
 
 
-/*
- * The main and reset stylesheets are added in the Layout component
- * to prevent a bug in development HMR updates.
- *
- * This avoids the "failed to execute 'insertBefore' on 'Node'" error
- * that occurs after editing and navigating to another page.
- *
- * It's a temporary fix until the issue is resolved.
- * https://github.com/remix-run/remix/issues/9242
- */
 
 
 export const links: LinksFunction = () => [
@@ -168,15 +158,17 @@ export default function App() {
   }
 
   return (
-    <Analytics.Provider
-      cart={data.cart}
-      shop={data.shop}
-      consent={data.consent}
-    >
-      <PageLayout {...data} header={data.menuData}>
-        <Outlet />
-      </PageLayout>
-    </Analytics.Provider>
+    <ContextProvider>
+      <Analytics.Provider
+        cart={data.cart}
+        shop={data.shop}
+        consent={data.consent}
+      >
+        <PageLayout {...data} header={data.menuData}>
+          <Outlet />
+        </PageLayout>
+      </Analytics.Provider>
+    </ContextProvider>
   );
 }
 
@@ -214,7 +206,7 @@ export function ErrorBoundary() {
 
 
       <Image
-        data={shopData?.shop.brand?.logo?.image}
+        data={shopData?.shop.brand?.logo?.image || {}}
         className='absolute bottom-[5%] -left-[20%] -z-1 max-w-200 aspect-auto object-cover blur-2xl opacity-70'
       />
     </div>

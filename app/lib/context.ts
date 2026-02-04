@@ -24,9 +24,7 @@ declare global {
  * Returns HydrogenRouterContextProvider with hybrid access patterns
  * */
 export async function createHydrogenRouterContext(
-  request: Request,
-  env: Env,
-  executionContext: ExecutionContext,
+request: Request, env: Env, executionContext: ExecutionContext, p0: unknown,
 ) {
   /**
    * Open a cache instance in the worker and a custom session instance.

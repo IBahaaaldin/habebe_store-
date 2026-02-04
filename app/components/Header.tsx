@@ -1,5 +1,5 @@
-import { Suspense, useId } from 'react';
-import { Await, Link, NavLink, useAsyncValue, useLocation } from 'react-router';
+import { Suspense, useEffect, useId, useState } from 'react';
+import { Await, Form, Link, NavLink, useAsyncValue, useLocation, useSubmit } from 'react-router';
 import {
   Image,
   useAnalytics,
@@ -12,8 +12,7 @@ import { Menu, SearchIcon, ShoppingBag, User } from "lucide-react";
 import { SearchFormPredictive } from './SearchFormPredictive';
 import LoadingSpinner from './MINE/ReUsable/LoadingSpinner';
 import { SearchResultsPredictive } from './SearchResultsPredictive';
-
-
+import { currencies, useCurrency, type CurrencyCode } from '~/lib/ContextProvider';
 
 interface HeaderProps {
   header: HeaderQuery;
@@ -28,8 +27,10 @@ export default function Header({ header, isLoggedIn, cart }: HeaderProps) {
 
   const { menu } = header;
 
+
+
   return (
-    <header className={`z-999 sticky top-0 left-0 right-0 bg-white backdrop-blur-sm w-full mx-auto flex flex-row items-center gap-5 px-[2.5%] py-3.5 duration-500 
+    <header className={`z-999 sticky top-0 left-0 right-0 bg-white backdrop-blur-sm w-full mx-auto flex flex-row items-center gap-5 py-3.5 duration-500 
       `}
     >
       {/* LOGO on TOP */}
@@ -46,6 +47,8 @@ export default function Header({ header, isLoggedIn, cart }: HeaderProps) {
           className='scale-120'
         />
       </NavLink>
+
+
 
       <HeaderMenu
         menu={menu}
@@ -67,8 +70,8 @@ export function HeaderMenu({ menu }: { menu: any }) {
   return (
     <nav role="navigation" className='flex lg:flex-row flex-col gap-3'>
 
-      <ul className="hidden lg:flex flex-row rounded-full"> {/* Increased gap for better look */}
-        {menu?.items.slice(0, 5).map((menu: any) => { // Slice only the first 5 menus
+      <ul className="hidden xl:flex flex-row  justify-center items-center rounded-full"> {/* Increased gap for better look */}
+        {menu?.items.slice(0, 4).map((menu: any) => { // Slice only the first 5 menus
           // Optional: Logic to determine if active
 
           const isMainMenuActive = currentTabURL === menu.resource?.handle;
@@ -131,7 +134,9 @@ export function HeaderMenu({ menu }: { menu: any }) {
           );
         })}
 
-        {menu.items.length > 5 ? "..." : ""}
+        <Link to="/collections" className="text-xs px-3 py-1 hover:text-orange-400 text-nowrap text-orange-300 text-start duration-500">
+          {menu.items.length > 4 ? "More..." : ""}
+        </Link>
       </ul>
     </nav>
   );
@@ -144,6 +149,7 @@ function HeaderCtas({ isLoggedIn, cart, }: Pick<HeaderProps, 'isLoggedIn' | 'car
   return (
     <nav className="header-ctas" role="navigation">
       {/* Mobile Menu */}
+      <ChangeCurrencyButton />
       <HeaderMenuMobileToggle />
       {/* Search functionality */}
       <SearchToggle />
@@ -165,12 +171,32 @@ function HeaderCtas({ isLoggedIn, cart, }: Pick<HeaderProps, 'isLoggedIn' | 'car
 
 
 
+function ChangeCurrencyButton() {
+
+  const { currency, setCurrency } = useCurrency();
+
+  return (
+    <select
+      value={currency}
+      onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
+      className="text-xs font-bold cursor-pointer bg-zinc-100 duration-300 rounded-xl px-3 py-2 focus:border-orange-400 hover:bg-zinc-200 appearance-none outline-hidden transition-all "
+    >
+      {currencies.map((curr) => (
+        <option key={curr.code} value={curr.code} className="bg-white text-black py-2">
+          {curr.flag}&nbsp;{curr.code}
+        </option>
+      ))}
+    </select>
+  )
+}
+
+
 function HeaderMenuMobileToggle() {
 
   const { open } = useAside();
   return (
     <button
-      className="block lg:hidden bg-orange-400 text-black p-1 rounded-lg cursor-pointer hover:opacity-70 duration-300"
+      className="block xl:hidden bg-orange-400 text-black p-1 rounded-lg cursor-pointer hover:opacity-70 duration-300"
       onClick={() => open('mobile')}
     >
       <Menu className='text-white ' size={20} />

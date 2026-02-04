@@ -140,6 +140,13 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
 // AllCategories component displays a horizontal scrollable list of collection categories.
 export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
 
+
+    if (!Array.isArray(allSubMenus) || allSubMenus.length === 0) {
+        return null;
+    }
+
+
+
     return (
         <div className="relative">
             {/* SLIDES */}

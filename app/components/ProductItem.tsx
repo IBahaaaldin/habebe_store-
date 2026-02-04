@@ -1,7 +1,7 @@
 /* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { Link } from 'react-router';
-import { Image } from '@shopify/hydrogen';
+import { Image, Money } from '@shopify/hydrogen';
 import { useMemo, useState } from 'react';
 import type {
   CollectionItemFragment,
@@ -133,10 +133,10 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
         <Prices
           price={price}
-          currency={currency}
           isBig={false}
         />
 
+        {/* <Money data={product.priceRange?.minVariantPrice} /> */}
 
 
         <div className='flex flex-row w-full justify-between items-center '>
