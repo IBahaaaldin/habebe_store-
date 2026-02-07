@@ -69,9 +69,6 @@ export default function Homepage() {
 
   const { MainCollections } = useLoaderData<typeof loader>();
 
-  const usdPrice = 100; // Default price for conversion example
-
-
 
 
   return (
@@ -112,18 +109,19 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
 
 
-  const arrayOfWords = [
-    "Explore",
-    "Browse",
-    "Uncover",
-    "Find",
-    "Dive into",
-    "Check out",
-    "See",
-    "View",
-    "Experience",
-    "Journey through"
-  ];
+  // const arrayOfWords = [
+  //   "Explore",
+  //   "Browse",
+  //   "Uncover",
+  //   "Find",
+  //   "Dive into",
+  //   "Check out",
+  //   "See",
+  //   "View",
+  //   "Experience",
+  //   "Journey through"
+  // ];
+  // const randomWord = useMemo(() => arrayOfWords[Math.floor(Math.random() * arrayOfWords.length)], [])
 
 
   const arrayOfPromotions = [
@@ -140,8 +138,22 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
   ];
 
 
-  const randomWord = useMemo(() => arrayOfWords[Math.floor(Math.random() * arrayOfWords.length)], [])
   const randomPromotion = useMemo(() => arrayOfPromotions[Math.floor(Math.random() * arrayOfPromotions.length)], [])
+
+
+
+  const BannerMap: Record<string, () => JSX.Element | null> = {
+    "pets-supplies": PetsSuppliesBanner,
+    "home-garden-furniture": HomeGardenFurnitureBanner,
+    "consumer-electronics": ConsumerElectronicsBanner,
+    "men-clothing": () => <PlatinumBanners collectionHandle="men-clothing" />,
+  };
+
+  // 2. Render dynamically
+  const SelectedBanner = BannerMap[Handle];
+
+  if (!SelectedBanner) return null;
+
 
   return (
     <section className="flex flex-col gap-10">
@@ -151,97 +163,20 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
       <GridBanners collectionHandle={Handle} bannerArray={gridBanners} />
       <PlatinumBanners bannerArray={platinumBanners} collectionHandle={Handle} />
       <CasualBanners bannerArray={casualBanners} collectionHandle={Handle} />
- */}
+      */}
 
 
-      {Handle === "pets-supplies" &&
-        <div>
-
-          <div className='flex flex-row gap-10 justify-between'>
-            <HeaderText
-              HEAD={`${randomPromotion} ${collectionTitle}`}
-            />
-
-            <ArrowButton
-              Text={`Explore`}
-              CC='border h-fit'
-              Href={`/collections/${Handle}`}
-            />
-          </div>
-          <PetsSuppliesBanner />
+      <div className="space-y-3">
+        <div className="flex flex-row gap-10 justify-between items-center">
+          <SmallHeaderText HEAD={`${randomPromotion} ${collectionTitle}`} />
+          <ArrowButton
+            Text="Explore"
+            CC="border h-fit"
+            Href={`/collections/${Handle}`}
+          />
         </div>
-      }
-
-      {Handle === "home-garden-furniture" &&
-        <div>
-
-          <div className='flex flex-row gap-10 justify-between'>
-            <HeaderText
-              HEAD={`${randomPromotion} ${collectionTitle}`}
-            />
-
-            <ArrowButton
-              Text={`Explore`}
-              CC='border h-fit'
-              Href={`/collections/${Handle}`}
-            />
-          </div>
-          <HomeGardenFurnitureBanner />
-        </div>
-      }
-
-
-      {Handle === "consumer-electronics" &&
-        <div>
-
-          <div className='flex flex-row gap-10 justify-between'>
-            <HeaderText
-              HEAD={`${randomPromotion} ${collectionTitle}`}
-            />
-
-            <ArrowButton
-              Text={`Explore`}
-              CC='border h-fit'
-              Href={`/collections/${Handle}`}
-            />
-          </div>
-          <ConsumerElectronicsBanner />
-        </div>
-      }
-
-
-      {Handle === "men-clothing" &&
-        <div>
-
-          <div className='flex flex-row gap-10 justify-between'>
-            <HeaderText
-              HEAD={`${randomPromotion} ${collectionTitle}`}
-            />
-
-            <ArrowButton
-              Text={`Explore`}
-              CC='border h-fit'
-              Href={`/collections/${Handle}`}
-            />
-          </div>
-          <PlatinumBanners collectionHandle='men-clothing' />
-        </div>
-      }
-
-
-
-      {/*  /// Header text */}
-      {/* <div className='flex flex-row justify-between items-start'>
-        <SmallHeaderText HEAD={`${collectionTitle}${collectionTitle?.endsWith('s') ? "'" : "'s"} Collection`} />
-
-        <Link
-          className='LINK'
-          prefetch="intent"
-          to={`/collections/${Handle}`}
-        >
-          See More
-        </Link>
-      </div> */}
+        <SelectedBanner />
+      </div>
 
 
       {/* /   */}
@@ -249,16 +184,16 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
         <Await resolve={products}>
           {(response) => (
             <div className=''>
-
               <div className="PRODUCTS_GRID_CONTAINER">
-
                 {response
-                  ? response?.nodes?.map((product: any) => (
-                    <ProductItem
-                      key={product?.id}
-                      product={product}
-                    />
-                  ))
+                  ? [...(response?.nodes || [])]
+                    .sort(() => Math.random() - 0.5)
+                    .map((product: any) => (
+                      <ProductItem
+                        key={product?.id}
+                        product={product}
+                      />
+                    ))
                   : null}
               </div>
             </div>
@@ -275,8 +210,6 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
         font-bold text-2xl md:text-4xl lg:text-5xl
         text-center py-12 md:py-16 lg:py-20
         tracking-wide
-        shadow-2xl
-        border-b-4 border-red-500/50
       ">
         {/* Optional subtle overlay pattern / shine */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.08)_0%,transparent_50%)] pointer-events-none" />

@@ -3,6 +3,7 @@ import { Image } from '@shopify/hydrogen';
 import { Link } from 'react-router';
 import ArrowButton from './ReUsable/Buttons';
 import HeaderText, { SmallHeaderText } from './UI/HeaderText';
+import Prices from './UI/Prices';
 
 
 
@@ -13,17 +14,17 @@ export function HomeGardenFurnitureBanner() {
         { id: 1, name: "Beige Sofa", price: 1570, oldPrice: 2000, img: "https://images.pexels.com/photos/6636021/pexels-photo-6636021.jpeg", wide: true },
         { id: 2, name: "Gray Armchair", price: 120, img: "https://images.pexels.com/photos/6636021/pexels-photo-6636021.jpeg" },
         { id: 3, name: "Leather Chair", price: 230, img: "https://images.pexels.com/photos/6636021/pexels-photo-6636021.jpeg" },
-        { id: 4, name: "Wooden Armchair", price: 85, oldPrice: 120, img: "https://images.pexels.com/photos/6636021/pexels-photo-6636021.jpeg", discount: "-30" },
+        { id: 4, name: "Wooden chair", price: 85, oldPrice: 120, img: "https://images.pexels.com/photos/6636021/pexels-photo-6636021.jpeg", discount: "-30" },
         { id: 5, name: "Yellow Sofa", price: 1250, oldPrice: 1600, img: "https://images.pexels.com/photos/6636021/pexels-photo-6636021.jpeg", wide: true, discount: "-30" },
-        { id: 6, name: "Wardrobe", price: 620, img: "https://images.pexels.com/photos/6636021/pexels-photo-6636021.jpeg" },
+        { id: 6, name: "Ward", price: 620, img: "https://images.pexels.com/photos/6636021/pexels-photo-6636021.jpeg" },
     ];
 
 
 
     return (
-        <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+        <section className="grid grid-cols-4 gap-3">
             {products.map((product) => (
-                <div key={product.id} className={`relative md:h-70 h-40 overflow-hidden border rounded-2xl flex flex-col justify-end ${product.wide ? 'md:col-span-2' : 'col-span-1'}`}>
+                <div key={product.id} className={`relative md:h-70 h-50 overflow-hidden border rounded-2xl flex flex-col justify-end ${product.wide ? 'col-span-2' : 'col-span-1'}`}>
                     {/* Product Image */}
                     <Image
                         src={product.img}
@@ -33,27 +34,24 @@ export function HomeGardenFurnitureBanner() {
 
 
                     {product.wide &&
-                        <span className='font-medium absolute top-5 left-5 bg-green-400 px-2 py-1 rounded-xl text-white shadow'>
+                        <span className='font-medium absolute md:top-5 top-3 md:left-5 left-3 bg-green-400 px-2 py-1 rounded-xl text-white shadow'>
                             Best Seller
                         </span>
                     }
 
 
-
                     {/* Footer Info */}
-                    <article className="p-5 flex gap-2 justify-between items-end">
-                        <div>
-                            <h4 className='font-medium' >{product.name}</h4>
+                    <article className="md:p-5 p-3 flex flex-col gap-3 justify-between items-start">
+                        <div className=''>
+                            {/* <h5 className='font-medium' >{product.name}</h5> */}
                             <div className="flex gap-2 items-center">
                                 <span className="font-medium">${product.price}</span>
-                                {product.oldPrice && <span className="text-gray-400 line-through text-sm">${product.oldPrice}</span>}
+                                {product.oldPrice && <span className="text-zinc-400 line-through">${product.oldPrice}</span>}
+                                {/* <Prices price={`${product.price}`} isBig={false} /> */}
                             </div>
                         </div>
 
-
-
-
-
+                        {/* 
                         <button
                             className={`cursor-pointer
                             group absolute right-4 bottom-4 
@@ -71,7 +69,15 @@ export function HomeGardenFurnitureBanner() {
                             </span>
 
                             <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
-                        </button>
+                        </button> */}
+
+                        {product.wide &&
+                            <ArrowButton
+                                Text='Shop Now'
+                                CC='w-fit right-4 bottom-4'
+                                Href='/collections/home-garden-furniture'
+                            />
+                        }
                     </article>
                 </div>
             ))}
@@ -124,7 +130,7 @@ export function PetsSuppliesBanner() {
 
 
     return (
-        <section className="flex flex-col sm:flex-col gap-2">
+        <section className="text-black flex flex-col sm:flex-col gap-2">
             {/* LEFT */}
 
             <div className="w-full flex flex-row gap-2 md:h-70 h-50">
@@ -133,7 +139,7 @@ export function PetsSuppliesBanner() {
                         key={banner}
                         to={`/collections/${collectionHandle}`}
                         aria-label={collectionHandle}
-                        className={`relative md:p-10 p-5 text-white md:rounded-3xl rounded-2xl md:h-full overflow-hidden 
+                        className={`relative md:p-10 p-5 md:rounded-3xl rounded-2xl md:h-full overflow-hidden 
                             ${index % 2 === 0 ? "w-2/3" : "w-1/3"}
                         `}
                     >
@@ -165,7 +171,7 @@ export function PetsSuppliesBanner() {
                         key={banner.id}
                         to={`/collections/${collectionHandle}`}
                         aria-label={collectionHandle}
-                        className={`relative md:p-7 p-5 text-white md:rounded-3xl rounded-2xl md:h-full overflow-hidden w-1/3
+                        className={`relative md:p-7 p-5 md:rounded-3xl rounded-2xl md:h-full overflow-hidden w-1/3
                         `}
                     >
 

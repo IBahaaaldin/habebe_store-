@@ -64,18 +64,13 @@ export function CollectionsNewHero({ Collections, Title, Description, HeroImg, s
     return (
         <div className="w-full flex flex-col gap-3 ">
             {/* /// Main Hero Banner */}
-            <article className="border border-black text-white relative md:rounded-3xl rounded-2xl md:p-10 p-7 overflow-hidden max-h-150 h-[50vh] flex flex-col justify-center gap-5">
+            <article className="border border-black text-white relative md:rounded-3xl rounded-2xl md:p-10 p-7 overflow-hidden max-h-150 h-[70vh] flex flex-col justify-center gap-5">
 
                 <HeroText
                     HEAD={"Modern Minimalist Furniture"}
                     SUBHEAD={subText}
                 />
 
-                <ArrowButton
-                    CC={"w-fit"}
-                    Href={`/collections/${Collections?.handle ?? ''}`}
-                    Text="EXPLORE COLLECTION"
-                />
 
                 <Image
                     src={defaultHeroImage}
@@ -88,9 +83,6 @@ export function CollectionsNewHero({ Collections, Title, Description, HeroImg, s
 
                 />
             </article>
-
-            <TwoGrids subTwoMenus={subTwoMenus} />
-
         </div>
     );
 }
@@ -151,7 +143,7 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
         <div className="relative">
             {/* SLIDES */}
             <article
-                className=" flex items-start justify-start md:gap-5 gap-3 w-full transition-transform duration-500 ease-out overflow-x-scroll SCROLL"
+                className=" flex items-start justify-start gap-3 w-full transition-transform duration-500 ease-out overflow-x-scroll SCROLL"
             >
                 {allSubMenus?.map((menu: any) => (
                     <Link
@@ -173,9 +165,9 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
                             />
                         </figure>
 
-                        <p className="text-black font-medium text-wrap text-center">
+                        <span className="text-black text-wrap text-center">
                             {menu.title.length > 20 ? menu.title.slice(0, 15) + "..." : menu.title}
-                        </p>
+                        </span>
                     </Link>
                 ))}
             </article>

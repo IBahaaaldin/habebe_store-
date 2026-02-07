@@ -58,11 +58,11 @@ export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?:
 
 export function SmallHeaderText({ HEAD, SUBHEAD }: { HEAD?: React.ReactNode, SUBHEAD?: React.ReactNode }) {
     return (
-        <div className="flex flex-col flex-wrap z-1 capitalize items-start justify-start gap-y-1 lg:max-w-sm w-full text-wrap mb-5" >
+        <div className="flex flex-col flex-wrap z-1 capitalize items-start justify-start gap-y-1 w-full text-wrap mb-3" >
             {HEAD &&
-                <h5 className='flex-wrap gap-x-1.5 text-nowrap flex flex-row w-full'>
+                <h4 className='text-start flex-1 gap-x-1.5 text-wrap w-full'>
                     {HEAD}
-                </h5>
+                </h4>
             }
 
             {SUBHEAD &&

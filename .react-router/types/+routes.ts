@@ -24,12 +24,6 @@ type Pages = {
       "version": string;
     };
   };
-  "/:locale?/products/:handle": {
-    params: {
-      "locale"?: string;
-      "handle": string;
-    };
-  };
   "/sitemap/:type/:page.xml": {
     params: {
       "type": string;
@@ -58,6 +52,11 @@ type Pages = {
     };
   };
   "/policies/:handle": {
+    params: {
+      "handle": string;
+    };
+  };
+  "/products/:handle": {
     params: {
       "handle": string;
     };
@@ -163,7 +162,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/blogs/:blogHandle/:articleHandle" | "/api/:version/graphql.json" | "/:locale?/products/:handle" | "/sitemap/:type/:page.xml" | "/blogs/:blogHandle" | "/collections/:handle" | "/account/authorize" | "/collections" | "/:locale?" | "/policies/:handle" | "/terms-conditions" | "/account/logout" | "/collections/all" | "/policies" | "/account/login" | "/discount/:code" | "/privacy-policy" | "/sitemap.xml" | "/pages/:handle" | "/robots.txt" | "/blogs" | "/account" | "/account/orders" | "/account/orders/:id" | "/account/addresses" | "/account/profile" | "/account/*" | "/contact" | "/search" | "/shirts" | "/pants" | "/shoes" | "/cart" | "/cart/:lines" | "/*" | "/graphiql" | "/subrequest-profiler" | "/.well-known/appspecific/com.chrome.devtools.json";
+    page: "/" | "/blogs/:blogHandle/:articleHandle" | "/api/:version/graphql.json" | "/sitemap/:type/:page.xml" | "/blogs/:blogHandle" | "/collections/:handle" | "/account/authorize" | "/collections" | "/:locale?" | "/policies/:handle" | "/products/:handle" | "/terms-conditions" | "/account/logout" | "/collections/all" | "/policies" | "/account/login" | "/discount/:code" | "/privacy-policy" | "/sitemap.xml" | "/pages/:handle" | "/robots.txt" | "/blogs" | "/account" | "/account/orders" | "/account/orders/:id" | "/account/addresses" | "/account/profile" | "/account/*" | "/contact" | "/search" | "/shirts" | "/pants" | "/shoes" | "/cart" | "/cart/:lines" | "/*" | "/graphiql" | "/subrequest-profiler" | "/.well-known/appspecific/com.chrome.devtools.json";
   };
   "routes/blogs.$blogHandle.$articleHandle.tsx": {
     id: "routes/blogs.$blogHandle.$articleHandle";
@@ -172,10 +171,6 @@ type RouteFiles = {
   "routes/api.$version.[graphql.json].tsx": {
     id: "routes/api.$version.[graphql.json]";
     page: "/api/:version/graphql.json";
-  };
-  "routes/($locale).products.$handle.tsx": {
-    id: "routes/($locale).products.$handle";
-    page: "/:locale?/products/:handle";
   };
   "routes/sitemap.$type.$page[.xml].tsx": {
     id: "routes/sitemap.$type.$page[.xml]";
@@ -204,6 +199,10 @@ type RouteFiles = {
   "routes/policies.$handle.tsx": {
     id: "routes/policies.$handle";
     page: "/policies/:handle";
+  };
+  "routes/products.$handle.tsx": {
+    id: "routes/products.$handle";
+    page: "/products/:handle";
   };
   "routes/terms-conditions.tsx": {
     id: "routes/terms-conditions";

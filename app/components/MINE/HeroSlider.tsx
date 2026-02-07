@@ -3,7 +3,7 @@ import type { CollectionItemFragment } from 'storefrontapi.generated';
 import { Image } from '@shopify/hydrogen';
 import ArrowButton, { SliderButtons, SmallIndexButtons } from './ReUsable/Buttons';
 import { AllCategories, TwoGrids } from './CollectionsHero';
-import HeaderText from './UI/HeaderText';
+import HeaderText, { SmallHeaderText } from './UI/HeaderText';
 import Logos from './Logos';
 
 
@@ -95,7 +95,7 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Coll
             /> */}
 
             <div className='mt-3'>
-                <HeaderText
+                <SmallHeaderText
                     HEAD='browse by collection'
                 />
                 <AllCategories

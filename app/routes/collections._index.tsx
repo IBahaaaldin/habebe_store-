@@ -2,7 +2,7 @@ import { useLoaderData, Link } from 'react-router';
 import type { Route } from './+types/collections._index';
 import { Image } from '@shopify/hydrogen';
 import type { CollectionItemFragment } from 'storefrontapi.generated';
-import HeaderText from '~/components/MINE/UI/HeaderText';
+import HeaderText, { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
 
 
 
@@ -32,7 +32,7 @@ export default function Collections() {
 
   return (
     <div className="flex flex-col gap-5 ">
-      <h3 className="font-semibold">Discover our collections</h3>
+      <SmallHeaderText HEAD="Discover our collections"></SmallHeaderText>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
         {items.map((item: any) => {
@@ -231,13 +231,13 @@ export const MAINMENU_AND_PRODUCTS_QUERY = `#graphql
               }
             }
             # /// Fetch products associated with the collection
-            products(first: 10) {
+            products(first: 10, sortKey: TITLE) {
               nodes {
                 id
                 title
                 handle
                 # /// Fetch media to display other images for the same product
-                media(first: 10) {
+                media(first: 50) {
                   nodes {
                     mediaContentType
                     alt
@@ -271,7 +271,7 @@ export const MAINMENU_AND_PRODUCTS_QUERY = `#graphql
                   width
                   height
                 }
-                variants(first: 5) {
+                variants(first: 50) {
                   nodes {
                     id
                     availableForSale

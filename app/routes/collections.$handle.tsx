@@ -110,23 +110,6 @@ export default function Collection() {
         subTwoMenus={specificMenu.slice(0, 2)}
       />
 
-
-      <h2 className="
-        relative overflow-hidden
-        bg-linear-to-r from-blue-800 via-blue-700 to-blue-900
-        text-white 
-        font-bold text-2xl md:text-4xl lg:text-5xl
-        text-center py-12 md:py-16 lg:py-20
-        tracking-wide
-        shadow-2xl
-      ">
-        {/* Optional subtle overlay pattern / shine */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.08)_0%,transparent_50%)] pointer-events-none" />
-
-        BANNER PLACEHOLDER YA ALI
-      </h2>
-
-
       <AllCategories
         allSubMenus={specificMenu}
       />
@@ -139,13 +122,7 @@ export default function Collection() {
       <div className='space-y-5'>
         {collection.products.nodes.length > 0 && (
           <>
-            <BestSeller
-              products={collection.products}
-              Handle={collection.handle}
-              collectionTitle={collection.title}
-            />
-
-            <CasualBanners collectionHandle='' bannerArray={bannersArray} />
+            <CasualBanners collectionHandle={collection.handle} bannerArray={bannersArray} />
 
             <PaginatedResourceSection<ProductFragment>
               connection={collection.products}
@@ -155,7 +132,7 @@ export default function Collection() {
                 <ProductItem
                   key={product.id}
                   product={product}
-                  loading={index < 16 ? 'eager' : undefined}
+                  loading={index < 15 ? 'eager' : undefined}
                 />
               )}
             </PaginatedResourceSection>
@@ -289,7 +266,7 @@ export const COLLECTION_QUERY = `#graphql
       # Add the image field here
       image {
         id
-        url(transform: {maxWidth: 2000, maxHeight: 1000})
+        url
         altText
         width
         height

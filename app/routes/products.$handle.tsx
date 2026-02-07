@@ -1,5 +1,5 @@
 import { Await, redirect, useLoaderData } from 'react-router';
-import type { Route } from './+types/($locale).products.$handle';
+import type { Route } from './+types/products.$handle';
 import {
   getSelectedProductOptions,
   Analytics,
@@ -16,6 +16,7 @@ import Reviews from '~/components/MINE/Reviews';
 import { Suspense, useState } from 'react';
 import LoadingSpinner from '~/components/MINE/ReUsable/LoadingSpinner';
 import Prices from '~/components/MINE/UI/Prices';
+import HeaderText, { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
 
 
 
@@ -123,36 +124,6 @@ export default function Product() {
   const [more, setMore] = useState(150)
 
 
-
-  // 1. Get currency from URL (e.g., mysite.com?cur=EUR)
-  const urlParams = new URLSearchParams(window.location.search);
-  // const targetCurrency = urlParams.get('cur') || 'USD'; // Default to USD
-
-  // 2. Fetch the rate and convert
-  const usdPrice = 100; // Your default price
-
-  // fetch(`https://api.frankfurter.app/latest?from=USD&to=${targetCurrency}`)
-  fetch(`https://api.frankfurter.app/latest?from=USD&to=CAD`)
-    .then(async (res) => {
-      if (!res.ok) {
-        console.error('Failed to fetch exchange rate:', res.statusText);
-        return;
-      }
-      // Cast the JSON to a known shape so TypeScript can infer the rates ologbject
-      const data = (await res.json()) as { rates?: Record<string, number> } | null;
-      const rate = data?.rates?.['CAD'];
-      if (typeof rate !== 'number') {
-        console.error('Invalid or missing exchange rate for CAD:', data);
-        return;
-      }
-      const convertedPrice = (usdPrice * rate).toFixed(2);
-      console.log(`Price in CAD: ${convertedPrice}`);
-      console.log(`%c${JSON.stringify(rate, null, 3)}`, 'color: white; font-size: 20px;')
-      // Display this on your page
-    })
-    .catch((err) => {
-      console.error('Error fetching exchange rate:', err);
-    });
 
 
   // const urlParams = new URLSearchParams(window.location.search);
@@ -289,9 +260,8 @@ function SimilarProducts({ products, Title }: { products: any; Title: string; })
 
   return (
     <div className="border-b border-black/30 pb-10 flex flex-col gap-3">
-      <h3 className='text-start w-full capitalize'>
-        {Title}
-      </h3>
+      <HeaderText HEAD={Title} />
+
 
       <Suspense fallback={<LoadingSpinner />}>
         <Await resolve={products}>
@@ -478,14 +448,14 @@ const SIMILAR_PRODUCTS_QUERY = `#graphql
       collections(first: 1) {
         edges {
           node {
-            products(first: 10) {
+            products(first: 10, sortKey: PRODUCT_TYPE ) {
               edges {
                 node {
                   id
                   title
                   handle
                    # /// Fetch media to display other images for the same product
-                  media(first: 10) {
+                  media(first: 3) { # For the hover effect
                     nodes {
                       mediaContentType
                       alt

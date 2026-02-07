@@ -208,13 +208,6 @@ export function PlatinumBanners({ bannerArray, collectionHandle }: { bannerArray
                                 <span>
                                     Go and buy something you son of a bitch.
                                 </span>
-
-                                <Link
-                                    to={`/collections/${collectionHandle}`}
-                                    className="absolute right-5 bottom-5 bg-white shadow duration-300 p-2 rounded-full"
-                                >
-                                    <ChevronRight size={24} />
-                                </Link>
                             </article>
                         </Link>
                     ))}
@@ -225,6 +218,13 @@ export function PlatinumBanners({ bannerArray, collectionHandle }: { bannerArray
                 <SmallIndexButtons
                     changeIndex={setCurrentIndex}
                     currentIndex={currentIndex}
+                    passedArray={fakeData}
+                />
+
+
+                <SliderButtons
+                    itemsToShow={1}
+                    changeIndex={setCurrentIndex}
                     passedArray={fakeData}
                 />
             </div>

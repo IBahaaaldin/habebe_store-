@@ -56,14 +56,14 @@ export function SliderButtons({
         <>
             <button
                 onClick={prevSlide}
-                className="cursor-pointer absolute -left-2 top-1/2 -translate-y-1/2 z-10 bg-zinc-100 hover:bg-white/30 duration-300 backdrop-blur-sm p-2 rounded-r-full"
+                className="cursor-pointer absolute -left-2 top-1/2 -translate-y-1/2 z-10 bg-black/10 text-white backdrop-blur-sm p-2 rounded-r-full"
             >
                 <ChevronLeft size={24} />
             </button>
 
             <button
                 onClick={nextSlide}
-                className="cursor-pointer absolute -right-2 top-1/2 -translate-y-1/2 z-10 bg-zinc-100 hover:bg-white/30 duration-300 backdrop-blur-sm p-2 rounded-l-full"
+                className="cursor-pointer absolute -right-2 top-1/2 -translate-y-1/2 z-10 bg-black/10 text-white backdrop-blur-sm p-2 rounded-l-full"
             >
                 <ChevronRight size={24} />
             </button>
