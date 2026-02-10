@@ -40,29 +40,28 @@ function CategoryBanner() {
                         className="grid md:grid-cols-4 gap-3 md:gap-5 items-center overflow-hidden backdrop-blur-sm transition-all duration-500"
                     >
                         {/* Image - Spans 3 columns */}
-                        <div className={`relative md:h-60 overflow-hidden  md:col-span-3 
-                            ${isOdd ? 'md:order-1' : 'md:order-2'}
+                        <div className={`group relative w-full md:h-60 h-50 overflow-hidden col-span-4 md:rounded-3xl rounded-2xl
                             `}>
                             <Image
                                 src={category.image}
                                 sizes='75vw' // Updated for better optimization
                                 alt={category.title}
-                                className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                             {isOdd ? (
-                                <div className="absolute inset-0 bg-linear-to-l from-white via-transparent to-black/50" />
-                            ) : (
                                 <div className="absolute inset-0 bg-linear-to-r from-white via-transparent to-black/50" />
+                            ) : (
+                                <div className="absolute inset-0 bg-linear-to-l from-white via-transparent to-black/50" />
                             )}
                         </div>
 
                         {/* Text content - Spans 1 column */}
-                        <div className={`flex flex-col gap-2 text-center md:text-left md:col-span-1
-            ${isOdd ? 'md:order-2' : 'md:order-1'}`}>
+                        <div className={`absolute top-1/2 transform -translate-y-1/2 md:max-w-[40%] max-w-[50%] flex flex-col gap-2 text-center md:text-left md:col-span-1
+                            ${isOdd ? 'left-5' : 'right-5'}`}>
                             <HeaderText HEAD={category.title} SUBHEAD={category.subtitle} />
                             <ArrowButton
                                 Text="Explore"
-                                CC="w-fit border"
+                                CC="w-fit"
                                 Href={`/collections/${category.handle}`}
                             />
                         </div>

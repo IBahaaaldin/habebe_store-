@@ -174,7 +174,7 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
       <div className="flex flex-col gap-5">
 
         <div className="flex flex-row gap-10 justify-between items-center">
-          <SmallHeaderText HEAD={`${randomPromotion}`} />
+          <HeaderText HEAD={`${randomPromotion}`} />
           <ArrowButton
             Text="Explore"
             CC="border h-fit"

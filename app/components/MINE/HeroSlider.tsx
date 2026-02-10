@@ -60,13 +60,13 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Coll
                                 <div className="text-white">
                                     <h2 className="font-medium mb-3">{collection.title}</h2>
                                     <h6 className="font-semibold text-white mb-2">
-                                        {collection.description.slice(0, 70)}...
+                                        {collection.description}
                                     </h6>
                                     <div className="flex items-center gap-4 mb-4">
                                         <span className="bg-orange-300 px-3 py-1 rounded">
                                             {collection.location}
                                         </span>
-                                        <span className="font-medium">Starts from: AED 10</span>
+                                        <span className="font-medium">Starts from: USD 0.99</span>
                                     </div>
                                     <ArrowButton
                                         CC="w-fit"
@@ -94,8 +94,8 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Coll
                 subTwoMenus={mainCollections?.slice(0, 2)}
             /> */}
 
-            <div className='mt-3'>
-                <SmallHeaderText
+            <div className='mt-3 flex flex-col gap-3'>
+                <HeaderText
                     HEAD='browse by collection'
                 />
                 <AllCategories
