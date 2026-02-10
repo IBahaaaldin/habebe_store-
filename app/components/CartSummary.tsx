@@ -41,7 +41,7 @@ export function CartSummary({ cart, layout }: CartSummaryProps) {
 
   const subTotalPrice = Number(cart?.cost?.subtotalAmount?.amount)
   const totalPrice = Number(cart?.cost?.totalAmount?.amount)
-  const totalDiscount = (subTotalPrice - totalPrice).toFixed(2)
+  const totalDiscount = (subTotalPrice - totalPrice)
 
   const currency = cart?.cost?.totalAmount?.currencyCode ?? 'USD';
 
@@ -71,7 +71,7 @@ export function CartSummary({ cart, layout }: CartSummaryProps) {
           <dl className="flex flex-row justify-between">
             <dt className='text-zinc-300'><p> Discounts on orders above <u>$100</u></p></dt>
             <dd className='text-red-500 font-medium'>
-              <p>- {currency} {totalDiscount}</p>
+              <p>- {currency} {totalDiscount.toFixed(2)}</p>
             </dd>
           </dl>
         }
@@ -87,7 +87,7 @@ export function CartSummary({ cart, layout }: CartSummaryProps) {
       <dl className="flex flex-row justify-between border-t border-zinc-300 py-3">
         <dt className='text-zinc-300'><h4 className='text-black'>Total <sup className='text-zinc-400'>price</sup></h4></dt>
         <dd className='font-medium'>
-          <h4>{currency} {cart?.cost?.totalAmount?.amount}</h4>
+          <h4>{currency} {Number(cart?.cost?.totalAmount?.amount ?? 0).toFixed(2)}</h4>
         </dd>
       </dl>
 

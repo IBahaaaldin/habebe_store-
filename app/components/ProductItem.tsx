@@ -60,27 +60,27 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
   const fakeBadges = [
     {
       label: "Best Seller",
-      bg: "bg-yellow-500/50",
+      bg: "bg-yellow-500/90",
       text: "text-white",
     },
     {
       label: "Hot Deal",
-      bg: "bg-red-500/50",
+      bg: "bg-red-500/90",
       text: "text-white",
     },
     {
       label: "New Arrival",
-      bg: "bg-emerald-500/50",
+      bg: "bg-emerald-500/90",
       text: "text-white",
     },
     {
       label: "Trending",
-      bg: "bg-purple-500/50",
+      bg: "bg-purple-500/90",
       text: "text-white",
     },
     {
       label: "Limited Stock",
-      bg: "bg-orange-500/50",
+      bg: "bg-orange-500/90",
       text: "text-white",
     }
   ] as const;
@@ -112,14 +112,16 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
           />
 
 
-          <span
-            className={`
-                absolute top-3 left-3 px-3 py-0.5 rounded-full font-thin backdrop-blur-sm
-                ${badge.bg} ${badge.text} border-b-2 border-l-2 border-white/20
-          `}
-          >
-            {badge.label}
-          </span>
+
+          {price > 20 && (
+            <span
+              className={`font-bold absolute top-3 left-3 px-3 py-0.5 rounded-full backdrop-blur-sm
+            ${badge.bg} ${badge.text} border-b-2 border-l-2 border-white/20
+            `}
+            >
+              {badge.label}
+            </span>
+          )}
         </Link>
       )}
 
@@ -166,7 +168,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
 
       <Share2
-        className="cursor-pointer absolute top-5 right-5 bg-white/80 backdrop-blur-xs hover:bg-white duration-300 rounded-lg z-100 text-orange-400 p-1.5 w-8 h-8"
+        className="cursor-pointer absolute top-5 right-5 bg-white/80 backdrop-blur-xs hover:bg-white duration-300 rounded-lg z-10 text-orange-400 p-1.5 w-8 h-8"
         onClick={handleShareClick}
       />
       {showCopyMessage && (

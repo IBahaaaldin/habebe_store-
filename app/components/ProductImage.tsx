@@ -191,7 +191,7 @@ export function ProductImage({
       </figure>
 
       {/* Thumbnail Gallery */}
-      <div className="relative flex flex-row gap-3 overflow-x-scroll SCROLL w-full">
+      <div className="relative flex flex-row gap-3 overflow-x-scroll  ROW_SCROLL w-full">
         {productMedia?.map((imgData: any, index: number) => (
           <figure
             key={imgData.node?.image?.id || index}

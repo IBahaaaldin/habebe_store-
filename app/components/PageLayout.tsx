@@ -12,7 +12,6 @@ import {
 } from '~/components/SearchFormPredictive';
 import { SearchResultsPredictive } from '~/components/SearchResultsPredictive';
 import FooterSection from './MINE/ReUsable/FooterSection';
-import Logos from './MINE/Logos';
 import Header from './Header';
 import LoadingSpinner from './MINE/ReUsable/LoadingSpinner';
 

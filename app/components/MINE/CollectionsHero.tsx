@@ -143,17 +143,17 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
         <div className="relative">
             {/* SLIDES */}
             <article
-                className=" flex items-start justify-start gap-3 w-full transition-transform duration-500 ease-out overflow-x-scroll SCROLL"
+                className=" flex items-start justify-start md:gap-7 gap-5 w-full transition-transform duration-500 ease-out overflow-x-scroll  ROW_SCROLL"
             >
                 {allSubMenus?.map((menu: any) => (
                     <Link
                         to={`/collections/${menu.handle ?? menu.resource?.handle}`}
                         key={menu.id || menu.handle}
-                        className='flex flex-col items-center gap-3 w-30'
+                        className='flex flex-col items-center gap-2'
 
                     >
                         <figure
-                            className="group relative rounded-full md:w-25 w-20 overflow-hidden border"
+                            className="group relative rounded-4xl md:w-25 w-20 overflow-hidden"
                         >
                             <Image
                                 data={menu.image ?? menu.resource?.image}
@@ -165,9 +165,9 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
                             />
                         </figure>
 
-                        <span className="text-black text-wrap text-center">
+                        <p className="text-black text-wrap text-center">
                             {menu.title.length > 20 ? menu.title.slice(0, 15) + "..." : menu.title}
-                        </span>
+                        </p>
                     </Link>
                 ))}
             </article>

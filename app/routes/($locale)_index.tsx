@@ -1,20 +1,21 @@
 import { Await, useLoaderData, Link } from 'react-router';
-import type { Route } from './+types/($locale)._index';
+import type { Route } from './+types/($locale)_index';
 import { Suspense, useMemo, } from 'react';
 import { ProductItem } from '~/components/ProductItem';
 import CollectionsHero, { AllCategories, CollectionsNewHero, TwoGrids } from '~/components/MINE/CollectionsHero';
 import Reviews from '~/components/MINE/Reviews';
 
 // For the collection section
-import { MAINMENU_AND_PRODUCTS_QUERY } from './collections._index';
+import { MAINMENU_AND_PRODUCTS_QUERY } from './($locale).collections._index';
 import LoadingSpinner from '~/components/MINE/ReUsable/LoadingSpinner';
 import FAQs from '~/components/MINE/FAQs';
 import HeaderText, { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
-import { PlatinumBanners, GridBanners, ScrollBanners, CasualBanners } from '~/components/MINE/AdsSections';
+import { PlatinumBanners, GridBanners, ScrollBanners, CasualBanners, OverflowBanners } from '~/components/MINE/AdsSections';
 import HeroSlider from '~/components/MINE/HeroSlider';
 import ArrowButton, { SliderButtons } from '~/components/MINE/ReUsable/Buttons';
 import { ConsumerElectronicsBanner, HomeGardenFurnitureBanner, PetsSuppliesBanner } from '~/components/MINE/NewCollectionsBanners';
 import Logos from '~/components/MINE/Logos';
+import CategoryBanner from '~/components/MINE/CategoryBanner';
 
 
 
@@ -30,30 +31,32 @@ export const meta: Route.MetaFunction = () => [
 
 // Handle HTTP caching for the homepage
 export async function loader(args: Route.LoaderArgs) {
+  // Get language/country from the context (set in server.ts)
+  const { language, country } = args.context.storefront.i18n;
+
   const deferredData = loadDeferredData(args);
-  const criticalData = await loadCriticalData(args);
+  const criticalData = await loadCriticalData(args, language, country);
 
   return { ...deferredData, ...criticalData };
 }
 
 
 
-async function loadCriticalData({ context }: Route.LoaderArgs) {
+async function loadCriticalData({ context }: Route.LoaderArgs, language: any, country: any) {
 
-  // Fetch the main menu and its associated products (only 10 products per collection)
   const [MainMenu] = await Promise.all([
     context.storefront.query(MAINMENU_AND_PRODUCTS_QUERY, {
       variables: {
         handle: 'main-menu',
+        language, // Pass language to the query
+        country,  // Pass country to the query
       }
     }),
   ]);
 
-  const MainCollections = MainMenu?.menu?.items?.map((item: any) => item.resource); // Used for Fetching Collections like => Men, Women, Unisex, ...
+  const MainCollections = MainMenu?.menu?.items?.map((item: any) => item.resource);
 
-  return {
-    MainCollections, // Object called Collections
-  };
+  return { MainCollections };
 }
 
 
@@ -77,6 +80,7 @@ export default function Homepage() {
         mainCollections={MainCollections ?? []}
       />
 
+      <OverflowBanners />
 
       {/* <Collections /> */}
       {MainCollections?.map((collection: any) => (
@@ -126,15 +130,15 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
   const arrayOfPromotions = [
     "Up to 10% off",
-    "Hot deals on",
+    "Hot deals",
     "Save up to 15%",
-    "Exclusive offers on",
+    "Exclusive offers",
     "Up to 20% discount",
     "Best deals for",
-    "Limited-time offers on",
+    "Limited-time offers",
     "Grab up to 25% off",
-    "Special prices on",
-    "Amazing savings on"
+    "Special prices",
+    "Amazing savings"
   ];
 
 
@@ -143,10 +147,10 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
 
   const BannerMap: Record<string, () => JSX.Element | null> = {
-    "pets-supplies": PetsSuppliesBanner,
-    "home-garden-furniture": HomeGardenFurnitureBanner,
-    "consumer-electronics": ConsumerElectronicsBanner,
-    "men-clothing": () => <PlatinumBanners collectionHandle="men-clothing" />,
+    "pets": PetsSuppliesBanner,
+    // "home-garden-furniture": HomeGardenFurnitureBanner,
+    // "consumer-electronics": ConsumerElectronicsBanner,
+    "men": () => <CategoryBanner />,
   };
 
   // 2. Render dynamically
@@ -164,11 +168,13 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
       <PlatinumBanners bannerArray={platinumBanners} collectionHandle={Handle} />
       <CasualBanners bannerArray={casualBanners} collectionHandle={Handle} />
       */}
+      {/* <ScrollBanners bannerArray={scrollBanners} Title={collectionTitle} collectionHandle={Handle} /> */}
 
 
-      <div className="space-y-3">
+      <div className="flex flex-col gap-5">
+
         <div className="flex flex-row gap-10 justify-between items-center">
-          <SmallHeaderText HEAD={`${randomPromotion} ${collectionTitle}`} />
+          <SmallHeaderText HEAD={`${randomPromotion}`} />
           <ArrowButton
             Text="Explore"
             CC="border h-fit"

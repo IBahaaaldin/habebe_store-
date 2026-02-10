@@ -6,20 +6,20 @@ import PaymentIcons from "../UI/PaymentIcons";
 
 
 
-
-
-
 export default function FooterSection({ header }: { header: any }) {
 
     const [email, setEmail] = useState<string>('')
+    const [message, setMessage] = useState<string>('')
 
 
     /// Show Subscribe Alert
     function subscribeFun() {
         if (email.length > 5 && email.includes('com') && email.includes('@')) {
-            // toast.success("subscribed successfully")
+            setMessage("Subscribed successfully!")
             setEmail("")
+            setTimeout(() => setMessage(''), 5000)
         } else {
+            setMessage("Please enter a valid email")
             // toast.error('Please enter a valide email')
         }
     }
@@ -152,12 +152,11 @@ export default function FooterSection({ header }: { header: any }) {
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                     />
+                    {message && <span className={`text-sm ${message.includes('success') ? 'text-green-600' : 'text-red-500'}`}>{message}</span>}
                     <button className="BUTTON2 w-full"
                         onClick={() => subscribeFun()}
                     >Subscribe</button>
                 </section>
-
-
 
 
                 {/* /// ABOUT US */}
@@ -172,6 +171,7 @@ export default function FooterSection({ header }: { header: any }) {
                             />
                         </figure>
                     )}
+
 
                     {/* //  */}
                     <div className="flex flex-col gap-3">

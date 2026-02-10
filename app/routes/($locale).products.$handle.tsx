@@ -1,5 +1,5 @@
 import { Await, redirect, useLoaderData } from 'react-router';
-import type { Route } from './+types/products.$handle';
+import type { Route } from './+types/($locale).products.$handle';
 import {
   getSelectedProductOptions,
   Analytics,
@@ -7,7 +7,6 @@ import {
   getProductOptions,
   getAdjacentAndFirstAvailableVariants,
   useSelectedOptionInUrlParam,
-  Money,
 } from '@shopify/hydrogen';
 import { ProductImage } from '~/components/ProductImage';
 import { ProductForm } from '~/components/ProductForm';
@@ -89,7 +88,6 @@ async function loadCriticalData({ context, params, request }: Route.LoaderArgs) 
 function loadDeferredData({ context, params }: Route.LoaderArgs) {
   return {};
 }
-
 
 
 export default function Product() {

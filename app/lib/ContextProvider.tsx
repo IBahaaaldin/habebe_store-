@@ -9,7 +9,11 @@ export const currencies = [
   { code: 'CAD', symbol: 'C$', name: 'Canada', flag: '🇨🇦', rate: 1.41 },
   { code: 'EUR', symbol: '€', name: 'Europe', flag: '🇪🇺', rate: 0.95 },
   { code: 'SYP', symbol: 'LS', name: 'Syria', flag: '🇸🇾', rate: 14650 },
-
+  { code: 'KWD', symbol: 'KD', name: 'Kuwait', flag: '🇰🇼', rate: 0.31 },
+  { code: 'RUB', symbol: '₽', name: 'Russia', flag: '🇷🇺', rate: 105.50 },
+  { code: 'MAD', symbol: 'DH', name: 'Morocco', flag: '🇲🇦', rate: 10.10 },
+  { code: 'TND', symbol: 'DT', name: 'Tunisia', flag: '🇹🇳', rate: 3.15 },
+  { code: 'LYD', symbol: 'LD', name: 'Libya', flag: '🇱🇾', rate: 4.85 }
 ] as const;
 
 export type CurrencyCode = typeof currencies[number]['code'];

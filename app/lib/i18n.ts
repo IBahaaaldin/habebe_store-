@@ -19,22 +19,22 @@ import type {I18nBase} from '@shopify/hydrogen';
 //     : defaultLocale;
 // }
 
-
 export function getLocaleFromRequest(request: Request): I18nBase {
   const url = new URL(request.url);
+  // This gets "AR" from "/ar"
   const firstPathPart = url.pathname.split('/')[1]?.toUpperCase();
 
   const supportedLocales: Record<string, I18nBase> = {
     CA: { language: 'EN', country: 'CA' },
     GB: { language: 'EN', country: 'GB' },
     JP: { language: 'JA', country: 'JP' },
+    // ADD YOUR ARABIC LOCALE HERE
+    AR: { language: 'AR', country: 'AE' }, // Use 'CA' if your Shopify market is set to Canada
   };
 
-  // If the URL is habebe.store/ca, this returns the CA config
   if (firstPathPart && supportedLocales[firstPathPart]) {
     return supportedLocales[firstPathPart];
   }
 
-  // Default to US/USD
   return { language: 'EN', country: 'US' };
 }

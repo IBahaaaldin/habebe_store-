@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router";
 import { Image } from "@shopify/hydrogen";
-import { Calendar, Ticket, ChevronRight } from 'lucide-react';
-import { SliderButtons, SmallIndexButtons } from "./ReUsable/Buttons";
+import { Calendar, Ticket, ChevronRight } from 'lucide-react'; import { SliderButtons, SmallIndexButtons } from "./ReUsable/Buttons";
+import HeaderText from "./UI/HeaderText";
 
 
 
@@ -23,7 +23,7 @@ export default function MainBanners({ bannerArray }: { bannerArray?: any }) {
 
 
 
-    if (!Array.isArray(bannerArray)) {
+    if (!Array.isArray(bannerArray) || bannerArray.length === 0) {
         return null
     }
 
@@ -68,7 +68,7 @@ export function ScrollBanners({ bannerArray, Title, collectionHandle }: { banner
 
 
 
-    if (!Array.isArray(bannerArray)) {
+    if (!Array.isArray(bannerArray) || bannerArray.length === 0) {
         return null
     }
 
@@ -118,13 +118,13 @@ export function ScrollBanners({ bannerArray, Title, collectionHandle }: { banner
 export function GridBanners({ bannerArray, collectionHandle }: { bannerArray: any, collectionHandle: string }) {
 
 
-    if (!Array.isArray(bannerArray)) {
+    if (!Array.isArray(bannerArray) || bannerArray.length === 0) {
         return null;
     }
 
 
     return (
-        <section className="w-full overflow-x-scroll flex flex-row sm:grid grid-cols-2 lg:grid-cols-4 gap-3 ">
+        <section className="w-full overflow-x-scroll HIDDEN_SCROLL flex flex-row sm:grid grid-cols-2 lg:grid-cols-4 gap-3 ">
             {bannerArray.map((banner: any, index: number) => (
                 <figure key={index} className="object-cover min-w-[70%] sm:w-full h-full rounded-xl overflow-hidden">
                     <Image
@@ -140,6 +140,103 @@ export function GridBanners({ bannerArray, collectionHandle }: { bannerArray: an
 }
 
 
+export function OverflowBanners({ bannerArray, collectionHandle }: { bannerArray?: any, collectionHandle?: string, }) {
+
+
+    // if (!Array.isArray(bannerArray) || bannerArray.length === 0) {
+    //     return null;
+    // }
+
+    const fakeBannerArray = [
+        {
+            image: {
+                url: "https://images.pexels.com/photos/7282024/pexels-photo-7282024.jpeg",
+                altText: "Banner 1",
+            },
+        },
+        {
+            image: {
+                url: "https://images.pexels.com/photos/6990620/pexels-photo-6990620.jpeg",
+                altText: "Banner 2",
+            },
+        },
+        {
+            image: {
+                url: "https://images.pexels.com/photos/30379114/pexels-photo-30379114.jpeg",
+                altText: "Banner 3",
+            },
+        },
+        {
+            image: {
+                url: "https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg",
+                altText: "Banner 3",
+            },
+        },
+        {
+            image: {
+                url: "https://images.pexels.com/photos/5650016/pexels-photo-5650016.jpeg",
+                altText: "Banner 3",
+            },
+        },
+    ];
+
+
+
+    const arrayOfPromotions = [
+        "Up to 10% off",
+        "Hot deals",
+        "Save up to 15%",
+        "Exclusive offers",
+        "Up to 20% discount",
+        "Best deals for",
+        "Limited-time offers",
+        "Grab up to 25% off",
+        "Special prices",
+        "Amazing savings"
+    ];
+
+
+    const randomPromotion = useMemo(() => arrayOfPromotions[Math.floor(Math.random() * arrayOfPromotions.length)], [])
+
+
+
+
+    return (
+        <section className="flex flex-col gap-3">
+
+
+            <HeaderText
+                HEAD={randomPromotion}
+            />
+
+
+
+            <div className="w-full overflow-x-scroll HIDDEN_SCROLL flex flex-row gap-3">
+
+                {fakeBannerArray.map((banner: any, index: number) => (
+                    <figure key={index} className="object-cover min-h-50 max-h-50 min-w-100 max-w-100 rounded-xl overflow-hidden">
+                        <Image
+                            key={index}
+                            data={banner?.image}
+                            alt={`${collectionHandle}` || "Banner"}
+                            className='h-full w-full md:rounded-3xl rounded-2xl object-cover'
+                        />
+                    </figure>
+                ))}
+                {fakeBannerArray.map((banner: any, index: number) => (
+                    <figure key={index} className="object-cover min-h-50 max-h-50 min-w-100 max-w-100 rounded-xl overflow-hidden">
+                        <Image
+                            key={index}
+                            data={banner?.image}
+                            alt={`${collectionHandle}` || "Banner"}
+                            className='h-full w-full md:rounded-3xl rounded-2xl object-cover'
+                        />
+                    </figure>
+                ))}
+            </div>
+        </section>
+    )
+}
 
 
 
@@ -228,65 +325,10 @@ export function PlatinumBanners({ bannerArray, collectionHandle }: { bannerArray
                     passedArray={fakeData}
                 />
             </div>
-
-
-            {/* Footer Section */}
-            {/* <div className="pt-3 w-full text-end">
-                <span className="text-gray-600 text-sm">
-                    Sponsors &nbsp;
-                    <Link
-                        to={"#"}
-                        className="text-blue-600 hover:text-blue-700 font-semibold"
-                    >
-                        Advertising with us
-                    </Link>
-                </span>
-            </div> */}
         </section>
-
     );
 };
 
-
-
-// <div
-//     className="flex h-60 transition-transform duration-700 ease-in-out"
-//     style={{
-//         transform: `translateX(-${currentIndex * 100}%)`,
-//     }}
-// >
-//     {bannerArray.map((banner: any) => (
-//         <div
-//             key={banner?.image?.url}
-//             className="flex min-w-full border border-black/10 rounded-2xl shadow-[0px_0px_15px_-10px] overflow-hidden"
-//         >
-//             {/* Image */}
-//             <Image
-//                 data={banner?.image}
-//                 alt={collectionHandle}
-//                 className="min-w-[50%] h-full object-cover"
-//             />
-
-//             {/* Content */}
-//             <div className="relative p-5 flex flex-col justify-center gap-2 w-full">
-//                 <h3 className="font-medium uppercase">
-//                     {collectionHandle} Collection
-//                 </h3>
-
-//                 <p>
-//                     Go and buy something you son of a bitch. Just kidding, have a good day.
-//                 </p>
-
-//                 <Link
-//                     to={`collections/${collectionHandle}`}
-//                     className="absolute right-5 bottom-5 bg-zinc-100 shadow hover:bg-white duration-300 p-2 rounded-full"
-//                 >
-//                     <ChevronRight size={24} />
-//                 </Link>
-//             </div>
-//         </div>
-//     ))}
-// </div>
 
 
 
@@ -297,7 +339,7 @@ type Banner = { image?: any };
 export function CasualBanners({ bannerArray, collectionHandle }: { bannerArray: Banner[], collectionHandle: string }) {
 
 
-    if (!Array.isArray(bannerArray)) {
+    if (!Array.isArray(bannerArray) || bannerArray.length === 0) {
         return null;
     }
 

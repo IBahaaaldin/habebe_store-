@@ -179,7 +179,7 @@ function ChangeCurrencyButton() {
     <select
       value={currency}
       onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
-      className="text-xs font-bold cursor-pointer bg-zinc-100 duration-300 rounded-xl px-3 py-2 focus:border-orange-400 hover:bg-zinc-200 appearance-none outline-hidden transition-all "
+      className="text-xs font-bold cursor-pointer bg-zinc-100 duration-300 rounded-xl px-3 py-2 focus:border-orange-400 hover:bg-zinc-200 appearance-none outline-hidden transition-all max-h-[200px] overflow-y-auto"
     >
       {currencies.map((curr) => (
         <option key={curr.code} value={curr.code} className="bg-white text-black py-2">

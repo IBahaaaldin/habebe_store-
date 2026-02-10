@@ -149,7 +149,7 @@ export function PetsSuppliesBanner() {
                             className="-z-1 absolute inset-0 object-cover md:rounded-3xl rounded-2xl w-full h-full hover:scale-105  duration-500"
                         />
 
-                        <HeaderText
+                        <SmallHeaderText
                             HEAD='Watch Wearable Device'
                         />
                         {index % 2 === 0 &&

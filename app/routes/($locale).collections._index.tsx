@@ -1,8 +1,8 @@
 import { useLoaderData, Link } from 'react-router';
-import type { Route } from './+types/collections._index';
+import type { Route } from './+types/($locale).collections._index';
 import { Image } from '@shopify/hydrogen';
 import type { CollectionItemFragment } from 'storefrontapi.generated';
-import HeaderText, { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
+import { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
 
 
 
@@ -26,7 +26,7 @@ export default function Collections() {
   const { MainCollections } = useLoaderData<typeof loader>();
 
   const items = MainCollections?.menu?.items || [];
-  console.log(`%c${JSON.stringify(items, null, 3)}`, 'color: white; font-size: 20px;')
+  // console.log(`%c${JSON.stringify(items, null, 3)}`, 'color: white; font-size: 20px;')
 
 
 
