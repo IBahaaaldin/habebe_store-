@@ -143,8 +143,8 @@ form {
 
 
 .SEARCH_CONTAINERS {
-    @apply flex absolute bg-red-900 top-16 right-0 left-0 md:rounded-3xl rounded-2xl overflow-hidden p-5 border border-black/10;
-    @apply md:p-10;
+    @apply flex absolute top-18 right-0 left-0 md:rounded-3xl rounded-2xl overflow-hidden p-3 border border-black/10;
+    @apply md:p-5;
 }
 
 .LINK {

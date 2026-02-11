@@ -30,7 +30,7 @@ const categories = [
 
 function CategoryBanner() {
     return (
-        <div className="flex flex-col gap-5 text-black">
+        <div className="flex flex-col md:gap-5 gap-3 text-black">
             {categories.map((category, index) => {
                 const isOdd = index % 2 === 0; // 0,2,4... → left image
 
@@ -57,13 +57,8 @@ function CategoryBanner() {
 
                         {/* Text content - Spans 1 column */}
                         <div className={`absolute top-1/2 transform -translate-y-1/2 md:max-w-[40%] max-w-[50%] flex flex-col gap-2 text-center md:text-left md:col-span-1
-                            ${isOdd ? 'left-5' : 'right-5'}`}>
-                            <HeaderText HEAD={category.title} SUBHEAD={category.subtitle} />
-                            <ArrowButton
-                                Text="Explore"
-                                CC="w-fit"
-                                Href={`/collections/${category.handle}`}
-                            />
+                            ${isOdd ? 'left-10' : 'right-10'}`}>
+                            <h3 className="font-bold ">{category.title}</h3>
                         </div>
                     </div>
                 );

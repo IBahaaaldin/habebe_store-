@@ -60,27 +60,27 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
   const fakeBadges = [
     {
       label: "Best Seller",
-      bg: "bg-yellow-500/90",
+      bg: "bg-yellow-500/50",
       text: "text-white",
     },
     {
       label: "Hot Deal",
-      bg: "bg-red-500/90",
+      bg: "bg-red-500/50",
       text: "text-white",
     },
     {
       label: "New Arrival",
-      bg: "bg-emerald-500/90",
+      bg: "bg-emerald-500/50",
       text: "text-white",
     },
     {
       label: "Trending",
-      bg: "bg-purple-500/90",
+      bg: "bg-purple-500/50",
       text: "text-white",
     },
     {
       label: "Limited Stock",
-      bg: "bg-orange-500/90",
+      bg: "bg-orange-500/50",
       text: "text-white",
     }
   ] as const;
@@ -115,7 +115,7 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
 
           {price > 20 && (
             <span
-              className={`font-bold absolute top-3 left-3 px-3 py-0.5 rounded-full backdrop-blur-sm
+              className={`font-thin absolute top-3 left-3 px-3 py-0.5 rounded-full backdrop-blur-sm
             ${badge.bg} ${badge.text} border-b-2 border-l-2 border-white/20
             `}
             >
@@ -137,8 +137,6 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
           price={price}
           isBig={false}
         />
-
-        {/* <Money data={product.priceRange?.minVariantPrice} /> */}
 
 
         <div className='flex flex-row w-full justify-between items-center '>

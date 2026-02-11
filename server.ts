@@ -14,13 +14,25 @@ export default {
     executionContext: ExecutionContext,
   ): Promise<Response> {
     try {
+      /**
+       * CSRF Fix: Normalize the origin header to match the host.
+       * This prevents the "host header does not match origin" error.
+       */
+      const url = new URL(request.url);
+      const modifiedRequest = new Request(request, {
+        headers: new Headers(request.headers),
+      });
+
+      if (modifiedRequest.headers.has('origin')) {
+        modifiedRequest.headers.set('origin', url.origin);
+      }
+
       const hydrogenContext = await createHydrogenRouterContext(
-        request,
+        modifiedRequest,
         env,
         executionContext,
         {
-          // ADD THIS LINE
-          i18n: getLocaleFromRequest(request),
+          i18n: getLocaleFromRequest(modifiedRequest),
         }
       );
 
@@ -35,7 +47,7 @@ export default {
         getLoadContext: () => hydrogenContext,
       });
 
-      const response = await handleRequest(request);
+      const response = await handleRequest(modifiedRequest);
 
       if (hydrogenContext.session.isPending) {
         response.headers.set(
@@ -45,13 +57,8 @@ export default {
       }
 
       if (response.status === 404) {
-        /**
-         * Check for redirects only when there's a 404 from the app.
-         * If the redirect doesn't exist, then `storefrontRedirect`
-         * will pass through the 404 response.
-         */
         return storefrontRedirect({
-          request,
+          request: modifiedRequest,
           response,
           storefront: hydrogenContext.storefront,
         });

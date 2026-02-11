@@ -1,6 +1,6 @@
 import { useLoaderData } from 'react-router';
 import type { Route } from './+types/search';
-import { getPaginationVariables, Analytics } from '@shopify/hydrogen';
+import { getPaginationVariables, Analytics, Pagination } from '@shopify/hydrogen';
 import { SearchResults } from '~/components/SearchResults';
 import {
   type RegularSearchReturn,
@@ -11,8 +11,9 @@ import type {
   RegularSearchQuery,
   PredictiveSearchQuery,
 } from 'storefrontapi.generated';
-import { SearchResultsPredictiveProducts } from '~/components/SearchResultsPredictive';
+import { SearchResultsPredictive } from '~/components/SearchResultsPredictive';
 import { SearchFormPredictive } from '~/components/SearchFormPredictive';
+import { useEffect, useState } from 'react';
 
 
 
@@ -44,6 +45,50 @@ export default function SearchPage() {
   const { type, term, result, error } = useLoaderData<typeof loader>();
   if (type === 'predictive') return null;
 
+
+
+  const [placeholder, setPlaceholder] = useState("");
+  const words = [
+    "Oversized linen shirt",        // Men's Clothes
+    "Mid-century modern lamp",     // Decor
+    "Slim fit navy chino",         // Men's Fashion
+    "Ceramic bubble vase",         // Decor
+    "Chelsea boots leather",       // Men's Fashion
+    "Abstract wall art print",     // Decor
+    "Heavyweight hooded sweatshirt", // Men's Clothes
+    "Minimalist coffee table",     // Decor
+    "Polarized retro sunglasses",  // Men's Fashion
+    "Velvet throw pillows"         // Decor
+  ];
+  const [index, setIndex] = useState(0);
+  const [subIndex, setSubIndex] = useState(0);
+  const [reverse, setReverse] = useState(false);
+
+  useEffect(() => {
+    if (subIndex === words[index].length + 1 && !reverse) {
+      setTimeout(() => setReverse(true), 1000); // Pause at end
+      return;
+    }
+
+    if (subIndex === 0 && reverse) {
+      setReverse(false);
+      setIndex((prev) => (prev + 1) % words.length); // Move to next word
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setSubIndex((prev) => prev + (reverse ? -1 : 1));
+    }, reverse ? 75 : 150); // Speed: faster when deleting
+
+    return () => clearTimeout(timeout);
+  }, [subIndex, index, reverse]);
+
+  useEffect(() => {
+    setPlaceholder(words[index].substring(0, subIndex));
+  }, [subIndex]);
+
+
+
   return (
     <div className="flex flex-col gap-3">
       <SearchFormPredictive>
@@ -53,7 +98,7 @@ export default function SearchPage() {
               name="q"
               onChange={fetchResults}
               onFocus={fetchResults}
-              placeholder="Search"
+              placeholder={placeholder}
               ref={inputRef}
               type="search"
               className='INPUT'
@@ -68,15 +113,35 @@ export default function SearchPage() {
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <Analytics.SearchView data={{ searchTerm: term, searchResults: result }} />
 
+
       <SearchResults result={result} term={term}>
         {({ products, term }) => (
-          <SearchResultsPredictiveProducts
-            products={products?.nodes ?? []}
-            term={{ current: term ?? '' }}
-            closeSearch={() => { }}
-          />
+          <div className="flex flex-col gap-6">
+            {/* 1. Use Pagination component to wrap the results */}
+            <Pagination connection={products}>
+              {({ nodes, NextLink, hasNextPage, isLoading }) => (
+                <>
+                  <SearchResultsPredictive.Products
+                    products={nodes}
+                    term={{ current: term ?? '' }}
+                    closeSearch={() => { }}
+                  />
+
+                  {/* 2. NextLink is provided by the Pagination wrapper */}
+                  {hasNextPage && (
+                    <div className="flex justify-center mt-8">
+                      <NextLink className="BUTTON1 px-6 py-2">
+                        {isLoading ? 'Loading...' : 'Load More'}
+                      </NextLink>
+                    </div>
+                  )}
+                </>
+              )}
+            </Pagination>
+          </div>
         )}
       </SearchResults>
+
 
     </div>
   );

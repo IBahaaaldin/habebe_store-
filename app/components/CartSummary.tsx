@@ -54,7 +54,7 @@ export function CartSummary({ cart, layout }: CartSummaryProps) {
         <dl className="flex flex-row justify-between">
           <dt className='text-zinc-300'><p>Subtotal</p></dt>
           <dd className=' font-medium'>
-            <p> {cart?.cost?.subtotalAmount?.currencyCode} {Number(cart?.cost?.subtotalAmount?.amount ?? 0) + totalDiscountOnAllProducts}</p>
+            <p> {cart?.cost?.subtotalAmount?.currencyCode} {Number(cart?.cost?.subtotalAmount?.amount ?? 0).toFixed(2) + totalDiscountOnAllProducts.toFixed(2)}</p>
           </dd>
         </dl>
 

@@ -200,7 +200,7 @@ function SearchResultsPredictivePages({
 
 
 /// Search results for products
-export function SearchResultsPredictiveProducts({
+function SearchResultsPredictiveProducts({
   term,
   products,
   closeSearch,
@@ -216,8 +216,6 @@ export function SearchResultsPredictiveProducts({
     }
   }, [location, closeSearch]);
 
-
-  console.log(`%c${JSON.stringify(location.pathname, null, 3)}`, 'color: white; font-size: 20px;')
 
 
   // Close search when clicking outside
@@ -235,9 +233,9 @@ export function SearchResultsPredictiveProducts({
 
 
   return (
-    <div ref={containerRef} className="flex flex-col gap-3 w-full" key="products">
-      <h5 className='md:text-xl text-lg font-medium'>Products</h5>
-      <ul className='flex flex-col gap-3 overflow-y-scroll'>
+    <div ref={containerRef} className="flex flex-col gap-5 mt-3 w-full" key="products">
+      <h3 className='font-medium'>Matched Products</h3>
+      <ul className='flex flex-col gap-3 '>
         {products.map((product) => {
           const productUrl = urlWithTrackingParams({
             baseUrl: `/products/${product.handle}`,
@@ -249,25 +247,27 @@ export function SearchResultsPredictiveProducts({
           const image = product?.selectedOrFirstAvailableVariant?.image;
 
           return (
-            <Link className="flex flex-row gap-3" key={product.id} to={productUrl} onClick={closeSearch}>
+            <div className="flex flex-row gap-3" key={product.id} onClick={closeSearch}>
               {image && (
-                <figure className='min-w-25 min-h-25 p-1.5 rounded-xl overflow-hidden bg-zinc-100'>
+                <div className="overflow-hidden rounded-2xl w-30 h-30 border">
                   <Image
                     alt={image.altText ?? ''}
                     src={image.url}
-                    width={50}
-                    height={50}
-                    sizes='100px'
-                    className='w-full h-full rounded-lg object-cover hover:scale-105 duration-300'
+                    sizes="200px"
+                    className="w-full h-full object-cover duration-300 hover:scale-105"
                   />
-                </figure>
+                </div>
               )}
 
-              <div>
-                <p className='font-medium'>{product.title}</p>
-                {price && <Prices price={price.amount} currency={price.currencyCode} />}
+              <div className='flex flex-col gap-1'>
+                <h5 className='font-medium max-w-3xl'>{product.title}</h5>
+                {price && <Prices price={price.amount} />}
+                <Link to={productUrl} className="BUTTON2 w-fit mt-3">
+                  Show Details
+                </Link>
               </div>
-            </Link>
+
+            </div>
           );
         })}
       </ul>
@@ -275,6 +275,86 @@ export function SearchResultsPredictiveProducts({
   );
 }
 
+
+/// Search results for products - Same page version (used in predictive search aside)
+export function SearchResultsPredictiveProductsSamePage({
+  term,
+  products,
+  closeSearch,
+}: PartialPredictiveSearchResult<'products'>) {
+  if (!products.length) return null;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+
+  // Close search when URL changes
+  useEffect(() => {
+    if (location.pathname || location.search) {
+      closeSearch();
+    }
+  }, [location, closeSearch]);
+
+
+
+  // Close search when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        closeSearch();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [closeSearch]);
+
+
+
+  return (
+    <div ref={containerRef} className="flex flex-col gap-5 mt-3 w-full" key="products">
+      <ul className='flex flex-col gap-3'>
+        {products.map((product) => {
+          const productUrl = urlWithTrackingParams({
+            baseUrl: `/products/${product.handle}`,
+            trackingParams: product.trackingParameters,
+            term: term.current,
+          });
+
+          const price = product?.selectedOrFirstAvailableVariant?.price;
+          const image = product?.selectedOrFirstAvailableVariant?.image;
+
+          return (
+            <div className="flex flex-row gap-3" key={product.id} onClick={closeSearch}>
+              {image && (
+                <div className="overflow-hidden rounded-2xl w-20 h-20 border">
+                  <Image
+                    alt={image.altText ?? ''}
+                    src={image.url}
+                    sizes="100px"
+                    className="w-full h-full object-cover duration-300 hover:scale-105"
+                  />
+                </div>
+              )}
+
+              <div className='flex flex-col gap-1'>
+                <p className='font-medium max-w-3xl'>{product.title}</p>
+                {price && <Prices price={price.amount} />}
+              </div>
+            </div>
+          );
+        })}
+      </ul>
+
+      <Link to={`/search?q=${term.current}`} className="BUTTON1 w-fit mx-auto mt-5">
+        See all results
+      </Link>
+    </div>
+  );
+}
+
+
+
+
+// Search results for queries
 function SearchResultsPredictiveQueries({
   queries,
   queriesDatalistId,
@@ -310,13 +390,9 @@ function SearchResultsPredictiveEmpty({
   );
 }
 
-/**
- * Hook that returns the predictive search results and fetcher and input ref.
- * @example
- * '''ts
- * const { items, total, inputRef, term, fetcher } = usePredictiveSearch();
- * '''
- **/
+
+
+/// Custom hook that manages predictive search state and logic
 function usePredictiveSearch(): UsePredictiveSearchReturn {
   const fetcher = useFetcher<PredictiveSearchReturn>({ key: 'search' });
   const term = useRef<string>('');

@@ -182,49 +182,11 @@ export function OverflowBanners({ bannerArray, collectionHandle }: { bannerArray
 
 
 
-    const arrayOfPromotions = [
-        "Up to 10% off",
-        "Hot deals",
-        "Save up to 15%",
-        "Exclusive offers",
-        "Up to 20% discount",
-        "Best deals for",
-        "Limited-time offers",
-        "Grab up to 25% off",
-        "Special prices",
-        "Amazing savings"
-    ];
-
-
-    const randomPromotion = useMemo(() => arrayOfPromotions[Math.floor(Math.random() * arrayOfPromotions.length)], [])
-
-
-
-
     return (
         <section className="flex flex-col gap-3">
-
-
-            <HeaderText
-                HEAD={randomPromotion}
-            />
-
-
-
             <div className="w-full overflow-x-scroll HIDDEN_SCROLL flex flex-row gap-3">
-
                 {fakeBannerArray.map((banner: any, index: number) => (
-                    <figure key={index} className="object-cover min-h-50 max-h-50 min-w-100 max-w-100 rounded-xl overflow-hidden">
-                        <Image
-                            key={index}
-                            data={banner?.image}
-                            alt={`${collectionHandle}` || "Banner"}
-                            className='h-full w-full md:rounded-3xl rounded-2xl object-cover'
-                        />
-                    </figure>
-                ))}
-                {fakeBannerArray.map((banner: any, index: number) => (
-                    <figure key={index} className="object-cover min-h-50 max-h-50 min-w-100 max-w-100 rounded-xl overflow-hidden">
+                    <figure key={index} className="object-cover min-h-40 max-h-40 min-w-80 max-w-80 rounded-xl overflow-hidden">
                         <Image
                             key={index}
                             data={banner?.image}

@@ -66,7 +66,7 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Coll
                                         <span className="bg-orange-300 px-3 py-1 rounded">
                                             {collection.location}
                                         </span>
-                                        <span className="font-medium">Starts from: USD 0.99</span>
+                                        <span className="font-medium">Starts from: <strong> USD 0.99</strong></span>
                                     </div>
                                     <ArrowButton
                                         CC="w-fit"

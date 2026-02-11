@@ -223,7 +223,7 @@ export default function Product() {
 
 
       <SimilarProducts
-        Title={"Similar Products"}
+        Title={"People usually buy together"}
         products={similarProducts}
       />
 
@@ -446,7 +446,7 @@ const SIMILAR_PRODUCTS_QUERY = `#graphql
       collections(first: 1) {
         edges {
           node {
-            products(first: 10, sortKey: PRODUCT_TYPE ) {
+            products(first: 10 ) {
               edges {
                 node {
                   id

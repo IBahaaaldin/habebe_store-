@@ -11,7 +11,7 @@ import { useAside } from '~/components/Aside';
 import { Menu, SearchIcon, ShoppingBag, User } from "lucide-react";
 import { SearchFormPredictive } from './SearchFormPredictive';
 import LoadingSpinner from './MINE/ReUsable/LoadingSpinner';
-import { SearchResultsPredictive } from './SearchResultsPredictive';
+import { SearchResultsPredictive, SearchResultsPredictiveProductsSamePage } from './SearchResultsPredictive';
 import { currencies, useCurrency, type CurrencyCode } from '~/lib/ContextProvider';
 
 interface HeaderProps {
@@ -277,6 +277,14 @@ function SearchToggle() {
 /// Display the search results in the same page
 function SamePageSearch() {
   const queriesDatalistId = useId();
+  const location = useLocation();
+
+  // If we are on the search page, don't render the header search
+  if (location.pathname === '/search') {
+    return null;
+  }
+
+
 
   return (
     <div className='hidden sm:flex'>
@@ -317,8 +325,8 @@ function SamePageSearch() {
           }
 
           return (
-            <div className='SEARCH_CONTAINERS'>
-              <SearchResultsPredictive.Products
+            <div className='SEARCH_CONTAINERS bg-white backdrop-blur-sm w-full' onBlur={closeSearch}>
+              <SearchResultsPredictiveProductsSamePage
                 products={products}
                 closeSearch={closeSearch}
                 term={term}
