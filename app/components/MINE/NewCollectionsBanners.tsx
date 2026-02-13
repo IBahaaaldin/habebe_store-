@@ -1,14 +1,12 @@
-import { ArrowBigRight, ArrowRight, ShoppingCart } from 'lucide-react';
 import { Image } from '@shopify/hydrogen';
 import { Link } from 'react-router';
 import ArrowButton from './ReUsable/Buttons';
 import HeaderText, { SmallHeaderText } from './UI/HeaderText';
-import Prices from './UI/Prices';
 
 
 
 
-export function HomeGardenFurnitureBanner() {
+export function HomeGardenFurnitureBanner({ bannerArray }: { bannerArray: any }) {
 
     const products = [
         { id: 1, name: "Beige Sofa", price: 1570, oldPrice: 2000, img: "https://images.pexels.com/photos/6636021/pexels-photo-6636021.jpeg", wide: true },
@@ -29,7 +27,6 @@ export function HomeGardenFurnitureBanner() {
                     <Image
                         src={product.img}
                         alt={product.name}
-                        sizes={product.wide ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 768px) 25vw, 100vw'}
                         className="absolute -z-1 h-full w-fullw-full object-cover"
                     />
 
@@ -39,6 +36,7 @@ export function HomeGardenFurnitureBanner() {
                             Best Seller
                         </span>
                     }
+
 
 
                     {/* Footer Info */}
@@ -51,26 +49,6 @@ export function HomeGardenFurnitureBanner() {
                                 {/* <Prices price={`${product.price}`} isBig={false} /> */}
                             </div>
                         </div>
-
-                        {/* 
-                        <button
-                            className={`cursor-pointer
-                            group absolute right-4 bottom-4 
-                            flex items-center
-                            px-3 py-2 rounded-full
-                            bg-orange-400 text-white
-                            transition-all duration-300 ease-out
-                            hover:bg-orange-500
-                        `}
-                        >
-                            <span className=" text-nowrap font-medium
-                            opacity-0 max-w-0 
-                            group-hover:opacity-100 group-hover:max-w-38 transition-all duration-500 ease-out overflow-hidden">
-                                Discover collection!
-                            </span>
-
-                            <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
-                        </button> */}
 
                         {product.wide &&
                             <ArrowButton
@@ -88,46 +66,12 @@ export function HomeGardenFurnitureBanner() {
 
 
 
-export function PetsBanner() {
-    const bannerArray = [
-        {
-            id: 1,
-            image: {
-                url: 'https://images.pexels.com/photos/4587979/pexels-photo-4587979.jpeg',
-            },
-        },
-        {
-            id: 3,
-            image: {
-                url: 'https://images.pexels.com/photos/4964846/pexels-photo-4964846.jpeg',
-            },
-        },
-        {
-            id: 2,
-            image: {
-                url: 'https://images.pexels.com/photos/1398185/pexels-photo-1398185.jpeg',
-            },
-        },
-        {
-            id: 3,
-            image: {
-                url: 'https://images.pexels.com/photos/4964846/pexels-photo-4964846.jpeg',
-            },
-        },
-        {
-            id: 1,
-            image: {
-                url: 'https://images.pexels.com/photos/4587979/pexels-photo-4587979.jpeg',
-            },
-        },
-    ]
+export function PetsBanner({ bannerArray }: { bannerArray: any }) {
 
-    const collectionHandle = "pets"
-
-
-    if (!Array.isArray(bannerArray && bannerArray.length > 0)) {
-        return null;
-    }
+    console.log(`%c${JSON.stringify(bannerArray, null, 3)}`, 'color: white; font-size: 20px;')
+    // if (!Array.isArray(bannerArray && bannerArray.length > 0)) {
+    //     return null;
+    // }
 
 
     return (
@@ -135,19 +79,18 @@ export function PetsBanner() {
             {/* LEFT */}
 
             <div className="w-full flex flex-row gap-2 md:h-70 h-50">
-                {bannerArray.slice(0, 2).map((banner: any, index) => (
+                {bannerArray.slice(0, 2).map((banner: any, index: number) => (
                     <Link
-                        key={banner}
-                        to={`/collections/${collectionHandle}`}
-                        aria-label={collectionHandle}
+                        key={banner.id}
+                        to={`/collections/${banner.handle}`}
+                        aria-label={banner.handle}
                         className={`relative md:p-10 p-5 md:rounded-3xl rounded-2xl md:h-full overflow-hidden 
                             ${index % 2 === 0 ? "w-2/3" : "w-1/3"}
                         `}
                     >
                         <Image
-                            data={bannerArray[0]?.image}
-                            alt={collectionHandle}
-                            sizes={index % 2 === 0 ? '(min-width: 768px) 66vw, 100vw' : '(min-width: 768px) 33vw, 100vw'}
+                            data={banner?.image}
+                            alt={banner.handle}
                             className="-z-1 absolute inset-0 object-cover md:rounded-3xl rounded-2xl w-full h-full hover:scale-105  duration-500"
                         />
 
@@ -168,11 +111,11 @@ export function PetsBanner() {
 
             {/* /// RIGHT */}
             <div className="w-full flex flex-row gap-2 md:h-50 h-30">
-                {bannerArray.slice(2, 5).map((banner: any, index) => (
+                {bannerArray.slice(2, 5).map((banner: any, index: number) => (
                     <Link
                         key={banner.id}
-                        to={`/collections/${collectionHandle}`}
-                        aria-label={collectionHandle}
+                        to={`/collections/${banner.handle}`}
+                        aria-label={banner.handle}
                         className={`relative md:p-7 p-5 md:rounded-3xl rounded-2xl md:h-full overflow-hidden w-1/3
                         `}
                     >
@@ -184,8 +127,7 @@ export function PetsBanner() {
 
                         <Image
                             data={banner?.image}
-                            alt={collectionHandle}
-                            sizes="(min-width: 768px) 33vw, 100vw"
+                            alt={banner.handle}
                             className="-z-1 absolute inset-0 object-cover md:rounded-3xl rounded-2xl h-full w-full hover:scale-105 duration-500"
                         />
                     </Link>
@@ -218,31 +160,7 @@ const products = [
 ];
 
 
-export function ConsumerElectronicsBanner() {
-
-
-    const absoluteDiscount = [
-        {
-            position: "top-5 right-10",
-            rotate: "rotate-5",
-            discount: "50 on accessories",
-            discountType: "hot deal"
-        },
-        {
-            position: "top-[40%] right-40",
-            rotate: "-rotate-7",
-            discount: "30 laptops",
-            discountType: "hot deal"
-        },
-        {
-            position: "top-[70%] right-7",
-            rotate: "rotate-10",
-            discount: "70 on cameras",
-            discountType: "hot deal"
-        }
-    ]
-
-
+export function ElectronicsBanner({ bannerArray }: { bannerArray: any }) {
 
 
     return (
@@ -253,7 +171,6 @@ export function ConsumerElectronicsBanner() {
 
                     <Image
                         src='https://images.pexels.com/photos/792345/pexels-photo-792345.jpeg'
-                        sizes="(min-width: 768px) 66vw, 100vw"
                         className='absolute -z-1 inset-0 w-full h-full object-cover md:rounded-3xl rounded-2xl object-center'
                     />
 
@@ -267,34 +184,22 @@ export function ConsumerElectronicsBanner() {
                         CC='w-fit'
                         Href='/collections/electronics'
                     />
-
-                    {/* Discount Badges */}
-                    {/* {absoluteDiscount.map((badge, index) => (
-                        <div
-                            key={index}
-                            className={`absolute ${badge.position} backdrop-blur-sm md:p-5 p-3 md:rounded-3xl rounded-2xl ${badge.rotate} z-20 max-w-40 bg-white/20`}
-                        >
-                            <p className="font-medium leading-tight">UP TO {badge.discount}% OFF</p>
-                            <span className="">{badge.discountType}</span>
-                        </div>
-                    ))} */}
                 </article>
 
 
                 <article className="flex md:flex-col flex-row md:h-70 h-30 min-h-full md:w-1/3 w-full gap-3">
-                    {products.slice(0, 2).map((product, index) => (
+                    {bannerArray.slice(0, 2).map((banner: any, index: number) => (
                         <div
                             key={index}
                             className={`h-full text-black relative overflow-hidden w-full p-5 text-center`}
                         >
                             <Image
-                                src={"https://images.pexels.com/photos/3945663/pexels-photo-3945663.jpeg"}
-                                alt={product.name}
-                                sizes="(min-width: 768px) 16vw, 50vw"
+                                src={banner.image}
+                                alt={banner.title}
                                 className="absolute -z-1 inset-0 w-full h-full object-cover md:rounded-3xl rounded-2xl hover:scale-105 duration-300"
                             />
                             <HeaderText
-                                HEAD={product.name}
+                                HEAD={banner.title}
                                 SUBHEAD='Up TO 50% OFF'
                             />
                         </div>
@@ -306,19 +211,18 @@ export function ConsumerElectronicsBanner() {
 
             {/* Bottom Products - Mapped */}
             <article className="grid grid-cols-3 gap-3">
-                {products.map((product, index) => (
+                {bannerArray.slice(2, 5).map((banner: any, index: any) => (
                     <div
                         key={index}
-                        className={`text-white relative md:h-50 h-30 overflow-hidden ${product.gradient} p-5 text-center flex flex-col justify-between`}
+                        className={`text-white relative md:h-50 h-30 overflow-hidden p-5 text-center flex flex-col justify-between`}
                     >
                         <Image
-                            src={"https://images.pexels.com/photos/6370375/pexels-photo-6370375.jpeg"}
-                            alt={product.name}
-                            sizes="(min-width: 768px) 33vw, 33vw"
+                            src={banner.image}
+                            alt={banner.title}
                             className="absolute -z-1 inset-0 w-full h-full object-cover md:rounded-3xl rounded-2xl hover:scale-105 duration-300"
                         />
                         <SmallHeaderText
-                            HEAD={product.name}
+                            HEAD={banner.title}
                             SUBHEAD='Starting at $299'
                         />
                     </div>
