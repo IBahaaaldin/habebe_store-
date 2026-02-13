@@ -190,6 +190,7 @@ export function OverflowBanners({ bannerArray, collectionHandle }: { bannerArray
                         <Image
                             key={index}
                             data={banner?.image}
+                            sizes="200px"
                             alt={`${collectionHandle}` || "Banner"}
                             className='h-full w-full md:rounded-3xl rounded-2xl object-cover'
                         />
@@ -255,6 +256,7 @@ export function PlatinumBanners({ bannerArray, collectionHandle }: { bannerArray
                                 src={banner?.image}
                                 alt={collectionHandle}
                                 className="min-w-[60%] h-full object-cover object-center"
+
                             />
 
 

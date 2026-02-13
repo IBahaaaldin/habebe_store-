@@ -10,7 +10,7 @@ import { MAINMENU_AND_SUBMENU_QUERY } from '~/graphql/sharedQueries';
 import MainBanners, { CasualBanners, GridBanners } from '~/components/MINE/AdsSections';
 import { useNavigate, useLocation } from 'react-router';
 import { useState, useMemo, useRef, useEffect } from 'react';
-import { ArrowDown, Filter, Search } from 'lucide-react';
+import { ArrowDown, Check, Filter, Search } from 'lucide-react';
 
 /**
  * Meta function for SEO and page title
@@ -206,7 +206,7 @@ export default function Collection() {
 
 
   return (
-    <div className="flex flex-col gap-10 ">
+    <div className="flex flex-col gap-10 overflow-hidden">
       {/* Hero Section */}
       <CollectionsNewHero
         Title={collection.title}
@@ -227,117 +227,119 @@ export default function Collection() {
 
       {/* STICKY HORIZONTAL FILTER BAR */}
       <div>
-
-        <div className="flex flex-row flex-wrap gap-3 justify-between items-center border-b border-zinc-300 py-3" ref={dropdownRef}>
-          <div className="flex flex-wrap items-center gap-3">
-            <div className="flex items-center gap-2 pr-4 border-r border-zinc-200">
-              <Filter size={17} />
-              <span className="uppercaser">Filters</span>
-            </div>
-
-            {/* Filter Dropdowns */}
-            <div className="relative flex flex-wrap items-center gap-2">
-              {collection.products.filters.map((filter: any) => {
-                const isActive = activeDropdown === filter.id;
-                const isPriceFilter = filter.type === 'PRICE_RANGE';
-                const hasActiveValues = filter.values?.some((v: any) => isFilterActive(filter.id, v.input));
-
-                return (
-                  <div key={filter.id} className="">
-                    <button
-                      onClick={() => setActiveDropdown(isActive ? null : filter.id)}
-                      className={`flex items-center gap-2 px-4 py-2 font-bold uppercase border transition-all ${isActive || hasActiveValues ? 'border-black bg-black text-white' : 'border-zinc-200 text-zinc-600 hover:border-zinc-400'
-                        }`}
-                    >
-                      <span>
-                        {filter.label}
-                      </span>
-                      <ArrowDown className={`w-3 h-3 transition-transform ${isActive ? 'rotate-180' : ''}`} />
-                    </button>
-
-                    {/* Dropdown Content */}
-                    {isActive && (
-                      <div className="absolute top-full left-0 mt-2 w-fit flex gap-10 bg-white border border-zinc-200 shadow-2xl p-6 z-50 animate-in fade-in slide-in-from-top-2 duration-200 ">
-                        {isPriceFilter ? (
-                          <div className="space-y-4">
-                            <div className="flex items-center gap-2">
-                              <div className="relative flex-1">
-                                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 ">$</span>
-                                <input
-                                  type="number"
-                                  placeholder="Min"
-                                  className="w-full pl-6 pr-2 py-2 border border-zinc-200 focus:border-black focus:ring-0"
-                                  onBlur={(e) => updatePriceFilter(filter.id, e.target.value, (document.getElementById(`max-${filter.id}`) as HTMLInputElement)?.value)}
-                                  id={`max-${filter.id}`}
-                                />
-                              </div>
-                              <span className="text-zinc-300">—</span>
-                              <div className="relative flex-1">
-                                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 ">$</span>
-                                <input
-                                  type="number"
-                                  placeholder="Max"
-                                  className="w-full pl-6 pr-2 py-2 border border-zinc-200 focus:border-black focus:ring-0"
-                                  onBlur={(e) => updatePriceFilter(filter.id, (document.getElementById(`min-${filter.id}`) as HTMLInputElement)?.value, e.target.value)}
-                                  id={`max-${filter.id}`}
-                                />
-                              </div>
-                            </div>
-                            <button
-                              onClick={() => setActiveDropdown(null)}
-                              className="w-full py-2 bg-black text-white  font-bold uppercase tracking-widest"
-                            >
-                              Apply
-                            </button>
-                          </div>
-                        ) : (
-                          <div className="flex flex-col max-h-50 overflow-y-auto space-y-2">
-                            {filter.values.map((value: any) => {
-                              const active = isFilterActive(filter.id, value.input);
-                              return (
-                                <button
-                                  key={value.id}
-                                  onClick={() => toggleFilter(filter.id, value.input)}
-                                  className={`flex gap-10 items-center justify-between w-full py-1 transition-all group ${active ? 'text-black font-black' : 'text-zinc-500 hover:text-black'
-                                    }`}
-                                >
-                                  <div className="flex items-center gap-3">
-                                    <div className={`w-4 h-4 border flex items-center justify-center transition-all ${active ? 'bg-black border-black' : 'border-zinc-200 group-hover:border-zinc-400'
-                                      }`}>
-                                      {active && (
-                                        <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" />
-                                        </svg>
-                                      )}
-                                    </div>
-                                    <span className="uppercase tracking-tight">{value.label}</span>
-                                  </div>
-                                  <span className="text-[9px] font-bold text-zinc-300 tabular-nums">
-                                    {value.count}
-                                  </span>
-                                </button>
-                              );
-                            })}
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
+        <div
+          className="relative flex flex-row w-full gap-3 justify-start items-center"
+          ref={dropdownRef}
+        >
+          <div className="flex items-center gap-2 pr-3 border-r border-zinc-200">
+            <Filter size={17} />
+            <span className="uppercaser">Filters</span>
           </div>
 
-          {activeFilterCount > 0 && (
-            <button
-              onClick={clearFilters}
-              className="text-red-600 hover:text-red-800 uppercase transition-colors ml-3 "
-            >
-              <span>
-                Clear All ({activeFilterCount})
-              </span>
-            </button>
-          )}
+          <div className="overflow-x-scroll ROW_SCROLL flex items-center gap-3 w-full border-b border-zinc-300">
+            {/* Filter Dropdowns */}
+            {collection.products.filters.map((filter: any) => {
+              const isActive = activeDropdown === filter.id;
+              const isPriceFilter = filter.type === 'PRICE_RANGE';
+              const hasActiveValues = filter.values?.some((v: any) => isFilterActive(filter.id, v.input));
+
+              return (
+                <div
+                  key={filter.id}
+                  className="min-w-max"
+                >
+                  <button
+                    onClick={() => setActiveDropdown(isActive ? null : filter.id)}
+                    className={`flex items-center gap-2 px-4 py-2 capitalize border transition-all rounded-xl ${isActive || hasActiveValues ? 'border-orange-200 bg-orange-400 text-white' : 'border-zinc-200 bg-zinc-50 text-black hover:border-zinc-400'
+                      }`}
+                  >
+                    <span className='text-nowrap'>
+                      {filter.label}
+                    </span>
+                    <ArrowDown className={`w-3 h-3 transition-transform ${isActive ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  {/* Dropdown Content */}
+                  {isActive && (
+                    <div className="absolute top-full left-0 mt-2 rounded-2xl flex gap-10 bg-white border border-zinc-200 shadow-2xl p-6 z-50 w-100">
+                      {isPriceFilter ? (
+                        <div className="space-y-4" onBlur={() => setActiveDropdown(null)}>
+                          <div className="flex items-center gap-2">
+                            <div className="relative flex-1">
+                              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 ">$</span>
+                              <input
+                                type="number"
+                                placeholder="Min"
+                                className="w-full pl-6 pr-2 py-2 border border-zinc-200 focus:border-black rounded-xl"
+                                onBlur={(e) => updatePriceFilter(filter.id, e.target.value, (document.getElementById(`max-${filter.id}`) as HTMLInputElement)?.value)}
+                                id={`min-${filter.id}`}
+                              />
+                            </div>
+                            <span className="text-zinc-300">—</span>
+                            <div className="relative flex-1">
+                              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 ">$</span>
+                              <input
+                                type="number"
+                                placeholder="Max"
+                                className="w-full pl-6 pr-2 py-2 border border-zinc-200 focus:border-black rounded-xl"
+                                onBlur={(e) => updatePriceFilter(filter.id, (document.getElementById(`min-${filter.id}`) as HTMLInputElement)?.value, e.target.value)}
+                                id={`max-${filter.id}`}
+                              />
+                            </div>
+                          </div>
+                          <button
+                            onClick={() => setActiveDropdown(null)}
+                            className="BUTTON1 w-full"
+                          >
+                            Apply
+                          </button>
+                        </div>
+                      ) : (
+                        <div className="flex flex-col w-full max-h-50 overflow-y-auto space-y-2">
+                          {filter.values.map((value: any) => {
+                            const active = isFilterActive(filter.id, value.input);
+                            return (
+                              <button
+                                key={value.id}
+                                onClick={() => toggleFilter(filter.id, value.input)}
+                                className={`flex gap-10 items-center justify-between w-full py-1 transition-all group ${active ? 'text-black font-medium' : 'text-zinc-500 hover:text-black'
+                                  }`}
+                              >
+                                <div className="flex items-center gap-3">
+                                  <div className={`w-4 h-4 border flex rounded-sm items-center justify-center transition-all ${active ? 'bg-orange-400 border-orange-400' : 'border-zinc-200 group-hover:border-zinc-400'
+                                    }`}>
+                                    {active && (
+                                      <Check className="w-2.5 h-2.5 text-white" strokeWidth={4} />
+                                    )}
+                                  </div>
+                                  <span className="text-wrap">{value.label}</span>
+                                </div>
+                                <span className="font-bold text-zinc-300">
+                                  {value.count}
+                                </span>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+
+
+            {activeFilterCount > 0 && (
+              <button
+                onClick={clearFilters}
+                className="text-red-600 hover:text-red-800 transition-colors text-nowrap pl-3 border-l border-zinc-200"
+              >
+                <span className='font-bold'>
+                  Clear ({activeFilterCount})
+                </span>
+              </button>
+            )}
+          </div>
         </div>
         {/* </div> */}
 
@@ -349,7 +351,7 @@ export default function Collection() {
               <CasualBanners collectionHandle={collection.handle} bannerArray={bannersArray} />
 
               {/* Paginated Product List */}
-              <PaginatedResourceSection<ProductFragment>
+              <PaginatedResourceSection<any>
                 connection={collection.products}
               >
                 {({ node: product, index }) => (
@@ -396,6 +398,12 @@ export const PRODUCT_ITEM_FRAGMENT = `#graphql
     id
     handle
     title
+    description
+    descriptionHtml
+    vendor
+    tags
+    encodedVariantExistence
+    encodedVariantAvailability
     featuredImage {
       id
       altText

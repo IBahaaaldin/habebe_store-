@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 
 export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?: string }) {
     return (
-        <div className="flex flex-col z-1 capitalize items-start justify-start w-full gap-1" >
+        <div className="flex flex-col z-1 capitalize items-start justify-start w-full gap-1 text-black" >
             <h3 className='font-normal flex-wrap flex flex-row md:gap-x-2 gap-x-1.5 leading-tight'>
                 {HEAD!.split(' ')?.map((word, index) => (
                     <div

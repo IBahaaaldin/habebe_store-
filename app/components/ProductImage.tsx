@@ -195,7 +195,7 @@ export function ProductImage({
         {productMedia?.map((imgData: any, index: number) => (
           <figure
             key={imgData.node?.image?.id || index}
-            className="min-w-25 md:rounded-2xl rounded-xl p-1.5 bg-zinc-50 aspect-square overflow-hidden cursor-pointer border-2 border-transparent hover:border-black transition-all duration-200"
+            className="min-w-25 md:rounded-2xl rounded-xl p-1.5 bg-zinc-50 aspect-square overflow-hidden cursor-pointer border-2 border-transparent hover:border-black transition-all duration-200 hover:brightness-70 active:brightness-70"
             onMouseEnter={() => handleMouseEnter(imgData.node.image)}
             onMouseLeave={handleMouseLeave}
           >

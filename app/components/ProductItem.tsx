@@ -105,10 +105,8 @@ export function ProductItem({ product, loading }: { product: | CollectionItemFra
             alt={image.altText || ""}
             data={displayImage}
             loading={loading}
-            className='object-cover min-h-40'
-            sizes='400px'
-            width={400}
-            height={400}
+            className='object-cover min-h-60 max-h-60 aspect-square'
+            sizes='300px'
           />
 
 

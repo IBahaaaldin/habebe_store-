@@ -141,12 +141,12 @@ export const MAINMENU_AND_PRODUCTS_QUERY = `#graphql
     $handle: String!,
     $country: CountryCode,
     $language: LanguageCode
-  ) @inContext(country: $country, language: $language) { # Use them here
+  ) @inContext(country: $country, language: $language) { # /// Use them here
     menu(handle: $handle) {
       items {
         title
         resource {
-          # /// Fetch collection details
+          # /// Fetch Top Level collection details
           ... on Collection {
             id
             title
@@ -159,127 +159,146 @@ export const MAINMENU_AND_PRODUCTS_QUERY = `#graphql
               width
               height
             }
-            # /// Fetch metafield for main banner
-            mainBanners: metafield(namespace: "custom", key: "main_banners") {
-              references(first: 10) {
-                nodes {
-                  ... on MediaImage {
-                    image {
-                      url
-                      altText
-                      width
-                      height
-                    }
-                  }
-                }
-              }
-            }
-            scrollBanners: metafield(namespace: "custom", key: "scroll_banners") {
-              references(first: 10) {
-                nodes {
-                  ... on MediaImage {
-                    image {
-                      url
-                      altText
-                      width
-                      height
-                    }
-                  }
-                }
-              }
-            }
-            gridBanners: metafield(namespace: "custom", key: "grid_banners") {
-              references(first: 10) {
-                nodes {
-                  ... on MediaImage {
-                    image {
-                      url
-                      altText
-                      width
-                      height
-                    }
-                  }
-                }
-              }
-            }
-            platinumBanners: metafield(namespace: "custom", key: "platinum_banners") {
-              references(first: 10) {
-                nodes {
-                  ... on MediaImage {
-                    image {
-                      url
-                      altText
-                      width
-                      height
-                    }
-                  }
-                }
-              }
-            }
-            casualBanners: metafield(namespace: "custom", key: "casual_banners") {
-              references(first: 4) {
-                nodes {
-                  ... on MediaImage {
-                    image {
-                      url
-                      altText
-                      width
-                      height
-                    }
-                  }
-                }
-              }
-            }
-            # /// Fetch products associated with the collection
-            products(first: 10, sortKey: TITLE) {
-              nodes {
+          }
+        }
+        items {
+          title
+          resource {
+            # /// Fetch Sub Level collection details
+            ... on Collection {
+              id
+              title
+              description
+              handle
+              image {
                 id
-                title
-                handle
-                # /// Fetch media to display other images for the same product
-                media(first: 50) {
+                url
+                altText
+                width
+                height
+              }
+              # /// Fetch metafield for main banner
+              mainBanners: metafield(namespace: "custom", key: "main_banners") {
+                references(first: 10) {
                   nodes {
-                    mediaContentType
-                    alt
                     ... on MediaImage {
                       image {
-                        id
                         url
                         altText
                         width
                         height
                       }
                     }
-                    ... on Video {
-                      sources {
+                  }
+                }
+              }
+              scrollBanners: metafield(namespace: "custom", key: "scroll_banners") {
+                references(first: 10) {
+                  nodes {
+                    ... on MediaImage {
+                      image {
                         url
+                        altText
+                        width
+                        height
                       }
                     }
-                    # You can add 3DModel if needed
                   }
                 }
-                priceRange {
-                  minVariantPrice {
-                    amount
-                    currencyCode
-                  }
-                }
-                featuredImage {
-                  id
-                  url
-                  altText
-                  width
-                  height
-                }
-                variants(first: 50) {
+              }
+              gridBanners: metafield(namespace: "custom", key: "grid_banners") {
+                references(first: 10) {
                   nodes {
-                    id
-                    availableForSale
-                    title
-                    sku
-                    price {
+                    ... on MediaImage {
+                      image {
+                        url
+                        altText
+                        width
+                        height
+                      }
+                    }
+                  }
+                }
+              }
+              platinumBanners: metafield(namespace: "custom", key: "platinum_banners") {
+                references(first: 10) {
+                  nodes {
+                    ... on MediaImage {
+                      image {
+                        url
+                        altText
+                        width
+                        height
+                      }
+                    }
+                  }
+                }
+              }
+              casualBanners: metafield(namespace: "custom", key: "casual_banners") {
+                references(first: 4) {
+                  nodes {
+                    ... on MediaImage {
+                      image {
+                        url
+                        altText
+                        width
+                        height
+                      }
+                    }
+                  }
+                }
+              }
+              # /// Fetch products associated with the collection
+              products(first: 5) {
+                nodes {
+                  id
+                  title
+                  handle
+                  # /// Fetch media to display other images for the same product
+                  media(first: 2) {
+                    nodes {
+                      mediaContentType
+                      alt
+                      ... on MediaImage {
+                        image {
+                          id
+                          url
+                          altText
+                          width
+                          height
+                        }
+                      }
+                      ... on Video {
+                        sources {
+                          url
+                        }
+                      }
+                      # /// You can add 3DModel if needed
+                    }
+                  }
+                  priceRange {
+                    minVariantPrice {
                       amount
                       currencyCode
+                    }
+                  }
+                  featuredImage {
+                    id
+                    url
+                    altText
+                    width
+                    height
+                  }
+                  variants(first: 1) {
+                    nodes {
+                      id
+                      availableForSale
+                      title
+                      sku
+                      price {
+                        amount
+                        currencyCode
+                      }
                     }
                   }
                 }

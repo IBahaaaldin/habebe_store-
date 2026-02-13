@@ -35,12 +35,12 @@ export function CartLineItem({ layout, line, }: { layout: CartLayout; line: Cart
           {image && (
             <Link
               to={lineItemUrl}
-              className='w-35 min-h-full p-1.5 rounded-2xl overflow-hidden bg-zinc-100 flex'>
+              className='w-35 h-35 p-1.5 rounded-2xl overflow-hidden bg-zinc-100 flex'>
               <Image
-                className='object-cover w-full h-full aspect-square rounded-xl overflow-hidden'
+                className='object-cover w-full h-full aspect-square rounded-xl hover:scale-105 duration-300'
                 alt={title}
                 data={image}
-                loading="lazy"
+                sizes='200px'
               />
 
             </Link>

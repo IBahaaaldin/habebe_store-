@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react'
 import HeaderText from './UI/HeaderText';
+import { Plus } from 'lucide-react';
 
 
 export default function FAQs() {
@@ -59,7 +60,7 @@ export default function FAQs() {
                         className="border-b border-black/10 p-3 duration-300 ease-in-out"
                     >
                         <motion.button
-                            initial={{ opacity: 0, filter: 'blur(5px)' }}
+                            initial={{ opacity: 1, filter: 'blur(5px)' }}
                             whileInView={{ opacity: 1, filter: 'blur(0px)' }}
                             transition={{ duration: 2, delay: index * 0.05 }}
                             viewport={{ once: true }}
@@ -67,16 +68,17 @@ export default function FAQs() {
                             onClick={() => toggleFAQ(index)} // Pass the index to toggle the specific FAQ
                             className={`${openFAQ === index ? '' : ''} flex gap-5 cursor-pointer w-full text-left font-semibold justify-between items-center focus:outline-none`}
                         >
-                            <h6> {faq.question}</h6>
-                            <p className="">{openFAQ === index ? "-" : "+"}</p>
+                            <h5 className=''> {faq.question}</h5>
+                            <Plus
+                                className={`transition-transform duration-300 ${openFAQ === index ? 'rotate-45 text-zinc-500' : 'rotate-0'
+                                    }`}
+                            />
                         </motion.button>
 
-                        <div
-                            className={`overflow-hidden text-zinc-500 transition-all duration-300 ease-in-out ${openFAQ === index ? 'max-h-100 opacity-100 mt-1' : 'max-h-0 opacity-0 hidden'
-                                }`}
-                        >
+                        <p className={`overflow-hidden text-zinc-500 transition-all duration-500 ease-in-out ${openFAQ === index ? 'max-h-40 opacity-100 mt-1' : 'max-h-0 opacity-0'}`}
+                        > 
                             {faq.answer}
-                        </div>
+                        </p>
                     </div>
                 ))}
             </div>

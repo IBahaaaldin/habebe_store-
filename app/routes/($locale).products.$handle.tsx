@@ -122,41 +122,6 @@ export default function Product() {
   const [more, setMore] = useState(150)
 
 
-
-
-  // const urlParams = new URLSearchParams(window.location.search);
-  // const targetCurrency = urlParams.get('cur') || 'USD'; // Default to USD
-
-  // // 2. Fetch the rate and convert
-  // const usdPrice = 100; // Your default price
-
-  // if (targetCurrency !== 'USD') {
-  //   // fetch(`https://api.frankfurter.app/latest?from=USD&to=${targetCurrency}`)
-  //   fetch(`https://api.frankfurter.app/latest?from=USD&to=CAD`)
-  //     .then(async (res) => {
-  //       if (!res.ok) {
-  //         console.error('Failed to fetch exchange rate:', res.statusText);
-  //         return;
-  //       }
-  //       // Cast the JSON to a known shape so TypeScript can infer the rates ologbject
-  //       const data = (await res.json()) as { rates?: Record<string, number> } | null;
-  //       const rate = data?.rates?.[targetCurrency];
-  //       if (typeof rate !== 'number') {
-  //         console.error('Invalid or missing exchange rate for', targetCurrency, data);
-  //         return;
-  //       }
-  //       const convertedPrice = (usdPrice * rate).toFixed(2);
-  //       console.log(`Price in ${targetCurrency}: ${convertedPrice}`);
-  //       console.log(`%c${JSON.stringify(targetCurrency, null, 3)}`, 'color: white; font-size: 20px;')
-  //       // Display this on your page
-  //     })
-  //     .catch((err) => {
-  //       console.error('Error fetching exchange rate:', err);
-  //     });
-  // }
-
-
-
   return (
     <div className='flex flex-col gap-10'>
       <div className='flex md:flex-row flex-col gap-x-7'>

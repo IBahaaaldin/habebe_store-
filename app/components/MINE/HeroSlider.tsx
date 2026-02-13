@@ -11,11 +11,10 @@ import Logos from './Logos';
 
 export default function HeroSlider({ mainCollections }: { mainCollections?: CollectionItemFragment[] }) {
     const promotions = [
-        "Free shipping on orders over AED 200",
-        "New arrivals in Fashion - Up to 30% off",
-        "Join our loyalty program for exclusive deals",
-        "Flash Sale: 24 hours only on Electronics",
-        "Quality guaranteed on all home furniture"
+        "1 Month Free World Wide Shipping",
+        "30% special offer for GCC countries",
+        "20% Off for Middle East Countries",
+        "Fast shipping for Europe & United States"
     ];
     const [currentIndex, setCurrentIndex] = useState<number>(0);
 
@@ -33,9 +32,9 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Coll
 
 
     return (
-        <section className="relative w-full flex flex-col overflow-hidden">
+        <section className="relative w-full flex flex-col overflow-hidden md:rounded-3xl rounded-2xl">
             {/* Slides */}
-            <article className="max-h-150 h-[70vh] relative w-full overflow-hidden md:rounded-t-3xl rounded-t-2xl">
+            <article className="max-h-150 h-[70vh] relative w-full ">
                 <div
                     className="relative flex transition-transform duration-700 ease-in-out h-full"
                     style={{
@@ -52,6 +51,7 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Coll
                                     data={collection.image}
                                     alt={collection.handle}
                                     className="w-full h-full object-cover"
+                                    sizes='100vw'
                                 />
                             </figure>
 
@@ -59,7 +59,7 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Coll
                             <div className="flex flex-col my-20 justify-end md:px-15 px-10">
                                 <div className="text-white">
                                     <h2 className="font-medium mb-3">{collection.title}</h2>
-                                    <h6 className="font-semibold text-white mb-2">
+                                    <h6 className="opacity-80 text-white mb-2">
                                         {collection.description}
                                     </h6>
                                     <div className="flex items-center gap-4 mb-4">
@@ -95,7 +95,7 @@ export default function HeroSlider({ mainCollections }: { mainCollections?: Coll
             /> */}
 
             <div className='mt-3 flex flex-col gap-3'>
-                <HeaderText
+                <SmallHeaderText
                     HEAD='browse by collection'
                 />
                 <AllCategories

@@ -42,9 +42,8 @@ export default function Header({ header, isLoggedIn, cart }: HeaderProps) {
         <Image
           alt={header.shop.name}
           src={header.shop.brand?.logo?.image?.url}
-          width={30}
-          height={30}
-          className='scale-120'
+          sizes='100px'
+          className='scale-120 w-10 h-10 object-contain'
         />
       </NavLink>
 
@@ -70,8 +69,8 @@ export function HeaderMenu({ menu }: { menu: any }) {
   return (
     <nav role="navigation" className='flex lg:flex-row flex-col gap-3'>
 
-      <ul className="hidden xl:flex flex-row  justify-center items-center rounded-full"> {/* Increased gap for better look */}
-        {menu?.items.slice(0, 4).map((menu: any) => { // Slice only the first 5 menus
+      <ul className="hidden lg:flex flex-row  justify-center items-center rounded-full bg-zinc-100 p-1"> {/* Increased gap for better look */}
+        {menu?.items.slice(0, 5).map((menu: any) => { // Slice only the first 5 menus
           // Optional: Logic to determine if active
 
           const isMainMenuActive = currentTabURL === menu.resource?.handle;
@@ -79,20 +78,19 @@ export function HeaderMenu({ menu }: { menu: any }) {
           return (
             <li
               key={menu.id}
-              className={`relative group px-3 py-1 rounded-full`}
+              className={`relative group px-1 py-1 rounded-full`}
             >
 
               {/* The Active Line */}
-              {isMainMenuActive && (
+              {/* {isMainMenuActive && (
                 <div className="absolute left-0 right-0 top-10 h-0.5 bg-orange-400 mx-3 duration-300" />
-              )}
+              )} */}
 
               <Link
                 to={`/collections/${menu?.resource?.handle || '#'}`}
                 key={menu.id}
-
-                className={`hover:text-orange-400 text-nowrap text-black text-start duration-500 
-                  ${isMainMenuActive ? 'text-orange-400' : ' text-black'}
+                className={`hover:text-orange-400 text-nowrap text-black text-start duration-500 px-3 py-1 rounded-full shadow-inner
+                  ${isMainMenuActive ? 'text-orange-400 bg-orange-100 font-medium' : ' text-black bg-white '}
                   `}
               >
                 <span>
@@ -134,9 +132,12 @@ export function HeaderMenu({ menu }: { menu: any }) {
           );
         })}
 
-        <Link to="/collections" className="text-xs px-3 py-1 hover:text-orange-400 text-nowrap text-orange-300 text-start duration-500">
-          {menu.items.length > 4 ? "More..." : ""}
-        </Link>
+
+        {menu.items.length > 5 && (
+          <Link to="/collections" className="text-xs px-3 py-1 hover:text-orange-400 text-nowrap text-orange-300 text-start duration-500">
+            More...
+          </Link>
+        )}
       </ul>
     </nav>
   );
@@ -196,7 +197,7 @@ function HeaderMenuMobileToggle() {
   const { open } = useAside();
   return (
     <button
-      className="block xl:hidden bg-orange-400 text-black p-1 rounded-lg cursor-pointer hover:opacity-70 duration-300"
+      className="block lg:hidden bg-orange-400 text-black p-1 rounded-lg cursor-pointer hover:opacity-70 duration-300"
       onClick={() => open('mobile')}
     >
       <Menu className='text-white ' size={20} />

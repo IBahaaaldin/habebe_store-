@@ -29,6 +29,7 @@ export function HomeGardenFurnitureBanner() {
                     <Image
                         src={product.img}
                         alt={product.name}
+                        sizes={product.wide ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 768px) 25vw, 100vw'}
                         className="absolute -z-1 h-full w-fullw-full object-cover"
                     />
 
@@ -87,7 +88,7 @@ export function HomeGardenFurnitureBanner() {
 
 
 
-export function PetsSuppliesBanner() {
+export function PetsBanner() {
     const bannerArray = [
         {
             id: 1,
@@ -124,7 +125,7 @@ export function PetsSuppliesBanner() {
     const collectionHandle = "pets"
 
 
-    if (!Array.isArray(bannerArray)) {
+    if (!Array.isArray(bannerArray && bannerArray.length > 0)) {
         return null;
     }
 
@@ -146,6 +147,7 @@ export function PetsSuppliesBanner() {
                         <Image
                             data={bannerArray[0]?.image}
                             alt={collectionHandle}
+                            sizes={index % 2 === 0 ? '(min-width: 768px) 66vw, 100vw' : '(min-width: 768px) 33vw, 100vw'}
                             className="-z-1 absolute inset-0 object-cover md:rounded-3xl rounded-2xl w-full h-full hover:scale-105  duration-500"
                         />
 
@@ -183,6 +185,7 @@ export function PetsSuppliesBanner() {
                         <Image
                             data={banner?.image}
                             alt={collectionHandle}
+                            sizes="(min-width: 768px) 33vw, 100vw"
                             className="-z-1 absolute inset-0 object-cover md:rounded-3xl rounded-2xl h-full w-full hover:scale-105 duration-500"
                         />
                     </Link>
@@ -250,6 +253,7 @@ export function ConsumerElectronicsBanner() {
 
                     <Image
                         src='https://images.pexels.com/photos/792345/pexels-photo-792345.jpeg'
+                        sizes="(min-width: 768px) 66vw, 100vw"
                         className='absolute -z-1 inset-0 w-full h-full object-cover md:rounded-3xl rounded-2xl object-center'
                     />
 
@@ -286,6 +290,7 @@ export function ConsumerElectronicsBanner() {
                             <Image
                                 src={"https://images.pexels.com/photos/3945663/pexels-photo-3945663.jpeg"}
                                 alt={product.name}
+                                sizes="(min-width: 768px) 16vw, 50vw"
                                 className="absolute -z-1 inset-0 w-full h-full object-cover md:rounded-3xl rounded-2xl hover:scale-105 duration-300"
                             />
                             <HeaderText
@@ -309,6 +314,7 @@ export function ConsumerElectronicsBanner() {
                         <Image
                             src={"https://images.pexels.com/photos/6370375/pexels-photo-6370375.jpeg"}
                             alt={product.name}
+                            sizes="(min-width: 768px) 33vw, 33vw"
                             className="absolute -z-1 inset-0 w-full h-full object-cover md:rounded-3xl rounded-2xl hover:scale-105 duration-300"
                         />
                         <SmallHeaderText

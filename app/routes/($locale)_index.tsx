@@ -1,8 +1,7 @@
-import { Await, useLoaderData, Link } from 'react-router';
+import { Await, useLoaderData } from 'react-router';
 import type { Route } from './+types/($locale)_index';
 import { Suspense, useMemo, } from 'react';
 import { ProductItem } from '~/components/ProductItem';
-import CollectionsHero, { AllCategories, CollectionsNewHero, TwoGrids } from '~/components/MINE/CollectionsHero';
 import Reviews from '~/components/MINE/Reviews';
 
 // For the collection section
@@ -10,11 +9,10 @@ import { MAINMENU_AND_PRODUCTS_QUERY } from './($locale).collections._index';
 import LoadingSpinner from '~/components/MINE/ReUsable/LoadingSpinner';
 import FAQs from '~/components/MINE/FAQs';
 import HeaderText, { SmallHeaderText } from '~/components/MINE/UI/HeaderText';
-import { PlatinumBanners, GridBanners, ScrollBanners, CasualBanners, OverflowBanners } from '~/components/MINE/AdsSections';
+import { OverflowBanners } from '~/components/MINE/AdsSections';
 import HeroSlider from '~/components/MINE/HeroSlider';
-import ArrowButton, { SliderButtons } from '~/components/MINE/ReUsable/Buttons';
-import { ConsumerElectronicsBanner, HomeGardenFurnitureBanner, PetsSuppliesBanner } from '~/components/MINE/NewCollectionsBanners';
-import Logos from '~/components/MINE/Logos';
+import ArrowButton from '~/components/MINE/ReUsable/Buttons';
+import { ElectronicsBanner, HomeGardenFurnitureBanner, PetsBanner } from '~/components/MINE/NewCollectionsBanners';
 import CategoryBanner from '~/components/MINE/CategoryBanner';
 
 
@@ -54,9 +52,10 @@ async function loadCriticalData({ context }: Route.LoaderArgs, language: any, co
     }),
   ]);
 
-  const MainCollections = MainMenu?.menu?.items?.map((item: any) => item.resource);
+  // const TopLevelCollections = MainMenu?.menu?.items;
+  const TopSubLevelCollections = MainMenu?.menu?.items || [];
 
-  return { MainCollections };
+  return { TopSubLevelCollections };
 }
 
 
@@ -70,36 +69,56 @@ function loadDeferredData({ context }: Route.LoaderArgs) {
 // The homepage component
 export default function Homepage() {
 
-  const { MainCollections } = useLoaderData<typeof loader>();
-
+  const { TopSubLevelCollections } = useLoaderData<typeof loader>();
 
 
   return (
     <div className='space-y-10'>
       <HeroSlider
-        mainCollections={MainCollections ?? []}
+        mainCollections={TopSubLevelCollections.map((item: any) => item.resource) ?? []}
       />
 
       <OverflowBanners />
 
-      {/* <Collections /> */}
-      {MainCollections?.map((collection: any) => (
-        <div
-          key={collection.id}
-        >
-          <MainCollectionsProductsSample
-            mainBanners={collection?.mainBanners?.references?.nodes} // Get the matafield called "main_banners" that has the banners for each collection (if we assigned it to it)
-            scrollBanners={collection?.scrollBanners?.references?.nodes}
-            gridBanners={collection?.gridBanners?.references?.nodes}
-            platinumBanners={collection?.platinumBanners?.references?.nodes} //
-            casualBanners={collection?.casualBanners?.references?.nodes}
-            products={collection?.products} // 
-            collectionTitle={collection?.title}
-            Handle={collection?.handle}
-          />
-        </div>
-      ))}
+      {TopSubLevelCollections?.map((mainMenu: any) => {
+        if (!mainMenu.resource) return null;
 
+        // 1. Extract all products from every sub-item (Shirts, Pants, etc.)
+        const allProducts = mainMenu.items?.flatMap(
+          (subItem: any) => subItem.resource?.products?.nodes || []
+        );
+
+        // 2. Remove duplicates (if a product is in two sub-collections)
+        const uniqueProducts = {
+          nodes: Array.from(new Map(allProducts.map((p: { id: any; }) => [p.id, p])).values())
+        };
+
+        const uniqueSubCollections = Array.from(
+          new Map(
+            mainMenu.items?.map((subItem: any) => [
+              subItem.resource.id,
+              { handle: subItem.resource.handle, image: subItem.resource.image, title: subItem.resource.title }
+            ])
+          ).values()
+        );
+
+
+        console.log(`%c${JSON.stringify(uniqueSubCollections, null, 2)}`, 'color: blue; font-size: 20px;')
+        return (
+          <div key={mainMenu.resource.id} className="main-menu-section mb-12">
+            {/* Display Main Title (e.g., Men) */}
+            {/* <h2>{mainMenu.resource.title}</h2> */}
+
+            {/* Display the merged product list */}
+            <TopLevelCollectionsProductsSample
+              products={uniqueProducts}
+              collectionTitle={mainMenu.resource.title}
+              Handle={mainMenu.resource.handle}
+              BannerArray={uniqueSubCollections}
+            />
+          </div>
+        );
+      })}
 
       <FAQs />
       <Reviews />
@@ -108,24 +127,8 @@ export default function Homepage() {
 }
 
 
-// MainCollectionsProductsSample component
-export function MainCollectionsProductsSample({ products, collectionTitle, Handle, mainBanners, scrollBanners, gridBanners, platinumBanners, casualBanners }: { products: any; collectionTitle: string; Handle: string; mainBanners?: any; scrollBanners?: any; gridBanners?: any; platinumBanners: any, casualBanners?: any; }) {
-
-
-
-  // const arrayOfWords = [
-  //   "Explore",
-  //   "Browse",
-  //   "Uncover",
-  //   "Find",
-  //   "Dive into",
-  //   "Check out",
-  //   "See",
-  //   "View",
-  //   "Experience",
-  //   "Journey through"
-  // ];
-  // const randomWord = useMemo(() => arrayOfWords[Math.floor(Math.random() * arrayOfWords.length)], [])
+// TopLevelCollectionsProductsSample component
+export function TopLevelCollectionsProductsSample({ BannerArray, products, collectionTitle, Handle, mainBanners, scrollBanners, gridBanners, platinumBanners, casualBanners }: { BannerArray?: any; products: any; collectionTitle: string; Handle: string; mainBanners?: any; scrollBanners?: any; gridBanners?: any; platinumBanners?: any, casualBanners?: any; }) {
 
 
   const arrayOfPromotions = [
@@ -146,11 +149,14 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
 
 
-  const BannerMap: Record<string, () => JSX.Element | null> = {
-    "pets": PetsSuppliesBanner,
-    // "home-garden-furniture": HomeGardenFurnitureBanner,
-    // "consumer-electronics": ConsumerElectronicsBanner,
-    "men": () => <CategoryBanner />,
+  type BannerProps = {
+    bannerArray: any;   // ← optional so old banners don't break
+  };
+  const BannerMap: Record<string, (props: BannerProps) => JSX.Element | null> = {
+    pets: (props) => <PetsBanner {...props} />,
+    home: (props) => <HomeGardenFurnitureBanner />,        // ignores bannerArray for now
+    electronics: (props) => <ElectronicsBanner {...props} />,
+    men: (props) => <CategoryBanner />, // CategoryBanner doesn't accept banner props
   };
 
   // 2. Render dynamically
@@ -172,16 +178,16 @@ export function MainCollectionsProductsSample({ products, collectionTitle, Handl
 
 
       <div className="flex flex-col gap-5">
-
-        <div className="flex flex-row gap-10 justify-between items-center">
-          <HeaderText HEAD={`${randomPromotion}`} />
+        <div className="flex flex-row gap-10 justify-between items-center text-black">
+          <SmallHeaderText HEAD={`${randomPromotion}`} />
           <ArrowButton
             Text="Explore"
             CC="border h-fit"
             Href={`/collections/${Handle}`}
           />
         </div>
-        <SelectedBanner />
+
+        <SelectedBanner bannerArray={BannerArray} />
       </div>
 
 

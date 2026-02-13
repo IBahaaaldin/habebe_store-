@@ -64,10 +64,10 @@ export function CollectionsNewHero({ Collections, Title, Description, HeroImg, s
     return (
         <div className="w-full flex flex-col gap-3 ">
             {/* /// Main Hero Banner */}
-            <article className="border border-black text-white relative md:rounded-3xl rounded-2xl md:p-10 p-7 overflow-hidden max-h-150 h-[70vh] flex flex-col justify-center gap-5">
+            <article className="text-white relative md:rounded-3xl rounded-2xl md:p-10 p-7 overflow-hidden max-h-150 h-[70vh] flex flex-col justify-center gap-5">
 
                 <HeroText
-                    HEAD={"Modern Minimalist Furniture"}
+                    HEAD={headText}
                     SUBHEAD={subText}
                 />
 

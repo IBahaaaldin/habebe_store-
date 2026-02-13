@@ -208,6 +208,7 @@ export function ErrorBoundary() {
       <Image
         data={shopData?.shop.brand?.logo?.image || {}}
         className='absolute bottom-[5%] -left-[20%] -z-1 max-w-200 aspect-auto object-cover blur-2xl opacity-70'
+        sizes='800px'
       />
     </div>
   );

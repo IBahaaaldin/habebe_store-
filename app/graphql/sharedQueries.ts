@@ -7,7 +7,6 @@ export const MAINMENU_AND_SUBMENU_QUERY = `#graphql
         id
         title
         url
-
         resource {
           ... on Collection {
             handle
