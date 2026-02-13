@@ -154,9 +154,9 @@ export function TopLevelCollectionsProductsSample({ BannerArray, products, colle
   };
   const BannerMap: Record<string, (props: BannerProps) => JSX.Element | null> = {
     pets: (props) => <PetsBanner {...props} />,
-    home: (props) => <HomeGardenFurnitureBanner />,        // ignores bannerArray for now
+    home: (props) => <HomeGardenFurnitureBanner {...props} />,        // ignores bannerArray for now
     electronics: (props) => <ElectronicsBanner {...props} />,
-    men: (props) => <CategoryBanner />, // CategoryBanner doesn't accept banner props
+    men: (props) => <CategoryBanner {...props} />, // CategoryBanner doesn't accept banner props
   };
 
   // 2. Render dynamically
