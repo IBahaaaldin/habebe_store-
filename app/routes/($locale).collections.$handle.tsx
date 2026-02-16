@@ -213,7 +213,7 @@ export default function Collection() {
 
   // Sorting logic
   const sortOptions = [
-    { label: 'Random (Default)', key: 'RANDOM', reverse: false },
+    { label: 'Random (Default)', key: 'TITLE', reverse: false },
     { label: 'Featured', key: 'COLLECTION_DEFAULT', reverse: false },
     { label: 'Price: Low to High', key: 'PRICE', reverse: false },
     { label: 'Price: High to Low', key: 'PRICE', reverse: true },
