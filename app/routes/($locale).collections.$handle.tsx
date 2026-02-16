@@ -10,7 +10,7 @@ import { MAINMENU_AND_SUBMENU_QUERY } from '~/graphql/sharedQueries';
 import MainBanners, { CasualBanners, GridBanners } from '~/components/MINE/AdsSections';
 import { useNavigate, useLocation } from 'react-router';
 import { useState, useMemo, useRef, useEffect } from 'react';
-import { ArrowDown, Check, Filter, Search } from 'lucide-react';
+import { ArrowDown, Check, Filter, Search, ArrowUpDown, Shuffle } from 'lucide-react';
 
 /**
  * Meta function for SEO and page title
@@ -60,12 +60,21 @@ async function loadCriticalData({ context, params, request }: Route.LoaderArgs) 
     }
   }
 
-  // 3. Fetch data from Shopify Storefront API
+  // 3. Parse sorting from the URL
+  // Default to 'RANDOM' if no sortKey is provided
+  const sortKey = searchParams.get('sortKey') || 'RANDOM';
+  const reverse = searchParams.get('reverse') === 'true';
+  const isRandom = sortKey === 'RANDOM';
+
+  // 4. Fetch data from Shopify Storefront API
   const [{ collection }, { menu }] = await Promise.all([
     storefront.query(COLLECTION_QUERY, {
       variables: {
         handle,
         filters,
+        // If RANDOM, we use default Shopify sorting and shuffle on the client
+        sortKey: isRandom ? 'COLLECTION_DEFAULT' : sortKey,
+        reverse: isRandom ? false : reverse,
         ...paginationVariables,
       },
     }),
@@ -202,7 +211,46 @@ export default function Collection() {
   const activeFilterCount = Array.from(new URLSearchParams(search).keys())
     .filter(key => key.startsWith('filter.')).length;
 
+  // Sorting logic
+  const sortOptions = [
+    { label: 'Random (Default)', key: 'RANDOM', reverse: false },
+    { label: 'Featured', key: 'COLLECTION_DEFAULT', reverse: false },
+    { label: 'Price: Low to High', key: 'PRICE', reverse: false },
+    { label: 'Price: High to Low', key: 'PRICE', reverse: true },
+    { label: 'Name: A-Z', key: 'TITLE', reverse: false },
+    { label: 'Name: Z-A', key: 'TITLE', reverse: true },
+    { label: 'Newest', key: 'CREATED', reverse: true },
+    { label: 'Oldest', key: 'CREATED', reverse: false },
+  ];
 
+  const currentSortKey = new URLSearchParams(search).get('sortKey') || 'RANDOM';
+  const currentReverse = new URLSearchParams(search).get('reverse') === 'true';
+  const currentSortLabel = sortOptions.find(opt => opt.key === currentSortKey && opt.reverse === currentReverse)?.label || 'Sort';
+
+  const handleSortChange = (key: string, reverse: boolean) => {
+    const params = new URLSearchParams(search);
+    params.set('sortKey', key);
+    params.set('reverse', reverse.toString());
+    params.delete('cursor');
+    params.delete('direction');
+    navigate(`?${params.toString()}`, { preventScrollReset: true });
+    setActiveDropdown(null);
+  };
+
+  // Client-side random shuffling if "Random" is selected
+  // We use a ref to store the shuffled order so it doesn't re-shuffle on every render
+  // unless the products from the server actually change or the user re-selects Random.
+  const processedProducts = useMemo(() => {
+    const nodes = [...collection.products.nodes];
+    if (currentSortKey === 'RANDOM') {
+      // Fisher-Yates shuffle
+      for (let i = nodes.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [nodes[i], nodes[j]] = [nodes[j], nodes[i]];
+      }
+    }
+    return nodes;
+  }, [collection.products.nodes, currentSortKey]);
 
 
   return (
@@ -237,6 +285,42 @@ export default function Collection() {
           </div>
 
           <div className="overflow-x-scroll ROW_SCROLL flex items-center gap-3 w-full border-b border-zinc-300">
+            {/* Sort Dropdown */}
+            <div className="min-w-max">
+              <button
+                onClick={() => setActiveDropdown(activeDropdown === 'sort' ? null : 'sort')}
+                className={`flex items-center gap-2 px-4 py-2 capitalize border transition-all rounded-xl ${activeDropdown === 'sort' ? 'border-orange-200 bg-orange-400 text-white' : 'border-zinc-200 bg-zinc-50 text-black hover:border-zinc-400'
+                  }`}
+              >
+                {currentSortKey === 'RANDOM' ? <Shuffle size={14} /> : <ArrowUpDown size={14} />}
+                <span className='text-nowrap'>
+                  {currentSortLabel}
+                </span>
+                <ArrowDown className={`w-3 h-3 transition-transform ${activeDropdown === 'sort' ? 'rotate-180' : ''}`} />
+              </button>
+
+              {activeDropdown === 'sort' && (
+                <div className="absolute top-full left-0 mt-2 rounded-2xl flex flex-col bg-white border border-zinc-200 shadow-2xl p-4 z-50 min-w-50">
+                  {sortOptions.map((option) => {
+                    const isSelected = currentSortKey === option.key && currentReverse === option.reverse;
+                    return (
+                      <button
+                        key={`${option.key}-${option.reverse}`}
+                        onClick={() => handleSortChange(option.key, option.reverse)}
+                        className={`flex items-center justify-between w-full py-2 px-3 rounded-lg transition-all ${isSelected ? 'bg-orange-50 text-orange-600 font-medium' : 'text-zinc-600 hover:bg-zinc-50'
+                          }`}
+                      >
+                        <div className="flex items-center gap-2">
+                          {option.key === 'RANDOM' && <Shuffle size={12} />}
+                          <span>{option.label}</span>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
             {/* Filter Dropdowns */}
             {collection.products.filters.map((filter: any) => {
               const isActive = activeDropdown === filter.id;
@@ -345,14 +429,17 @@ export default function Collection() {
 
         {/* Product Grid Section */}
         <div className="mt-10">
-          {collection.products.nodes.length > 0 ? (
+          {processedProducts.length > 0 ? (
             <div className="space-y-16">
               {/* Secondary Banners */}
               <CasualBanners collectionHandle={collection.handle} bannerArray={bannersArray} />
 
               {/* Paginated Product List */}
               <PaginatedResourceSection<any>
-                connection={collection.products}
+                connection={{
+                  ...collection.products,
+                  nodes: processedProducts
+                }}
               >
                 {({ node: product, index }) => (
                   <ProductItem
@@ -467,6 +554,8 @@ export const COLLECTION_QUERY = `#graphql
     $country: CountryCode
     $language: LanguageCode
     $filters: [ProductFilter!]
+    $sortKey: ProductCollectionSortKeys
+    $reverse: Boolean
     $first: Int
     $last: Int
     $startCursor: String
@@ -487,7 +576,9 @@ export const COLLECTION_QUERY = `#graphql
         last: $last,
         before: $startCursor,
         after: $endCursor,
-        filters: $filters
+        filters: $filters,
+        sortKey: $sortKey,
+        reverse: $reverse
       ) {
         nodes {
           ...ProductItem

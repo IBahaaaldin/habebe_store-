@@ -2,6 +2,7 @@ import React from 'react';
 import ArrowButton from './ReUsable/Buttons';
 import { Image } from '@shopify/hydrogen';
 import HeaderText from './UI/HeaderText';
+import { Link } from 'react-router';
 
 
 
@@ -10,19 +11,19 @@ const categories = [
         title: "Men",
         subtitle: "Bold & Timeless — Premium apparel designed for the modern man.",
         image: "https://images.pexels.com/photos/4611700/pexels-photo-4611700.jpeg",
-        handle: "men",
+        handle: "men-shirts",
     },
     {
         title: "Women",
         subtitle: "Elegant & Modern — Sophisticated pieces that blend contemporary trends.",
         image: "https://images.pexels.com/photos/7202897/pexels-photo-7202897.jpeg",
-        handle: "women",
+        handle: "women-pants",
     },
     {
         title: "Kids",
         subtitle: "Playful & Colorful — Durable outfits that keep up with every adventure.",
         image: "https://images.pexels.com/photos/6261908/pexels-photo-6261908.jpeg",
-        handle: "kids",
+        handle: "kids-toys",
     },
 ];
 
@@ -37,7 +38,8 @@ function CategoryBanner({ bannerArray }: { bannerArray?: any }) {
                 const isOdd = index % 2 === 0; // 0,2,4... → left image
 
                 return (
-                    <div
+                    <Link
+                        to={`/collections/${category.handle}`}
                         key={category.title}
                         className="grid md:grid-cols-4 gap-3 md:gap-5 items-center overflow-hidden backdrop-blur-sm transition-all duration-500"
                     >
@@ -62,7 +64,7 @@ function CategoryBanner({ bannerArray }: { bannerArray?: any }) {
                             ${isOdd ? 'left-10' : 'right-10'}`}>
                             <h3 className="font-bold ">{category.title}</h3>
                         </div>
-                    </div>
+                    </Link>
                 );
             })}
         </div>
