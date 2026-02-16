@@ -39,7 +39,7 @@ export default function FooterSection({ header }: { header: any }) {
         },
         {
             name: "WhatsApp",
-            path: "https://api.whatsapp.com/send?phone=+971589840405&text=Hello%2C%20I%20am%20interested%20in%20your%20services",
+            path: "https://api.whatsapp.com/send?phone=+971506838187&text=Hello%2C%20I%20am%20interested%20in%20your%20services",
             logo: <FaWhatsapp />,
         },
         {
