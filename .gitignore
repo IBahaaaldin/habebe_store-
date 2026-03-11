@@ -14,6 +14,3 @@ git reset --hard 691d400baab3839be2a5a0ac965ab36891214326
 git clean -fd
 .aider*
 .env
-.env
-.env
-.env
