@@ -143,6 +143,7 @@ export function GridBanners({ bannerArray, collectionHandle }: { bannerArray: an
 export function OverflowBanners({ bannerArray, collectionHandle }: { bannerArray?: any, collectionHandle?: string, }) {
 
 
+    /// connect it from the data coming from shopify, but we removed it because of ali
     // if (!Array.isArray(bannerArray) || bannerArray.length === 0) {
     //     return null;
     // }
@@ -151,36 +152,77 @@ export function OverflowBanners({ bannerArray, collectionHandle }: { bannerArray
 
     const fakeBannerArray = [
         {
+            title: "Wedding & Events",
             image: {
-                url: "https://images.pexels.com/photos/7282024/pexels-photo-7282024.jpeg",
-                altText: "Banner 1",
+                url: "https://images.pexels.com/photos/265722/pexels-photo-265722.jpeg",
+                altText: "Wedding and Events",
             },
         },
         {
+            title: "Couples & Parents",
             image: {
-                url: "https://images.pexels.com/photos/6990620/pexels-photo-6990620.jpeg",
-                altText: "Banner 2",
+                url: "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg",
+                altText: "Couples and Parents",
             },
         },
         {
+            title: "Babies & Parents",
             image: {
-                url: "https://images.pexels.com/photos/30379114/pexels-photo-30379114.jpeg",
-                altText: "Banner 3",
+                url: "https://images.pexels.com/photos/3933275/pexels-photo-3933275.jpeg",
+                altText: "Babies and Parents",
             },
         },
         {
+            title: "Travel",
             image: {
-                url: "https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg",
-                altText: "Banner 3",
+                url: "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg",
+                altText: "Travel",
             },
         },
         {
+            title: "Sun Care",
             image: {
-                url: "https://images.pexels.com/photos/5650016/pexels-photo-5650016.jpeg",
-                altText: "Banner 3",
+                url: "https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg",
+                altText: "Sun Care",
+            },
+        },
+        {
+            title: "Top Selling",
+            image: {
+                url: "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg",
+                altText: "Top Selling",
+            },
+        },
+        {
+            title: "Print On Demand",
+            image: {
+                url: "https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg",
+                altText: "Print On Demand",
+            },
+        },
+        {
+            title: "Promotions",
+            image: {
+                url: "https://images.pexels.com/photos/5650026/pexels-photo-5650026.jpeg",
+                altText: "Promotions",
+            },
+        },
+        {
+            title: "Store Sections",
+            image: {
+                url: "https://images.pexels.com/photos/3965545/pexels-photo-3965545.jpeg",
+                altText: "Store Sections",
+            },
+        },
+        {
+            title: "Specific Categories",
+            image: {
+                url: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg",
+                altText: "Specific Categories",
             },
         },
     ];
+
 
 
 
@@ -188,22 +230,29 @@ export function OverflowBanners({ bannerArray, collectionHandle }: { bannerArray
         <section className="relative flex flex-col gap-3">
             <div ref={containerRef} className="w-full overflow-x-scroll HIDDEN_SCROLL flex flex-row gap-3">
                 {fakeBannerArray.map((banner: any, index: number) => (
-                    <figure key={index} className="object-cover min-h-40 max-h-40 min-w-80 max-w-80 rounded-xl overflow-hidden">
-                        <Image
+                    <figure key={index} className="relative group z-0 object-cover min-h-40 max-h-40 min-w-80 max-w-80 overflow-hidden md:rounded-3xl rounded-2xl border text-center flex flex-col justify-center items-center">
+                        {/* <Image
                             key={index}
                             data={banner?.image}
                             sizes="200px"
                             alt={`${collectionHandle}` || "Banner"}
-                            className='h-full w-full md:rounded-3xl rounded-2xl object-cover'
-                        />
+                            className='h-full w-full object-cover'
+                        /> */}
+
+                        <h4>{banner.title}</h4>
+
+                        {/* <Link
+                            to={`/collections/${collectionHandle}`}
+                            className="absolute inset-0 z-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/10"
+                        /> */}
                     </figure>
                 ))}
             </div>
 
 
             <SliderButtonsss
-                next={() => slideNext(100)}
-                prev={() => slidePrev(100)}
+                next={() => slideNext(320)}
+                prev={() => slidePrev(320)}
                 disableNext={disableNext}
                 disablePrev={disablePrev}
             />

@@ -105,7 +105,7 @@ export default function Collection() {
   const { search } = useLocation();
 
   // State for active dropdown
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>("Random");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Close dropdown when clicking outside
@@ -225,7 +225,10 @@ export default function Collection() {
 
   const currentSortKey = new URLSearchParams(search).get('sortKey') || 'RANDOM';
   const currentReverse = new URLSearchParams(search).get('reverse') === 'true';
-  const currentSortLabel = sortOptions.find(opt => opt.key === currentSortKey && opt.reverse === currentReverse)?.label || 'Sort';
+  const currentSortLabel =
+    currentSortKey === 'RANDOM'
+      ? 'Random'
+      : sortOptions.find(opt => opt.key === currentSortKey && opt.reverse === currentReverse)?.label || 'Sort';
 
   const handleSortChange = (key: string, reverse: boolean) => {
     const params = new URLSearchParams(search);
@@ -284,7 +287,7 @@ export default function Collection() {
             <span className="uppercaser">Filters</span>
           </div>
 
-          <div className="overflow-x-scroll ROW_SCROLL flex items-center gap-3 w-full border-b border-zinc-300">
+          <div className="overflow-x-scroll ROW_SCROLL pb-3 flex items-center gap-3 w-full border-b border-zinc-300">
             {/* Sort Dropdown */}
             <div className="min-w-max">
               <button

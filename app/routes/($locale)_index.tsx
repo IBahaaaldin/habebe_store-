@@ -176,6 +176,7 @@ export function TopLevelCollectionsProductsSample({ BannerArray, products, colle
       */}
       {/* <ScrollBanners bannerArray={scrollBanners} Title={collectionTitle} collectionHandle={Handle} /> */}
 
+      {SelectedBanner && <SelectedBanner bannerArray={BannerArray} />}
 
       <div className="flex flex-col gap-5">
         <div className="flex flex-row gap-10 justify-between items-center text-black">
@@ -186,8 +187,6 @@ export function TopLevelCollectionsProductsSample({ BannerArray, products, colle
             Href={`/collections/${Handle}`}
           />
         </div>
-
-        <SelectedBanner bannerArray={BannerArray} />
       </div>
 
 
