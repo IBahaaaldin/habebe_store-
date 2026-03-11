@@ -63,21 +63,21 @@ export function HeaderMenu({ menu }: { menu: any }) {
 
 
   const location = useLocation();
-  const currentTabURL = location.pathname.split('/').pop(); // Get the first segment of the path
+  const currentTabURL = location?.pathname?.split('/')?.pop(); // Get the first segment of the path
 
 
   return (
     <nav role="navigation" className='flex lg:flex-row flex-col gap-3'>
 
       <ul className="hidden lg:flex flex-row  justify-center items-center rounded-full bg-zinc-100 p-1"> {/* Increased gap for better look */}
-        {menu?.items.slice(0, 5).map((menu: any) => { // Slice only the first 5 menus
+        {menu?.items?.slice(0, 5)?.map((menu: any, index: number) => { // Slice only the first 5 menus
           // Optional: Logic to determine if active
 
           const isMainMenuActive = currentTabURL === menu.resource?.handle;
 
           return (
             <li
-              key={menu.id}
+              key={menu.id + index}
               className={`relative group px-1 py-1 rounded-full`}
             >
 
@@ -88,7 +88,7 @@ export function HeaderMenu({ menu }: { menu: any }) {
 
               <Link
                 to={`/collections/${menu?.resource?.handle || '#'}`}
-                key={menu.id}
+                // key={index}
                 className={`hover:text-orange-400 text-nowrap text-black text-start duration-500 px-3 py-1 rounded-full shadow-inner
                   ${isMainMenuActive ? 'text-orange-400 bg-orange-100 font-medium' : ' text-black bg-white '}
                   `}
@@ -107,13 +107,13 @@ export function HeaderMenu({ menu }: { menu: any }) {
                   transition-all duration-300
                 `}>
                   <div className='mt-5 border-5 border-zinc-50 rounded-2xl p-1 min-w-sm overflow-scroll HIDDEN_SCROLL bg-white flex flex-col gap-1 max-h-[70vh]'>
-                    {menu.items.map((subMenu: any) => {
+                    {menu?.items?.map((subMenu: any, subIndex: number) => {
                       const isSubMenuActive = currentTabURL === subMenu.resource?.handle;
 
                       return (
                         <Link
                           to={`/collections/${subMenu?.resource?.handle || '#'}`}
-                          key={menu.id}
+                          key={subMenu.id || subIndex}
 
                           className={`px-3 py-0.5 w-fit rounded-xl hover:text-orange-400 hover:bg-orange-100 text-black text-start duration-500
                           ${isSubMenuActive ? 'text-orange-400' : 'text-black'}
@@ -150,7 +150,7 @@ function HeaderCtas({ isLoggedIn, cart, }: Pick<HeaderProps, 'isLoggedIn' | 'car
   return (
     <nav className="header-ctas" role="navigation">
       {/* Mobile Menu */}
-      <ChangeCurrencyButton />
+      {/* <ChangeCurrencyButton /> */}
       <HeaderMenuMobileToggle />
       {/* Search functionality */}
       <SearchToggle />
@@ -180,7 +180,7 @@ function ChangeCurrencyButton() {
     <select
       value={currency}
       onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
-      className="text-xs font-bold cursor-pointer bg-zinc-100 duration-300 rounded-xl px-3 py-2 focus:border-orange-400 hover:bg-zinc-200 appearance-none outline-hidden transition-all max-h-[200px] overflow-y-auto"
+      className="text-xs font-bold cursor-pointer bg-zinc-100 duration-300 rounded-xl px-3 py-2 focus:border-orange-400 hover:bg-zinc-200 appearance-none outline-hidden transition-all max-h-50 overflow-y-auto"
     >
       {currencies.map((curr) => (
         <option key={curr.code} value={curr.code} className="bg-white text-black py-2">

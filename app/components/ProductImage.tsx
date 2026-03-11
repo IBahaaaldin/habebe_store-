@@ -114,9 +114,6 @@
 //     </section>
 //   );
 // }
-
-
-
 /* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import type { ProductVariantFragment } from 'storefrontapi.generated';
@@ -133,10 +130,15 @@ export function ProductImage({
   productMedia?: any;
   selectedVariant?: ProductVariantFragment;
 }) {
-  // Set initial state to selected variant or fallback image
+  const [mounted, setMounted] = useState(false);
   const [mainImage, setMainImage] = useState(selectedVariant?.image || image);
   const [showCopyMessage, setShowCopyMessage] = useState(false);
   const [copyMessage, setCopyMessage] = useState('');
+
+  // Set mounted state after hydration
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Update main image whenever the selected variant changes
   useEffect(() => {
@@ -148,11 +150,12 @@ export function ProductImage({
   };
 
   const handleMouseLeave = () => {
-    // Revert back to the selected variant's image
     setMainImage(selectedVariant?.image || image);
   };
 
   const handleShareClick = async () => {
+    if (!mounted) return; // Don't run on server
+
     try {
       await navigator.clipboard.writeText(window.location.href);
       setCopyMessage('Product link copied!');
@@ -177,21 +180,31 @@ export function ProductImage({
           sizes="70vw"
         />
 
-        <Share2
-          className="cursor-pointer absolute top-5 right-5 bg-white/90 backdrop-blur-sm hover:bg-white duration-300 rounded-lg z-10 text-orange-400 p-1.5 shadow-sm"
-          size={35}
-          onClick={handleShareClick}
-        />
+        {/* Only render interactive elements after mounting */}
+        {mounted && (
+          <>
+            <Share2
+              className="cursor-pointer absolute top-5 right-5 bg-white/90 backdrop-blur-sm hover:bg-white duration-300 rounded-lg z-10 text-orange-400 p-1.5 shadow-sm"
+              size={35}
+              onClick={handleShareClick}
+            />
 
-        {showCopyMessage && (
-          <span className="absolute md:top-5 md:right-16 top-17 right-5 px-3 py-1 bg-white rounded-lg text-black text-sm shadow-md z-20">
-            {copyMessage}
-          </span>
+            {showCopyMessage && (
+              <span className="absolute md:top-5 md:right-16 top-17 right-5 px-3 py-1 bg-white rounded-lg text-black text-sm shadow-md z-20">
+                {copyMessage}
+              </span>
+            )}
+          </>
+        )}
+
+        {/* Optional: Show a placeholder during SSR */}
+        {!mounted && (
+          <div className="absolute top-5 right-5 w-[35px] h-[35px] rounded-lg bg-white/90" />
         )}
       </figure>
 
       {/* Thumbnail Gallery */}
-      <div className="relative flex flex-row gap-3 overflow-x-scroll  ROW_SCROLL w-full">
+      <div className="relative flex flex-row gap-3 overflow-x-scroll ROW_SCROLL w-full">
         {productMedia?.map((imgData: any, index: number) => (
           <figure
             key={imgData.node?.image?.id || index}

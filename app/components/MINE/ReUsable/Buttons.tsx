@@ -1,5 +1,5 @@
 import { ArrowRight, ChevronLeft, ChevronRight, Minus, Plus } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router';
 
 
@@ -22,6 +22,8 @@ export default function ArrowButton({ Href, Text, CC }: { Href?: string; Text?: 
 };
 
 
+
+/// Slider navigation buttons for index-based carousels
 export function SliderButtons({
     passedArray = [],
     changeIndex,
@@ -31,7 +33,6 @@ export function SliderButtons({
     changeIndex: (value: number | ((prev: number) => number)) => void;
     itemsToShow: number;
 }) {
-
 
     // console.log(`%c${JSON.stringify(passedArray)}`, 'color: white; font-size: 20px;')
 
@@ -49,7 +50,7 @@ export function SliderButtons({
     };
 
     // 3. Don't show buttons if there is nothing to slide
-    // if (arrayLength === 0) return null;
+    if (arrayLength === 0) return null;
 
 
     return (
@@ -72,7 +73,97 @@ export function SliderButtons({
 }
 
 
-/// 
+
+
+/// Used for Skeping the array by X number of pexels
+export function SliderButtonsss({
+    next,
+    prev,
+    disableNext,
+    disablePrev,
+}: {
+    next: () => void;
+    prev: () => void;
+    disableNext: boolean;
+    disablePrev: boolean;
+}) {
+    return (
+        <>
+            <button
+                onClick={prev}
+                disabled={disablePrev}
+                className={`cursor-pointer group absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-r-full text-white backdrop-blur-md transition-all duration-300 
+        ${disablePrev
+                        ? "opacity-0 pointer-events-none"
+                        : "bg-black/40 px-2 py-3 hover:bg-black/60 hover:px-4 hover:py-1 active:scale-95"
+                    }`}
+            >
+                <ChevronLeft size={24} />
+            </button>
+
+            <button
+                onClick={next}
+                disabled={disableNext}
+                className={`cursor-pointer group absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-l-full text-white backdrop-blur-md transition-all duration-300 
+        ${disableNext
+                        ? "opacity-0 pointer-events-none"
+                        : "bg-black/40 px-2 py-3 hover:bg-black/60 hover:px-4 hover:py-1 active:scale-95"
+                    }`}
+            >
+                <ChevronRight size={24} />
+            </button>
+        </>
+    );
+}
+
+
+export function useHorizontalSlider() {
+    const containerRef = useRef<HTMLDivElement | null>(null);
+
+    const [disableNext, setDisableNext] = useState(false);
+    const [disablePrev, setDisablePrev] = useState(true);
+
+    const updateButtons = () => {
+        const el = containerRef.current;
+        if (!el) return;
+
+        const maxScroll = el.scrollWidth - el.clientWidth;
+
+        setDisablePrev(el.scrollLeft <= 0);
+        setDisableNext(el.scrollLeft >= maxScroll - 1);
+    };
+
+    const slideNext = (px: number) => {
+        const el = containerRef.current;
+        if (!el) return;
+
+        el.scrollBy({ left: px, behavior: "smooth" });
+    };
+
+    const slidePrev = (px: number) => {
+        const el = containerRef.current;
+        if (!el) return;
+
+        el.scrollBy({ left: -px, behavior: "smooth" });
+    };
+
+    useEffect(() => {
+        const el = containerRef.current;
+        if (!el) return;
+
+        updateButtons();
+        el.addEventListener("scroll", updateButtons);
+
+        return () => el.removeEventListener("scroll", updateButtons);
+    }, []);
+
+    return { containerRef, slideNext, slidePrev, disableNext, disablePrev };
+}
+
+
+
+
+/// Used for jumping to a specific item in the array
 export function SmallIndexButtons({
     passedArray,
     changeIndex,

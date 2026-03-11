@@ -35,53 +35,48 @@ export default function FAQs() {
     const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
     const toggleFAQ = (index: number) => {
-        if (openFAQ === index) {
-            setOpenFAQ(null); // Close it if it's already open
-        } else {
-            setOpenFAQ(index); // Open the clicked FAQ
-        }
+        setOpenFAQ(openFAQ === index ? null : index);
     };
-
-
 
     return (
         <div className="flex flex-col items-start justify-start w-full gap-3 md:p-10 p-5 border border-black/10 md:rounded-3xl rounded-2xl">
-
             <HeaderText
                 HEAD="Frequently Asked Questions"
                 SUBHEAD='Find answers to the most common questions about our products and services.'
             />
 
-
             <div className="w-full bg-zinc-50 p-5 md:rounded-3xl rounded-2xl overflow-hidden">
                 {faqs.map((faq, index) => (
                     <div
                         key={index}
-                        className="border-b border-black/10 p-3 duration-300 ease-in-out"
+                        className="border-b border-black/10 p-3"
                     >
-                        <motion.button
-                            initial={{ opacity: 1, filter: 'blur(5px)' }}
-                            whileInView={{ opacity: 1, filter: 'blur(0px)' }}
-                            transition={{ duration: 2, delay: index * 0.05 }}
-                            viewport={{ once: true }}
+                        <button
                             aria-label='Toggle FAQ'
-                            onClick={() => toggleFAQ(index)} // Pass the index to toggle the specific FAQ
-                            className={`${openFAQ === index ? '' : ''} flex gap-5 cursor-pointer w-full text-left font-semibold justify-between items-center focus:outline-none`}
+                            onClick={() => toggleFAQ(index)}
+                            className="flex gap-5 cursor-pointer w-full text-left font-semibold justify-between items-center focus:outline-none"
                         >
-                            <h5 className=''> {faq.question}</h5>
+                            <h5>{faq.question}</h5>
                             <Plus
                                 className={`transition-transform duration-300 ${openFAQ === index ? 'rotate-45 text-zinc-500' : 'rotate-0'
                                     }`}
                             />
-                        </motion.button>
+                        </button>
 
-                        <p className={`overflow-hidden text-zinc-500 transition-all duration-500 ease-in-out ${openFAQ === index ? 'max-h-40 opacity-100 mt-1' : 'max-h-0 opacity-0'}`}
-                        > 
-                            {faq.answer}
-                        </p>
+                        {/* Use CSS Grid for smooth height transition */}
+                        <div
+                            className={`grid transition-all duration-500 ease-in-out ${openFAQ === index ? 'grid-rows-[1fr] mt-1' : 'grid-rows-[0fr]'
+                                }`}
+                        >
+                            <div className="overflow-hidden">
+                                <p className="text-zinc-500">
+                                    {faq.answer}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
         </div>
     );
-};
+}

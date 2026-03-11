@@ -62,9 +62,9 @@ async function loadCriticalData({ context, params, request }: Route.LoaderArgs) 
 
   // 3. Parse sorting from the URL
   // Default to 'RANDOM' if no sortKey is provided
-  const sortKey = searchParams.get('sortKey') || 'RANDOM';
+  const sortKey = searchParams.get('sortKey');
   const reverse = searchParams.get('reverse') === 'true';
-  const isRandom = sortKey === 'RANDOM';
+  const isRandom = !sortKey || sortKey === 'RANDOM';
 
   // 4. Fetch data from Shopify Storefront API
   const [{ collection }, { menu }] = await Promise.all([
@@ -73,7 +73,7 @@ async function loadCriticalData({ context, params, request }: Route.LoaderArgs) 
         handle,
         filters,
         // If RANDOM, we use default Shopify sorting and shuffle on the client
-        sortKey: isRandom ? 'COLLECTION_DEFAULT' : sortKey,
+        sortKey: isRandom ? 'COLLECTION_DEFAULT' : (sortKey as any),
         reverse: isRandom ? false : reverse,
         ...paginationVariables,
       },
@@ -213,12 +213,12 @@ export default function Collection() {
 
   // Sorting logic
   const sortOptions = [
-    { label: 'Random (Default)', key: 'TITLE', reverse: false },
+    { label: 'Random', key: 'TITLE', reverse: false },
     { label: 'Featured', key: 'COLLECTION_DEFAULT', reverse: false },
     { label: 'Price: Low to High', key: 'PRICE', reverse: false },
     { label: 'Price: High to Low', key: 'PRICE', reverse: true },
-    { label: 'Name: A-Z', key: 'TITLE', reverse: false },
-    { label: 'Name: Z-A', key: 'TITLE', reverse: true },
+    // { label: 'Name: A-Z', key: 'TITLE', reverse: false },
+    // { label: 'Name: Z-A', key: 'TITLE', reverse: true },
     { label: 'Newest', key: 'CREATED', reverse: true },
     { label: 'Oldest', key: 'CREATED', reverse: false },
   ];

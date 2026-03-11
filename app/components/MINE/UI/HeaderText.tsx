@@ -29,7 +29,6 @@ export default function HeaderText({ HEAD, SUBHEAD }: { HEAD?: string, SUBHEAD?:
             </h3>
 
 
-
             {SUBHEAD &&
                 <div className='flex flex-row flex-wrap gap-x-1.5 text-wrap opacity-50 mb-3'>
                     {SUBHEAD.split(' ').map((word, index) => (

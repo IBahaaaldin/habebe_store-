@@ -143,7 +143,7 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
         <div className="relative">
             {/* SLIDES */}
             <article
-                className=" flex items-start justify-start md:gap-7 gap-5 w-full transition-transform duration-500 ease-out overflow-x-scroll  ROW_SCROLL"
+                className=" flex items-start justify-start md:gap-7 gap-5 w-full transition-transform duration-500 ease-out overflow-x-scroll pb-3 ROW_SCROLL"
             >
                 {allSubMenus?.map((menu: any) => (
                     <Link

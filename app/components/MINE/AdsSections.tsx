@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router";
 import { Image } from "@shopify/hydrogen";
-import { Calendar, Ticket, ChevronRight } from 'lucide-react'; import { SliderButtons, SmallIndexButtons } from "./ReUsable/Buttons";
+import { Calendar, Ticket, ChevronRight } from 'lucide-react'; import { SliderButtons, SliderButtonsss, SmallIndexButtons, useHorizontalSlider } from "./ReUsable/Buttons";
 import HeaderText from "./UI/HeaderText";
 
 
@@ -146,6 +146,8 @@ export function OverflowBanners({ bannerArray, collectionHandle }: { bannerArray
     // if (!Array.isArray(bannerArray) || bannerArray.length === 0) {
     //     return null;
     // }
+    const { containerRef, slideNext, slidePrev, disableNext, disablePrev } = useHorizontalSlider();
+
 
     const fakeBannerArray = [
         {
@@ -183,8 +185,8 @@ export function OverflowBanners({ bannerArray, collectionHandle }: { bannerArray
 
 
     return (
-        <section className="flex flex-col gap-3">
-            <div className="w-full overflow-x-scroll HIDDEN_SCROLL flex flex-row gap-3">
+        <section className="relative flex flex-col gap-3">
+            <div ref={containerRef} className="w-full overflow-x-scroll HIDDEN_SCROLL flex flex-row gap-3">
                 {fakeBannerArray.map((banner: any, index: number) => (
                     <figure key={index} className="object-cover min-h-40 max-h-40 min-w-80 max-w-80 rounded-xl overflow-hidden">
                         <Image
@@ -197,6 +199,14 @@ export function OverflowBanners({ bannerArray, collectionHandle }: { bannerArray
                     </figure>
                 ))}
             </div>
+
+
+            <SliderButtonsss
+                next={() => slideNext(100)}
+                prev={() => slidePrev(100)}
+                disableNext={disableNext}
+                disablePrev={disablePrev}
+            />
         </section>
     )
 }

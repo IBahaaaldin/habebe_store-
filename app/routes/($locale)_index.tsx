@@ -103,7 +103,7 @@ export default function Homepage() {
         );
 
 
-        console.log(`%c${JSON.stringify(uniqueSubCollections, null, 2)}`, 'color: blue; font-size: 20px;')
+        // console.log(`%c${JSON.stringify(uniqueSubCollections, null, 2)}`, 'color: blue; font-size: 20px;')
         return (
           <div key={mainMenu.resource.id} className="main-menu-section mb-12">
             {/* Display Main Title (e.g., Men) */}

@@ -20,6 +20,7 @@ import tailwindCss from './styles/tailwind.css?url';
 import { PageLayout } from './components/PageLayout';
 import { MAINMENU_AND_SUBMENU_QUERY } from '~/graphql/sharedQueries';
 import { ContextProvider } from './lib/ContextProvider';
+import ClientOnly from './components/ClientOnly';
 
 
 export type RootLoader = typeof loader;
@@ -45,13 +46,6 @@ export const shouldRevalidate: ShouldRevalidateFunction = ({
   // For more details see: https://remix.run/docs/en/main/route/should-revalidate
   return false;
 };
-
-
-
-
-export const links: LinksFunction = () => [
-  { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-];
 
 
 export async function loader(args: Route.LoaderArgs) {
@@ -119,23 +113,30 @@ function loadDeferredData({ context }: Route.LoaderArgs) {
 }
 
 
+
+export const links: LinksFunction = () => [
+  { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+  { rel: "stylesheet", href: tailwindCss },
+  { rel: "stylesheet", href: resetStyles },
+  { rel: "stylesheet", href: appStyles },
+];
+
+
 // Layout component that includes the HTML structure
 export function Layout({ children }: { children?: React.ReactNode }) {
   const nonce = useNonce();
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <link rel="stylesheet" href={tailwindCss}></link>
-        <link rel="stylesheet" href={resetStyles}></link>
-        <link rel="stylesheet" href={appStyles}></link>
         <Meta />
         <Links />
       </head>
       <body>
         {children}
+        {/* ahmed */}
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
       </body>
@@ -145,13 +146,8 @@ export function Layout({ children }: { children?: React.ReactNode }) {
 
 
 
-
-
-// The main App component
 export default function App() {
-  const data = useRouteLoaderData<RootLoader>('root');
-  // console.log(`%c${JSON.stringify(data, null, 3)}`, 'color: white; font-size: 20px;')
-
+  const data = useRouteLoaderData<RootLoader>("root");
 
   if (!data) {
     return <Outlet />;
@@ -159,15 +155,19 @@ export default function App() {
 
   return (
     <ContextProvider>
-      <Analytics.Provider
-        cart={data.cart}
-        shop={data.shop}
-        consent={data.consent}
-      >
-        <PageLayout {...data} header={data.menuData}>
+      <PageLayout {...data} header={data.menuData}>
+        <ClientOnly>
+          {/*
+            <Analytics.Provider
+            cart={data.cart}
+            shop={data.shop}
+            consent={data.consent}
+            > */}
           <Outlet />
-        </PageLayout>
-      </Analytics.Provider>
+          {/* </Analytics.Provider>
+           */}
+        </ClientOnly>
+      </PageLayout>
     </ContextProvider>
   );
 }
