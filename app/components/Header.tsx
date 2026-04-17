@@ -58,6 +58,15 @@ export default function Header({ header, isLoggedIn, cart }: HeaderProps) {
 }
 
 
+const EXTRA_CATEGORIES = [
+  { title: "Kids", handle: "kids-toys" },
+  { title: "Pets", handle: "pets" },
+  { title: "Home & Decoration", handle: "home-decoration" },
+  { title: "Electronics", handle: "electronics-smart-systems" },
+  { title: "Phones & Computers", handle: "phones-computers" },
+  { title: "Automobiles", handle: "automobile-motorcycle" },
+];
+
 /// Header Menu Component inside the Header
 export function HeaderMenu({ menu }: { menu: any }) {
 
@@ -102,8 +111,8 @@ export function HeaderMenu({ menu }: { menu: any }) {
               {/* Dropdown Container */}
               {menu.items && menu.items.length > 0 && (
                 <ul className={`
-                  absolute left-0 top-5 
-                  opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                  absolute left-0 top-5
+                  opacity-0 invisible group-hover:opacity-100 group-hover:visible
                   transition-all duration-300
                 `}>
                   <div className='mt-5 border-5 border-zinc-50 rounded-2xl p-1 min-w-sm overflow-scroll HIDDEN_SCROLL bg-white flex flex-col gap-1 max-h-[70vh]'>
@@ -132,6 +141,21 @@ export function HeaderMenu({ menu }: { menu: any }) {
           );
         })}
 
+        {/* Static extra categories */}
+        {EXTRA_CATEGORIES.map((cat) => {
+          const isActive = currentTabURL === cat.handle;
+          return (
+            <li key={cat.handle} className="px-1 py-1 rounded-full">
+              <Link
+                to={`/collections/${cat.handle}`}
+                className={`hover:text-orange-400 text-nowrap text-black text-start duration-500 px-3 py-1 rounded-full shadow-inner
+                  ${isActive ? 'text-orange-400 bg-orange-100 font-medium' : 'text-black bg-white'}`}
+              >
+                <span>{cat.title}</span>
+              </Link>
+            </li>
+          );
+        })}
 
         {menu.items.length > 5 && (
           <Link to="/collections" className="text-xs px-3 py-1 hover:text-orange-400 text-nowrap text-orange-300 text-start duration-500">

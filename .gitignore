@@ -4,14 +4,25 @@ node_modules
 /dist
 /public/build
 /.mf
-# .env
-# .shopify
-# .react-router
 
+# Environment variables
+.env
+.env.*
+!.env.example
 
-git log
-git reset --hard 691d400baab3839be2a5a0ac965ab36891214326
-git clean -fd
+# Shopify & React Router generated files
+.shopify
+.react-router
+
+# OS files
+.DS_Store
+.DS_Store?
+Thumbs.db
+
+# AI tooling
 .aider*
-.env
-.env
+.claude*
+
+# Editor
+.vscode
+.idea

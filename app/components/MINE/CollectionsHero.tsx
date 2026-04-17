@@ -129,35 +129,39 @@ export function TwoGrids({ subTwoMenus }: { subTwoMenus?: any }) {
 
 
 
+const STATIC_CATEGORIES = [
+    { title: "Men", handle: "men-shirts", image: "https://images.pexels.com/photos/4611700/pexels-photo-4611700.jpeg" },
+    { title: "Women", handle: "women-pants", image: "https://images.pexels.com/photos/7202897/pexels-photo-7202897.jpeg" },
+    { title: "Kids", handle: "kids-toys", image: "https://images.pexels.com/photos/6261908/pexels-photo-6261908.jpeg" },
+    { title: "Pets", handle: "pets", image: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" },
+    { title: "Home & Decoration", handle: "home-decoration", image: "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg" },
+    { title: "Electronics", handle: "electronics-smart-systems", image: "https://images.pexels.com/photos/1571442/pexels-photo-1571442.jpeg" },
+    { title: "Phones & Computers", handle: "phones-computers", image: "https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg" },
+    { title: "Automobiles", handle: "automobile-motorcycle", image: "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg" },
+];
+
+
+
 // AllCategories component displays a horizontal scrollable list of collection categories.
 export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
-
-
-    if (!Array.isArray(allSubMenus) || allSubMenus.length === 0) {
-        return null;
-    }
-
-
-
     return (
         <div className="relative">
             {/* SLIDES */}
             <article
                 className=" flex items-start justify-start md:gap-7 gap-5 w-full transition-transform duration-500 ease-out overflow-x-scroll pb-3 ROW_SCROLL"
             >
-                {allSubMenus?.map((menu: any) => (
+                {STATIC_CATEGORIES.map((category) => (
                     <Link
-                        to={`/collections/${menu.handle ?? menu.resource?.handle}`}
-                        key={menu.id || menu.handle}
+                        to={`/collections/${category.handle}`}
+                        key={category.handle}
                         className='flex flex-col items-center gap-2'
-
                     >
                         <figure
                             className="group relative rounded-4xl md:w-25 w-20 overflow-hidden"
                         >
                             <Image
-                                data={menu.image ?? menu.resource?.image}
-                                alt={menu.altText || menu.title}
+                                src={category.image}
+                                alt={category.title}
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                 sizes='150px'
                                 width={150}
@@ -166,7 +170,7 @@ export function AllCategories({ allSubMenus }: { allSubMenus?: any }) {
                         </figure>
 
                         <p className="text-black text-wrap text-center">
-                            {menu.title.length > 20 ? menu.title.slice(0, 15) + "..." : menu.title}
+                            {category.title.length > 20 ? category.title.slice(0, 15) + "..." : category.title}
                         </p>
                     </Link>
                 ))}

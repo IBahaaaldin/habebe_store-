@@ -63,6 +63,15 @@ export function PageLayout({ cart, children = null, header, isLoggedIn }: PageLa
 
 
 
+const EXTRA_MOBILE_CATEGORIES = [
+  { title: "Kids", handle: "kids-toys" },
+  { title: "Pets", handle: "pets" },
+  { title: "Home & Decoration", handle: "home-decoration" },
+  { title: "Electronics", handle: "electronics-smart-systems" },
+  { title: "Phones & Computers", handle: "phones-computers" },
+  { title: "Automobiles", handle: "automobile-motorcycle" },
+];
+
 /// SIDEBAR menu "Will appear only when the user clicks the menu icon"
 function MenuAside({ menu }: any) {
 
@@ -89,7 +98,7 @@ function MenuAside({ menu }: any) {
                     to={`/collections/${item.resource?.handle || '#'}`}
                     key={item.id}
 
-                    className={`hover:text-orange-400 text-black font-medium text-start duration-500 
+                    className={`hover:text-orange-400 text-black font-medium text-start duration-500
                   ${isMainMenuActive ? 'text-orange-400' : 'text-black'}
                   `}
                   >
@@ -99,6 +108,22 @@ function MenuAside({ menu }: any) {
               );
             })
             }
+
+            {/* Static extra categories */}
+            {EXTRA_MOBILE_CATEGORIES.map((cat) => {
+              const isActive = currentTabURL === cat.handle;
+              return (
+                <li key={cat.handle} className="relative group">
+                  <Link
+                    to={`/collections/${cat.handle}`}
+                    className={`hover:text-orange-400 text-black font-medium text-start duration-500
+                      ${isActive ? 'text-orange-400' : 'text-black'}`}
+                  >
+                    {cat.title}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </Await>
       </Suspense>
