@@ -151,17 +151,17 @@ export function OverflowBanners({ bannerArray, collectionHandle }: { bannerArray
 
 
     const fakeBannerArray = [
-        { title: "Top Selling" },
-        { title: "Trending Products" },
-        { title: "Super Deals" },
-        { title: "Hot Selling" },
-        { title: "New Products" },
-        { title: "Video Promotions" },
-        { title: "Recommended Products" },
-        { title: "Print On Demand" },
-        { title: "Brands Section" },
-        { title: "On Going Posters" },
-        { title: "Past Recommendation" },
+        { title: "Top Selling",          image: "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg" },
+        { title: "Trending Products",    image: "https://images.pexels.com/photos/934063/pexels-photo-934063.jpeg" },
+        { title: "Super Deals",          image: "https://images.pexels.com/photos/5650026/pexels-photo-5650026.jpeg" },
+        { title: "Hot Selling",          image: "https://images.pexels.com/photos/1488463/pexels-photo-1488463.jpeg" },
+        { title: "New Products",         image: "https://images.pexels.com/photos/5632398/pexels-photo-5632398.jpeg" },
+        { title: "Video Promotions",     image: "https://images.pexels.com/photos/2510428/pexels-photo-2510428.jpeg" },
+        { title: "Recommended Products", image: "https://images.pexels.com/photos/3965545/pexels-photo-3965545.jpeg" },
+        { title: "Print On Demand",      image: "https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg" },
+        { title: "Brands Section",       image: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg" },
+        { title: "On Going Posters",     image: "https://images.pexels.com/photos/1762851/pexels-photo-1762851.jpeg" },
+        { title: "Past Recommendation",  image: "https://images.pexels.com/photos/5632400/pexels-photo-5632400.jpeg" },
     ];
 
 
@@ -171,21 +171,15 @@ export function OverflowBanners({ bannerArray, collectionHandle }: { bannerArray
         <section className="relative flex flex-col gap-3">
             <div ref={containerRef} className="w-full overflow-x-scroll HIDDEN_SCROLL flex flex-row gap-3">
                 {fakeBannerArray.map((banner: any, index: number) => (
-                    <figure key={index} className="relative group z-0 object-cover min-h-32 max-h-32 min-w-60 max-w-60 overflow-hidden md:rounded-3xl rounded-2xl border text-center flex flex-col justify-center items-center">
-                        {/* <Image
-                            key={index}
-                            data={banner?.image}
-                            sizes="200px"
-                            alt={`${collectionHandle}` || "Banner"}
-                            className='h-full w-full object-cover'
-                        /> */}
-
-                        <h4>{banner.title}</h4>
-
-                        {/* <Link
-                            to={`/collections/${collectionHandle}`}
-                            className="absolute inset-0 z-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/10"
-                        /> */}
+                    <figure key={index} className="relative group z-0 min-h-32 max-h-32 min-w-60 max-w-60 overflow-hidden md:rounded-3xl rounded-2xl flex-shrink-0">
+                        <Image
+                            src={banner.image}
+                            sizes="240px"
+                            alt={banner.title}
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+                        <h4 className="absolute bottom-3 left-3 right-3 text-white font-bold text-sm leading-tight">{banner.title}</h4>
                     </figure>
                 ))}
             </div>
