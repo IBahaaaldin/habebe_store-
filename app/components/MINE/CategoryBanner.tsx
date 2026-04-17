@@ -72,15 +72,15 @@ function CategoryBanner({ bannerArray }: { bannerArray?: any }) {
 
     return (
         <div className="flex flex-col gap-3">
-            {/* Mobile: horizontal snap slider  |  Desktop: 2-row 4-col grid */}
+            {/* Mobile: full-width edge-to-edge snap slider  |  Desktop: 2-row 4-col grid */}
             <div
                 ref={scrollRef}
                 onScroll={handleScroll}
                 className="
-                    flex flex-row gap-3 overflow-x-scroll pb-2
+                    flex flex-row gap-3 overflow-x-scroll px-1
                     [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
-                    scroll-smooth [scroll-snap-type:x_mandatory]
-                    md:grid md:grid-cols-4 md:overflow-visible md:pb-0 md:gap-4
+                    [scroll-snap-type:x_mandatory]
+                    md:grid md:grid-cols-4 md:overflow-visible md:gap-4 md:px-0
                     md:[scroll-snap-type:none]
                 "
             >
@@ -90,19 +90,19 @@ function CategoryBanner({ bannerArray }: { bannerArray?: any }) {
                         key={category.title}
                         className="
                             relative flex-shrink-0 [scroll-snap-align:start]
-                            w-[47vw] h-48
-                            md:w-auto md:h-52
-                            rounded-2xl md:rounded-3xl overflow-hidden group
+                            w-[92vw] h-40 rounded-2xl
+                            md:w-auto md:h-52 md:rounded-3xl
+                            overflow-hidden group
                         "
                     >
                         <Image
                             src={category.image}
                             alt={category.title}
-                            sizes="(min-width: 768px) 25vw, 47vw"
+                            sizes="(min-width: 768px) 25vw, 100vw"
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                        <h3 className="absolute bottom-3 left-3 right-3 text-white font-bold text-sm md:text-base leading-tight">
+                        <h3 className="absolute bottom-4 left-5 right-5 text-white font-bold text-xl md:text-base leading-tight">
                             {category.title}
                         </h3>
                     </Link>
